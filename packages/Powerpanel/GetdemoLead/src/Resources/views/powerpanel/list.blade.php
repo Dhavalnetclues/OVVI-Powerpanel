@@ -36,16 +36,16 @@
                                     <div class="p-3 dropdown-body">
 
                                         <div class="mb-3">
-                                            <div class="input-group input-daterange" id="feedbackRange">
+                                            <div class="input-group input-daterange" id="getdemoRange">
                                                 <span class="input-group-text"><i class="ri-calendar-line fs-13"></i></span>
-                                                <input type="text" class="form-control" id="start_date" name="start_date" placeholder="{{ trans('feedbacklead::template.common.fromdate') }}"  data-provider="flatpickr" data-date-format="{{Config::get('Constant.DEFAULT_DATE_FORMAT')}}">
+                                                <input type="text" class="form-control" id="start_date" name="start_date" placeholder="{{ trans('getdemolead::template.common.fromdate') }}"  data-provider="flatpickr" data-date-format="{{Config::get('Constant.DEFAULT_DATE_FORMAT')}}">
                                             </div>
                                         </div>
 
                                         <div class="mb-3">
-                                            <div class="input-group input-daterange" id="feedbackRange">
+                                            <div class="input-group input-daterange" id="getdemoRange">
                                                 <span class="input-group-text"><i class="ri-calendar-line fs-13"></i></span>
-                                                <input type="text" class="form-control" id="end_date" name="end_date" placeholder="{{ trans('feedbacklead::template.common.todate') }}"  data-provider="flatpickr" data-date-format="{{Config::get('Constant.DEFAULT_DATE_FORMAT')}}">
+                                                <input type="text" class="form-control" id="end_date" name="end_date" placeholder="{{ trans('getdemolead::template.common.todate') }}"  data-provider="flatpickr" data-date-format="{{Config::get('Constant.DEFAULT_DATE_FORMAT')}}">
                                                 {{-- <button class="btn btn-outline-primary border-outline-light btn-rh-search" id="feedbackRange" type="button"><i class="ri-search-line fs-13"></i></button> --}}
                                             </div>
                                         </div>
@@ -84,20 +84,16 @@
                                             ['Identity_Name'=>'name','TabIndex'=>'1','Name'=>'Name'],
                                             ['Identity_Name'=>'email','TabIndex'=>'2','Name'=>'Email'],
                                             ['Identity_Name'=>'phone','TabIndex'=>'3','Name'=>'Phone'],
-                                            ['Identity_Name'=>'satisfied','TabIndex'=>'4','Name'=>'Satisfied'],
-                                            ['Identity_Name'=>'visit','TabIndex'=>'5','Name'=>'Visit For'],
-                                            ['Identity_Name'=>'category','TabIndex'=>'6','Name'=>'Category'],
-                                            ['Identity_Name'=>'message','TabIndex'=>'7','Name'=>'Message'],
-                                            ['Identity_Name'=>'ip','TabIndex'=>'8','Name'=>'IP'],
-                                            ['Identity_Name'=>'date','TabIndex'=>'9','Name'=>'Received Date'],
+                                            ['Identity_Name'=>'category','TabIndex'=>'4','Name'=>'Category'],
+                                            ['Identity_Name'=>'message','TabIndex'=>'5','Name'=>'Message'],
+                                            ['Identity_Name'=>'ip','TabIndex'=>'6','Name'=>'IP'],
+                                            ['Identity_Name'=>'date','TabIndex'=>'7','Name'=>'Received Date'],
                                         ],
                                         'DataTableHead'=>[
                                             ['Title'=>'Name','Align'=>'left'],
                                             ['Title'=>'Email','Align'=>'left'],
                                             ['Title'=>'Phone','Align'=>'left'],
-                                            ['Title'=>'Satisfied','Align'=>'left'],
-                                            ['Title'=>'Visit For','Align'=>'left'],
-                                            ['Title'=>'Category','Align'=>'left'],
+                                            ['Title'=>'Business','Align'=>'left'],
                                             ['Title'=>'Message','Align'=>'left'],
                                             ['Title'=>'IP','Align'=>'left'],
                                             ['Title'=>'Received Date','Align'=>'center']
@@ -106,7 +102,7 @@
                                 ];
                             @endphp
 
-                            @include('powerpanel.partials.datatable-view',['ModuleName'=>'feedbacklead','Permission_Delete'=>'feedback-leads-delete','tablearray'=>$tablearray,'userIsAdmin'=>$userIsAdmin,'Module_ID'=>Config::get('Constant.MODULE.ID')])
+                            @include('powerpanel.partials.datatable-view',['ModuleName'=>'feedbacklead','Permission_Delete'=>'getdemo-leads-delete','tablearray'=>$tablearray,'userIsAdmin'=>$userIsAdmin,'Module_ID'=>Config::get('Constant.MODULE.ID')])
 
                         </div>
                     </div>
@@ -114,7 +110,7 @@
 
                 <!-- Modal -->
                 @if (File::exists(base_path() . '/resources/views/powerpanel/partials/quickeditpopup.blade.php') != null)
-                @include('powerpanel.partials.quickeditpopup',['TableName'=>'feedbackLead'])
+                @include('powerpanel.partials.quickeditpopup',['TableName'=>'getdemoLead'])
                 @endif
                 @else
                 @if (File::exists(base_path() . '/resources/views/powerpanel/partials/addrecordsection.blade.php') != null)
@@ -137,11 +133,11 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">{{ trans('feedbacklead::template.common.alert') }}</h5>
+                    <h5 class="modal-title">{{ trans('getdemolead::template.common.alert') }}</h5>
                     <button type="button" class="btn-close fs-10" data-bs-dismiss="modal" aria-label="Close"> </button>
                 </div>
                 <div class="modal-body">
-                    <h5 class="mb-2">{{ trans('feedbacklead::template.feedbackleadModule.noExport') }}</h5>
+                    <h5 class="mb-2">{{ trans('getdemolead::template.getdemoleadModule.noExport') }}</h5>
                     <div class="pt-2">
                         <button type="button" class="btn btn-primary bg-gradient waves-effect waves-light btn-label" data-bs-dismiss="modal">
                             <div class="d-flex">
@@ -149,7 +145,7 @@
                                     <i class="ri-check-line label-icon align-middle fs-20 me-2"></i>
                                 </div>
                                 <div class="flex-grow-1">
-                                    {{ trans('feedbacklead::template.common.ok') }}
+                                    {{ trans('getdemolead::template.common.ok') }}
                                 </div>
                             </div>
                         </button>
@@ -163,20 +159,20 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">{{ trans('feedbacklead::template.common.alert') }}</h5>
+                    <h5 class="modal-title">{{ trans('getdemolead::template.common.alert') }}</h5>
                     <button type="button" class="btn-close fs-10" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-sm-12">
-                            <h5 class="mb-2">{{ trans('feedbacklead::template.feedbackleadModule.recordsExport') }}</h5>
+                            <h5 class="mb-2">{{ trans('getdemolead::template.getdemoleadModule.recordsExport') }}</h5>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" value="selected_records" id="selected_records" name="export_type">
-                                <label for="selected_records">{{ trans('feedbacklead::template.feedbackleadModule.selectedRecords') }}</label>
+                                <label for="selected_records">{{ trans('getdemolead::template.getdemoleadModule.selectedRecords') }}</label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" value="all_records" id="all_records" name="export_type" checked>
-                                <label for="all_records">{{ trans('feedbacklead::template.feedbackleadModule.allRecords') }}</label>
+                                <label for="all_records">{{ trans('getdemolead::template.getdemoleadModule.allRecords') }}</label>
                             </div>
                         </div>
                         <div class="col-sm-12 mt-3">
@@ -186,7 +182,7 @@
                                         <i class="ri-check-line label-icon align-middle fs-20 me-2"></i>
                                     </div>
                                     <div class="flex-grow-1">
-                                        {{ trans('feedbacklead::template.common.ok') }}
+                                        {{ trans('getdemolead::template.common.ok') }}
                                     </div>
                                 </div>
                             </button>
@@ -201,11 +197,11 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">{{ trans('feedbacklead::template.common.alert') }}</h5>
+                    <h5 class="modal-title">{{ trans('getdemolead::template.common.alert') }}</h5>
                     <button type="button" class="btn-close fs-10" data-bs-dismiss="modal" aria-label="Close"> </button>
                 </div>
                 <div class="modal-body">
-                    <h5 class="mb-2">{{ trans('feedbacklead::template.feedbackleadModule.leastRecord') }}</h5>
+                    <h5 class="mb-2">{{ trans('getdemolead::template.getdemoleadModule.leastRecord') }}</h5>
                     <div class="pt-2">
                         <button type="button" class="btn btn-primary bg-gradient waves-effect waves-light btn-label" data-bs-dismiss="modal">
                             <div class="d-flex">
@@ -213,7 +209,7 @@
                                     <i class="ri-check-line label-icon align-middle fs-20 me-2"></i>
                                 </div>
                                 <div class="flex-grow-1">
-                                    {{ trans('feedbacklead::template.common.ok') }}
+                                    {{ trans('getdemolead::template.common.ok') }}
                                 </div>
                             </div>
                         </button>
@@ -235,7 +231,7 @@
 @section('scripts')
 <script type="text/javascript">
     window.site_url = '{!! url("/") !!}';
-    var DELETE_URL = '{!! url("/powerpanel/feedback-leads/DeleteRecord") !!}';
+    var DELETE_URL = '{!! url("/powerpanel/getdemo-leads/DeleteRecord") !!}';
     var searchid = '{{ $searchid }}';
 
     var showChecker = true;
@@ -255,7 +251,7 @@
 <script src="{{ $CDN_PATH.'resources/global/scripts/datatable.js' }}" type="text/javascript"></script>
 <script src="{{ $CDN_PATH.'resources/global/plugins/datatables/datatables.min.js' }}" type="text/javascript"></script>
 <script src="{{ $CDN_PATH.'resources/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js' }}" type="text/javascript"></script>
-<script src="{{ $CDN_PATH.'resources/pages/scripts/packages/feedbacklead/feedbacklead-datatables-ajax.js?v='.time() }}" type="text/javascript"></script>
+<script src="{{ $CDN_PATH.'resources/pages/scripts/packages/getdemo/getdemolead-datatables-ajax.js?v='.time() }}" type="text/javascript"></script>
 @if((File::exists(app_path() . '/Workflow.php') != null || File::exists(base_path() . '/packages/Powerpanel/Workflow/src/Models/Workflow.php') != null))
     <script src="{{ $CDN_PATH.'resources/pages/scripts/user-updates-approval.js' }}" type="text/javascript"></script>
 @endif

@@ -5,26 +5,23 @@ namespace Powerpanel\GetdemoLead\Models;
 use Illuminate\Database\Eloquent\Model;
 use DB;
 
-class FeedbackLead extends Model {
+class GetdemoLead extends Model {
 
     /**
      * The table associated with the model.
      *
      * @var string
      */
-    protected $table = 'feedback_leads';
+    protected $table = 'getdemo_leads';
     protected $fillable = [
         'id',
         'varName',
         'varEmail',
         'varPhoneNo',
-        'chrSatisfied',
-        'varVisitfor',
-        'chrCategory',
+        'varBusinessName',
         'txtUserMessage',
         'chrDelete',
         'varIpAddress',
-        'chrIsPrimary',
         'created_at',
         'updated_at'
     ];
@@ -68,7 +65,7 @@ class FeedbackLead extends Model {
      */
     public static function getRecordById($id, $moduleFields = false) {
         $response = false;
-        $moduleFields = ['id', 'varName', 'varEmail', 'varPhoneNo', 'txtUserMessage', 'chrSatisfied', 'varVisitfor', 'chrCategory', 'chrDelete', 'varIpAddress', 'created_at', 'updated_at'];
+        $moduleFields = ['id', 'varName', 'varEmail', 'varPhoneNo', 'txtUserMessage', 'varBusinessName', 'chrDelete', 'varIpAddress', 'created_at', 'updated_at'];
         $response = Self::getPowerPanelRecords($moduleFields)->deleted()->checkRecordId($id)->first();
         return $response;
     }
@@ -97,7 +94,7 @@ class FeedbackLead extends Model {
      */
     public static function getRecordList($filterArr = false, $id = false) {
         $response = false;
-        $moduleFields = ['id', 'varName', 'varEmail', 'varPhoneNo', 'chrSatisfied', 'varVisitfor', 'chrCategory', 'txtUserMessage', 'varIpAddress', 'created_at', 'chrPublish'];
+        $moduleFields = ['id', 'varName', 'varEmail', 'varPhoneNo', 'varBusinessName', 'txtUserMessage', 'varIpAddress', 'created_at', 'chrPublish'];
         $response = Self::getPowerPanelRecords($moduleFields)
                 ->deleted();
         if (isset($id) && $id != '') {
@@ -110,7 +107,7 @@ class FeedbackLead extends Model {
 
     public static function getRecordCount($filterArr = false, $returnCounter = false, $modelNameSpace = false, $checkMain = false, $id = false) {
         $response = false;
-        $moduleFields = ['id', 'varName', 'varEmail', 'varPhoneNo', 'chrSatisfied', 'varVisitfor', 'chrCategory', 'txtUserMessage', 'varIpAddress', 'created_at', 'chrPublish'];
+        $moduleFields = ['id', 'varName', 'varEmail', 'varPhoneNo', 'varBusinessName', 'txtUserMessage', 'varIpAddress', 'created_at', 'chrPublish'];
         $response = Self::getPowerPanelRecords($moduleFields)
                 ->deleted();
         if (isset($id) && $id != '') {
@@ -134,9 +131,7 @@ class FeedbackLead extends Model {
             'varName',
             'varEmail',
             'varPhoneNo',
-            'chrSatisfied',
-            'varVisitfor',
-            'chrCategory',
+            'varBusinessName',
             'txtUserMessage',
             'varIpAddress',
             'created_at',
@@ -168,7 +163,7 @@ class FeedbackLead extends Model {
      */
     public static function getCronRecords() {
         $response = false;
-        $moduleFields = ['id', 'varName', 'varEmail', 'varPhoneNo', 'chrSatisfied', 'varVisitfor', 'chrCategory', 'txtUserMessage', 'created_at'];
+        $moduleFields = ['id', 'varName', 'varEmail', 'varPhoneNo', 'varBusinessName', 'txtUserMessage', 'created_at'];
         $response = Self::getPowerPanelRecords($moduleFields)
                 ->deleted()
                 ->publish()
@@ -188,9 +183,7 @@ class FeedbackLead extends Model {
             'varName',
             'varEmail',
             'varPhoneNo',
-            'chrSatisfied',
-            'varVisitfor',
-            'chrCategory',
+            'varBusinessName',
             'txtUserMessage',
             'varIpAddress',
             'created_at'

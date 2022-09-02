@@ -1,13 +1,13 @@
 <?php
-namespace Powerpanel\FeedbackLead\Models;
-use Powerpanel\FeedbackLead\Models\FeedbackLead;
+namespace Powerpanel\GetdemoLead\Models;
+use Powerpanel\GetdemoLead\Models\GetdemoLead;
 use Illuminate\Contracts\View\View;
 use Maatwebsite\Excel\Concerns\FromView;
 use Maatwebsite\Excel\Concerns\ShouldAutoSize;
 use Request;
 use Config;
 
-class GetdemoExport implements FromView, ShouldAutoSize
+class GetdemoLeadExport implements FromView, ShouldAutoSize
 {
     public function view(): View
     {
@@ -16,15 +16,16 @@ class GetdemoExport implements FromView, ShouldAutoSize
             if (null !== Request::get('delete')) {
                 $selectedIds = Request::get('delete');
             }
-            $arrResults = FeedbackLead::getListForExport($selectedIds);
-
+            $arrResults = GetdemoLead::getListForExport($selectedIds);
+            
         } else {
             $filterArr['searchFilter'] = !empty(Request::get('searchValue')) ? Request::get('searchValue') : '';
-            $arrResults = FeedbackLead::getListForExport();
+            $arrResults = GetdemoLead::getListForExport();
         }
+        // echo "<pre>";print_r($arrResults);die;
 
         if (count($arrResults) > 0) {
-            return view('feedbacklead::powerpanel.excel_format', ['FeedbackLead' => $arrResults]);
+            return view('getdemolead::powerpanel.excel_format', ['GetdemoLead' => $arrResults]);
         }
     }
 

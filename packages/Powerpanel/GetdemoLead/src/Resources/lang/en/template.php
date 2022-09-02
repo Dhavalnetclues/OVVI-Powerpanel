@@ -194,8 +194,9 @@ return [
         'deletePermanently' => 'Delete Permanently',
         'recordApprovalMessage' => 'Record has been sent for approval.',
         'selectuser' => 'Select User',
+        'getdemoLeads' => 'Getdemo Leads',
     ],
-    'feedbackleadModule' => [
+    'getdemoleadModule' => [
         'managegetdemolead' => 'Getdemo Leads',
         'export' => 'Export',
         'noExport' => 'No Records to export!',
@@ -212,5 +213,6 @@ return [
         'ipAddress' => 'IP',
         'receivedDateTime' => 'Received Date/Time',
         'getdemoLeads' => 'Getdemo Leads',
+        'business' => 'Business'
     ]
 ];

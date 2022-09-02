@@ -13,7 +13,7 @@ class CreateFeedbackLeadTable extends Migration {
      */
     public function up() {
 
-        Schema::create('feedback_leads', function (Blueprint $table) {
+        Schema::create('getdemo_leads', function (Blueprint $table) {
 
             $table->engine = 'InnoDB';
             $table->increments('id')->collation('utf8_general_ci');
@@ -39,7 +39,7 @@ class CreateFeedbackLeadTable extends Migration {
      * @return void
      */
     public function down() {
-        Schema::drop('feedback_leads');
+        Schema::drop('getdemo_leads');
     }
 
 }

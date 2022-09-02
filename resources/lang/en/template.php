@@ -269,7 +269,7 @@ return [
         'subscribed' => 'Subscribed',
         'here' => 'Here',
         'newsLetterLead' => 'to find out how to get more newsletter leads.',
-        'noFeedback' => 'to find out how to get more feedback leads.',
+        'noGetdemo' => 'to find out how to get more getdemo leads.',
         'noNewsLetter' => 'No newsletter leads received yet. Please Click',
         'noContactLead' => 'No Complaint leads received yet. Please Click',
         'findContactLead' => 'to find out how to get more Complaint leads.',
@@ -364,7 +364,7 @@ return [
         'complaintlead' => 'Complaint Leads',
         'errortracking' => 'Error Tracking',
         'notificationlist' => 'Notification',
-        'feedbacklead' => 'Feedback Leads',
+        'getdemolead' => 'Getdemo Leads',
         'onlinepollinglead' => 'Online Polling Leads',
         'submitticketslead' => 'Ticket List',
         'restaurant_reservations' => 'Reservations',
@@ -739,8 +739,8 @@ return [
     'dcumentreportModule' => [
         'manageDocumentsReports' => 'Documents Report',
     ],
-    'feedbackleadModule' => [
-        'managefeedbacklead' => 'Feedback Leads',
+    'getdemoleadModule' => [
+        'managegetdemolead' => 'Getdemo Leads',
         'export' => 'Export',
         'noExport' => 'No Records to export!',
         'recordsExport' => 'Which records do you want to export?',
@@ -755,7 +755,7 @@ return [
         'message' => 'Message',
         'ipAddress' => 'IP',
         'receivedDateTime' => 'Received Date/Time',
-        'feedbackLeads' => 'Feedback Leads',
+        'getdemoLeads' => 'Getdemo Leads',
     ],
     'SubmitTicketsModule' => [
         'manageTicketsLeads' => 'Ticket List',
@@ -1315,7 +1315,7 @@ return [
         'replyToEmail' => 'Default Reply To Email',
         'contactUsEmail' => 'Default Contact Us Email',
         'complaintEmail' => 'Default Complaint Email',
-        'feedbackEmail' => 'Default Feedback Us Email',
+        'getdemoEmail' => 'Default Getdemo Us Email',
         'testSMTPSettings' => 'Test SMTP settings',
         'sentMail' => 'Sent Mail',
         'mailer' => 'Mailer',

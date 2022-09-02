@@ -9,7 +9,7 @@ use Excel;
 use Powerpanel\GetdemoLead\Models\GetdemoLead;
 use App\CommonModel;
 use App\Helpers\MyLibrary;
-use Powerpanel\GetdemoLead\Models\GetdemoExport;
+use Powerpanel\GetdemoLead\Models\GetdemoLeadExport;
 use Config;
 
 class GetdemoleadController extends PowerpanelController {
@@ -53,6 +53,7 @@ class GetdemoleadController extends PowerpanelController {
         }
 
         $arrResults = GetdemoLead::getRecordList($filterArr,$id);
+        // print_r($arrResults);die;
         $iTotalRecords = GetdemoLead::getRecordCount($filterArr, true,'','',$id);
         $end = $filterArr['iDisplayStart'] + $filterArr['iDisplayLength'];
         $end = $end > $iTotalRecords ? $iTotalRecords : $end;
@@ -94,7 +95,7 @@ class GetdemoleadController extends PowerpanelController {
      * @author  NetQuick
      */
     public function ExportRecord() {
-        return Excel::download(new GetdemoLeadExport, Config::get('Constant.SITE_NAME') . '-' . trans("getdemo::template.getdemoModule.getdemoLeads") . '-' . date("dmy-h:i") . '.xlsx');
+        return Excel::download(new GetdemoLeadExport, 'OVVI -' . trans("getdemolead::template.getdemoleadModule.getdemoLeads") . '-' . date("dmy-h:i") . '.xlsx');
     }
 
     public function tableData($value) {
@@ -105,59 +106,23 @@ class GetdemoleadController extends PowerpanelController {
 
         // Checkbox
         $checkbox = view('powerpanel.partials.checkbox', ['name'=>'delete[]', 'value'=>$value->id])->render();
-
-        $category = "";
+        $details = '';
         if (!empty($value->txtUserMessage)) {
             $details .= '<div class="pro-act-btn">';
-            $details .= '<a href="javascript:void(0)" class="" onclick="return hs.htmlExpand(this,{width:300,headingText:\'Message\',wrapperClassName:\'titlebar\',showCredits:false});"><span aria-hidden="true" class="icon-envelope"></span></a>';
+            $details .= '<a href="javascript:void(0)" class="without_bg_icon" onclick="return hs.htmlExpand(this,{width:300,headingText:\'Message\',wrapperClassName:\'titlebar\',showCredits:false});"><i aria-hidden="true" class="ri-message-2-line fs-16"></i></a>';
             $details .= '<div class="highslide-maincontent">' . nl2br($value->txtUserMessage) . '</div>';
             $details .= '</div>';
         } else {
             $details .= '-';
         }
-        if (!empty($value->varVisitfor)) {
-            $Visitfor .= '<div class="pro-act-btn">';
-            $Visitfor .= '<a href="javascript:void(0)" class="" onclick="return hs.htmlExpand(this,{width:300,headingText:\'What was the reason for visit?\',wrapperClassName:\'titlebar\',showCredits:false});"><span aria-hidden="true" class="icon-envelope"></span></a>';
-            $Visitfor .= '<div class="highslide-maincontent">' . nl2br($value->varVisitfor) . '</div>';
-            $Visitfor .= '</div>';
+            
+        if (!empty($value->varBusinessName) ) {
+            $Business = $value->varBusinessName;
         } else {
-            $Visitfor .= '-';
-        }
-
-
-
-        if ($value->chrSatisfied != 'N') {
-            if ($value->chrSatisfied == 'H') {
-                $Satisfied = "Horrible";
-            } elseif ($value->chrSatisfied == 'B') {
-                $Satisfied = "Bad";
-            } elseif ($value->chrSatisfied == 'J') {
-                $Satisfied = "Just OK";
-            } elseif ($value->chrSatisfied == 'G') {
-                $Satisfied = "Good";
-            } elseif ($value->chrSatisfied == 'S') {
-                $Satisfied = "Super!";
-            } else {
-                $Satisfied = '-';
-            }
-        } else {
-            $Satisfied = '-';
-        }
-        if ($value->chrCategory != '0') {
-            if ($value->chrCategory == '1') {
-                $category = "Suggestions";
-            } elseif ($value->chrCategory == '2') {
-                $category = "Issues/Bugs";
-            } elseif ($value->chrCategory == '3') {
-                $category = "Others";
-            } else {
-                $category = '-';
-            }
-        } else {
-            $category = '-';
+            $Business = '-';
         }
         if (!empty($value->varPhoneNo)) {
-            $phoneNo = MyLibrary::getDecryptedString($value->varPhoneNo);
+            $phoneNo = MyLibrary::decryptLatest($value->varPhoneNo);
         } else {
             $phoneNo = '-';
         }
@@ -168,11 +133,11 @@ class GetdemoleadController extends PowerpanelController {
         $records = array(
             $checkbox,
             $value->varName,
-            MyLibrary::getDecryptedString($value->varEmail),
+            MyLibrary::decryptLatest($value->varEmail),
             $phoneNo,
-            $Satisfied,
-            $Visitfor,
-            $category,
+            // $Satisfied,
+            // $Visitfor,
+            $Business,
             $details,
             $ipAdress,
             $receivedDate

@@ -71,7 +71,7 @@ var TableDatatablesAjax = function () {
                     {"data": 9, className: 'text-center', "name": 'created_at', "bSortable": true},
                 ],
                 "ajax": {
-                    "url": window.site_url + "/powerpanel/feedback-leads/get_list"+id, // ajax source
+                    "url": window.site_url + "/powerpanel/getdemo-leads/get_list"+id, // ajax source
                 },
                 "order": [
                     [9, "desc"]
@@ -107,7 +107,7 @@ var TableDatatablesAjax = function () {
                         if ($('#ExportRecord').click) {
                             if ($('input[name="delete[]"]:checked').val()) {
                                 ip = '?' + $('input[name="delete[]"]:checked').serialize() + '&' + 'export_type' + '=' + exportRadioVal;
-                                var ajaxurl = window.site_url + "/powerpanel/feedback-leads/ExportRecord" + ip;
+                                var ajaxurl = window.site_url + "/powerpanel/getdemo-leads/ExportRecord" + ip;
                                 window.location = ajaxurl;
                                 grid.getDataTable().ajax.reload();
                             } else {
@@ -116,7 +116,7 @@ var TableDatatablesAjax = function () {
                         }
                     } else {
                         $('#selected_records').modal('hide');
-                        var ajaxurl = window.site_url + "/powerpanel/feedback-leads/ExportRecord";
+                        var ajaxurl = window.site_url + "/powerpanel/getdemo-leads/ExportRecord";
                         window.location = ajaxurl;
                     }
                 }

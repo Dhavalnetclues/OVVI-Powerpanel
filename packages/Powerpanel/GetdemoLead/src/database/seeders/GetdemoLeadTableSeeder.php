@@ -17,7 +17,7 @@ class GetdemoLeadTableSeeder extends Seeder
                     'intFkGroupCode' => '4',
                     'varTitle' => 'FeedBack Leads',
                     'varModuleName' => 'feedback-leads',
-                    'varTableName' => 'feedback_leads',
+                    'varTableName' => 'getdemo_leads',
                     'varModelName' => 'FeedbackLead',
                     'varModuleClass' => 'FeedbackleadController',
                     'varModuleNameSpace' => 'Powerpanel\FeedbackLead\\',
@@ -35,7 +35,7 @@ class GetdemoLeadTableSeeder extends Seeder
                 DB::table('module')->insert([
                     'varTitle' => 'FeedBack Leads',
                     'varModuleName' => 'feedback-leads',
-                    'varTableName' => 'feedback_leads',
+                    'varTableName' => 'getdemo_leads',
                     'varModelName' => 'FeedbackLead',
                     'varModuleClass' => 'FeedbackleadController',
                     'varModuleNameSpace' => 'Powerpanel\FeedbackLead\\',
