@@ -1,0 +1,91 @@
+.home-short-service{
+    position: relative;
+    z-index: 1;
+    background-color: $ac_white; 
+
+    .owl-item{
+        &:hover{
+            .item-m{
+                &:before{
+                    opacity: 1;
+                    left: -140px;
+                    top: -140px;
+                }
+                @include css3-prefix ('box-shadow', 'none');
+            }
+        }
+        &.active{
+            .item-m{
+                @include css3-prefix ('background', 'linear-gradient(90deg,#7c277a 0,#89236d 100%)');
+            }
+            + .active {
+                .item-m{
+                    @include css3-prefix ('background', 'linear-gradient(90deg,#8a236c 0,#961f63 100%)');   
+                }
+                + .active {
+                    .item-m{
+                        @include css3-prefix ('background', 'linear-gradient(90deg,#991e5f 0,#a21b56 100%)');  
+                    }
+                    + .active {
+                        .item-m{
+                            @include css3-prefix ('background', 'linear-gradient(90deg,#a81a52 0,#b01648 100%)'); 
+                        }
+                        + .active {
+                            .item-m{
+                                @include css3-prefix ('background','linear-gradient(90deg,#b41646 0,#be133d 100%)'); 
+                            }
+                            + .active {
+                                .item-m{
+                                    @include css3-prefix ('background', 'linear-gradient(90deg,#c11239 0,#cc0e30 100%)'); 
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        } 
+    }
+
+    .item-m{            
+        position: relative;
+        overflow: hidden; 
+        min-height: 260px;
+        padding: 25px;
+        border-color: transparent;
+        @include css3-prefix ('transition', '#{$ac_3_ti}');           
+        @include css3-prefix ('box-shadow', 'inset 6px 0px 15px 0px rgba(0,0,0,0.4)');
+        @media (max-width: 1024px){
+            min-height: 200px;
+        }
+        &:before{
+            content: '';
+            position: absolute;
+            height: 280px;
+            width: 280px;
+            left: -280px;
+            top: -280px;
+            border: 40px solid $ac_white;
+            border-radius: 100%;
+            opacity: 0;
+            @include css3-prefix ('transition', '#{$ac_3_ti}');
+        }
+        .title-m{
+            font-size: em(20);
+            letter-spacing: 2px;
+            color: $ac_white;
+            display: block;
+            text-transform: uppercase;
+            font-weight: 500;
+            @include css3-prefix ('transition', '#{$ac_3_ti}');
+            @media (max-width: 1024px){
+                font-size: em(16);
+            }
+        }
+        .more-info{
+            font-size: em(16);
+            color: $ac_white;
+            display: block;
+            margin-top: 15px;         
+        }
+    }
+}

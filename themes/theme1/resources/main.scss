@@ -1,0 +1,99 @@
+/* Default S */
+	@import "scss/mixin/css3mixins";
+	@import "scss/mixin/custommixins";
+	@import "scss/variables/fontsvariables";
+	@import "scss/variables/colorvariables";
+	@import "scss/variables/css3variables";
+	@import "scss/variables/fontsgenerator";
+/* Default E */
+
+/* Libraries S */
+	@import "libraries/aos-master/sass/aos";
+	
+	@import "libraries/cookies/scss/cookies";
+	@import "libraries/back-top/scss/back-top";
+	@import "libraries/browser-upgrade/scss/browser-upgrade";
+	
+	@import "libraries/menu/scss/menu_01";
+
+	@import "libraries/bootstrap/4.5.3/scss/bootstrap";
+	@import "libraries/bootstrap/4.5.3/scss/bootstrap-grid";
+	@import "libraries/bootstrap/4.5.3/scss/bootstrap-reboot";
+
+	@import "libraries/font-awesome-4.7.0/scss/font-awesome";
+
+	@import "libraries/mc-scrollbar/scss/jquery.mCustomScrollbar.min";
+	@import "libraries/mc-scrollbar/scss/custom";
+	
+	@import "libraries/bootstrap-select-master/1.13.14/sass/bootstrap-select";
+	@import "libraries/bootstrap-select-master/custom/bootstrap-select";
+
+	@import "libraries/bootstrap-datetimepicker-master/scss/bootstrap-datetimepicker";
+	@import "libraries/bootstrap-datetimepicker-master/scss/custom";
+
+	// @import "libraries/fancybox-master/3.5.7/scss/jquery.fancybox";
+
+	// @import "libraries/loader/scss/loader";
+
+	@import "libraries/OwlCarousel2/2.3.4/scss/owl.carousel";
+	@import "libraries/OwlCarousel2/2.3.4/scss/owl.theme.default";
+
+	@import "libraries/slick/scss/slick";
+	@import "libraries/slick/scss/slick-theme";
+/* Libraries E */
+
+/* Components S */
+	@import "scss/components/reset-css";
+	@import "scss/components/cms";
+	@import "scss/components/img-thum";
+	@import "scss/components/button";
+	@import "scss/components/form";
+	@import "scss/components/breadcrumb";
+	@import "scss/components/modal";
+	@import "scss/components/pagination";
+	@import "scss/components/table";
+	@import "scss/components/tabs";
+	@import "scss/components/collapse";
+	@import "scss/components/share";
+	@import "scss/components/dropdown";
+/* Components E */
+
+/* Sections S */
+	@import "sections/header-main";
+	@import "sections/home-banner";
+	@import "sections/home-notification";
+	@import "sections/home-welcome";
+	@import "sections/home-short-service";
+	@import "sections/home-welcome-text";
+	@import "sections/home-service";
+	@import "sections/home-news";
+	@import "sections/footer-main";
+	@import "sections/inner-banner";
+/* Sections E */
+
+/* Pages S */
+	@import "pages/sitemap";
+	@import "pages/404-page-not-found";
+	@import "pages/thankyou";
+	@import "pages/left-panel";
+	@import "pages/news-listing";						/* This design also used on the consultations-listing */
+	@import "pages/consultations-listing";				/* This design depends on the news-listing */
+	@import "pages/news-detail";						/* This design also used on the consultations-detail */
+	@import "pages/consultations-detail";				/* This design depends on the news-detail */
+	@import "pages/director";
+	@import "pages/director-detail";
+	@import "pages/ict";
+	@import "pages/about-us";
+	@import "pages/who-we-are";
+	@import "pages/board-of-directors-meetings";		/* This design also used on the industry-statistics */
+	@import "pages/careers-listing";
+	@import "pages/consumer";
+	@import "pages/register-of-applications";
+	@import "pages/whois-information";
+	@import "pages/fm-broadcasting";
+	@import "pages/contact-us";
+	@import "pages/event-listing";
+	@import "pages/event-detail";
+	@import "pages/pay";
+	@import "pages/search";
+/* Pages E */

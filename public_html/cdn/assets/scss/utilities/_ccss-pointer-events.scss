@@ -1,0 +1,25 @@
+/* - - - - - - - - - - - - -
+    Related File Name: No
+- - - - - - - - - - - - - */
+
+/* Overflow Wrap S */
+    .#{$ccss}-pe-inherit {
+      pointer-events: inherit;
+    }
+
+    .#{$ccss}-pe-initial {
+      pointer-events: initial;
+    }
+
+    .#{$ccss}-pe-unset {
+      pointer-events: unset;
+    }
+
+    .#{$ccss}-pe-auto {
+      pointer-events: auto;
+    }
+
+    .#{$ccss}-pe-none {
+      pointer-events: none;
+    }
+/* Overflow Wrap E */

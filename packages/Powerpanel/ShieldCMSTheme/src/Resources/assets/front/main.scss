@@ -1,0 +1,91 @@
+/* Google Font S */
+	// @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Roboto:100,300,400,500,700,900');
+/* Google Font E */
+
+/* Default S */
+	@import "scss/mixin/css3mixins";
+	@import "scss/mixin/custommixins";
+	@import "scss/variables/fontsvariables";
+	@import "scss/variables/colorvariables";
+	@import "scss/variables/css3variables";
+/* Default E */
+
+/* Libraries S */
+	@import "libraries/loader/scss/loader";
+	@import "libraries/bootstrap/3.3.7/scss/bootstrap.min";
+	@import "libraries/materialize-src/sass/materialize";
+	@import "libraries/reset-css/reset-css";
+	@import "libraries/browser-upgrade/scss/browser-upgrade";
+	@import "libraries/back-top/scss/back-top";
+	@import "libraries/animate-css/animate.min";
+	@import "libraries/font-awesome-4.7.0/scss/font-awesome";
+	@import "libraries/flat-icon/scss/flaticon";
+	@import "libraries/icomoon/scss/icomoon";
+	@import "libraries/bootstrap-select-master/3.3.7/scss/bootstrap-select";
+	//@import "libraries/daterangepicker-master/scss/daterangepicker";
+	//@import "libraries/daterangepicker-master/scss/daterangepicker_update";	
+
+	@import "libraries/OwlCarousel2-2.3.4/scss/owl.carousel";
+	@import "libraries/OwlCarousel2-2.3.4/scss/owl.theme.default";
+	@import "libraries/fancybox-master/new/scss/jquery.fancybox.min.css";
+	//@import "libraries/bootstrap-responsive-tabs/scss/bootstrap_responsive_tabs";
+	//@import "libraries/bootstrap-responsive-tabs/scss/bootstrap_responsive_tabs_simple";
+	@import "libraries/malihu-custom-scrollbar-plugin-master/scss/jquery.mCustomScrollbar";		
+	@import "libraries/menu/scss/menu_01";
+	@import "libraries/lazyloadxt/scss/jquery.lazyloadxt.fadein";
+/* Libraries E */
+
+/* Components S */
+	@import "scss/components/img-thum";
+	@import "scss/components/button";
+	@import "scss/components/form";
+	@import "scss/components/breadcrumb";
+	@import "scss/components/modal";
+	@import "scss/components/pagination";
+	@import "scss/components/table";
+	@import "scss/components/bootstrap-select";
+/* Components E */
+
+/* Utilities S */
+	@import "scss/utilities/extra-class";
+	@import "scss/utilities/spacing";
+	@import "scss/utilities/float";
+	// @import "scss/utilities/img-effect/img-effect";
+	// @import "scss/utilities/img-effect/img-effect-16";
+/* Utilities E */
+
+/* Libraries Update S */
+	@import "scss/libraries-update/owl_carousel_update";
+/* Libraries Update E */
+
+/* Sections S */
+	@import "sections/alert_slider";		
+	@import "sections/header_main";	
+	@import "sections/home_banner_02";
+	@import "sections/about_section";
+	@import "sections/news_section";
+	@import "sections/events_section";	
+	@import "sections/blog_section";
+	@import "sections/newslatter";
+	
+	@import "sections/footer_main";	
+	@import "sections/inner_banner";	
+
+	//@import "sections/feedback_form";	
+/* Sections E */
+
+/* Pages S */
+	@import "pages/cms";
+	@import "pages/thankyou";
+	@import "pages/404";
+	
+	@import "pages/contact_us";		
+	@import "pages/photo_album";
+	@import "pages/blogs";
+	@import "pages/news";
+	@import "pages/events";	
+	@import "pages/detail_page";
+	@import "pages/faqs";
+	@import "pages/links";
+	@import "pages/publications";
+/* Pages E */

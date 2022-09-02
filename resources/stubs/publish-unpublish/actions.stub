@@ -1,0 +1,32 @@
+<div class="col-md-6">
+	@php $display = (isset($recordObj->{{ fieldName }})?$recordObj->{{ fieldName }}:null)  @endphp		
+	<div class="form-group">
+	<!--  <label class="control-label form_title">{{ trans('template.display') }} <span aria-required="true" class="required"> * </span> </label> -->
+	<label class="form_title" for="site_name">Publish/ Unpublish <span aria-required="true" class="required"> * </span></label>
+	 <div class="md-radio-inline">
+			<div class="md-radio">
+				 @if ((isset($display) && $display == 'Y') || (null == Input::old('{{ fieldName }}') || Input::old('{{ fieldName }}') == 'Y'))
+						@php  $checked_yes = 'checked'  @endphp
+				 @else
+						@php  $checked_yes = ''  @endphp
+				 @endif     
+				 <input class="md-radiobtn" type="radio" value="Y" name="{{ fieldName }}" id="chrMenuDisplay0" {{ $checked_yes }}> 
+				 <label for="chrMenuDisplay0"> <span></span> <span class="check"></span> <span class="box"></span> {{ trans('template.common.publish') }} </label>
+				</div>
+				<div class="md-radio">               
+				 @if ((isset($display) && $display == 'N') || Input::old('{{ fieldName }}') == 'N')
+						@php  $checked_no = 'checked'  @endphp
+				 @else 
+						@php  $checked_no = ''  @endphp
+				 @endif     
+				 <input class="md-radiobtn" type="radio" value="N" name="{{ fieldName }}" id="chrMenuDisplay1" {{  $checked_no }}>
+				 <label for="chrMenuDisplay1"> <span></span> <span class="check"></span> <span class="box"></span> {{ trans('template.common.unpublish') }} </label>
+			</div>
+			<span class="help-block">
+				<strong>{{ $errors->first('{{ fieldName }}') }}</strong>
+			</span>
+			<div id="frmmail_membership_error">
+			</div>
+	 </div>
+</div>   
+</div>

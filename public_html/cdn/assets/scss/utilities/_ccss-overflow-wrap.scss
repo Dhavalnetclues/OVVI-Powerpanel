@@ -1,0 +1,29 @@
+/* - - - - - - - - - - - - -
+    Related File Name: No
+- - - - - - - - - - - - - */
+
+/* Overflow Wrap S */
+    .#{$ccss}-ofw-inherit {
+      overflow-wrap: inherit;
+    }
+
+    .#{$ccss}-ofw-initial {
+      overflow-wrap: initial;
+    }
+
+    .#{$ccss}-ofw-unset {
+      overflow-wrap: unset;
+    }
+
+    .#{$ccss}-ofw-normal {
+      overflow-wrap: normal;
+    }
+
+    .#{$ccss}-ofw-break-word {
+      overflow-wrap: break-word;
+    }
+
+    .#{$ccss}-ofw-anywhere {
+      overflow-wrap: anywhere;
+    }
+/* Overflow Wrap E */

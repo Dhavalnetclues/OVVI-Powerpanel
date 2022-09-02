@@ -1,0 +1,39 @@
+//  Sliier Cub Box
+.cube_sllier {	
+	margin:50px auto 0px;
+	.cube_inner {
+		position: relative;	
+		@include css3-prefix ('transform-style','preserve-3d');
+	}
+	.face {
+		position: absolute;
+		padding: 0px;
+	 } 
+ } 
+ .nav_cube_icon {
+	 position:absolute;
+	 left:0px;
+	 right:0px;
+	 bottom:-60px;
+	 height:23px;	
+	 width:58px;
+	 text-align:center;
+	 background:$secondary_dark_2;
+	 border-radius:20px;
+	 margin:auto;
+ }
+ .nav_cube_icon .cub_ic{
+	 display:inline-block;
+	 margin:0px;	
+	 color:$ac_white;
+	 cursor:pointer;
+	 width: 23px;
+	 line-height: 23px;
+ }
+ @media (max-width:767px){
+	 .cube_sllier {margin:50px auto 50px;}	
+	 .nav_cube_icon {bottom:-60px;}	
+ }
+ @media (max-width:479px){
+	 .cube_sllier {transform:scale(0.75);margin: 20px auto 20px;}
+ }

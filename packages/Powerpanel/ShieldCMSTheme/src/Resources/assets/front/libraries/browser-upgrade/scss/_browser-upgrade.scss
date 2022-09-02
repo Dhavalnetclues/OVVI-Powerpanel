@@ -1,0 +1,29 @@
+.buorg{
+    position: fixed;
+    text-align: center;
+    display: none;
+    background-color: $ac_a;
+    padding: 8px 15px;
+    z-index: 99999999;
+    width: 100%;
+    i{
+    	color: $ac_white;
+    }
+    .buorg__text{
+    	font-size: $ac_fs_md;
+    	font-weight: $ac_fw_r;
+    	line-height: 120%;
+    	color: $ac_white;	
+    }
+    a{
+    	font-size: $ac_fs_md;
+    	font-weight: $ac_fw_r;
+    	line-height: 120%;
+    	color: $ac_white;    	
+    }
+}
+.ie8 {
+	.buorg {
+		display:block;
+	}
+}

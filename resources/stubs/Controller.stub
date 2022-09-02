@@ -1,0 +1,346 @@
+<?php
+
+namespace App\Http\Controllers\Powerpanel;
+
+use App\Http\Controllers\PowerpanelController;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Http\Request;
+use App\Helpers\MyLibrary;
+use App\{{modelName}};
+use App\CommonModel;
+use App\Log;
+use App\RecentUpdates;
+use Carbon\Carbon;
+use Validator;
+use Auth;
+use Cache;
+
+class {{modelName}}Controller extends PowerpanelController
+{
+
+    /**
+     * Create a new controller instance.
+     * @return void
+     */
+    public function __construct()
+    {
+        parent::__construct();
+        if (isset($_COOKIE['locale'])) {
+            app()->setLocale($_COOKIE['locale']);
+        }
+    }
+
+    /**
+     * This method handels load {{moduleTitle}} grid
+     * @return  View
+     * @since   {{ date }}
+     * @author  NetQuick
+     */
+    public function index()
+    {
+        $total                     = CommonModel::getRecordCount(false, false,'\App\{{modelName}}');
+        $this->breadcrumb['title'] = '{{moduleTitle}}';
+        return view('powerpanel.{{moduleSlug}}.index', ['iTotalRecords' => $total, 'breadcrumb' => $this->breadcrumb]);
+    }
+
+     /**
+     * This method handels list of {{moduleTitle}} with filters
+     * @return  View
+     * @since   {{ date }}
+     * @author  NetQuick
+     */
+    public function get_list()
+    {
+        /*Start code for sorting*/
+        $filterArr                       = [];
+        $records                         = array();
+        $records["data"]                 = array();
+        $filterArr['orderColumnNo']      = (!empty(Input::get('order')[0]['column']) ? Input::get('order')[0]['column'] : '');
+        $filterArr['orderByFieldName']   = (!empty(Input::get('columns')[$filterArr['orderColumnNo']]['name']) ? Input::get('columns')[$filterArr['orderColumnNo']]['name'] : '');
+        $filterArr['orderTypeAscOrDesc'] = (!empty(Input::get('order')[0]['dir']) ? Input::get('order')[0]['dir'] : '');
+        $filterArr['searchFilter']       = !empty(Input::get('searchValue')) ? Input::get('searchValue') : '';
+        $filterArr['iDisplayLength']     = intval(Input::get('length'));
+        $filterArr['iDisplayStart']      = intval(Input::get('start'));
+        
+        /**** Delete record then redirect to approriate pagination **/ 
+        $currentrecordcountstart = intval(Input::get('start'));
+        $currentpaging = intval(Input::get('length'));
+
+        $totalRecords_old                = CommonModel::getTotalRecordCount();
+        if($totalRecords_old > $currentrecordcountstart ){
+            $filterArr['iDisplayStart']  = intval(Input::get('start'));
+        }else{
+            $filterArr['iDisplayStart']  = intval(0);
+        }
+        /**** Delete record then redirect to approriate pagination **/ 
+
+        $sEcho                           = intval(Input::get('draw'));
+        $arrResults                      = {{modelName}}::getRecordList($filterArr);
+        $iTotalRecords                   = CommonModel::getRecordCount($filterArr, true,'\App\{{modelName}}');
+        $totalRecords                    = CommonModel::getTotalRecordCount('\App\{{modelName}}');
+        
+        if (count($arrResults) > 0 && !empty($arrResults)) 
+        {
+            foreach ($arrResults as $key => $value) {
+                $records["data"][] = $this->tableData($value, $totalRecords);
+            }
+        }
+
+        $records["customActionStatus"] = "OK";
+        $records["draw"]               = $sEcho;
+        $records["recordsTotal"]       = $iTotalRecords;
+        $records["recordsFiltered"]    = $iTotalRecords;
+        echo json_encode($records);
+        exit;
+    }
+
+
+    /**
+     * This method handels list of {{moduleTitle}} with filters
+     * @return  View
+     * @since   {{ date }}
+     * @author  NetQuick
+     */
+    public function tableData($value, $totalRecords)
+    {
+        $actions  = '';
+        $publish_action = '';    
+        if (Auth::user()->can('{{moduleSlug}}-edit')) {
+          $actions .= '<a class="without_bg_icon" title="' . trans("template.common.edit") . '" href="' . route('powerpanel.{{moduleSlug}}.edit', array('alias' => $value->id)) . '"><i class="fa fa-pencil"></i></a>';
+        }   
+
+        if (Auth::user()->can('{{moduleSlug}}-delete')) {
+          $actions .= '&nbsp;<a class="without_bg_icon delete" title="' . trans("template.common.delete") . '" data-controller="{{modelName }}" data-alias = "' . $value->id . '"><i class="ri-time-line"></i></a>';
+        }
+
+        if (Auth::user()->can('{{moduleSlug}}-publish'))
+        {
+            {{ publishUnPublish }}
+        }
+
+        {{ displayOrderFieldVal }}
+           
+        $records = array(
+            '<input type="checkbox" name="delete" class="chkDelete" value="' . $value->id . '">',
+            {{ fields }},
+            $publish_action,
+            $actions
+        );
+        return $records;
+    }
+
+     /**
+     * This method loads {{moduleTitle}} edit view
+     * @param      Alias of record
+     * @return  View
+     * @since   {{ date }}
+     * @author  NetQuick
+     */
+    public function edit($alias = false)
+    {
+        if (!is_numeric($alias)) 
+        {
+            $total                           = CommonModel::getRecordCount(false, false,'\App\{{modelName}}');
+            $total                           = $total + 1;
+            $this->breadcrumb['title']       = 'Add {{moduleTitle}}';
+            $this->breadcrumb['module']      = 'Manage {{moduleTitle}}';
+            $this->breadcrumb['url']         = 'powerpanel/{{moduleSlug}}';
+            $this->breadcrumb['inner_title'] = 'Add {{moduleTitle}}';
+            $data                            = ['total' => $total, 'breadcrumb' => $this->breadcrumb];
+        } else {
+            $id  = $alias;
+            $recordObj = {{modelName}}::getRecordById($id);
+            if (count($recordObj) == 0) {
+                return redirect()->route('powerpanel.{{moduleSlug}}.add');
+            }
+            $this->breadcrumb['title']       =  'Edit {{moduleTitle}}'. ' - ' . $recordObj->varTitle;
+            $this->breadcrumb['module']      = 'Manage {{moduleTitle}}';
+            $this->breadcrumb['url']         = 'powerpanel/{{moduleSlug}}';
+            $this->breadcrumb['inner_title'] =  'Edit {{moduleTitle}}'. ' - ' . $recordObj->varTitle;
+            $data                            = ['recordObj' => $recordObj, 'id' => $id, 'breadcrumb' => $this->breadcrumb];
+        }
+        return view('powerpanel.{{moduleSlug}}.actions', $data);
+    }
+
+     /**
+     * This method stores {{moduleTitle}} modifications
+     * @return  View
+     * @since   {{ date }}
+     * @author  NetQuick
+     */
+    public function handlePost(Request $resquest)
+    {
+        $postArr   = Input::all();
+        $rules     = [{{ serverSideValidationRules }}];
+
+        $validator = Validator::make($postArr, $rules);
+        if ($validator->passes()) 
+        {
+            $id            = $resquest->segment(3);
+            $actionMessage = trans('template.common.oppsSomethingWrong');
+
+            $fieldsArr  = array();
+            {{ addFields }}
+
+            if (is_numeric($id)) 
+            {
+                #Edit post Handler=======
+                $recordObj                               = {{modelName}}::getRecordForLogById($id);
+                $whereConditions                   = ['id' => $id];
+                $update                            = CommonModel::updateRecords($whereConditions, $fieldsArr);
+                if ($update) 
+                {
+                    if ($id > 0 && !empty($id)) 
+                    {
+
+                        {{ swapOrderEdit }}
+
+                        $logArr = MyLibrary::logData($id);
+                        if (Auth::user()->can('log-advanced')) 
+                        {
+                            $newRecordObj         = {{modelName}}::getRecordForLogById($id);
+                            $oldRec            = $this->recordHistory($recordObj);
+                            $newRec            = $this->recordHistory($newRecordObj);
+                            $logArr['old_val'] = $oldRec;
+                            $logArr['new_val'] = $newRec;
+                        }
+                        $logArr['varTitle'] = trim($postArr['varTitle']);
+                        Log::recordLog($logArr);
+                        if (Auth::user()->can('recent-updates-list')) 
+                        {
+                            if (!isset($newRecordObj)) {
+                                $newRecordObj = {{modelName}}::getRecordForLogById($id);
+                            }
+                            $notificationArr = MyLibrary::notificationData($id, $newRecordObj);
+                            RecentUpdates::setNotification($notificationArr);
+                        }
+                        $actionMessage = '{{moduleTitle}} has been successfully updated';
+                    }
+                }
+
+            } else {
+                #Add post Handler=======
+                {{ swapOrderAdd }}    
+                $recordID                     = CommonModel::addRecord($fieldsArr);
+                if (!empty($recordID)) 
+                {
+                    $id                 = $recordID;
+                    $newRecordObj          = {{modelName}}::getRecordForLogById($id);
+                    $logArr             = MyLibrary::logData($id);
+                    $logArr['varTitle'] = $newRecordObj->varTitle;
+                    Log::recordLog($logArr);
+                    if (Auth::user()->can('recent-updates-list'))
+                    {
+                        $notificationArr = MyLibrary::notificationData($id, $newRecordObj);
+                        RecentUpdates::setNotification($notificationArr);
+                    }
+                    $actionMessage = 'A new {{moduleTitle}} has been successfully added';
+                }
+            }
+            if (!empty($postArr['saveandexit']) && $postArr['saveandexit'] == 'saveandexit') {
+                return redirect()->route('powerpanel.{{moduleSlug}}.index')->with('message', $actionMessage);
+            } else {
+                return redirect()->route('powerpanel.{{moduleSlug}}.edit', $id)->with('message', $actionMessage);
+            }
+        } else {
+            return Redirect::back()->withErrors($validator)->withInput();
+        }
+    }
+
+    /**
+     * This method destroys {{moduleTitle}} in multiples
+     * @return  {{moduleTitle}} index view
+     * @since   {{ date }}
+     * @author  NetQuick
+     */
+    public function DeleteRecord(Request $request)
+    {
+        $data   = $request->all('ids');
+        $update = MyLibrary::deleteMultipleRecords($data);
+        echo json_encode($update);
+        exit;
+    }
+
+     /**
+     * This method destroys {{moduleTitle}} in multiples
+     * @return  {{moduleTitle}} index view
+     * @since   {{ date }}
+     * @author  NetQuick
+     */
+    public function publish(Request $request)
+    {
+        $alias  = (int) Input::get('alias');
+        $update = MyLibrary::setPublishUnpublish($alias, $request);
+        echo json_encode($update);
+        exit;
+    }
+
+    /**
+     * This method handels swapping of available order record while adding
+     * @param   order
+     * @return  order
+     * @since   {{ date }}
+     * @author  NetQuick
+     */
+    public static function swap_order_add($order = null)
+    {
+        $response = false;
+        if ($order != null) {
+            $response = MyLibrary::swapOrderAdd($order);
+        }
+        return $response;
+    }
+
+    /**
+     * This method handels swapping of available order record while editing
+     * @param      order
+     * @return  order
+     * @since   {{ date }}
+     * @author  NetQuick
+     */
+    public static function swap_order_edit($order = null, $id = null)
+    {
+        MyLibrary::swapOrderEdit($order, $id);
+    }
+
+    /**
+     * This method reorders banner position
+     * @return  index view data
+     * @since   {{ date }}
+     * @author  NetQuick
+     */
+    public function reorder()
+    {
+        $order   = Input::get('order');
+        $exOrder = Input::get('exOrder');
+        MyLibrary::swapOrder($order, $exOrder);
+        
+    }
+
+    /**
+   * This method handels logs History records
+   * @param   $data
+   * @return  HTML
+   * @since   {{ date }}
+   * @author  NetQuick
+   */
+    public function recordHistory($data = false)
+    {
+        $returnHtml = '';
+        $returnHtml .= '<table class="new_table_desing table table-striped table-bordered table-hover">
+                          <thead>
+                            <tr>
+                              {{  advanceLogField }} 
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              {{  advanceLogFieldVal }}
+                            </tr>
+                          </tbody>
+                        </table>';
+        return $returnHtml;
+    }
+
+}

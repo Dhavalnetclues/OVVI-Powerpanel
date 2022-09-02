@@ -1,0 +1,12 @@
+<div class="col-md-6">
+	<div class="form-group @if($errors->first('{{ fieldName }}')) has-error @endif form-md-line-input">
+		@php
+		$display_order_attributes = array('class' => 'form-control','maxlength'=>10,'placeholder'=>trans('template.common.displayorder'),'autocomplete'=>'off');
+		@endphp
+		{!! Form::text('{{ fieldName }}', isset($recordObj->{{ fieldName }})?$recordObj->{{ fieldName }}:$total, $display_order_attributes) !!}
+		<label class="form_title" for="site_name">{{ trans('template.common.displayorder') }} <span aria-required="true" class="required"> * </span></label>
+		<span style="color: red;">
+			<strong>{{ $errors->first('{{ fieldName }}') }}</strong>
+		</span>
+	</div>
+</div>

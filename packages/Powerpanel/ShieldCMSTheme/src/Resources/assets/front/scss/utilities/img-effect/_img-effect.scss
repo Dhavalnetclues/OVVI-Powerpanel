@@ -1,0 +1,15 @@
+.imghvr-effect{
+    .imghvr-img{
+        &:before, &:after{
+            position: absolute;
+            content: '';
+            z-index: 1;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            opacity: 0;
+            @include css3-prefix ('transition', '#{$ac_3_ti}');
+        }
+    }
+}

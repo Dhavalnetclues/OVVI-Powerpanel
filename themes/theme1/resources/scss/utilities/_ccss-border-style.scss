@@ -1,0 +1,11 @@
+/* - - - - - - - - - - - - -
+    Related File Name: ..\utilities\_ccss-utilities-setting.scss
+- - - - - - - - - - - - - */
+
+/* Border Style S */  
+    @each $ccssBorderStyle in $ccssBorderStyleArray {
+        .#{$ccss}-#{$ccssBs}-#{$ccssBorderStyle} {
+            border-style: #{$ccssBorderStyle};
+        }
+    }
+/* Border Style E */

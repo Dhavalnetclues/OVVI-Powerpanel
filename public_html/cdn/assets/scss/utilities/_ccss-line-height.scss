@@ -1,0 +1,11 @@
+/* - - - - - - - - - - - - -
+    Related File Name: ..\utilities\_ccss-utilities-setting.scss
+- - - - - - - - - - - - - */
+
+/* Line Height S */
+    @each $ccssLineHeight in $ccssLineHeightArray {
+        .#{$ccss}-lh-#{$ccssLineHeight} {
+            line-height: #{$ccssLineHeight}#{'%'};
+        }
+    }
+/* Line Height E */

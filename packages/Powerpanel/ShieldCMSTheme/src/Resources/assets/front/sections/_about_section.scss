@@ -1,0 +1,91 @@
+.about_sec{
+	padding:125px 0;
+	position: relative;
+	z-index: 1;
+	&:before {
+		display: none;
+		font-weight: normal;
+		font-size: 350px;
+		color: rgba(255,255,255,0.75);
+		text-shadow: 0px 10px 40px rgba(0, 0, 0, 0.08);
+		letter-spacing: 10px;		
+		content: "Goverment";
+		font-weight: 600;
+		position: absolute;
+		z-index: -1;
+		left: 0;				
+		text-transform: uppercase;
+		@media (max-width:1024px){
+			display: none;
+		}
+	}
+	
+	@media (max-width:1024px){		
+		padding:60px 0;
+	}	
+	@media (max-width:767px){
+		padding:30px 0 30px 0;	
+	}	
+	.same_title, .cms .same_title {
+		margin-bottom:10px;				
+		.title_div {
+			margin:0px;
+			font-size:$ac_fs_6xl;			
+			font-weight:$ac_fw_eb;
+			text-transform:uppercase;
+			line-height:115%;
+			position:relative;
+			z-index:1;
+			@media (max-width:992px){
+				font-size:$ac_fs_3xl + 4;					
+			}
+			@media (max-width:767px){
+				font-size:$ac_fs_3xl + 1;					
+			}
+		}
+		@media (max-width:767px){
+			margin-bottom:10px;
+		}
+	}	
+	.cms .info {
+		margin-top:8px;
+		p {
+			font-size: $ac_fs_sm + 1px;
+			line-height:200%;			
+			@media (max-width:992px){
+				line-height:150%;
+			}
+		}
+	}
+	.cms .btn {
+		margin-top:35px;
+		@media (max-width:767px){
+			margin-top:20px;
+		}
+	}
+	.about_full {
+		text-align: center;
+		.about_image {						
+			@media (min-width:768px){ 
+				margin:0px auto 30px;
+				max-width: 500px;
+			}
+		}
+		p {
+			text-align: center;
+		}
+	}	
+	@media (max-width:767px){
+		text-align: center;
+		.cms .info p{text-align: center;}
+		.about_image {
+			max-width: 400px;
+			margin:0px auto 20px;
+		}
+	}		
+}
+
+
+
+
+

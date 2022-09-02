@@ -1,0 +1,19 @@
+{
+    "name": "netclues/themes",
+    "description": "This package handles NetQuick themes",
+    "type": "composer-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "NetQuick",
+            "email": "netquick@netclues.net"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Netclues\\Themes\\": "src"
+        }
+    }
+}

@@ -1,0 +1,23 @@
+$imghvr_bg_color: rgba($ccssBlack, 0.5);
+
+.imghvr-effect{
+    .imghvr-img{
+        &:before{
+            top: 50%;
+            bottom: 50%;
+            left: -35%;
+            right: -35%;
+            @include css3-prefix ('transform','rotate(45deg)');
+        }
+    }
+    &:hover{
+        .imghvr-img{
+            &:before{
+                opacity: 1;
+                top: -35%;
+                bottom: -35%;
+                background-color: $imghvr_bg_color;                
+            }
+        }
+    }
+}

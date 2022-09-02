@@ -1,0 +1,137 @@
+.directors-detail{
+    .-img{
+        max-width: 580px;
+        width: 100%;
+        margin:0 45px 30px 0;
+        float:left;
+        @media (max-width: 1024px){
+            max-width:320px;
+            margin:0 45px 30px 0;
+        }
+        @media (max-width:767px){
+            max-width: 100%;
+            margin:0 0 30px 0;
+        }
+        .thumbnail-container{
+            background-color: rgba($ac_a, 0.07);
+            padding-bottom: 100%;
+        }
+    }
+
+    .-desc{
+        .-list{
+            display: flex;
+            flex-wrap: wrap;
+            li{
+                display: flex;
+                align-items:center;
+                width: 33.33%;
+                flex: 0 0 33.33%;
+                @media (max-width: 1024px){
+                    width: 50%;
+                    flex: 0 0 50%;
+                    &:nth-child(n+3){
+                        margin-top: 15px;
+                    }
+                }
+                @media (max-width: 992px){
+                    width: 100%;
+                    flex: 0 0 100%;
+                    &:nth-child(n+2){
+                        margin-top: 15px;
+                    }
+                }
+                .-number{
+                    font-size:79px;
+                    @media (max-width:1599px){
+                        font-size:45px;
+                    }
+                }
+                &:nth-child(n+4){
+                    margin-top: 15px;
+                }
+            }
+        }
+    }
+
+    .-achievements{
+        background-color: #F7F7F7;
+        .-year{
+            position: relative;
+            &:before{
+                position:absolute;
+                content:"";
+                top:0;
+                bottom:0;
+                margin: auto 0;
+                right: 0px;
+                width: 1px;
+                height: 70%;
+                background-color:#00000029;
+            }
+        }
+    }
+
+    .-accordion-list{
+        margin-top: 47px;
+        @media (max-width:767px){
+           margin-top: 23px; 
+        }
+        .card{
+            border:none;
+            +.card{
+                margin-top:25px;
+            }
+            .card-header{
+                border-bottom:none;
+                padding:0;
+               .card-link{
+                    position:relative;
+                    display: block;
+                    padding:20px 70px 20px 30px;
+                    background: transparent linear-gradient(90deg, #7A2779 0%, #CC0F2F 100%) 0% 0% no-repeat padding-box;
+                    @media (max-width: 1599px){
+                        font-size:$ac_fs_h2 - 2;
+                    }
+                    @media (max-width:767px){
+                        padding:20px 50px 20px 20px;
+                        font-size:$ac_fs_h2 - 4;
+                    }
+                    &:after{
+                        position:absolute;
+                        content: "";
+                        top: 0;
+                        bottom:0;
+                        right:30px;
+                        background-image:url('../images/minus-icon.svg');
+                        width:26px;
+                        height:2px;
+                        margin:auto 0;
+                        @media (max-width:767px){
+                            right:15px;
+                        }
+                    }
+                    &.collapsed{
+                        &:after{
+                            background-image:url('../images/plus-icon.svg');
+                            width:26px;
+                            height:26px;
+                        }
+                    }
+                }
+            }
+            .card-body{
+                background-color:$ac_white;
+                padding:20px 30px;
+                @media (max-width:767px){
+                    padding:20px 20px;
+                }
+                p{
+                    font-family:$ac_ff_one;
+                    color:#616161;
+                    font-size:$ac_fs_h3;
+                }
+            }
+        }
+    }
+}

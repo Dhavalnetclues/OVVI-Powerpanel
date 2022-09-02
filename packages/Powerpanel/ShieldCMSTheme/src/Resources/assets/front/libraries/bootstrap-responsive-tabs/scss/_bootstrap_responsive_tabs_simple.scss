@@ -1,0 +1,304 @@
+@mixin a-t_a () {
+    color: $ac_m;
+    background-color: $ac_white;
+    border-width: 1px;
+    border-style: solid;
+    border-color: $ac_white;
+    border-radius: 0;
+    padding: 8px 15px;
+    outline: none;
+}
+
+@mixin a-t_a_hover () {
+    color: $ac_a;
+    background-color: rgba($ac_black, 0.2);
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba($ac_black, 0.2);
+    border-bottom-color: transparent;
+    outline: none;
+}
+
+@mixin a-t_a_active () {
+    color: $ac_a;
+    background-color: rgba($ac_black, 0.2);
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba($ac_black, 0.2);
+    border-bottom-color: transparent;
+}
+
+.ac-tabs {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 0;
+    border-width: 0 0 1px 0;
+    border-style: solid;
+    border-color: rgba($ac_black, 0.2);
+    li{
+        margin: 0;
+        padding: 0;
+        display: inline-block;
+        float: none;
+        position: relative;
+        + li {
+            margin-left: 0px;
+        }
+        a{
+            @include a-t_a();
+            margin: 0;
+            position: relative;
+            &:focus{
+                @include a-t_a();
+            }
+            &:hover{
+                @include a-t_a_hover ();
+                &:focus {
+                    @include a-t_a_hover ();
+                }
+            }
+        }
+        &.active{
+            > a{
+                @include a-t_a_active ();
+                &:focus, &:hover {
+                    @include a-t_a_active ();
+                }
+                &:before{
+                    position: absolute;
+                    z-index: 9;
+                    content: '';
+                    bottom: -2px;
+                    left: 0;
+                    right: 0;
+                    border-bottom: 1px solid rgba($ac_black, 0.2);
+                }
+            }
+        }
+    }
+}
+
+.ac-content {
+    position: relative;
+    z-index: 1;
+    .tab-pane {
+        padding: 15px 0 0 0;
+    }   
+}
+
+
+.ac-tabs-left {
+    float: left;
+    width: 120px;
+}
+.ac-tabs-right{
+    float: left;
+    width: calc(100% - 120px;);
+}
+
+@mixin ac-t-l () {
+    color: $ac_m;
+    background-color: $ac_white;
+    border-width: 1px;
+    border-style: solid;
+    border-color: $ac_white;
+    border-radius: 0;
+    padding: 8px 15px;
+    outline: none;
+}
+
+@mixin ac-t-l_hover () {
+    color: $ac_a;
+    background-color: rgba($ac_black, 0.2);
+    border-width: 1px 0px 1px 1px;
+    border-style: solid;
+    border-color: rgba($ac_black, 0.2);
+    border-bottom-color: rgba($ac_black, 0.2);
+    outline: none;
+}
+
+@mixin ac-t-l_active () {
+    color: $ac_a;
+    background-color: rgba($ac_black, 0.2);
+    border-width: 1px 0px 1px 1px;
+    border-style: solid;
+    border-color: rgba($ac_black, 0.2);
+    border-bottom-color: rgba($ac_black, 0.2);;
+}
+
+.ac-t-l_tabs {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 0;
+    border-width: 0 1px 0 0;
+    border-style: solid;
+    border-color: rgba($ac_black, 0.2);
+    li{
+        margin: 0;
+        padding: 0;
+        display: block;
+        float: none;
+        position: relative;
+        a{
+            @include ac-t-l();
+            margin: 0;
+            position: relative;
+            &:focus{
+                @include ac-t-l();
+            }
+            &:hover{
+                @include ac-t-l_hover ();
+                &:focus {
+                    @include ac-t-l_hover ();
+                }
+            }
+        }
+        &.active{
+            > a{
+                @include ac-t-l_active ();
+                &:focus, &:hover {
+                    @include ac-t-l_active ();
+                }
+                &:before{
+                    position: absolute;
+                    z-index: 9;
+                    content: '';
+                    top: 0;
+                    right: -1px;
+                    bottom: 0;
+                    left: 0;
+                    border-right: 1px solid rgba($ac_black, 0.2);
+                }
+            }
+        }
+    }
+}
+
+.ac-t-l_content {
+    position: relative;
+    z-index: 1;
+    .tab-pane {
+        padding: 0 0 0 15px;
+    }   
+    &:before{
+        position: absolute;
+        z-index: -1;
+        content: '';
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: -1px;
+        border-left: 1px solid rgba($ac_black, 0.2);
+    }
+}
+
+
+
+
+.ac-tabs-left {
+    float: left;
+    width: 120px;
+}
+.ac-tabs-right{
+    float: left;
+    width: calc(100% - 120px;);
+}
+
+@mixin ac-t-r () {
+    color: $ac_m;
+    background-color: $ac_white;
+    border-width: 1px;
+    border-style: solid;
+    border-color: $ac_white;
+    border-radius: 0;
+    padding: 8px 15px;
+    outline: none;
+}
+
+@mixin ac-t-r_hover () {
+    color: $ac_a;
+    background-color: rgba($ac_black, 0.2);
+    border-width: 1px 1px 1px 0px;
+    border-style: solid;
+    border-color: rgba($ac_black, 0.2);
+    border-bottom-color: rgba($ac_black, 0.2);
+    outline: none;
+}
+
+@mixin ac-t-r_active () {
+    color: $ac_a;
+    background-color: rgba($ac_black, 0.2);
+    border-width: 1px 1px 1px 0px;
+    border-style: solid;
+    border-color: rgba($ac_black, 0.2);
+    border-bottom-color: rgba($ac_black, 0.2);;
+}
+
+.ac-t-r_tabs {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 0;
+    border-width: 0 0 0 1px;
+    border-style: solid;
+    border-color: rgba($ac_black, 0.2);
+    li{
+        margin: 0;
+        padding: 0;
+        display: block;
+        float: none;
+        position: relative;
+        a{
+            @include ac-t-r();
+            margin: 0;
+            position: relative;
+            &:focus{
+                @include ac-t-r();
+            }
+            &:hover{
+                @include ac-t-r_hover ();
+                &:focus {
+                    @include ac-t-r_hover ();
+                }
+            }
+        }
+        &.active{
+            > a{
+                @include ac-t-r_active ();
+                &:focus, &:hover {
+                    @include ac-t-r_active ();
+                }
+                &:before{
+                    position: absolute;
+                    z-index: 9;
+                    content: '';
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: -1px;
+                    border-left: 1px solid rgba($ac_black, 0.2);
+                }
+            }
+        }
+    }
+}
+
+.ac-t-r_content {
+    position: relative;
+    z-index: 1;
+    .tab-pane {
+        padding: 0 15px 0 0;
+    }   
+    &:before{
+        position: absolute;
+        z-index: -1;
+        content: '';
+        top: 0;
+        right: -1px;
+        bottom: 0;
+        left: 0;
+        border-right: 1px solid rgba($ac_black, 0.2);
+    }
+}

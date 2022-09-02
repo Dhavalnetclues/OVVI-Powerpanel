@@ -1,0 +1,31 @@
+.form_builder {
+    /*background: #fff;*/
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    max-width: 600px;
+    margin:auto ;
+}
+.form_builder .label-title {    
+    font-size: 14px;
+    font-weight: 600;
+    color: #555;
+    padding-bottom: 5px;
+    display: block;
+}
+.form_builder .captcha_builder .captcha_div_build {
+    float: left;
+}
+.form_builder .captcha_builder .btn {
+    float: right;
+}
+@media (max-width:568px){
+    .form_builder {
+        padding:12px;
+    }    
+    .form_builder .captcha_builder .captcha_div_build {
+        float: none;
+    }
+    .form_builder .captcha_builder .btn {
+        float: none;
+    }
+}

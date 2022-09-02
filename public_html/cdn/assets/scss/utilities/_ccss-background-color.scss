@@ -1,0 +1,7 @@
+/* Background Color S */
+    @each $color, $value in colorMap($ccssBaseColors, 10) {
+        .#{$ccss}-#{$ccssBgc}-#{$color} {
+			background-color: $value;
+        }
+    }
+/* Background Color E */

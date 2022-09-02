@@ -1,0 +1,17 @@
+.home-welcome-text {
+    position: relative;
+    z-index: 1;
+    background-color: $ac_white;
+    .-desc {
+        p {
+            font-size: em(34);
+            font-weight: 400;
+            line-height: 110%;
+            letter-spacing: 1px;
+            color: $ac_black;
+            @media (max-width: 1024px){
+                font-size: em(24);
+            }
+        }
+    }
+}

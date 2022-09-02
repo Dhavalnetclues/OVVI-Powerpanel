@@ -1,0 +1,27 @@
+body #back-top {
+    position: fixed;
+    bottom: 90px; 
+    right: 15px;
+    cursor: pointer;
+    z-index: 999;
+    i{
+        background-color: $ac_a;
+        @include css3-prefix ('border-radius','250px');
+        font-size: $ac_fs_lg;
+        line-height: 40px;
+        color: $ac_white;
+        text-align: center;
+        @include css3-prefix ('transition','all 0.5s ease 0s');
+        display: block;
+        height: 40px;
+        width: 40px;
+        &:hover{
+            background-color: $ac_a;
+        }        
+    }
+    @media (max-width:767px) {
+         bottom: 25px;
+         right: 10px;
+         i {display: none;}
+    }
+}

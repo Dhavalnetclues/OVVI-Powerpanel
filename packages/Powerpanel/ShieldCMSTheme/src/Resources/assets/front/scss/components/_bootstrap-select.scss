@@ -1,0 +1,228 @@
+$ac_select_height: 35px;
+$ac_select_dropdown_menu_border_color: rgba($ac_m,0.5);
+$ac_select_dropdown_menu_bg: rgba($ac_m,0.1); 
+$ac_select_dropdown_menu_text_size:  $ac_fs_sm;
+$ac_select_dropdown_menu_text_weight:  $ac_fw_r;
+$ac_select_dropdown_menu_text_color: rgba($ac_m,1);
+$ac_select_dropdown_menu_text_hover: rgba($ac_black,1);
+
+$ac_select_dropdown_header_border_color: rgba($ac_m,0.2);
+$ac_select_dropdown_header_bg: rgba($ac_m,0.5);
+$ac_select_dropdown_header_text_size:  $ac_fs_sm;
+$ac_select_dropdown_header_text_weight:  $ac_fw_r;
+$ac_select_dropdown_header_text_color: rgba($ac_white,1);
+
+$ac_select_check_mark_color: rgba($ac_black,1);
+
+/* Bootstrap Select S */
+    @mixin ac_select_check_mark {
+        position: absolute;
+        content: '';
+        display: block;
+        width: 6px;
+        height: 10px;
+        border: solid $ac_select_check_mark_color;
+        border-width: 0 2px 2px 0;
+        @include css3-prefix ('transform','rotate(45deg)');
+    }
+
+    .#{$ac}-bootstrap-select{
+        .btn.dropdown-toggle{
+            border-radius: 0;
+            background: $ac_white;
+            border-width:  1px;
+            border-style: solid;
+            border-color: rgba($ac_m, 0.5);
+            padding: 6px 15px;
+            height: $ac_select_height;
+            @include css3-prefix ('box-shadow', 'none');
+            @include css3-prefix ('border-radius', '#{$ac_3_br_0}');
+            &.bs-placeholder{
+                .filter-option{
+                    color: rgba($ac_m, 0.5);
+                }    
+            }
+            .filter-option{
+                font-size: $ac_fs_sm;
+                font-weight: $ac_fw_r;
+                line-height: 150%;
+                color: $ac_m;
+            }
+            &:focus, &:active{
+                background: transparent;
+                @include css3-prefix ('box-shadow', 'none');
+                outline: none !important;
+            }
+            &:not([disabled]):not(.disabled):active{
+                background: transparent !important;
+                @include css3-prefix ('box-shadow', 'none');
+                outline: none !important;
+            }
+            &:hover{
+                border-color: $ac_a;
+            }
+        }
+        .caret {
+            border-top: 4px dashed $ac_m;
+            border-right: 4px solid transparent;
+            border-left: 4px solid transparent;
+        }
+        &.dropup .caret{
+            border-top: 0px;
+            border-bottom: 4px dashed $ac_m;
+        }
+        &.show, &.open{
+            .dropdown-toggle{
+                background: transparent;
+                @include css3-prefix ('box-shadow', 'none');
+                outline: none !important;
+                border-color: $ac_a !important;
+                &:hover, &:active{
+                    background: transparent;
+                    @include css3-prefix ('box-shadow', 'none');
+                    outline: none !important;
+                }
+                &:focus{
+                    background: transparent;
+                    @include css3-prefix ('box-shadow', 'none');
+                    outline: none !important;
+                }
+            }   
+        }
+        .dropdown-menu{
+            margin: -1px 0 0 0;
+            padding: 0;
+            list-style: none;
+            border-radius: 0;
+            li{
+                margin: 0;
+                padding: 0;
+                a{
+                    padding: 5px 15px;
+                    border-bottom: 1px solid $ac_select_dropdown_menu_border_color;
+                    .text{
+                        font-weight: $ac_select_dropdown_menu_text_weight;
+                        font-size: $ac_select_dropdown_menu_text_size;
+                        color: $ac_select_dropdown_menu_text_color;
+                        line-height: 0;
+                    }
+                    &.active, &:hover, &:active{
+                        background-color: $ac_select_dropdown_menu_bg;
+                        .text{
+                            color: $ac_select_dropdown_menu_text_hover;
+                        }
+                    }
+                    &.opt{
+                        padding-left: 20px !important;
+                        &:focus, &:visited, &:active, &:not([disabled]):not(.disabled):active, .focus{
+                            outline: none !important;
+                        }
+                    }
+                    &:focus, &:visited, &:active, &:not([disabled]):not(.disabled):active, .focus{
+                        outline: none !important;
+                    }
+                }
+                &.selected, &.disabled{
+                    a{
+                        background-color: $ac_select_dropdown_menu_bg;
+                        .text{
+                            color: $ac_select_dropdown_menu_text_hover;
+                        }
+                    }
+                }
+                &.selected{
+                    a{  
+                        &:before{
+                            right: 15px;
+                            top: 10px;
+                            @include ac_select_check_mark;
+                        }
+                    }
+                }
+                &:last-child{
+                    a{
+                        border-bottom: none;
+                    }
+                }
+                &.divider{
+                    display: none;
+                }
+                &.dropdown-header{
+                    padding: 6px 10px 5px 10px;
+                    border-bottom: 1px solid $ac_select_dropdown_header_border_color;
+                    background-color: $ac_select_dropdown_header_bg;
+                    .text{
+                        font-size: $ac_select_dropdown_header_text_size;
+                        font-weight: $ac_select_dropdown_header_text_weight;
+                        color: $ac_select_dropdown_header_text_color;
+                    }
+                    ~ .dropdown-divider {
+                        border: none;
+                    }
+                }
+                .text-muted, &.active .text-muted{
+                    color: $ac_a;
+                }
+            }
+        }
+        .bs-searchbox{
+            .form-control{
+                font-size: $ac_fs_sm;
+                font-weight: $ac_fw_r;
+                font-style: $ac_fs_n;
+                line-height: 150%;
+                color: $ac_black;
+                border: 1px solid rgba($ac_m, 0.5);
+                resize: none;
+                height: $ac_form_height;
+                @include css3-prefix ('border-radius', '#{$ac_3_br_0}');
+                @include css3-prefix ('box-shadow', 'none');
+                &:focus{
+                    outline: none;
+                    border-color: $ac_a;
+                    @include css3-prefix ('box-shadow', 'none');
+                    @include css3-prefix ('transition', '#{$ac_3_ti}');
+                }
+                @include placeholder (){
+                    color: rgba($ac_m, 0.5);
+                }
+            }
+        }
+        .bootstrap-select .dropdown-menu .notify, .bs-actionsbox, .bs-actionsbox, .bs-donebutton, .bs-searchbox {
+            padding: 8px 8px !important;
+        }
+        .no-results {
+            padding: 5px 15px;
+        }
+        .close{
+            position: absolute;
+            right: 15px;
+            top: 2px;
+            &:hover, &:focus, &:visited, &:active, &:not([disabled]):not(.disabled):active, .focus{
+                background: none;
+                color: $ac_m;
+                @include css3-prefix ('box-shadow', 'none');
+            }
+        }
+        .glyphicon {
+            margin-right: 5px;
+        }
+    }
+    .bootstrap-select.show-tick .dropdown-menu .selected span.check-mark,{
+        &:before{
+            @include ac_select_check_mark;
+        }
+    }
+    .#{$ac}-form-md{
+        .btn.dropdown-toggle{
+            border-radius: 0;
+            background: $ac_white;
+            border-width:  0 0 1px 0;
+            border-style: solid;
+            border-color: rgba($ac_m, 0.2);
+            padding: 6px 0;
+            @include css3-prefix ('box-shadow', 'none');
+            @include css3-prefix ('border-radius', '#{$ac_3_br_0}');
+        }
+    }
+/* Bootstrap Select E */

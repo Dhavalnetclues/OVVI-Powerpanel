@@ -1,0 +1,14 @@
+/*
+ * CKEditor 5 (v28.0.0) content styles.
+ * Generated on Mon, 07 Jun 2021 06:33:15 GMT.
+ * For more information, check out https://ckeditor.com/docs/ckeditor5/latest/builds/guides/integration/content-styles.html
+ */
+
+.ck-content ul {
+    padding-left:5px !important; 
+    margin-left:5px !important;
+    list-style: inside !important;
+}
+.ck-content .table thead {
+    position: relative !important;
+}

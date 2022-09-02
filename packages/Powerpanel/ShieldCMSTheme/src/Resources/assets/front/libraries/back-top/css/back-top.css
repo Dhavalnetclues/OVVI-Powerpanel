@@ -1,0 +1,33 @@
+body #back-top {
+    position: fixed;
+    bottom: 25px;
+    right: 15px;
+    cursor: pointer;
+    z-index: 999;
+}
+
+body #back-top i {
+    background-color: #26a69a;
+    border-radius: 250px;
+    font-size: 18px;
+    line-height: 40px;
+    color: #fff;
+    text-align: center;
+    -webkit-transition: all .5s ease 0s;
+    -o-transition: all .5s ease 0s;
+    transition: all .5s ease 0s;
+    display: block;
+    height: 40px;
+    width: 40px;
+}
+
+body #back-top i:hover {
+    background-color: #26a69a;
+}
+
+@media (max-width:767px) {
+    body #back-top i {
+        display: none;
+    }
+
+}

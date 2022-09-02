@@ -1,0 +1,49 @@
+@charset "utf-8";
+
+.loading { 
+  margin: auto; 
+  background:#000;
+  width:120px;
+  height:40px;
+  padding:5px;
+  text-align:center;
+  font-size:15px;
+
+}
+
+.loading span {
+  line-height: 32px;
+  margin-left: 12px;
+  font-size:15px;
+  vertical-align: middle;
+}
+
+.loading img { vertical-align: middle; }
+
+.loading_wrp {
+  background-color: #000 !important;
+  display: block;
+  height: 100%;
+  left: 0;
+  right:0;
+  bottom:0;
+  opacity: 0.4 !important;
+  filter: alpha(opacity=40);
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1020;
+}
+
+.loading_wrp .x16 span {
+  line-height: 16px;
+  font-size:15px;
+  margin-left: 6px;
+  color:#fff !important;
+  font-weight: 600;
+}
+
+.loading_wrp .x32 img {
+  width: 32px;
+  height: 32px;
+}

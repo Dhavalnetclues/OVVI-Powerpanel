@@ -1,0 +1,24 @@
+@mixin placeholder () {
+    &::-webkit-input-placeholder {
+        @content;
+    }
+    &::-moz-placeholder {
+        @content;
+    }
+    &:-ms-input-placeholder {
+        @content;
+    }
+    &:-moz-placeholder {
+        @content;
+    }
+}
+
+@mixin css3-prefix-last($property, $value) {
+    #{$property}: -webkit-#{$value};
+    #{$property}: -khtml-#{$value};
+    #{$property}: -moz-#{$value};
+    #{$property}: -ms-#{$value};
+    #{$property}: -o-#{$value};
+    #{$property}: #{$value};
+}
+

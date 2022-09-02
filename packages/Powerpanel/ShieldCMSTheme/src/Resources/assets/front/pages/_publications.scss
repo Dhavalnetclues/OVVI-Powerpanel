@@ -1,0 +1,129 @@
+.publication {
+	.pub_post {
+		border: 2px solid $ac_b;
+		margin:10px 0;
+		padding: 20px;
+		position: relative;
+		&:before {
+			content: "";
+			width: 2px;
+			height: 20px;
+			background: #00a9e6;
+			position: absolute;
+			bottom: -10px;
+			left: 10px;
+		}
+		&:after {
+			content: "";
+			width: 4px;
+			height: 40px;
+			background: #fff;
+			position: absolute;
+			bottom: -14px;
+			right: 2px;
+			transform: rotate(45deg);
+		}
+		.date {
+			float: left;
+			width: 150px;
+			margin-top: 0px;
+			margin-right: 20px;
+			padding: 15px 0 10px;
+			text-align: center;
+			background: rgba($ac_b,0.55);
+			color: #fff;
+			font-size: 13px;			
+			text-transform: uppercase;
+			span {				
+				display: block;
+				line-height: 170%;				
+				&:first-child{
+					margin-bottom: 5px;
+					font-size: 70px;
+					font-weight: 600;
+					line-height: 120%;
+				}
+				&:last-child{
+					padding: 3px 0;
+					background: #fff;
+					color: $ac_a;
+					letter-spacing: 2px;
+				}
+			}
+		}
+		.info {
+			.sub_title {
+				font-size: 22px;
+				margin-bottom: 10px;
+			}
+			.info_dtl {								
+				p {
+					margin-bottom:10px;
+					text-align: inherit;
+					height: 62px;
+					line-height: 150%;
+					overflow: hidden;
+				}
+				.n-more {
+					margin-top: 8px;
+					font-weight: 600;
+					line-height: 165%;
+					color: $ac_b;
+					display: inline-block;
+					&:hover {
+						color: $ac_a;
+					}
+				}
+				.down_date {
+					margin:5px 0;
+				}
+				.download_link_btn {					
+					font-weight: 600;
+					color: $ac_a;
+					~ .download_link_btn {
+						margin-left:10px;
+					}
+					i {
+						margin-left: 5px;
+						font-size: 25px;						
+						vertical-align: -3px;
+						&.flaticon-pdf-file {
+							color: red;
+						}
+						&.flaticon-doc-file {
+							color: #0096e6;
+						}
+						&.flaticon-xlsx-file-format-extension {
+							color: #35af47;
+						}
+						&.flaticon-xls-file {
+							color: #1e7244;
+						}						  
+						&.flaticon-txt-file-symbol {
+							color: #2766a2;
+						}						
+						&.flaticon-ppt {
+							color: #e64a19;
+						}						
+						&.flaticon-zip-file-format {
+							color: #2766a0;
+						}						
+						&.flaticon-excel-file {
+							color: #2f7d32;
+						} 
+					}
+				}
+			}
+		}
+	}
+	.row [class*="sm"]:last-child .pub_post:before {
+		display: none;
+	}
+	@media (max-width:767px) {
+		.pub_post {padding: 15px;}
+		.pub_post .info .sub_title {font-size: 18px;}
+	}	
+	@media (max-width:479px) {
+		.pub_post .date {float: none;margin:0 auto 15px;}
+	}	
+}

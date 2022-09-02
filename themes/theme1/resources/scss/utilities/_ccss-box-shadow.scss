@@ -1,0 +1,29 @@
+/* - - - - - - - - - - - - -
+    Related File Name: ..\utilities\_ccss-utilities-setting.scss 
+- - - - - - - - - - - - - */
+
+/* Box Shadow S */
+    .#{$ccss}-#{$ccssBoxs}-1 {
+        @include css3-prefix ('box-shadow', #{$ccssBoxShodow1});
+    }
+
+    .#{$ccss}-#{$ccssBoxs}-2 {
+        @include css3-prefix ('box-shadow', #{$ccssBoxShodow2});
+    }
+
+    .#{$ccss}-#{$ccssBoxs}-3 {
+        @include css3-prefix ('box-shadow', #{$ccssBoxShodow3});
+    }
+
+    .#{$ccss}-#{$ccssBoxs}-4 {
+        @include css3-prefix ('box-shadow', #{$ccssBoxShodow4});
+    }
+
+    .#{$ccss}-#{$ccssBoxs}-5 {
+        @include css3-prefix ('box-shadow', #{$ccssBoxShodow5});
+    }
+
+    .#{$ccss}-#{$ccssBoxs}-none {
+        @include css3-prefix ('box-shadow', none);
+    }
+/* Box Shadow E */

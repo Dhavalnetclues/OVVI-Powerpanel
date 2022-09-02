@@ -1,0 +1,19 @@
+$imghvr_bg_color: rgba($ac_black, 0.5);
+.imghvr-effect{
+    .imghvr-img{
+        @include css3-prefix ('perspective', '50em');
+        &:before{
+            @include css3-prefix ('transform', 'rotateX(90deg)');
+            @include css3-prefix ('transform-origin', '0% 50%');
+        }
+    }
+    &:hover{
+        .imghvr-img{
+            &:before{
+                opacity: 1;
+                background-color: $imghvr_bg_color;
+                @include css3-prefix ('transform', 'rotateX(0deg)');
+            }
+        }
+    }
+}

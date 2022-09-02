@@ -1,0 +1,13 @@
+/* - - - - - - - - - - - - -
+    Related File Name: ..\utilities\_ccss-utilities-setting.scss
+- - - - - - - - - - - - - */
+
+/* SVG Fill S */
+    @each $color, $value in colorMap($ccssBaseColors, 10) {
+        svg{
+            .#{$ccss}-fill-#{$color} {
+                fill: $value;
+            }
+        }
+    }
+/* SVG Fill E */

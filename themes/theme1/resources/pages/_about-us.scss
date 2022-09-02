@@ -1,0 +1,31 @@
+.about-us {
+    .-img {
+        max-width: 730px;
+        margin-left: auto;
+        margin-right: auto;
+        img {
+            width: 100%;
+            border-radius: $ac_radius;
+        }
+    }
+}
+
+.short-menu{
+    .-gap {
+        @media (min-width:1024px) {
+            &:nth-child(n+5) {
+                margin-top: 30px;
+            }
+        }
+        @media (max-width:1024px) {
+            &:nth-child(n+3) {
+                margin-top: 30px;
+            }
+        }
+        @media (max-width:767px) {
+            &:nth-child(n+2) {
+                margin-top: 30px;
+            }
+        }
+    }
+}

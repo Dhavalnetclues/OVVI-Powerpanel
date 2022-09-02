@@ -1,0 +1,124 @@
+.datetimepicker {
+    padding: 15px;
+    border-radius: 5px; 
+    border: 1px solid rgba(#000, 0.1);
+    z-index: 99999!important;
+    transform: translate(0, 6.3em);
+    table{
+        tr{
+            th{
+                &.dow{
+                    padding: 20px 10px 10px 10px;
+                    font-size: 14px;
+                    font-weight: 600;
+                    color: #5E5873;
+                }
+                &.switch {
+                    padding: 10px;
+                    font-size: 14px;
+                    font-weight: 600;
+                    color: #5E5873;
+                    background: rgba(#000, 0.1);
+                    &:hover{
+                        background: #d60f39;
+                        color: #fff;
+                        @include css3-prefix('box-shadow', 0 8px 25px -8px #d60f39);
+                    }
+                }
+                &.today {
+                    padding: 10px;
+                    font-size: 14px;
+                    font-weight: 600;
+                    color: #fff;
+                    background: #d60f39;
+                    &:hover{
+                        background: #d60f39;
+                        color: #fff;
+                        @include css3-prefix('box-shadow', 0 8px 25px -8px #d60f39);
+                    }
+                }
+            }
+            td{
+                &.day, .month, .year, .hour_am, .hour_pm, span.minute {
+                    padding: 10px;
+                    font-size: 14px;
+                    font-weight: 400;
+                    color: #5E5873;
+                    &.active {
+                        background: #d60f39 !important;
+                        @include css3-prefix('box-shadow', 0 8px 25px -8px #d60f39);
+                        color: #fff;
+                        &:hover{
+                            color: #fff;
+                        }
+                    }
+                    &:hover{
+                        background: rgba(#000, 0.1);
+                        @include css3-prefix('box-shadow', 0 8px 25px -8px #000);
+                        color: #000;
+                    }
+                }
+                .month, .year  {
+                    padding: 10px 15px;
+                    height: auto;
+                    line-height: 100%;
+                    width: calc(33.33% - 10px);
+                    margin: 0 5px;
+                }
+            }
+        }
+    }
+
+    .datetimepicker-months, .datetimepicker-years, .datetimepicker-hours, .datetimepicker-minutes {
+        td {
+            width: 220px;
+            padding: 10px 0;
+        }
+    }
+
+    .datetimepicker-hours, .datetimepicker-minutes {
+        table{
+            tr{
+                td{
+                    .hour_am, .hour_pm, span.minute {
+                        padding: 0;
+                    }
+                }
+            }
+        }
+        legend {
+            font-size: 14px;
+            font-weight: 600;
+            color: #5E5873;
+        }
+    }
+
+    .prev, .next {
+        width: 39px;
+        height: 34px;
+    }
+
+    .glyphicon  {
+        position: relative;
+        &.glyphicon-arrow-right, &.glyphicon-arrow-left {
+            &:after{
+                position: absolute;
+                content: "";
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size: 17px;
+                height: 17px;
+                width: 17px;
+                display: inline-block;
+                right: calc(50% - 8.5px);
+                top: -15px;
+                background-image: url(../images/icon/right-date.svg);
+            }
+        }
+        &.glyphicon-arrow-left {
+            &:after{
+                transform: rotate(180deg);
+            }
+        }
+    }
+}

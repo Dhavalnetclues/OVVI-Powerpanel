@@ -1,0 +1,55 @@
+.careers-listing {
+    .thumbnail-container {
+    	border-radius: $ac_radius;
+        padding-bottom: 70%;
+        background-color: rgba($ac_black, 0.05);
+    }
+	.row
+	{
+		margin:0px;
+	}
+}
+
+.careers-jobs {
+	background-color: #f5fafe;
+	.-items {
+		.s-users {
+			width: 24px;
+			height: 24px;
+			color: $ac_a;
+			position: relative;
+			top: 2px;
+		}
+		&:hover{
+			.-title{
+				color: $ac_a;
+			}
+		}
+	}
+}
+.cms
+{
+	#BambooHR
+	{
+		max-width:1600px;
+		margin:auto;
+		padding:0 15px;
+		h2
+		{
+			color:$ac_black;
+			font-weight:$ac_fw_eb;
+		}
+		.BambooHR-ATS-board 
+		{
+			.BambooHR-ATS-blankState
+			{
+				strong
+				{
+					font-size:$ac_fs_24;
+					display:block;
+					margin-bottom:-10px;
+				}
+			}
+		}
+	}
+}

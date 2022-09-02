@@ -1,0 +1,211 @@
+@extends('powerpanel.layouts.app')
+@section('title')
+	{{Config::get('Constant.SITE_NAME')}} - PowerPanel
+@stop
+@section('css')
+<link href="{{ url('resources/global/plugins/datatables/datatables.min.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ url('resources/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ url('resources/global/plugins/highslide/highslide.css') }}" rel="stylesheet" type="text/css"/>
+@endsection
+@section('content')
+@include('powerpanel.partials.breadcrumbs')
+<!-- BEGIN PAGE BASE CONTENT -->
+{!! csrf_field() !!}
+<div class="row">
+	<div class="col-md-12">
+	<!-- Begin: life time stats -->
+		@if(Session::has('message'))
+			<div class="alert alert-success">
+				<button class="close" data-close="alert"></button>
+				{{ Session::get('message') }}
+			</div>
+		@endif
+		<div class="portlet light portlet-fit portlet-datatable">
+			@if($iTotalRecords > 0)
+			<div class="portlet-title">
+				@can('{{moduleSlug}}-create')
+					<div class="pull-right">
+							<a class="btn btn-green-drake" href="{{ route('powerpanel.{{moduleSlug}}.add') }}">Add {{moduleTitle}}</a>
+					</div>
+				@endcan
+			</div>
+			<div class="portlet-body">
+			<p style="background:rgba(16, 128, 242,0.08);color:rgba(16, 128, 242, 1);width:100%;padding:10px 15px"> Adding {{moduleTitle}} are incremental, once you add a new {{moduleTitle}} it will display as first {{moduleTitle}} and previous {{moduleTitle}} will
+			 move down in the order.</p>
+				<div class="table-container">
+					<div class="table-actions-wrapper">
+						<div class="dataTables_filter">
+							<span>{{ trans('template.common.search') }} :</span>
+							<input type="search" class="form-control form-control-solid placeholder-no-fix" id="searchfilter">
+						</div>
+					</div>
+					<table class="new_table_desing table table-striped table-bordered table-hover table-checkable" id="datatable_ajax">
+					<thead>
+						<tr role="row" class="heading">
+							<th width="2%" align="center"><input type="checkbox" class="group-checkable"></th>
+							{{fieldsForIndex}}
+							<th align="left">{{ trans('template.common.publish') }}</th>
+							<th width="15%" align="right">{{ trans('template.common.actions') }}</th>
+						</tr>
+					</thead>
+					<tbody> </tbody>
+					</table>
+					@can('{{moduleSlug}}-delete')
+						<a href="javascript:;" class="btn-sm btn btn-outline red right_bottom_btn deleteMass">{{ trans('template.common.delete') }}
+						</a>
+					@endcan
+				</div>
+				</div>
+			@else
+				@include('powerpanel.partials.addrecordsection',['type'=>Config::get('Constant.MODULE.TITLE'), 'adUrl' => url('powerpanel/{{moduleSlug}}/add')])
+			@endif
+		</div>
+		</div>
+</div>
+@include('powerpanel.partials.deletePopup')
+@endsection
+@section('scripts')
+<script type="text/javascript">
+	window.site_url =  '{!! url("/") !!}';
+	var DELETE_URL =  '{!! url("/powerpanel/{{moduleSlug}}/DeleteRecord") !!}';
+</script>
+<script src="{{ url('resources/global/scripts/datatable.js') }}" type="text/javascript"></script>
+<script src="{{ url('resources/global/plugins/datatables/datatables.min.js') }}" type="text/javascript"></script>
+<script src="{{ url('resources/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js') }}" type="text/javascript"></script>
+
+<script type="text/javascript">	
+var gridRows = 0;
+var grid;
+var TableDatatablesAjax = function() 
+{
+		var handleRecords = function() 
+		{
+				grid = new Datatable();
+				grid.init({
+						src: $("#datatable_ajax"),
+						onSuccess: function(grid, response) {
+								if (response.recordsTotal < 1) {
+										$('.deleteMass').hide();
+								} else {
+										$('.deleteMass').show();
+								}
+								gridRows = response.recordsTotal;
+						},
+						onError: function(grid) {},
+						onDataLoad: function(grid) {
+							// $('.make-switch').bootstrapSwitch();
+						},
+						loadingMessage: 'Loading...',
+						dataTable: { 
+								"deferRender": true,
+								"stateSave": false,
+								"lengthMenu": [
+										[10, 20, 50, 100],
+										[10, 20, 50, 100]
+								],
+								"pageLength": 10,
+								"serverSide": true,
+								"columns": [
+
+											{{fieldsForDatatable}}
+								],
+								"ajax": {
+										"url": window.site_url + "/powerpanel/{{moduleSlug}}/get_list"
+								},
+								"order": [
+										[1, "desc"]
+								]
+						}
+				});
+				$('#datatable_ajax tbody').on('click', '.moveDwn', function() {
+						var order = $(this).data('order');
+						//var exOrder = $('#datatable_ajax tbody').find('tr[data-order=' + order + ']').next().data('order');
+						exOrder = order - 1;
+						reorder(order, exOrder);
+				});
+				$('#datatable_ajax tbody').on('click', '.moveUp', function() {
+						var order = $(this).data('order');
+						//var exOrder = $('#datatable_ajax tbody').find('tr[data-order=' + order + ']').prev().data('order');
+						exOrder = order + 1;
+						reorder(order, exOrder);
+				});
+				$(document).on('keyup', '#searchfilter', function(e) 
+				{
+						e.preventDefault();
+						var action = $('#searchfilter').val();
+						if (action.length >= 2) 
+						{
+								grid.setAjaxParam("customActionType", "group_action");
+								grid.setAjaxParam("searchValue", action);
+								grid.setAjaxParam("id", grid.getSelectedRows());
+								grid.getDataTable().ajax.reload();
+						} else {
+								
+								grid.setAjaxParam("customActionType", "group_action");
+								grid.setAjaxParam("searchValue", action);
+								grid.setAjaxParam("id", grid.getSelectedRows());
+								grid.getDataTable().ajax.reload();
+						}
+				});
+				$(document).on("switchChange.bootstrapSwitch",".publish",function(event, state){
+						//e.preventDefault();
+						var controller = $(this).data('controller');
+						var alias = $(this).data('alias');
+						var val = $(this).data('value');
+						var url = site_url + '/' + controller + '/publish';
+						$.ajax({
+								url: url,
+								data: {
+										alias: alias,
+										val: val
+								},
+								type: "POST",
+								dataType: "HTML",
+								success: function(data) {
+										grid.getDataTable().ajax.reload(null,false);
+								},
+								error: function() {
+										console.log('error!');
+								}
+						});
+				});
+				grid.setAjaxParam("customActionType", "group_action");
+				grid.clearAjaxParams();
+				grid.getDataTable().columns().iterator('column', function(ctx, idx) {
+						$(grid.getDataTable().column(idx).header()).append('<span class="sort-icon"/>');
+				});
+		}
+		return {
+				init: function() {
+						handleRecords();
+				}
+		};
+}();
+
+$(document).ready(function()
+{
+	TableDatatablesAjax.init();	
+});
+
+function reorder(curOrder, excOrder) {
+		var ajaxurl = site_url + '/powerpanel/{{moduleSlug}}/reorder';
+		$.ajax({
+				url: ajaxurl,
+				data: {
+						order: curOrder,
+						exOrder: excOrder
+				},
+				type: "POST",
+				dataType: "HTML",
+				success: function(data) {},
+				complete: function() {
+						grid.getDataTable().ajax.reload(null, false);
+				},
+				error: function() {
+						console.log('error!');
+				}
+		});
+}
+</script>
+<script src="{{ url('resources/pages/scripts/custom.js') }}" type="text/javascript"></script>
+@endsection

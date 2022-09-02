@@ -1,0 +1,13 @@
+.thankyou_01 {
+    position: relative;
+    z-index: 1;
+    background-image: $ac_white;
+    .nqtitle {
+        span{
+            font-size: 60px;
+            @media (max-width: 767px){
+                font-size: 40px;
+            }
+        }
+    }
+}

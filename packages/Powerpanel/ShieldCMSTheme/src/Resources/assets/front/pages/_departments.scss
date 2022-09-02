@@ -1,0 +1,60 @@
+.department {
+	.department_box {
+		margin:10px 0;
+		padding: 20px;
+		background: transparent;		
+		border:2px solid rgba($ac_a,0.20); 
+		display: table;
+		width: 100%;		
+		.image, .info, .info_more {
+			display: table-cell;
+			vertical-align: middle;
+		}
+		.image {			
+			width: 20%;					
+		}	
+		.info {			
+			padding: 0px 20px 0px 40px;		
+			width: 65%;
+			border-bottom:0;	
+			.sub_title {
+				margin-bottom: 8px;
+				font-weight: 600;
+				font-size: $ac_fs_md;
+				color: $ac_black;				
+				a {
+					color: inherit;
+				}				
+			}
+			p {	
+				margin-bottom: 5px;
+				height: 65px;	
+				overflow: hidden;
+				text-align: inherit;		
+			}
+			.btn {
+				margin-top: 10px;
+			}																
+		}
+		.info_more {
+			width: 20%;
+			margin-top: 0px;						
+		}
+		@media (max-width:1024px){
+			.info {padding: 0px 15px;}	
+		}		
+		@media (max-width:767px){	
+			display: inherit;	
+			.image, .info, .info_more {display:inherit;width:100%;}
+			.image {width:170px;float: left;margin-right:15px;}
+			.info {width:auto;overflow:hidden;padding:0px;}
+			.info .sub_title {margin-bottom:5px;}						
+			.info p {margin-bottom: 0px;}
+			.info_more {margin-top:-18px; }
+			.btn_event {margin-top: 30px;}
+		}		
+		@media (max-width:479px){
+			.image {width:100%;float: none;margin:0 0 15px 0;}
+		}	
+	}
+}

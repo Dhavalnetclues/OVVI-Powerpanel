@@ -1,0 +1,165 @@
+$date-font-size                  :14px;
+$date-black                      :#000000;
+$date-primary                    :#3763eb;
+$date-secondary                  :#f3525a;
+$date-white                      :#ffffff;
+$date-tertiary                   :#707070;
+
+.datepicker {
+    border: 1px solid rgba($date-black,0.1);
+    border-radius: 0px;
+    padding: 15px 15px 55px 15px;
+    .datepicker-days, .datepicker-months, .datepicker-years, .datepicker-decades, .datepicker-centuries{
+        position: relative;
+    }
+    .datepicker-title {
+        font-size: $date-font-size + 4;
+        font-weight: 400;
+        line-height: 100%;
+        color: $date-white;
+        padding: 10px;
+        border-radius: 0;
+    }
+    .prev {
+        border-radius: 0;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        background: $date-secondary !important;
+        &:hover {
+            background: rgba($date-secondary,0.5) !important;
+        }
+    }
+    .datepicker-switch{
+        border-radius: 0;
+        background: $date-secondary !important;
+    }
+    .next{
+        border-radius: 0;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        background: $date-secondary !important;
+        &:hover {
+            background: rgba($date-secondary,0.5) !important;
+        }
+    }
+    .prev, .datepicker-switch, .next{
+        background: $date-primary;
+        font-size: $date-font-size;
+        font-weight: 400;
+        line-height: 100%;
+        color: $date-white;
+        padding: 10px;
+        &:hover {
+            background: $date-primary;
+        }
+    }
+    .dow {
+        font-size: $date-font-size;
+        font-weight: 400;
+        line-height: 100%;
+        color: $date-white;
+        padding: 10px;
+        border-radius: 0;
+        background: rgba($date-primary,0.8) !important;
+    }
+
+    .datepicker-days {
+        .day {
+            font-size: $date-font-size;
+            font-weight: 400;
+            line-height: 100%;
+            color: $date-black;
+            padding: 10px;
+            &.today, &:hover {
+                border-radius: 0;
+                color: $date-white !important;
+                background: $date-secondary !important;
+                &:hover{
+                    color: $date-white !important;
+                    background: $date-primary !important;
+                }
+            }
+            &.active{
+                color: $date-white !important;
+                background: $date-primary !important;
+            }
+            &.disabled {
+                pointer-events: none !important;
+                color: #dddddd !important; 
+            }
+        }
+        .range-star{
+            color: $date-white !important;
+            background: $date-primary !important;
+            border-radius: 0 !important;
+        }
+        .range {
+            color: $date-white !important;
+            background: $date-primary !important;
+            border-radius: 0px !important;
+        }
+        .range-end {
+            color: $date-white !important;
+            background: $date-primary !important;
+            border-radius: 0 !important;
+        }
+    }
+
+    .datepicker-months, .datepicker-years, .datepicker-decades, .datepicker-centuries {
+        .month, .year, .decade, .century {
+            font-size: $date-font-size;
+            font-weight: 400;
+            line-height: 0;
+            color: $date-black;
+            padding: 18px 0;
+            border-radius: 0;
+            margin: 0;
+            height: auto;
+            width: 25%;
+            &.focused, &:hover{
+                background: $date-primary !important;
+                color: $date-white !important;
+            }
+            &.active{
+                background: $date-primary !important;
+                color: $date-white !important;
+            }
+            &.disabled{
+                pointer-events: none !important;
+                color: #dddddd !important;
+            }
+        }
+        tbody > tr > td {
+            padding: 0;
+        }
+    }
+
+    tfoot {
+        .today, .clear{
+            font-size: $date-font-size;
+            font-weight: 400;
+            line-height: 0;
+            color: $date-white;
+            padding: 15px;
+            border-radius: 100px;
+            position: absolute;
+            margin-top: 10px;           
+        }
+        .today{
+            right: 0;
+            width: calc(50% - 15px);
+            background: $date-primary;
+            &:hover {
+                background: $date-secondary;
+            } 
+        }
+        .clear{
+            left: 0;
+            width: calc(50% - 15px);
+            background: $date-secondary;
+            &:hover {
+                background: $date-primary;
+            } 
+        }
+    }
+}

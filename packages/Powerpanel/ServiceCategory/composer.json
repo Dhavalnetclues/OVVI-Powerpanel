@@ -1,0 +1,17 @@
+{
+    "name": "Powerpanel/ServiceCategory",
+    "description": "This is a netquick service category package",
+    "type": "library",
+    "license": "1.0.0.0",
+    "authors": [{
+        "name": "Powerpanel",
+        "email": "v6.netclues@gmail.com"
+    }],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Powerpanel\\ServiceCategory\\": "/src"
+        }
+    },
+    "require": {}
+}

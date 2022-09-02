@@ -1,0 +1,16 @@
+	@media (max-width: 480px) { .col-xs-small { width: 100%;  } } 
+	.pg_main_border { border:1px solid #f2f2f2; margin: 15px 0;   }
+	.thumbnail_container { padding-bottom: 66.6%; border-radius: 0px; position: relative; }
+	.thumbnail { margin: 0px; padding: 0px; border-width: 0px 0px 0px 0px; height: 100%; width: 100%; position: absolute; background: none; }
+	.thumbnail img { padding: 0; }
+	.nqimg_mask{position:absolute;overflow:hidden;width:100%;height:100%;top:0;left:0;z-index:9}
+	.nqimg_inner{transform:translate(-50%, -50%);-webkit-transform:translate(-50%, -50%);-khtml-transform:translate(-50%, -50%);-moz-transform:translate(-50%, -50%);-ms-transform:translate(-50%, -50%);-o-transform:translate(-50%, -50%);top:50%;left:50%;position:relative}
+	.team_box { border: 1px solid #f2f2f2; background-color: #f2f2f2; padding: 10px; margin: 15px 0;  }
+	.team_box .team_desc table { border-collapse: inherit; border-spacing: 10px; background-color: #fff; }
+	.team_box .team_desc .nqsocia {list-style: none;  padding: 0; text-align: center; font-size: 18px;}
+	.team_box .team_desc .nqsocia li { display: inline-block;}
+	.team_box .nqimg_mask { opacity: 0; transition: all 0.4s ease-in; -webkit-transition: all 0.4s ease-in; background-color: rgba(67, 71, 77, 0.5); }
+	.team_box .thumbnail_container:hover .nqimg_mask { opacity: 1; }
+	.pg_main_search { background-color: #f3f3f3; padding-top: 15px; margin: 0px;   }
+	.pg_main_search .left { float: left; margin: 0 5px; line-height: 30px; }
+	@media (max-width: 480px) { .pg_main_search .left { float: none; margin: 0 5px; } } 

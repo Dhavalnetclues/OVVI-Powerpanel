@@ -1,0 +1,102 @@
+.event-detail{
+	@media (min-width: 1025px){
+	    margin-top: 102px;
+	}
+	.-ebanner {
+		position: relative;
+		z-index: 1;
+		background-position: center center;
+	    background-repeat: no-repeat;
+	    background-size: cover;
+	    background-attachment: fixed;
+	    &:before{
+	    	position: absolute;
+	    	z-index: -1;
+	    	content: '';
+	    	top: 0;
+	    	right: 0;
+	    	bottom: 0;
+	    	left: 0;
+	    	background-image: linear-gradient(180deg,#000000A1 0%,#00000080 100%);
+	    }
+		.-bgh {
+			min-height: 500px;
+		}
+		.-cate {
+			padding: 11px 15px;
+		    text-align: center;
+		    margin: 15px 0 0 0;
+		    color: $ac_white;
+		    border-radius: $ac_radius;
+		    @include css3-prefix ('background', linear-gradient(90deg, $ac_b 0,$ac_a 100%));
+		    &.fuel-tag {
+		        @include css3-prefix ('background', linear-gradient(90deg, #d47631 0,#e1a04a 100%));
+		    }
+		    &.energy-tag {
+		        @include css3-prefix ('background', linear-gradient(90deg, #45a126 0,#65be3a 100%));
+		    }
+		    &.water-tag {
+		        @include css3-prefix ('background', linear-gradient(90deg, #2fb6a2 0,#46dac4 100%));
+		    }
+		    &.ict-tag {
+		        @include css3-prefix ('background', linear-gradient(90deg, #83055a 0,#ae0b79 100%));
+		    }
+		    &.ofreg-tag {
+		        @include css3-prefix ('background', linear-gradient(-65deg, #762270 20%, #f3b43b 50%, #2fb6a2));
+		    }
+		}
+		.s-pen-tool {
+			transform: rotate(-95deg);
+			margin-right: 10px;
+			top: -2px;
+			position: relative;
+		}
+		svg {
+			width: 24px;
+			height: 24px;
+		}
+		.-eicon {
+			width: 30px;
+			flex: 0 0 30px;
+			justify-content: center;
+			display: flex;
+		}
+	}
+
+	@media (min-width: 1025px) {
+		.-content {
+			margin-top: -160px;
+			position: relative;
+			z-index: 1;
+			min-height: 450px;
+		}
+	}
+
+	.related-posts {
+        overflow: hidden;
+        margin-top: 15px;
+        + .related-posts {
+            padding-top: 15px;
+            border-top: 1px solid rgba(0, 0, 0, 0.06);
+        }
+        .-rimg {
+            float: left;
+            width: 100px;
+        }
+        .-rdesc {
+            float: left;
+            width: calc(100% - 100px);
+            padding-left: 15px;
+            .-ricon {
+            	svg {
+            		color: $ac_a;
+            		width: 19px;
+            		height: 19px;
+            		margin-right: 5px;
+            		position: relative;
+            		top: 1px;
+            	}
+            }
+        }
+    }
+}

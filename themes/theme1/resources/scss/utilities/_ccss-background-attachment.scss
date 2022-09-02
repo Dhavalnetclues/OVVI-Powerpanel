@@ -1,0 +1,8 @@
+/* Background Attachment S */
+    @each $ccssBackgroundAttachmentClass in $ccssBackgroundAttachmentClasses {
+        $index: index($ccssBackgroundAttachmentClasses, $ccssBackgroundAttachmentClass);
+        .#{$ccss}-#{$ccssBga}-#{nth($ccssBackgroundAttachmentClasses, $index)}{
+            background-attachment: #{nth($ccssBackgroundAttachments, $index)};
+        }
+    }
+/* Background Attachment E */

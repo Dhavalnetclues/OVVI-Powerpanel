@@ -1,0 +1,19 @@
+$imghvr_bg_color: rgba($ac_black, 0.5);
+.imghvr-effect{
+    .imghvr-img{
+        &:before{
+            top: 50%;
+            bottom: 50%;
+        }
+    }
+    &:hover{
+        .imghvr-img{
+            &:before{
+                opacity: 1;
+                top: 0;
+                bottom: 0;
+                background-color: $imghvr_bg_color;                
+            }
+        }
+    }
+}

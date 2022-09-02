@@ -1,0 +1,382 @@
+/* CMS S */		
+	.cms{
+		html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+			line-height: 1.3;
+		}
+		&:after {
+		    display: block;
+		    clear: both;
+		    content: "";
+		}
+		+ .cms, ~ .cms {
+			margin-top: 20px;
+		}
+
+		a {
+			color: $ac_a;
+			font-weight: 600;
+			@include ac-media-hover() {
+				&:hover{
+					color: $ac_b;
+				}
+			}
+		}
+
+		blockquote {
+			border-left: 10px solid rgba($ac_a, 1);
+			background-color: rgba($ac_black, 0.05);
+			padding: 10px 15px 10px 15px;
+			display: table;
+		}
+
+		.image {
+			position: relative;
+			z-index: 1;
+			max-width: 100%;
+		    display: block;
+		    box-sizing: border-box;
+		    margin-top: 20px;
+		    margin-bottom: 20px;
+		    margin-left: auto;
+		    margin-right: auto;
+		    clear: both;
+		    text-align: center;
+
+		    @media (max-width: 480px){
+		    	width: 100% !important;
+		    }
+
+		    @media (min-width: 481px){
+			    &.image-style-align-right {
+			    	float: right;
+			    	margin-left: 20px;
+			    }
+
+			    &.image-style-align-left {
+			    	float: left;
+			    	margin-right: 20px;
+			    }
+			}
+
+			img {
+				display: block;
+			    margin: 0 auto;
+			    max-width: 100%;
+			    min-width: 50px;
+				width: 100%;
+			}
+			figcaption {
+				background-color: rgba($ac_black, 0.09);
+				padding: 15px;
+				text-align: center;
+				font-style: italic;
+				font-size: em(18);
+				line-height: 120%;
+			}
+		}
+
+		.page-break {
+		    position: relative;
+		    clear: both;
+		    padding: 0;
+		    display: flex;
+		    align-items: center;
+		    justify-content: center;
+		}
+
+		h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{
+			font-size: em(20);
+		}
+
+		p, ul li, ol li {
+			font-size: em(19);
+			font-weight: 400;
+			line-height: 130%;
+			color: $ac_m;
+		}
+		p, ul, ol, blockquote, .image, .table-responsive, figure.table{
+			+ p, + ul, + ol, + blockquote, + table{
+				margin-top: 20px;
+			}
+			+ h1, + h2, + h3, + h4, + h5, + h6, + .h1, + .h2, + .h3, + .h4, + .h5, + .h6{
+				margin-top: 20px;
+			}
+			+ .table-responsive, figure.table{
+				margin-top: 15px;
+			}
+		}
+
+		h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{
+			text-transform: uppercase;
+			+ h1,+ h2,+ h3,+ h4,+ h5,+ h6, + .h1, + .h2, + .h3, + .h4, + .h5, + .h6 {
+				margin-top: 20px;
+			}
+			+ p, + ul, + ol, + blockquote {
+				margin-top: 10px;
+			}
+			+ .table-responsive, figure.table{
+				margin-top: 15px;
+			}
+		}
+
+		img + p{
+			margin-top: 20px;
+		}
+
+		ol, ul{
+			position: relative;
+			margin: 0;
+	    	padding: 0;
+	    	list-style: none;
+			li{
+				position: relative;
+				+ li, ul, ol  {
+					margin-top: 12px;
+				}
+			}
+			+ p, + h1,+ h2,+ h3,+ h4,+ h5,+ h6, + .h1, + .h2, + .h3, + .h4, + .h5, + .h6 {
+				margin-top: 20px;
+			}
+		}
+
+		ul{
+			li {
+				span{
+					padding-left: 30px;
+					display: table;
+				}
+				&:before{
+					position: absolute;
+				    content: '';
+				    left: auto;
+				    top: 9px;
+				    height: 11px;
+				    width: 11px;
+				    background-color: lighten($ac_m,35%);
+				    border-radius: 5px;
+				    @include css3-prefix ('transition', '#{$ac_3_ti}');
+				}
+				&:after{
+					position: absolute;
+				    content: '';
+				    left: auto;
+				    top: 14px;
+				    height: 1px;
+				    width: 18px;
+				    background-color: lighten($ac_m,35%);
+				    @include css3-prefix ('transition', '#{$ac_3_ti}');
+				}
+				&:hover{
+					&:before{
+						background-color: $ac_a;
+						border-radius: 2px;
+					}
+					&:after{
+						background-color: $ac_a;
+						width: 25px;
+					}
+					color: $ac_a;
+				}
+			}
+		}
+
+		ol {
+			counter-reset: section;
+			li {
+				ol {
+					li {
+						margin-right: 35px !important;
+					}
+				}
+				&:before{
+					counter-increment: section;
+					content: counters(section,".") ". ";
+					font-weight: 500;
+				}
+			}
+		}
+
+		.documents, + .documents {
+			margin-top: 20px;
+		}
+		p{
+			text-align: justify;
+		}
+	}
+
+	.documents {
+		display: flex;
+		align-items: center;
+		+ .documents {
+			margin-top: 20px;
+		}
+		.-doct-img {
+			width: 50px;
+		    height: 50px;
+		    flex: 0 0 50px;
+		    display: inline-flex;
+		    align-items: center;
+		    justify-content: center;
+		    border-radius: $ac_radius;
+		    background: linear-gradient(90deg, $ac_b 0%, $ac_a 100%);
+		    margin-right: 15px;
+			svg {
+				width: 30px;
+				height: 30px;
+				transition: all .5s ease-in-out;
+				path, polygon{
+					fill: $ac_white;
+				}
+			}
+			.s-download{
+				opacity: 0;
+			    visibility: hidden;
+			    transform: scale(0);
+			    position: absolute;
+			    line, polyline, path{
+			    	stroke: $ac_white;
+			    	fill: transparent;
+			    }
+			}
+		}
+		.-link {
+			display: flex;
+			align-items: center;
+			font-size: em(16);
+			font-weight: 500;
+			line-height: 120%;
+			color: $ac_m;
+			font-family: $ac_ff_two;
+		}
+		&:hover{
+			.-doct-img {
+				svg {
+					opacity: 0;
+				    visibility: hidden;
+				    position: absolute;
+				    transform: scale(0);
+				}
+				.s-download{
+					opacity: 1;
+				    visibility: visible;
+				    position: relative;
+				    transform: scale(1);
+				}
+			}
+		}
+	}
+
+	.doc-icon-top {
+		margin-top: 25px;
+		.documents {
+			margin-left: 70px;
+			.-doct-img{
+				top: -25px;
+				position: absolute;
+				left: 20px;
+			}
+		}
+		.s-calendar{
+			width: 24px;
+			height: 24px;
+			position: relative;
+			top: -1px;
+			margin-right: 5px;
+		}
+	}
+/* CMS E */
+
+/* Main Title S */
+	.nqtitle {
+		font-family: $ac_ff_two;
+		font-size: em(34);
+		font-weight: 800;
+		line-height: 130%;
+		color: $ac_black;
+		@include css3-prefix ('transition', '#{$ac_3_ti}');
+		@media (max-width: 1024px) {
+			font-size: em(24);
+		}
+		@media (max-width: 767px) {
+			font-size: em(20);
+			line-height: 30px;
+		}
+	}
+/* Main Title E */
+
+/* Sub Title S */
+	.nqtitle-small {
+		font-family: $ac_ff_two;
+		font-size: em(20);
+		font-weight: 800;
+		line-height: 130%;
+		color: $ac_a;
+		@include css3-prefix ('transition', '#{$ac_3_ti}');
+	}
+	.nqtitle-ip {
+		font-family: $ac_ff_two;
+		font-size: em(28);
+		font-weight: 800;
+		line-height: 130%;
+		color: $ac_black;
+		@include css3-prefix ('transition', '#{$ac_3_ti}');
+		@media (max-width: 1024px) {
+			font-size: em(20);
+		}
+	}
+/* Sub Title E */
+
+/* Ul Li S */
+	.nqul{
+		list-style: none;
+		li {
+			list-style: none;
+		}
+	}
+/* Ul Li E */
+
+.sticky-top {
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+	z-index: 1020;
+}
+
+/* common modal*/
+.common-modal{
+	@media (max-width:1199px){
+		padding:0 !important;
+	}
+	.modal-dialog{
+		max-width:650px;
+		width: 100%;
+		position:relative;
+		padding:0 15px;
+		@media (max-width: 479px){
+			margin:0;
+		}
+		.modal-body{
+			padding:0;
+			.close{
+				width:65px;
+				height:65px;
+				display: inline-block;
+				opacity: 1;
+				background-image:url(../images/close.svg);
+				position:absolute;
+				top:12px;
+				right:12px;
+				z-index: 1;
+				@include css3-prefix ('transition', '#{$ac_3_ti}');
+				@media (min-width: 1200px){
+					&:hover{
+						opacity:0.5;
+					}
+				}
+				&:focus{
+					outline:none;
+				}
+			}
+		}
+	}
+}

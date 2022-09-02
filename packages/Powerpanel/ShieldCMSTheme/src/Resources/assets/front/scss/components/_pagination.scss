@@ -1,0 +1,65 @@
+/* Pagination S */
+    .#{$ac}-pagination{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        @include css3-prefix-last ('display', 'inline-flex');
+        li{
+            margin: 0;
+            padding: 0;
+            display: inline;
+            a{
+                position: relative;
+                float: left;
+                padding: 0;
+                margin-left: -1px;
+                width: 35px;
+                height: 35px;
+                line-height: 35px;
+                font-size: $ac_fs_sm;
+                font-weight: $ac_fw_r;
+                color: $ac_m;
+                background-color: $ac_white;
+                border: 1px solid $ac_white;
+                i{
+                    font-size: $ac_fs_sm;
+                    font-weight: $ac_fw_r;
+                    color: $ac_m;
+                }
+                &:hover, {
+                    color: $ac_white;
+                    background-color: $ac_a;
+                    border-color: $ac_a;
+                    i{
+                        color: $ac_white;
+                    }
+                }
+            }
+            &.active{
+                a{
+                    color: $ac_white;
+                    background-color: $ac_a;
+                    border-color: $ac_a;
+                    cursor: default;
+                    pointer-events: none;
+                }
+            }
+            &:first-child, &:last-child{
+                a{
+                    width: auto;
+                    padding: 0 15px;
+                }
+            }
+            &:first-child{
+                a{
+                    @include css3-prefix ('border-radius', '#{$ac_3_br_0} #{$ac_3_br_0} #{$ac_3_br_0} #{$ac_3_br_0}');
+                }
+            }
+            &:last-child{
+                a{
+                    @include css3-prefix ('border-radius', '#{$ac_3_br_0} #{$ac_3_br_0} #{$ac_3_br_0} #{$ac_3_br_0}');
+                }
+            }
+        }
+    }
+/* Pagination E */

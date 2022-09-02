@@ -1,0 +1,20 @@
+#map {
+	height: 500px;
+	.map__title {
+		margin: 5px 0 0 0;
+		font-size: $ac_fs_base + 2px;
+		font-weight: $ac_fw_m;
+		line-height: 140%;
+		color: $ac_a;
+	}
+	.map__address {
+		margin: 10px 0 0 0;
+		font-size: $ac_fs_base - 2px;
+		font-weight: $ac_fw_m;
+		line-height: 140%;
+		color: $ac_black;
+	}
+	button{
+		min-height: auto;
+	}
+}

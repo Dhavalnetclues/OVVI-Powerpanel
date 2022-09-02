@@ -1,0 +1,397 @@
+
+
+.note_top{
+  background:rgba(27, 101, 192, 0.08);
+  color:#1D4DA1;
+}
+.form-group.form-md-line-input .form-control.edited:not([readonly])~.form-control-focus:after,
+.form-group.form-md-line-input .form-control.edited:not([readonly])~label:after,
+.form-group.form-md-line-input .form-control.focus:not([readonly])~.form-control-focus:after,
+.form-group.form-md-line-input .form-control.focus:not([readonly])~label:after,
+.form-group.form-md-line-input .form-control:focus:not([readonly])~.form-control-focus:after,
+.form-group.form-md-line-input .form-control:focus:not([readonly])~label:after {
+    background:#1D4DA1
+}
+.md-radio label>.check {
+    background:#1D4DA1;
+}
+a {
+    color:#1D4DA1
+}
+.new_modal.modal .modal-header {
+    background: rgba(27, 101, 192, 0.8);
+}
+.portlet.portlet-fullscreen>.portlet-title {
+    background: #1D4DA1
+}
+.font-green_drark {
+    color: #1D4DA1 !important
+}
+.font-green {
+    color: #1D4DA1!important
+}
+.btn-green-drake {
+    border-color: #1D4DA1;
+    color: #1D4DA1;
+}
+.login-container a.forget_link {
+    color: #1D4DA1 !important;
+}
+.Design-preview .left-panel .Tab ul li > a {
+    border-color:#1D4DA1;
+    color:#1D4DA1;
+}
+.Design-preview .left-panel .tabs-left.nav-tabs > li.active > a {
+  background:#1D4DA1;
+  border-color:#1D4DA1;
+}
+.Design-preview .left-panel .tabs-left.nav-tabs > li.active > a:hover {
+    background:#1D4DA1;
+}
+.Design-settings .right-panel .img-box:hover,
+.Design-settings .right-panel .img-box-active {
+    border-color:#1D4DA1 !important;
+}
+.Design-preview .left-panel .tabs-left.nav-tabs > li > a:hover {
+    color: #1D4DA1;
+    border-color:#1D4DA1;
+}
+.Design-preview .left-panel .tabs-left.nav-tabs > li.active:before,
+.Design-preview .left-panel .tabs-left.nav-tabs > li:before {
+    background-color:#1D4DA1;
+  }
+.Design-preview .left-panel .tab-content > .tab-pane {
+  background-color:rgba(27, 101, 192, 0);
+}
+.Design-preview .left-panel .info {
+    background-color:rgba(27, 101, 192, 0);
+}
+.search-sugg-list li.mean {
+    color: #1D4DA1;
+}
+.search-sugg-list li > a:hover {
+    color: #1D4DA1 !important;
+}
+.search-sugg-list li.mean a {
+    color: #1D4DA1 !important;
+}
+.Design-preview .left-panel .Tab ul li {
+    border-color:#1D4DA1;
+}
+.portlet.box.green_dark > .portlet-title,
+.portlet.green_dark,
+.portlet > .portlet-body.green_dark {
+    color: #1D4DA1;
+}
+.portlet.green_dark > .portlet-title > .caption > i {
+    color: #1D4DA1;
+}
+.green_dark .form-horizontal .form-actions {
+    background: rgba(27, 101, 192, 0.0);
+}
+.new_date_picker .input-group-addon {
+    color: #1D4DA1;
+}
+.new_date_picker .datepicker {
+    border-color: #1D4DA1;
+}
+.datepicker .table-condensed tr .prev,
+.datepicker .table-condensed tr th {
+    color: #1D4DA1;
+}
+.datetimepicker .table-condensed tr .prev,
+.datetimepicker .table-condensed tr th {
+    color: #1D4DA1;
+}
+.datetimepicker .table-condensed tr td.active,
+.datepicker .table-condensed tr td.active {
+    background: #1D4DA1 !important;
+}
+.datetimepicker .table-condensed tr td .active {
+    background: #1D4DA1 !important;
+}
+.tab_section .active a {
+    background: #1D4DA1 !important
+}
+.recent_update .new_date_picker .input-group-addon i {
+    color: #1D4DA1;
+}
+.recent_update .overview-item.edited .work-type {
+    color: rgba(27, 101, 192, 0.9);
+}
+.event_datepicker .input-group-addon {
+    color: #1D4DA1;
+}
+.event_datepicker .input-group-addon i {
+    color:#1D4DA1;
+}
+.gallary_manager.portlet.portlet-fullscreen .portlet-title .caption {
+    color: #1D4DA1;
+}
+.gallary_manager.portlet.portlet-fullscreen .portlet-title .caption i {
+    color: #1D4DA1;
+}
+.gallary_manager.portlet.portlet-fullscreen .portlet-title .caption .caption-subject {
+    color: #1D4DA1;
+}
+.gallary_manager.portlet.portlet-fullscreen .portlet-title .caption .caption-helper {
+    color: #1D4DA1;
+}
+.gallary_manager.portlet.portlet-fullscreen .portlet-title .tools .remove:before {
+  color: #1D4DA1;
+}
+.gallary_manager.portlet.portlet-fullscreen .right-panel .contains_thumb:hover {
+    border-color:#1D4DA1 !important;
+}
+.gallary_manager.portlet.portlet-fullscreen .right-panel .contains_thumb.img-box-active {
+    border-color:#1D4DA1 !important;
+}
+.gallary_manager.portlet.portlet-fullscreen .right-panel .contains_thumb.active_video{
+     border-color:#1D4DA1 !important;
+}
+.gallary_manager.portlet.portlet-fullscreen .right-panel .contains_thumb.document-box-active{
+     border-color:#1D4DA1 !important;
+}
+.gallary_manager.portlet.portlet-fullscreen .contains_thumb.img-box-active .right_check .icon-check {
+    background: #1D4DA1;
+}
+.gallary_manager.portlet.portlet-fullscreen .contains_thumb.active_video .right_check .icon-check{
+    background: #1D4DA1;
+}
+.gallary_manager.portlet.portlet-fullscreen .contains_thumb.document-box-active .right_check .icon-check{
+    background: #1D4DA1;
+}
+
+.gallary_manager.portlet.portlet-fullscreen .portlet-body .left-panel ul.nav a:hover,
+.gallary_manager.portlet.portlet-fullscreen .portlet-body .left-panel ul.nav a.active {
+    background: rgba(27, 101, 192, 0.08);
+    color: #1D4DA1;
+}
+.gallary_manager.portlet.portlet-fullscreen .dropzone_icon {
+    color: rgba(27, 101, 192, 0.6);
+}
+.gallary_manager.portlet.portlet-fullscreen .dropzone_icon .icons{
+    color: rgba(27, 101, 192, 0.6);
+}
+.drop_border {
+  border-color:#1D4DA1 !important;
+}
+.dataTables_wrapper .paging_bootstrap_extended .default {
+    background: #1D4DA1;
+    border-color:#1D4DA1;
+  }
+.dataTables_wrapper .paging_bootstrap_extended .pagination-panel-input {
+  border-color:#1D4DA1;
+}
+.dataTables_wrapper .dataTables_length .form-control {
+    border-color:#1D4DA1;
+}
+.footer_section {
+    color: #1D4DA1;
+}
+.footer_section:before {
+    background: rgba(27, 101, 192, 0.1);
+}
+.top_browser_note {
+    color:#1D4DA1;
+}
+.page-header.navbar .page-top .navbar-nav li.msg-btn .default {
+   color: #1D4DA1 !important;
+}
+
+.language_select select option {
+    background: #1D4DA1;
+}
+.main_calendar .fc-view-container .fc-head th {
+    background: #1D4DA1;
+}
+.main_calendar .fc-view-container .fc-content-skeleton table tr td {
+    color: #1D4DA1;
+}
+.main_calendar .fc-view-container .fc-event {
+    background: #1D4DA1 !important;
+}
+.main_calendar .fc-button.fc-state-active,
+.main_calendar .fc-button.fc-state-hover {
+    border-bottom-color: #1D4DA1 !important
+}
+.main_calendar .popover .popover-title {
+    background: #1D4DA1
+}
+.actions .menu-controls {
+    background: rgba(27, 101, 192, 0.8);
+}
+.menu_list_set .actions {
+    background: rgba(27, 101, 192, 0);
+}
+.select_box .menu_control {
+    color: #1D4DA1;
+}
+.select_box .menu_control option {
+    color: #1D4DA1;
+}
+.select_box .menu_control option:checked {
+    background: #00a9e6 linear-gradient(0deg, #00a9e6 10%, #00a9e6 100%);
+}
+.select_box .menu_control option:checked:before {
+  color: #00a9e6;
+}
+.checked_off_on .bootstrap-switch-on {
+  background: #1D4DA1;
+}
+.edit_icon_bg{
+    background: #1D4DA1;
+}
+.menu_active.md-checkbox label > .check{
+    background: #1D4DA1;
+}
+.icon_title{
+    color:#1D4DA1;
+}
+.information_icons ul li:hover{
+    background:rgba(27, 101, 192, 0.2)
+}
+.information_icons ul li span{
+    background: #1D4DA1;
+  }
+.information_icons ul li .hover_info:before{
+    background:rgba(27, 101, 192, 0.2);
+}
+.information_icons ul li .hover_info li span{
+    color: #1D4DA1;
+}
+/*----- Light mini Css*/
+.page-header.navbar {
+  background: #1D4DA1;
+}
+.page-header.navbar{
+    background-image:-moz-linear-gradient(to right, rgb(27, 101, 192) 20%, rgb(252, 184, 20) 100%); 
+    background-image:-webkit-linear-gradient(to right, rgb(27, 101, 192) 20%, rgb(252, 184, 20) 100%); 
+    background-image:-o-linear-gradient(to right, rgb(27, 101, 192) 20%, rgb(252, 184, 20) 100%); 
+    background-image:-ms-linear-gradient(to right, rgb(27, 101, 192) 20%, rgb(252, 184, 20) 100%); 
+    background-image:linear-gradient(to right, rgb(27, 101, 192) 20%, rgb(252, 184, 20) 100%); 
+}
+.page-header.navbar .menu-toggler{
+    color:rgba(255, 255, 255,1);
+}
+.page-header.navbar .top-menu .navbar-nav>li.dropdown-language>.dropdown-toggle>.langname, 
+.page-header.navbar .top-menu .navbar-nav>li.dropdown-user>.dropdown-toggle>.username, 
+.page-header.navbar .top-menu .navbar-nav>li.dropdown-user>.dropdown-toggle>i{
+    color:rgba(0, 41, 92,1);
+    font-size:13px;
+}
+.page-header.navbar .top-menu .navbar-nav>li.dropdown .dropdown-menu:before {
+    border-bottom-color: #1D4DA1
+}
+.page-header.navbar .top-menu .navbar-nav>li.dropdown-extended .dropdown-menu:after {
+    border-bottom-color: #1D4DA1
+}
+.page-header.navbar .top-menu .navbar-nav>li.dropdown-extended .dropdown-menu>li.external {
+    background: #124f92;
+}
+.page-header.navbar .top-menu .navbar-nav>li.dropdown-dark .dropdown-menu {
+    background: #124f92;
+}
+.page-header.navbar .top-menu .navbar-nav>li.dropdown-dark .dropdown-menu:after {
+    border-bottom-color: #1D4DA1
+}
+.page-sidebar .page-sidebar-menu>li.open>a,
+.page-sidebar .page-sidebar-menu>li:hover>a,
+.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu>li.open>a,
+.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu>li:hover>a {
+    background: rgba(255, 255, 255, 0.08); 
+    color: rgba(255, 255, 255,1)
+}
+.page-sidebar .page-sidebar-menu>li.open>a>i,
+.page-sidebar .page-sidebar-menu>li:hover>a>i,
+.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu>li.open>a>i,
+.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu>li:hover>a>i {
+    color: rgba(255, 255, 255,1)
+}
+.page-sidebar .page-sidebar-menu>li.open>a>.arrow.open:before,
+.page-sidebar .page-sidebar-menu>li.open>a>.arrow:before,
+.page-sidebar .page-sidebar-menu>li:hover>a>.arrow.open:before,
+.page-sidebar .page-sidebar-menu>li:hover>a>.arrow:before,
+.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu>li.open>a>.arrow.open:before,
+.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu>li.open>a>.arrow:before,
+.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu>li:hover>a>.arrow.open:before,
+.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu>li:hover>a>.arrow:before {
+    color: rgba(255, 255, 255,1)
+}
+.page-sidebar .page-sidebar-menu>li.active.open>a,
+.page-sidebar .page-sidebar-menu>li.active>a,
+.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu>li.active.open>a,
+.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu>li.active>a {
+    background: rgba(255, 255, 255, 0.08); 
+    color: rgba(255, 255, 255,1)
+}
+.page-sidebar .page-sidebar-menu>li.active.open>a:hover,
+.page-sidebar .page-sidebar-menu>li.active>a:hover,
+.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu>li.active.open>a:hover,
+.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu>li.active>a:hover {
+    background: rgba(255, 255, 255, 0.08); 
+}
+
+.page-sidebar .page-sidebar-menu>li.active.open>a>i,
+.page-sidebar .page-sidebar-menu>li.active>a>i,
+.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu>li.active.open>a>i,
+.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu>li.active>a>i {
+    color: rgba(255,255,255,1)
+}
+.page-sidebar .page-sidebar-menu>li.active>a,
+.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu>li.active>a {
+    border-left-color:#fff !important;  /* rgba(252, 184,20,1) */
+}
+.page-sidebar .page-sidebar-menu li.active>a>.arrow.open:before,
+.page-sidebar .page-sidebar-menu li.active>a>.arrow:before,
+.page-sidebar .page-sidebar-menu li:hover>a>.arrow.open:before,
+.page-sidebar .page-sidebar-menu li:hover>a>.arrow:before,
+.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu li.active>a>.arrow.open:before,
+.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu li.active>a>.arrow:before,
+.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu li:hover>a>.arrow.open:before,
+.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu li:hover>a>.arrow:before {
+    color: rgba(255, 255, 255,1)
+}
+.page-sidebar .page-sidebar-menu .sub-menu>li.active>a,
+.page-sidebar .page-sidebar-menu .sub-menu>li.open>a,
+.page-sidebar .page-sidebar-menu .sub-menu>li:hover>a,
+.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu .sub-menu>li.active>a,
+.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu .sub-menu>li.open>a,
+.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu .sub-menu>li:hover>a {
+    color: rgba(255, 255, 255, 1);
+    background: rgba(255, 255, 255,0.08) !important
+}
+.page-sidebar .page-sidebar-menu>li.active.open>a>.arrow.open:before, 
+.page-sidebar .page-sidebar-menu>li.active.open>a>.arrow:before, 
+.page-sidebar .page-sidebar-menu>li.active>a>.arrow.open:before, 
+.page-sidebar .page-sidebar-menu>li.active>a>.arrow:before,
+ .page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu>li.active.open>a>.arrow.open:before,
+  .page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu>li.active.open>a>.arrow:before,
+   .page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu>li.active>a>.arrow.open:before, 
+.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu>li.active>a>.arrow:before{
+    color:rgba(255,255,255,1);
+}
+.page-sidebar .page-sidebar-menu .sub-menu>li.active>a>i,
+.page-sidebar .page-sidebar-menu .sub-menu>li.open>a>i,
+.page-sidebar .page-sidebar-menu .sub-menu>li:hover>a>i,
+.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu .sub-menu>li.active>a>i,
+.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu .sub-menu>li.open>a>i,
+.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu .sub-menu>li:hover>a>i {
+    color: rgba(255, 255, 255,1)
+}
+.page-sidebar .page-sidebar-menu .sub-menu>li>a,
+.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu .sub-menu>li>a{
+    color:rgba(255,255,255,1);
+}
+.page-sidebar-closed .page-sidebar .page-sidebar-menu.page-sidebar-menu-closed>li:not(.heading):hover>.sub-menu{
+    background-color:#1D4DA1
+}
+/*---- Layout mini css --*/
+.breadcrumb li .icon-home {
+    color: #1D4DA1;
+}
+
+.login_form .btn.blue:not(.btn-outline){
+    background: #1D4DA1;
+    border-color:#1D4DA1;
+}

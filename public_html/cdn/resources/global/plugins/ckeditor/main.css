@@ -1,0 +1,560 @@
+body a {
+	color: inherit;
+}
+
+body a:hover {
+	color: inherit;
+}
+
+body a, body a:active, body a:focus, body a:hover {
+	color: inherit;
+	text-decoration: none;
+	outline: 0;
+	outline-offset: 0;
+	-webkit-transition: all .5s ease-in-out;
+	-o-transition: all .5s ease-in-out;
+	transition: all .5s ease-in-out;
+}
+
+body ol li, body p, body ul li {
+	font-style: normal;
+	letter-spacing: 0;
+	word-spacing: 0;
+	text-transform: inherit;
+}
+
+body .h1, body .h2, body .h3, body .h4, body .h5, body .h6, body h1, body h2, body h3, body h4, body h5, body h6 {
+	font-family: Montserrat, sans-serif;
+	color: #000;
+	font-weight: 800;
+	line-height: 120%;
+	font-style: normal;
+	letter-spacing: 0;
+	word-spacing: 0;
+	text-transform: inherit;
+	margin: 0;
+	padding: 0;
+}
+
+body .h1, body h1 {
+	font-size: 36px;
+}
+
+body .h2, body h2 {
+	font-size: 20px;
+}
+
+body .h3, body h3 {
+	font-size: 18px;
+}
+
+body .h4, body h4 {
+	font-size: 16px;
+}
+
+body .h5, body h5 {
+	font-size: 14px;
+}
+
+body .h6, body h6 {
+	font-size: 12px;
+}
+
+body img {
+	max-width: 100%;
+}
+
+.cms a, .cms abbr, .cms acronym, .cms address, .cms applet, .cms article, .cms aside, .cms audio, .cms b, .cms big, .cms blockquote, .cms body, .cms canvas, .cms caption, .cms center, .cms cite, .cms code, .cms dd, .cms del, .cms details, .cms dfn, .cms div, .cms dl, .cms dt, .cms em, .cms embed, .cms fieldset, .cms figcaption, .cms figure, .cms footer, .cms form, .cms h1, .cms h2, .cms h3, .cms h4, .cms h5, .cms h6, .cms header, .cms hgroup, .cms html, .cms i, .cms iframe, .cms img, .cms ins, .cms kbd, .cms label, .cms legend, .cms li, .cms mark, .cms menu, .cms nav, .cms object, .cms ol, .cms output, .cms p, .cms pre, .cms q, .cms ruby, .cms s, .cms samp, .cms section, .cms small, .cms span, .cms strike, .cms strong, .cms sub, .cms summary, .cms sup, .cms table, .cms tbody, .cms td, .cms tfoot, .cms th, .cms thead, .cms time, .cms tr, .cms tt, .cms u, .cms ul, .cms var, .cms video {
+	line-height: 1.3;
+}
+
+.cms:after {
+	display: block;
+	clear: both;
+	content: "";
+}
+
+.cms+.cms, .cms~.cms {
+	margin-top: 20px;
+}
+
+.cms a {
+	color: #d60f39;
+	font-weight: 600;
+}
+
+.cms blockquote {
+	border-left: 10px solid #d60f39;
+	background-color: rgba(0, 0, 0, .05);
+	padding: 10px 15px 10px 15px;
+	display: table;
+}
+
+.cms .image {
+	position: relative;
+	z-index: 1;
+	max-width: 100%;
+	display: block;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	clear: both;
+	text-align: center;
+}
+
+.cms .image img {
+	display: block;
+	margin: 0 auto;
+	max-width: 100%;
+	min-width: 50px;
+	width: 100%;
+}
+
+.cms .image figcaption {
+	background-color: rgba(0, 0, 0, .09);
+	padding: 15px;
+	text-align: center;
+	font-style: italic;
+	font-size: 1.125em;
+	line-height: 120%;
+}
+
+.cms .page-break {
+	position: relative;
+	clear: both;
+	padding: 0;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+}
+
+.cms .h1, .cms .h2, .cms .h3, .cms .h4, .cms .h5, .cms .h6, .cms h1, .cms h2, .cms h3, .cms h4, .cms h5, .cms h6 {
+	font-size: 1.25em;
+}
+
+.cms ol li, .cms p, .cms ul li {
+	font-size: 1.1875em;
+	font-weight: 400;
+	line-height: 130%;
+	color: #616161;
+}
+
+.cms .image+blockquote, .cms .image+ol, .cms .image+p, .cms .image+table, .cms .image+ul, .cms .table-responsive+blockquote, .cms .table-responsive+ol, .cms .table-responsive+p, .cms .table-responsive+table, .cms .table-responsive+ul, .cms blockquote+blockquote, .cms blockquote+ol, .cms blockquote+p, .cms blockquote+table, .cms blockquote+ul, .cms figure.table+blockquote, .cms figure.table+ol, .cms figure.table+p, .cms figure.table+table, .cms figure.table+ul, .cms ol+blockquote, .cms ol+ol, .cms ol+p, .cms ol+table, .cms ol+ul, .cms p+blockquote, .cms p+ol, .cms p+p, .cms p+table, .cms p+ul, .cms ul+blockquote, .cms ul+ol, .cms ul+p, .cms ul+table, .cms ul+ul {
+	margin-top: 20px;
+}
+
+.cms .image+.h1, .cms .image+.h2, .cms .image+.h3, .cms .image+.h4, .cms .image+.h5, .cms .image+.h6, .cms .image+h1, .cms .image+h2, .cms .image+h3, .cms .image+h4, .cms .image+h5, .cms .image+h6, .cms .table-responsive+.h1, .cms .table-responsive+.h2, .cms .table-responsive+.h3, .cms .table-responsive+.h4, .cms .table-responsive+.h5, .cms .table-responsive+.h6, .cms .table-responsive+h1, .cms .table-responsive+h2, .cms .table-responsive+h3, .cms .table-responsive+h4, .cms .table-responsive+h5, .cms .table-responsive+h6, .cms blockquote+.h1, .cms blockquote+.h2, .cms blockquote+.h3, .cms blockquote+.h4, .cms blockquote+.h5, .cms blockquote+.h6, .cms blockquote+h1, .cms blockquote+h2, .cms blockquote+h3, .cms blockquote+h4, .cms blockquote+h5, .cms blockquote+h6, .cms figure.table+.h1, .cms figure.table+.h2, .cms figure.table+.h3, .cms figure.table+.h4, .cms figure.table+.h5, .cms figure.table+.h6, .cms figure.table+h1, .cms figure.table+h2, .cms figure.table+h3, .cms figure.table+h4, .cms figure.table+h5, .cms figure.table+h6, .cms ol+.h1, .cms ol+.h2, .cms ol+.h3, .cms ol+.h4, .cms ol+.h5, .cms ol+.h6, .cms ol+h1, .cms ol+h2, .cms ol+h3, .cms ol+h4, .cms ol+h5, .cms ol+h6, .cms p+.h1, .cms p+.h2, .cms p+.h3, .cms p+.h4, .cms p+.h5, .cms p+.h6, .cms p+h1, .cms p+h2, .cms p+h3, .cms p+h4, .cms p+h5, .cms p+h6, .cms ul+.h1, .cms ul+.h2, .cms ul+.h3, .cms ul+.h4, .cms ul+.h5, .cms ul+.h6, .cms ul+h1, .cms ul+h2, .cms ul+h3, .cms ul+h4, .cms ul+h5, .cms ul+h6 {
+	margin-top: 20px;
+}
+
+.cms .image figure.table, .cms .image+.table-responsive, .cms .table-responsive figure.table, .cms .table-responsive+.table-responsive, .cms blockquote figure.table, .cms blockquote+.table-responsive, .cms figure.table figure.table, .cms figure.table+.table-responsive, .cms ol figure.table, .cms ol+.table-responsive, .cms p figure.table, .cms p+.table-responsive, .cms ul figure.table, .cms ul+.table-responsive {
+	margin-top: 15px;
+}
+
+.cms .h1, .cms .h2, .cms .h3, .cms .h4, .cms .h5, .cms .h6, .cms h1, .cms h2, .cms h3, .cms h4, .cms h5, .cms h6 {
+	text-transform: uppercase;
+}
+
+.cms .h1+.h1, .cms .h1+.h2, .cms .h1+.h3, .cms .h1+.h4, .cms .h1+.h5, .cms .h1+.h6, .cms .h1+h1, .cms .h1+h2, .cms .h1+h3, .cms .h1+h4, .cms .h1+h5, .cms .h1+h6, .cms .h2+.h1, .cms .h2+.h2, .cms .h2+.h3, .cms .h2+.h4, .cms .h2+.h5, .cms .h2+.h6, .cms .h2+h1, .cms .h2+h2, .cms .h2+h3, .cms .h2+h4, .cms .h2+h5, .cms .h2+h6, .cms .h3+.h1, .cms .h3+.h2, .cms .h3+.h3, .cms .h3+.h4, .cms .h3+.h5, .cms .h3+.h6, .cms .h3+h1, .cms .h3+h2, .cms .h3+h3, .cms .h3+h4, .cms .h3+h5, .cms .h3+h6, .cms .h4+.h1, .cms .h4+.h2, .cms .h4+.h3, .cms .h4+.h4, .cms .h4+.h5, .cms .h4+.h6, .cms .h4+h1, .cms .h4+h2, .cms .h4+h3, .cms .h4+h4, .cms .h4+h5, .cms .h4+h6, .cms .h5+.h1, .cms .h5+.h2, .cms .h5+.h3, .cms .h5+.h4, .cms .h5+.h5, .cms .h5+.h6, .cms .h5+h1, .cms .h5+h2, .cms .h5+h3, .cms .h5+h4, .cms .h5+h5, .cms .h5+h6, .cms .h6+.h1, .cms .h6+.h2, .cms .h6+.h3, .cms .h6+.h4, .cms .h6+.h5, .cms .h6+.h6, .cms .h6+h1, .cms .h6+h2, .cms .h6+h3, .cms .h6+h4, .cms .h6+h5, .cms .h6+h6, .cms h1+.h1, .cms h1+.h2, .cms h1+.h3, .cms h1+.h4, .cms h1+.h5, .cms h1+.h6, .cms h1+h1, .cms h1+h2, .cms h1+h3, .cms h1+h4, .cms h1+h5, .cms h1+h6, .cms h2+.h1, .cms h2+.h2, .cms h2+.h3, .cms h2+.h4, .cms h2+.h5, .cms h2+.h6, .cms h2+h1, .cms h2+h2, .cms h2+h3, .cms h2+h4, .cms h2+h5, .cms h2+h6, .cms h3+.h1, .cms h3+.h2, .cms h3+.h3, .cms h3+.h4, .cms h3+.h5, .cms h3+.h6, .cms h3+h1, .cms h3+h2, .cms h3+h3, .cms h3+h4, .cms h3+h5, .cms h3+h6, .cms h4+.h1, .cms h4+.h2, .cms h4+.h3, .cms h4+.h4, .cms h4+.h5, .cms h4+.h6, .cms h4+h1, .cms h4+h2, .cms h4+h3, .cms h4+h4, .cms h4+h5, .cms h4+h6, .cms h5+.h1, .cms h5+.h2, .cms h5+.h3, .cms h5+.h4, .cms h5+.h5, .cms h5+.h6, .cms h5+h1, .cms h5+h2, .cms h5+h3, .cms h5+h4, .cms h5+h5, .cms h5+h6, .cms h6+.h1, .cms h6+.h2, .cms h6+.h3, .cms h6+.h4, .cms h6+.h5, .cms h6+.h6, .cms h6+h1, .cms h6+h2, .cms h6+h3, .cms h6+h4, .cms h6+h5, .cms h6+h6 {
+	margin-top: 20px;
+}
+
+.cms .h1+blockquote, .cms .h1+ol, .cms .h1+p, .cms .h1+ul, .cms .h2+blockquote, .cms .h2+ol, .cms .h2+p, .cms .h2+ul, .cms .h3+blockquote, .cms .h3+ol, .cms .h3+p, .cms .h3+ul, .cms .h4+blockquote, .cms .h4+ol, .cms .h4+p, .cms .h4+ul, .cms .h5+blockquote, .cms .h5+ol, .cms .h5+p, .cms .h5+ul, .cms .h6+blockquote, .cms .h6+ol, .cms .h6+p, .cms .h6+ul, .cms h1+blockquote, .cms h1+ol, .cms h1+p, .cms h1+ul, .cms h2+blockquote, .cms h2+ol, .cms h2+p, .cms h2+ul, .cms h3+blockquote, .cms h3+ol, .cms h3+p, .cms h3+ul, .cms h4+blockquote, .cms h4+ol, .cms h4+p, .cms h4+ul, .cms h5+blockquote, .cms h5+ol, .cms h5+p, .cms h5+ul, .cms h6+blockquote, .cms h6+ol, .cms h6+p, .cms h6+ul {
+	margin-top: 10px;
+}
+
+.cms .h1 figure.table, .cms .h1+.table-responsive, .cms .h2 figure.table, .cms .h2+.table-responsive, .cms .h3 figure.table, .cms .h3+.table-responsive, .cms .h4 figure.table, .cms .h4+.table-responsive, .cms .h5 figure.table, .cms .h5+.table-responsive, .cms .h6 figure.table, .cms .h6+.table-responsive, .cms h1 figure.table, .cms h1+.table-responsive, .cms h2 figure.table, .cms h2+.table-responsive, .cms h3 figure.table, .cms h3+.table-responsive, .cms h4 figure.table, .cms h4+.table-responsive, .cms h5 figure.table, .cms h5+.table-responsive, .cms h6 figure.table, .cms h6+.table-responsive {
+	margin-top: 15px;
+}
+
+.cms img+p {
+	margin-top: 20px;
+}
+
+.cms ol, .cms ul {
+	position: relative;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.cms ol li, .cms ul li {
+	position: relative;
+}
+
+.cms ol li ol, .cms ol li ul, .cms ol li+li, .cms ul li ol, .cms ul li ul, .cms ul li+li {
+	margin-top: 12px;
+}
+
+.cms ol+.h1, .cms ol+.h2, .cms ol+.h3, .cms ol+.h4, .cms ol+.h5, .cms ol+.h6, .cms ol+h1, .cms ol+h2, .cms ol+h3, .cms ol+h4, .cms ol+h5, .cms ol+h6, .cms ol+p, .cms ul+.h1, .cms ul+.h2, .cms ul+.h3, .cms ul+.h4, .cms ul+.h5, .cms ul+.h6, .cms ul+h1, .cms ul+h2, .cms ul+h3, .cms ul+h4, .cms ul+h5, .cms ul+h6, .cms ul+p {
+	margin-top: 20px;
+}
+
+.cms ul li span {
+	padding-left: 30px;
+	display: table;
+}
+
+.cms ul li:before {
+	position: absolute;
+	content: '';
+	left: auto;
+	top: 9px;
+	height: 11px;
+	width: 11px;
+	background-color: #bababa;
+	border-radius: 5px;
+	-webkit-transition: all .5s ease-in-out;
+	-o-transition: all .5s ease-in-out;
+	transition: all .5s ease-in-out;
+}
+
+.cms ul li:after {
+	position: absolute;
+	content: '';
+	left: auto;
+	top: 14px;
+	height: 1px;
+	width: 18px;
+	background-color: #bababa;
+	-webkit-transition: all .5s ease-in-out;
+	-o-transition: all .5s ease-in-out;
+	transition: all .5s ease-in-out;
+}
+
+.cms ul li:hover {
+	color: #d60f39;
+}
+
+.cms ul li:hover:before {
+	background-color: #d60f39;
+	border-radius: 2px;
+}
+
+.cms ul li:hover:after {
+	background-color: #d60f39;
+	width: 25px;
+}
+
+.cms ol {
+	counter-reset: section;
+}
+
+.cms ol li ol li {
+	margin-right: 35px !important;
+}
+
+.cms ol li:before {
+	counter-increment: section;
+	content: counters(section, ".") ". ";
+	font-weight: 500;
+}
+
+.cms .documents, .cms+.documents {
+	margin-top: 20px;
+}
+
+.documents {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+
+.documents+.documents {
+	margin-top: 20px;
+}
+
+.documents .-doct-img {
+	width: 50px;
+	height: 50px;
+	-webkit-box-flex: 0;
+	-ms-flex: 0 0 50px;
+	flex: 0 0 50px;
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	border-radius: 3px;
+	background: -webkit-gradient(linear, left top, right top, color-stop(0, #692558), to(#d60f39));
+	background: -o-linear-gradient(left, #692558 0, #d60f39 100%);
+	background: linear-gradient(90deg, #692558 0, #d60f39 100%);
+	margin-right: 15px;
+}
+
+.documents .-doct-img svg {
+	width: 30px;
+	height: 30px;
+	-webkit-transition: all .5s ease-in-out;
+	-o-transition: all .5s ease-in-out;
+	transition: all .5s ease-in-out;
+}
+
+.documents .-doct-img svg path, .documents .-doct-img svg polygon {
+	fill: #fff;
+}
+
+.documents .-doct-img .s-download {
+	opacity: 0;
+	visibility: hidden;
+	-webkit-transform: scale(0);
+	-ms-transform: scale(0);
+	transform: scale(0);
+	position: absolute;
+}
+
+.documents .-doct-img .s-download line, .documents .-doct-img .s-download path, .documents .-doct-img .s-download polyline {
+	stroke: #fff;
+	fill: transparent;
+}
+
+.documents .-link {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	font-size: 1em;
+	font-weight: 500;
+	line-height: 120%;
+	color: #616161;
+	font-family: Montserrat, sans-serif;
+}
+
+.documents:hover .-doct-img svg {
+	opacity: 0;
+	visibility: hidden;
+	position: absolute;
+	-webkit-transform: scale(0);
+	-ms-transform: scale(0);
+	transform: scale(0);
+}
+
+.documents:hover .-doct-img .s-download {
+	opacity: 1;
+	visibility: visible;
+	position: relative;
+	-webkit-transform: scale(1);
+	-ms-transform: scale(1);
+	transform: scale(1);
+}
+
+.doc-icon-top {
+	margin-top: 25px;
+}
+
+.doc-icon-top .documents {
+	margin-left: 70px;
+}
+
+.doc-icon-top .documents .-doct-img {
+	top: -25px;
+	position: absolute;
+	left: 20px;
+}
+
+.doc-icon-top .s-calendar {
+	width: 24px;
+	height: 24px;
+	position: relative;
+	top: -1px;
+	margin-right: 5px;
+}
+
+.nqtitle {
+	font-family: Montserrat, sans-serif;
+	font-size: 2.125em;
+	font-weight: 800;
+	line-height: 130%;
+	color: #000;
+	-webkit-transition: all .5s ease-in-out;
+	-o-transition: all .5s ease-in-out;
+	transition: all .5s ease-in-out;
+}
+
+.nqtitle-small {
+	font-family: Montserrat, sans-serif;
+	font-size: 1.25em;
+	font-weight: 800;
+	line-height: 130%;
+	color: #d60f39;
+	-webkit-transition: all .5s ease-in-out;
+	-o-transition: all .5s ease-in-out;
+	transition: all .5s ease-in-out;
+}
+
+.nqtitle-ip {
+	font-family: Montserrat, sans-serif;
+	font-size: 1.75em;
+	font-weight: 800;
+	line-height: 130%;
+	color: #000;
+	-webkit-transition: all .5s ease-in-out;
+	-o-transition: all .5s ease-in-out;
+	transition: all .5s ease-in-out;
+}
+
+@font-face {
+	font-family: "Gill Sans Nova";
+	font-weight: 600;
+	display: swap;
+	src: url(../fonts/Gill-Sans-Nova-SemiBold.eot);
+	src: url(../fonts/Gill-Sans-Nova-SemiBold.eot?#iefix) format("embedded-opentype"), url(../fonts/Gill-Sans-Nova-SemiBold.woff2) format("woff2"), url(../fonts/Gill-Sans-Nova-SemiBold.woff) format("woff"), url(../fonts/Gill-Sans-Nova-SemiBold.ttf) format("truetype"), url("../fonts/Gill-Sans-Nova-SemiBold.svg#Gill Sans Nova SemiBold") format("svg");
+}
+
+@font-face {
+	font-family: "Gill Sans Nova";
+	font-weight: 600;
+	font-style: italic;
+	display: swap;
+	src: url(../fonts/Gill-Sans-Nova-SemiBold-Italic.eot);
+	src: url(../fonts/Gill-Sans-Nova-SemiBold-Italic.eot?#iefix) format("embedded-opentype"), url(../fonts/Gill-Sans-Nova-SemiBold-Italic.woff2) format("woff2"), url(../fonts/Gill-Sans-Nova-SemiBold-Italic.woff) format("woff"), url(../fonts/Gill-Sans-Nova-SemiBold-Italic.ttf) format("truetype"), url("../fonts/Gill-Sans-Nova-SemiBold-Italic.svg#Gill Sans Nova SemiBold") format("svg");
+}
+
+@font-face {
+	font-family: "Gill Sans Nova";
+	font-weight: 500;
+	display: swap;
+	src: url(../fonts/Gill-Sans-Nova-Medium.eot);
+	src: url(../fonts/Gill-Sans-Nova-Medium.eot?#iefix) format("embedded-opentype"), url(../fonts/Gill-Sans-Nova-Medium.woff2) format("woff2"), url(../fonts/Gill-Sans-Nova-Medium.woff) format("woff"), url(../fonts/Gill-Sans-Nova-Medium.ttf) format("truetype"), url("../fonts/Gill-Sans-Nova-Medium.svg#Gill Sans Nova Medium") format("svg");
+}
+
+@font-face {
+	font-family: "Gill Sans Nova";
+	font-weight: 500;
+	font-style: italic;
+	display: swap;
+	src: url(../fonts/Gill-Sans-Nova-Medium-Italic.eot);
+	src: url(../fonts/Gill-Sans-Nova-Medium-Italic.eot?#iefix) format("embedded-opentype"), url(../fonts/Gill-Sans-Nova-Medium-Italic.woff2) format("woff2"), url(../fonts/Gill-Sans-Nova-Medium-Italic.woff) format("woff"), url(../fonts/Gill-Sans-Nova-Medium-Italic.ttf) format("truetype"), url("../fonts/Gill-Sans-Nova-Medium-Italic.svg#Gill Sans Nova Medium") format("svg");
+}
+
+@font-face {
+	font-family: "Gill Sans Nova";
+	font-weight: 300;
+	display: swap;
+	src: url(../fonts/Gill-Sans-Nova-Light.eot);
+	src: url(../fonts/Gill-Sans-Nova-Light.eot?#iefix) format("embedded-opentype"), url(../fonts/Gill-Sans-Nova-Light.woff2) format("woff2"), url(../fonts/Gill-Sans-Nova-Light.woff) format("woff"), url(../fonts/Gill-Sans-Nova-Light.ttf) format("truetype"), url("../fonts/Gill-Sans-Nova-Light.svg#Gill Sans Nova Light") format("svg");
+}
+
+@font-face {
+	font-family: "Gill Sans Nova";
+	font-weight: 400;
+	display: swap;
+	src: url(../fonts/Gill-Sans-Nova-Book.eot);
+	src: url(../fonts/Gill-Sans-Nova-Book.eot?#iefix) format("embedded-opentype"), url(../fonts/Gill-Sans-Nova-Book.woff2) format("woff2"), url(../fonts/Gill-Sans-Nova-Book.woff) format("woff"), url(../fonts/Gill-Sans-Nova-Book.ttf) format("truetype"), url("../fonts/Gill-Sans-Nova-Book.svg#Gill Sans Nova Book") format("svg");
+}
+
+@font-face {
+	font-family: "Gill Sans Nova";
+	font-weight: 400;
+	font-style: italic;
+	display: swap;
+	src: url(../fonts/Gill-Sans-Nova-Book-Italic.eot);
+	src: url(../fonts/Gill-Sans-Nova-Book-Italic.eot?#iefix) format("embedded-opentype"), url(../fonts/Gill-Sans-Nova-Book-Italic.woff2) format("woff2"), url(../fonts/Gill-Sans-Nova-Book-Italic.woff) format("woff"), url(../fonts/Gill-Sans-Nova-Book-Italic.ttf) format("truetype"), url("../fonts/Gill-Sans-Nova-Book-Italic.svg#Gill Sans Nova Book") format("svg");
+}
+
+@font-face {
+	font-family: "Gill Sans Nova";
+	font-weight: 700;
+	display: swap;
+	src: url(../fonts/Gill-Sans-Nova-Bold.eot);
+	src: url(../fonts/Gill-Sans-Nova-Bold.eot?#iefix) format("embedded-opentype"), url(../fonts/Gill-Sans-Nova-Bold.woff2) format("woff2"), url(../fonts/Gill-Sans-Nova-Bold.woff) format("woff"), url(../fonts/Gill-Sans-Nova-Bold.ttf) format("truetype"), url("../fonts/Gill-Sans-Nova-Bold.svg#Gill Sans Nova Book") format("svg");
+}
+
+@font-face {
+	font-family: "Gill Sans Nova";
+	font-weight: 700;
+	font-style: italic;
+	display: swap;
+	src: url(../fonts/Gill-Sans-Nova-Bold-Italic.eot);
+	src: url(../fonts/Gill-Sans-Nova-Bold-Italic.eot?#iefix) format("embedded-opentype"), url(../fonts/Gill-Sans-Nova-Bold-Italic.woff2) format("woff2"), url(../fonts/Gill-Sans-Nova-Bold-Italic.woff) format("woff"), url(../fonts/Gill-Sans-Nova-Bold-Italic.ttf) format("truetype"), url("../fonts/Gill-Sans-Nova-Bold-Italic.svg#Gill Sans Nova Book") format("svg");
+}
+
+@media (min-width:481px) {
+	.cms .image.image-style-align-right {
+		float: right;
+		margin-left: 20px;
+	}
+
+	.cms .image.image-style-align-left {
+		float: left;
+		margin-right: 20px;
+	}
+
+}
+
+@media (min-width:1024px) {
+	.cms a:hover {
+		color: #692558;
+	}
+
+}
+
+@media (max-width:1024px) {
+	.nqtitle {
+		font-size: 1.5em;
+	}
+
+	.nqtitle-ip {
+		font-size: 1.25em;
+	}
+
+}
+
+@media (max-width:992px) {
+	body .h1, body h1 {
+		font-size: 20px;
+	}
+
+	body .h2, body h2 {
+		font-size: 18px;
+	}
+
+	body .h3, body h3 {
+		font-size: 16px;
+	}
+
+	body .h4, body h4 {
+		font-size: 14px;
+	}
+
+	body .h5, body h5 {
+		font-size: 12px;
+	}
+
+	body .h6, body h6 {
+		font-size: 12px;
+	}
+
+}
+
+@media (max-width:767px) {
+	.nqtitle {
+		font-size: 1.25em;
+	}
+
+}
+
+@media (max-width:480px) {
+	.cms .image {
+		width: 100% !important;
+	}
+
+}

@@ -1,0 +1,85 @@
+/* Modal S */
+    .#{$ac}-modal{
+        .#{$ac}-modal-table{
+            display: table;
+            height: 100vh;
+            width: 100%;
+            .#{$ac}-modal-center{
+                display: table-cell;
+                vertical-align: middle;
+            }
+        }
+        .#{$ac}-close{
+            position: absolute;
+            right: 15px;
+            top: calc(50% - 12px);
+            padding: 0;
+            margin: 0;
+            border: 0;
+            box-shadow: none;
+            outline: 0;
+            width: 20px;
+            height: 20px;
+            font-size: 35px;
+            font-weight: 100;
+            color: $ac_white;
+            line-height: 100%;
+            opacity: 0.5;
+            display: flex;
+            align-items: center;
+            &:hover{
+                opacity: 1;
+            }
+        }
+        .modal-header {
+            background-color: $ac_a;
+            border-radius: 0 0 0 0;
+            border: none;
+            position: relative;
+            padding: 15px 40px 15px 15px;
+        }
+        .modal-content{
+            border-radius: 0;
+            border: none;
+        }
+        .modal-body {
+            padding: 30px;
+        }
+        .modal-footer{
+            .ac-btn {
+                margin-right: 5px;
+                &:last-child{
+                    margin-right: 0;
+                }
+            }
+        }
+        &.modal-static {
+            .modal-dialog{
+                transform: scale(1.0);
+            }
+        }
+    }
+/* Modal E */
+
+
+.#{$ac}-alert{
+    position: relative;
+    padding: 15px 40px 15px 15px;
+    .close{
+        position: absolute;
+        right: 15px;
+        top: calc(50% - 12px);
+        padding: 0;
+        margin: 0;
+        border: 0;
+        box-shadow: 0;
+        outline: 0;
+        span{
+            font-size: $ac_fs_h4;
+            font-weight: $ac_fw_r;
+            color: $ac_black;
+            line-height: 1;
+            opacity: 1;
+        }
+    }
+}

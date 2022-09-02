@@ -1,0 +1,10 @@
+$orderArrow = '';
+$orderArrow .= '<span class="pageorderlink">'; 
+if ($totalRecords != $value->intDisplayOrder) {
+    $orderArrow .= '<a href="javascript:;" data-order="' . $value->intDisplayOrder . '" class="moveUp"><i class="fa fa-plus" aria-hidden="true"></i></a> ';
+}
+$orderArrow .= $value->intDisplayOrder . ' ';
+if ($value->intDisplayOrder != 1) {
+    $orderArrow .= ' <a href="javascript:;" data-order="' . $value->intDisplayOrder . '" class="moveDwn"><i class="fa fa-minus" aria-hidden="true"></i></a>';
+}
+ $orderArrow .= '</span>';  

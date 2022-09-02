@@ -1,0 +1,232 @@
+/*  Material Color Generator: http://mcg.mbitson.com/ */
+
+$ccss: 'n';
+
+$ccssWhite:				#ffffff !default;
+$ccssBlack:				#000000 !default;
+$ccssLight:				#999999 !default;
+$ccssGrey:				#333333 !default;
+$ccssDark:				#616161 !default;
+
+$ccssA:					#8B226C;
+$ccssB:					#692558;
+$ccssC:					#e619a1;
+
+$ccssError:				#c00 !default;
+$ccssWarning:			#f50 !default;
+$ccssSuccess:			#00b300 !default;
+$ccssInfo:				#08c !default;
+
+
+/* Utility Setting S */
+
+	/* Background Attachment S */
+	    $ccssBga: 'bga';
+	    /* This is the default class name, do not change. */
+
+	    $ccssBackgroundAttachmentClasses: ('s', 'f', 'l', 'r', 'ini', 'inh', 'u');
+	    $ccssBackgroundAttachments: (scroll, fixed, local, revert, initial, inherit, unset);
+	/* Background Attachment E */
+
+
+	/* Background Color, Font Color, Border Color S */
+		$ccssBgc: 'bgc';
+		/* This is the default class name, do not change. */
+
+		$ccssBaseColors: (
+		    white:				$ccssWhite,
+		    black:				$ccssBlack,
+		    light:				$ccssLight,
+		    grey:				$ccssGrey,
+		    dark:				$ccssDark,
+		    a:					$ccssA,
+		    b:					$ccssB,
+		    c:					$ccssC,
+		    error:				$ccssError,
+		    warning:			$ccssWarning,
+		    success:			$ccssSuccess,
+		    info:				$ccssInfo,
+		);
+	/* Background Color, Font Color, Border Color E */
+
+
+	/* Background Position S */
+		$ccssBgp: 'bgp';
+		/* This is the default class name, do not change. */
+
+	    $ccssBackgroundPositionClasses: ('t', 'r', 'b', 'l', 'c', 'lt', 'lc', 'lb', 'rt', 'rc', 'rb', 'ct', 'cc', 'cb', 'inh', 'ini', 'u', 're');
+	    $ccssBackgroundPositions: (top, right, bottom, left, center, left top, left center, left bottom, right top, right center, right bottom, center top, center center, center bottom, inherit, initial, unset, revert);
+	/* Background Position E */
+
+
+	/* Background Repeat S */
+		$ccssBgr: 'bgr';
+		/* This is the default class name, do not change. */
+
+	    $ccssBackgroundRepeatClasses: ('r', 'rx', 'ry', 'nr', 's', 'rou', 'ini');
+	    $ccssBackgroundRepeats: (repeat, repeat-x, repeat-y, no-repeat, space, round, initial);
+	/* Background Repeat E */
+
+
+	/* Background Size S */
+		$ccssBgs: 'bgs';
+		/* This is the default class name, do not change. */
+
+	    $ccssBackgroundSizeClasses: ('a', 'cov', 'con', 'ini', 'inh', 'u', '100');
+	    $ccssBackgroundSizes: (auto, cover, contain, initial, inherit, unset, 100%);
+	/* Background Size E */
+
+	/* Border Radius Size S */
+		$ccssBr: 'br';
+		/* This is the default class name, do not change. */
+		$ccssBorderRadiusArray: (0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100);
+	/* Border Radius Size E */
+
+	/* Border Color S */
+		$ccssBc: 'bc';
+		/* This is the default class name, do not change. */
+	/* Border Color E */
+
+	/* Border Width Size S */
+		$ccssBw: 'bw';
+		/* This is the default class name, do not change. */
+
+		$ccssBorderWidthArray: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+		$ccssBorderSideArray: (top, bottom, left, right);
+	/* Border Width Size E */
+
+	/* Border Style S */
+		$ccssBs: 'bs';
+		/* This is the default class name, do not change. */
+
+		$ccssBorderStyleArray: (dashed, dotted, double, groove, hidden, inherit, initial, inset, none, outset, revert, ridge, solid, unset);
+	/* Border Style E */
+
+	/* Box Shadow S */
+		$ccssBoxs: 'bs';
+		/* This is the default class name, do not change. */
+
+		$ccssBoxShodow1: 0 4px 24px 0 rgba(34,41,47,.1);
+		$ccssBoxShodow2: 0 1px 2px 1px rgba(46,49,56,.1);
+		$ccssBoxShodow3: 0 1px 4px 1px rgba(46,49,56,.1);
+		$ccssBoxShodow4: 0 1px 6px 1px rgba(46,49,56,.1);
+		$ccssBoxShodow5: 0 1px 8px 1px rgba(46,49,56,.1);
+	/* Box Shadow E */
+
+	/* Font Family S */
+		$ccssFontFamily1: 'Gill Sans Nova';
+		$ccssFontFamily2: 'Montserrat', sans-serif;
+		$ccssFontFamily3: null;
+		$ccssFontFamily4: FontAwesome;
+	/* Font Family E */
+
+	/* Font Size S */
+		$csssFontSizeMin: 10;
+		$csssFontSizeMax: 50;
+	/* Font Size E */
+
+	/* Font Style S */
+		$ccssFontStyleArray: (inherit, initial, unset, normal, italic, oblique);
+	/* Font Style E */
+
+	/* Font Weight S */
+		$ccssFontWeightArray: (100, 200, 300, 400, 500, 600, 700, 800, 900);
+	/* Font Weight E */
+
+	/* Gap S */
+		$ccssGapSizeArray: (1, 2, 3, 4, 5);
+		$ccssGapMarginTop: 30px;
+	/* Gap E */
+
+	/* Float S */
+		$ccssFloatArray: (left, right, none);
+	/* Float E */
+
+	/* Headings S */
+		$ccssHeadings1: 32;
+		$ccssHeadings2: 24;
+		$ccssHeadings3: 20;
+		$ccssHeadings4: 18;
+		$ccssHeadings5: 16;
+		$ccssHeadings6: 14;
+	/* Headings E */
+
+	/* Icon Sizes S */
+		$ccssIcon1: 16;
+		$ccssIcon2: 24;
+		$ccssIcon3: 32;
+		$ccssIcon4: 48;
+		$ccssIcon5: 64;
+		$ccssIcon6: 80;
+		$ccssIcon7: 96;
+	/* Icon Sizes E */
+
+	/* Letter Spacing S */
+		$ccssLetterSpacing0: 0;
+		$ccssLetterSpacing1: 0.5;
+		$ccssLetterSpacing2: 1;
+		$ccssLetterSpacing3: 1.5;
+	/* Letter Spacing E */
+
+	/* Line Height S */
+		$ccssLineHeightArray: (90, 100, 110, 120, 130, 140, 150);
+	/* Line Height E */
+
+	/* Margin S */
+		$ccssMarginSizeArray: (0, 1, 2, 3, 4, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120, 125, 130, 135, 140, 145, 150);
+		$ccssMarginSideArray: (top, bottom, left, right);
+	/* Margin E */
+
+	/* Padding S */
+		$ccssPaddingSizeArray: (0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120, 125, 130, 135, 140, 145, 150);
+		$ccssPaddingSideArray: (top, bottom, left, right);
+	/* Padding E */
+
+	/* Opacity S */
+		$ccssOpacityArray: (10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95);
+	/* Opacity E */
+
+	/* Position S */
+		$ccssPositionArray: (absolute, fixed, inherit, initial, relative, revert, static, sticky, unset);
+	/* Position E */
+
+	/* Text Align S */
+		$ccssTextAlignArray: (center, left, right, justify);
+	/* Text Align E */
+
+	/* Text Transform S */
+		$ccssTextTransformArray: (capitalize, lowercase, none, uppercase);
+	/* Text Transform E */
+
+	/* Transition S */
+		$ccssTransitionArray: (1, 2, 3, 4, 5, 6, 7, 8, 9);
+	/* Transition E */
+
+	/* Z-Index S */
+		$ccssZIndexArray: (1, 2, 3, 4, 5, 9, 99, 999, 9999, 99999);
+	/* Z-Index E */
+
+	/* Media Queries S*/
+		$max1366: (max-width: 1366px);
+		$min1366: (min-width: 1366px);
+
+		$max1200: (max-width: 1200px);
+		$min1200: (min-width: 1200px);
+
+		$max1024: (max-width: 1024px);
+		$min1024: (min-width: 1024px);
+
+		$max992: (max-width: 992px);
+		$min992: (min-width: 992px);
+
+		$max768: (max-width: 768px);
+		$min768: (min-width: 768px);
+
+		$max767: (max-width: 767px);
+		$min767: (min-width: 767px);
+
+		$max576: (max-width: 576px);
+		$min576: (min-width: 576px);
+	/* Media Queries E*/
+
+/* Utility Setting E */

@@ -1,0 +1,54 @@
+.#{$ac}-tabs{
+    li {
+        list-style: none;
+        display: inline-flex;
+        a {
+            font-size: em(18);
+            font-weight: 600;
+            line-height: 130%;
+            color: $ac_black;
+            padding: 10px;
+            position: relative;
+            white-space: nowrap;
+            &.active {
+                color: $ac_a;
+                &:after{
+                    content: '';
+                    position: absolute;
+                    bottom: 0px;
+                    left: 0;
+                    width: 100%;
+                    height: 3px;
+                    background: -webkit-linear-gradient(60deg,$ac_a,rgba($ac_a,.5))!important;
+                    background: linear-gradient(30deg,$ac_a,rgba($ac_a,.5))!important;
+                }
+            }
+        }
+    }
+}
+
+.#{$ac}-content{
+    .tab-pane {
+        padding-top: 15px;
+    }
+}
+
+.#{$ac}-more {
+    overflow: hidden;
+    height: 39px;
+    .#{$ac}-more-inner {
+        overflow-x: scroll;
+    }
+}
+
+
+/* <ul class="nav">
+    <li><a class="active" data-toggle="tab" href="#home">Home</a></li>
+    <li><a class="" data-toggle="tab" href="#profile">Profile</a></li>
+    <li><a class="" data-toggle="tab" href="#contact">Contact</a></li>
+</ul>
+<div class="tab-content">
+    <div class="tab-pane fade show active" id="home">0</div>
+    <div class="tab-pane fade" id="profile">1</div>
+    <div class="tab-pane fade" id="contact">2</div>
+</div> */

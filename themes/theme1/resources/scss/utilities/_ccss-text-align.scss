@@ -1,0 +1,51 @@
+/* - - - - - - - - - - - - -
+    Related File Name: ..\utilities\_ccss-utilities-setting.scss
+- - - - - - - - - - - - - */
+
+/* Text Align S */
+    @each $ccssTextAlign in $ccssTextAlignArray {
+        .#{$ccss}-ta#{str-slice($ccssTextAlign, 0, 1)} {
+            text-align: #{$ccssTextAlign} !important;
+        }
+    }
+
+    @media #{$min576} {
+    	@each $ccssTextAlign in $ccssTextAlignArray {
+    	    .#{$ccss}-ta#{str-slice($ccssTextAlign, 0, 1)}-sm {
+    	        text-align: #{$ccssTextAlign} !important;
+    	    }
+    	}
+    }
+
+    @media #{$min768} {
+    	@each $ccssTextAlign in $ccssTextAlignArray {
+    	    .#{$ccss}-ta#{str-slice($ccssTextAlign, 0, 1)}-md {
+    	        text-align: #{$ccssTextAlign} !important;
+    	    }
+    	}
+    }
+
+    @media #{$min992} {
+    	@each $ccssTextAlign in $ccssTextAlignArray {
+    	    .#{$ccss}-ta#{str-slice($ccssTextAlign, 0, 1)}-lg {
+    	        text-align: #{$ccssTextAlign} !important;
+    	    }
+    	}
+    }
+
+    @media #{$min1200} {
+    	@each $ccssTextAlign in $ccssTextAlignArray {
+    	    .#{$ccss}-ta#{str-slice($ccssTextAlign, 0, 1)}-xl {
+    	        text-align: #{$ccssTextAlign} !important;
+    	    }
+    	}
+    }
+
+    @media #{$min1366} {
+    	@each $ccssTextAlign in $ccssTextAlignArray {
+    	    .#{$ccss}-ta#{str-slice($ccssTextAlign, 0, 1)}-xxl {
+    	        text-align: #{$ccssTextAlign} !important;
+    	    }
+    	}
+    }
+/* Text Align E */

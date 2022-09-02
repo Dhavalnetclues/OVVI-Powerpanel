@@ -1,0 +1,71 @@
+
+#remote database connection
+DB_CONNECTION="mysql"
+DB_HOST=192.168.1.27
+DB_PORT=3306
+DB_DATABASE="ofreg"
+DB_USERNAME="sa"
+DB_PASSWORD="Netclues@123#$"
+
+#local database connection
+#DB_HOST=localhost
+#DB_PORT=3306
+#DB_DATABASE="ofreg"
+#DB_USERNAME="root"
+#DB_PASSWORD=""
+
+ref
+roll
+pos 
+exp
+status
+salary
+
+-------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------
+
+\\ndisk22\Media\T\Tutorials\PHP_for_Beginners_Become_a_PHP_Master_CMS_Project_2020
+
+------------------------------------------------------------
+-------------------------------------------------------------- 
+Netquick-engine === Malcd501  ===  NetKarJay@501$678#
+Netquick-engine === rrojivadiya@netclues.com === Man..@..
+powerpanel === testbynetclues@gmail.com   === Admin@123
+
+
+Git User (Team B)
+Username : team2@netclues.com
+Password : N3tClues501#608
+
+git config user.name "raj"
+git config user.email "rrojivadiya@netclues.com"
+
+git pull
+git status (shows all the modified and new created file list)
+git add  ( will add all the files) or git add filename
+git checkout <filename>
+git commit -m "message"
+git push
+
+-------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------
+
+--Updates 02-02-2021--
+1) Done-site Error -so find issue and discussion and solved. (1.15h)
+2) Done-create a new module Career-Category and changes done in 34 files.(4h)
+3) Done-changes in action file and controller for drop down in Career modul for CareerCategory.(1h)
+4) Done-Testing Carrer-category module and also checked Approved functionality in all modules and add work flow for client and user.(1h)
+5) Done-Designing career module and re-changes.(45m)
+6) working On-delete and publish column issues.(30m)
+
+
+--Updates 03-02-2021--
+1) working On-delete and publish column issues in Career Category module.(2h)
+2) re-create CareerCategorry module coz of git conflict.(4h)
+-Done-create a new module Career-Category and changes done in 34 files.
+-Done-changes in action file and controller for drop down in Career modul for CareerCategory.
+-Done-Testing Carrer-category module and also checked Approved functionality in all modules and add work flow for client and user.
+-Done-Designing career module and re-changes.
+3)

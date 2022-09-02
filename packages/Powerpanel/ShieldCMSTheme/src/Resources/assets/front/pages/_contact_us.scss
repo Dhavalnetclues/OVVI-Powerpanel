@@ -1,0 +1,235 @@
+.contact-us{
+	.contact_info_title {
+		margin-bottom: 20px;
+	}
+	.col-md-4.pull-right {
+		@media (max-width:992px){
+			float: none !important;
+		}
+	}		
+	.mailing_box {			
+		position:relative;		
+		padding: 30px 30px 30px 0;
+		h2 {
+			color: $ac_white;
+		}
+		h4 {
+			font-size:$ac_fs_lg;			
+			color: $ac_white;
+			margin-bottom:10px;
+		}
+		p {
+			color: $ac_white;
+		}
+		.social_contact {
+			left: auto;
+			margin-top:35px;
+			li {
+				list-style: none;
+				margin:0px;
+				display: inline-block;
+				~ li {
+					margin-left: 15px;
+				}
+				a {
+					font-size: 20px;
+					color: $ac_white;
+				}
+			}
+		}
+		@media (max-width:992px){
+			min-height: inherit;						
+			padding: 30px 30px;
+		}
+		@media (max-width:767px){
+			h4 {margin-bottom:15px;}
+		}
+		@media (max-width:479px){
+			padding: 20px 15px;
+			margin:0 auto 15px;
+		}
+	}
+	.contact_form {		
+		padding: 0px;
+		background: $ac_a;		
+		box-shadow: 0 0 25px rgba($ac_black,0.1);
+		.ac-form {
+			background: $ac_white;
+			padding: 30px;
+			@media (max-width:479px){
+				padding: 20px 15px;			
+			}
+		}
+		.contact_desc {
+			margin-bottom:25px;
+			p {
+				color: $ac_a;
+				margin: 0;
+				.required {
+					display:inline;
+				}
+				@media (max-width:992px){
+					margin:0px;
+				}
+			}
+		}
+		.form-group {
+			margin-bottom:20px;
+			.error {
+				padding-top:5px;
+				padding-bottom:0px;
+			}			
+			.ac-textarea {
+				min-height:136px;											
+			}
+			.bootstrap-select {
+				width: 100%;						
+				.btn-default {
+					height: 42px;
+					border: 0px; 
+					width: 100%;
+					outline: none !important;
+					border-radius: 0px; 
+					padding-left: 20px;
+					box-shadow: none;
+					font-size: $ac_fs_md; 
+					font-weight: 400;
+					color: $ac_m;						
+					span {
+						line-height: 150%;
+					}
+					.caret {						
+						border:0px;
+						width:14px;
+						height:8px;   	
+						right:20px;
+						margin-top:-12px;  
+						font-size: $ac_fs_lg;
+						@include css3-prefix ('transition', 'all .5s ease-in-out');
+						&:before{
+							font-family:FontAwesome; 
+							content: "\f107";
+							position: absolute;
+						}
+					}
+					&:hover, &:focus {
+						background: $ac_white;
+					}
+					@media (max-width: 767px) {
+						height: 42px;
+					}
+				}
+				.dropdown-menu {		
+					border:0px; 				
+					border-radius:0px; 					
+					&.inner {
+						max-height: 175px !important;
+					}
+					&.open {
+						margin-top:5px; 							
+						box-shadow: 10px 10px 15px rgba($ac_m,0.90);
+						border-radius: 0px;
+						border:1px solid rgba($ac_black,0.5);							
+					}						 
+					li {
+						margin:0px;
+						list-style: none;
+						list-style-image:inherit;							 
+						+ li {
+							border-top:1px solid rgba($ac_white,0.5); 
+						}
+						a {
+							font-size:$ac_fs_base; 								
+							color:$ac_m;
+							padding:6px 20px; 
+							white-space: inherit;
+							&:hover {
+								background: rgba($ac_a,0.2);
+								color:$ac_black;
+							}
+						}	
+						&.selected {
+							a {
+								background: rgba($ac_a,0.2);
+								color:$ac_black;
+							}
+						}						
+					}
+				}					
+				&.dropup {
+					.dropdown-menu.open {
+						margin-bottom: 5px;
+					}
+				}
+				&.open>.dropdown-toggle.btn-default {					    
+					background-color: $ac_white;
+				}
+			}				
+			@media (max-width:992px){
+				margin-bottom:20px;
+			}
+		}
+		.captcha_contact {
+			// float:right;
+			@media (max-width:992px){
+				float:none;
+			}	
+		}
+		.captcha_div {
+			margin-bottom:20px;
+		}
+		
+	}
+	.panel_list_title {
+		margin-top: 50px;
+		margin-bottom: 10px;
+		text-align: center;
+	}
+	.contact_listing {
+		.panel_listing {
+			padding: 10px 20px;
+			background: #f5f5f5;			
+			.panel {
+				margin-top: 10px;
+				margin-bottom: 10px;
+				border-bottom: 0px;
+				background: transparent;
+			}
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+	.contact_wishes {		
+		padding-top:20px;		
+		p {
+			font-weight:$ac_fw_sb;
+			color:$ac_a;
+			text-align: center;			
+			font-size:$ac_fs_md - 2px;
+			+ p {
+				margin-top:5px;
+			}
+			@media (max-width:767px){			   
+			   font-size:$ac_fs_md - 2px;
+			   line-height:130%;
+			}
+		}		
+		@media (max-width:992px){
+			padding-top:10px;
+		}
+		@media (max-width:992px){
+			padding-top:5px;
+		}
+	}
+}

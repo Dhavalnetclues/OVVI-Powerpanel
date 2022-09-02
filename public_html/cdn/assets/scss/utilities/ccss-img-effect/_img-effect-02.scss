@@ -1,0 +1,17 @@
+$imghvr_bg_color: rgba($ac_black, 0.5);
+.imghvr-effect{
+    .imghvr-img{
+        &:before{
+            @include css3-prefix ('transform', 'translateY(100%)');
+        }
+    }
+    &:hover{
+        .imghvr-img{
+            &:before{
+                opacity: 1;
+                background-color: $imghvr_bg_color;
+                @include css3-prefix ('transform', 'translateY(0%)');
+            }
+        }
+    }
+}

@@ -1,0 +1,36 @@
+/* - - - - - - - - - - - - -
+    Related File Name: ..\utilities\_ccss-utilities-setting.scss
+- - - - - - - - - - - - - */
+
+/* Font Size S */
+    @for $i from $csssFontSizeMin through $csssFontSizeMax {
+        .#{$ccss}-fs-#{$i} {
+            font-size: em($i);
+        }
+	    @media #{$min576} {
+	    	.#{$ccss}-fs-#{$i}-sm {
+	            font-size: em($i);
+	        }
+	    }
+	    @media #{$min768} {
+	    	.#{$ccss}-fs-#{$i}-md {
+	            font-size: em($i);
+	        }
+	    }
+	    @media #{$min992} {
+	    	.#{$ccss}-fs-#{$i}-lg {
+	            font-size: em($i);
+	        }
+	    }
+	    @media #{$min1200} {
+	    	.#{$ccss}-fs-#{$i}-xl {
+	            font-size: em($i);
+	        }
+	    }
+	    @media #{$min1366} {
+	    	.#{$ccss}-fs-#{$i}-xxl {
+	            font-size: em($i);
+	        }
+	    }
+    }
+/* Font Size E */

@@ -1,0 +1,353 @@
+footer {
+	position:relative;
+	z-index:1;
+}
+.footer-main {	
+	background:url("../images/footer_bg.jpg") no-repeat 0px 0px;
+	background: #1b457d;
+
+	background-size:cover;
+	background-position:center center;
+	padding:40px 0 50px 0;	
+	margin-bottom:-1px; 	
+	p {
+		color:$ac_white; 
+		~ p {
+			margin-top: 10px;
+		}		
+	}
+	a {
+		color:$ac_white;	
+		&:hover {
+			color:$ac_b;
+		}	
+	}
+	h4 {
+		padding-bottom:18px;		 
+		font-size:$ac_fs_2xl;	
+		font-weight:$ac_fw_r;
+		color:$ac_white;
+		&.foot_title {
+			border-bottom:1px solid $ac_white;
+			margin-bottom:25px;
+			@media (max-width:992px){
+				margin-bottom:20px;
+			}
+			@media (max-width:767px){
+				margin-bottom:15px;
+			}			
+		}
+		@media (max-width:992px){
+			padding-bottom:15px;
+			font-size: 18px;
+		}
+		@media (max-width:767px){
+			padding-bottom:10px;
+			font-size:$ac_fs_2xl - 4px;	
+		}		
+	}
+	h5 {
+		margin-bottom: 10px;
+		font-weight:$ac_fw_r;
+		color:$ac_white;		
+	}	
+	.main_row_top {
+		margin-bottom:40px;
+		@media (max-width:992px){
+			margin-bottom:20px;
+		}
+		@media (max-width:767px){
+			margin-bottom:15px;
+		}
+	}
+	.footer_logo {		
+		margin-bottom: 10px;		
+		padding: 15px;
+		background: $ac_white;
+		@media (max-width:767px){
+			margin-bottom: 10px;
+		}
+	}
+	.about_foot {		
+		padding-bottom: 20px; 				
+		p {
+			margin:0;
+			@media (max-width:992px){				
+				line-height:130%;				
+			}			
+		}		
+		@media (max-width:767px){
+			padding-bottom: 12px;
+		}	
+	}
+	.footer_links {
+		margin:0;
+		list-style:none;
+		li {
+			margin-top:0px;
+			margin-bottom:10px;
+			a {
+				position:relative;				
+				line-height:150%;
+				padding-left:25px;	
+				font-size:$ac_fs_base;
+				display:table;					
+				&:before {
+					position:absolute;						
+					content: "";												
+					left:0px;
+					top:10px;					
+					width: 10px;
+					height: 2px;
+					background: $ac_white;
+					@include css3-prefix ('transition', '#{$ac_3_ti}');
+				}
+				&.active {
+					color:$ac_b;
+				}
+				&:hover {
+					padding-left: 30px; 
+					&:before {
+						width: 18px;
+					}
+				}
+				@media (max-width:992px){
+					font-size:$ac_fs_base;
+				}
+				@media (max-width:479px){
+					font-size:$ac_fs_base - 1px;
+				}
+			}
+			@media (max-width:992px){
+				margin-bottom:8px;
+			}
+			@media (max-width:992px){
+				margin-bottom:5px;
+			}
+		}	
+	}
+	.footer_box {
+		margin:20px 0px 0 0px;						
+		@media (max-width:767px){
+			margin-top:15px;
+		}
+	}
+	.mail_box {		
+		p {
+			~ p {
+				margin-top:10px; 
+				@media (max-width:767px){
+					margin-top:5px; 
+				}			
+			}			
+			@media (max-width:992px){
+				font-size:$ac_fs_base;
+			}			
+			@media (max-width:479px){
+				font-size:$ac_fs_base - 1px;
+			}			
+		}
+		.info_social {
+			margin:35px 0 0 0;
+			list-style:none;
+			li {
+				+ li {
+					margin-top:30px;
+					@media (max-width:992px){
+						margin-top:15px;
+					}
+					@media (max-width:479px){
+						margin-top:10px;
+					}
+				}
+				a {
+					font-size:$ac_fs_base;
+					padding-left:38px;	
+					position:relative;
+					display:table;
+					line-height:130%;
+					i {
+						position:absolute;
+						left:0px;
+						top:0px;
+						font-size:$ac_fs_xl + 1px; 
+						&.flaticon-facebook-icon {
+							left:3px;
+						}
+						&.flaticon-youtube-icon {
+							top:1px;
+						}
+					}
+					@media (max-width:992px){
+						padding-left:34px;
+						font-size:$ac_fs_base;
+						i {
+							font-size:$ac_fs_lg;
+							top:1px;
+						}
+					}
+					@media (max-width:479px){
+						font-size:$ac_fs_base - 1px;
+					}
+				}
+			}
+			@media (max-width:992px){
+				margin-top:25px;
+			}
+			@media (max-width:767px){
+				margin-top:15px;
+				padding-bottom:10px;
+			}	
+		}
+		@media (max-width:992px){
+			padding-right:0px;
+		}
+		@media (max-width:767px){
+			margin-top:15px;
+			margin-bottom:8px;
+		}
+	}
+	.newslatter_sign {
+		margin:20px 0px 0 0px;
+	}	
+	.social {			
+		margin:5px 0 0 0;
+		padding:0px;
+		li {
+			margin: 0px;
+			+ li {
+				margin-left:8px;				
+			}
+			list-style:none;
+			display:inline-block;
+			vertical-align: middle;
+			a {					
+				font-size: $ac_fs_sm;
+				color:rgba($ac_white,0.85);	
+				width: 36px;				
+				height: 36px;
+				line-height: 36px;				
+				display:inline-block;
+				vertical-align: middle;						
+				text-align: center;
+				border-radius: 0; 
+				background: rgba($ac_black,0.20);						
+				&:hover {
+					background: rgba($ac_white,0.25);					
+				}
+				@media (max-width:1024px){
+					width: 32px;				
+					height: 32px;
+					line-height: 32px;
+				}
+			}
+		}	
+	}					
+	@media (max-width:992px){
+		padding-bottom:35px;
+	}	
+	@media (max-width:767px){
+		padding-top:20px;
+		padding-bottom:30px;		 
+	}	
+}
+
+
+.footer-bottom{
+	position: relative;
+	z-index: 1;
+	background-color: $ac_a;
+	padding: 20px 0;	
+	.f-m_link{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		text-align: left;
+		@media (max-width: 992px){
+			text-align: center;
+			margin: 5px 0;
+		}
+		li {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			display: inline-block;
+			position:relative;
+			+ li {
+				margin-left: 20px;				
+				&:before {
+					content:"";
+					width:1px;
+					height:13px;
+					background:$ac_white;
+					display:inline-block;
+					position:absolute;
+					top:2px;
+					left:-12px;
+				}	
+			}
+			a{
+				font-size: $ac_fs_xs + 1;
+				font-weight: $ac_fw_r;
+				line-height: 120%;
+				color: $ac_white;
+				&.active, &:hover{					
+					color:$ac_white;
+				}
+				@media (max-width: 992px){					
+					font-size: $ac_fs_xs;
+				}
+			}
+		}
+		@media (min-width:992px) and (max-width: 1024px){			
+			margin-bottom:10px;	
+		}
+	}
+	.f-m_copyright, .f-m_designed{
+		font-size: $ac_fs_xs + 1;
+		font-weight: $ac_fw_r;
+		line-height: 120%;
+		color: $ac_white;
+		@media (max-width: 992px){
+			text-align: center;
+			margin: 5px 0;
+			font-size: $ac_fs_xs;
+		}
+	}
+	.f-m_copyright{
+		text-align: left;		
+	}
+	.f-m_designed{
+		position: relative;
+		text-align: right;
+		.f-m_d_logo{
+			@include css3-prefix ('transition', '#{$ac_3_ti}');
+			position: relative;
+			display: inline-block;
+			top: 1px;
+			background-image: url(../images/design-by.png);
+			background-repeat: no-repeat;
+		    background-position: 0 0;
+		    height: 14px;
+		    width: 56px;
+		    &:hover{
+		    	background-position: 0 bottom;
+		    }
+		}
+		a{
+			color: $ac_white;
+			font-size: $ac_fs_xs;
+			font-weight: $ac_fw_b;
+			&:hover{
+				color: $ac_white;
+				font-weight: $ac_fw_b;
+			}
+		}
+		@media (min-width:992px) and (max-width: 1024px){
+			text-align: center;			
+		}
+	}
+	@media (max-width:992px){
+		padding:10px 0; 
+	}
+}

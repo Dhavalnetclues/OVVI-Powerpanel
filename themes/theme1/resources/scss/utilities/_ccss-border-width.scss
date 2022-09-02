@@ -1,0 +1,24 @@
+/* - - - - - - - - - - - - -
+    Related File Name: ..\utilities\_ccss-utilities-setting.scss
+- - - - - - - - - - - - - */
+
+/* Border Width S */  
+    @each $ccssBorderWidth in $ccssBorderWidthArray {
+        .#{$ccss}-#{$ccssBw}-#{$ccssBorderWidth} {
+            border-width: #{$ccssBorderWidth}px;
+        }
+        .#{$ccss}-#{$ccssBw}v-#{$ccssBorderWidth} {
+            border-top-width: #{$ccssBorderWidth}px;
+            border-bottom-width: #{$ccssBorderWidth}px;
+        }
+        .#{$ccss}-#{$ccssBw}h-#{$ccssBorderWidth} {
+            border-left-width: #{$ccssBorderWidth}px;
+            border-right-width: #{$ccssBorderWidth}px;
+        }
+        @each $ccssBorderSide in $ccssBorderSideArray {
+            .#{$ccss}-#{$ccssBw}#{str-slice($ccssBorderSide, 0, 1)}-#{$ccssBorderWidth} {
+                border-#{$ccssBorderSide}-width: #{$ccssBorderWidth}px !important;
+            }
+        }
+    }
+/* Border Width E */

@@ -1,0 +1,30 @@
+.#{$ac}-share {
+    margin: 15px 0 0 0;
+    padding: 0;
+    list-style: none;
+    font-size: 0;
+    li {
+        display: inline-block;
+        margin-right: 8px;
+        &:last-child{
+            margin-right: 0;
+        }
+        a {
+            font-size:18px;
+            line-height: 30px;
+            color: $ac_m;
+            display: inline-block;
+            width:32px;
+            height:32px;
+            border:2px solid $ac_m;
+            border-radius:50%;
+            text-align: center;
+            background:transparent;
+            @include css3-prefix ('transition', '#{$ac_3_ti}');
+            &:hover {
+                border-color:$ac_a;
+                color: $ac_a;
+            }
+        }
+    }
+}

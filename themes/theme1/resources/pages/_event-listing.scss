@@ -1,0 +1,86 @@
+.event-listing{
+	.-items {
+		.-label {
+			position: absolute;
+			z-index: 1;
+		    color: $ac_white;
+		    background-color: $ac_a;
+		    right: -65px;
+			top: 34px;
+		    transform: rotate(45deg);
+		    padding: 5px 15px;
+		    text-align: center;
+		    min-width: 220px;
+		    //font-family: $ac_ff_two;
+		}
+		.-cate {
+			position: absolute;
+			z-index: 1;
+			padding: 11px 15px;
+		    text-align: center;
+		    margin: 15px 0 0 0;
+		    color: $ac_white;
+		    border-radius: 0 $ac_radius $ac_radius 0;
+		    @include css3-prefix ('background', linear-gradient(90deg, $ac_b 0,$ac_a 100%));
+		}
+		.-loca {
+			position: absolute;
+			z-index: 1;
+			right: 15px;
+			bottom: -100%;
+			left: 15px;
+			background-color: $ac_white;
+			border-radius: $ac_radius $ac_radius 0 0;
+			border-bottom: 10px solid $ac_a;
+			@include css3-prefix ('transition', '#{$ac_3_ti}');
+		}
+		.thumbnail-container{
+			&:before{
+				position: absolute;
+				content: '';
+				z-index: 1;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				background: rgb(255,255,255);
+				background: -moz-linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.8) 100%);
+				background: -webkit-linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.8) 100%);
+				background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.8) 100%);
+				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#000000",GradientType=1);
+			}
+		}
+		.-date {
+			position: absolute;
+			z-index: 1;
+			left: 15px;
+			bottom: 15px;
+			@include css3-prefix ('transition', '#{$ac_3_ti}');
+		}
+		.-sloca {
+			position: absolute;
+			z-index: 1;
+			right: 15px;
+			bottom: 15px;
+			@include css3-prefix ('transition', '#{$ac_3_ti}');
+		}
+		@media (min-width: 1025px){
+			&:hover{
+				.-loca {
+					bottom: 15px;
+				}
+				.-date {
+					left: -100%;
+				}
+				.-sloca {
+					right: -100%;
+				}
+				.-ntitle {
+					a {
+						color: $ac_a;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,41 @@
+/* Breadcrumb S */
+    .#{$ac}-breadcrumb{
+        margin: 15px 0 5px 0;
+        padding: 0;
+        list-style: none;
+        li{
+            margin: 0;
+            padding: 0;
+            @include css3-prefix-last ('display', 'inline-flex');
+            @include css3-prefix ('flex-wrap', 'wrap');
+            font-size: $ac_fs_sm;
+            font-weight: $ac_fw_r;
+            line-height: 150%;
+            color: $ac_m;
+            a{
+                font-size: $ac_fs_sm;
+                font-weight: $ac_fw_r;
+                line-height: 150%;
+                color: $ac_m;
+                &:hover{
+                    color: $ac_a;
+                }
+            }
+            &.active{
+                color: $ac_a;
+            }
+            + li{
+                &:before{
+                    display: inline-block;
+                    padding-right: 8px;
+                    padding-left: 6px;
+                    color: $ac_m;
+                    content: "/";
+                }
+            }
+        }
+        @media (max-width: 767px){
+            display: none;
+        }
+    }
+/* Breadcrumb E */

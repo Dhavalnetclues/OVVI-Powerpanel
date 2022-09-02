@@ -1,0 +1,19 @@
+{
+    "name": "Powerpanel/Department",
+    "description": "This is a powerpanel Department package",
+    "type": "library",
+    "license": "1.0.0.0",
+    "authors": [
+        {
+            "name": "Powerpanel",
+            "email": "v6.netclues@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Powerpanel\\Department\\": "/src"
+        }
+    },
+    "require": {}
+}

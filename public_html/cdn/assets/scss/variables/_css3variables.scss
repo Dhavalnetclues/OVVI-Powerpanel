@@ -1,0 +1,48 @@
+/* Transition S */
+	$ac_3_ti_all:							all;
+
+	$ac_3_ti_01s: 						0.1s;
+	$ac_3_ti_02s: 						0.2s;
+	$ac_3_ti_03s: 						0.3s;
+	$ac_3_ti_04s: 						0.4s;
+	$ac_3_ti_05s: 						0.5s;
+	$ac_3_ti_06s: 						0.6s;
+	$ac_3_ti_07s: 						0.7s;
+	$ac_3_ti_08s: 						0.8s;
+	$ac_3_ti_09s: 						0.9s;
+	$ac_3_ti_1s: 						1s;
+	$ac_3_ti_2s: 						2s;
+
+	$ac_3_ti_ease:						ease-in-out;
+
+	$ac_3_ti:							#{$ac_3_ti_all} #{$ac_3_ti_05s} #{$ac_3_ti_ease};
+/* Transition S */
+
+
+/* Border Radius S */
+	$ac_radius: 						3px;
+/* Border Radius E */
+
+
+$ac_bs_1: 						0 2px 2px 0 rgba($ac_black,0.03),
+											0 1px 5px 0 rgba($ac_black,0.03),
+											0 3px 1px -2px rgba($ac_black,0.03);
+
+$ac_bs_2: 						0 4px 5px 0 rgba($ac_black,0.03),
+											0 1px 10px 0 rgba($ac_black,0.03),
+											0 2px 4px -1px rgba($ac_black,0.03);
+
+$ac_bs_3: 						0 6px 10px 0 rgba($ac_black,0.03),
+											0 1px 18px 0 rgba($ac_black,0.03),
+											0 3px 5px -1px rgba($ac_black,0.03);
+
+$ac_bs_4: 						0 8px 10px 1px rgba($ac_black,0.03),
+											0 3px 14px 2px rgba($ac_black,0.03),
+											0 5px 5px -3px rgba($ac_black,0.03);
+
+$ac_bs_5: 						0 2.8px 2.2px rgba($ac_black, 0.02),
+  0 6.7px 5.3px rgba($ac_black, 0.028),
+  0 12.5px 10px rgba($ac_black, 0.035),
+  0 22.3px 17.9px rgba($ac_black, 0.042),
+  0 41.8px 33.4px rgba($ac_black, 0.05),
+  0 100px 80px rgba($ac_black, 0.07);

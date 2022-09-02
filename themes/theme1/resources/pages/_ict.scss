@@ -1,0 +1,55 @@
+.ict{
+    .-items {
+        position: relative;
+        padding-top: 100px !important;
+        .-nimg {
+            width: 100px;
+            height: 100px;
+            // background-image: url(../images/icon/polygon.svg);
+            background-repeat: no-repeat;
+            background-position: left top;
+            background-size: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            img {
+                width: 100PX;
+                margin: 0 0 0 10px;
+            }
+        }
+        &:before{
+            position:absolute;
+            content: "";
+            z-index: -1;
+            top: 0;
+            left: 0px;
+            width: 60px;
+            height: 60px;
+            background-image:url(../images/ict-top.svg);
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        &:after{
+            position:absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            background: transparent linear-gradient(93deg, #B91138 0%, #CC0E30 100%) 0% 0% no-repeat padding-box;
+            z-index: -2;
+            width: 10px;
+            height:10px;
+            @include css3-prefix ('transition', '#{$ac_3_ti}');
+            opacity:0;
+        }
+        &:hover{
+            .nqtitle-small, .cms p {
+                color: $ac_white;
+            }
+            &:after{
+                opacity: 1;
+                width: 100%;
+                height:100%;
+            }
+        }
+    }
+}

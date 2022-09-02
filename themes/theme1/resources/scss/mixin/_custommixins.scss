@@ -1,0 +1,103 @@
+@mixin placeholder () {
+    &::-webkit-input-placeholder {
+        @content;
+    }
+    &::-moz-placeholder {
+        @content;
+    }
+    &:-ms-input-placeholder {
+        @content;
+    }
+    &:-moz-placeholder {
+        @content;
+    }
+}
+
+@mixin css3-prefix-last($property, $value) {
+    #{$property}: -webkit-#{$value};
+    #{$property}: -khtml-#{$value};
+    #{$property}: -moz-#{$value};
+    #{$property}: -ms-#{$value};
+    #{$property}: -o-#{$value};
+    #{$property}: #{$value};
+}
+
+@mixin ac-page () {
+    position: relative;
+    z-index: 1;
+}
+
+@mixin ac-ul-li () {
+    margin: 0 0 0 0;
+    padding: 0;
+    list-style: none;
+    font-size: 0;
+    li {
+        margin: 0;
+        padding: 0;
+        display: inline-block;
+    }
+}
+
+@mixin ac-font ($value-size, $value-weight, $value-height, $value-color) {
+    @if $value-size != null {
+        font-size: $value-size;
+    }
+    @if $value-weight != null {
+        font-weight: $value-weight;
+    }
+    @if $value-height != null {
+        line-height: $value-height;
+    }
+    @if $value-color != null {
+        color: $value-color;
+    }
+}
+
+@mixin ac-media-hover () {
+    @media (min-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin ac-clearfix ($property: after) {
+    @if $property != null{
+        &::#{$property} {
+            display: block;
+            content: "";
+            clear: both;
+        }
+    }
+}
+
+@mixin ac-vertical-align ($property: middle, $value: 100vh) {
+    .ac-table{
+        display: table;
+        width: 100%;
+        .ac-center{
+            display: table-cell;
+            @if $property != null{
+                vertical-align: $property;
+            } @else {
+                vertical-align: $property;
+            }
+            @if $value != null{
+                height: $value;
+            }
+        }
+    }
+}
+
+@mixin ac-header-gap () {
+    margin-top: 51px;
+    @media (max-width: $menu_responsive_media){
+        margin-top: 0px;
+    }
+}
+
+
+$browser-context: 16; // Default
+
+@function em($pixels, $context: $browser-context) {
+    @return #{$pixels/$context}em;
+}

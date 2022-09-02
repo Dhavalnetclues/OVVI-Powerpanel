@@ -1,0 +1,278 @@
+"intGlCode","Fk_Licence","FK_Licence_Type","varTitle","chrFileFlag","varFile","varFileUrl","intDisplayOrder","chrDelete","chrPublish","dtCreateDate","dtModifyDate","varIpAddress","PUserGlCode","varAdminReview"
+"1","6","1","View Licence document","U","UnitedTelecomLicence_1417639337.pdf",NULL,"1","N","Y","2014-12-03 02:42:18","2014-12-03 02:42:18","27.54.170.98","1",NULL
+"2","6","1","View Amendment #1 (Addition of Types 9 & 14 Services)","U","UNITELAmend1_1417639376.pdf",NULL,"2","N","Y","2014-12-03 02:42:56","2016-10-21 05:05:57","179.218.172.243","1",NULL
+"3","6","1","View Amendment #2 (Allocation of 400MHz & 800MHz Spectrum)","U","Unitel_Amend2_1417639407.pdf",NULL,"3","N","Y","2014-12-03 02:43:27","2016-10-21 05:07:29","179.218.172.243","1",NULL
+"4","6","1","View Amendment #3 (Surrender Type E2 Network)","U","Unitel_Amend3_1417639474.pdf",NULL,"4","N","Y","2014-12-03 02:44:34","2016-10-21 05:08:40","179.218.172.243","1",NULL
+"5","6","1","View Amendment #4 (Allocation of 400MHz Spectrum)","U","Unitel_Amend4_1417639541.pdf",NULL,"5","N","Y","2014-12-03 02:45:41","2016-10-21 05:09:39","179.218.172.243","1",NULL
+"6","6","1","View Amendment #5 (Amend Annex 2)","U","UniTel_Amend5_1417639558.pdf",NULL,"6","N","Y","2014-12-03 02:45:58","2016-10-21 05:10:32","179.218.172.243","1",NULL
+"7","4","1","View Licence document","U","WestIndianLicence_1417639748.pdf",NULL,"1","N","Y","2014-12-03 02:49:08","2014-12-03 02:49:08","27.54.170.98","1",NULL
+"8","4","1","View Amendment #1 (Addition of Type 14 Service)","U","WestIndianAmend1_1417639763.pdf",NULL,"2","N","Y","2014-12-03 02:49:23","2016-10-21 04:38:51","179.218.172.243","1",NULL
+"9","3","1","View Licence document","U","ViewLicencedocument_1417640209.pdf",NULL,"4","N","Y","2014-12-03 02:56:49","2014-12-03 02:56:49","27.54.170.98","1",NULL
+"10","3","1","View Amendment #1 (Additional 4 MHz of 900MHz Spectrum and 1 Additional NXX)","U","ViewAmendment1_1417640221.pdf",NULL,"5","N","Y","2014-12-03 02:57:01","2016-10-21 03:31:59","179.218.172.243","1",NULL
+"11","3","1","View Amendment #2 (Additional 2 NXX's)","U","ViewAmendment2_1417640242.pdf",NULL,"6","N","Y","2014-12-03 02:57:22","2016-10-21 03:32:55","179.218.172.243","1",NULL
+"12","3","1","View Amendment #3 (Additional 3 NXX's)","U","ViewAmendment3_1417640265.pdf",NULL,"7","N","Y","2014-12-03 02:57:45","2016-10-21 03:33:41","179.218.172.243","1",NULL
+"13","3","1","View Amendment #4 (Amendment to Annex 1A - Fixed Wireless Roll Out Schedule)","U","ViewAmendment4_1417640275.pdf",NULL,"8","N","Y","2014-12-03 02:57:55","2016-10-21 03:35:25","179.218.172.243","1",NULL
+"14","3","1","View Amendment #5 (Additional NXX)","U","ViewAmendment5_1417640285.pdf",NULL,"9","N","Y","2014-12-03 02:58:05","2016-10-21 03:36:24","179.218.172.243","1",NULL
+"15","3","1","View Amendment #6 (Surrender 1900MHz Spectrum)","U","ViewAmendment6_1417640291.pdf",NULL,"10","N","Y","2014-12-03 02:58:11","2016-10-21 03:40:45","179.218.172.243","1",NULL
+"16","3","1","View Amendment #7 (Additional 10 NXX's and Allocation of 850MHz, 1900MHz and 7GHz Spectrum)","U","ViewAmendment7_1417640299.pdf",NULL,"11","N","Y","2014-12-03 02:58:19","2016-10-21 03:45:41","179.218.172.243","1",NULL
+"17","3","1","View Amendment #8 (Additional NXX and Surrender 1 NXX)","U","ViewAmendment8_1417640307.pdf",NULL,"12","N","Y","2014-12-03 02:58:27","2016-10-21 03:47:51","179.218.172.243","1",NULL
+"18","3","1","View Amendment #9 (Allocation of 2GHz Spectrum)","U","ViewAmendment9_1417640315.pdf",NULL,"13","N","Y","2014-12-03 02:58:35","2016-10-21 03:50:30","179.218.172.243","1",NULL
+"19","3","1","View Amendment #10 (Allocation of 10GHz Spectrum)","U","ViewAmendment10_1417640323.pdf",NULL,"14","N","Y","2014-12-03 02:58:43","2016-10-21 03:51:55","179.218.172.243","1",NULL
+"20","3","1","View Amendment #11 (Additional NXX)","U","ViewAmendment11_1417640332.pdf",NULL,"15","N","Y","2014-12-03 02:58:52","2016-10-21 03:52:58","179.218.172.243","1",NULL
+"21","3","1","View Amendment #12 (Additional NXX)","U","ViewAmendment12_1417640338.pdf",NULL,"16","N","Y","2014-12-03 02:58:58","2016-10-21 03:54:11","179.218.172.243","1",NULL
+"22","3","1","View Amendment #13 (Allocation of 8GHz Spectrum - Temporary)","U","ViewAmendment13_1417640365.pdf",NULL,"17","N","Y","2014-12-03 02:59:25","2016-10-21 03:56:05","179.218.172.243","1",NULL
+"23","3","1","View Amendment #14 (Allocation of 3.8GHz and 6GHz Spectrum - Defined)","U","ViewAmendment14_1417640373.pdf",NULL,"18","N","Y","2014-12-03 02:59:33","2016-10-21 03:58:44","179.218.172.243","1",NULL
+"24","3","1","View Amendment #15 (Allocation of 8GHz Spectrum (Temporary) and 1900MHz and 2100MHz Spectrum)","U","ViewAmendment15_1417640380.pdf",NULL,"19","N","Y","2014-12-03 02:59:40","2016-10-21 04:18:54","179.218.172.243","1",NULL
+"25","3","1","View Amendment #16 (Amended Annex 1 to reflect updated s.23(2) Notice)","U","ViewAmendment16_1417640389.pdf",NULL,"20","N","Y","2014-12-03 02:59:49","2016-10-21 04:02:52","179.218.172.243","1",NULL
+"26","3","1","View Amendment #17 (Replace 1900MHz & 2100MHz with different 1900MHz & 2100MHz Spectrum)","U","ViewAmendment17_1417640397.pdf",NULL,"21","N","Y","2014-12-03 02:59:57","2016-10-21 04:06:57","179.218.172.243","1",NULL
+"27","3","1","View Amendment #18 (Addition of Type D1 Network)","U","ViewAmendment18_1417640405.pdf",NULL,"22","N","Y","2014-12-03 03:00:05","2016-10-21 04:11:24","179.218.172.243","1",NULL
+"28","3","1","View Amendment #19 (Addition of Type F Network and Types 6, 7 & 15 Services)","U","ViewAmendment19_1417640414.pdf",NULL,"23","N","Y","2014-12-03 03:00:14","2016-10-21 04:12:57","179.218.172.243","1",NULL
+"29","3","1","View Amendment #20 (Addition of Fibre Roll Out Schedule)","U","ViewAmendment20_1417640423.pdf",NULL,"24","N","Y","2014-12-03 03:00:23","2016-10-21 04:14:24","179.218.172.243","1",NULL
+"30","3","1","View Amendment #21 (Allocation of 2300MHz, 12GHz and 13GHz Spectrum)","U","ViewAmendment21_1417640432.pdf",NULL,"25","N","Y","2014-12-03 03:00:32","2016-10-21 04:16:03","179.218.172.243","1",NULL
+"31","3","1","View Amendment #22 (Allocation of 1700MHz & 1800MHz Spectrum, Roll Out Schedule for this Network)","U","ViewAmendment22_1417640442.pdf",NULL,"26","N","Y","2014-12-03 03:00:42","2016-10-21 04:24:06","179.218.172.243","1",NULL
+"32","3","1","View Amendment #23 (Allocation of 700MHz Spectrum, Roll Out Schedule to this Network)","U","ViewAmendment23_1417640470.pdf",NULL,"27","N","Y","2014-12-03 03:01:10","2016-10-21 04:24:23","179.218.172.243","1",NULL
+"33","3","1","View Amendment #24 (Allocation of 800MHz, 10GHz, 11GHz, 12GHz & 13GHz Spectrum)","U","ViewAmendment24_1417640479.pdf",NULL,"28","N","Y","2014-12-03 03:01:19","2016-10-21 04:26:01","179.218.172.243","1",NULL
+"34","3","1","View Amendment #25 (Amendment of local content for Type 6 Service)","U","ViewAmendment25_1417640487.pdf",NULL,"29","N","Y","2014-12-03 03:01:27","2016-10-21 04:27:37","179.218.172.243","1",NULL
+"35","3","1","View Amendment #26 (Allocation of 5800MHz Spectrum)","U","ViewAmendment26_1417640495.pdf",NULL,"30","N","Y","2014-12-03 03:01:35","2016-10-21 04:28:35","179.218.172.243","1",NULL
+"36","2","1","View Licence document","U","ViewLicencedocument_1417640603.pdf",NULL,"1","N","Y","2014-12-03 03:03:23","2014-12-03 03:03:23","27.54.170.98","1",NULL
+"37","1","1","View Licence document","U","ViewLicencedocument_1417640671.pdf",NULL,"1","N","Y","2014-12-03 03:04:31","2014-12-03 03:04:31","27.54.170.98","1",NULL
+"38","7","1","View Licence document","U","FosterLicence_1417642251.pdf",NULL,"1","N","Y","2014-12-03 03:30:51","2014-12-03 03:30:51","27.54.170.98","1",NULL
+"39","8","1","View Licence document","U","ViewLicencedocument_1417642598.pdf",NULL,"1","N","Y","2014-12-03 03:36:38","2014-12-03 03:36:38","27.54.170.98","1",NULL
+"40","8","1","View Amendment #1 (Allocation of 7GHz Spectrum, Surrender of 6GHz Spectrum)","U","ViewAmendment1_1417642609.pdf",NULL,"2","N","Y","2014-12-03 03:36:49","2016-10-21 04:43:16","179.218.172.243","1",NULL
+"41","8","1","View Amendment #2 (Amend Annex 1A Roll Out Schedules)","U","ViewAmendment2_1417642621.pdf",NULL,"3","N","Y","2014-12-03 03:37:01","2016-10-21 04:44:19","179.218.172.243","1",NULL
+"42","8","1","View Amendment #3 (Additional 4 NXX's)","U","ViewAmendment3_1417642637.pdf",NULL,"4","N","Y","2014-12-03 03:37:17","2016-10-21 04:45:03","179.218.172.243","1",NULL
+"43","8","1","View Amendment #4 (Extension of 4 Months to Roll Out Schedule for Sister Islands)","U","ViewAmendment4_1417642648.pdf",NULL,"5","N","Y","2014-12-03 03:37:28","2016-10-21 04:48:10","179.218.172.243","1",NULL
+"44","8","1","View Amendment #5 (Withdrawn)","U","ViewAmendment5_1417642668.pdf",NULL,"6","N","Y","2014-12-03 03:37:48","2016-10-21 04:48:51","179.218.172.243","1",NULL
+"45","8","1","View Amendment #6 (Allocation of 10GHz Spectrum)","U","ViewAmendment6_1417642675.pdf",NULL,"7","N","Y","2014-12-03 03:37:55","2016-10-21 04:49:44","179.218.172.243","1",NULL
+"46","8","1","View Amendment #7 (Allocation of 10GHz Spectrum)","U","ViewAmendment7_1417642682.pdf",NULL,"8","N","Y","2014-12-03 03:38:02","2016-10-21 04:51:28","179.218.172.243","1",NULL
+"47","8","1","View Amendment #8 (Allocation of 10GHz & 11GHz Spectrum)","U","ViewAmendment8_1417642692.pdf",NULL,"9","N","Y","2014-12-03 03:38:12","2016-10-21 04:52:18","179.218.172.243","1",NULL
+"48","8","1","View Amendment #9 (Amend 10GHz Spectrum Allocations)","U","ViewAmendment9_1417642699.pdf",NULL,"10","N","Y","2014-12-03 03:38:19","2016-10-21 04:54:18","179.218.172.243","1",NULL
+"49","8","1","View Amendment #10 (Amend 5GHz Spectrum Allocation)","U","ViewAmendment10_1417642707.pdf",NULL,"11","N","Y","2014-12-03 03:38:27","2016-10-21 04:55:30","179.218.172.243","1",NULL
+"50","8","1","View Amendment #11 (Surrender of 11GHz Spectrum)","U","ViewAmendment11_1417642714.pdf",NULL,"12","N","Y","2014-12-03 03:38:34","2016-10-21 04:56:37","179.218.172.243","1",NULL
+"51","8","1","View Amendment #12 (Surrender 1 NXX)","U","ViewAmendment12_1417642722.pdf",NULL,"13","N","Y","2014-12-03 03:38:42","2016-10-21 04:57:38","179.218.172.243","1",NULL
+"52","8","1","View Amendment #13 (Surrender part 10GHz Spectrum, Surrender 12GHz and 14GHz Spectrum)","U","ViewAmendment13_1417642729.pdf",NULL,"14","N","Y","2014-12-03 03:38:49","2016-10-21 04:59:33","179.218.172.243","1",NULL
+"53","8","1","View Amendment #14 (Amend Annex 2)","U","ViewAmendment14_1417642737.pdf",NULL,"15","N","Y","2014-12-03 03:38:57","2016-10-21 05:00:57","179.218.172.243","1",NULL
+"54","9","1","View Licence document","U","ViewLicencedocument_1417643403.pdf",NULL,"1","N","Y","2014-12-03 03:50:03","2014-12-03 03:50:03","27.54.170.98","1",NULL
+"55","9","1","View Amendment #1 (Allocation of 174MHz & 800MHz Spectrum)","U","ViewAmendment1_1417643425.pdf",NULL,"2","N","Y","2014-12-03 03:50:25","2016-10-21 05:13:35","179.218.172.243","1",NULL
+"56","9","1","View Amendment #2 (Amend Annex 2)","U","ViewAmendment2_1417643440.pdf",NULL,"3","N","Y","2014-12-03 03:50:40","2016-10-21 05:14:26","179.218.172.243","1",NULL
+"57","10","1","View Licence document","U","ViewLicencedocument_1417643832.pdf",NULL,"1","N","Y","2014-12-03 03:57:12","2014-12-03 03:57:12","27.54.170.98","1",NULL
+"58","10","2","View old Licence document","U","ViewoldLicencedocument_1417643859.pdf",NULL,"1","N","Y","2014-12-03 03:57:39","2014-12-03 03:57:39","27.54.170.98","1",NULL
+"59","10","2","View old Amendment #1 (Allocation of 88.7MHz Spectrum)","U","ViewoldAmendment1_1417643881.pdf",NULL,"2","N","Y","2014-12-03 03:58:01","2016-10-25 05:05:30","179.218.172.243","1",NULL
+"60","10","2","View old Amendment #2 (Allocation of 166.67MHz & 166.7MHz Spectrum)","U","ViewoldAmendment2_1417643898.pdf",NULL,"3","N","Y","2014-12-03 03:58:18","2016-10-25 05:06:55","179.218.172.243","1",NULL
+"61","10","2","View old Amendment #3 (Extend Licence)","U","ViewoldAmendment3_1417643915.pdf",NULL,"4","N","Y","2014-12-03 03:58:35","2016-10-25 05:08:07","179.218.172.243","1",NULL
+"62","11","1","View Licence document","U","ViewLicencedocument_1417644190.pdf",NULL,"1","N","Y","2014-12-03 04:03:10","2014-12-03 04:03:10","27.54.170.98","1",NULL
+"63","11","1","View Amendment #1 (Amend Annex 2)","U","ViewAmendment1_1417644208.pdf",NULL,"2","N","Y","2014-12-03 04:03:28","2016-10-25 05:14:12","179.218.172.243","1",NULL
+"64","11","2","View old Licence document","U","ViewoldLicencedocument_1417644224.pdf",NULL,"1","N","Y","2014-12-03 04:03:44","2014-12-03 04:03:44","27.54.170.98","1",NULL
+"65","11","2","View old Amendment #1 (Allocation of 94.9MHz Spectrum)","U","ViewoldAmendment1_1417644234.pdf",NULL,"2","N","Y","2014-12-03 04:03:54","2016-10-25 05:11:58","179.218.172.243","1",NULL
+"66","11","2","View old Amendment #2 (Allocation of 952.5MHz Spectrum)","U","ViewoldAmendment2_1417644243.pdf",NULL,"3","N","Y","2014-12-03 04:04:03","2016-10-25 05:12:55","179.218.172.243","1",NULL
+"67","11","2","View old Amendment #3 (Extend Licence)","U","ViewoldAmendment3_1417644253.pdf",NULL,"4","N","Y","2014-12-03 04:04:13","2016-10-25 05:13:36","179.218.172.243","1",NULL
+"68","12","1","View Licence document","U","ViewLicencedocument_1417644454.pdf",NULL,"1","N","Y","2014-12-03 04:07:34","2014-12-03 04:07:34","27.54.170.98","1",NULL
+"69","12","1","View Amendment #1 (Amend Annex 2)","U","ViewAmendment1_1417644474.pdf",NULL,"2","N","Y","2014-12-03 04:07:54","2016-10-25 05:09:50","179.218.172.243","1",NULL
+"70","12","2","View old Licence document","U","ViewoldLicencedocument_1417644508.pdf",NULL,"40","N","Y","2014-12-03 04:08:28","2014-12-03 04:08:28","27.54.170.98","1",NULL
+"71","13","1","View Licence document","U","ViewLicencedocument_1417644766.pdf",NULL,"1","N","Y","2014-12-03 04:12:46","2014-12-03 04:12:46","27.54.170.98","1",NULL
+"72","13","1","View Amendment #1 (Allocation of 951.5MHz Spectrum)","U","ViewAmendment1_1417644783.pdf",NULL,"2","N","Y","2014-12-03 04:13:03","2016-10-25 05:02:42","179.218.172.243","1",NULL
+"73","14","1","View Licence document","U","ViewLicencedocument_1417645069.pdf",NULL,"1","N","Y","2014-12-03 04:17:49","2014-12-03 04:17:49","27.54.170.98","1",NULL
+"74","14","1","View Amendment #1 (Surrender 951.5MHz Spectrum)","U","ViewAmendment1_1417645095.pdf",NULL,"2","N","Y","2014-12-03 04:18:15","2016-10-25 04:55:00","179.218.172.243","1",NULL
+"75","14","1","View Amendment #2 (Amend Annex 2)","U","ViewAmendment2_1417645106.pdf",NULL,"3","N","Y","2014-12-03 04:18:26","2016-10-25 04:55:41","179.218.172.243","1",NULL
+"76","14","2","View old Licence document","U","ViewoldLicencedocument_1417645122.pdf",NULL,"1","N","Y","2014-12-03 04:18:42","2014-12-03 04:18:42","27.54.170.98","1",NULL
+"77","14","2","View old Amendment #1 (Allocation of 103.1MHz Spectrum)","U","ViewoldAmendment1_1417645133.pdf",NULL,"2","N","Y","2014-12-03 04:18:53","2016-10-25 04:45:19","179.218.172.243","1",NULL
+"78","14","2","View old Amendment #2 (Extend Roll Out Schedule by 4 months)","U","ViewoldAmendment2_1417645139.pdf",NULL,"3","N","Y","2014-12-03 04:18:59","2016-10-25 04:46:19","179.218.172.243","1",NULL
+"79","14","2","View old Amendment #3 (Allocation of 95.7MHz Spectrum, Surrender 103.1MHz Spectrum)","U","ViewoldAmendment3_1417645148.pdf",NULL,"4","N","Y","2014-12-03 04:19:08","2016-10-25 04:47:47","179.218.172.243","1",NULL
+"80","14","2","View old Amendment #4 (Allocation of 951.5MHz & 954.5MHz Spectrum, Surrender 948.0MHz Spectrum)","U","ViewoldAmendment4_1417645155.pdf",NULL,"5","N","Y","2014-12-03 04:19:15","2016-10-25 04:51:49","179.218.172.243","1",NULL
+"81","14","2","View old Amendment #5 (Surrender 95.7MHz Spectrum)","U","ViewoldAmendment5_1417645167.pdf",NULL,"6","N","Y","2014-12-03 04:19:27","2016-10-25 04:52:59","179.218.172.243","1",NULL
+"82","15","1","View Licence document","U","ViewLicencedocument_1417645398.pdf",NULL,"1","N","Y","2014-12-03 04:23:18","2014-12-03 04:23:18","27.54.170.98","1",NULL
+"83","15","1","View Amendment #1 (Allocation of 465.0MHz Spectrum)","U","ViewAmendment1_1417645413.pdf",NULL,"2","N","Y","2014-12-03 04:23:33","2016-10-25 04:42:13","179.218.172.243","1",NULL
+"84","15","1","View Amendment #2 (Amend Annex 2)","U","ViewAmendment2_1417645420.pdf",NULL,"3","N","Y","2014-12-03 04:23:40","2016-10-25 04:42:44","179.218.172.243","1",NULL
+"85","15","2","View old Licence document","U","ViewoldLicencedocument_1417645437.pdf",NULL,"1","N","Y","2014-12-03 04:23:57","2014-12-03 04:23:57","27.54.170.98","1",NULL
+"86","15","2","View old Amendment #1 (Surrender 91.9MHz Spectrum)","U","ViewoldAmendment1_1417645449.pdf",NULL,"2","N","Y","2014-12-03 04:24:09","2016-10-25 04:40:35","179.218.172.243","1",NULL
+"87","16","1","View Licence document","U","ViewLicencedocument_1417645668.pdf",NULL,"1","N","Y","2014-12-03 04:27:48","2014-12-03 04:27:48","27.54.170.98","1",NULL
+"88","16","2","View old Licence document","U","ViewoldLicencedocument_1417645686.pdf",NULL,"1","N","Y","2014-12-03 04:28:06","2014-12-03 04:28:06","27.54.170.98","1",NULL
+"89","16","2","View old Amendment #1 (Addition of Type 2 Network and Type 3 Service)","U","ViewoldAmendment1_1417645702.pdf",NULL,"2","N","Y","2014-12-03 04:28:22","2016-10-21 05:16:32","179.218.172.243","1",NULL
+"90","16","2","View old Amendment #2 (Allocation of 1800MHz & 1900MHz Spectrum)","U","ViewoldAmendment2_1417645710.pdf",NULL,"3","N","Y","2014-12-03 04:28:30","2016-10-21 05:17:32","179.218.172.243","1",NULL
+"91","16","2","View old Amendment #3 (Extension of 90 days to CDMA launch date)","U","ViewoldAmendment3_1417645719.pdf",NULL,"4","N","Y","2014-12-03 04:28:39","2016-10-21 05:18:54","179.218.172.243","1",NULL
+"92","16","2","View old Amendment #4 (Amend Annex 1B - Caymanian Participation)","U","ViewoldAmendment4_1417645724.pdf",NULL,"5","N","Y","2014-12-03 04:28:44","2016-10-21 05:20:07","179.218.172.243","1",NULL
+"93","17","1","View Licence document","U","ViewLicencedocument_1417645879.pdf",NULL,"1","N","Y","2014-12-03 04:31:19","2014-12-03 04:31:19","27.54.170.98","1",NULL
+"94","17","1","View Amendment #1 (Amend Annex 2)","U","ViewAmendment1_1417645893.pdf",NULL,"2","N","Y","2014-12-03 04:31:33","2016-10-21 05:21:11","179.218.172.243","1",NULL
+"95","18","1","View Licence document","U","ViewLicencedocument_1417646193.pdf",NULL,"3","N","Y","2014-12-03 04:36:33","2014-12-03 04:36:33","27.54.170.98","1",NULL
+"96","18","1","View Amendment #1 (Allocation of 700MHz Spectrum)","U","ViewAmendment1_1417646224.pdf",NULL,"4","N","Y","2014-12-03 04:37:04","2016-10-21 05:30:22","179.218.172.243","1",NULL
+"97","18","1","View Amendment #2 (Voice Service Roll Out Schedule Added)","U","ViewAmendment2_1417646230.pdf",NULL,"5","N","Y","2014-12-03 04:37:10","2016-10-21 05:33:07","179.218.172.243","1",NULL
+"98","18","1","View Amendment #3 (Allocation of 5GHz Spectrum, Addition of Type 12 Service)","U","ViewAmendment3_1417646237.pdf",NULL,"6","N","Y","2014-12-03 04:37:17","2016-10-21 05:35:35","179.218.172.243","1",NULL
+"99","18","1","View Amendment #4 (Allocation of 7GHz Spectrum)","U","ViewAmendment4_1417646245.pdf",NULL,"7","N","Y","2014-12-03 04:37:25","2016-10-21 05:36:39","179.218.172.243","1",NULL
+"100","18","1","View Amendment #5 (Allocation of 5GHz Spectrum)","U","ViewAmendment5_1417646255.pdf",NULL,"8","N","Y","2014-12-03 04:37:35","2016-10-21 05:37:35","179.218.172.243","1",NULL
+"101","18","1","View Amendment #6 (Addition of Type 14 Service)","U","ViewAmendment6_1417646262.pdf",NULL,"9","N","Y","2014-12-03 04:37:42","2016-10-21 05:38:39","179.218.172.243","1",NULL
+"102","18","1","View Amendment #7 (Allocation of 8GHz Spectrum)","U","ViewAmendment7_1417646270.pdf",NULL,"10","N","Y","2014-12-03 04:37:50","2016-10-21 05:40:19","179.218.172.243","1",NULL
+"103","18","1","View Amendment #8 (Addition of Type D1 Network & Types 1, 4 & 11 Services)","U","ViewAmendment8_1417646276.pdf",NULL,"11","N","Y","2014-12-03 04:37:56","2016-10-21 05:42:44","179.218.172.243","1",NULL
+"104","18","1","View Amendment #9 (Allocation of 5GHz Spectrum, Surrender of 5GHz Spectrum)","U","ViewAmendment9_1417646284.pdf",NULL,"12","N","Y","2014-12-03 04:38:04","2016-10-21 05:44:15","179.218.172.243","1",NULL
+"105","18","1","View Amendment #10. (Amend certain 5GHz Spectrum to Exclusive Use)","U","ViewAmendment10_1417646292.pdf",NULL,"13","N","Y","2014-12-03 04:38:12","2016-10-21 05:47:22","179.218.172.243","1",NULL
+"106","18","1","View Amendment #11 (Amend 2500 - 2700MHz Spectrum Allocation)","U","ViewAmendment11_1417646296.pdf",NULL,"14","N","Y","2014-12-03 04:38:16","2016-10-21 05:49:49","179.218.172.243","1",NULL
+"107","18","1","View Amendment #12 (Additional 2 NXX's)","U","ViewAmendment12_1417646305.pdf",NULL,"15","N","Y","2014-12-03 04:38:25","2016-10-21 05:51:54","179.218.172.243","1",NULL
+"108","18","1","View Amendment #13 (Surrender 700MHz Spectrum)","U","ViewAmendment13_1417646313.pdf",NULL,"16","N","Y","2014-12-03 04:38:33","2016-10-21 05:53:03","179.218.172.243","1",NULL
+"109","18","1","View Amendment #14 (Amend Annex 1B - Caymanian Participation)","U","ViewAmendment14_1417646323.pdf",NULL,"17","N","Y","2014-12-03 04:38:43","2016-10-21 05:54:40","179.218.172.243","1",NULL
+"110","18","1","View Amendment #15 (Surrender 2 NXX's)","U","ViewAmendment15_1417646330.pdf",NULL,"18","N","Y","2014-12-03 04:38:50","2016-10-21 05:55:43","179.218.172.243","1",NULL
+"111","18","1","View Amendment #16 (Surrender 2400-2500 MHz Spectrum, Correct Annex 4 error in Amendment 15)","U","ViewAmendment16_1417646337.pdf",NULL,"19","N","Y","2014-12-03 04:38:57","2016-10-21 05:59:24","179.218.172.243","1",NULL
+"112","18","1","View Amendment #17 (Additional Type F Network and Types 6, 7 & 15 Services)","U","ViewAmendment17_1417646346.pdf",NULL,"20","N","Y","2014-12-03 04:39:06","2016-10-21 06:01:17","179.218.172.243","1",NULL
+"113","18","1","View Amendment #18 (Amend Annex 1A - Add Fibre Roll Out Schedule)","U","ViewAmendment18_1417646354.pdf",NULL,"21","N","Y","2014-12-03 04:39:14","2016-10-21 06:03:02","179.218.172.243","1",NULL
+"114","18","1","View Amendment #19 (Allocation of 524 - 530MHz (Ch 23) Spectrum)","U","ViewAmendment19_1417646361.pdf",NULL,"22","N","Y","2014-12-03 04:39:21","2016-10-21 06:04:37","179.218.172.243","1",NULL
+"115","18","1","View Amendment #20 (Amend Annex 2)","U","ViewAmendment20_1417646371.pdf",NULL,"23","N","Y","2014-12-03 04:39:31","2016-10-21 06:05:24","179.218.172.243","1",NULL
+"116","18","1","View Amendment #21 (Amend local content percentage of Type 6 Service)","U","ViewAmendment21_1417646379.pdf",NULL,"24","N","Y","2014-12-03 04:39:39","2016-10-21 06:06:58","179.218.172.243","1",NULL
+"117","18","1","View Amendment #22 (Extend part Fibre Roll Out Schedule 7 months)","U","ViewAmendment22_1417646387.pdf",NULL,"25","N","Y","2014-12-03 04:39:47","2016-10-21 06:10:37","179.218.172.243","1",NULL
+"118","19","1","View Licence document","U","ViewLicencedocument_1417646610.pdf",NULL,"1","N","Y","2014-12-03 04:43:30","2014-12-03 04:43:30","27.54.170.98","1",NULL
+"119","19","1","View Amendment #1 (Amend Channel 21 Spectrum)","U","ViewAmendment1_1417646626.pdf",NULL,"2","N","Y","2014-12-03 04:43:46","2016-10-22 07:15:47","179.218.172.243","1",NULL
+"120","19","1","View Amendment #2 (Amend Annex 2)","U","ViewAmendment2_1417646633.pdf",NULL,"3","N","Y","2014-12-03 04:43:53","2016-10-22 07:14:20","179.218.172.243","1",NULL
+"121","20","1","View Licence document","U","ViewLicencedocument_1417646836.pdf",NULL,"1","N","Y","2014-12-03 04:47:16","2014-12-03 04:47:16","27.54.170.98","1",NULL
+"122","20","1","View Amendment #1 (Allocation of 700MHz & 4.9GHz Spectrum)","U","ViewAmendment1_1417646854.pdf",NULL,"2","N","Y","2014-12-03 04:47:34","2016-10-22 07:17:52","179.218.172.243","1",NULL
+"123","20","1","View Amendment #2 (Allocation of 1400MHz and 1500MHz Spectrum)","U","ViewAmendment2_1417646860.pdf",NULL,"3","N","Y","2014-12-03 04:47:40","2016-10-22 07:19:08","179.218.172.243","1",NULL
+"124","20","1","View Amendment #3 (Allocation of 4.9GHz, 58.1GHz & 62.9GHz Spectrum)","U","ViewAmendment3_1417646867.pdf",NULL,"4","N","Y","2014-12-03 04:47:47","2016-10-22 07:20:55","179.218.172.243","1",NULL
+"125","20","1","View Amendment #4 (Allocation of 2.8GHz & 6GHz Spectrum)","U","ViewAmendment4_1417646876.pdf",NULL,"5","N","Y","2014-12-03 04:47:56","2016-10-22 07:22:39","179.218.172.243","1",NULL
+"126","20","1","View Amendment #5 (Addition of Type 6 Service, Allocation of 6GHz Spectrum)","U","ViewAmendment5_1417646884.pdf",NULL,"6","N","Y","2014-12-03 04:48:04","2016-10-22 07:24:12","179.218.172.243","1",NULL
+"127","21","1","View Licence document","U","ViewLicencedocument_1417647067.pdf",NULL,"1","N","Y","2014-12-03 04:51:07","2014-12-03 04:51:07","27.54.170.98","1",NULL
+"128","21","1","View Amendment #1 (Allocation of 155.1MHz Spectrum)","U","ViewAmendment1_1417647080.pdf",NULL,"2","N","Y","2014-12-03 04:51:20","2016-10-25 05:16:13","179.218.172.243","1",NULL
+"129","22","1","View Licence document","U","ViewLicencedocument_1417647399.pdf",NULL,"1","N","Y","2014-12-03 04:56:39","2014-12-03 04:56:39","27.54.170.98","1",NULL
+"130","22","1","View Amendment #1 (Authorize operation of 96.5MHz)","U","ViewAmendment1_1417647418.pdf",NULL,"2","N","Y","2014-12-03 04:56:58","2016-10-25 05:37:26","179.218.172.243","1",NULL
+"131","22","1","View Amendment #2 (Amend Annex 2)","U","ViewAmendment2_1417647426.pdf",NULL,"3","N","Y","2014-12-03 04:57:06","2016-10-25 05:38:08","179.218.172.243","1",NULL
+"132","22","2","View old Licence document","U","ViewoldLicencedocument_1417647443.pdf",NULL,"1","N","Y","2014-12-03 04:57:23","2014-12-03 04:57:23","27.54.170.98","1",NULL
+"133","22","2","View old Amendment #1 (Allocation of 954MHz Spectrum, remove 952MHz Spectrum)","U","ViewoldAmendment1_1417647454.pdf",NULL,"2","N","Y","2014-12-03 04:57:34","2016-10-25 05:18:59","179.218.172.243","1",NULL
+"134","22","2","View old Amendment #2 (Amend Radio Station reference names)","U","ViewoldAmendment2_1417647462.pdf",NULL,"3","N","Y","2014-12-03 04:57:42","2016-10-25 05:20:39","179.218.172.243","1",NULL
+"135","22","2","View old Amendment #3 (Reduce Roll Out Schedule for Sister Islands by 2 years, Amend Annex 1B)","U","ViewoldAmendment3_1417647471.pdf",NULL,"4","N","Y","2014-12-03 04:57:51","2016-10-25 05:23:37","179.218.172.243","1",NULL
+"136","22","2","View old Amendment #4 (Allocation of 96.5MHz Spectrum)","U","ViewoldAmendment4_1417647480.pdf",NULL,"5","N","Y","2014-12-03 04:58:00","2016-10-25 05:24:46","179.218.172.243","1",NULL
+"137","22","2","View old Amendment #5 (Allocation of 954.5MHz Spectrum)","U","ViewoldAmendment5_1417647487.pdf",NULL,"6","N","Y","2014-12-03 04:58:07","2016-10-25 05:25:37","179.218.172.243","1",NULL
+"138","22","2","View old Amendment #6 (Amend Radio Station reference name)","U","ViewoldAmendment6_1417647495.pdf",NULL,"7","N","Y","2014-12-03 04:58:15","2016-10-25 05:26:46","179.218.172.243","1",NULL
+"139","22","2","View old Amendment #7 (Amend Radio Station for Roll Out in Sister Islands)","U","ViewoldAmendment7_1417647501.pdf",NULL,"8","N","Y","2014-12-03 04:58:21","2016-10-25 05:28:13","179.218.172.243","1",NULL
+"140","22","2","View old Amendment #8 (Amend Radio Station for Roll Out in Sister Islands)","U","ViewoldAmendment8_1417647510.pdf",NULL,"9","N","Y","2014-12-03 04:58:30","2016-10-25 05:30:07","179.218.172.243","1",NULL
+"141","22","2","View old Amendment #9 (Allocation of 949MHz & 950MHz Spectrum, Surrender 954.5MHz Spectrum)","U","ViewoldAmendment9_1417647519.pdf",NULL,"10","N","Y","2014-12-03 04:58:39","2016-10-25 05:32:03","179.218.172.243","1",NULL
+"142","22","2","View old Amendment #10 (Allocation of 955.5MHz Spectrum, Surrender 949MHz Spectrum)","U","ViewoldAmendment10_1417647530.pdf",NULL,"11","N","Y","2014-12-03 04:58:50","2016-10-25 05:33:51","179.218.172.243","1",NULL
+"143","23","1","View Licence document","U","ViewLicencedocument_1417647838.pdf",NULL,"1","N","Y","2014-12-03 05:03:58","2014-12-03 05:03:58","27.54.170.98","1",NULL
+"144","23","1","View Amendment #1 (Allocation of 13GHz Spectrum)","U","ViewAmendment1_1417647860.pdf",NULL,"2","N","Y","2014-12-03 05:04:20","2016-10-22 07:27:51","179.218.172.243","1",NULL
+"145","23","1","View Amendment #2 (Extend Roll Out Schedule 3 - 8 months)","U","ViewAmendment2_1417647870.pdf",NULL,"3","N","Y","2014-12-03 05:04:30","2016-10-22 07:29:41","179.218.172.243","1",NULL
+"146","23","1","View Amendment #3 (Allocation of 6GHz Spectrum)","U","ViewAmendment3_1417647875.pdf",NULL,"4","N","Y","2014-12-03 05:04:35","2016-10-22 07:30:46","179.218.172.243","1",NULL
+"147","23","1","View Amendment #4 (Extend Roll Out Schedule by 8 months)","U","ViewAmendment4_1417647882.pdf",NULL,"5","N","Y","2014-12-03 05:04:42","2016-10-22 07:32:38","179.218.172.243","1",NULL
+"148","24","1","View Licence document","U","ViewLicencedocument_1417648224.pdf",NULL,"1","N","Y","2014-12-03 05:10:24","2014-12-03 05:10:24","27.54.170.98","1",NULL
+"149","24","1","View Amendment #1 (Extend Roll Out Schedule by 18 months)","U","ViewAmendment1_1417648244.pdf",NULL,"2","N","Y","2014-12-03 05:10:44","2016-10-22 07:40:01","179.218.172.243","1",NULL
+"150","24","1","View Amendment #2 (Extend Roll Out Schedule by 2 years)","U","ViewAmendment2_1417648253.pdf",NULL,"3","N","Y","2014-12-03 05:10:53","2016-10-22 07:41:16","179.218.172.243","1",NULL
+"151","24","1","View Amendment #3 (Surrender 2 NXX's)","U","ViewAmendment3_1417648258.pdf",NULL,"4","N","Y","2014-12-03 05:10:58","2016-10-22 07:42:05","179.218.172.243","1",NULL
+"152","24","1","View Amendment #4 (Amend Annex 1B - Caymanian Participation)","U","ViewAmendment4_1417648266.pdf",NULL,"5","N","Y","2014-12-03 05:11:06","2016-10-22 07:43:19","179.218.172.243","1",NULL
+"153","24","1","View Amendment #5 (Extend Roll Out Schedule by 5 years)","U","ViewAmendment5_1417648273.pdf",NULL,"6","N","Y","2014-12-03 05:11:13","2016-10-22 07:45:05","179.218.172.243","1",NULL
+"154","24","1","View Amendment #6 (Extend Roll Out Schedule by 7 months)","U","ViewAmendment6_1417648282.pdf",NULL,"7","N","Y","2014-12-03 05:11:22","2016-10-22 07:46:48","179.218.172.243","1",NULL
+"155","24","1","View Amendment #7 (Addition of NXX)","U","ViewAmendment7_1417648288.pdf",NULL,"8","N","Y","2014-12-03 05:11:28","2016-10-22 07:47:58","179.218.172.243","1",NULL
+"156","24","1","View Amendment #8 (Amend Annex 2)","U","ViewAmendment8_1417648297.pdf",NULL,"9","N","Y","2014-12-03 05:11:37","2016-10-22 07:48:57","179.218.172.243","1",NULL
+"157","24","1","View Amendment #9 (Addition of National Point Code)","U","ViewAmendment9_1417648303.pdf",NULL,"10","N","Y","2014-12-03 05:11:43","2016-10-22 07:50:01","179.218.172.243","1",NULL
+"158","24","1","View Amendment #10 (Amend Roll Out Schedule)","U","ViewAmendment10_1417648311.pdf",NULL,"11","N","Y","2014-12-03 05:11:51","2016-10-22 07:53:30","179.218.172.243","1",NULL
+"159","25","1","View Licence document","U","ViewLicencedocument_1417648550.pdf",NULL,"1","N","Y","2014-12-03 05:15:50","2014-12-03 05:15:50","27.54.170.98","1",NULL
+"160","25","1","View Amendment #1 (Extend Roll Out Schedule 90 days)","U","ViewAmendment1_1417648566.pdf",NULL,"2","N","Y","2014-12-03 05:16:06","2016-10-22 08:01:05","179.218.172.243","1",NULL
+"161","25","1","View Amendment #2 (Allocation of 5GHz Spectrum)","U","ViewAmendment2_1417648573.pdf",NULL,"3","N","Y","2014-12-03 05:16:13","2016-10-22 08:01:59","179.218.172.243","1",NULL
+"162","25","1","View Amendment #3 (Addition of Types B & C3 Networks, Addition of Types 9, 11, 12, 14 & 15 Services)","U","ViewAmendment3_1417648582.pdf",NULL,"4","N","Y","2014-12-03 05:16:22","2016-10-22 08:04:54","179.218.172.243","1",NULL
+"163","25","1","View Amendment #4 (Extend Roll Out Schedule by 6 & 10 months)","U","ViewAmendment4_1417648587.pdf",NULL,"5","N","Y","2014-12-03 05:16:27","2016-10-22 08:06:28","179.218.172.243","1",NULL
+"164","25","1","View Amendment #5 (Assign Annex 1, 1A and 4 elements from E-Technologies)","U","ViewAmendment5_1417648595.pdf",NULL,"6","N","Y","2014-12-03 05:16:35","2016-10-22 08:09:00","179.218.172.243","1",NULL
+"165","25","1","View Amendment #6 (Amend Annex 4 to include assignment of E-Technology elements)","U","ViewAmendment6_1417648601.pdf",NULL,"7","N","Y","2014-12-03 05:16:41","2016-10-22 08:11:46","179.218.172.243","1",NULL
+"166","25","1","View Amendment #7 (Amend Annex 1B - Caymanian Participation)","U","ViewAmendment7_1417648607.pdf",NULL,"8","N","Y","2014-12-03 05:16:47","2016-10-22 08:13:02","179.218.172.243","1",NULL
+"167","25","1","View Amendment #8 (Extend Roll Out Schedule by 2 years)","U","ViewAmendment8_1417648614.pdf",NULL,"9","N","Y","2014-12-03 05:16:54","2016-10-22 08:15:03","179.218.172.243","1",NULL
+"168","25","1","View Amendment #9 (Allocation of 6GHz & 11GHz Spectrum, Surrender of 15GHz Spectrum)","U","ViewAmendment9_1417648622.pdf",NULL,"10","N","Y","2014-12-03 05:17:02","2016-10-22 08:16:24","179.218.172.243","1",NULL
+"169","26","1","View Licence document","U","ViewLicencedocument_1417648768.pdf",NULL,"1","N","Y","2014-12-03 05:19:28","2014-12-03 05:19:28","27.54.170.98","1",NULL
+"170","26","1","View Amendment #1 (Licence Assigned to CI Conference of SDA)","U","ViewAmendment1_1417648781.pdf",NULL,"2","N","Y","2014-12-03 05:19:41","2016-10-22 08:19:19","179.218.172.243","1",NULL
+"171","27","1","View Licence document","U","ViewLicencedocument_1417648919.pdf",NULL,"1","N","Y","2014-12-03 05:21:59","2014-12-03 05:21:59","27.54.170.98","1",NULL
+"172","27","1","View Amendment #1 (Amend Type 8 Service term)","U","ViewAmendment1_1417648940.pdf",NULL,"2","N","Y","2014-12-03 05:22:20","2016-10-22 08:22:52","179.218.172.243","1",NULL
+"173","27","1","View Amendment #2 (Allocation of 900MHz Spectrum erroneously omitted)","U","ViewAmendment2_1417648945.pdf",NULL,"3","N","Y","2014-12-03 05:22:25","2016-10-22 08:24:26","179.218.172.243","1",NULL
+"174","28","1","View Licence document","U","ViewLicencedocument_1417649096.pdf",NULL,"1","N","Y","2014-12-03 05:24:56","2014-12-03 05:24:56","27.54.170.98","1",NULL
+"175","28","1","View Amendment #1 (Allocation of 949MHz Spectrum)","U","ViewAmendment1_1417649108.pdf",NULL,"2","N","Y","2014-12-03 05:25:08","2016-10-25 05:39:57","179.218.172.243","1",NULL
+"176","29","1","View Licence document","U","ViewLicencedocument_1417649239.pdf",NULL,"1","N","Y","2014-12-03 05:27:19","2014-12-03 05:27:19","27.54.170.98","1",NULL
+"177","30","1","View Licence document","U","ViewLicencedocument_1417649385.pdf",NULL,"1","N","Y","2014-12-03 05:29:45","2014-12-03 05:29:45","27.54.170.98","1",NULL
+"178","31","1","View Licence document","U","ViewLicencedocument_1417649503.pdf",NULL,"1","N","Y","2014-12-03 05:31:43","2014-12-03 05:31:43","27.54.170.98","1",NULL
+"179","32","1","View Licence document","U","ViewLicencedocument_1417649651.pdf",NULL,"1","N","Y","2014-12-03 05:34:11","2014-12-03 05:34:11","27.54.170.98","1",NULL
+"180","32","1","View Amendment #1 (Extend Roll Out Schedule by 6 - 12 months)","U","ViewAmendment1_1417649663.pdf",NULL,"2","N","Y","2014-12-03 05:34:23","2016-10-22 08:26:52","179.218.172.243","1",NULL
+"181","33","1","View Licence document","U","ViewLicencedocument_1417649812.pdf",NULL,"1","N","Y","2014-12-03 05:36:52","2014-12-03 05:36:52","27.54.170.98","1",NULL
+"182","33","1","View Amendment #1 (Allocation of 956MHz Spectrum, Surrender 949MHz Spectrum)","U","ViewAmendment1_1417649823.pdf",NULL,"2","N","Y","2014-12-03 05:37:03","2016-10-25 05:42:25","179.218.172.243","1",NULL
+"183","33","1","View Amendment #2 (Amend Annex 2)","U","ViewAmendment2_1417649837.pdf",NULL,"3","N","Y","2014-12-03 05:37:17","2016-10-25 05:43:00","179.218.172.243","1",NULL
+"184","34","1","View Licence document","U","ViewLicencedocument_1417649995.pdf",NULL,"1","N","Y","2014-12-03 05:39:55","2014-12-03 05:39:55","27.54.170.98","1",NULL
+"185","34","1","View Amendment #1 (Amend Annex 2)","U","ViewAmendment1_1417650012.pdf",NULL,"2","N","Y","2014-12-03 05:40:12","2016-10-25 05:44:35","179.218.172.243","1",NULL
+"186","35","1","View Licence document","U","ViewLicencedocument_1417650173.pdf",NULL,"1","N","Y","2014-12-03 05:42:53","2014-12-03 05:42:53","27.54.170.98","1",NULL
+"187","35","1","View Amendment #1 (Surrender 951.5MHz Spectrum)","U","ViewAmendment1_1417650185.pdf",NULL,"2","N","Y","2014-12-03 05:43:05","2016-10-25 05:46:19","179.218.172.243","1",NULL
+"188","35","1","View Amendment #2 (Extend Roll Out Schedule by 2 months)","U","ViewAmendment2_1417650197.pdf",NULL,"3","N","Y","2014-12-03 05:43:17","2016-10-25 05:47:17","179.218.172.243","1",NULL
+"189","35","1","View Amendment #3 (Amend Annex 2)","U","ViewAmendment3_1417650231.pdf",NULL,"4","N","Y","2014-12-03 05:43:51","2016-10-25 05:47:46","179.218.172.243","1",NULL
+"190","36","1","View Licence document","U","ViewLicencedocument_1417650665.pdf",NULL,"1","N","Y","2014-12-03 05:51:05","2014-12-03 05:51:05","27.54.170.98","1",NULL
+"191","36","1","View Amendment #1 (Amend Annex 2)","U","ViewAmendment1_1417650681.pdf",NULL,"2","N","Y","2014-12-03 05:51:21","2016-10-22 08:30:08","179.218.172.243","1",NULL
+"192","5","1","View Licence document","U","ViewLicencedocument_1417651056.pdf",NULL,"4","N","Y","2014-12-03 05:57:36","2014-12-03 05:57:36","27.54.170.98","1",NULL
+"193","5","1","View Amendment #1 (Allocation 800MHz Spectrum, Additional Short Codes, return 5 MHz 800MHz Spectrum)","U","ViewAmendment1_1417651080.pdf",NULL,"5","N","Y","2014-12-03 05:58:00","2016-10-15 09:41:28","179.218.70.205","1",NULL
+"194","5","1","View Amendment #2 (Allocation of 7GHz & 8GHz Spectrum, Additional Short Codes)","U","ViewAmendment2_1417651088.pdf",NULL,"6","N","Y","2014-12-03 05:58:08","2016-10-15 09:10:22","179.218.70.205","1",NULL
+"195","5","1","View Amendment #3 (Additional Short Codes)","U","ViewAmendment3_1417651095.pdf",NULL,"7","N","Y","2014-12-03 05:58:15","2016-10-15 09:12:23","179.218.70.205","1",NULL
+"196","5","1","View Amendment #4 (Additional Short Code)","U","ViewAmendment4_1417651103.pdf",NULL,"8","N","Y","2014-12-03 05:58:23","2016-10-15 09:12:00","179.218.70.205","1",NULL
+"197","5","1","View Amendment #5 (Allocation of 5GHz Spectrum)","U","ViewAmendment5_1417651115.pdf",NULL,"9","N","Y","2014-12-03 05:58:35","2016-10-15 09:13:54","179.218.70.205","1",NULL
+"198","5","1","View Amendment #6 (Reinstate references for point-to-point spectrum previously omitted in error)","U","ViewAmendment6_1417651121.pdf",NULL,"10","N","Y","2014-12-03 05:58:41","2016-10-15 09:16:49","179.218.70.205","1",NULL
+"199","5","1","View Amendment #7 (Removal of Short Codes, Reformat Central Office Codes)","U","ViewAmendment7_1417651149.pdf",NULL,"11","N","Y","2014-12-03 05:59:09","2016-10-15 09:19:51","179.218.70.205","1",NULL
+"200","5","1","View Amendment #8 (Specify in-service dates for Central Office Codes)","U","ViewAmendment8_1417651157.pdf",NULL,"12","N","Y","2014-12-03 05:59:17","2016-10-15 09:21:34","179.218.70.205","1",NULL
+"201","5","1","View Amendment #9 (Allocation of 800MHz Spectrum, Allocation of 850MHz Spectrum)","U","ViewAmendment9_1417651164.pdf",NULL,"13","N","Y","2014-12-03 05:59:24","2016-10-15 09:23:20","179.218.70.205","1",NULL
+"202","5","1","View Amendment #10 (Additional Central Office Codes 922, 923, 936 & 937)","U","ViewAmendment10_1417651174.pdf",NULL,"14","N","Y","2014-12-03 05:59:34","2016-10-15 09:43:40","179.218.70.205","1",NULL
+"203","5","1","View Amendment #11 (Amend Annex 4 - 800MHz and 850MHz Spectrum, no additional spectrum granted)","U","ViewAmendment11_1417651179.pdf",NULL,"15","N","Y","2014-12-03 05:59:39","2016-10-15 09:28:52","179.218.70.205","1",NULL
+"204","5","1","View Amendment #12 (Allocation of 1800MHz and 1900MHz Spectrum, Amend use of VSAT Spectrum)","U","ViewAmendment12_1417651187.pdf",NULL,"16","N","Y","2014-12-03 05:59:47","2016-10-15 09:32:29","179.218.70.205","1",NULL
+"205","5","1","View Amendment #13 (Addition of Type 15 Service)","U","ViewAmendment13_1417651195.pdf",NULL,"17","N","Y","2014-12-03 05:59:55","2016-10-15 09:33:55","179.218.70.205","1",NULL
+"206","5","1","View Amendment #14 (Reassignment of Central Office Code 990)","U","ViewAmendment14_1417651209.pdf",NULL,"18","N","Y","2014-12-03 06:00:09","2016-10-15 09:42:21","179.218.70.205","1",NULL
+"207","5","1","View Amendment #15 (Amendment 'doing business as ""LIME""')","U","ViewAmendment15_1417651219.pdf",NULL,"19","N","Y","2014-12-03 06:00:19","2016-10-15 09:37:24","179.218.70.205","1",NULL
+"208","5","1","View Amendment #16 (Allocation of 800MHz Spectrum, Allocation of 11GHz Spectrum)","U","ViewAmendment16_1417651227.pdf",NULL,"20","N","Y","2014-12-03 06:00:27","2016-10-15 09:39:59","179.218.70.205","1",NULL
+"209","5","1","View Amendment #17 (Amend Annex 1 to reflect updated s.23(2) notice changes)","U","ViewAmendment17_1417651234.pdf",NULL,"21","N","Y","2014-12-03 06:00:34","2016-10-15 09:47:13","179.218.70.205","1",NULL
+"210","5","1","View Amendment #18 (Addition of Types 6 & 7 Services)","U","ViewAmendment18_1417651243.pdf",NULL,"22","N","Y","2014-12-03 06:00:43","2016-10-15 09:48:35","179.218.70.205","1",NULL
+"211","5","1","View Amendment #19 (Allocation of 700MHz Spectrum)","U","ViewAmendment19_1417651252.pdf",NULL,"23","N","Y","2014-12-03 06:00:52","2016-10-15 09:50:12","179.218.70.205","1",NULL
+"212","5","1","View Amendment #20 (Amendment of Annex 2)","U","ViewAmendment20_1417651258.pdf",NULL,"24","N","Y","2014-12-03 06:00:58","2016-10-15 09:52:00","179.218.70.205","1",NULL
+"213","37","1","View Licence document","U","ViewLicencedocument_1417651674.pdf",NULL,"1","N","Y","2014-12-03 06:07:54","2014-12-03 06:07:54","27.54.170.98","1",NULL
+"214","37","1","View Amendment #1 (Transfer of certain Network and Service Types to WestTel)","U","ViewAmendment1_1417651696.pdf",NULL,"2","N","Y","2014-12-03 06:08:16","2016-10-21 06:22:16","179.218.172.243","1",NULL
+"215","37","1","View Amendment #2 (Extension of 1 year for Digital Technology launch in Sister Islands)","U","ViewAmendment2_1417651701.pdf",NULL,"3","N","Y","2014-12-03 06:08:21","2016-10-21 06:22:34","179.218.172.243","1",NULL
+"216","37","1","View Amendment #3 (Addition of Network Type D1, Service Type 11 and Fibre Rollout Schedule)","U","ViewAmendment3_1417651708.pdf",NULL,"4","N","Y","2014-12-03 06:08:28","2016-10-21 06:23:11","179.218.172.243","1",NULL
+"217","37","1","View Amendment #4 (Amendment to Digital Technology Rollout for Sister Islands)","U","ViewAmendment4_1417651715.pdf",NULL,"5","N","Y","2014-12-03 06:08:35","2016-10-21 06:23:30","179.218.172.243","1",NULL
+"218","37","1","View Amendment #5 (Amendment of 2500 - 2698 MHz Spectrum Allocations)","U","ViewAmendment5_1417651722.pdf",NULL,"6","N","Y","2014-12-03 06:08:42","2016-10-21 06:25:45","179.218.172.243","1",NULL
+"219","37","1","View Amendment #6 (Extension of 2 years to Fibre Rollout Schedule)","U","ViewAmendment6_1417651732.pdf",NULL,"7","N","Y","2014-12-03 06:08:52","2016-10-21 06:25:59","179.218.172.243","1",NULL
+"220","37","1","View Amendment #7 (Extension of 1 year to Fibre Rollout Schedule)","U","ViewAmendment7_1417651738.pdf",NULL,"8","N","Y","2014-12-03 06:08:58","2016-10-21 05:54:06","179.218.172.243","1",NULL
+"221","37","1","View Amendment #8 (Surrender 5750 - 5800 MHz Spectrum)","U","ViewAmendment8_1417651746.pdf",NULL,"9","N","Y","2014-12-03 06:09:06","2016-10-21 06:26:24","179.218.172.243","1",NULL
+"222","37","1","View Amendment #9 (Extension of 1 year to Fibre Rollout Schedule)","U","ViewAmendment9_1417651752.pdf",NULL,"10","N","Y","2014-12-03 06:09:12","2016-10-21 06:26:38","179.218.172.243","1",NULL
+"223","37","1","View Amendment #10 (Surrender 548 - 554 MHz (Ch 24) Spectrum)","U","ViewAmendment10_1417651760.pdf",NULL,"11","N","Y","2014-12-03 06:09:20","2016-10-21 06:25:19","179.218.172.243","1",NULL
+"224","37","1","View Amendment #11 (Addition of Service Types 1, 5 & 9)","U","ViewAmendment11_1417651767.pdf",NULL,"12","N","Y","2014-12-03 06:09:27","2016-10-21 06:26:55","179.218.172.243","1",NULL
+"225","37","1","View Amendment #12 (Extension of 2 years to Fibre Rollout Schedule)","U","ViewAmendment12_1417651776.pdf",NULL,"13","N","Y","2014-12-03 06:09:36","2016-10-21 06:27:13","179.218.172.243","1",NULL
+"226","37","1","View Amendment #13 (Addition of Service Type 15)","U","ViewAmendment13_1417651782.pdf",NULL,"14","N","Y","2014-12-03 06:09:42","2016-10-21 06:25:04","179.218.172.243","1",NULL
+"227","37","1","View Amendment #14 (Amendment of Ch 27 Spectrum Allocation)","U","ViewAmendment14_1417651792.pdf",NULL,"15","N","Y","2014-12-03 06:09:52","2016-10-21 06:27:29","179.218.172.243","1",NULL
+"228","37","1","View Amendment #15 (Amendment to Annex 1B - Caymanian Participation)","U","ViewAmendment15_1417651803.pdf",NULL,"16","N","Y","2014-12-03 06:10:03","2016-10-21 06:07:51","179.218.172.243","1",NULL
+"229","37","1","View Amendment #16 (Extension of 3.75 years to Fibre Rollout Plan)","U","ViewAmendment16_1417651811.pdf",NULL,"17","N","Y","2014-12-03 06:10:11","2016-10-21 06:24:03","179.218.172.243","1",NULL
+"230","37","1","View Amendment #17 (Allocation of 530 - 536 MHz (Ch 24) Spectrum)","U","ViewAmendment17_1417651819.pdf",NULL,"18","N","Y","2014-12-03 06:10:19","2016-10-21 06:13:58","179.218.172.243","1",NULL
+"231","38","1","View Licence document","U","ViewLicencedocument_1417652010.pdf",NULL,"1","N","Y","2014-12-03 06:13:30","2014-12-03 06:13:30","27.54.170.98","1",NULL
+"232","39","1","""tetdfsdf 's & dfgdfg""","U","_1418257345.pdf",NULL,"2","Y","N","2014-12-10 06:22:25","2016-10-25 05:49:27","173.192.46.6","1",NULL
+"233","39","2","""test & khgdfg's & fdjkghdfjgh""","U","testdocument_1418257410.doc",NULL,"2","Y","N","2014-12-10 06:23:30","2016-10-25 05:49:27","173.192.46.6","1",NULL
+"235","42","2","Landscape Boulders's","U","1417634725ComplaintFormC100Dec05_1418500106.doc",NULL,"5","N","N","2014-12-13 01:48:26","2014-12-13 01:50:10","27.54.170.98","2",NULL
+"236","42","1","Landscape Boulders's","U","1417634725ComplaintFormC100Dec05_1418500131.doc",NULL,"2","N","N","2014-12-13 01:48:51","2014-12-13 01:48:51","27.54.170.98","2",NULL
+"241","44","2","test by mark'","U","testbynetclues_1418982130.pdf",NULL,"2","N","Y","2014-12-19 03:42:10","2014-12-19 03:45:50","174.36.7.178","2",NULL
+"242","45","1","""tyest's & df h fgjh""","U","_1418409958_1419279303.pdf",NULL,"1","N","Y","2014-12-22 02:15:03","2014-12-22 02:15:03","27.54.170.98","1",NULL
+"243","32","1","View Amendment #2 (Amend Condition 9 on the direction of the Governor)","U","2014_11_21_Blue_Bison_Amendment_2_1429647968.pdf",NULL,"3","N","Y","2015-04-21 04:26:08","2016-10-22 08:28:15","179.218.172.243","2",NULL
+"244","36","1","View Amendment #2 (Amend Condition 9 on the direction of the Governor)","U","2014_11_21_DataLink_Amendment_2_1429648052.pdf",NULL,"3","N","Y","2015-04-21 04:27:32","2016-10-22 08:31:11","179.218.172.243","2",NULL
+"245","3","1","View Amendment #27 (Amend Condition 9 on the direction of the Governor)","U","2014_11_21_Digicel_Amendment_27_1429648116.pdf",NULL,"31","N","Y","2015-04-21 04:28:36","2016-10-21 04:32:39","179.218.172.243","2",NULL
+"246","5","1","View Amendment #21 (Amendment of Condition 9 on the direction of the Governor)","U","2014_11_21_LIME_Amendment_21_1429648377.pdf",NULL,"3","N","Y","2015-04-21 04:32:57","2016-10-21 04:36:38","179.218.172.243","2",NULL
+"247","37","1","View Amendment #18 (Amendment to Condition 9 on the direction of the Governor)","U","2014_11_21_WestStar_Amendment_18_1429648446.pdf",NULL,"19","N","Y","2015-04-21 04:34:06","2016-10-21 06:29:20","179.218.172.243","2",NULL
+"248","8","1","View Amendment #15 (Amend Condition 9 on the direction of the Governor)","U","2014_11_21_TeleCayman_Amendment_15_1429648504.pdf",NULL,"16","N","Y","2015-04-21 04:35:04","2016-10-21 05:02:10","179.218.172.243","2",NULL
+"249","18","1","View Amendment #23 (Amend Condition 9 on the direction of the Governor)","U","2014_11_21_WestTel_Amendment_23_1429648567.pdf",NULL,"26","N","Y","2015-04-21 04:36:07","2016-10-21 06:11:50","179.218.172.243","2",NULL
+"250","24","1","View Amendment #11 (Amend Condition 9 on the direction of the Governor)","U","2014_11_21_Infinity_Amendment_11_1429648619.pdf",NULL,"12","N","Y","2015-04-21 04:36:59","2016-10-22 07:54:37","179.218.172.243","2",NULL
+"251","37","1","View Amendment #20 (Surrender 530 - 536 MHz (Ch 24) & 548 - 554 MHz (Ch 27) Spectrum)","U","AmendmentNo.20_1437771112.pdf",NULL,"21","N","Y","2015-07-24 04:51:52","2016-10-21 06:24:30","179.218.172.243","2",NULL
+"252","39","1","View Licence Document","U","HurleysTVLtdLicence_1437772341.pdf",NULL,"1","N","Y","2015-07-24 05:12:21","2015-07-24 05:12:21","104.200.151.54","2",NULL
+"253","5","1","View Amendment #22 (Addition of Condition 9a on the direction of the Governor)","U","2015_06_11_Licence_Amendment_C9a_1437772605.pdf",NULL,"2","N","Y","2015-07-24 05:16:45","2016-10-21 04:36:18","179.218.172.243","2",NULL
+"254","37","1","View Amendment #19 (Addition of Condition 9a on the direction of the Governor)","U","2015_06_11_Licence_Amendment_C9a_1437772712.pdf",NULL,"20","N","Y","2015-07-24 05:18:32","2016-10-21 04:33:35","179.218.172.243","2",NULL
+"255","3","1","View Amendment #28 (Addition of Condition 9a on the direction of the Governor)","U","2015_06_11_Licence_Amendment_C9a_1437772788.pdf",NULL,"32","N","Y","2015-07-24 05:19:48","2016-10-21 04:31:56","179.218.172.243","2",NULL
+"256","8","1","View Amendment #16 (Addition of Condition 9a on the direction of the Governor)","U","2015_06_11_Licence_Amendment_C9a_1437772851.pdf",NULL,"17","N","Y","2015-07-24 05:20:51","2016-10-21 05:03:16","179.218.172.243","2",NULL
+"257","18","1","View Amendment #24 (Add Condition 9a on the direction of the Governor)","U","2015_06_11_Licence_Amendment_C9a_1437772908.pdf",NULL,"27","N","Y","2015-07-24 05:21:48","2016-10-21 06:13:02","179.218.172.243","2",NULL
+"258","18","1","View Amendment #24","U","2015_06_11_Licence_Amendment_C9a_1437772909.pdf",NULL,"1","Y","Y","2015-07-24 05:21:49","2016-10-21 05:27:57","173.192.46.6","2",NULL
+"259","24","1","View Amendment #12 (Add Condition 9a on the direction of the Governor)","U","2015_06_11_Licence_Amendment_C9a_1437772964.pdf",NULL,"13","N","Y","2015-07-24 05:22:44","2016-10-22 07:55:31","179.218.172.243","2",NULL
+"260","36","1","View Amendment #3 (Add Condition 9a on the direction of the Governor)","U","2015_06_11_Licence_Amendment_C9a_1437773030.pdf",NULL,"4","N","Y","2015-07-24 05:23:50","2016-10-22 08:32:06","179.218.172.243","2",NULL
+"261","24","1","View Amendment #13 (Addition of 2 NXX's)","U","2015_09_04_IB_Licence_Amendment_No_13_1441391443.pdf",NULL,"14","N","Y","2015-09-04 02:30:43","2016-10-22 07:56:41","179.218.172.243","2",NULL
+"262","24","1","View Amendment #14 (Addition of National Point Code)","U","LicenceAmendmentNo.14InfinityBroadband_1446817647.pdf",NULL,"15","N","Y","2015-11-06 08:47:27","2016-10-22 07:57:35","179.218.172.243","2",NULL
+"263","24","1","View Amendment #15 (Addition of Type 11 Service)","U","InfinityBroadbandAmendment15_1447704883.pdf",NULL,"16","N","Y","2015-11-16 03:14:43","2016-10-22 07:59:01","179.218.172.243","2",NULL
+"264","41","1","View Licence Document","U","2015_12_07_Open_Public_Licence-signed_1449517564.pdf",NULL,"1","N","Y","2015-12-07 02:46:04","2015-12-07 02:46:04","108.61.27.139","2",NULL
+"265","14","1","View Amendment #3 (Assignment of Paramount Media Licence)","U","AmendmentNo.3HurleysEntertainmentCorporation_1450444484.pdf",NULL,"4","N","Y","2015-12-18 08:14:45","2016-10-25 05:00:02","179.218.172.243","2",NULL
+"266","20","1","View Amendment #6 (Allocation of 800MHz Spectrum)","U","2016_04_19CIGAmendment6_signed_1466614928.pdf",NULL,"7","N","Y","2016-06-22 01:02:08","2016-10-22 07:25:10","179.218.172.243","2",NULL
+"267","5","1","View Amendment #23 (Change doing business as name to 'FLOW')","U","AmendmentNo.23totheLicenceofCWsigned_1481736379.pdf",NULL,"1","N","Y","2016-12-14 12:26:19","2016-12-14 12:27:55","189.122.98.8","2",NULL
+"268","3","1","View Amendment #29 (5 Additional NXX's)","U","AmendmentNo29totheLicenceofDigicelNXXAdditionSIGNED_1493081729.pdf",NULL,"33","N","Y","2017-04-24 08:55:29","2017-04-24 08:57:13","208.168.255.61","2",NULL
+"269","42","1","View Licence Document","U","SpreadtheWordInternationalMinistriesT-AVoice97.7Licence-signed_1496270522.pdf",NULL,"1","N","Y","2017-05-31 06:42:02","2017-05-31 06:42:02","189.122.99.80","2",NULL
+"270","3","1","View Amendment #30 (Allocation of 7800 MHz and 8200 MHz Spectrum)","U","DigicelLicenceAmendmentNo30Allocationof7816-78728201-8257MHzSigned_1497571003.pdf",NULL,"3","N","Y","2017-06-15 05:15:46","2017-06-15 07:56:43","189.122.99.80","2",NULL
+"271","3","1","View Amendment #31","U","20180510143645326_1526628540.pdf",NULL,"34","N","Y","2018-05-18 03:29:00","2018-05-18 03:29:46","27.54.170.98","1",NULL
+"272","37","1","Amendment #25 (Additional spectrum assignment- Band 71)","U","AmendmentNo25toLicenceofWestTelLimited_signedAF_1562185609.pdf",NULL,"1","Y","Y","2019-07-03 04:26:49","2019-07-03 05:36:03","173.193.29.45","1",NULL
+"273","18","1","Amendment #25 (Additional spectrum assignment- Band 71)","U","AmendmentNo25toLicenceofWestTelLimited_signedAF_1562189696.pdf",NULL,"2","N","Y","2019-07-03 05:34:56","2019-07-03 05:34:56","103.226.187.41","1",NULL
+"274","43","1","E2 Maxcom","U","2019UTILITYREGULATIONANDCOMPETITIONOFFICEMaxcomsignedAF_1569396126.pdf",NULL,"4","N","Y","2019-09-25 03:22:06","2019-09-25 03:22:06","103.226.187.41","1",NULL
+"275","18","1","Amendment #26 (Licence of WestTel Limited)","U","AmendmentNo26toLicenceofWestTelLimited_1585334645.pdf",NULL,"1","N","Y","2020-03-27 02:44:05","2020-03-27 02:44:05","27.54.170.98","1",NULL
+"276","43","1","E3 Maxcom","U","2019UTILITYREGULATIONANDCOMPETITIONOFFICEMaxcomsignedAF_15693961261_1587769019.pdf",NULL,"3","N","N","2020-04-24 06:56:59","2020-04-24 09:10:43","27.54.170.98","1",NULL
+"277","3","1","View Amendment #33","U","DigicelLicenceAmendmentNo33Extension_1588178458.pdf",NULL,"2","N","Y","2020-04-29 12:40:58","2020-04-29 12:40:58","27.54.170.98","1",NULL
+"278","43","1","E3 Maxcom","U","2020OFREGEXPERIMENTALLICENSEE32020-FUTUREDIGITALSEZC_1589961326.pdf",NULL,"2","N","N","2020-05-20 03:55:26","2020-05-20 03:55:26","27.54.170.98","1",NULL
+"279","43","1","E3 Maxcom","U","2020OFREGEXPERIMENTALLICENSEE32020-FUTUREDIGITALSEZC_1593499361.pdf",NULL,"1","N","N","2020-06-30 02:42:41","2020-06-30 02:42:41","27.54.170.98","1",NULL
+"280","46","1","E3","U","2020OFREGEXPERIMENTALLICENSEE32020-FUTUREDIGITALSEZC_1593784060.pdf",NULL,"1","N","Y","2020-07-03 09:47:40","2020-07-03 09:47:40","27.54.170.98","1",NULL
+"281","47","1","UTILITY REGULATION AND COMPETITION OFFICE","U","SaltLtdInternetExchangePointLicenceFinal_1616674300.pdf",NULL,"1","N","Y","2021-03-25 08:11:40","2021-03-25 08:11:40","103.226.184.100","1",NULL
+"282","3","1","View Amendment #34","U","DigicelLicenceAmendment34November2020_1620232885.pdf",NULL,"1","N","Y","2021-05-05 12:41:25","2021-05-05 12:41:25","27.54.170.98","1",NULL

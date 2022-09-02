@@ -1,0 +1,111 @@
+@font-face {
+    font-family: $ac_ff_one;
+    font-weight: 600;
+    display: swap;
+    src: url('../fonts/Gill-Sans-Nova-SemiBold.eot');
+    src: url('../fonts/Gill-Sans-Nova-SemiBold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Gill-Sans-Nova-SemiBold.woff2') format('woff2'),
+         url('../fonts/Gill-Sans-Nova-SemiBold.woff') format('woff'),
+         url('../fonts/Gill-Sans-Nova-SemiBold.ttf')  format('truetype'),
+         url('../fonts/Gill-Sans-Nova-SemiBold.svg#Gill Sans Nova SemiBold') format('svg');
+}
+
+@font-face {
+    font-family: $ac_ff_one;
+    font-weight: 600;
+    font-style: italic;
+    display: swap;
+    src: url('../fonts/Gill-Sans-Nova-SemiBold-Italic.eot');
+    src: url('../fonts/Gill-Sans-Nova-SemiBold-Italic.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Gill-Sans-Nova-SemiBold-Italic.woff2') format('woff2'),
+         url('../fonts/Gill-Sans-Nova-SemiBold-Italic.woff') format('woff'),
+         url('../fonts/Gill-Sans-Nova-SemiBold-Italic.ttf')  format('truetype'),
+         url('../fonts/Gill-Sans-Nova-SemiBold-Italic.svg#Gill Sans Nova SemiBold') format('svg');
+}
+
+@font-face {
+    font-family: $ac_ff_one;
+    font-weight: 500;
+    display: swap;
+    src: url('../fonts/Gill-Sans-Nova-Medium.eot');
+    src: url('../fonts/Gill-Sans-Nova-Medium.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Gill-Sans-Nova-Medium.woff2') format('woff2'),
+         url('../fonts/Gill-Sans-Nova-Medium.woff') format('woff'),
+         url('../fonts/Gill-Sans-Nova-Medium.ttf')  format('truetype'),
+         url('../fonts/Gill-Sans-Nova-Medium.svg#Gill Sans Nova Medium') format('svg');
+}
+
+@font-face {
+    font-family: $ac_ff_one;
+    font-weight: 500;
+    font-style: italic;
+    display: swap;
+    src: url('../fonts/Gill-Sans-Nova-Medium-Italic.eot');
+    src: url('../fonts/Gill-Sans-Nova-Medium-Italic.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Gill-Sans-Nova-Medium-Italic.woff2') format('woff2'),
+         url('../fonts/Gill-Sans-Nova-Medium-Italic.woff') format('woff'),
+         url('../fonts/Gill-Sans-Nova-Medium-Italic.ttf')  format('truetype'),
+         url('../fonts/Gill-Sans-Nova-Medium-Italic.svg#Gill Sans Nova Medium') format('svg');
+}
+
+@font-face {
+    font-family: $ac_ff_one;
+    font-weight: 300;
+    display: swap;
+    src: url('../fonts/Gill-Sans-Nova-Light.eot');
+    src: url('../fonts/Gill-Sans-Nova-Light.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Gill-Sans-Nova-Light.woff2') format('woff2'),
+         url('../fonts/Gill-Sans-Nova-Light.woff') format('woff'),
+         url('../fonts/Gill-Sans-Nova-Light.ttf')  format('truetype'),
+         url('../fonts/Gill-Sans-Nova-Light.svg#Gill Sans Nova Light') format('svg');
+}
+
+@font-face {
+    font-family: $ac_ff_one;
+    font-weight: 400;
+    display: swap;
+    src: url('../fonts/Gill-Sans-Nova-Book.eot');
+    src: url('../fonts/Gill-Sans-Nova-Book.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Gill-Sans-Nova-Book.woff2') format('woff2'),
+         url('../fonts/Gill-Sans-Nova-Book.woff') format('woff'),
+         url('../fonts/Gill-Sans-Nova-Book.ttf')  format('truetype'),
+         url('../fonts/Gill-Sans-Nova-Book.svg#Gill Sans Nova Book') format('svg');
+}
+
+@font-face {
+    font-family: $ac_ff_one;
+    font-weight: 400;
+    font-style: italic;
+    display: swap;
+    src: url('../fonts/Gill-Sans-Nova-Book-Italic.eot');
+    src: url('../fonts/Gill-Sans-Nova-Book-Italic.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Gill-Sans-Nova-Book-Italic.woff2') format('woff2'),
+         url('../fonts/Gill-Sans-Nova-Book-Italic.woff') format('woff'),
+         url('../fonts/Gill-Sans-Nova-Book-Italic.ttf')  format('truetype'),
+         url('../fonts/Gill-Sans-Nova-Book-Italic.svg#Gill Sans Nova Book') format('svg');
+}
+
+@font-face {
+    font-family: $ac_ff_one;
+    font-weight: 700;
+    display: swap;
+    src: url('../fonts/Gill-Sans-Nova-Bold.eot');
+    src: url('../fonts/Gill-Sans-Nova-Bold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Gill-Sans-Nova-Bold.woff2') format('woff2'),
+         url('../fonts/Gill-Sans-Nova-Bold.woff') format('woff'),
+         url('../fonts/Gill-Sans-Nova-Bold.ttf')  format('truetype'),
+         url('../fonts/Gill-Sans-Nova-Bold.svg#Gill Sans Nova Book') format('svg');
+}
+
+@font-face {
+    font-family: $ac_ff_one;
+    font-weight: 700;
+    font-style: italic;
+    display: swap;
+    src: url('../fonts/Gill-Sans-Nova-Bold-Italic.eot');
+    src: url('../fonts/Gill-Sans-Nova-Bold-Italic.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Gill-Sans-Nova-Bold-Italic.woff2') format('woff2'),
+         url('../fonts/Gill-Sans-Nova-Bold-Italic.woff') format('woff'),
+         url('../fonts/Gill-Sans-Nova-Bold-Italic.ttf')  format('truetype'),
+         url('../fonts/Gill-Sans-Nova-Bold-Italic.svg#Gill Sans Nova Book') format('svg');
+}

@@ -1,0 +1,109 @@
+// Subscribe 
+.subscribe-sec {
+	background:rgba($ac_a,0.15);
+	padding: 45px 0 45px;	
+	.mailling_box {		
+		position: relative;
+		&::before {
+			content: "";
+			position: absolute;
+			left: 5%;    		
+    		top: 10px;
+			bottom: 0px;
+			margin: auto;
+			background: url("../images/mail-send.svg") no-repeat 0px 0px;
+			width: 180px;
+			height: 180px;			
+			opacity: 0.05; 		
+			@include css3-prefix ('transform', 'rotate(-20deg)');
+			@media (max-width:767px) {
+				width: 115px;
+				height: 115px;
+			}		
+		}		
+		.sub_title {			
+			padding-top:5px; 
+			font-size: $ac_fs_4xl;
+			font-weight: 400;	
+			text-transform: uppercase;
+			line-height: 100%;
+			span {
+				padding-bottom: 2px;
+				font-size: $ac_fs_md;
+				display: block;
+			}								
+		}
+		p {
+			margin:0px 0 30px 0;
+			text-align:center;					
+			@media (max-width:992px){				
+				line-height:130%;
+				margin-bottom:20px;
+			}			
+		}
+		.form-group {
+			position:relative;
+			margin-bottom:0px;
+			.form-control {
+				background:$ac_white;
+				height:52px;
+				border:0px;
+				border-radius:0px;
+				box-shadow:none;
+				font-size:$ac_fs_base;
+				@media (max-width:992px){
+					height:50px;
+				}
+			}
+			.btn {
+				position:absolute;
+				right:0px;
+				top:0px;
+				width:75px;
+				height:52px;
+				line-height:52px;				
+				background:$ac_a;
+				color:$ac_white;
+				text-align:center;
+				border:0px;
+				border-radius:0px;
+				outline:0px !important;
+				padding:0px;
+				font-size:$ac_fs_4xl - 3px;
+				@include css3-prefix ('transition', '#{$ac_3_ti}');
+				i {
+					vertical-align:1px;
+				}
+				&:hover {
+					background:$ac_b;
+				}
+				@media (max-width:992px){				
+					width:50px;
+					height:50px;
+					line-height:50px;	
+					font-size:$ac_fs_2xl;
+				}
+			}
+			label.error {
+				color: #f57979;
+			}
+			.success {
+				margin-top:5px; 
+				label {
+					font-weight: 400;
+					color: #2ee82e;
+				}
+			}
+		}			
+	}
+	@media (max-width:767px){
+		padding: 30px 0;
+		.mailling_box .sub_title { font-size: $ac_fs_4xl - 4px;}		
+	}
+	@media (max-width:479px){	
+		.mailling_box .sub_title {padding:0 0 10px; }		
+	}
+}
+
+
+

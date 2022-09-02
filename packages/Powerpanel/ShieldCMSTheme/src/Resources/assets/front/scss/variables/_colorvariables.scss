@@ -1,0 +1,29 @@
+/*  Material Color Generator: http://mcg.mbitson.com/ */
+
+$ac_white: 				#FFFFFF;
+$ac_black: 				#000000;
+$ac_red: 				#FF0000;
+$ac_green: 				#008000;
+$ac_m: 					#525f7f; //#2f2f2f
+$ac_a: 					#1D4DA1; 
+$ac_b: 					#00A9E6;
+
+//$ac_d: 					#71c9f8;
+
+
+
+$theme: default;
+
+@if $theme==Light {
+    $ac_a:	#f408d0; 
+    $ac_b:	#f48208;
+}
+@else if $theme==Dark {
+    $ac_a:	green; 
+    $ac_b:	red;
+} 
+@else {
+    // default
+}
+
+// #00a0e4

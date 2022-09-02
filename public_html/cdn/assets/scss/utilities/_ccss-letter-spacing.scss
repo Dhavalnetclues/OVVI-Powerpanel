@@ -1,0 +1,18 @@
+/* - - - - - - - - - - - - -
+    Related File Name: ..\utilities\_ccss-utilities-setting.scss
+- - - - - - - - - - - - - */
+
+/* Letter Spacing S */
+    .#{$ccss}-ls-0 {
+        letter-spacing: #{$ccssLetterSpacing0}px;
+    }
+    .#{$ccss}-ls-1 {
+        letter-spacing: #{$ccssLetterSpacing1}px;
+    }
+    .#{$ccss}-ls-2 {
+        letter-spacing: #{$ccssLetterSpacing2}px;
+    }
+    .#{$ccss}-ls-3 {
+        letter-spacing: #{$ccssLetterSpacing3}px;
+    }
+/* Letter Spacing E */

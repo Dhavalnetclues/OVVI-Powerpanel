@@ -1,0 +1,8 @@
+/* Background Size S */
+    @each $ccssBackgroundSizeClass in $ccssBackgroundSizeClasses {
+      	$index: index($ccssBackgroundSizeClasses, $ccssBackgroundSizeClass);
+      	.#{$ccss}-#{$ccssBgs}-#{nth($ccssBackgroundSizeClasses, $index)}{
+        	background-repeat: #{nth($ccssBackgroundSizes, $index)};
+      	}
+    }
+/* Background Size E */

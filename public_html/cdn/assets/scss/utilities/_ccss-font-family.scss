@@ -1,0 +1,30 @@
+/* - - - - - - - - - - - - -
+    Related File Name: ..\utilities\_ccss-utilities-setting.scss
+- - - - - - - - - - - - - */
+
+/* Font Family S */
+    @if $ccssFontFamily1 != null {
+        .#{$ccss}-ff-1 {
+            font-family: $ccssFontFamily1;
+        }
+    }
+
+
+    @if $ccssFontFamily2 != null {
+        .#{$ccss}-ff-2 {
+            font-family: $ccssFontFamily2;
+        }
+    }
+
+    @if $ccssFontFamily3 != null {
+        .#{$ccss}-ff-3 {
+            font-family: $ccssFontFamily3;
+        }
+    }
+
+    @if $ccssFontFamily4 != null {
+        .#{$ccss}-ff-4 {
+            font-family: $ccssFontFamily4;
+        }
+    }
+/* Font Family E */

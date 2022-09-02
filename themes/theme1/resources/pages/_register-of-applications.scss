@@ -1,0 +1,38 @@
+.register-of-applications {
+	.-items {
+		position: relative;
+		z-index: 1;
+		border-left: 10px solid $ac_a;
+		@include css3-prefix ('transition', '#{$ac_3_ti}');
+		&:before{
+			position: absolute;
+			z-index: -1;
+			content: '';
+			background: linear-gradient(90deg, $ac_b 0%, $ac_a 100%);
+			@include css3-prefix ('transition', '#{$ac_3_ti}');
+			top: 0;
+			left: 0;
+			bottom: 0;
+			width: 0;
+		}
+		&:after{
+			position: absolute;
+		    z-index: -1;
+		    content: attr(data-id);
+		    right: 10px;
+		    bottom: 10px;
+		    font-size: 40px;
+		    font-family: $ac_ff_two;
+		    font-weight: 600;
+		    color: rgba($ac_black, 0.07);
+		}
+		&:hover{
+			&:before{
+				width: 100%;
+			}
+			a, .-status {
+				color: $ac_white;
+			}
+		}
+	}
+}

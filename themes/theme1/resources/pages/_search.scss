@@ -1,0 +1,8 @@
+.search{
+	.-items{
+		border: 1px solid lighten($ac_black,90%);
+		.-desc {
+			flex: auto; 
+		}
+	}
+}

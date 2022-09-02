@@ -1,0 +1,14 @@
+/* - - - - - - - - - - - - -
+    Related File Name: ..\utilities\_ccss-utilities-setting.scss
+- - - - - - - - - - - - - */
+
+/* Opacity S */  
+    @each $ccssOpacity in $ccssOpacityArray {
+        .#{$ccss}-opacity-#{$ccssOpacity} {
+            opacity: #{'0.'}#{$ccssOpacity};
+        }
+    }
+    .#{$ccss}-opacity-100 {
+        opacity: 1;
+    }
+/* Opacity E */

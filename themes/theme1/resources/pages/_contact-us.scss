@@ -1,0 +1,51 @@
+.contact-us{
+	.-secure{
+		position: absolute;
+	    right: 0;
+	    left: 0;
+	    margin: 0 auto;
+	    text-align: center;
+	    background-color: $ac_a;
+	    border-radius: 50px;
+	    max-width: 270px;
+	    padding: 15px;
+	    bottom: -93px;
+	}
+	.-items {
+		position: relative;
+		&:before {
+			content: '';
+			position: absolute;
+			width: 2px;
+			height: 100%;
+			top: 0;
+			bottom: 0;
+			left: 10px;
+			background-color: lighten($ac_m,35%);
+			@include css3-prefix ('transition', '#{$ac_3_ti}');
+		}
+		&:after {
+			content: '';
+		    position: absolute;
+		    width: 20px;
+		    height: 20px;
+		    top: 14px;
+		    left: 1px;
+		    background-color: lighten($ac_m,35%);
+		    border-radius: 50px;
+		    border: 5px solid $ac_white;
+		    @include css3-prefix ('transition', '#{$ac_3_ti}');
+		}
+		&:hover{
+			&:before{
+				background-color: $ac_a;
+			}
+			&:after{
+				background-color: $ac_a;
+			}
+			.nqtitle-small {
+				color: $ac_a;
+			}
+		}
+	}
+}

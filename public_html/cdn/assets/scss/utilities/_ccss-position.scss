@@ -1,0 +1,11 @@
+/* - - - - - - - - - - - - -
+    Related File Name: ..\utilities\_ccss-utilities-setting.scss
+- - - - - - - - - - - - - */
+
+/* Position S */  
+    @each $ccssPosition in $ccssPositionArray {
+        .#{$ccss}-p-#{$ccssPosition} {
+            position: #{$ccssPosition};
+        }
+    }
+/* Position E */

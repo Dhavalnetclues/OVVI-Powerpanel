@@ -1,0 +1,21 @@
+.detail_page {	
+	.date-detail {
+		color: rgba($ac_a,0.5);
+		margin-bottom: 15px;
+	}
+	.detail-img {
+		margin: 5px 25px 10px 0px;
+		width: 48%;
+		border: 1px solid #1c4da0;
+		padding: 4px;
+		float: left;
+		img {
+			width:100%;
+		}
+	}
+	@media (max-width:479px){
+		.detail-img { width:100%;float:none;margin:5px 0px 10px 0px;}
+	}
+}	
+
+

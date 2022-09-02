@@ -1,0 +1,14 @@
+.consultations-listing {
+    .-items {
+    	@media (min-width: 480px) {
+			padding: 20px 20px 20px 20px;
+		}
+    	.-download {
+		    bottom: auto;
+		    right: -5px;
+		    @media (min-width: 480px){
+		        top: calc(50% - 20px);
+		    }
+    	}
+    }
+}

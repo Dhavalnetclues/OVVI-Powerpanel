@@ -1,0 +1,13 @@
+/* - - - - - - - - - - - - -
+    Related File Name: ..\utilities\_ccss-utilities-setting.scss
+- - - - - - - - - - - - - */
+
+/* Link S */
+    @each $color, $value in colorMap($ccssBaseColors, 10) {
+        .#{$ccss}-ah-#{$color} {
+            &:hover, &.active {
+            	color: $value;
+            }
+        }
+    }
+/* Link E */

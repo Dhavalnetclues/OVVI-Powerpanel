@@ -1,0 +1,63 @@
+/* Default and Responsive Table S */
+    .cms, .#{$ac}-table{
+        table{
+            width: 100%;
+            margin-bottom: 0px;
+            border: 0px solid lighten($ac_black,95%);
+            tr{
+                &:first-of-type(){
+                    td{
+                        background-color: $ac_white;
+                        color: $ac_black;
+                    }   
+                }
+                &:nth-of-type(odd){
+                    background-color: $ac_white;
+                }
+                &:nth-of-type(even){
+                    background-color: lighten($ac_black,95%);
+                    td{
+                        border: 1px solid lighten($ac_white,0%);
+                    }
+                }
+                &:hover{
+                    background-color: lighten($ac_a,50%);
+                    td {
+                        color: $ac_a;
+                        &:hover{
+                            background-color: lighten($ac_a,0%);
+                            color: $ac_white;
+                        }
+                    }
+                }
+                td{
+                    font-size: em(18);
+                    font-weight: 400;
+                    line-height: 130%;
+                    color: $ac_m;
+                    font-style: normal;
+                    border: 1px solid lighten($ac_black,95%);
+                    padding: 8px 8px;
+
+                }
+                th{
+                    border-bottom: 1px solid lighten($ac_white,95%);
+                    border-right: 1px solid lighten($ac_white,95%);
+                    background-color: lighten($ac_b,55%);
+                    font-style: normal;
+                    font-size: em(18);
+                    font-weight: $ac_fw_sb;
+                    line-height: 120%;
+                    color: $ac_b;
+                    padding: 8px 8px 12px 8px;
+                    &:last-child{
+                        border-right: 1px solid lighten($ac_black,95%);
+                    }
+                }
+            }
+        }
+        .table-responsive{
+            border: 0px solid lighten($ac_black,95%);
+        }
+    }
+/* Default and Responsive Table E */

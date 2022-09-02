@@ -1,0 +1,219 @@
+/* Reset CSS S */
+	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		line-height: 1;
+		vertical-align: baseline;
+	    @include css3-prefix ('text-rendering','optimizeLegibility');
+	    @include css3-prefix ('font-smoothing','antialiased');
+	}
+
+	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+		display: block;
+	}
+
+	html {
+		height: 100%;
+		width: 100%;
+		@include css3-prefix ('overflow-style','scrollbar');
+	}
+
+	body {
+		font-size: $ac_fs_base;
+		font-weight: $ac_fw_r;
+		line-height: $ac_lh_base;
+		color: $ac_m;
+		font-family: $ac_ff_one;
+		font-style: normal;
+		letter-spacing: 0px;
+		word-spacing: 0px;
+		text-transform: inherit;
+		background-color: $ac_white;
+	}
+
+	blockquote, q {
+		quotes: none;
+	}
+
+	blockquote:before, blockquote:after, q:before, q:after {
+		content: '';
+		content: none;
+	}
+
+	:focus {
+		outline: 0;
+	}
+
+	ins {
+		text-decoration: none;
+	}
+
+	del {
+		text-decoration: line-through;
+	}
+
+	table {
+		border-collapse: collapse;
+		border-spacing: 0;
+	}
+
+	img { width: inherit; }
+	img.lazy{
+		width: auto !important;
+		height: auto !important;
+	}
+/* Reset CSS E */
+
+/* Wrapper S */
+	body {
+		#wrapper{
+			background-color:  $ac_white;
+			position: relative;
+			width: 100%;
+			@include css3-prefix ('transition', '#{$ac_3_ti}');
+			border-radius: 0;
+			opacity: 0;
+			//overflow: hidden;
+		}
+	}
+/* Wrapper E */
+
+/* Body S */
+	body {
+		a {
+			color: inherit;
+			&:hover{
+				color: inherit;
+			}
+		}
+		a, a:hover, a:focus, a:active {
+			color: inherit;
+			text-decoration: none;
+			outline: 0;
+    		outline-offset: 0;
+			@include css3-prefix ('transition', '#{$ac_3_ti}');
+		}
+		p, ul li, ol li{
+			font-style: normal;
+			letter-spacing: 0px;
+			word-spacing: 0px;
+			text-transform: inherit;
+		}
+		h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{			
+			font-family: $ac_ff_one;
+			color: $ac_black;
+			font-weight: 800;
+			line-height: 120%;
+			font-style: normal;
+			letter-spacing: 0px;
+			word-spacing: 0px;
+			text-transform: inherit;
+			margin: 0;
+			padding: 0;
+		}
+		h1,.h1{
+			font-size: $ac_fs_h1;
+			@media (max-width: 992px) {
+				font-size: $ac_fs_h2;
+			}
+		}
+		h2,.h2{
+			font-size: $ac_fs_h2;
+			@media (max-width: 992px) {
+				font-size: $ac_fs_h3;
+			}
+		}
+		h3,.h3{
+			font-size: $ac_fs_h3;
+			@media (max-width: 992px) {
+				font-size: $ac_fs_h4;
+			}
+		}
+		h4,.h4{
+			font-size: $ac_fs_h4;
+			@media (max-width: 992px) {
+				font-size: $ac_fs_h5;
+			}
+		}
+		h5,.h5{
+			font-size: $ac_fs_h5;
+			@media (max-width: 992px) {
+				font-size: $ac_fs_h6;
+			}
+		}
+		h6,.h6{
+			font-size: $ac_fs_h6;
+			@media (max-width: 992px) {
+				font-size: $ac_fs_h6;
+			}
+		}
+		img {
+			max-width: 100%;
+		}
+	}
+/* Body E */
+
+/* Container S */
+	@media (min-width: 768px) {
+	  	.container {
+	    	max-width: 750px;
+	  	}
+	}
+	@media (min-width: 992px) {
+	  	.container {
+	    	max-width: 970px;
+	  	}
+	}
+	@media (min-width: 1280px) {
+	  	.container {
+	    	max-width: 1220px;
+	  	}
+	}
+	/* @media (min-width: 1360px) {
+	  	.container {
+	    	max-width: 1336px;
+	  	}
+	}
+	@media (min-width: 1441px) {
+	  	.container {
+	    	max-width: 1411px;
+	  	}
+	}
+	@media (min-width: 1600px) {
+	  	.container {
+	    	max-width: 1600px;
+	  	}
+	} */
+	.inner-page-gap{
+		position: relative;
+		z-index: 1;
+		background-color: $ac_white;
+		padding: 0 0 70px 0;
+		overflow: hidden;
+		@media (max-width: 992px) {
+			padding: 0 0 50px 0;
+		}
+	}
+/* Container E */
+
+.translate3d {
+    transform: none !important;
+}
+
+.owl-carousel {
+	.owl-stage {
+		display: flex;
+		.owl-item {
+			display: flex;
+			.item {
+				display: flex;
+				width: 100%;
+			}
+		}
+	}
+}
+
+.flex-auto {
+	flex: auto;
+}

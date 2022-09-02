@@ -1,0 +1,92 @@
+/* - - - - - - - - - - - - -
+    Related File Name: ..\utilities\_ccss-utilities-setting.scss
+- - - - - - - - - - - - - */
+
+/* Icon Sizes S */
+    .#{$ccss}-icon-1 {
+    	display: inline-block;
+        width: #{$ccssIcon1}px;
+        height: #{$ccssIcon1}px;
+        svg {
+            @extend .#{$ccss}-icon-1;
+        }
+    }
+
+    .#{$ccss}-icon-2 {
+        display: inline-block;
+        width: #{$ccssIcon2}px;
+        height: #{$ccssIcon2}px;
+        svg {
+            @extend .#{$ccss}-icon-2;
+        }
+    }
+
+    .#{$ccss}-icon-3 {
+        display: inline-block;
+        width: #{$ccssIcon3}px;
+        height: #{$ccssIcon3}px;
+        svg {
+            @extend .#{$ccss}-icon-3;
+        }
+    }
+
+    .#{$ccss}-icon-4 {
+        display: inline-block;
+        width: #{$ccssIcon4}px;
+        height: #{$ccssIcon4}px;
+        svg {
+            @extend .#{$ccss}-icon-4;
+        }
+    }
+
+    .#{$ccss}-icon-5 {
+        display: inline-block;
+        width: #{$ccssIcon5}px;
+        height: #{$ccssIcon5}px;
+        svg {
+            @extend .#{$ccss}-icon-5;
+        }
+    }
+
+    .#{$ccss}-icon-6 {
+        display: inline-block;
+        width: #{$ccssIcon6}px;
+        height: #{$ccssIcon6}px;
+        svg {
+            @extend .#{$ccss}-icon-6;
+        }
+    }
+
+    .#{$ccss}-icon-7 {
+        display: inline-block;
+        width: #{$ccssIcon7}px;
+        height: #{$ccssIcon7}px;
+        svg {
+            @extend .#{$ccss}-icon-7;
+        }
+    }
+
+    svg {
+        &.#{$ccss}-icon-1{
+            @extend .#{$ccss}-icon-1;
+        }
+        &.#{$ccss}-icon-2{
+            @extend .#{$ccss}-icon-2;
+        }
+        &.#{$ccss}-icon-3{
+            @extend .#{$ccss}-icon-3;
+        }
+        &.#{$ccss}-icon-4{
+            @extend .#{$ccss}-icon-4;
+        }
+        &.#{$ccss}-icon-5{
+            @extend .#{$ccss}-icon-5;
+        }
+        &.#{$ccss}-icon-6{
+            @extend .#{$ccss}-icon-6;
+        }
+        &.#{$ccss}-icon-7{
+            @extend .#{$ccss}-icon-7;
+        }
+    }
+/* Icon Sizes E */

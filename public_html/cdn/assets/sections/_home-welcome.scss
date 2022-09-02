@@ -1,0 +1,30 @@
+.home-welcome{
+    position: relative;
+    z-index: 1;
+    background-color: $ac_white;
+    .nqtitle{
+        letter-spacing: 1px;
+        @media (min-width: 1024px){
+            max-width: 350px;
+        }
+    }
+
+    .nqul{
+        li{
+            position: relative;
+            padding-left: 25px;
+            + li{
+                margin-top: 15px;
+            }
+            &:before{
+                position: absolute;
+                content: '';
+                background-image: url(../images/icon/arrow.svg);
+                width: 15px;
+                height: 15px;
+                left: 0;
+                top: calc(50% - 6.5px);
+            }
+        }
+    }
+}

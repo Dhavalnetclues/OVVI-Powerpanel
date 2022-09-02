@@ -1,0 +1,87 @@
+.directors-listing{
+    .-items{
+        .thumbnail-container{
+            background-color: rgba($ac_a, 0.07);
+            padding-bottom: 100%;
+            .overlay{
+                position:absolute;
+                content: "";
+                top:0;
+                left:0;
+                right:0;
+                bottom:0;
+                opacity: 0;
+                @include css3-prefix ('transition', '#{$ac_3_ti}');
+                i{
+                    position:absolute;
+                    content: "";
+                    top:50%;
+                    left:50%;
+                    @include css3-prefix ('transition', '#{$ac_3_ti}');
+                    @include css3-prefix ('transform', 'translate(-50%,-50%)');
+                    width:49px;
+                    height:49px;
+                    display: inline-block;
+                    background-image:url('../images/plus.svg');
+                }
+            }
+        }
+        @media (max-width: 1024px){
+            .-title {
+                font-size: 18px;
+            }
+        }
+        .cms {
+            h2, h3, h4, h5, h6 {
+                font-size: 16px;
+                font-weight: 600;
+            }
+        }
+        &:hover{
+            @media (min-width: 1200px){
+                .overlay{
+                    opacity: 1;
+                }
+            }
+            .-title {
+                color: $ac_a;
+            }
+        }
+    }
+
+    .-bg{
+        position: relative;
+        &:before {
+            position:absolute;
+            content: "";
+            bottom:0;
+            right: 0;
+            width:103px;
+            height:103px;
+            display: inline-block;
+            background-image:url(../images/director-shape.svg);
+            z-index: 1;
+            @media (max-width:1199px){
+                display: none;
+            }
+        }
+    }
+
+    .-gap {
+        &:nth-child(n+2) {
+            margin-top: 60px;
+        }
+        @media (max-width: 1024px){
+            &:nth-child(n+1) {
+                margin-top: 30px;
+            }
+        }
+        @media (min-width: 1366px){
+            &:nth-child(even) {
+                .col-xl-5{
+                    order: 2;
+                }
+            }
+        }
+    }
+}

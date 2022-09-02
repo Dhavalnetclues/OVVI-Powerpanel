@@ -1,0 +1,268 @@
+.notfound{
+    position: relative;
+    padding: 60px 0;
+    border-top:1px solid rgba($ac_black,0.1); 
+    @media (max-width: 1024px){
+        text-align: center;
+    }   
+    .notfound__table{
+        position: relative;        
+    }
+    .notfound__box {                       
+        padding:0px;
+        width: 100%;
+        max-width: 600px;
+        margin:auto;                 
+    } 
+    .notfound__logo{
+        width: 100%;
+        max-width:300px; 
+        display: inline-block;
+        margin: 15px 0 20px;
+        @media (max-width: 992px){
+            max-width:250px; 
+        }
+    }
+    .notfound__title{
+        font-size: 175px;
+        font-weight: 700;
+        line-height: 100%;
+        color: $ac_b;
+        margin: 0;                
+        //text-shadow: 5px 5px 10px rgba(0,0,0,.50);
+        span {
+            display: block;             
+            font-size:22px;
+            font-weight: 800;
+            color: $ac_a;
+            letter-spacing: 5px;
+            text-shadow: none;
+        }
+        @media (max-width: 767px){
+            font-size: 105px;
+            span {
+                font-size: 20px;
+            }
+        }
+    }
+    .notfound__desc{
+        margin: 30px 0 0 0;   
+        font-size: $ac_fs_md;
+        font-weight: $ac_fw_r;
+        line-height: 150%;
+        color: $ac_m;
+        @media (max-width: 767px){
+            br{
+                display: none;
+            }
+        }
+    }
+    .notfound__link{
+        margin: 30px 0 0 0;                
+    }
+    .btn {
+        &.back_home {
+            padding:0 0px 8px 24px;         
+            &:after {
+                font-size:$ac_fs_xl;
+                content:"\f109";
+                right:auto;
+                left:0px;   
+                top:-4px;                   
+            }
+        }
+    }
+    @media (max-width:767px) {
+        padding: 30px 0;
+        .notfound__logo {margin-bottom: 10px;}
+        .notfound__desc {margin-top:20px;}
+        .notfound__link {margin-top:20px;}
+    }
+}
+
+// IP Page Block
+.ip_block {
+    padding: 30px 0;
+    .ip__table {
+        display: table;
+        width: 100%;
+        .ip__center {
+            height: calc(100vh - 60px);
+            display: table-cell;
+            vertical-align: middle;
+            width: calc(100% - 0px);
+        }
+    }    
+    .ip__box {
+        background: $ac_white;        
+        border: 2px dashed $ac_b;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        padding:40px;
+        width: 100%;
+        max-width: 600px;
+        margin:auto;                 
+    } 
+    .ip__logo{
+        width: 100%;
+        max-width:300px; 
+        display: inline-block;
+        margin: 0px 0 20px;
+        @media (max-width: 992px){
+            max-width:250px; 
+        }
+    }
+    .ip__title{
+        font-size: 60px;
+        font-weight: 800;
+        line-height: 100%;
+        color: $ac_a;
+        margin: 0;                
+        text-shadow: 5px 5px 5px rgba(0,0,0,.20);       
+        span {
+            font-size: 60px;
+            font-weight: 400;
+            font-style: italic;
+            display: block;
+            color: $ac_b;
+        }
+        @media (max-width: 767px){
+            font-size: 50px;            
+        }
+    }
+    .ip__desc{
+        margin: 20px 0 0 0;   
+        font-size: $ac_fs_md;
+        font-weight: $ac_fw_sb;
+        line-height: 150%;
+        color: red;        
+    }
+    .ip__desc_info{
+        margin: 30px 0 0 0;   
+        font-size: $ac_fs_md;
+        font-weight: $ac_fw_r;
+        line-height: 150%;
+        color: $ac_m;        
+    }
+    @media (max-width:767px) {
+        padding: 20px 0;
+        .ip__table .ip__center {height:calc(100vh - 40px);}
+        .ip__logo {margin-bottom: 10px;}
+        .ip__desc {margin-top:20px;}
+
+    }
+    @media (max-width:479px){
+        .ip__box {padding: 10px;} 
+    }
+}
+
+
+// NEW SIGN ACCOUNT
+.new_sign_block {
+    .ip__logo {
+        width: 100%;
+        max-width: 220px;
+        display: table;
+        margin: 0px auto 20px;
+    }
+    .ip__box {
+        max-width: 500px;
+    }
+    .new-sign-title {
+        margin:0;
+        font-size: 24px;
+        font-weight: $ac_fw_r;
+        color: $ac_black;
+    }
+    .new-sign-mail {
+        position: relative;
+        padding: 5px 0 5px 34px;
+        margin: 5px 0 25px 0;
+        img {
+            position: absolute;
+            width: 25px;
+            top: 0px;
+            left: 0;
+        }
+    }
+    .your_acc_risk {
+        margin: 0 0 20px 0;
+    }
+    .acc_risk_detail {
+        .img {
+            margin-right: 10px;
+            width:75px;
+            float: left;
+            text-align: center;
+            i {
+                font-size: 85px;
+                line-height: 75%;
+                display: table;
+                margin: auto;
+                color: #293852;
+                &.fa-desktop {
+                    font-size: 45px;
+                    line-height: 100%;
+                }
+            }
+        }
+        .info {
+            overflow: hidden;
+            padding-top:0px; 
+            color: #5f6368;      
+            font-size: $ac_fs_sm - 1px;  
+            line-height: 150%;    
+        }
+        .info_device {                  
+            font-size: $ac_fs_sm;         
+            font-weight: $ac_fw_sb;            
+            color: $ac_black;        
+        }
+        .info_brows {   
+            margin-top: 5px;  
+            padding-bottom: 5px;        
+            font-size: $ac_fs_sm;                        
+            color: #999;        
+        }        
+        .info_contact {
+            line-height: 150%;    
+            margin-top:10px;                                     
+            i {
+                font-size: 20px;
+                padding-left: 1px;
+                width: 20px;
+                vertical-align: -2px;
+                text-align: center;
+                margin-right: 12px;
+            }
+        }        
+    } 
+    .acc_risk_btns {
+        margin-top: 12px;
+        a {
+            margin: 5px 4px 5px 0;
+            padding: 13px 26px;
+            border-radius: 4px;
+            border: 1px solid #d9d9d9;
+            display: inline-block;
+            vertical-align: middle;            
+            font-size: 13px;
+            color: #606469;
+            font-weight: 600;
+            i {
+                margin-right: 5px;
+                &.fa-times {
+                    color: red;
+                }
+                &.fa-check {
+                    color: green;
+                }
+            }
+        }
+    }
+    @media (max-width:479px){
+        .ip__box {padding: 15px;}
+        .new-sign-title {font-size: 22px;}
+        .acc_risk_detail .img {width:52px;}
+        .acc_risk_detail .info_contact i {margin-right: 5px;}
+    }
+}

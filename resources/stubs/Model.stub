@@ -1,0 +1,178 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class {{modelName}} extends Model
+{
+	 protected $table    = '{{ tableName }}';
+	 protected $fillable = [{{ fields }}];
+
+	  /**
+		 * This method handels retrival of backend record list
+		 * @return  Object
+		 * @since   {{ date }}
+		 * @author  NetQuick
+		 */
+		public static function getRecordList($filterArr = false)
+		{
+				$response     = false;
+				$moduleFields = [{{ fields }}];
+				$response     = Self::getPowerPanelRecords($moduleFields)
+									->filter($filterArr)
+									->deleted()
+									->get();
+
+				return $response;
+		}
+
+		/**
+		 * This method handels retrival of record by id
+		 * @return  Object
+		 * @since   2017-10-16
+		 * @author  NetQuick
+		 */
+		public static function getRecordById($id)
+		{
+				$response     = false;
+				$moduleFields = [{{ fields }}];
+				$response     = Self::getPowerPanelRecords($moduleFields)->deleted()->checkRecordId($id)->first();
+				return $response;
+		}
+
+		/**
+		 * This method handels retrival of record by id for Log Manage
+		 * @return  Object
+		 * @since   2017-10-16
+		 * @author  NetQuick
+		*/
+		public static function getRecordForLogById($id)
+		{
+				$response     = false;
+				$moduleFields = [{{ fields }}];
+				$response     = Self::getPowerPanelRecords($moduleFields)->deleted()->checkRecordId($id)->first();
+				return $response;
+		}
+
+
+		/**
+		 * This method handels backend records
+		 * @return  Object
+		 * @since   {{ date }}
+		 * @author  NetQuick
+		 */
+		public static function getPowerPanelRecords($moduleFields = false)
+		{
+				$data     = [];
+				$response = false;
+				$response = self::select($moduleFields);
+				if (count($data) > 0) {
+						$response = $response->with($data);
+				}
+				return $response;
+		}
+
+		/**
+		 * This method handels filter scope
+		 * @return  Object
+		 * @since   {{ date }}
+		 * @author  NetQuick
+		*/
+		public function scopeFilter($query, $filterArr = false, $retunTotalRecords = false)
+		{
+				$response = null;
+				if ($filterArr['orderByFieldName'] != null && $filterArr['orderTypeAscOrDesc'] != null) {
+						$query = $query->orderBy($filterArr['orderByFieldName'], $filterArr['orderTypeAscOrDesc']);
+				} 
+
+				if (!$retunTotalRecords) {
+						if (!empty($filterArr['iDisplayLength']) && $filterArr['iDisplayLength'] > 0) {
+								$data = $query->skip($filterArr['iDisplayStart'])->take($filterArr['iDisplayLength']);
+						}
+				}
+				if (!empty($filterArr['searchFilter']) && $filterArr['searchFilter'] != ' ') {
+						{{ searchableFields  }}
+				}
+
+				if (!empty($query)) {
+						$response = $query;
+				}
+				return $response;
+		}
+	
+
+		/**
+		 * This method handels record id scope
+		 * @return  Object
+		 * @since   {{ date }}
+		 * @author  NetQuick
+		 */
+		public function scopeCheckRecordId($query, $id)
+		{
+				return $query->where('id', $id);
+		}
+
+		/**
+		 * This method handels publish scope
+		 * @return  Object
+		 * @since   {{ date }}
+		 * @author  NetQuick
+		 */
+		public function scopePublish($query)
+		{
+				return $query->where(['chrPublish' => 'Y']);
+		}
+
+		/**
+		 * This method handels delete scope
+		 * @return  Object
+		 * @since   {{ date }}
+		 * @author  NetQuick
+		 */
+		public function scopeDeleted($query)
+		{
+				return $query->where(['chrDelete' => 'N']);
+		}
+
+		/**
+		 * This method handels retrival of record count
+		 * @return  Object
+		 * @since   {{ date }}
+		 * @author  NetQuick
+		 */
+		protected static $fetchedOrder    = [];
+		protected static $fetchedOrderObj = null;
+		public static function getRecordByOrder($order = false)
+		{
+				$response     = false;
+				$moduleFields = [
+						'id',
+						'intDisplayOrder',
+				];
+				
+				if (!in_array($order, Self::$fetchedOrder)) {
+						array_push(Self::$fetchedOrder, $order);
+						Self::$fetchedOrderObj = Self::getPowerPanelRecords($moduleFields)
+								->deleted()
+								->orderCheck($order)
+								->first();
+				}
+
+				$response = Self::$fetchedOrderObj;
+				return $response;
+		}
+
+		/**
+		 * This method handels order scope
+		 * @return  Object
+		 * @since   {{ date }}
+		 * @author  NetQuick
+		 */
+		public function scopeOrderCheck($query, $order)
+		{
+				return $query->where('intDisplayOrder', $order);
+		}
+		
+	 
+}

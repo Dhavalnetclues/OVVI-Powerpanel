@@ -1,0 +1,133 @@
+/* - - - - - - - - - - - - -
+    Related File Name: ..\utilities\_ccss-utilities-setting.scss
+- - - - - - - - - - - - - */
+
+/* Padding S */
+    .#{$ccss}-nopadding{
+        padding: 0 !important;;
+    }
+
+    @each $ccssPaddingSize in $ccssPaddingSizeArray {
+        @each $ccssPaddingSide in $ccssPaddingSideArray {
+            .#{$ccss}-p#{str-slice($ccssPaddingSide, 0, 1)}-#{$ccssPaddingSize} {
+                padding-#{$ccssPaddingSide}: #{$ccssPaddingSize}px !important;
+            }
+        }
+        .#{$ccss}-pv-#{$ccssPaddingSize} {
+            padding-top: #{$ccssPaddingSize}px !important;
+            padding-bottom: #{$ccssPaddingSize}px !important;
+        }
+        .#{$ccss}-ph-#{$ccssPaddingSize} {
+            padding-left: #{$ccssPaddingSize}px !important;
+            padding-right: #{$ccssPaddingSize}px !important;
+        }
+        .#{$ccss}-pa-#{$ccssPaddingSize} {
+            padding: #{$ccssPaddingSize}px !important;
+        }
+    }
+    
+    @media #{$min576} {
+        @each $ccssPaddingSize in $ccssPaddingSizeArray {
+            @each $ccssPaddingSide in $ccssPaddingSideArray {
+                .#{$ccss}-p#{str-slice($ccssPaddingSide, 0, 1)}-sm-#{$ccssPaddingSize} {
+                    padding-#{$ccssPaddingSide}: #{$ccssPaddingSize}px !important;
+                }
+            }
+            .#{$ccss}-pv-sm-#{$ccssPaddingSize} {
+                padding-top: #{$ccssPaddingSize}px !important;
+                padding-bottom: #{$ccssPaddingSize}px !important;
+            }
+            .#{$ccss}-ph-sm-#{$ccssPaddingSize} {
+                padding-left: #{$ccssPaddingSize}px !important;
+                padding-right: #{$ccssPaddingSize}px !important;
+            }
+            .#{$ccss}-pa-sm-#{$ccssPaddingSize} {
+                padding: #{$ccssPaddingSize}px !important;
+            }
+        }
+    }
+  
+    @media #{$min768} {
+        @each $ccssPaddingSize in $ccssPaddingSizeArray {
+            @each $ccssPaddingSide in $ccssPaddingSideArray {
+                .#{$ccss}-p#{str-slice($ccssPaddingSide, 0, 1)}-md-#{$ccssPaddingSize} {
+                    padding-#{$ccssPaddingSide}: #{$ccssPaddingSize}px !important;
+                }
+            }
+            .#{$ccss}-pv-md-#{$ccssPaddingSize} {
+                padding-top: #{$ccssPaddingSize}px !important;
+                padding-bottom: #{$ccssPaddingSize}px !important;
+            }
+            .#{$ccss}-ph-md-#{$ccssPaddingSize} {
+                padding-left: #{$ccssPaddingSize}px !important;
+                padding-right: #{$ccssPaddingSize}px !important;
+            }
+            .#{$ccss}-pa-md-#{$ccssPaddingSize} {
+                padding: #{$ccssPaddingSize}px !important;
+            }
+        }
+    }
+  
+    @media #{$min992} {
+        @each $ccssPaddingSize in $ccssPaddingSizeArray {
+            @each $ccssPaddingSide in $ccssPaddingSideArray {
+                .#{$ccss}-p#{str-slice($ccssPaddingSide, 0, 1)}-lg-#{$ccssPaddingSize} {
+                    padding-#{$ccssPaddingSide}: #{$ccssPaddingSize}px !important;
+                }
+            }
+            .#{$ccss}-pv-lg-#{$ccssPaddingSize} {
+                padding-top: #{$ccssPaddingSize}px !important;
+                padding-bottom: #{$ccssPaddingSize}px !important;
+            }
+            .#{$ccss}-ph-lg-#{$ccssPaddingSize} {
+                padding-left: #{$ccssPaddingSize}px !important;
+                padding-right: #{$ccssPaddingSize}px !important;
+            }
+            .#{$ccss}-pa-lg-#{$ccssPaddingSize} {
+                padding: #{$ccssPaddingSize}px !important;
+            }
+        }
+    }
+  
+    @media #{$min1200} {
+        @each $ccssPaddingSize in $ccssPaddingSizeArray {
+            @each $ccssPaddingSide in $ccssPaddingSideArray {
+                .#{$ccss}-p#{str-slice($ccssPaddingSide, 0, 1)}-xl-#{$ccssPaddingSize} {
+                    padding-#{$ccssPaddingSide}: #{$ccssPaddingSize}px !important;
+                }
+            }
+            .#{$ccss}-pv-xl-#{$ccssPaddingSize} {
+                padding-top: #{$ccssPaddingSize}px !important;
+                padding-bottom: #{$ccssPaddingSize}px !important;
+            }
+            .#{$ccss}-ph-xl-#{$ccssPaddingSize} {
+                padding-left: #{$ccssPaddingSize}px !important;
+                padding-right: #{$ccssPaddingSize}px !important;
+            }
+            .#{$ccss}-pa-xl-#{$ccssPaddingSize} {
+                padding: #{$ccssPaddingSize}px !important;
+            }
+        }
+    }
+
+    @media #{$min1366} {
+        @each $ccssPaddingSize in $ccssPaddingSizeArray {
+            @each $ccssPaddingSide in $ccssPaddingSideArray {
+                .#{$ccss}-p#{str-slice($ccssPaddingSide, 0, 1)}-xxl-#{$ccssPaddingSize} {
+                    padding-#{$ccssPaddingSide}: #{$ccssPaddingSize}px !important;
+                }
+            }
+            .#{$ccss}-pv-xxl-#{$ccssPaddingSize} {
+                padding-top: #{$ccssPaddingSize}px !important;
+                padding-bottom: #{$ccssPaddingSize}px !important;
+            }
+            .#{$ccss}-ph-xxl-#{$ccssPaddingSize} {
+                padding-left: #{$ccssPaddingSize}px !important;
+                padding-right: #{$ccssPaddingSize}px !important;
+            }
+            .#{$ccss}-pa-xxl-#{$ccssPaddingSize} {
+                padding: #{$ccssPaddingSize}px !important;
+            }
+        }
+    }
+/* Padding E */

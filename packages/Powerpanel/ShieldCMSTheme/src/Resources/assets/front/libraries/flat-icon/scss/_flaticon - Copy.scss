@@ -1,0 +1,73 @@
+/* Flaticon icon font: Flaticon Creation date: 20/02/2019 06:30   */
+
+@font-face {
+  font-family: "Flaticon";
+  src: url("../fonts/Flaticon.eot");
+  src: url("../fonts/Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("../fonts/Flaticon.woff2") format("woff2"),
+       url("../fonts/Flaticon.woff") format("woff"),
+       url("../fonts/Flaticon.ttf") format("truetype"),
+       url("../fonts/Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("../fonts/Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+.fi:before{
+  display: inline-block;
+  font-family: "Flaticon";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+.flaticon-search:before { content: "\f100"; }
+.flaticon-left-arrow:before { content: "\f101"; }
+.flaticon-right-arrow:before { content: "\f102"; }
+.flaticon-pdf-file:before { content: "\f103"; }
+.flaticon-xls-file:before { content: "\f104"; }
+.flaticon-phone-call:before { content: "\f105"; }
+.flaticon-mail:before { content: "\f106"; }
+.flaticon-facebook-icon:before { content: "\f107"; }
+.flaticon-right:before { content: "\f108"; }
+.flaticon-youtube-icon:before { content: "\f109"; }
+.flaticon-clock-circular-outline:before { content: "\f10a"; }
+.flaticon-doc-file:before { content: "\f10b"; }
+.flaticon-home-icon:before { content: "\f10c"; }
+.flaticon-twitter-social-outlined-logo:before { content: "\f10d"; }
+.flaticon-play-button:before { content: "\f10e"; }
+.flaticon-comments:before { content: "\f10f"; }
+.flaticon-danger:before { content: "\f110"; }
+.flaticon-caret-down:before { content: "\f111"; }
+
+$font-Flaticon-search: "\f100";
+$font-Flaticon-left-arrow: "\f101";
+$font-Flaticon-right-arrow: "\f102";
+$font-Flaticon-pdf-file: "\f103";
+$font-Flaticon-xls-file: "\f104";
+$font-Flaticon-phone-call: "\f105";
+$font-Flaticon-mail: "\f106";
+$font-Flaticon-facebook-icon: "\f107";
+$font-Flaticon-right: "\f108";
+$font-Flaticon-youtube-icon: "\f109";
+$font-Flaticon-clock-circular-outline: "\f10a";
+$font-Flaticon-doc-file: "\f10b";
+$font-Flaticon-home-icon: "\f10c";
+$font-Flaticon-twitter-social-outlined-logo: "\f10d";
+$font-Flaticon-play-button: "\f10e";
+$font-Flaticon-comments: "\f10f";
+$font-Flaticon-danger: "\f110";
+$font-Flaticon-caret-down: "\f111";

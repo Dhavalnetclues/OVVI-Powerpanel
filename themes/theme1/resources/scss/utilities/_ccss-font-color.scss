@@ -1,0 +1,11 @@
+/* - - - - - - - - - - - - -
+    Related File Name: ..\utilities\_ccss-utilities-setting.scss
+- - - - - - - - - - - - - */
+
+/* Font Color S */
+    @each $color, $value in colorMap($ccssBaseColors, 10) {
+        .#{$ccss}-fc-#{$color} {     
+            color: $value;
+        }
+    }
+/* Font Color E */

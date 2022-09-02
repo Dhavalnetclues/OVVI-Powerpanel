@@ -1,0 +1,48 @@
+/* - - - - - - - - - - - - -
+    Related File Name: ..\utilities\_ccss-utilities-setting.scss
+- - - - - - - - - - - - - */
+
+/* Font Style S */  
+    @each $ccssFontWeight in $ccssFontWeightArray {
+        .#{$ccss}-fw-#{$ccssFontWeight} {
+            font-weight: #{$ccssFontWeight};
+        }
+    }
+
+    .#{$ccss}-fw-thin {
+      	@extend .#{$ccss}-fw-100;
+    }
+
+    .#{$ccss}-fw-extra-light {
+    	@extend .#{$ccss}-fw-200;
+    }
+
+    .#{$ccss}-fw-light {
+    	@extend .#{$ccss}-fw-300;
+    }
+
+    .#{$ccss}-fw-regular {
+    	@extend .#{$ccss}-fw-400;
+    }
+
+    .#{$ccss}-fw-medium {
+    	@extend .#{$ccss}-fw-500;
+    }
+
+    .#{$ccss}-fw-semibold {
+    	@extend .#{$ccss}-fw-600;
+    }
+
+    .#{$ccss}-fw-bold {
+    	@extend .#{$ccss}-fw-700;
+    }
+
+    .#{$ccss}-fw-extra-bold {
+    	@extend .#{$ccss}-fw-800;
+    }
+
+    .#{$ccss}-fw-black {
+    	@extend .#{$ccss}-fw-900;
+    }
+
+/* Font Style E */

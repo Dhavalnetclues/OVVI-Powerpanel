@@ -1,0 +1,271 @@
+/* - - - - - - - - - - - - -
+    Related File Name: ..\utilities\_ccss-utilities-setting.scss
+- - - - - - - - - - - - - */
+
+/* Margin S */
+    .#{$ccss}-nomargin{
+        margin: 0 !important;;
+    }
+
+    @each $ccssMarginSize in $ccssMarginSizeArray {
+        @each $ccssMarginSide in $ccssMarginSideArray {
+            .#{$ccss}-m#{str-slice($ccssMarginSide, 0, 1)}-#{$ccssMarginSize} {
+                margin-#{$ccssMarginSide}: #{$ccssMarginSize}px !important;
+            }
+        }
+        .#{$ccss}-mv-#{$ccssMarginSize} {
+            margin-top: #{$ccssMarginSize}px !important;
+            margin-bottom: #{$ccssMarginSize}px !important;
+        }
+        .#{$ccss}-mh-#{$ccssMarginSize} {
+            margin-left: #{$ccssMarginSize}px !important;
+            margin-right: #{$ccssMarginSize}px !important;
+        }
+        .#{$ccss}-ma-#{$ccssMarginSize} {
+            margin: #{$ccssMarginSize}px !important;
+        }
+    }
+    .#{$ccss}-ma {
+        margin: auto !important;
+    }
+    .#{$ccss}-mva {
+        margin-top: auto !important;
+        margin-bottom: auto !important;
+    }
+    .#{$ccss}-mha {
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    .#{$ccss}-mta {
+        margin-top: auto !important;
+    }
+    .#{$ccss}-mba {
+        margin-bottom: auto !important;
+    }
+    .#{$ccss}-mla {
+        margin-left: auto !important;
+    }
+    .#{$ccss}-mra {
+        margin-right: auto !important;
+    }
+    
+    @media #{$min576} {
+        @each $ccssMarginSize in $ccssMarginSizeArray {
+            @each $ccssMarginSide in $ccssMarginSideArray {
+                .#{$ccss}-m#{str-slice($ccssMarginSide, 0, 1)}-sm-#{$ccssMarginSize} {
+                    margin-#{$ccssMarginSide}: #{$ccssMarginSize}px !important;
+                }
+            }
+            .#{$ccss}-mv-sm-#{$ccssMarginSize} {
+                margin-top: #{$ccssMarginSize}px !important;
+                margin-bottom: #{$ccssMarginSize}px !important;
+            }
+            .#{$ccss}-mh-sm-#{$ccssMarginSize} {
+                margin-left: #{$ccssMarginSize}px !important;
+                margin-right: #{$ccssMarginSize}px !important;
+            }
+            .#{$ccss}-ma-sm-#{$ccssMarginSize} {
+                margin: #{$ccssMarginSize}px !important;
+            }
+        }
+        .#{$ccss}-ma-sm {
+            margin: auto !important;
+        }
+        .#{$ccss}-mva-sm {
+            margin-top: auto !important;
+            margin-bottom: auto !important;
+        }
+        .#{$ccss}-mha-sm {
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+        .#{$ccss}-mta-sm {
+            margin-top: auto !important;
+        }
+        .#{$ccss}-mba-sm {
+            margin-bottom: auto !important;
+        }
+        .#{$ccss}-mla-sm {
+            margin-left: auto !important;
+        }
+        .#{$ccss}-mra-sm {
+            margin-right: auto !important;
+        }
+    }
+  
+    @media #{$min768} {
+        @each $ccssMarginSize in $ccssMarginSizeArray {
+            @each $ccssMarginSide in $ccssMarginSideArray {
+                .#{$ccss}-m#{str-slice($ccssMarginSide, 0, 1)}-md-#{$ccssMarginSize} {
+                    margin-#{$ccssMarginSide}: #{$ccssMarginSize}px !important;
+                }
+            }
+            .#{$ccss}-mv-md-#{$ccssMarginSize} {
+                margin-top: #{$ccssMarginSize}px !important;
+                margin-bottom: #{$ccssMarginSize}px !important;
+            }
+            .#{$ccss}-mh-md-#{$ccssMarginSize} {
+                margin-left: #{$ccssMarginSize}px !important;
+                margin-right: #{$ccssMarginSize}px !important;
+            }
+            .#{$ccss}-ma-md-#{$ccssMarginSize} {
+                margin: #{$ccssMarginSize}px !important;
+            }
+        }
+        .#{$ccss}-ma-md {
+            margin: auto !important;
+        }
+        .#{$ccss}-mva-md {
+            margin-top: auto !important;
+            margin-bottom: auto !important;
+        }
+        .#{$ccss}-mha-md {
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+        .#{$ccss}-mta-md {
+            margin-top: auto !important;
+        }
+        .#{$ccss}-mba-md {
+            margin-bottom: auto !important;
+        }
+        .#{$ccss}-mla-md {
+            margin-left: auto !important;
+        }
+        .#{$ccss}-mra-md {
+            margin-right: auto !important;
+        }
+    }
+  
+    @media #{$min992} {
+        @each $ccssMarginSize in $ccssMarginSizeArray {
+            @each $ccssMarginSide in $ccssMarginSideArray {
+                .#{$ccss}-m#{str-slice($ccssMarginSide, 0, 1)}-lg-#{$ccssMarginSize} {
+                    margin-#{$ccssMarginSide}: #{$ccssMarginSize}px !important;
+                }
+            }
+            .#{$ccss}-mv-lg-#{$ccssMarginSize} {
+                margin-top: #{$ccssMarginSize}px !important;
+                margin-bottom: #{$ccssMarginSize}px !important;
+            }
+            .#{$ccss}-mh-lg-#{$ccssMarginSize} {
+                margin-left: #{$ccssMarginSize}px !important;
+                margin-right: #{$ccssMarginSize}px !important;
+            }
+            .#{$ccss}-ma-lg-#{$ccssMarginSize} {
+                margin: #{$ccssMarginSize}px !important;
+            }
+        }
+        .#{$ccss}-ma-lg {
+            margin: auto !important;
+        }
+        .#{$ccss}-mva-lg {
+            margin-top: auto !important;
+            margin-bottom: auto !important;
+        }
+        .#{$ccss}-mha-lg {
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+        .#{$ccss}-mta-lg {
+            margin-top: auto !important;
+        }
+        .#{$ccss}-mba-lg {
+            margin-bottom: auto !important;
+        }
+        .#{$ccss}-mla-lg {
+            margin-left: auto !important;
+        }
+        .#{$ccss}-mra-lg {
+            margin-right: auto !important;
+        }
+    }
+  
+    @media #{$min1200} {
+        @each $ccssMarginSize in $ccssMarginSizeArray {
+            @each $ccssMarginSide in $ccssMarginSideArray {
+                .#{$ccss}-m#{str-slice($ccssMarginSide, 0, 1)}-xl-#{$ccssMarginSize} {
+                    margin-#{$ccssMarginSide}: #{$ccssMarginSize}px !important;
+                }
+            }
+            .#{$ccss}-mv-xl-#{$ccssMarginSize} {
+                margin-top: #{$ccssMarginSize}px !important;
+                margin-bottom: #{$ccssMarginSize}px !important;
+            }
+            .#{$ccss}-mh-xl-#{$ccssMarginSize} {
+                margin-left: #{$ccssMarginSize}px !important;
+                margin-right: #{$ccssMarginSize}px !important;
+            }
+            .#{$ccss}-ma-xl-#{$ccssMarginSize} {
+                margin: #{$ccssMarginSize}px !important;
+            }
+        }
+        .#{$ccss}-ma-xl {
+            margin: auto !important;
+        }
+        .#{$ccss}-mva-xl {
+            margin-top: auto !important;
+            margin-bottom: auto !important;
+        }
+        .#{$ccss}-mha-xl {
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+        .#{$ccss}-mta-xl {
+            margin-top: auto !important;
+        }
+        .#{$ccss}-mba-xl {
+            margin-bottom: auto !important;
+        }
+        .#{$ccss}-mla-xl {
+            margin-left: auto !important;
+        }
+        .#{$ccss}-mra-xl {
+            margin-right: auto !important;
+        }
+    }
+
+    @media #{$min1366} {
+        @each $ccssMarginSize in $ccssMarginSizeArray {
+            @each $ccssMarginSide in $ccssMarginSideArray {
+                .#{$ccss}-m#{str-slice($ccssMarginSide, 0, 1)}-xxl-#{$ccssMarginSize} {
+                    margin-#{$ccssMarginSide}: #{$ccssMarginSize}px !important;
+                }
+            }
+            .#{$ccss}-mv-xxl-#{$ccssMarginSize} {
+                margin-top: #{$ccssMarginSize}px !important;
+                margin-bottom: #{$ccssMarginSize}px !important;
+            }
+            .#{$ccss}-mh-xxl-#{$ccssMarginSize} {
+                margin-left: #{$ccssMarginSize}px !important;
+                margin-right: #{$ccssMarginSize}px !important;
+            }
+            .#{$ccss}-ma-xxl-#{$ccssMarginSize} {
+                margin: #{$ccssMarginSize}px !important;
+            }
+        }
+        .#{$ccss}-ma-xxl {
+            margin: auto !important;
+        }
+        .#{$ccss}-mva-xxl {
+            margin-top: auto !important;
+            margin-bottom: auto !important;
+        }
+        .#{$ccss}-mha-xxl {
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+        .#{$ccss}-mta-xxl {
+            margin-top: auto !important;
+        }
+        .#{$ccss}-mba-xxl {
+            margin-bottom: auto !important;
+        }
+        .#{$ccss}-mla-xxl {
+            margin-left: auto !important;
+        }
+        .#{$ccss}-mra-xxl {
+            margin-right: auto !important;
+        }
+    }
+/* Margin E */

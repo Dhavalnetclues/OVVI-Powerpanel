@@ -1,0 +1,97 @@
+.home_notification{
+    display: none;
+    .latest-n{
+        background: lighten($ac_black, 15%);
+        color: $ac_white;
+        max-width: 285px;
+        width: 100%;
+        text-align: center;
+        padding: 34px; 
+        font-size: 22px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        @media(max-width: 1199px){
+            max-width: 215px;
+            font-size: 20px;
+            padding: 22px;
+        }
+        @media(max-width: 767px){
+            font-size: 14px;
+            padding: 15px 16px;
+            max-width: 142px;
+            float:left;
+        }
+    }
+    .n-item-m{
+        width: 100%;
+        max-width: calc(100% - 285px - 215px);
+        background: lighten($ac_black, 90%);
+        @media(max-width: 1199px){
+            max-width: calc(100% - 200px - 200px);
+        }
+        @media(max-width: 767px){
+            max-width: calc(100% - 142px);
+            height: 44px;
+            float: right;
+        }
+        .item{
+            text-align: center;
+            color: lighten($ac_black, 15%);
+            font-size: 20px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 15px;
+            a{
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            @media(max-width: 767px){
+                font-size: 16px;
+            }        
+        }
+        div{
+            height: 100%;
+        }
+    }
+    .view-all-n{
+        background: lighten($ac_black, 15%);
+        color: $ac_white;
+        max-width: 215px;
+        width: 100%;
+        text-align: center;
+        padding: 34px;
+        font-size: 22px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        @media(max-width: 1199px){
+            font-size: 20px;
+            padding: 22px;
+        }
+        @media(max-width: 767px){
+            background: transparent;
+            color: $ac_black;
+            padding: 0;
+            margin-top: 10px;
+            max-width: 100%;
+            text-align: right;
+            font-size: 14px;
+            clear: both;
+            i{
+                display: inline-block !important;
+            }
+        }
+        a{
+            @media(max-width: 767px){
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                i{
+                    margin-left: 5px;
+                }
+            }
+        }
+    }
+}

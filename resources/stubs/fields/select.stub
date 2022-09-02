@@ -1,0 +1,7 @@
+<div class="form-group @if($errors->first('{{ fieldName }}')) has-error @endif form-md-line-input">
+	<label class="form_title" for="advertise_type">{{ fieldTitle }}</label>
+	{!! Form::select('{{ fieldName }}', ['yes'=> 'Yes','no'=> 'No'], isset($recordObj->{{ fieldName }}) ? $recordObj->{{ fieldName }}:old('{{ fieldName }}'), array('class' => 'form-control bs-select select2')) !!}
+	<span class="help-block">
+		<strong>{{ $errors->first('{{ fieldName }}') }}</strong>
+	</span>
+</div>

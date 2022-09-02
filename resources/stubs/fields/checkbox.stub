@@ -1,0 +1,21 @@
+<div class="form-group @if($errors->first('{{ fieldName }}')) has-error @endif form-md-line-input">
+	<label class="form_title" for="site_name">{{ fieldTitle }} </label>
+	<br/>
+	@if(isset($recordObj->{{ fieldName }}) && $recordObj->{{ fieldName }} == 'yes')
+		@php $checkbox_yes = true; @endphp
+	@else
+		@php $checkbox_yes = false; @endphp
+	@endif  	
+ 	<label> {!! Form::checkbox('{{ fieldName }}', 'yes', $checkbox_yes) !!}	  
+  	<span class="check"></span> <span class="box"></span> Yes </label>	
+  	@if(isset($recordObj->{{ fieldName }}) && $recordObj->{{ fieldName }} == 'no')
+		@php $checkbox_no = true; @endphp
+	@else
+		@php $checkbox_no = false; @endphp
+	@endif
+	<label> {!! Form::checkbox('{{ fieldName }}', 'no', $checkbox_no) !!}
+	<span class="check"></span> <span class="box"></span> No </label>
+	<span class="help-block">
+		<strong>{{ $errors->first('{{ fieldName }}') }}</strong>
+	</span>
+</div>

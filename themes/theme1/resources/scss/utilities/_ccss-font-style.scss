@@ -1,0 +1,11 @@
+/* - - - - - - - - - - - - -
+    Related File Name: ..\utilities\_ccss-utilities-setting.scss
+- - - - - - - - - - - - - */
+
+/* Font Style S */  
+    @each $ccssFontStyle in $ccssFontStyleArray {
+        .#{$ccss}-fs-#{$ccssFontStyle} {
+            font-style: #{$ccssFontStyle};
+        }
+    }
+/* Font Style E */

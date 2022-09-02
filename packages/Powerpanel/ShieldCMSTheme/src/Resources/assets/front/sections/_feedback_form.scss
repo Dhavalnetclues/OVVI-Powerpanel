@@ -1,0 +1,203 @@
+.feedback_icon {
+		position:fixed;
+		top:50%;
+		right:0px;
+		z-index:16;
+		width:44px;
+		height:44px;
+		line-height: 44px;
+		padding:0px;
+		background: $secondary;
+		font-size: $ac_fs_xl;
+		color: $ac_white;
+		text-align:center;
+		cursor:pointer;
+		@include css3-prefix ('transition', '#{$ac_3_ti}');
+		@include css3-prefix('transform', 'translateY(-50%)');	
+		@include css3-prefix('box-shadow', '0 0 10px rgba(0,0,0,0.10)');	
+		border-radius:0px;
+		@media (min-width:1025px){
+			width:60px;
+			height:60px;	
+			line-height: 60px;
+			font-size: $ac_fs_xl + 5px;
+			&:hover {
+				background: $ternary;
+			}
+		}
+}
+.feedback_model {
+	.modal-body {
+		.head_model {
+			p {
+				color: $ternary_2;
+			}
+		}
+		.overall_title {
+			margin-top: 15px;
+			margin-bottom: 5px; 
+		}
+
+		.feedback_list {
+			margin-top:15px;
+			margin-bottom:15px;
+			ul {
+				text-align:center;
+				left: 0px;
+				margin: 0px;
+				li {
+					margin:0 5px;
+					position:relative;
+					display:inline-block;						
+					text-align:center;
+					input {
+						opacity:0;
+						position:absolute;
+						top:0px;
+						left:0px;
+						right:0px;							
+						cursor:pointer;
+						width:36px;
+						height:36px;
+						margin:auto;
+						&:checked {
+							+ .icon {									
+								i {
+									color:rgba($secondary,1);
+								}
+								+ .title_text {					
+									color:rgba($secondary,1);								
+								}	
+							}							
+						}
+					}	
+					.icon {
+						width:36px;
+						height:36px;
+						line-height:36px;						
+						border-radius:50%;
+						display:block;						
+						margin:0 auto 4px;
+						cursor:pointer;						
+						@include css3-prefix ('transition', '#{$ac_3_ti}');						
+						i {
+							font-size:$ac_fs_6xl;
+							color:rgba($ac_black,0.30);
+							vertical-align:middle;			
+							svg {
+								padding:0px !important; 
+							}				
+						}						
+					}
+					.title_text {						
+						margin-top:2px;
+						font-size:$ac_fs_md;
+						color:rgba($ac_black,0.40);
+						font-weight:500;
+						line-height: 150%;
+						display:block;	
+						@include css3-prefix ('transition', '#{$ac_3_ti}');		
+						@media (max-width:767px){
+							font-size:$ac_fs_md - 1;
+						}
+						@media (max-width:479px){
+							font-size:$ac_fs_md - 2px;
+						}
+					}
+					@media (max-width:767px){
+						margin:0 2px;						
+					}
+				}
+			}
+			.Satifn-error {
+				color:#a94442;
+				display:block;
+			}
+		}
+		.satisfied {
+			margin:0 auto 20px;
+			padding:8px 10px;			
+			width:100%;			
+			max-width:300px;
+			border-top:1px solid rgba($ac_black,0.20);
+			border-bottom:1px solid rgba($ac_black,0.20);			
+			span {
+				font-size:$ac_fs_md - 3px;				
+				&.right {
+					float:right;
+				}			
+			}			
+		}
+		.form-group {
+			.label-title {
+				font-size: 14px;
+				font-weight: 600;
+				color: $ternary_2;
+				line-height: 120%;
+				padding-bottom: 2px;
+			}
+		}		
+		.feedback_cat {
+			margin-left: -5px;
+			li {
+				margin: 5px 5px 0;
+				width: 100%;
+				max-width: 150px;
+				position: relative;
+				display: inline-block;
+				vertical-align: middle;
+				text-align: center;			
+				input {
+					opacity: 0;
+					position: absolute;
+					top: 0;
+					left: 0;
+					right: 0;
+					cursor: pointer;
+					width: 100%;
+					height: 100%;
+					margin: auto;
+				}
+				.title_text {
+					@include css3-prefix('transition', 'all .5s ease-in-out');					
+					background: $ac_lightblue;
+					//border: 1px solid $ac_lightblue_hover;
+					display: table;
+					width: 100%;
+					height: 40px;
+					padding: 5px 10px;
+					span {
+						display: table-cell;
+						vertical-align: middle;
+						font-size: $ac_fs_sm;
+						color: $ac_blue;
+						font-weight: 400;
+						line-height: 120%;
+					}
+				}
+				input:checked  {					
+						+ .title_text {
+							background: rgba($ternary, 0.65);
+							border-color: $secondary;	
+							span {
+								color: $ac_white;
+							}
+						}					
+				}
+				@media (max-width:479px) {
+					display: block;
+					max-width: 90%;
+					margin: 5px auto 0;
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+

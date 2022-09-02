@@ -1,0 +1,273 @@
+.cms{		
+	p {
+		//font-size:$ac_fs_md;		
+		text-align:justify;
+		strong  {
+		   font-weight:$ac_fw_sb;
+		}
+		@media (max-width:992px){
+			font-size:$ac_fs_sm;
+		}	
+		@media (max-width:767px){
+			text-align:justify;
+		}	
+	}
+	ul, ol {
+		li {
+			//font-size:$ac_fs_md;
+			@media (max-width:992px){
+				font-size:$ac_fs_md - 1px;
+			}
+		}
+	}
+	ul {
+		&.dotted {
+			li {
+				position:relative;
+				list-style-image:none;
+				list-style:none;
+				display: table;
+				&:before {
+				  content: "";
+				  width: 6px;
+				  height: 6px;
+				  border-radius:50%;
+				  background: $ac_a;
+				  position:absolute;
+				  left:-15px;
+				  top:9px;	
+				}
+			}
+		}
+	}
+	&.links_page {
+		ul {
+			li {
+				word-wrap: break-word;
+				p {
+					text-align:inherit;
+				}
+			}
+		}
+	}
+	
+	.back_div {
+		float:right;
+		margin-bottom: 5px; 
+		a {
+			color:$ac_a;
+			text-transform:uppercase;
+			line-height:150%; 
+			i {
+				@include css3-prefix ('transform','rotate(180deg)');
+				display:inline-block;
+				margin-right:2px;								
+				vertical-align: -1px;
+			}						
+		}
+		@media (max-width:992px){
+			float:none;
+			margin-bottom:10px;
+			text-align:right;			
+		}	
+	}
+	.cms_detail_h2 {
+		font-size: $ac_fs_3xl - 2px;		
+	}		
+	.same_title {
+		margin-bottom:20px;				
+		.title_div {
+			margin:0px;
+			font-size:$ac_fs_6xl;			
+			font-weight:$ac_fw_b;
+			text-transform:uppercase;
+			line-height:115%;
+			position:relative;
+			z-index:1;
+			@media (max-width:992px){
+				font-size:$ac_fs_3xl + 4;					
+			}
+			@media (max-width:767px){
+				font-size:$ac_fs_3xl + 1;					
+			}
+		}
+		p {
+			max-width: 800px;
+			margin: 5px auto 0px;
+			text-align: center;
+		}
+		@media (max-width:767px){
+			margin-bottom:10px;
+		}
+	}
+
+
+	h2 {
+		p {
+			font-size: inherit;
+			color: inherit;
+			font-weight: inherit;
+			text-align: inherit;
+			text-transform: inherit;
+			line-height: inherit;
+		}
+	}
+	.left_img_cms 
+	{
+		float: left;
+		margin-right: 15px;
+		margin-top: 5px;
+		margin-bottom: 10px;
+	}
+	.center_img_cms {
+		text-align: center;
+	}
+	.right_img_cms 
+	{
+		float: right;
+		margin-left: 15px;
+		margin-top: 5px;
+		margin-bottom: 10px;
+	}
+	@media(max-width:991px)
+	{
+		.right_img_cms,.left_img_cms
+		{
+			float: none !important;
+			display: table;
+			margin: 5px auto 15px;
+		}
+	}
+	
+	table {
+		border:0px;
+		tr {
+			th, td {				
+				color: $ac_black;
+				padding:12px 10px;
+				border:0px;
+				vertical-align:top;
+				line-height:130%;	
+			}
+			th {
+				background: rgba($ac_b,0.15);
+				color: $ac_black;
+				font-size:$ac_fs_md;
+				font-weight:$ac_fw_sb;
+				border-right:2px solid $ac_white;
+				&:last-child {
+					border-right:0px;
+				} 
+				@media (max-width:767px){
+					font-size:$ac_fs_md - 1px;
+				}
+			}
+			td {
+				font-size:$ac_fs_md - 1px;
+				background:$ac_white;
+				border-right:2px solid $ac_white;
+				color:$ac_m;
+				&:last-child {
+					border-right:0px;
+				} 
+				@media (max-width:767px){
+					font-size:$ac_fs_base - 1px;
+				}
+			}
+			&:nth-child(odd) {
+				td {
+					background:#f6f9fc;
+				}
+			}
+		}
+			
+	}
+	
+	// Pagination
+	.#{$ac}-pagination {	
+		margin: 20px 0;
+		left: 0;
+		width: auto;
+		li{
+			margin: 0px;
+		}
+	}	
+		
+}
+.download_files {
+	ul {
+		left:auto;
+		padding-left: 0px;		
+		width: auto;
+		li {
+			list-style-image:inherit;
+			list-style:none;			
+			padding:15px 0;
+			a {
+				position:relative;				
+				color:$ac_black;
+				padding-left:45px;
+				display:table;
+				i {
+					position:absolute;
+					left:-2px;
+					top:-10px;
+					font-size:$ac_fs_5xl + 2px;
+					color:$ac_a;
+					&.flaticon-pdf-file {
+						color: $ac_red;			
+					}
+					&.flaticon-doc-file {
+						color: #0096e6;
+					}
+					&.flaticon-xlsx-file-format-extension{
+						color: #35af47;
+					}
+					&.flaticon-xls-file{
+						color: #1e7244;
+					}
+					&.flaticon-txt-file-symbol {
+						color: #2766a2;
+					}
+					&.flaticon-ppt {
+						color: #e64a19;
+					}
+					&.flaticon-zip-file-format {
+						color: #2766a0;
+					}
+					&.flaticon-excel-file {
+						color: #2f7d32;
+					}
+				}
+				&:hover {
+					color: $ac_a;
+				}
+			}
+			@media (max-width:767px){
+				padding:10px 0;
+				a {
+					padding-left:32px;
+					i {
+						top:-8px;
+						font-size:$ac_fs_5xl - 4px;
+					}
+				}
+			}
+		}
+	}
+}
+
+// Home Page CMS
+.section {
+	padding:80px 0;
+	&.gray {
+		background: #f9f9f9;
+	}	
+	@media (max-width:1024px){		
+		padding:60px 0;
+	}	
+	@media (max-width:767px){
+		padding:30px 0;	
+	}
+}
+

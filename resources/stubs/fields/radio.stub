@@ -1,0 +1,26 @@
+<div class="form-group @if($errors->first('{{ fieldName }}')) has-error @endif form-md-line-input">
+	<label class="form_title" for="site_name">{{ fieldTitle }}</label>
+	 <div class="md-radio-inline">
+	 		@if(isset($recordObj->{{ fieldName }}) && $recordObj->{{ fieldName }} == 'yes')
+				@php $radio_yes = 'checked'; @endphp
+			@else
+				@php $radio_yes = ''; @endphp
+			@endif  		
+			<div class="md-radio">
+				 <input class="md-radiobtn" type="radio" value="yes" name="{{ fieldName }}" id="{{ fieldName }}0" {{ $radio_yes }}> 
+				 <label for="{{ fieldName }}0"> <span></span> <span class="check"></span> <span class="box"></span> Yes </label>
+			</div>
+			@if(isset($recordObj->{{ fieldName }}) && $recordObj->{{ fieldName }} == 'no')
+				@php $radio_no = 'checked'; @endphp
+			@else
+				@php $radio_no = ''; @endphp
+			@endif
+			<div class="md-radio">               
+				 <input class="md-radiobtn" type="radio" value="no" name="{{ fieldName }}" id="{{ fieldName }}1" {{ $radio_no }}>
+				 <label for="{{ fieldName }}1"> <span></span> <span class="check"></span> <span class="box"></span> No </label>
+			</div>
+			<span class="help-block">
+				<strong>{{ $errors->first('{{ fieldName }}') }}</strong>
+			</span>
+	 </div>   
+</div>

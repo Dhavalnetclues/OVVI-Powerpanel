@@ -1,0 +1,93 @@
+/* - - - - - - - - - - - - -
+    Related File Name: ..\utilities\_ccss-utilities-setting.scss
+- - - - - - - - - - - - - */
+
+/* Border Radius S */
+    .#{$ccss}-#{$ccssBr}-none{
+        border-radius: none;
+    }
+  
+    @each $ccssBorderRadius in $ccssBorderRadiusArray {
+        .#{$ccss}-#{$ccssBr}-#{$ccssBorderRadius} {
+            border-radius: #{$ccssBorderRadius}px;
+        }
+
+        .#{$ccss}-#{$ccssBr}-tl-#{$ccssBorderRadius} {
+            border-top-left-radius: #{$ccssBorderRadius}px;
+        }
+
+        .#{$ccss}-#{$ccssBr}-tr-#{$ccssBorderRadius} {
+            border-top-right-radius: #{$ccssBorderRadius}px;
+        }
+
+        .#{$ccss}-#{$ccssBr}-bl-#{$ccssBorderRadius} {
+            border-bottom-left-radius: #{$ccssBorderRadius}px;
+        }
+
+        .#{$ccss}-#{$ccssBr}-br-#{$ccssBorderRadius} {
+            border-bottom-right-radius: #{$ccssBorderRadius}px;
+        }
+
+        .#{$ccss}-#{$ccssBr}-t-#{$ccssBorderRadius} {
+            border-top-left-radius: #{$ccssBorderRadius}px;
+            border-top-right-radius: #{$ccssBorderRadius}px;
+        }
+
+        .#{$ccss}-#{$ccssBr}-r-#{$ccssBorderRadius} {
+            border-top-right-radius: #{$ccssBorderRadius}px;
+            border-bottom-right-radius: #{$ccssBorderRadius}px;
+        }
+
+        .#{$ccss}-#{$ccssBr}-b-#{$ccssBorderRadius} {
+            border-bottom-left-radius: #{$ccssBorderRadius}px;
+            border-bottom-right-radius: #{$ccssBorderRadius}px;
+        }
+
+        .#{$ccss}-#{$ccssBr}-l-#{$ccssBorderRadius} {
+            border-top-left-radius: #{$ccssBorderRadius}px;
+            border-bottom-left-radius: #{$ccssBorderRadius}px;
+        }
+    }
+
+    @each $ccssBorderRadius in $ccssBorderRadiusArray {
+        .#{$ccss}-#{$ccssBr}-#{$ccssBorderRadius}-p {
+            border-radius: #{$ccssBorderRadius}#{'%'};
+        }
+
+        .#{$ccss}-#{$ccssBr}-tl-#{$ccssBorderRadius}-p {
+            border-top-left-radius: #{$ccssBorderRadius}#{'%'};
+        }
+
+        .#{$ccss}-#{$ccssBr}-tr-#{$ccssBorderRadius}-p {
+            border-top-right-radius: #{$ccssBorderRadius}#{'%'};
+        }
+
+        .#{$ccss}-#{$ccssBr}-bl-#{$ccssBorderRadius}-p {
+            border-bottom-left-radius: #{$ccssBorderRadius}#{'%'};
+        }
+
+        .#{$ccss}-#{$ccssBr}-br-#{$ccssBorderRadius}-p {
+            border-bottom-right-radius: #{$ccssBorderRadius}#{'%'};
+        }
+
+        .#{$ccss}-#{$ccssBr}-t-#{$ccssBorderRadius}-p {
+            border-top-left-radius: #{$ccssBorderRadius}#{'%'};
+            border-top-right-radius: #{$ccssBorderRadius}#{'%'};
+        }
+
+        .#{$ccss}-#{$ccssBr}-r-#{$ccssBorderRadius}-p {
+            border-top-right-radius: #{$ccssBorderRadius}#{'%'};
+            border-bottom-right-radius: #{$ccssBorderRadius}#{'%'};
+        }
+
+        .#{$ccss}-#{$ccssBr}-b-#{$ccssBorderRadius}-p {
+            border-bottom-left-radius: #{$ccssBorderRadius}#{'%'};
+            border-bottom-right-radius: #{$ccssBorderRadius}#{'%'};
+        }
+
+        .#{$ccss}-#{$ccssBr}-l-#{$ccssBorderRadius}-p {
+            border-top-left-radius: #{$ccssBorderRadius}#{'%'};
+            border-bottom-left-radius: #{$ccssBorderRadius}#{'%'};
+        }
+    }
+/* Border Radius E */

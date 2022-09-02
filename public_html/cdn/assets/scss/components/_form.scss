@@ -1,0 +1,548 @@
+$ac_form_height: 48px;
+
+/* Basic Form S */
+    .#{$ac}-form-group{
+        margin-bottom:30px;
+        position: relative;
+    }
+    label {
+        &.#{$ac}-label{
+            font-size: 16px;
+            font-weight: 500;
+            font-style: normal;
+            line-height: 130%;
+            color: $ac_m;
+            display: block;
+            padding-bottom: 5px;
+            white-space: nowrap;
+        }
+    }
+    .#{$ac}-input, .#{$ac}-textarea{
+        font-size: 16px;
+        font-weight: 400;
+        font-style: normal;
+        line-height: 130%;
+        color: $ac_m;
+        border: 1px solid lighten($ac_black, 85.5%);
+        resize: none;
+        height: $ac_form_height;
+        border-radius: 3px;
+        @include css3-prefix ('box-shadow', 'none');
+        &:focus{
+            outline: none;
+            border-color: $ac_a;
+            @include css3-prefix ('box-shadow', 'none');
+            @include css3-prefix ('transition', '#{$ac_3_ti}');
+        }
+        &:hover{
+            border-color: $ac_a;
+        }
+        @include placeholder (){
+            color: lighten($ac_black, 60%);
+        }
+    }
+    .#{$ac}-textarea{
+        height: auto;
+        resize: none;
+        min-height: 96px;
+    }
+    .#{$ac}-form-help{
+        font-size: $ac_fs_base;
+        font-weight: $ac_fw_r;
+        font-style: normal;
+        line-height: 130%;
+        color: $ac_m;
+        display: block;
+        padding: 5px 0 0 0;
+    }
+    .#{$ac}-form-control-static{
+        font-size: $ac_fs_base;
+        font-weight: $ac_fw_r;
+        font-style: normal;
+        line-height: 130%;
+        color: $ac_black;
+        display: block;
+    }
+    select{
+        &.form-control, &.#{$ac}-input{
+            &:not([size]):not([multiple]){
+                height: $ac_form_height;
+            }
+        }
+    }
+    .#{$ac}-input[disabled], .#{$ac}-input[readonly],
+            .#{$ac}-textarea[disabled], .#{$ac}-textarea[readonly]{
+                background-color: transparent;
+            }
+    
+    .#{$ac}-input-group{
+        .#{$ac}-group-text{
+            font-size: $ac_fs_base;
+            font-weight: $ac_fw_r;
+            font-style: normal;
+            color: $ac_m;
+            background-color: rgba($ac_m, 0.2);
+            border-color: rgba($ac_m, 0.5);
+            + .#{$ac}-group-text{
+                border-right: 0;
+            }
+            ~ .#{$ac}-input {
+                + .#{$ac}-input {
+                    border-top: 0;
+                    &:focus{
+                        border-top-width: 1px;
+                        border-top-color: $ac_a;
+                        border-top-style: solid;
+                    }
+                }
+            }
+        }  
+        .input-group-btn{
+            .#{$ac}-input-group-btn{
+                height: $ac_form_height;
+                font-size: $ac_fs_base;
+                font-weight: $ac_fw_r;
+                color: $ac_white;
+                background-color: $ac_a;
+                &:focus, &:visited, &:active, &:not([disabled]):not(.disabled):active, .focus{
+                    background-color: $ac_a;
+                    outline: none;
+                    @include css3-prefix ('box-shadow', 'none');
+                }
+                &:hover{
+                    background-color: $ac_b;
+                    &:focus, &:visited, &:active, &:not([disabled]):not(.disabled):active{
+                        background-color: $ac_b;
+                        outline: none;
+                        @include css3-prefix ('box-shadow', 'none');
+                    }
+                }
+            }
+        }
+        .#{$ac}-input {  
+            ~ .#{$ac}-group-text {
+                border-left: 0;  
+                border-right: 1px solid rgba($ac_m, 0.5);
+            }
+        }
+        .input-group{
+            .#{$ac}-bootstrap-select{
+                float: left;
+                width: 1% !important;
+            }
+        }
+    }  
+/* Basic Form E */
+
+/* File S */
+    input[type='file'] {
+        &:before{
+            position: absolute;
+            content: attr(data-file);
+            background-color: $ac_white;
+            left: 1px;
+            right: 0;
+            top: 1px;
+            bottom: 0;
+            height: 48px;
+            width: calc(100% - 12px);
+            border-radius: $ac_radius;
+            display: flex;
+            align-items: center;
+            padding-left: 13px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    }
+/* File E */
+
+/* Checkbox S */
+    .#{$ac}-checkbox-list{
+        padding: 7px 0 0 0;
+    }
+
+    .#{$ac}-checkbox-inline{
+        padding-top: 7px; 
+        .#{$ac}-checkbox{
+            display: inline-block !important;
+            margin-right: 15px;
+            //margin-bottom: 0px;
+        }
+    }
+
+    .#{$ac}-checkbox{
+        font-size: $ac_fs_base;
+        font-weight: $ac_fw_sb;
+        font-style: normal;
+        line-height: 130%;
+        color: $ac_m;
+        display: block;
+        position: relative;
+        padding-left: 30px;
+        margin-bottom: 3px;
+        cursor: pointer;
+        span{
+            border-radius: $ac_radius;
+            background: none;
+            position: absolute;
+            top: 1px;
+            left: 0;
+            height: 18px;
+            width: 18px;
+            border: 1px solid $ac_m;
+            @include css3-prefix ('transition', '#{$ac_3_ti}');
+            &::after{
+                content: '';
+                position: absolute;
+                opacity: 0;
+                border: 1px solid $ac_a;
+                top: 50%;
+                left: 50%;
+                margin-left: -2px;
+                margin-top: -6px;
+                width: 5px;
+                height: 10px;
+                border-width: 0 2px 2px 0 !important;
+                @include css3-prefix ('transform', 'rotate(45deg)');
+                @include css3-prefix ('transition', '#{$ac_3_ti}');
+            }
+        }
+        input{
+            position: absolute;
+            z-index: -1;
+            opacity: 0;
+            &:checked{
+                ~ span{
+                    border: 1px solid $ac_a;
+                    &::after{
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+        &:last-child{
+            margin-bottom: 0px;
+        }
+    }
+/* Checkbox E */
+
+/* Radio S */
+    .#{$ac}-radio-list{
+        padding: 07px 0 0 0;
+    }
+
+    .#{$ac}-radio-inline{
+        padding-top:07px;
+        .#{$ac}-radio{
+            display: inline-block !important;
+            margin-right: 15px;
+            //margin-bottom: 0px;
+        }
+    }
+
+    .#{$ac}-radio{
+        font-size: $ac_fs_base;
+        font-weight: $ac_fw_sb;
+        font-style: normal;
+        line-height: 130%;
+        color: $ac_m;
+        display: block;
+        position: relative;
+        padding-left: 30px;
+        margin-bottom: 3px;
+        cursor: pointer;
+        span{
+            border-radius: 100px;
+            background: none;
+            position: absolute;
+            top: 1px;
+            left: 0;
+            height: 18px;
+            width: 18px;
+            border: 1px solid $ac_m;
+            @include css3-prefix ('transition', '#{$ac_3_ti}');
+            &::after{
+                content: '';
+                position: absolute;
+                opacity: 0;
+                border: 1px solid $ac_a;
+                background: $ac_a;
+                top: 50%;
+                left: 50%;
+                margin-left: -3px;
+                margin-top: -3px;
+                height: 6px;
+                width: 6px;
+                border-radius: 100px;
+                @include css3-prefix ('transform', 'rotate(45deg)');
+                @include css3-prefix ('transition', '#{$ac_3_ti}');
+            }
+        }
+        input{
+            position: absolute;
+            z-index: -1;
+            opacity: 0;
+            &:checked{
+                ~ span{
+                    border: 1px solid $ac_a;
+                    &::after{
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+        &:last-child{
+            margin-bottom: 0px;
+        }
+    }
+/* Radio E */
+
+/* Switch S */
+    .#{$ac}-switch {
+        display: inline-block;
+        margin-top: 07px;
+        input {
+            &:empty{
+                margin-left: -999px;
+                height: 0;
+                width: 0;
+                overflow: hidden;
+                position: absolute;
+                @include opacity (0);
+                ~ span{
+                    line-height: 20px;
+                    margin: 2px 0;
+                    height: 20px;
+                    width: 35px;
+                    border-radius: 15px;
+                    display: inline-block;
+                    position: relative;
+                    text-indent: 0;
+                    cursor: pointer;
+                    @include css3-prefix ('user-select', 'none');
+                    &:before, &:after{
+                        width: 35px;
+                        border-radius: 15px;
+                        position: absolute;
+                        display: block;
+                        top: 0;
+                        bottom: 0;
+                        left: 0;
+                        content: '';
+                        @include css3-prefix ('transition', '#{$ac_3_ti}');
+                    }
+                    &:before{
+                        background-color: rgba($ac_m, 0.3);
+                    }
+                    &:after{
+                        height: 14px;
+                        width: 14px;
+                        font-size: $ac_fs_base;
+                        line-height: 14px;
+                        color: $ac_white;
+                        top: 3px;
+                        bottom: 3px;
+                        margin-left: 3px;
+                        text-align: center;
+                        vertical-align: middle;
+                        background-color: $ac_m;
+                    }
+                }
+            }
+            &:checked{
+                ~ span{
+                    &:before{
+                        background-color: rgba($ac_m, 0.3);
+                        @include css3-prefix ('box-shadow', '#{$ac_bs_1}');
+                    }
+                    &:after{
+                        margin-left: 17px;
+                        background-color: $ac_a;
+                        color: $ac_white;
+                        @include css3-prefix ('box-shadow', '#{$ac_bs_1}');
+                    }
+                }
+            }
+        }
+    }
+/* Switch E */
+
+/* Material S */
+    .#{$ac}-form-md{
+        .#{$ac}-form-group{
+            margin-top: 25px;
+            position: relative;
+            label{
+                &.#{$ac}-label{
+                    position: absolute;
+                    pointer-events: none;
+                    left: 0;
+                    top: 7px;
+                    @include css3-prefix ('transition', '#{$ac_3_ti}');
+                }
+            }
+            .#{$ac}-input, .#{$ac}-textarea{
+                border-width: 0 0 1px 0;
+                padding-left: 0;
+                padding-right: 0;
+                background-color: transparent;
+                border-radius: 0;
+                &:focus+label.#{$ac}-label,
+                &:valid+label.#{$ac}-label{    
+                    top: -18px;
+                }
+            }
+            .#{$ac}-input[disabled], .#{$ac}-input[readonly],
+            .#{$ac}-textarea[disabled], .#{$ac}-textarea[readonly]{
+                background-color: transparent;
+            }
+        }
+        .#{$ac}-bootstrap-select{
+            .btn{
+                border-radius: 0;
+                background: $ac_white;
+                border-width: 0 0 1px 0;
+                padding: 6px 15px 6px 0;
+                border-radius: 0;
+            }
+        }
+        .#{$ac}-active, .#{$ac}-active-label .#{$ac}-label, .#{$ac}-active-select .#{$ac}-label{
+            @include css3-prefix ('transform', 'translateY(-100%)');
+            font-size: $ac_fs_base - 2px;
+        }
+        .#{$ac}-active-label .#{$ac}-label-normal{
+            @include css3-prefix ('transform', 'translateY(0%)');
+        }
+        .#{$ac}-label-normal{
+            font-size: $ac_fs_base - 2px;
+        }
+    }
+/* Material E */
+
+.#{$ac}-form-wd{
+    .#{$ac}-form-group{
+        margin-bottom: 25px;
+    }
+    .#{$ac}-input, .#{$ac}-textarea{
+        height: 50px;
+    }
+    select{
+        &.form-control, &.#{$ac}-input{
+            &:not([size]):not([multiple]){
+                height: 50px;
+            }
+        }
+    }
+    .#{$ac}-active-label{
+        border: 1px solid rgba($ac_black, 0.07);
+        border-radius: $ac_radius;
+        padding: 10px 14px;
+    }
+    .#{$ac}-label{
+        position: absolute;
+        z-index: 2;
+        left: 10px;
+        top: -13px;
+        background: #ffffff;
+        padding: 0 4px;
+        pointer-events: none;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        max-width: 90%;
+    }
+}
+
+/* Error and Required S */
+    .error, .help-block, .success, .required, .star{
+        font-size: $ac_fs_base;
+        font-weight: $ac_fw_r;
+        line-height: 110%;
+        color: $ac_red;
+        display: block;
+        padding-top:8px;
+        padding-bottom:8px;
+        
+    }
+    .has-error {
+        .capphitcha {
+            padding-bottom: 25px;
+        }
+    }
+    .success {
+        color: $ac_success;
+    }
+    .star {
+        display: inline-block;
+        padding: 0;
+    }
+    label.error, label.help-block{
+        margin: 5px 0 0 0;
+    }
+    .form-control{
+        &.error, &.help-block{
+            border-color: $ac_red;
+        }
+    }
+/* Error and Required E */
+
+/* Remove spinner on input of number S */
+    input[type='number'] {
+        @include css3-prefix ('appearance',textfield);
+    }
+    /* Webkit browsers like Safari and Chrome */
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+        @include css3-prefix ('appearance',none);
+        margin: 0;
+    }
+/* Remove spinner on input of number E */
+
+/* Remember S */
+    .#{$ac}-remember{
+        .#{$ac}-checkbox{
+            font-size: $ac_fs_base;
+            font-weight: $ac_fw_r;
+            line-height: 130%;
+            color: $ac_m;
+        }
+        a{
+            color: $ac_a;
+            &:hover{
+                color: $ac_b;
+            }
+        }
+    }
+/* Remember E */
+
+/* Note S */
+    .#{$ac}-note{
+        font-size: $ac_fs_base;
+        font-weight: $ac_fw_r;
+        line-height: 120%;
+        color: $ac_m;
+        a{
+            color: $ac_a;
+            &:hover{
+                color: $ac_b;
+            }
+        }
+    }
+/* Note E */
+
+/* Change Autocomplete Styles in WebKit Browsers S */
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover, 
+    input:-webkit-autofill:focus,
+    textarea:-webkit-autofill,
+    textarea:-webkit-autofill:hover,
+    textarea:-webkit-autofill:focus,
+    select:-webkit-autofill,
+    select:-webkit-autofill:hover,
+    select:-webkit-autofill:focus {
+      @include css3-prefix ('text-fill-color', $ac_black);
+      @include css3-prefix ('box-shadow','0 0 0px 1000px transparent inset');
+      @include css3-prefix ('transition','background-color 5000s ease-in-out 0s');
+    }
+/* Change Autocomplete Styles in WebKit Browsers E */

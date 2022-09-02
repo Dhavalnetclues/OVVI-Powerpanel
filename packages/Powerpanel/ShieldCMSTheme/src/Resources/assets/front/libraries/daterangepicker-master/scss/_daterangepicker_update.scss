@@ -1,0 +1,43 @@
+.daterangepicker {
+    z-index: 1;
+    table{
+        border: 0px solid rgba($ac_m, 0.2);
+        background-color: $ac_white;
+        tr{            
+            td, th{
+                font-size: $ac_fs_md;
+                font-weight: $ac_fw_r;
+                font-style: $ac_fs_n;
+                line-height: 1;
+                color: $ac_black;
+                border: 0px solid $ac_white;
+                padding: 5px;
+                background-color: $ac_white;
+            }
+            th{
+                border-bottom: 0px solid $ac_white;
+                border-right: 0px solid $ac_white;
+                background-color: $ac_white;
+                &:last-child{
+                    border-right: 0px solid $ac_white;
+                }
+            }
+        }
+    }
+    @media (max-width: 480px){
+        .drp-buttons{
+            text-align: center;
+            .btn {
+                margin: 0;
+                + .btn {
+                    margin-left: 5px;
+                }
+            }
+        }
+        .drp-selected{
+            display: block;
+            margin: 5px 0;
+            padding: 0;
+        }
+    }
+}

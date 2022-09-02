@@ -1,0 +1,122 @@
+@if(!empty($bannerData) && count($bannerData)>0)
+    <section class="home-banner">
+        <div id="home-banner" class="carousel slide carousel-fade" data-ride="carousel" data-interval="5000" data-pause="hover" data-wrap="true">
+            <div class="carousel-inner">
+                @foreach($bannerData as $key => $banner)
+                    <div class="carousel-item @if($key == 0) active @endif">
+
+                        @if($banner->chrDisplayVideo == "N")
+
+                            <div class="fill" style="background-image: url('{!! App\Helpers\resize_image::thumbImage($banner->image,1920,853) !!}');" >
+                            </div>
+
+                            <div class="carousel-caption">
+                                <div class="nq-table">
+                                    <div class="nq-center">
+                                        <div class="container">
+                                            <div class="banner-content">
+                                                <h2 class="title">{{ $banner->varTitle }}</h2>
+                                                <p>{{ $banner->varShortDescription }}</p>
+                                                @if(isset($banner->varLink))
+                                                    @if($banner->chrDisplayLink == "N")
+                                                        <div class="more-btn"><a class="ac-btn ac-btn-primary" href="{{ $banner->varLink }}" title="Read More">Read More</a></div>
+                                                    @else
+                                                        <div class="more-btn"><a class="ac-btn ac-btn-primary" href="{{ $banner->varLink }}" title="Read More" target="_blank">Read More</a></div>
+                                                    @endif
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        @elseif($banner->chrDisplayVideo == "Y")
+
+                            @if(str_contains($banner->varVideoLink, 'youtube.com'))
+
+                                @if(str_contains($banner->varVideoLink, 'embed'))
+                                    <div class="fill iframe">
+                                        <iframe class="fill" src="{{ $banner->varVideoLink }}" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                                    </div>
+                                @else
+                                    @php
+                                        $link = $banner->varVideoLink;
+                                        $video_id = explode("?v=", $link);
+                                        if (empty($video_id[1]))
+                                            $video_id = explode("/v/", $link);
+
+                                        $video_id = explode("&", $video_id[1]);
+                                        $video_id = $video_id[0];
+                                    @endphp
+                                    <div class="fill iframe">
+                                        <iframe class="fill" src="//www.youtube.com/embed/{{ $video_id }}?rel=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                                    </div>
+                                @endif
+
+                            @elseif(str_contains($banner->varVideoLink, 'vimeo.com'))
+                                @php $video_id = substr(parse_url($banner->varVideoLink, PHP_URL_PATH), 1) @endphp
+                                <div class="fill iframe">
+                                    @if(str_contains($banner->varVideoLink, 'player.vimeo.com'))
+                                        <iframe class="fill" src="{{ $banner->varVideoLink }}"></iframe>
+                                    @else
+                                        <iframe class="fill" src="//player.vimeo.com/video/{{ $video_id }}"></iframe>
+                                    @endif
+                                </div>
+                            @else
+                                <iframe class="fill" src="{{ $banner->varVideoLink }}"></iframe>
+                            @endif
+
+                        @endif
+
+                    </div>
+                @endforeach
+            </div>
+
+            @if(count($bannerData) > 1)
+                <!-- Left and right controls S -->
+                <a class="slider-control left btn btn-primary" href="#home-banner" data-slide="prev" title="Previous"><i class="fa fa-angle-left"></i></a>
+                <a class="slider-control right btn btn-primary" href="#home-banner" data-slide="next" title="Next"><i class="fa fa-angle-right"></i></a>
+                <!-- Left and right controls E -->
+            @endif
+        </div>
+    </section>
+@else
+    <section class="home-banner">
+        <div class="slider slider-for">
+            <div class="item">
+                <div class="thumbnail-container">
+                    <div class="thumbnail">
+                        <img src="{{ $CDN_PATH.'assets/images/banner/ICT-c.jpg' }}" alt="ICT" title="ICT" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+@endif
+<div class="fixed-sidemenu">
+<div class="side-ul">
+<ul>
+<li class="side-email">
+<a href="tel:+1 (345) 946 4282" class="link">
+<span class="side-text">Non Emergency</span>
+<span class="no"> +1 (345) 949-4222</span>
+ <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="s-phone-call"><path d="M15.05 5A5 5 0 0 1 19 8.95M15.05 1A9 9 0 0 1 23 8.94m-1 7.98v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span>
+ </a>
+</li>
+<li class="side-call">
+<a href="tel:+1 (345) 946 4282" class="link">
+
+<span class="side-text">Email</span>
+<span class="no">example@gmail.com</span>
+
+ <span class="icon">
+ <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" stroke="currentColor" fill="none"><path d="M0 128C0 92.65 28.65 64 64 64H448C483.3 64 512 92.65 512 128V384C512 419.3 483.3 448 448 448H64C28.65 448 0 419.3 0 384V128zM48 128V150.1L220.5 291.7C241.1 308.7 270.9 308.7 291.5 291.7L464 150.1V127.1C464 119.2 456.8 111.1 448 111.1H64C55.16 111.1 48 119.2 48 127.1L48 128zM48 212.2V384C48 392.8 55.16 400 64 400H448C456.8 400 464 392.8 464 384V212.2L322 328.8C283.6 360.3 228.4 360.3 189.1 328.8L48 212.2z"/></svg>
+ </span>
+ </a>
+</li>
+</ul>
+</div>
+</div>
+
+
+

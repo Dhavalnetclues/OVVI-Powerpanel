@@ -1,0 +1,40 @@
+
+.currency_slider {
+	.rotatebox {
+		width:100%;
+		max-width:546px;
+		
+		.images {
+			width: 100%;
+			height: 310px;
+			position: relative;	
+			img {
+				width: 100%;
+				height: 100%;
+				display: block;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		}
+		.ui-widget-content {
+			margin-top:17px;
+			border:0px;
+			border-top:1px solid #dedede;
+			border-radius:0px;
+			background:transparent;			
+			.ui-state-default {
+				background:url("../images/3d_arrow.png") no-repeat 0px 0px;	
+				width:58px;
+				height:23px;
+				border:0px;
+				cursor:pointer;
+				margin-top:-7px;
+				margin-left:0px;
+			}			
+		}
+	}
+}
+
+
+

@@ -1,0 +1,25 @@
+.careers-listing {
+    .thumbnail-container {
+    	border-radius: $ac_radius;
+        padding-bottom: 70%;
+        background-color: rgba($ac_black, 0.05);
+    }
+}
+
+.careers-jobs {
+	background-color: #f5fafe;
+	.-items {
+		.s-users {
+			width: 24px;
+			height: 24px;
+			color: $ac_a;
+			position: relative;
+			top: 2px;
+		}
+		&:hover{
+			.-title{
+				color: $ac_a;
+			}
+		}
+	}
+}

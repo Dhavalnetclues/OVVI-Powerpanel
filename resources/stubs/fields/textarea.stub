@@ -1,0 +1,5 @@
+<div class="form-group @if($errors->first('{{ fieldName }}')) has-error @endif form-md-line-input">
+    <label class="form_title">{{ fieldTitle }} </label>
+    {!! Form::textarea('{{ fieldName }}', isset($recordObj->{{ fieldName }})?$recordObj->{{ fieldName }}:old('{{ fieldName }}'), array('placeholder' => '{{ fieldTitle }}','class' => 'form-control','id'=>'txtDescription')) !!}
+    <span style="color: red;">{{ $errors->first('{{ fieldName }}') }}</span>
+</div>

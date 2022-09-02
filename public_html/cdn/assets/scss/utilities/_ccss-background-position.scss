@@ -1,0 +1,8 @@
+/* Background Position S */
+    @each $ccssBackgroundPositionClass in $ccssBackgroundPositionClasses {
+        $index: index($ccssBackgroundPositionClasses, $ccssBackgroundPositionClass);
+        .#{$ccss}-#{$ccssBgp}-#{nth($ccssBackgroundPositionClasses, $index)}{
+            background-position: #{nth($ccssBackgroundPositions, $index)};
+        }
+    }
+/* Background Position E */

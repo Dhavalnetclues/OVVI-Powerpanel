@@ -1,0 +1,12 @@
+/* - - - - - - - - - - - - -
+    Related File Name: No
+- - - - - - - - - - - - - */
+
+/* Truncate S */
+    .#{$ccss}-truncate {
+		display: block;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+    }
+/* Truncate E */

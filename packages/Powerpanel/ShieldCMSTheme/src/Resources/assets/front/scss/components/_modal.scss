@@ -1,0 +1,22 @@
+/* Modal S */
+    .#{$ac}-modal{
+        .#{$ac}-modal-table{
+            display: table;
+            height: 100vh;
+            width: 100%;
+            .#{$ac}-modal-center{
+                display: table-cell;
+                vertical-align: middle;
+            }
+        }
+        .#{$ac}-close{
+            position: absolute;
+            right: 15px;
+            top: 14px;
+            span{
+                font-size: $ac_fs_3xl;
+                font-weight: $ac_fw_r;
+            }
+        }
+    }
+/* Modal E */

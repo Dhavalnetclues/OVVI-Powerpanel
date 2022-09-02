@@ -1,0 +1,60 @@
+.home-service {
+	position: relative;
+	z-index: 1;
+	background-color: #f5fafe; 
+
+	.-items {
+		background-image: url(../images/round-shape.svg);
+		background-repeat: no-repeat;
+		background-position: left top;
+		background-size: 220px;
+		padding: 40px 20px 40px 40px;
+		@include css3-prefix ('transition', '#{$ac_3_ti}');
+		.nqul {
+			margin-top: 50px;
+			@media (max-width: 1024px){
+				margin-top: 30px;
+			}
+			li {
+				position: relative;
+				&:before {
+					position: absolute;
+					content: '';
+					background-image: url(../images/icon/arrow.svg);
+					width: 15px;
+					height: 15px;
+					left: 0;
+					top: calc(50% - 7.5px);
+				}
+				padding-left: 25px;
+				+ li {
+					margin-top: 15px;
+				}
+			}
+		}
+		.-img {
+			position: absolute;
+			width: 100px;
+			height: 100px;
+			.thumbnail-container {
+				padding-bottom: 100%;
+			}
+		}
+		.-stitle {
+			@media (min-width: 1025px){
+				margin-left: 160px;
+				min-height: 100px;
+			}
+			margin-top: 85px;
+			@media (max-width: 1024px){
+				margin-top: 190px;
+			}
+		}
+		&:hover{
+			background-size: 210px;
+			.nqtitle {
+				color: $ac_a;
+			}
+		}
+	}
+}

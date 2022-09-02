@@ -1,0 +1,62 @@
+/* Spacing S */
+    .#{$ac}-nopadding{
+        padding: 0 !important;
+    }
+
+    .#{$ac}-nomargin{
+        margin: 0 !important;;
+    }
+
+    $utilities_spaceamounts: (0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100);
+    $utilities_sides: (top, bottom, left, right);
+  
+    @each $utilities_space in $utilities_spaceamounts {
+        @each $utilities_side in $utilities_sides {
+            .#{$ac}-m#{str-slice($utilities_side, 0, 1)}-xs-#{$utilities_space} {
+                margin-#{$utilities_side}: #{$utilities_space}px !important;
+            }
+            .#{$ac}-p#{str-slice($utilities_side, 0, 1)}-xs-#{$utilities_space} {
+                padding-#{$utilities_side}: #{$utilities_space}px !important;
+            }
+        }
+    }
+  
+    @media (min-width: 768px) {
+        @each $utilities_space in $utilities_spaceamounts {
+            @each $utilities_side in $utilities_sides {
+                .#{$ac}-m#{str-slice($utilities_side, 0, 1)}-sm-#{$utilities_space} {
+                    margin-#{$utilities_side}: #{$utilities_space}px !important;
+                }
+                .#{$ac}-p#{str-slice($utilities_side, 0, 1)}-sm-#{$utilities_space} {
+                    padding-#{$utilities_side}: #{$utilities_space}px !important;
+                }
+            }
+        }
+    }
+  
+    @media (min-width: 992px) {
+        @each $utilities_space in $utilities_spaceamounts {
+            @each $utilities_side in $utilities_sides {
+                .#{$ac}-m#{str-slice($utilities_side, 0, 1)}-md-#{$utilities_space} {
+                    margin-#{$utilities_side}: #{$utilities_space}px !important;
+                }
+                .#{$ac}-p#{str-slice($utilities_side, 0, 1)}-md-#{$utilities_space} {
+                    padding-#{$utilities_side}: #{$utilities_space}px !important;
+                }
+            }
+        }
+    }
+  
+    @media (min-width: 1200px) {
+        @each $utilities_space in $utilities_spaceamounts {
+            @each $utilities_side in $utilities_sides {
+                .#{$ac}-m#{str-slice($utilities_side, 0, 1)}-lg-#{$utilities_space} {
+                    margin-#{$utilities_side}: #{$utilities_space}px !important;
+                }
+                .#{$ac}-p#{str-slice($utilities_side, 0, 1)}-lg-#{$utilities_space} {
+                    padding-#{$utilities_side}: #{$utilities_space}px !important;
+                }
+            }
+        }
+    }
+/* Spacing E */

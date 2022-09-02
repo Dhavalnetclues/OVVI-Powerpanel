@@ -1,0 +1,204 @@
+.news-listing {
+    position: relative;
+    z-index: 1;
+    background-color: $ac_white;
+
+    .-items {
+        overflow: hidden;
+    	position: relative;
+    	z-index: 1;
+    	background-color: $ac_white;
+    	@include css3-prefix ('transition', '#{$ac_3_ti}');
+    	padding: 20px 20px 60px 20px;
+
+    	.cms {
+    		min-height: 120px;
+    	}
+
+    	.-download {
+    		background-color: $ac_b;
+    		padding: 0px 15px;
+    		position: absolute;
+		    bottom: 0;
+		    right: 0;
+            border-radius: $ac_radius 0 0 $ac_radius;
+            a {
+                min-height: 40px;
+            }
+		    &:hover{
+		    	@include css3-prefix ('background', linear-gradient(90deg, $ac_b 0,$ac_a 100%));
+		    }
+		    .s-pdf-1{
+		    	width: 20px;
+		    	height: 26px;
+                path {
+                    fill: $ac_white;
+                }
+		    }
+    	}
+
+        .-view {
+            background-color: $ac_a;
+            &:hover{
+                @include css3-prefix ('background', linear-gradient(90deg, $ac_b 0,$ac_a 100%));
+            }
+            .s-pagination {
+                width: 20px;
+                path {
+                    fill: $ac_white;
+                }
+            }
+        }
+
+    	.-pdf{
+    		position: absolute;
+    		z-index: 1;
+    		bottom: 0;
+    		left: 0;
+    		right: 0;
+    		padding: 20px;
+    		background-color: $ac_b;
+    		@include css3-prefix ('transition', '#{$ac_3_ti}');
+    		@include css3-prefix ('transform', scale(0));
+    		@include css3-prefix ('transform-origin', bottom right);
+    		@include css3-prefix ('will-change', transform);
+    		&.show {
+    			@include css3-prefix ('transform', scale(1));
+    		}
+    		.-close {
+				position: absolute;
+				z-index: 1;
+			    right: 10px;
+			    top: 10px;
+			    width: 21px;
+			    height: 21px;
+			    background-color: $ac_white;
+			    border-radius: 100px;
+			    display: block;
+		        text-align: center;
+		        line-height: 18px;
+		        color: $ac_a;
+		        &:hover{
+		        	color: $ac_b;
+		        }
+    		}
+    		.mCcontent {
+    			max-height: 250px;
+    		}
+    		.-pdflist{
+    			li {
+    				+ li {
+    					margin-top: 15px;
+    				}
+    				.s-pdf-1{
+    					width: 18px;
+    					height: 18px;
+                        path {
+                            fill: $ac_white;
+                        }
+    				}
+    				.-pdfimg{
+    					width: 30px;
+    					flex: 0 0 30px;
+    				}
+    			}
+    		}
+    	}
+
+        .-bmenu {
+            svg{
+                width: 24px;
+                height: 24px;
+                flex: 0 0 24px;
+                position: relative;
+                top: 0px;
+                margin-right: 5px;
+                color: $ac_a;
+            }
+            li {
+                margin-right: 45px;
+                @media (max-width: 767px){
+                    margin-right: 15px;
+                }
+                &:last-child{
+                    margin-right: 0;
+                }
+            }
+        }
+
+    	&:hover{
+    		.-title {
+    			color: $ac_a;
+    		}
+    		&:before{
+    			background-size: 90%;
+    		}
+    	}
+    }
+
+    .gap{
+        @media (min-width: 1200px) {
+            &:nth-child(n+3) {
+                margin-top: 30px;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            &:nth-child(n+1) {
+                margin-top: 30px;
+            }
+        }
+    }
+}
+
+
+.-tag {
+    position: relative;
+    min-height: 63px;
+    svg {
+        width: 24px;
+		height: 24px;
+		flex: 0 0 24px;
+        position: relative;
+		top: -1px;
+		margin-right: 5px;
+        color: $ac_a;
+    }
+    li {
+        margin-right: 45px;
+        @media (max-width: 767px){
+            margin-right: 15px;
+        }
+        &:last-child{
+            margin-right: 0;
+        }
+        .-nimg{
+            width: 100px;
+            height: 100px;
+            background-image: url(../images/icon/polygon.svg);
+            background-repeat: no-repeat;
+            background-position: left top;
+            background-size: 100%;
+            position: absolute;
+            left: -20px;
+            top: -20px;
+            img {
+                width: 45px;
+                margin: 27px 28px;
+            }
+        }
+        .-nlabel{
+            margin-left: 58px;
+            @include css3-prefix ('background', linear-gradient(90deg, $ac_b 0,$ac_a 100%));
+            min-width: 100px;
+            text-align: center;
+            padding: 5px 15px;
+            position: relative;
+            z-index: -1;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            max-width: 170px;
+        }
+    }
+}

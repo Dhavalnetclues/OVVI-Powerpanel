@@ -1,0 +1,7 @@
+<div class="form-group @if($errors->first('{{ fieldName }}')) has-error @endif form-md-line-input">
+    {!! Form::date('{{ fieldName }}', isset($recordObj->{{ fieldName }}) ? $recordObj->{{ fieldName }}:old('{{ fieldName }}'), array('placeholder' => '{{ fieldTitle }}','class' => 'form-control','autocomplete'=>'off')) !!}
+    <label class="form_title" for="site_name">{{ fieldTitle }} <span aria-required="true" class="required"> * </span></label>
+    <span style="color: red;">
+        <strong>{{ $errors->first('{{ fieldName }}') }}</strong>
+    </span>
+</div>

@@ -1,0 +1,8 @@
+/* Background Repeat S */
+    @each $ccssBackgroundRepeatClass in $ccssBackgroundRepeatClasses {
+      	$index: index($ccssBackgroundRepeatClasses, $ccssBackgroundRepeatClass);
+      	.#{$ccss}-#{$ccssBgr}-#{nth($ccssBackgroundRepeatClasses, $index)}{
+        	background-repeat: #{nth($ccssBackgroundRepeats, $index)};
+      	}
+    }
+/* Background Repeat E */

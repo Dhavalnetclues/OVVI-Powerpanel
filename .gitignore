@@ -1,0 +1,11 @@
+/bootstrap/cache/
+/storage/
+/vendor/
+/public_html/cdn/report_img/
+package-lock.json
+.history
+.DS_Store
+.vscode/
+.env
+.env.local
+.env.local.bak

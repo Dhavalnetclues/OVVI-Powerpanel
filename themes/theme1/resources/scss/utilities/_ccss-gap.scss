@@ -1,0 +1,99 @@
+/* - - - - - - - - - - - - -
+    Related File Name: ..\utilities\_ccss-gap.scss
+- - - - - - - - - - - - - */
+
+/* Gap S */
+    @each $ccssGapSize in $ccssGapSizeArray {
+        .#{$ccss}-gapp-#{$ccssGapSize} {
+        	&:nth-child(n+#{$ccssGapSize}) {
+                margin-top: $ccssGapMarginTop;
+            }
+        }
+
+        @media #{$min576} {
+        	.#{$ccss}-gapp-sm-#{$ccssGapSize} {
+        		&:nth-child(n+#{$ccssGapSize}) {
+        	        margin-top: $ccssGapMarginTop;
+        	    }
+        	}
+        }
+
+        @media #{$min768} {
+        	.#{$ccss}-gapp-md-#{$ccssGapSize} {
+        		&:nth-child(n+#{$ccssGapSize}) {
+        	        margin-top: $ccssGapMarginTop;
+        	    }
+        	}
+        }
+
+        @media #{$min992} {
+        	.#{$ccss}-gapp-lg-#{$ccssGapSize} {
+        		&:nth-child(n+#{$ccssGapSize}) {
+        	        margin-top: $ccssGapMarginTop;
+        	    }
+        	}
+        }
+
+        @media #{$min1200} {
+        	.#{$ccss}-gapp-xl-#{$ccssGapSize} {
+        		&:nth-child(n+#{$ccssGapSize}) {
+        	        margin-top: $ccssGapMarginTop;
+        	    }
+        	}
+        }
+
+        @media #{$min1366} {
+        	.#{$ccss}-gapp-xxl-#{$ccssGapSize} {
+        		&:nth-child(n+#{$ccssGapSize}) {
+        	        margin-top: $ccssGapMarginTop;
+        	    }
+        	}
+        }
+
+        .#{$ccss}-gapm-#{$ccssGapSize} {
+        	&:nth-child(n+#{$ccssGapSize}) {
+                margin-top: $ccssGapMarginTop;
+            }
+        }
+
+        @media (max-width: 539px) {
+        	.#{$ccss}-gapm-sm-#{$ccssGapSize} {
+        		&:nth-child(n+#{$ccssGapSize}) {
+        	        margin-top: $ccssGapMarginTop;
+        	    }
+        	}
+        }
+
+        @media (max-width: 767px) {
+        	.#{$ccss}-gapm-md-#{$ccssGapSize} {
+        		&:nth-child(n+#{$ccssGapSize}) {
+        	        margin-top: $ccssGapMarginTop;
+        	    }
+        	}
+        }
+
+        @media (max-width: 991px) {
+        	.#{$ccss}-gapm-lg-#{$ccssGapSize} {
+        		&:nth-child(n+#{$ccssGapSize}) {
+        	        margin-top: $ccssGapMarginTop;
+        	    }
+        	}
+        }
+
+        @media (max-width: 1199px) {
+        	.#{$ccss}-gapm-xl-#{$ccssGapSize} {
+        		&:nth-child(n+#{$ccssGapSize}) {
+        	        margin-top: $ccssGapMarginTop;
+        	    }
+        	}
+        }
+
+        @media (max-width: 1365px) {
+        	.#{$ccss}-gapm-xxl-#{$ccssGapSize} {
+        		&:nth-child(n+#{$ccssGapSize}) {
+        	        margin-top: $ccssGapMarginTop;
+        	    }
+        	}
+        }
+    }
+/* Gap E */

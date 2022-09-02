@@ -1,0 +1,116 @@
+/* WorkFlow */
+.flow_form {text-align:center;}
+.flow_form .form-group {margin-bottom:15px;}
+.flow_form .user_fill {border:1px solid #c2cad8;padding:10px 25px;display:inline-block;border-radius:20px;cursor:default;font-weight:600;}
+.flow_form .arrow_line span {position:relative;height:60px;display:table;margin:auto;}
+.flow_form .arrow_line span:before {position: absolute;content:'';background-color:#00a3e3;left:0px;top:0px;width:1px;height:90%;}
+.flow_form .arrow_line span:after {
+    position: absolute;content:'';display:block;border-width: 0px 1px 1px 0px;border-style: solid;left:-4px;bottom:0px;width:9px;height:9px;
+	border-color: rgba(3, 169, 244, 0) #00a3e3 #00a3e3 rgba(3, 169, 244, 0);
+    -webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);-ms-transform: rotate(45deg);transform: rotate(45deg);    
+}
+.flow_form .input_box {width:150px;margin:auto;display:inline-block;}
+.flow_form .select2-container--bootstrap {width:100% !important;}
+.flow_form .after_msg {position:relative;width:150px;margin:auto;}
+.flow_form .after_msg .right {position:absolute;left:115%;top:0px;}
+.flow_form .after_msg .right .input_box {width:250px;}
+.flow_form .after_msg .right .input_box textarea.form-control {resize:none;}
+.flow_form .customer_div {width:425px;margin:50px auto 50px;position:relative;min-height:125px;}    
+.flow_form .customer_div .customer_box {position:relative;z-index:1;background:#fff;width:125px;height:125px;margin:auto;border:1px solid #c2cad8;display:table;-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg);}
+.flow_form .customer_div .customer_box span {display: table-cell;vertical-align:middle;-webkit-transform: rotate(-45deg);-moz-transform: rotate(-45deg);-ms-transform:rotate(-45deg);transform:rotate(-45deg);}
+.flow_form .customer_div .customer_box label.switch_btn {-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg);position: relative;top: 11px;margin-bottom:-5px;}
+.flow_form .customer_div .row_customer {border-top:0px solid #00a3e3;margin-top:-63px;}
+.flow_form .customer_div .row_customer .arrow_line span{height:100px;}
+.flow_form .customer_div .row_customer .left .arrow_line span{left:-50%}
+.flow_form .customer_div .row_customer .right .arrow_line {margin-right:1px;}
+.flow_form .customer_div .row_customer .right .arrow_line span{right:-50%}
+.flow_form .customer_div .row_customer .arrow_line {position:relative;z-index:0;}
+.flow_form .customer_div .row_customer .arrow_line:before {position: absolute;content: '';background:#00a3e3;left:0px;top:0px;width:100%;height:1px;}
+.flow_form .customer_div .row_customer .label_title {position:relative;top:-126px;font-weight:600;color:#616161;text-transform:uppercase;}
+.flow_form .customer_div .row_customer .left .row_inp_lf {position:relative;left:-50%;}
+.flow_form .customer_div .row_customer .right .row_inp_rh {position:relative;right:-50%;}
+.flow_form .customer_div .row_customer .right .row_inp_rh .form_title_reminder {white-space:nowrap;margin-left:-68px;}
+.flow_form .image-need {margin: 10px 0;}
+@media (max-width:767px){
+.flow_form{overflow:auto;}	
+.flow_form .customer_div .row_customer .left .row_inp_lf {left:-20%;}
+.flow_form .customer_div .row_customer .right .row_inp_rh {right:-20%;}
+.flow_form .customer_div .row_customer .right .row_inp_rh .form_title_reminder {white-space:inherit;margin-left:0px;} 
+}
+@media (max-width:479px){
+.flow_form .customer_div {padding:0 5px;}	
+.flow_form .customer_div .row_customer .left .row_inp_lf {left:0;}
+.flow_form .customer_div .row_customer .right .row_inp_rh {right:0;}
+}
+
+.flow_form .moduls_box_approval {max-width:845px;width:100%;margin:auto; }
+.flow_form .side_moduls_box {max-width:350px;width:100%;margin:auto; }
+.flow_form .side_moduls_box .approval_div {color: green; } 
+.flow_form .side_moduls_box .noapproval_div {color: #00A9E6; } 
+.flow_form .side_moduls_box .form_title a {font-size: 12px;text-transform:capitalize;border-bottom: 1px solid #1b65c0;margin-left:5px;margin-right:5px;  }
+.flow_form .side_moduls_box .form_title a:hover {border-bottom:1px solid transparent;}
+.flow_form .select_moduls_box {overflow-Y:auto;}
+.flow_form .select_moduls_box .form-control{overflow: inherit;min-height:166px;border:1px solid #c2cad8;padding:6px 12px;}
+.flow_form .select_moduls_box .form-control option {padding:5px 0px;border-bottom: 1px dashed #dcdee2;text-align:center;}
+.flow_form .select_moduls_box .form-control option:last-child {border-bottom:0px; }
+.flow_form .moduls_select_buttons {padding-top:40px;padding-bottom:10px;}
+.flow_form .moduls_select_buttons .btn{margin:4px auto;width:100%;max-width:125px;display:block;padding-left:0px;padding-right:0px;}
+.flow_form .moduls_select_buttons .btn i{margin:0px; }
+.flow_form .side_moduls_box .select2-search__field {width:100% !important;}
+
+
+@media (max-width:767px){
+    .flow_form .side_moduls_box .form_title a {display: table;margin:5px auto;}
+    .flow_form .select_moduls_box .form-control{min-height:150px;}
+    .flow_form .select_moduls_box .form-control option {padding:5px 0px;}
+    .flow_form .moduls_select_buttons .btn{width:100%;float:none;}    
+}
+@media (max-width:479px){
+    .col-xss-12{width:100%;}    
+}
+@media (max-width:479px){
+    .flow_form .moduls_select_buttons{padding-top:0px;}    
+}
+
+/* WorkFlow */
+.workflow_listing .dataTables_extended_wrapper {
+    margin-top: 0px;
+}
+.workflow_listing .dataTables_extended_wrapper .table.dataTable {
+    margin-top: 0px !important;
+}
+.workflow_listing .dataTables_wrapper .table-responsive {
+    margin-top: 0px;
+}
+.workflow_listing table tr .workflow_list_title {
+    width: auto;
+    max-width: 100%;
+    min-width: 100%;
+    text-align: left;   
+}
+.workflow_listing .icon_title1 .fa-minus:after, 
+.workflow_listing .icon_title1 .la-minus-square:after { 
+    left: 29px;
+    bottom: -2px;
+}
+.workflow_listing .workflow_list_title {
+    font-weight: 700;
+}
+.workflow_listing table .producttbl {        
+    padding: 5px;
+    margin: -8px -10px;
+    background: #1D4DA1;
+}
+.workflow_listing .dataTables_extended_wrapper table.new_table_desing tbody tr th, 
+.workflow_listing .dataTables_extended_wrapper table.new_table_desing tbody tr td {
+    padding-top:8px !important;
+    padding-bottom:8px !important;        
+}
+@media (max-width:767px){
+    .workflow_listing table .producttbl {
+        margin: -5px -5px;
+    }
+    .workflow_listing table tr .workflow_list_title_icon {
+        text-align: center !important;
+    }
+}

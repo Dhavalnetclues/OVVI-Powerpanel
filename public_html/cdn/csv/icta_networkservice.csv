@@ -1,0 +1,63 @@
+"intGlCode","varLink","varCode","varName","fkServiceCategory","txtDescription","txtComment","intFee","varNoteTitle","chrDisplayServices","intDisplayOrder","dtCreateDate","dtModifyDate","chrDelete","chrPublish","PUserGlCode","varIpAddress"
+"1","http://www","A","Fixed wireline","1",,"<p>A wireline network providing access to ICT Service(s) to residential and/or business Subscribers.</p>
+","3,500.00",,"Y","5","2014-12-02 19:03:28","2014-12-08 14:56:28","N","Y","1","27.54.170.98"
+"2","http://www.","B","Fixed wireless","1",,"<p>A wireless network (other than Mobile) providing access to ICT Service(s) to residential and/or business Subscribers.</p>
+","3,500.00",,"Y","6","2014-12-02 19:04:25","2014-12-04 16:35:23","N","Y","1","27.54.170.98"
+"3","#note1","C1","Mobile (cellular) 2G","1",,"<p>Mobile networks usually referred to as &quot;second generation&quot; or &quot;2G&quot; and normally operating in the 800, 900, 1800 or 1900 MHz frequency bands.</p>
+","3,500.00","(See Note 1)","Y","7","2014-12-02 19:06:00","2014-12-08 14:57:01","N","Y","1","27.54.170.98"
+"4","#note1","C2","Mobile (cellular) 2.5G","1",,"<p>Mobile networks usually referred to as &quot;two and a half generation&quot; or &quot;2.5G&quot; and normally operating in the 800, 900, 1800 or 1900 MHz frequency bands.</p>
+","3,500.00","(See Note 1)","Y","8","2014-12-02 19:06:49","2014-12-04 16:35:59","N","Y","1","27.54.170.98"
+"5","#note1","C3","Mobile (cellular) 3G","1",,"<p>Mobile networks usually referred to as &quot;third generation&quot; or &quot;3G&quot; and normally operating in the 1800 to 2200 MHz frequency bands.</p>
+","3,500.00","(See Note 1)","Y","9","2014-12-02 19:08:30","2014-12-04 16:36:24","N","Y","1","27.54.170.98"
+"6","http://www.","D1","Fibre optic cable - Domestic","1",,"<p>Whether &quot;lit&quot; or &quot;unlit&quot;.</p>
+","1,000.00",,"Y","10","2014-12-02 19:08:59","2014-12-04 16:36:42","N","Y","1","27.54.170.98"
+"7","http://www.","D2","Fibre optic cable - International","1",,"<p>Whether &quot;lit&quot; or &quot;unlit&quot;.</p>
+","1,500.00",,"Y","11","2014-12-02 19:09:40","2014-12-04 16:39:35","N","Y","1","27.54.170.98"
+"8","http://www.","E1","Satellite (incl VSAT) - Domestic","1",,,"1,500.00",,"Y","12","2014-12-02 19:10:13","2014-12-05 18:51:53","N","Y","1","27.54.170.98"
+"9","http://www.","E2","Satellite (incl VSAT) - International","1",,,"2,500.00",,"Y","13","2014-12-02 19:10:43","2017-08-12 02:36:07","N","Y","1","27.54.170.98"
+"10","http://www.","F","Broadcast Network","1",,,"3,500.00",,"Y","14","2014-12-02 19:11:05","2014-12-08 15:00:17","N","Y","1","27.54.170.98"
+"11","http://www.","1","Fixed Telephony","2",,,"3,500.00",,"Y","6","2014-12-02 19:13:54","2014-12-04 16:41:23","N","Y","1","27.54.170.98"
+"12","#note2","2","Fall-back International Voice and Data Communications","2",,"<p>An applicant for a Type2 Licence must already hold, or must apply simultaneously for, a Type E2 (International Satellite) Network Licence.</p>
+
+<p><a href=""#note2"">(See Note2)</a></p>
+","1,500.00",,"Y","7","2014-12-02 19:15:00","2014-12-04 16:41:44","N","Y","1","27.54.170.98"
+"13","http://www.","3","Mobile Telephony","2",,,"3,500.00",,"Y","8","2014-12-02 19:17:11","2014-12-04 16:42:07","N","Y","1","27.54.170.98"
+"14","http://www.","4","Resale of Telephony","2",,"<p>Also includes those services sometimes referred to as calling card services.</p>
+","1,000.00",,"Y","9","2014-12-02 19:18:03","2014-12-04 16:42:18","N","Y","1","27.54.170.98"
+"15","http://www.","5","Internet Telephony","2",,"<p>Voice over Internet and Voice over Internet Protocol.</p>
+","1,500.00",,"Y","10","2014-12-02 19:18:32","2014-12-04 16:45:06","N","Y","1","27.54.170.98"
+"16","http://www.","6","Public Service TV Broadcasting","2",,"<p>Sometimes referred to as &quot;on air&quot; broadcasting.</p>
+","2,500.00",,"Y","11","2014-12-02 19:18:57","2014-12-08 15:17:28","N","Y","1","27.54.170.98"
+"17","http://www.","7","Subcription TV Broadcasting","2",,"<p>Sometimes referred to as &quot;cable broadcasting&quot; or &quot;wireless cable broadcasting&quot;. Applicants should note that a Type 7 licence will not be issued without a Type 6 licence. In other words applicants wishing to provide Subscription Television service must also apply to provide Public Service Television broadcasting.</p>
+","2,500.00",,"Y","12","2014-12-02 19:19:27","2014-12-08 15:17:47","N","Y","1","27.54.170.98"
+"18","http://www.","8","Sound Broadcasting","2",,,"2,500.00",,"Y","13","2014-12-02 19:19:50","2017-08-12 02:37:02","N","Y","1","27.54.170.98"
+"19","http://www.","9","Internet Service Provider (ISP)","2",,,"1,500.00",,"Y","14","2014-12-02 19:20:10","2014-12-08 15:07:48","N","Y","1","27.54.170.98"
+"20","#note3","10","Information Security Service provision","2",,"<p>provision Licensing by the Authority is optional at the discretion of the applicant.</p>
+
+<p><a href=""#note3"">(See Note3)</a></p>
+",,,"Y","15","2014-12-02 19:20:58","2014-12-04 16:45:58","N","Y","1","27.54.170.98"
+"21","http://www.","11","Provision of ICT Infrastructure to 3rd Parties","2",,,"1,500.00",,"Y","16","2014-12-02 19:21:47","2015-01-12 05:55:49","N","Y","1","27.54.170.98"
+"22","http://www.","12","Retail sale of ICT equipment","2",,"<p>A Type 12 Licence is available only to Types 1 and 3 Licensees.&nbsp; All others must obtain an appropriate licence from the Cayman Islands Trade and Business Licensing Board. For consistency with the procedures adopted by the Cayman Islands Trade and Business Licensing Board, a separate Type 12 Licence is required for each retail outlet.</p>
+","1,000.00",,"Y","18","2014-12-02 19:22:28","2014-12-08 14:45:22","N","Y","1","27.54.170.98"
+"23","http://www.","13","Publication of directories","2",,,"1,000.00",,"Y","19","2014-12-02 19:22:53","2014-12-08 15:11:35","N","Y","1","27.54.170.98"
+"24","http://www.","14","Application Service Provider (ASP)","2",,,"1,500.00",,"Y","20","2014-12-02 19:23:19","2014-12-08 15:20:35","N","Y","1","27.54.170.98"
+"25","http://www.","15","Video on Demand","2",,"<p>Whether viewable real-time or near real-time.</p>
+","1,500.00",,"Y","21","2014-12-02 19:23:46","2014-12-04 16:44:48","N","Y","1","27.54.170.98"
+"26","http://www.","C","Mobile (Cellular)","1",,,,,"N","15","2014-12-03 14:09:30","2017-08-11 08:00:42","N","Y","1","27.54.170.98"
+"27","http://www.","S","Spectrum","1",,,,,"N","16","2014-12-03 14:09:39","2014-12-05 18:53:58","N","Y","1","27.54.170.98"
+"28","http://www.","11A","Provision of Infrastructure - dark fibre","2",,,,,"N","17","2014-12-03 17:48:37","2014-12-05 18:54:40","N","Y","1","27.54.170.98"
+"29","http://www.","78946","test66","2",NULL,"<p>test66</p>
+","500","ttest666","Y","1","2020-02-25 03:36:20","2020-02-25 03:36:38","Y","Y","1","67.207.88.158"
+"30","http://www.","test","test","1",NULL,"<p>test</p>
+",,,"Y","1","2020-02-25 13:09:18","2020-02-25 13:09:32","Y","Y","1","67.207.88.158"
+"31","http://www.","16","Experimental Licence for wearable devices and sensors to individuals on Cayman who have a verified case of, are suspected of having, or are at risk for contracting COVID-19","2",NULL,"<p>Experimental Licence&nbsp;for wearable devices and sensors to individuals on Cayman&nbsp;who have a verified case of, are suspected of having, or are at risk for contracting&nbsp;COVID-19</p>
+",,,"Y","5","2020-07-03 09:41:03","2020-07-03 09:41:03","N","Y","1","27.54.170.98"
+"32","http://www.","FD","Future Digital SEZC","1",NULL,"<p>Future Digital SEZC</p>
+",,,"Y","4","2020-07-03 09:44:51","2020-07-03 09:44:51","N","Y","1","27.54.170.98"
+"33","http://www.","A2","Occasional or Experimental Service","2",NULL,,,,"Y","4","2021-03-18 19:11:28","2021-03-18 19:22:16","N","Y","1","103.226.184.100"
+"34","http://www.","A1","Occasional or Experimental Network","1",NULL,,,,"Y","1","2021-03-18 19:12:01","2021-03-18 19:12:21","N","Y","1","103.226.184.100"
+"35","http://www.","17","4G LTE & Fixed Wireless Solution Experimental Testing","2",NULL,,,,"Y","3","2021-03-18 19:13:41","2021-03-18 19:13:41","N","Y","1","103.226.184.100"
+"36","http://www.","18","Mobile Data Capture Devices & Central Data Repository","2",NULL,,,,"Y","2","2021-03-18 19:14:54","2021-03-18 19:14:54","N","Y","1","103.226.184.100"
+"37","http://www.","G","Internet Exchange Point","1",NULL,,,,"Y","2","2021-03-18 19:15:18","2021-03-18 19:15:59","N","Y","1","103.226.184.100"
+"38","http://www.","16A","Internet Peering Service Provider","2",NULL,,,,"Y","1","2021-03-18 19:17:00","2021-03-18 19:17:00","N","Y","1","103.226.184.100"
+"39","http://www.","G","Internet Exchange Point","2",NULL,,,,"Y","1","2021-03-19 04:31:12","2021-03-19 04:33:36","Y","Y","1","67.207.88.158"

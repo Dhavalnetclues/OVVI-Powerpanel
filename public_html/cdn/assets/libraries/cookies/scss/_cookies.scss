@@ -1,0 +1,58 @@
+.ac-cookies {
+	position: fixed;
+	z-index: 9;
+	bottom: 10px;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	text-align: center;
+	width: 435px;
+	@media (max-width: 480px) {
+		width: 100%;
+	}
+	.ac-c-info{
+		display: inline-block;
+		background-color: rgba($ac_white, 0.9);
+		padding: 10px;
+		margin: 0 15px;
+		font-size: $ac_fs_base;
+		font-weight: $ac_fw_r;
+		line-height: 110%;
+		color: $ac_black;
+		border-radius: $ac_radius;
+		@include css3-prefix('box-shadow', '#{$ac_bs_5}');
+		border: 1px solid rgba($ac_m,0.1);
+		br {
+			display: none;
+		}
+		@media (max-width: 480px) {
+			br {
+				display: block;
+			}
+		}
+	}
+	.ac-c-find{
+		color: $ac_a;
+		&:hover{
+			color: $ac_b;
+		}
+	}
+	.ac-c-btn {
+		margin-left: 10px;
+	    padding: 7px 15px;
+	    font-size: $ac_fs_base;
+	    font-weight: $ac_fw_r;
+	    color: $ac_white;
+	    line-height: 100%;
+	    background-color: $ac_a;
+	    display: inline-block;
+	    border-radius: $ac_radius;
+	    &:hover {
+	    	background-color: $ac_b;
+	    }
+	    @media (max-width: 480px) {
+	    	margin-left: 0;
+	    	margin-top:10px;
+	    }
+	}
+}

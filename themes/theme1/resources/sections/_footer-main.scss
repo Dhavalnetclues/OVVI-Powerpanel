@@ -1,0 +1,26 @@
+.footer-main1 {
+	position: relative;
+	z-index: 1;
+	background-color: $ac_gray;
+	.container {
+		@media (min-width: 1600px){
+			max-width: 1600px;
+		}
+	}
+	.-nav {
+		li {
+			+ li {
+				margin-top: 15px;
+			}
+		}
+	}
+	.ac-input{
+		color: $ac_white;
+		border: 1px solid $ac_white;
+	}
+	.ac-label {
+		color: $ac_white;
+		font-size: 18px;
+		line-height: 100%;
+	}
+}

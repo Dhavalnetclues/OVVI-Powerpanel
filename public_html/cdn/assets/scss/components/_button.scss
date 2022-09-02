@@ -1,0 +1,352 @@
+$ac_mobile_small_btn: 'false';     // 'true' | 'false'
+
+/* Button S */
+    @mixin ac_btn {
+        background: linear-gradient(90deg, $ac_b 0%, $ac_a 100%);
+        border-color: transparent;
+        @include ac-font (18px, 700, null, $ac_white);
+        @include css3-prefix ('transition', '#{$ac_3_ti}');
+        @media(max-width:767px){
+            @include ac-font (16px, 700, null, $ac_white);
+        }
+    }
+    @mixin ac_btn_hover {
+        color: $ac_white;
+        background: $ac_black;
+        border-color: transparent;
+    }
+    .#{$ac}-btn, .#{$ac}-btn-primary, .#{$ac}-btn-secondary, .#{$ac}-btn-tertiary, a.#{$ac}-btn, a.#{$ac}-btn-primary, a.#{$ac}-btn-secondary, .#{$ac}-btn-tertiary{
+        @include ac_btn;
+        line-height: 80%;
+        padding: 5px 24px;
+        margin: 0;
+        text-transform: capitalize;
+        cursor: pointer;
+        white-space: normal;
+        border-width: 0px;
+        border-style: solid;
+        min-height:40px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius:7px;
+        text-align: center;
+        @include css3-prefix('box-shadow', none);
+        &:focus, &:visited, &:active, &:not([disabled]):not(.disabled):active, .focus{
+            @include css3-prefix('box-shadow', none);
+            outline: none;
+            @include ac_btn;
+        }        
+        @include ac-media-hover (){
+            &:hover{
+                @include ac_btn_hover;
+                &:focus, &:visited, &:active, &:not([disabled]):not(.disabled):active{
+                    @include ac_btn_hover;
+                }
+            }
+        }
+        @if $ac_mobile_small_btn == 'true' {
+            @media (max-width: 767px){
+                font-size: 14px;
+                min-height: 37px;
+                padding: 5px 10px;
+            }
+        }        
+    }
+/* Button E */
+
+.#{$ac}-small{
+    min-height: 35px !important;
+    font-size: 14px!important;
+    padding: 5px 15px!important;
+    line-height: 110%!important;
+}
+
+/* Button Primary S */
+    @mixin ac_btn_primary {
+        color: $ac_white;
+        background: $ac_a;
+        border-color: transparent;
+    }
+    @mixin ac_btn_primary_hover {
+        color: $ac_white;
+        background: $ac_black;
+        border-color: transparent;
+        @include css3-prefix('box-shadow', none);
+    }
+    @mixin ac_btn_primary_border {
+        color: $ac_a;
+        background-color: transparent;
+        border-color: $ac_a;
+    }
+    @mixin ac_btn_primary_border_hover {
+        color: $ac_m;
+        background-color: rgba($ac_a, 0.5);
+        border-color: rgba($ac_a, 0.5);
+    }
+    .#{$ac}-btn-primary, a.#{$ac}-btn-primary {
+        @include ac_btn_primary;
+        &:focus, &:visited, &:active, &:not([disabled]):not(.disabled):active, .focus{
+            @include ac_btn_primary;
+        }
+        @include ac-media-hover (){
+            &:hover{
+                @include ac_btn_primary_hover;
+                &:focus, &:visited, &:active, &:not([disabled]):not(.disabled):active{
+                    @include ac_btn_primary_hover;
+                }
+            }
+        }
+        &.#{$ac}-btn-border{
+            @include ac_btn_primary_border;
+            &:focus, &:visited, &:active, &:not([disabled]):not(.disabled):active, .focus{
+                @include ac_btn_primary_border;
+            }
+            @include ac-media-hover (){
+                &:hover{
+                    @include ac_btn_primary_border_hover;
+                    &:focus, &:visited, &:active, &:not([disabled]):not(.disabled):active{
+                        @include ac_btn_primary_border_hover;
+                    }
+                }
+            }
+        }
+    }
+/* Button Primary E */
+
+/* Button Secondary S */
+    @mixin ac_btn_secondary {
+        color: $ac_white;
+        background-color: $ac_b;
+        border-color: transparent;
+    }
+    @mixin ac_btn_secondary_hover {
+        color: $ac_white;
+        background-color: rgba($ac_b, 1);
+        border-color: transparent;
+        @include css3-prefix('box-shadow', 0 8px 25px -8px $ac_b);
+    }
+    @mixin ac_btn_secondary_border {
+        color: $ac_b;
+        background-color: transparent;
+        border-color: $ac_b;
+    }
+    @mixin ac_btn_secondary_border_hover {
+        color: $ac_m;
+        background-color: rgba($ac_b, 0.5);
+        border-color: rgba($ac_b, 0.5);
+    }
+    .#{$ac}-btn-secondary, a.#{$ac}-btn-secondary {
+        @include ac_btn_secondary;
+        &:focus, &:visited, &:active, &:not([disabled]):not(.disabled):active, .focus{
+            @include ac_btn_secondary;
+        }
+        @include ac-media-hover (){
+            &:hover{
+                @include ac_btn_secondary_hover; 
+                &:focus, &:visited, &:active, &:not([disabled]):not(.disabled):active{
+                    @include ac_btn_secondary_hover; 
+                }
+            }
+        }
+        &.#{$ac}-btn-border{
+            @include ac_btn_secondary_border;
+            &:focus, &:visited, &:active, &:not([disabled]):not(.disabled):active, .focus{
+                @include ac_btn_secondary_border;
+            }
+            @include ac-media-hover (){
+                &:hover{
+                    @include ac_btn_secondary_border_hover;
+                    &:focus, &:visited, &:active, &:not([disabled]):not(.disabled):active{
+                        @include ac_btn_secondary_border_hover;
+                    }
+                }
+            }
+        }
+    }
+/* Button Secondary E */
+
+/* Button Tertiary S */
+    @mixin ac_btn_tertiary {
+        color: $ac_white;
+        background-color: $ac_m;
+        border-color: transparent;
+    }
+    @mixin ac_btn_tertiary_hover {
+        color: $ac_white;
+        background-color: rgba($ac_m, 15);
+        border-color: transparent;
+        @include css3-prefix('box-shadow', 0 8px 25px -8px $ac_m);
+    }
+    @mixin ac_btn_tertiary_border {
+        color: $ac_m;
+        background-color: transparent;
+        border-color: $ac_m;
+    }
+    @mixin ac_btn_tertiary_border_hover {
+        color: $ac_white;
+        background-color: rgba($ac_m, 0.5);
+        border-color: rgba($ac_m, 0.5);
+    }
+    .#{$ac}-btn-tertiary, a.#{$ac}-btn-tertiary {
+        @include ac_btn_tertiary;
+        &:focus, &:visited, &:active, &:not([disabled]):not(.disabled):active, .focus{
+            @include ac_btn_tertiary;
+        }
+        @include ac-media-hover (){
+            &:hover{
+                @include ac_btn_tertiary_hover; 
+                &:focus, &:visited, &:active, &:not([disabled]):not(.disabled):active{
+                    @include ac_btn_tertiary_hover; 
+                }
+            }
+        }
+        &.#{$ac}-btn-border{
+            @include ac_btn_tertiary_border;
+            &:focus, &:visited, &:active, &:not([disabled]):not(.disabled):active, .focus{
+                @include ac_btn_tertiary_border;
+            }
+            @include ac-media-hover (){
+                &:hover{
+                    @include ac_btn_tertiary_border_hover;
+                    &:focus, &:visited, &:active, &:not([disabled]):not(.disabled):active{
+                        @include ac_btn_tertiary_border_hover;
+                    }
+                }
+            }
+        }
+    }
+/* Button Tertiary E */
+
+/* Button Danger S */
+    @mixin ac_btn_danger {
+        color: $ac_white;
+        background-color: $ac_red;
+        border-color: transparent;
+    }
+    @mixin ac_btn_danger_hover {
+        color: $ac_white;
+        background-color: rgba($ac_red, 1);
+        border-color: transparent;
+        @include css3-prefix('box-shadow', 0 8px 25px -8px $ac_red);
+    }
+    @mixin ac_btn_danger_border {
+        color: $ac_red;
+        background-color: transparent;
+        border-color: $ac_red;
+    }
+    @mixin ac_btn_danger_border_hover {
+        color: $ac_m;
+        background-color: rgba($ac_red, 0.5);
+        border-color: rgba($ac_red, 0.5);
+    }
+    .#{$ac}-btn-danger, a.#{$ac}-btn-danger {
+        @include ac_btn_danger;
+        &:focus, &:visited, &:active, &:not([disabled]):not(.disabled):active, .focus{
+            @include ac_btn_danger;
+        }
+        @include ac-media-hover (){
+            &:hover{
+                @include ac_btn_danger_hover;
+                &:focus, &:visited, &:active, &:not([disabled]):not(.disabled):active{
+                    @include ac_btn_danger_hover;
+                }
+            }
+        }
+        &.#{$ac}-btn-border{
+            @include ac_btn_danger_border;
+            &:focus, &:visited, &:active, &:not([disabled]):not(.disabled):active, .focus{
+                @include ac_btn_danger_border;
+            }
+            @include ac-media-hover (){
+                &:hover{
+                    @include ac_btn_danger_border_hover;
+                    &:focus, &:visited, &:active, &:not([disabled]):not(.disabled):active{
+                        @include ac_btn_danger_border_hover;
+                    }
+                }
+            }
+        }
+    }
+/* Button Danger E */
+
+/* Button Success S */
+    @mixin ac_btn_success {
+        color: $ac_white;
+        background-color: $ac_success;
+        border-color: transparent;
+    }
+    @mixin ac_btn_success_hover {
+        color: $ac_white;
+        background-color: rgba($ac_success, 1);
+        border-color: transparent;
+        @include css3-prefix('box-shadow', 0 8px 25px -8px $ac_success);
+    }
+    @mixin ac_btn_success_border {
+        color: $ac_success;
+        background-color: transparent;
+        border-color: $ac_success;
+    }
+    @mixin ac_btn_success_border_hover {
+        color: $ac_m;
+        background-color: rgba($ac_success, 0.5);
+        border-color: rgba($ac_success, 0.5);
+    }
+    .#{$ac}-btn-success, a.#{$ac}-btn-success {
+        @include ac_btn_success;
+        &:focus, &:visited, &:active, &:not([disabled]):not(.disabled):active, .focus{
+            @include ac_btn_success;
+        }
+        @include ac-media-hover (){
+            &:hover{
+                @include ac_btn_success_hover;
+                &:focus, &:visited, &:active, &:not([disabled]):not(.disabled):active{
+                    @include ac_btn_success_hover;
+                }
+            }
+        }
+        &.#{$ac}-btn-border{
+            @include ac_btn_success_border;
+            &:focus, &:visited, &:active, &:not([disabled]):not(.disabled):active, .focus{
+                @include ac_btn_success_border;
+            }
+            @include ac-media-hover (){
+                &:hover{
+                    @include ac_btn_success_border_hover;
+                    &:focus, &:visited, &:active, &:not([disabled]):not(.disabled):active{
+                        @include ac_btn_success_border_hover;
+                    }
+                }
+            }
+        }
+    }
+/* Button Success E */
+
+/* Button Link S */
+    @mixin ac_btn_link {
+        color: $ac_a;
+        background-color: transparent;
+        border-color: transparent;
+        @include css3-prefix('box-shadow', 'none');
+    }
+    @mixin ac_btn_link_hover {
+        color: $ac_b;
+        background-color: transparent;
+        border-color: transparent;
+        @include css3-prefix('box-shadow', 'none');
+    }
+    .#{$ac}-btn-link, a.#{$ac}-btn-link {
+        @include ac_btn_link;
+        &:focus, &:visited, &:active, &:not([disabled]):not(.disabled):active, .focus{
+            @include ac_btn_link;
+        }
+        @include ac-media-hover (){
+            &:hover{
+                @include ac_btn_link_hover; 
+                &:focus, &:visited, &:active, &:not([disabled]):not(.disabled):active{
+                    @include ac_btn_link_hover; 
+                }
+            }
+        }
+    }
+/* Button Link E */

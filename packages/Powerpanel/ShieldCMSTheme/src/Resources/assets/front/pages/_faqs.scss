@@ -1,0 +1,81 @@
+.faqs_page {
+	.faqs_title {
+		margin: 15px 0 0px 0;
+	}	
+}
+.panel_listing {
+	margin-top: 10px;
+	.panel {
+		border: 0px;
+		border-radius: 0px;
+		box-shadow: none;
+		padding: 12px 0 12px 25px;
+		border-bottom: 1px dashed rgba($ac_a,0.2);
+		~ .panel {
+			margin-top: 0px;
+		}
+		.panel-heading {
+			padding: 0;
+			background: transparent;
+			border: 0px;
+			border-radius: 0px;
+			.panel-title {
+				font-weight: 500;
+				color: $ac_black;
+				position: relative;
+				a {
+					color: inherit;
+				}
+			}
+		}
+		.panel-body {
+			border:0px !important;
+			padding: 5px 0;
+			p {
+				color: #7c7c7c;
+			}
+		}
+	}
+}
+
+
+.icon-plus, .icon-minus {
+    position: absolute;
+    left: -25px;
+    top: 1px;
+    width: 14px;
+	height: 14px;
+	cursor: pointer;
+	display: inline-block;
+
+}
+.icon-plus:before, .icon-plus:after, .icon-plus:before, .icon-minus:after {
+    position: absolute;
+    content: "";
+    background-color: $ac_b;
+    transition: transform 0.25s ease-out;
+    -webkit-transition: transform 0.25s ease-out;
+    -moz-transition: transform 0.25s ease-out;
+    -o-transition: transform 0.25s ease-out;
+}
+.icon-plus:before, .icon-minus:before {	
+    top: -1px;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+	margin-left: -1px;	
+	display: inline-block;
+}
+.icon-plus:after, .icon-minus:after  {	
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+	margin-top: -2px;	
+}
+.icon-minus:after {
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+}

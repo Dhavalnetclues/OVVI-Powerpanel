@@ -1,0 +1,51 @@
+/* - - - - - - - - - - - - -
+    Related File Name: ..\utilities\_ccss-utilities-setting.scss
+- - - - - - - - - - - - - */
+
+/* Float S */
+    @each $ccssFloatArray in $ccssFloatArray {
+        .#{$ccss}-f#{str-slice($ccssFloatArray, 0, 1)} {
+            float: #{$ccssFloatArray} !important;
+        }
+    }
+
+    @media #{$min576} {
+    	@each $ccssFloatArray in $ccssFloatArray {
+    	    .#{$ccss}-f#{str-slice($ccssFloatArray, 0, 1)}-sm {
+    	        float: #{$ccssFloatArray} !important;
+    	    }
+    	}
+    }
+
+    @media #{$min768} {
+    	@each $ccssFloatArray in $ccssFloatArray {
+    	    .#{$ccss}-f#{str-slice($ccssFloatArray, 0, 1)}-md {
+    	        float: #{$ccssFloatArray} !important;
+    	    }
+    	}
+    }
+
+    @media #{$min992} {
+    	@each $ccssFloatArray in $ccssFloatArray {
+    	    .#{$ccss}-f#{str-slice($ccssFloatArray, 0, 1)}-lg {
+    	        float: #{$ccssFloatArray} !important;
+    	    }
+    	}
+    }
+
+    @media #{$min1200} {
+    	@each $ccssFloatArray in $ccssFloatArray {
+    	    .#{$ccss}-f#{str-slice($ccssFloatArray, 0, 1)}-xl {
+    	        float: #{$ccssFloatArray} !important;
+    	    }
+    	}
+    }
+
+    @media #{$min1366} {
+    	@each $ccssFloatArray in $ccssFloatArray {
+    	    .#{$ccss}-f#{str-slice($ccssFloatArray, 0, 1)}-xxl {
+    	        float: #{$ccssFloatArray} !important;
+    	    }
+    	}
+    }
+/* Float E */

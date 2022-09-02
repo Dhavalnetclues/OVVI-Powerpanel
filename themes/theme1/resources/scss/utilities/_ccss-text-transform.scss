@@ -1,0 +1,11 @@
+/* - - - - - - - - - - - - -
+    Related File Name: ..\utilities\_ccss-utilities-setting.scss
+- - - - - - - - - - - - - */
+
+/* Text Transform S */
+    @each $ccssTextTransform in $ccssTextTransformArray {
+        .#{$ccss}-tt#{str-slice($ccssTextTransform, 0, 1)} {
+            text-transform: #{$ccssTextTransform};
+        }
+    }
+/* Text Transform E */

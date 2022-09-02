@@ -1,0 +1,27 @@
+.buorg{
+    position: fixed;
+    text-align: center;
+    display: none;
+    background-color: $ac_red;
+    padding: 8px 15px;
+    z-index: 99999999;
+    width: 100%;
+    i{
+    	color: $ac_white;
+    }
+    .buorg__text{
+    	font-size: $ac_fs_base + 2px;
+    	font-weight: $ac_fw_r;
+    	line-height: 120%;
+    	color: $ac_white;	
+    }
+    a{
+    	font-size: $ac_fs_base + 2px;
+    	font-weight: $ac_fw_r;
+    	line-height: 120%;
+    	color: $ac_white;
+    	&:hover{
+    		color: $ac_black;
+    	}
+    }
+}

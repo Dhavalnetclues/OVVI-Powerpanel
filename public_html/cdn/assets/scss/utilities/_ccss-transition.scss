@@ -1,0 +1,17 @@
+/* - - - - - - - - - - - - -
+    Related File Name: ..\utilities\_ccss-utilities-setting.scss
+- - - - - - - - - - - - - */
+
+/* Transition S */
+    @each $ccssTransition in $ccssTransitionArray {
+        .#{$ccss}-ti-0#{$ccssTransition} {
+            @include css3-prefix ('transition', all #{'0.'}#{$ccssTransition}s ease-in-out);
+        }
+    }
+
+    @each $ccssTransition in $ccssTransitionArray {
+        .#{$ccss}-ti-#{$ccssTransition} {
+            @include css3-prefix ('transition', all #{$ccssTransition}s ease-in-out);
+        }
+    }
+/* Transition E */

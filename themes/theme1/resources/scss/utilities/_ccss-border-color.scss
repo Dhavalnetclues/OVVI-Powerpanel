@@ -1,0 +1,11 @@
+/* - - - - - - - - - - - - -
+    Related File Name: ..\utilities\_ccss-utilities-setting.scss
+- - - - - - - - - - - - - */
+
+/* Border Color S */
+    @each $color, $value in colorMap($ccssBaseColors, 10) {
+        .#{$ccss}-#{$ccssBc}-#{$color} {
+            border-color: $value;
+        }
+    }
+/* Border Color E */
