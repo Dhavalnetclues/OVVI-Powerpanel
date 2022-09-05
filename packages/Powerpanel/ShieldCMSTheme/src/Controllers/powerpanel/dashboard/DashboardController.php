@@ -146,7 +146,7 @@ class DashboardController extends PowerpanelController
                 
             }
         }
-        $feedBackleadsCount = FeedbackLead::getCountForDashboardLeadList();        
+        // $feedBackleadsCount = FeedbackLead::getCountForDashboardLeadList();        
         $dashboardWidgetArray = array(
             'widget_download' => array('widget_name' => 'Document Views & Downloads', 'widget_id' => "widget_download", 'widget_display' => 'Y'),
             'widget_leadstatistics' => array('widget_name' => 'Leads Statistics', 'widget_id' => "widget_leadstatistics", 'widget_display' => 'Y'),
@@ -180,7 +180,7 @@ class DashboardController extends PowerpanelController
             }
         }
 
-        return view('shiledcmstheme::powerpanel.dashboard.dashboard', compact('leads', 'leadsCount', 'feedBackleadsCount', 'approvals', 'breadcrumb', 'formBuilderLead', 'formBuilderLeadCount', 'dashboardWidgetSettings'));
+        return view('shiledcmstheme::powerpanel.dashboard.dashboard', compact('leads', 'leadsCount', 'approvals', 'breadcrumb', 'formBuilderLead', 'formBuilderLeadCount', 'dashboardWidgetSettings'));
     }
 
     public function ajaxcall()
@@ -517,7 +517,7 @@ class DashboardController extends PowerpanelController
         $year = isset($filter['year']) ? $filter['year'] : 0;
         $year = date('Y', strtotime('-'.$year.' years'));
 
-        $labels = ['Feedback', 'Event', 'Newsletter', 'Form Builder','Contact'];
+        $labels = ['Event', 'Newsletter', 'Form Builder','Contact'];
 
         $Contactleads = ContactLead::getRecordListDashboard($year);
         $Feedbackleads = FeedbackLead::getRecordListDashboard($year);
@@ -528,7 +528,7 @@ class DashboardController extends PowerpanelController
         $formBuilderLead = FormBuilderLead::getDashboardReport($year);
         //$pollLead = PollLead::getDashboardReport($year);
 
-        $leadsReport = [$Feedbackleads, $eventLead, $newsletterLead, $formBuilderLead, $Contactleads];
+        $leadsReport = [$eventLead, $newsletterLead, $formBuilderLead, $Contactleads];
 
         $dataArr = [$labels, $leadsReport];
         $docChartData = json_encode($dataArr);

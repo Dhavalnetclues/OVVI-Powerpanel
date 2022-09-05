@@ -12,19 +12,16 @@ class FeedbackLead extends Model {
      *
      * @var string
      */
-    protected $table = 'feedback_leads';
+    protected $table = 'getdemo_leads';
     protected $fillable = [
         'id',
         'varName',
         'varEmail',
         'varPhoneNo',
-        'chrSatisfied',
-        'varVisitfor',
-        'chrCategory',
+        'varBusinessName',
         'txtUserMessage',
         'chrDelete',
         'varIpAddress',
-        'chrIsPrimary',
         'created_at',
         'updated_at'
     ];
@@ -68,7 +65,7 @@ class FeedbackLead extends Model {
      */
     public static function getRecordById($id, $moduleFields = false) {
         $response = false;
-        $moduleFields = ['id', 'varName', 'varEmail', 'varPhoneNo', 'txtUserMessage', 'chrSatisfied', 'varVisitfor', 'chrCategory', 'chrDelete', 'varIpAddress', 'created_at', 'updated_at'];
+        $moduleFields = ['id', 'varName', 'varEmail', 'varPhoneNo', 'txtUserMessage', 'varBusinessName', 'chrDelete', 'varIpAddress', 'created_at', 'updated_at'];
         $response = Self::getPowerPanelRecords($moduleFields)->deleted()->checkRecordId($id)->first();
         return $response;
     }
@@ -97,7 +94,7 @@ class FeedbackLead extends Model {
      */
     public static function getRecordList($filterArr = false, $id = false) {
         $response = false;
-        $moduleFields = ['id', 'varName', 'varEmail', 'varPhoneNo', 'chrSatisfied', 'varVisitfor', 'chrCategory', 'txtUserMessage', 'varIpAddress', 'created_at', 'chrPublish'];
+        $moduleFields = ['id', 'varName', 'varEmail', 'varPhoneNo', 'varBusinessName', 'txtUserMessage', 'varIpAddress', 'created_at', 'chrPublish'];
         $response = Self::getPowerPanelRecords($moduleFields)
                 ->deleted();
         if (isset($id) && $id != '') {
@@ -110,13 +107,13 @@ class FeedbackLead extends Model {
 
     public static function getRecordCount($filterArr = false, $returnCounter = false, $modelNameSpace = false, $checkMain = false, $id = false) {
         $response = false;
-        $moduleFields = ['id', 'varName', 'varEmail', 'varPhoneNo', 'chrSatisfied', 'varVisitfor', 'chrCategory', 'txtUserMessage', 'varIpAddress', 'created_at', 'chrPublish'];
+        $moduleFields = ['id', 'varName', 'varEmail', 'varPhoneNo', 'varBusinessName', 'txtUserMessage', 'varIpAddress', 'created_at', 'chrPublish'];
         $response = Self::getPowerPanelRecords($moduleFields)
                 ->deleted();
         if (isset($id) && $id != '') {
             $response = $response->where('id', '=', $id);
         }
-        $response = $response->filter($filterArr,$returnCounter);
+        $response = $response->filter($filterArr, $returnCounter);
         $response = $response->count();
         return $response;
     }
@@ -134,9 +131,7 @@ class FeedbackLead extends Model {
             'varName',
             'varEmail',
             'varPhoneNo',
-            'chrSatisfied',
-            'varVisitfor',
-            'chrCategory',
+            'varBusinessName',
             'txtUserMessage',
             'varIpAddress',
             'created_at',
@@ -150,26 +145,13 @@ class FeedbackLead extends Model {
         return $response;
     }
 
-    public static function getCountForDashboardLeadList() {
-        $response = false;
-        $moduleFields = [
-            'id'
-        ];
-        $response = Self::getPowerPanelRecords($moduleFields)
-                ->deleted()
-                ->count();
-        return $response;
-    }
-
     public static function getRecordListDashboard($year = false, $timeparam = false, $month = false) {
         $response = false;
-        $response = Self::select('id');
-        $response = $response->where('chrPublish', '=', 'Y')->where('chrDelete', '=', 'N');
-        if ($timeparam != 'month') {
-            $response = $response->whereRaw("YEAR(created_at) = " . (int) $year . "")->count();
-        } else {
-            $response = $response->whereRaw("YEAR(created_at) = " . (int) $year . "")->whereRaw("MONTH(created_at) = " . (int) $month . "")->count();
+        $response = Self::where('chrPublish', '=', 'Y')->where('chrDelete', '=', 'N');
+        if ($year != '') {
+            $response = $response->whereRaw("YEAR(created_at) >= " . (int) $year . "");
         }
+        $response = $response->count();
         return $response;
     }
 
@@ -181,7 +163,7 @@ class FeedbackLead extends Model {
      */
     public static function getCronRecords() {
         $response = false;
-        $moduleFields = ['id', 'varName', 'varEmail', 'varPhoneNo', 'chrSatisfied', 'varVisitfor', 'chrCategory', 'txtUserMessage', 'created_at'];
+        $moduleFields = ['id', 'varName', 'varEmail', 'varPhoneNo', 'varBusinessName', 'txtUserMessage', 'created_at'];
         $response = Self::getPowerPanelRecords($moduleFields)
                 ->deleted()
                 ->publish()
@@ -201,9 +183,7 @@ class FeedbackLead extends Model {
             'varName',
             'varEmail',
             'varPhoneNo',
-            'chrSatisfied',
-            'varVisitfor',
-            'chrCategory',
+            'varBusinessName',
             'txtUserMessage',
             'varIpAddress',
             'created_at'
@@ -291,6 +271,18 @@ class FeedbackLead extends Model {
         }
         if (isset($filterArr['searchFilter']) && !empty($filterArr['searchFilter'])) {
             $data = $query->where('varName', 'like', '%' . $filterArr['searchFilter'] . '%')->orwhere('varEmail', 'like', '%' . $filterArr['searchFilter'] . '%');
+        }
+        if (!empty($filterArr['start']) && $filterArr['start'] != ' ') {
+            $data = $query->whereRaw('DATE(created_at) >= DATE("' . date('Y-m-d', strtotime(str_replace('/', '-', $filterArr['start']))) . '")');
+        }
+        if (!empty($filterArr['start']) && $filterArr['start'] != '' && empty($filterArr['end']) && $filterArr['end'] == '') {
+                                    
+            $data = $query->whereRaw('DATE(created_at) >= DATE("' . date('Y-m-d', strtotime(str_replace('/', '-', $filterArr['start']))) . '")');
+        }
+
+        if (!empty($filterArr['end']) && $filterArr['end'] != ' ') {
+    //                                    echo 'hi';exit;
+            $data = $query->whereRaw('DATE(created_at) <= DATE("' . date('Y-m-d', strtotime(str_replace('/', '-', $filterArr['end']))) . '") AND created_at IS NOT null');
         }
         if (!empty($query)) {
             $response = $query;

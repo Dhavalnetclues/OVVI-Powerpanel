@@ -23,7 +23,7 @@
                     </tr>
                  </thead>
                  <tbody>
-                  @foreach($GetdemoLead as $row)
+                  @foreach($GetdemoLead as $row)   
                   @php
                   $Satisfied = '-';
                   $Visitfor = '-';
@@ -32,8 +32,8 @@
                   $userMessage = '-';
                   $Business = '-';
 	                  
-                              if (!empty($value->varBusinessName) ) {
-                                    $Business = $value->varBusinessName;
+                              if (!empty($row->varBusinessName) ) {
+                                    $Business = $row->varBusinessName;
                               } 									
 
 										if (!empty($row->varPhoneNo)) {
@@ -48,9 +48,7 @@
                        <td>{{ $row->varName }}</td>
                        <td>{{ \App\Helpers\MyLibrary::decryptLatest($row->varEmail) }}</td>
                        <td>{{ $phoneNo }}</td>
-                       <td>{{ $Satisfied }}</td>
-                       <td>{{ $Visitfor }}</td>
-                       <td>{{ $category }}</td>
+                       <td>{{ $Business }}</td>
                        <td>{{ $userMessage }}</td>
                        <td>{{ (!empty($row->varIpAddress) ? $row->varIpAddress :'-') }}</td>
                        <td>{{ date(''.Config::get('Constant.DEFAULT_DATE_FORMAT').' '.Config::get('Constant.DEFAULT_TIME_FORMAT').'',strtotime($row->created_at)) }}</td>

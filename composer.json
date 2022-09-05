@@ -50,7 +50,6 @@
             "Powerpanel\\CmsPage\\": "packages/Powerpanel/CmsPage/src",
             "Powerpanel\\RoleManager\\": "packages/Powerpanel/RoleManager/src",
             "Powerpanel\\MessagingSystem\\": "packages/Powerpanel/MessagingSystem/src",
-            "Powerpanel\\FeedbackLead\\": "packages/Powerpanel/FeedbackLead/src",
             "Powerpanel\\FormBuilder\\": "packages/Powerpanel/FormBuilder/src",
             "Powerpanel\\FormBuilderLead\\": "packages/Powerpanel/FormBuilderLead/src",
             "Powerpanel\\Workflow\\": "packages/Powerpanel/Workflow/src",
