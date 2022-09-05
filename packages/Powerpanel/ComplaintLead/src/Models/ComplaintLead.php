@@ -180,7 +180,7 @@ class ComplaintLead extends Model {
      * @author  NetQuick
      */
     function scopeOrderByCreatedAtDesc($query) {
-        return $query->orderBy('complaint_date', 'DESC');
+        return $query->orderBy('created_at', 'DESC');
     }
 
     public static function getRecordListDashboard($year = false, $timeparam = false, $month = false) {
@@ -188,9 +188,9 @@ class ComplaintLead extends Model {
         $response = Self::select('id');
         $response = $response->where('chrPublish', '=', 'Y')->where('chrDelete', '=', 'N');
         if ($timeparam != 'month') {
-            $response = $response->whereRaw("YEAR(complaint_date) = " . (int) $year . "")->count();
+            $response = $response->whereRaw("YEAR(created_at) = " . (int) $year . "")->count();
         } else {
-            $response = $response->whereRaw("YEAR(complaint_date) = " . (int) $year . "")->whereRaw("MONTH(complaint_date) = " . (int) $month . "")->count();
+            $response = $response->whereRaw("YEAR(created_at) = " . (int) $year . "")->whereRaw("MONTH(created_at) = " . (int) $month . "")->count();
         }
         return $response;
     }
@@ -199,7 +199,7 @@ class ComplaintLead extends Model {
         $response = false;
         $response = Self::where('chrPublish', '=', 'Y')->where('chrDelete', '=', 'N');
         if ($year != '') {
-            $response = $response->whereRaw("YEAR(complaint_date) >= " . (int) $year . "");
+            $response = $response->whereRaw("YEAR(created_at) >= " . (int) $year . "");
         }
         $response = $response->count();
         return $response;
@@ -234,7 +234,7 @@ class ComplaintLead extends Model {
             // $data = $query->where('fkIntCompanyId', $filterArr['cmpId']);
         }
         if (!empty($filterArr['rangeFilter']['from']) && $filterArr['rangeFilter']['to']) {
-            $data = $query->whereRaw('DATE(complaint_date) BETWEEN "' . date('Y-m-d', strtotime(str_replace('/', '-', $filterArr['rangeFilter']['from']))) . '" AND "' . date('Y-m-d', strtotime(str_replace('/', '-', $filterArr['rangeFilter']['to']))) . '"');
+            $data = $query->whereRaw('DATE(created_at) BETWEEN "' . date('Y-m-d', strtotime(str_replace('/', '-', $filterArr['rangeFilter']['from']))) . '" AND "' . date('Y-m-d', strtotime(str_replace('/', '-', $filterArr['rangeFilter']['to']))) . '"');
         }
         // if (!empty($filterArr['start']) && $filterArr['start'] != ' ') {
         // 		$data = $query->whereRaw('DATE(created_at) >= DATE("' . date('Y-m-d', strtotime(str_replace('/', '-', $filterArr['start']))) . '")');

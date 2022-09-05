@@ -15,7 +15,7 @@
                         <tr>
                             <th style="font-weight: bold;">{{ trans('complaintlead::template.common.name') }}</th>
                             <th style="font-weight: bold;">{{ trans('complaintlead::template.common.email') }}</th>
-                            <th style="font-weight: bold;">{{ trans('complaintlead::template.complaintleadModule.service') }}</th>
+                            <th style="font-weight: bold;">{{ trans('complaintlead::template.complaintleadModule.message') }}</th>
                             <th style="font-weight: bold;">{{ trans('complaintlead::template.complaintleadModule.phone') }}</th>                           
                             <th style="font-weight: bold;">{{ trans('complaintlead::template.complaintleadModule.receivedDateTime') }}</th>
                         </tr>
@@ -25,12 +25,12 @@
                         <tr>
                             <td>{{ $row->varTitle }}</td>
                             @php
-                            $email = \App\Helpers\MyLibrary::getDecryptedString($row->varEmail);
+                            $email = \App\Helpers\MyLibrary::decryptLatest($row->varEmail);
                             @endphp
                             <td>{{ (!empty($email)?($email):'-') }}</td>
-                            <td>{{ (!empty($row->varService)?($row->varService):'-') }}</td>
+                            <td>{{ (!empty($row->varMessage)?($row->varMessage):'-') }}</td>
                              @php
-                            $phone = \App\Helpers\MyLibrary::getDecryptedString($row->varPhoneNo);
+                            $phone = \App\Helpers\MyLibrary::decryptLatest($row->varPhoneNo);
                             @endphp
                             <td>{{ (!empty($phone) ? $phone : '-')  }}</td>
                             <td>{{ date(''.Config::get('Constant.DEFAULT_DATE_FORMAT').' '.Config::get('Constant.DEFAULT_TIME_FORMAT').'',strtotime($row->created_at)) }}</td>

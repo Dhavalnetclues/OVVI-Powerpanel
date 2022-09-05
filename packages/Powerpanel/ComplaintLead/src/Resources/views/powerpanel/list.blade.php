@@ -65,7 +65,7 @@
 										<th width="10%" align="left">{{ trans('complaintlead::template.common.email') }}</th>
 										<th width="10%" align="center">{{ trans('complaintlead::template.common.phoneno') }}</th>
 										<th width="10%" align="center">{{ trans('complaintlead::template.common.message') }}</th>
-										<th width="10%" align="center">{{ trans('Documents') }}</th>
+										<th width="10%" align="center">{{ trans('Resume') }}</th>
 										<th width="10%" align="center">{{ trans('complaintlead::template.common.received_date_time') }}</th>
 									</tr>
                                 </thead>

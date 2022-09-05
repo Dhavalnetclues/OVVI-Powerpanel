@@ -120,30 +120,18 @@ class ComplaintLeadController extends PowerpanelController
         if (!empty($doc) && isset($doc)) {
             $docx = rtrim($doc, ",");
             $docName = explode(',', $docx);
-    
-            $otherinfo .= '<div class="pro-act-btn">';
-            $otherinfo .= '<a href="javascript:void(0)" class="without_bg_icon" onclick="return hs.htmlExpand(this,{width:300,headingText:\'DOCUMENTS\',wrapperClassName:\'titlebar\',showCredits:false});"><span aria-hidden="true" class="fa fa-file"></span></a>';
-            $otherinfo .= '<div class="highslide-maincontent">';
+            
+            // $otherinfo .= '<div class="pro-act-btn">';
+            // $otherinfo .= '<a href="javascript:void(0)" class="without_bg_icon" onclick="return hs.htmlExpand(this,{width:300,headingText:\'DOCUMENTS\',wrapperClassName:\'titlebar\',showCredits:false});"><span aria-hidden="true" class="fa fa-file"></span></a>';
+            // $otherinfo .= '<div class="highslide-maincontent">';
             $count= count($docName);
             $i=1;
-            foreach($docName as $docs){
-                if($i<=$count)
-                
-                {
-                    if (Config::get('Constant.BUCKET_ENABLED')) {
-                        $Url = Config::get('Constant.CDN_PATH') . "complaint_documents/" . $docs;
-                    } else {
-                        $Url = url('/') . "/cdn/complaint_documents/" . $docs;
-                    }
-                    $otherinfo .= '<tr><td><strong>  File '.$i.':</strong></td><td>'.'<a href="' . $Url. '" title="Download File" download class="without_bg_icon" ><span aria-hidden="true" class="fa fa-download"></span></a>' . '</td></tr>'.'<br>'.'<br>';
-                }
-                $i++;
-        } 
-        
-            $otherinfo .='</div>';
-            $otherinfo .='</div>';
-        }
-        else {
+            $Url = "https://www.ovvihq.com/assets/career/" . $doc;
+            $otherinfo .= '<p>'.'<a href="' . $Url. '" target="_blank" title="Download File" download class="without_bg_icon" ><span aria-hidden="true" class="fa fa-download">Download</span></a>' . '</p>';
+          
+            // $otherinfo .='</div>';
+            // $otherinfo .='</div>';
+        }else {
             $otherinfo = '-';
         }
         
