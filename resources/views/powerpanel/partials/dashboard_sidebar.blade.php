@@ -1161,13 +1161,13 @@
                             </li>
                         @endif --}}
                         
-                        {{-- @if(isset($menuArr['can-careers-lead-list']) && $menuArr['can-careers-lead-list'])
+                        @if(isset($menuArr['can-careers-lead-list']) && $menuArr['can-careers-lead-list'])
                             <li data-id="52" class="nav-sort nav-item">
                                 <a href="{{ url('powerpanel/careers-lead') }}" class="nav-link {{ $menuArr['careers_lead_active'] }}" data-key="t-crm" title="{{ trans('template.sidebar.careerLeads') }}"> 
                                     <i class="ri-handbag-line d-none"></i> <span data-key="t-widgets">{{ trans('template.sidebar.careerLeads') }}</span>
                                 </a>
                             </li>
-                        @endif --}}
+                        @endif
                         
                         {{-- @if(isset($menuArr['can-payonline-list']) && $menuArr['can-payonline-list'])
                             <li data-id="53" class="nav-sort nav-item">

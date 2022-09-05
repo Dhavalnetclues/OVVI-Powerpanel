@@ -202,7 +202,7 @@ return [
         'ipAddress' => 'IP',    
     ],
     'complaintleadModule' => [
-        'manageComplaintLeads' => 'Complaint Leads',
+        'manageComplaintLeads' => 'Career Leads',
         'export' => 'Export',
         'noExport' => 'No Records to export!',
         'recordsExport' => 'Which records do you want to export?',
@@ -218,7 +218,7 @@ return [
         'attachments' => 'Attachments',
         'ipAddress' => 'IP',    
         'receivedDateTime' => 'Received Date/Time',
-        'complaintLeads' => 'Complaint Leads',
+        'complaintLeads' => 'Career Leads',
         'complaintReply' => 'Reply',
         'complaintForward' => 'Forward',
     ]

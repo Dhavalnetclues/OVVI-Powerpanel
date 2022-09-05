@@ -112,7 +112,7 @@ class ComplaintLeadController extends PowerpanelController
        
         
         
-       $companyname = Companies::getRecordById($value->fkIntCompanyId);
+    //    $companyname = Companies::getRecordById($value->fkIntCompanyId);
       
         
         $Company_response = '';
@@ -180,7 +180,7 @@ class ComplaintLeadController extends PowerpanelController
             $value->varTitle,
             $email,
             $value->varService ? $value->varService : "-" ,
-           $companyname->varTitle ,
+           '' ,
             date('' . Config::get('Constant.DEFAULT_DATE_FORMAT') . ' ', strtotime($value->complaint_date)),
          
             $phoneNo,
