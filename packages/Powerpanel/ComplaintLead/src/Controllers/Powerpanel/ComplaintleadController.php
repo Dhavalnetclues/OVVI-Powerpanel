@@ -41,7 +41,6 @@ class ComplaintLeadController extends PowerpanelController
         $records = [];
         $records["data"] = [];
         $filterArr['cmpId'] = !empty(Request::get('cmpId')) ? Request::get('cmpId') : '';
-//     echo '<pre>';print_r($filterArr['cmpId']);exit;
         $filterArr['orderColumnNo'] = (!empty(Request::get('order')[0]['column']) ? Request::get('order')[0]['column'] : '');
         $filterArr['orderByFieldName'] = (!empty(Request::get('columns')[$filterArr['orderColumnNo']]['name']) ? Request::get('columns')[$filterArr['orderColumnNo']]['name'] : '');
         $filterArr['orderTypeAscOrDesc'] = (!empty(Request::get('order')[0]['dir']) ? Request::get('order')[0]['dir'] : '');
@@ -51,10 +50,12 @@ class ComplaintLeadController extends PowerpanelController
         $filterArr['iDisplayLength'] = intval(Request::get('length'));
         $filterArr['iDisplayStart'] = intval(Request::get('start'));
         $filterArr['rangeFilter'] = !empty(Request::input('rangeFilter')) ? Request::input('rangeFilter') : '';
-
+        
         $sEcho = intval(Request::get('draw'));
-
+        
         $arrResults = ComplaintLead::getRecordList($filterArr);
+            // echo '<pre>';print_r($arrResults);exit;
+
         $iTotalRecords = CommonModel::getRecordCount($filterArr, true,false, 'Powerpanel\ComplaintLead\Models\ComplaintLead');
 
         $end = $filterArr['iDisplayStart'] + $filterArr['iDisplayLength'];
@@ -100,42 +101,19 @@ class ComplaintLeadController extends PowerpanelController
      */
     public function ExportRecord()
     {
-        return Excel::download(new ComplaintLeadExport, Config::get('Constant.SITE_NAME') . '-' . trans("complaintlead::template.complaintleadModule.complaintLeads") . '-' . date("dmy-h:i") . '.xlsx');
+        return Excel::download(new ComplaintLeadExport, 'OVVI - ' . trans("complaintlead::template.complaintleadModule.complaintLeads") . '-' . date("dmy-h:i") . '.xlsx');
 
     }
 
     public function tableData($value)
-    {
-       
-        
-        $phoneNo = '';
-       
-        
-        
-    //    $companyname = Companies::getRecordById($value->fkIntCompanyId);
-      
-        
-        $Company_response = '';
-        if (!empty($value->company_response)) {
-            $Company_response .= '<div class="pro-act-btn">';
-            $Company_response .= '<a href="javascript:void(0)" class="without_bg_icon" onclick="return hs.htmlExpand(this,{width:300,headingText:\'Company Response\',wrapperClassName:\'titlebar\',showCredits:false});"><span aria-hidden="true" class="icon-envelope"></span></a>';
-            $Company_response .= '<div class="highslide-maincontent">' . nl2br($value->company_response) . '</div>';
-            $Company_response .= '</div>';
-        } else {
-            $Company_response .= '-';
-        } 
-
+    {  
+        $phoneNo = '';          
         $email = '';
         if (!empty($value->varEmail)) {
-            $email .= '<div class="pro-act-btn">';
-            $email .= '<a href="javascript:void(0)" class="without_bg_icon" onclick="return hs.htmlExpand(this,{width:300,headingText:\'Email\',wrapperClassName:\'titlebar\',showCredits:false});"><span aria-hidden="true" class="icon-envelope"></span></a>';
-            $email .= '<div class="highslide-maincontent">' . nl2br(MyLibrary::getDecryptedString($value->varEmail)) . '</div>';
-            $email .= '</div>';
+            $email = MyLibrary::decryptLatest($value->varEmail);
         } else {
-            $email .= '-';
+            $email = '-';
         } 
-        
-      
         
         $doc = $value->varFile;
         $otherinfo = '';
@@ -169,8 +147,8 @@ class ComplaintLeadController extends PowerpanelController
             $otherinfo = '-';
         }
         
-        if (!empty($value->varPhoneNo)) {
-            $phoneNo = (MyLibrary::getDecryptedString($value->varPhoneNo));
+        if (!empty($value->varPhoneNo)) {   
+            $phoneNo = (MyLibrary::decryptLatest($value->varPhoneNo));
         } else {
             $phoneNo = '-';
         }
@@ -179,13 +157,8 @@ class ComplaintLeadController extends PowerpanelController
             '<input type="checkbox" name="delete[]" class="form-check-input chkDelete" value="' . $value->id . '">',
             $value->varTitle,
             $email,
-            $value->varService ? $value->varService : "-" ,
-           '' ,
-            date('' . Config::get('Constant.DEFAULT_DATE_FORMAT') . ' ', strtotime($value->complaint_date)),
-         
-            $phoneNo,
-            
-            $Company_response,
+            $phoneNo,            
+            $value->varMessage ? $value->varMessage : "-" ,         
             $otherinfo ,
             date('' . Config::get('Constant.DEFAULT_DATE_FORMAT') . ' ' . Config::get('Constant.DEFAULT_TIME_FORMAT') . '', strtotime($value->created_at)),
         );

@@ -15,20 +15,13 @@ class ComplaintLead extends Model {
     protected $table = 'complaint_lead';
     protected $fillable = [
         'id',
-        'fkIntCompanyId',
         'varTitle',
         'varEmail',
         'varPhoneNo',
-        'varPoBox',
-        'varService',
-        'complaint_date',
-        'complaint_details',
-        'company_response',
+        'varMessage',
         'varFile',
-        'txtStreetAddress',
         'chrDelete',
         'varIpAddress',
-        'chrIsPrimary',
         'created_at',
         'updated_at'
     ];
@@ -72,12 +65,7 @@ class ComplaintLead extends Model {
      */
     public static function getRecordById($id, $moduleFields = false) {
         $response = false;
-        $moduleFields = ['id', 'varTitle', 'varEmail', 'varPhoneNo', 'txtStreetAddress', 'complaint_details',
-            'varPoBox',
-            'varService',
-            'complaint_date',
-            'company_response',
-            'varFile', 'chrDelete', 'varIpAddress', 'created_at', 'updated_at'];
+        $moduleFields = ['id', 'varTitle', 'varEmail', 'varPhoneNo', 'varPoBox',  'varMessage', 'varFile', 'chrDelete', 'varIpAddress', 'created_at', 'updated_at'];
         $response = Self::getPowerPanelRecords($moduleFields)->deleted()->checkRecordId($id)->first();
         return $response;
     }
@@ -106,12 +94,7 @@ class ComplaintLead extends Model {
      */
     public static function getRecordList($filterArr = false) {
         $response = false;
-        $moduleFields = ['id', 'fkIntCompanyId', 'varTitle', 'varEmail', 'varPhoneNo', 'complaint_details',
-            'varPoBox',
-            'varService',
-            'complaint_date',
-            'company_response',
-            'varFile', 'txtStreetAddress', 'varIpAddress', 'created_at', 'chrPublish'];
+        $moduleFields = ['id', 'varTitle', 'varEmail', 'varPhoneNo', 'varMessage', 'varFile','varIpAddress', 'created_at', 'chrPublish'];
         $response = Self::getPowerPanelRecords($moduleFields)
                 ->deleted()
                 ->filter($filterArr)
@@ -127,12 +110,8 @@ class ComplaintLead extends Model {
      */
     public static function getListForExport($selectedIds = false) {
         $response = false;
-        $moduleFields = ['varTitle', 'varEmail','fkIntCompanyId', 'varPhoneNo', 'txtStreetAddress',
-            'varPoBox',
-            'varService',
-            'complaint_details',
-            'complaint_date',
-            'company_response',
+        $moduleFields = ['varTitle', 'varEmail','varPhoneNo', 
+            'varMessage',
             'varFile', 'varIpAddress', 'created_at'];
         $query = Self::getPowerPanelRecords($moduleFields)->deleted();
         if (!empty($selectedIds) && count($selectedIds) > 0) {
@@ -162,7 +141,7 @@ class ComplaintLead extends Model {
     }
 
      public function scopeCheckByComplaintId($query, $albumId) {
-        return $query->where('fkIntCompanyId', $albumId);
+        // return $query->where('fkIntCompanyId', $albumId);
     }
     /**
      * This method handels publish scope
@@ -252,7 +231,7 @@ class ComplaintLead extends Model {
             $data = $query->where('varTitle', 'like', '%' . $filterArr['searchFilter'] . '%')->orwhere('varEmail', 'like', '%' . $filterArr['searchFilter'] . '%');
         }
         if (!empty($filterArr['cmpId']) && $filterArr['cmpId'] != ' ') {
-            $data = $query->where('fkIntCompanyId', $filterArr['cmpId']);
+            // $data = $query->where('fkIntCompanyId', $filterArr['cmpId']);
         }
         if (!empty($filterArr['rangeFilter']['from']) && $filterArr['rangeFilter']['to']) {
             $data = $query->whereRaw('DATE(complaint_date) BETWEEN "' . date('Y-m-d', strtotime(str_replace('/', '-', $filterArr['rangeFilter']['from']))) . '" AND "' . date('Y-m-d', strtotime(str_replace('/', '-', $filterArr['rangeFilter']['to']))) . '"');

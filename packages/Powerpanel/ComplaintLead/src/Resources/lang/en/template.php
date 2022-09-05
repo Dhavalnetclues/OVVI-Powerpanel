@@ -195,6 +195,7 @@ return [
         'recordApprovalMessage' => 'Record has been sent for approval.',
         'selectuser' => 'Select User',
         'service' => 'Service',
+        'message' => 'Message',
         'company' => 'Company',
         'dateofcomplaint' => 'Date Of Complaint',
         'companyresponse' => 'Company Response',

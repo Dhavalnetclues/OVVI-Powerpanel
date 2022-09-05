@@ -35,14 +35,14 @@
                             <i class="ri-search-line search-icon"></i>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-3 col-xs-3">
+                    {{-- <div class="col-lg-6 col-md-3 col-xs-3">
 						<div class="input-group new_date_picker date-picker input-daterange">
                             <span class="input-group-text"><i class="ri-calendar-line fs-13"></i></span>
                             <input type="text" class="form-control" id="start_date" name="start_date" placeholder="Start Date" readonly data-provider="flatpickr" data-date-format="{{Config::get('Constant.DEFAULT_DATE_FORMAT')}}">
                             <input type="text" class="form-control" id="end_date" name="end_date" placeholder="To Date" readonly data-provider="flatpickr" data-date-format="{{Config::get('Constant.DEFAULT_DATE_FORMAT')}}">
                             <button class="btn btn-outline-primary btn-rh-search" id="complaintleadrange" type="button"><i class="ri-search-line fs-13"></i></button>
                         </div>
-                    </div>
+                    </div> --}}
                     <!--end col-->
                     <div class="col-xxl-1 col-sm-2">
                         <button type="button" class="btn btn-primary" title="Reset" id="refresh">
@@ -59,15 +59,12 @@
                         <div class="table-responsive">
                             <table class="table table-striped table-bordered table-hover table-checkable hide-mobile" id="datatable_ajax">
                                 <thead class="text-muted table-light">
-									<tr role="row" class="heading">
+									<tr role="row" class="heading">	
 										<th width="2%" align="center"><input type="checkbox" class="form-check-input group-checkable"></th>
 										<th width="10%" align="left">{{ trans('complaintlead::template.common.name') }}</th>
 										<th width="10%" align="left">{{ trans('complaintlead::template.common.email') }}</th>
-										<th width="10%" align="center">{{ trans('complaintlead::template.common.service') }}</th>
-										<th width="10%" align="center">{{ trans('complaintlead::template.common.company') }}</th>
-										<th width="10%" align="center">{{ trans('complaintlead::template.common.dateofcomplaint') }}</th>
 										<th width="10%" align="center">{{ trans('complaintlead::template.common.phoneno') }}</th>
-										<th width="10%" align="center">{{ trans('complaintlead::template.common.companyresponse') }}</th>
+										<th width="10%" align="center">{{ trans('complaintlead::template.common.message') }}</th>
 										<th width="10%" align="center">{{ trans('Documents') }}</th>
 										<th width="10%" align="center">{{ trans('complaintlead::template.common.received_date_time') }}</th>
 									</tr>

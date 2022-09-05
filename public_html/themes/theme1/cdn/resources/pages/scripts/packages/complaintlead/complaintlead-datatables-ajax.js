@@ -50,19 +50,17 @@ var TableDatatablesAjax = function() {
                     { "data": 1, className: 'text-left', "name": 'varName' },
                     { "data": 2, className: 'text-left', "bSortable": false },
                     { "data": 3, className: 'text-center', "name": 'varService', "bSortable": false },
-                    { "data": 4, className: 'text-center', "name": 'varCompany', "bSortable": false },
-                    { "data": 5, className: 'text-center', "name": 'complaint_date', "bSortable": false },
-                    { "data": 6, className: 'text-center', "bSortable": false },
+                    { "data": 4, className: 'text-center', "bSortable": false },
                    
-                    { "data": 7, className: 'text-center', "name": 'companyresponse', "bSortable": false },
-                    { "data": 8, className: 'text-center', "name": 'attachments', "bSortable": false },
-                    { "data": 9, className: 'text-center', "name": 'created_at' },
+                    
+                    { "data": 5, className: 'text-center', "name": 'attachments', "bSortable": false },
+                    { "data": 6, className: 'text-center', "name": 'created_at' },
                 ],
                 "ajax": {
                     "url": window.site_url + "/powerpanel/complaint/get_list", // ajax source
                 },
                 "order": [
-                        [9, "desc"]
+                        [6, "desc"]
                     ] // set first column as a default sort by asc
             }
         });
