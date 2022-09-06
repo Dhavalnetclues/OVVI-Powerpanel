@@ -13,7 +13,7 @@ class CreateComplaintLeadTable extends Migration {
      */
     public function up() {
 
-        Schema::create('complaint_lead', function (Blueprint $table) {
+        Schema::create('career_lead', function (Blueprint $table) {
 
             $table->engine = 'InnoDB';
             $table->increments('id')->collation('utf8_general_ci');
@@ -42,7 +42,7 @@ class CreateComplaintLeadTable extends Migration {
      * @return void
      */
     public function down() {
-        Schema::drop('complaint_lead');
+        Schema::drop('career_lead');
     }
 
 }

@@ -25,7 +25,7 @@
                  <tbody>
                   @foreach($ContactLead as $row)
                     <tr>
-                       <td>{{ $row->varFullName }}</td>
+                       <td>{{ $row->varTitle }}</td>
                        <td>{{ \App\Helpers\MyLibrary::decryptLatest($row->varEmailId) }}</td>
                        <td>{{ (!empty($row->varPhoneNumber)?\App\Helpers\MyLibrary::decryptLatest($row->varPhoneNumber):'-') }}</td>
                        <td>{{ (!empty($row->varBusinessName) ? $row->varBusinessName :'-') }}</td>

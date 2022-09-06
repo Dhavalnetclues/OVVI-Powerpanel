@@ -102,7 +102,7 @@
                                 ];
                             @endphp
 
-                            @include('powerpanel.partials.datatable-view',['ModuleName'=>'feedbacklead','Permission_Delete'=>'getdemo-leads-delete','tablearray'=>$tablearray,'userIsAdmin'=>$userIsAdmin,'Module_ID'=>Config::get('Constant.MODULE.ID')])
+                            @include('powerpanel.partials.datatable-view',['ModuleName'=>'getdemolead','Permission_Delete'=>'getdemo-leads-delete','tablearray'=>$tablearray,'userIsAdmin'=>$userIsAdmin,'Module_ID'=>Config::get('Constant.MODULE.ID')])
 
                         </div>
                     </div>

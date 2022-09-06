@@ -11,7 +11,7 @@ class ContactLead extends Model {
 	 protected $table = 'ContactUsLeads';
 	 protected $fillable = [
 		'id',
-		'varFullName',
+		'varTitle',
 		'varEmailId',
 		'varPhoneNumber',
 		'varMessage',
@@ -67,7 +67,7 @@ class ContactLead extends Model {
 			$response = false;
 			$moduleFields = [
 				'id',
-				'varFullName',
+				'varTitle',
 				'varEmailId',
 				'varPhoneNumber',
 				'varBusinessName',
@@ -109,7 +109,7 @@ class ContactLead extends Model {
 	public static function getRecordList($filterArr=false){
 		$response = false;
 		$moduleFields= ['id',
-			'varFullName',
+			'varTitle',
 			'varEmailId',
 			'varPhoneNumber',
 			'varBusinessName',
@@ -147,7 +147,7 @@ class ContactLead extends Model {
 	public static function getListForExport($selectedIds=false){
 		$response = false;
 		$moduleFields= ['id',
-			'varFullName',
+			'varTitle',
 			'varEmailId',
 			'varPhoneNumber',
 			'varBusinessName',
@@ -274,7 +274,7 @@ class ContactLead extends Model {
 				}
 				if(isset($filterArr['searchFilter']) && !empty($filterArr['searchFilter']))
 				{
-						$data = $query->where('varFullName','like','%'.$filterArr['searchFilter'].'%')->orwhere('varEmailId','like','%'.$filterArr['searchFilter'].'%');
+						$data = $query->where('varTitle','like','%'.$filterArr['searchFilter'].'%')->orwhere('varEmailId','like','%'.$filterArr['searchFilter'].'%');
 				}
 
 				if (!empty($filterArr['start']) && $filterArr['start'] != ' ') {

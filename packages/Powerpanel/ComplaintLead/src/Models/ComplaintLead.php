@@ -12,7 +12,7 @@ class ComplaintLead extends Model {
      *
      * @var string
      */
-    protected $table = 'complaint_lead';
+    protected $table = 'career_lead';
     protected $fillable = [
         'id',
         'varTitle',

@@ -154,7 +154,7 @@ class ContactLeadController extends PowerpanelController
         }
 
     
-        $LTitle = (isset($value->varFullName) && !empty($value->varFullName)) ? $value->varFullName : "-"; 
+        $LTitle = (isset($value->varTitle) && !empty($value->varTitle)) ? $value->varTitle : "-"; 
         $ipAdress = (isset($value->varIpAddress) && !empty($value->varIpAddress)) ? $value->varIpAddress : "-";
 
         $records = array(

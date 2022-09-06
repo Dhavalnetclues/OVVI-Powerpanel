@@ -45,7 +45,7 @@
 										}
                   @endphp
                     <tr>
-                       <td>{{ $row->varName }}</td>
+                       <td>{{ $row->varTitle }}</td>
                        <td>{{ \App\Helpers\MyLibrary::decryptLatest($row->varEmail) }}</td>
                        <td>{{ $phoneNo }}</td>
                        <td>{{ $Business }}</td>

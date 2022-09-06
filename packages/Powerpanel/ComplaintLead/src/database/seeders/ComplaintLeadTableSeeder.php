@@ -17,7 +17,7 @@ class ComplaintLeadTableSeeder extends Seeder {
                     'intFkGroupCode' => '4',
                     'varTitle' => 'Complaint',
                     'varModuleName' => 'complaint',
-                    'varTableName' => 'complaint_lead',
+                    'varTableName' => 'career_lead',
                     'varModelName' => 'ComplaintLead',
                     'varModuleClass' => 'ComplaintleadController',
                     'varModuleNameSpace' => 'Powerpanel\ComplaintLead\\',
@@ -35,7 +35,7 @@ class ComplaintLeadTableSeeder extends Seeder {
                 DB::table('module')->insert([
                     'varTitle' => 'Complaint',
                     'varModuleName' => 'complaint',
-                    'varTableName' => 'complaint_lead',
+                    'varTableName' => 'career_lead',
                     'varModelName' => 'ComplaintLead',
                     'varModuleClass' => 'ComplaintleadController',
                     'varModuleNameSpace' => 'Powerpanel\ComplaintLead\\',

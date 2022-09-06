@@ -132,7 +132,7 @@ class GetdemoleadController extends PowerpanelController {
 
         $records = array(
             $checkbox,
-            $value->varName,
+            $value->varTitle,
             MyLibrary::decryptLatest($value->varEmail),
             $phoneNo,
             // $Satisfied,
