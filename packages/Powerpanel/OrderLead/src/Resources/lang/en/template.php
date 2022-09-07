@@ -196,7 +196,7 @@ return [
         'selectuser' => 'Select User',
     ],
     'formbuilderleadModule' => [
-        'manageformbuilderLeads' => 'Form Builder Leads',
+        'manageformbuilderLeads' => 'Order Leads',
         'export' => 'Export',
         'noExport' => 'No Records to export!',
         'recordsExport' => 'Which records do you want to export?',
@@ -207,6 +207,6 @@ return [
         'message' => 'Message',
         'ipAddress' => 'IP',
         'receivedDateTime' => 'Received Date/Time',
-        'formbuilderleads' => 'Form Builder Leads',
+        'formbuilderleads' => 'Order Leads',
     ],
 ];

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * The FormBuilderLead class handels bannner queries
+ * The OrderLead class handels bannner queries
  * ORM implemetation.
  * @package   Netquick powerpanel
  * @license   http://www.opensource.org/licenses/BSD-3-Clause
@@ -10,7 +10,7 @@
  * @author    NetQuick
  */
 
-namespace Powerpanel\FormBuilderLead\Models;
+namespace Powerpanel\OrderLead\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use DB;
@@ -19,7 +19,7 @@ use Carbon\Carbon;
 use Config;
 use App\Helpers\Aws_File_helper;
 
-class FormBuilderLead extends Model {
+class OrderLead extends Model {
 
     /**
      * The attributes that are mass assignable.

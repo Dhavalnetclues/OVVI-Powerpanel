@@ -1112,7 +1112,7 @@
             (isset($menuArr['can-newsletter-lead-list']) && $menuArr['can-newsletter-lead-list'])||
             (isset($menuArr['can-error-tracking-list']) && $menuArr['can-error-tracking-list'])||
             // (isset($menuArr['can-online-polling-lead-list']) && $menuArr['can-online-polling-lead-list']) ||
-            (isset($menuArr['can-formbuilder-lead-list']) && $menuArr['can-formbuilder-lead-list']) ||
+            (isset($menuArr['can-order-lead-list']) && $menuArr['can-order-lead-list']) ||
             // (isset($menuArr['can-payonline-list']) && $menuArr['can-payonline-list']) ||
             (isset($menuArr['can-submit-tickets-list']) && $menuArr['can-submit-tickets-list']))
             <li class="nav-item">
@@ -1146,13 +1146,13 @@
                             </li>
                         @endif --}}
 
-                        {{-- @if(isset($menuArr['can-formbuilder-list']) && $menuArr['can-formbuilder-list'])
+                        @if(isset($menuArr['can-order-lead-list']) && $menuArr['can-order-lead-list'])
                         <li class="nav-item">
-                            <a class="nav-link {{ $menuArr['formbuilder_active'] }}" title="{{ trans('template.sidebar.formbuilder') }}" href="{{ url('powerpanel/formbuilder') }}">
-                                <i class="ri-todo-line d-none"></i> <span data-key="t-widgets">{{ trans('template.sidebar.formbuilder') }}</span>
+                            <a class="nav-link {{ $menuArr['order_active'] }}" title="{{ trans('template.sidebar.orderleads') }}" href="{{ url('powerpanel/order') }}">
+                                <i class="ri-todo-line d-none"></i> <span data-key="t-widgets">{{ trans('template.sidebar.orderleads') }}</span>
                             </a>
                         </li>
-                    @endif --}}
+                    @endif
                         
                         @if(isset($menuArr['can-complaint-list']) && $menuArr['can-complaint-list'])
                             <li data-id="50" class="nav-sort nav-item">

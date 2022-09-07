@@ -51,7 +51,7 @@
             "Powerpanel\\RoleManager\\": "packages/Powerpanel/RoleManager/src",
             "Powerpanel\\MessagingSystem\\": "packages/Powerpanel/MessagingSystem/src",
             "Powerpanel\\FormBuilder\\": "packages/Powerpanel/FormBuilder/src",
-            "Powerpanel\\FormBuilderLead\\": "packages/Powerpanel/FormBuilderLead/src",
+            "Powerpanel\\OrderLead\\": "packages/Powerpanel/OrderLead/src",
             "Powerpanel\\Workflow\\": "packages/Powerpanel/Workflow/src",
             "Powerpanel\\ContactUsLead\\": "packages/Powerpanel/ContactUsLead/src",
             "Powerpanel\\GetdemoLead\\": "packages/Powerpanel/GetdemoLead/src",

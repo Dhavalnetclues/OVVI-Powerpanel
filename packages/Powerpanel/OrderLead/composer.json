@@ -1,5 +1,5 @@
 {
-    "name": "Powerpanel/FormBuilderLead",
+    "name": "Powerpanel/OrderLead",
     "description": "This is a powerpanel Form Builder Lead package",
     "type": "library",
     "license": "1.0.0.0",
@@ -12,7 +12,7 @@
     "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
-            "Powerpanel\\FormBuilderLead\\": "/src"
+            "Powerpanel\\OrderLead\\": "/src"
         }
     },
     "require": {}

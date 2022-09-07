@@ -1003,7 +1003,7 @@ $menuArr = App\Helpers\PowerPanelSidebarConfig::getConfig();
             (isset($menuArr['can-getdemo-leads-list']) && $menuArr['can-getdemo-leads-list']) ||
             (isset($menuArr['can-reseller-leads-list']) && $menuArr['can-reseller-leads-list']) ||
             (isset($menuArr['can-newsletter-lead-list']) && $menuArr['can-newsletter-lead-list'])||
-            (isset($menuArr['can-formbuilder-lead-list']) && $menuArr['can-formbuilder-lead-list'])
+            (isset($menuArr['can-order-lead-list']) && $menuArr['can-order-lead-list'])
             )
             <li class="nav-item {{ (isset($menuArr['leadmg']) && $menuArr['leadmg']=='active')? 'open active' : '' }}">
                 <a title="{{ trans('template.sidebar.leads') }}" href="javascript:;" class="nav-link nav-toggle">
@@ -1069,12 +1069,12 @@ $menuArr = App\Helpers\PowerPanelSidebarConfig::getConfig();
                         </a>
                     </li>
                     @endif
-                    @if(isset($menuArr['can-formbuilder-lead-list']) && $menuArr['can-formbuilder-lead-list'])
-                    <li class="nav-item {{ $menuArr['form_builder_active'] }}">
-                        <a title="{{ trans('template.sidebar.formbuilderleads') }}" href="{{ url('powerpanel/formbuilder-lead') }}" class="nav-link ">
+                    @if(isset($menuArr['can-order-lead-list']) && $menuArr['can-order-lead-list'])
+                    <li class="nav-item {{ $menuArr['order_active'] }}">
+                        <a title="{{ trans('template.sidebar.formbuilderleads') }}" href="{{ url('powerpanel/order-lead') }}" class="nav-link ">
                             <i class="fa fa-file-text-o"></i>
                             <span class="title">{{ trans('template.sidebar.formbuilderleads') }}</span>
-                            <span class="{{ $menuArr['form_builder_selected'] }}"></span>
+                            <span class="{{ $menuArr['order_selected'] }}"></span>
                         </a>
                     </li>
                     @endif

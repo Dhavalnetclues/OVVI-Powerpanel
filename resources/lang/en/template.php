@@ -370,7 +370,7 @@ return [
         'submitticketslead' => 'Ticket List',
         'restaurant_reservations' => 'Reservations',
         'newsletterleads' => 'Newsletter Leads',
-        'formbuilderleads' => 'Form Builder Leads',
+        'orderleads' => 'Order Leads',
         'productscategory' => 'Product Categories',
         'showcategory' => 'Show Categories',
         'events' => 'Events',
@@ -694,7 +694,7 @@ return [
         'complaintForward' => 'Forward',
     ],
     'formbuilderleadModule' => [
-        'manageformbuilderLeads' => 'Form Builder Leads',
+        'manageformbuilderLeads' => 'Order Leads',
         'export' => 'Export',
         'noExport' => 'No Records to export!',
         'recordsExport' => 'Which records do you want to export?',
@@ -705,7 +705,7 @@ return [
         'message' => 'Message',
         'ipAddress' => 'IP',
         'receivedDateTime' => 'Received Date/Time',
-        'formbuilderleads' => 'Form Builder Leads',
+        'formbuilderleads' => 'Order Leads',
     ],
     'notificationlistModule' => [
         'managenotificationlist' => 'Notification',

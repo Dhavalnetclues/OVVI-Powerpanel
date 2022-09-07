@@ -744,20 +744,20 @@ class GlobalSearch extends Model {
         return $feedback_leads;
     }
 
-    public static function formbuilderleads($term) {
-        $terms = str_word_count($term, 1);
-        $formbuilderleadsModuleObj = Modules::where('varModuleName', 'formbuilder-lead')->first();
-        $formbuilderleadsObj = DB::table('formbuilder_lead')
-                ->select(
-                        DB::raw('null as intSearchRank'), 'form_builder.varName as term', DB::raw('null as info'), DB::raw(' null as slug'), DB::raw('null as pageAliasId'), DB::raw("'" . $formbuilderleadsModuleObj->id . "'" . ' as moduleId'), DB::raw("'" . $formbuilderleadsModuleObj->varModelName . "'" . ' as varModelName'), DB::raw("'" . $formbuilderleadsModuleObj->varModuleName . "'" . ' as varModuleName'), DB::raw('"Form Builder Lead" as moduleTitle'), 'formbuilder_lead.id', DB::raw(' null as fkIntDocId'), DB::raw(' null as fkIntImgId'), DB::raw(' null as intFKCategory')
-                )
-                ->leftJoin('form_builder', 'form_builder.id', '=', 'formbuilder_lead.fk_formbuilder_id')
-                ->where('formbuilder_lead.chrDelete', '=', 'N');
-        $rawstring = '(nq_form_builder.varName like "%' . self::cleanString($term) . '%"';
-        $rawstring .= ')';
-        $formbuilderleadsObj = $formbuilderleadsObj->whereRaw($rawstring);
-        return $formbuilderleadsObj;
-    }
+    // public static function formbuilderleads($term) {
+    //     $terms = str_word_count($term, 1);
+    //     $formbuilderleadsModuleObj = Modules::where('varModuleName', 'formbuilder-lead')->first();
+    //     $formbuilderleadsObj = DB::table('formbuilder_lead')
+    //             ->select(
+    //                     DB::raw('null as intSearchRank'), 'form_builder.varName as term', DB::raw('null as info'), DB::raw(' null as slug'), DB::raw('null as pageAliasId'), DB::raw("'" . $formbuilderleadsModuleObj->id . "'" . ' as moduleId'), DB::raw("'" . $formbuilderleadsModuleObj->varModelName . "'" . ' as varModelName'), DB::raw("'" . $formbuilderleadsModuleObj->varModuleName . "'" . ' as varModuleName'), DB::raw('"Form Builder Lead" as moduleTitle'), 'formbuilder_lead.id', DB::raw(' null as fkIntDocId'), DB::raw(' null as fkIntImgId'), DB::raw(' null as intFKCategory')
+    //             )
+    //             ->leftJoin('form_builder', 'form_builder.id', '=', 'formbuilder_lead.fk_formbuilder_id')
+    //             ->where('formbuilder_lead.chrDelete', '=', 'N');
+    //     $rawstring = '(nq_form_builder.varName like "%' . self::cleanString($term) . '%"';
+    //     $rawstring .= ')';
+    //     $formbuilderleadsObj = $formbuilderleadsObj->whereRaw($rawstring);
+    //     return $formbuilderleadsObj;
+    // }
 
 //==============================================================================================
     public static function department($term) {
@@ -845,7 +845,7 @@ class GlobalSearch extends Model {
             /* feedback leads Group */
             $feedbackleads = Self::feedbackleads($term);
             /* form builder leads Group */
-            $formbuilderleads = Self::formbuilderleads($term);
+            // $formbuilderleads = Self::formbuilderleads($term);
         } else {
             $data['page'] = (null !== (Request::post('page'))) ? Request::post('page') : 1;
             $limit = $limit;

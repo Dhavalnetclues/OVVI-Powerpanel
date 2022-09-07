@@ -266,17 +266,17 @@ class PowerPanelSidebarConfig {
                 $menuArr['news_letter_selected'] = '';
             }
         }
-        if (Auth::user()->can('formbuilder-lead-list')) {
-            $menuArr['can-formbuilder-lead-list'] = true;
-            if (Request::segment(2) == 'formbuilder-lead') {
-                $menuArr['form_builder_active'] = 'active';
-                $menuArr['form_builder_open'] = 'open';
-                $menuArr['form_builder_selected'] = 'selected';
+        if (Auth::user()->can('order-lead-list')) {
+            $menuArr['can-order-lead-list'] = true;
+            if (Request::segment(2) == 'order-lead') {
+                $menuArr['order_active'] = 'active';
+                $menuArr['order_open'] = 'open';
+                $menuArr['order_selected'] = 'selected';
                 $menuArr['leadmg'] = 'active';
             } else {
-                $menuArr['form_builder_active'] = '';
-                $menuArr['form_builder_open'] = '';
-                $menuArr['form_builder_selected'] = '';
+                $menuArr['order_active'] = '';
+                $menuArr['order_open'] = '';
+                $menuArr['order_selected'] = '';
             }
         }
         if (Auth::user()->can('submit-tickets-list')) {

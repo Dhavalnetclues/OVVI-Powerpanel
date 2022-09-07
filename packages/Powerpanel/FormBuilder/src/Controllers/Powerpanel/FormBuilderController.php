@@ -56,7 +56,7 @@ class FormBuilderController extends PowerpanelController {
         }
         $total = FormBuilder::getRecordCount();
         $NewRecordsCount = FormBuilder::getNewRecordsCount();
-
+        
         $this->breadcrumb['title'] = trans('formbuilder::template.formbuilderModule.manageformbuilder');
 
         if (method_exists($this->CommonModel, 'GridColumnData')) {
@@ -69,7 +69,7 @@ class FormBuilderController extends PowerpanelController {
             $settingarray = '';
         }
         $settingarray = json_encode($settingarray);
-
+        
         return view('formbuilder::powerpanel.index', ['iTotalRecords' => $total, 'breadcrumb' => $this->breadcrumb, 'NewRecordsCount' => $NewRecordsCount, 'userIsAdmin' => $userIsAdmin, 'settingarray' => $settingarray]);
     }
 
@@ -80,7 +80,7 @@ class FormBuilderController extends PowerpanelController {
      * @author  NetQuick
      */
     public function get_list() {
-
+        
         /* Start code for sorting */
         $filterArr = [];
         $records = array();
@@ -101,11 +101,11 @@ class FormBuilderController extends PowerpanelController {
                 $isAdmin = true;
             }
         }
-
+        
         $ignoreId = [];
         $arrResults = FormBuilder::getRecordList($filterArr, $isAdmin, $ignoreId, $this->currentUserRoleSector);
         $iTotalRecords = FormBuilder::getRecordCountforList($filterArr, true, $isAdmin, $ignoreId, $this->currentUserRoleSector);
-
+        
         if (!empty($arrResults)) {
             $currentUserID = auth()->user()->id;
             $permit = [
@@ -115,14 +115,18 @@ class FormBuilderController extends PowerpanelController {
                 'canformbuilderreviewchanges' => Auth::user()->can('formbuilder-reviewchanges'),
                 'canloglist' => Auth::user()->can('log-list'),
             ];
-
+            
             foreach ($arrResults as $key => $value) {
                 if (!in_array($value->id, $ignoreId)) {
+                    
                     $records['data'][] = $this->tableData($value, $permit, $currentUserID, $isAdmin);
                 }
-            }
+            }         
+            
+            
         }
-
+        // print_r($records);die;
+            
         $NewRecordsCount = FormBuilder::getNewRecordsCount($isAdmin, $this->currentUserRoleSector);
         $records["newRecordCount"] = $NewRecordsCount;
         if (!empty(Request::input('customActionType')) && Request::input('customActionType') == 'group_action') {
@@ -444,11 +448,10 @@ class FormBuilderController extends PowerpanelController {
     }
 
     public function tableData($value , $permit, $currentUserID, $isAdmin) {
-
         // Checkbox
         $checkbox = view('powerpanel.partials.checkbox', ['name'=>'delete', 'value'=>$value->id])->render();
-
-
+        
+        
         // StartDate
         // $date = date('' . Config::get('Constant.DEFAULT_DATE_FORMAT') . ' ' . Config::get('Constant.DEFAULT_TIME_FORMAT') . '', strtotime($value->created_at));
         $date = '<span align="left" data-bs-toggle="tooltip" data-bs-placement="bottom" title="'.date(Config::get("Constant.DEFAULT_DATE_FORMAT").' '.Config::get("Constant.DEFAULT_TIME_FORMAT"), strtotime($value->created_at)).'">'.date(Config::get('Constant.DEFAULT_DATE_FORMAT'), strtotime($value->created_at)).'</span>';
@@ -458,7 +461,7 @@ class FormBuilderController extends PowerpanelController {
         if (Auth::user()->can('formbuilder-edit')) {
             $title = '<div class="quick_edit text-uppercase"><a href="' . route('powerpanel.formbuilder.edit', array('alias' => $value->id)) . '?tab=P" title="Edit">' . $value->varName . '</a></div>';
         }
-
+        
         // Publish Action
         $publish_action = '';
         if ($value->chrAddStar != 'Y') {
@@ -490,7 +493,7 @@ class FormBuilderController extends PowerpanelController {
                 $publish_action = "-";
             }
         }
-
+        
         if ($publish_action == "") {
             $publish_action = "";
         } else {
@@ -504,7 +507,7 @@ class FormBuilderController extends PowerpanelController {
                 }
             }
         }
-
+        
         // Details
         $details = '';
         $details .= '<div class="pro-act-btn">';
@@ -522,17 +525,17 @@ class FormBuilderController extends PowerpanelController {
         $details .= '</div>';
         $details .= '</div>';
 
-
+        
         // User
-        if ($isAdmin) {
-            $userdata = User::getUserId($value->UserID);
-            $username = '(<em>Created by @' . $userdata->name . "</em>)";
-        } else {
-            $username = '';
-        }
+        // if ($isAdmin) {
+        //     $userdata = User::getUserId($value->UserID);
+        //     $username = '(<em>Created by @' . $userdata->name . "</em>)";
+        // } else {
+        // }
+        $username = '';
 
-
-
+        
+        
         // Status-Data , Status , Sector
         $statusdata = '';
         if (method_exists($this->MyLibrary, 'count_days')) {
@@ -565,34 +568,34 @@ class FormBuilderController extends PowerpanelController {
         if ($value->chrArchive == 'Y') {
             $status .= Config::get('Constant.ARCHIVE_LIST') . ' ';
         }
-
-
+        
+        
         // All - Actions
         $logurl = url('powerpanel/log?id=' . $value->id . '&mid=' . Config::get('Constant.MODULE.ID'));
         $allActions = view('powerpanel.partials.all-actions',
-                    [
-                        'tabName'=>'All',
-                        'canedit'=> $permit['canformbuilderedit'],
-                        'candelete'=>$permit['canformbuilderdelete'],
-                        'canloglist'=>$permit['canloglist'],
-                        'value'=>$value,
-                        'chrIsAdmin' => $this->currentUserRoleData->chrIsAdmin,
-                        'module_name'=>'formbuilder',
+        [
+            'tabName'=>'All',
+            'canedit'=> $permit['canformbuilderedit'],
+            'candelete'=>$permit['canformbuilderdelete'],
+            'canloglist'=>$permit['canloglist'],
+            'value'=>$value,
+            'chrIsAdmin' => $this->currentUserRoleData->chrIsAdmin,
+            'module_name'=>'formbuilder',
                         'module_edit_url' => route('powerpanel.formbuilder.edit', array('alias' => $value->id)),
                         'module_type'=>'parent',
                         'viewlink' => isset($viewlink) ? $viewlink : "",
                         'linkviewLable' => isset($linkviewLable) ? $linkviewLable : "",
                         'logurl' => $logurl
-                    ])->render();
+                        ])->render();
 
-        if($permit['canformbuilderedit'] || $permit['canformbuilderdelete']){
-            $allActions = $allActions;
-        } else {
-            $allActions = "-";
-        }
-
-
-        $records = array(
+                        if($permit['canformbuilderedit'] || $permit['canformbuilderdelete']){
+                            $allActions = $allActions;
+                        } else {
+                            $allActions = "-";
+                        }
+                        
+                        
+                        $records = array(
             $checkbox,
             '<div class="pages_title_div_row"> <span class="title-txt"> ' . $title . ' ' . $status . $statusdata . ' - ' . $username . '</span></div>',
             // $details,
@@ -601,6 +604,7 @@ class FormBuilderController extends PowerpanelController {
             $date,
             $allActions
         );
+        // echo "<pre>";print_r($records);die;
         return $records;
     }
 

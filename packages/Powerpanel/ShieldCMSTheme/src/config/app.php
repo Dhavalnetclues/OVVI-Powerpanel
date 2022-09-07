@@ -198,6 +198,7 @@ return [
         Powerpanel\ContactUsLead\Providers\ContactUsLeadServiceProvider::class,
         Powerpanel\GetdemoLead\Providers\GetdemoLeadServiceProvider::class,
         Powerpanel\ResellerLead\Providers\ResellerLeadServiceProvider::class,
+        Powerpanel\OrderLead\Providers\OrderLeadServiceProvider::class,
         Powerpanel\ServicesCategory\Providers\ServicesCategoryServiceProvider::class,
         Powerpanel\Services\Providers\ServicesServiceProvider::class,
         Powerpanel\Testimonial\Providers\TestimonialServiceProvider::class,

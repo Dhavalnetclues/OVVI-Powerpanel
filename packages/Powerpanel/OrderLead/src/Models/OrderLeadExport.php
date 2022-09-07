@@ -1,13 +1,13 @@
 <?php
 namespace Powerpanel\FormBuilderLead\Models;
-use Powerpanel\FormBuilderLead\Models\FormBuilderLead;
+use Powerpanel\FormBuilderLead\Models\OrderLead;
 use Illuminate\Contracts\View\View;
 use Maatwebsite\Excel\Concerns\FromView;
 use Maatwebsite\Excel\Concerns\ShouldAutoSize;
 use Request;
 use Config;
 
-class FormBuilderLeadExport implements FromView, ShouldAutoSize
+class OrderLeadExport implements FromView, ShouldAutoSize
 {
     public function view(): View
     {
@@ -16,15 +16,15 @@ class FormBuilderLeadExport implements FromView, ShouldAutoSize
             if (null !== Request::get('delete')) {
                 $selectedIds = Request::get('delete');
             }
-            $arrResults = FormBuilderLead::getListForExport($selectedIds);
+            $arrResults = OrderLead::getListForExport($selectedIds);
             
         } else {
             $filterArr['searchFilter'] = !empty(Request::get('searchValue')) ? Request::get('searchValue') : '';
-            $arrResults = FormBuilderLead::getListForExport();
+            $arrResults = OrderLead::getListForExport();
         }
 
         if (count($arrResults) > 0) {
-            return view('formbuilderlead::powerpanel.excel_format', ['FormBuilderLead' => $arrResults]);
+            return view('orderlead::powerpanel.excel_format', ['OrderLead' => $arrResults]);
         }
     }
 

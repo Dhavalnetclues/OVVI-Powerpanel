@@ -1,14 +1,14 @@
 <?php
 
-namespace Powerpanel\FormBuilderLead\Controllers\Powerpanel;
+namespace Powerpanel\OrderLead\Controllers\Powerpanel;
 
 use App\Http\Controllers\PowerpanelController;
 use Illuminate\Support\Facades\Redirect;
 use Request;
 use Excel;
 use App\Department;
-use Powerpanel\FormBuilderLead\Models\FormBuilderLead;
-use Powerpanel\FormBuilderLead\Models\FormBuilderLeadExport;
+use Powerpanel\OrderLead\Models\OrderLead;
+use Powerpanel\OrderLead\Models\OrderLeadExport;
 use App\CommonModel;
 use App\Helpers\MyLibrary;
 use Config;
@@ -16,7 +16,7 @@ use App\UserNotification;
 use App\Helpers\Email_sender;
 use Illuminate\Support\Facades\Validator;
 
-class FormBuilderLeadController extends PowerpanelController {
+class OrderLeadController extends PowerpanelController {
 
 
     public function __construct() {
@@ -28,9 +28,9 @@ class FormBuilderLeadController extends PowerpanelController {
 
 
     public function index() {
-        $iTotalRecords = FormBuilderLead::getRecordCount(false,true,"Powerpanel\FormBuilderLead\Models\FormBuilderLead");
-        $this->breadcrumb['title'] = trans('formbuilderlead::template.formbuilderleadModule.manageformbuilderLeads');
-        return view('formbuilderlead::powerpanel.list', ['iTotalRecords' => $iTotalRecords, 'breadcrumb' => $this->breadcrumb]);
+        $iTotalRecords = OrderLead::getRecordCount(false,true,"Powerpanel\OrderLead\Models\OrderLead");
+        $this->breadcrumb['title'] = trans('orderlead::template.orderleadModule.manageorderLeads');
+        return view('orderlead::powerpanel.list', ['iTotalRecords' => $iTotalRecords, 'breadcrumb' => $this->breadcrumb]);
     }
 
 
@@ -54,8 +54,8 @@ class FormBuilderLeadController extends PowerpanelController {
             $id = '';
         }
 
-        $arrResults = FormBuilderLead::getRecordList($filterArr, $id);
-        $iTotalRecords = FormBuilderLead::getRecordCount($filterArr, true, '', '', $id);
+        $arrResults = OrderLead::getRecordList($filterArr, $id);
+        $iTotalRecords = OrderLead::getRecordCount($filterArr, true, '', '', $id);
         $end = $filterArr['iDisplayStart'] + $filterArr['iDisplayLength'];
         $end = $end > $iTotalRecords ? $iTotalRecords : $end;
 
@@ -77,10 +77,9 @@ class FormBuilderLeadController extends PowerpanelController {
     }
 
 
-
     public function DeleteRecord(Request $request) {
         $data = Request::all('ids');
-        $update = MyLibrary::deleteMultipleRecords($data,false,false,"Powerpanel\FormBuilderLead\Models\FormBuilderLead");
+        $update = MyLibrary::deleteMultipleRecords($data,false,false,"Powerpanel\OrderLead\Models\OrderLead");
         UserNotification::deleteNotificationByRecordID($data['ids'], Config::get('Constant.MODULE.ID'));
         echo json_encode($update);
         exit;
@@ -89,7 +88,7 @@ class FormBuilderLeadController extends PowerpanelController {
 
 
     public function ExportRecord() {
-        return Excel::download(new FormBuilderLeadExport, Config::get('Constant.SITE_NAME') . '-' . trans("formbuilderlead::template.formbuilderleadModule.formbuilderleads") . '-' . date("dmy-h:i") . '.xlsx');
+        return Excel::download(new OrdereadExport, Config::get('Constant.SITE_NAME') . '-' . trans("orderlead::template.orderleadModule.orderleads") . '-' . date("dmy-h:i") . '.xlsx');
     }
 
 

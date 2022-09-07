@@ -98,7 +98,7 @@
                                 ];
                             @endphp
 
-                            @include('powerpanel.partials.datatable-view',['ModuleName'=>'formbuilderlead','Permission_Delete'=>'formbuilder-lead-delete','tablearray'=>$tablearray,'userIsAdmin'=>$userIsAdmin,'Module_ID'=>Config::get('Constant.MODULE.ID')])
+                            @include('powerpanel.partials.datatable-view',['ModuleName'=>'formbuilderlead','Permission_Delete'=>'order-lead-delete','tablearray'=>$tablearray,'userIsAdmin'=>$userIsAdmin,'Module_ID'=>Config::get('Constant.MODULE.ID')])
 
                         </div>
                     </div>

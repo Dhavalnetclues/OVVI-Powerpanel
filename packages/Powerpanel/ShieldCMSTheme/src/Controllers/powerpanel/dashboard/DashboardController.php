@@ -133,19 +133,19 @@ class DashboardController extends PowerpanelController
         $filterArr['iDisplayLength'] = intval(3);
         $filterArr['iDisplayStart'] = intval(0);
 
-        $formBuilderLeadList = FormBuilderLead::getRecordList($filterArr);
-        $formBuilderLeadCount = FormBuilderLead::getRecordCount();
+        // $formBuilderLeadList = OrderLead::getRecordList($filterArr);
+        // $formBuilderLeadCount = OrderLead::getRecordCount();
         
-        if (!empty($formBuilderLeadList)) {
-            foreach ($formBuilderLeadList as $key => $value) {
-            	$formExist = FormBuilder::getRecordById($value->fk_formbuilder_id);
-            	if(!empty($formExist)){
-            		$formBuilderLead[$key] = FormBuilderLeadController::tableData($value, 'dashboard');
-                $formBuilderLead[$key][0] = $value->id;
-            	}
+        // if (!empty($formBuilderLeadList)) {
+        //     foreach ($formBuilderLeadList as $key => $value) {
+        //     	$formExist = FormBuilder::getRecordById($value->fk_formbuilder_id);
+        //     	if(!empty($formExist)){
+        //     		$formBuilderLead[$key] = FormBuilderLeadController::tableData($value, 'dashboard');
+        //         $formBuilderLead[$key][0] = $value->id;
+        //     	}
                 
-            }
-        }
+        //     }
+        // }
         // $feedBackleadsCount = FeedbackLead::getCountForDashboardLeadList();        
         $dashboardWidgetArray = array(
             'widget_download' => array('widget_name' => 'Document Views & Downloads', 'widget_id' => "widget_download", 'widget_display' => 'Y'),
@@ -180,7 +180,7 @@ class DashboardController extends PowerpanelController
             }
         }
 
-        return view('shiledcmstheme::powerpanel.dashboard.dashboard', compact('leads', 'leadsCount', 'approvals', 'breadcrumb', 'formBuilderLead', 'formBuilderLeadCount', 'dashboardWidgetSettings'));
+        return view('shiledcmstheme::powerpanel.dashboard.dashboard', compact('leads', 'leadsCount', 'approvals', 'breadcrumb', 'formBuilderLead', 'dashboardWidgetSettings'));
     }
 
     public function ajaxcall()
@@ -525,7 +525,7 @@ class DashboardController extends PowerpanelController
         $eventLead = EventLead::getDashboardReport($year);
         //$payonlineLead = Payonline::getDashboardReport($year);
         $newsletterLead = NewsletterLead::getDashboardReport($year);
-        $formBuilderLead = FormBuilderLead::getDashboardReport($year);
+        $formBuilderLead = OrderLead::getDashboardReport($year);
         //$pollLead = PollLead::getDashboardReport($year);
 
         $leadsReport = [$eventLead, $newsletterLead, $formBuilderLead, $Contactleads];
