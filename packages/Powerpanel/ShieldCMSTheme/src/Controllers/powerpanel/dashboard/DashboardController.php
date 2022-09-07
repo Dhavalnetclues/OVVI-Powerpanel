@@ -522,7 +522,7 @@ class DashboardController extends PowerpanelController
         $Contactleads = ContactLead::getRecordListDashboard($year);
         $Feedbackleads = FeedbackLead::getRecordListDashboard($year);
         //$complaintLead = ComplaintLead::getDashboardReport($year);
-        $eventLead = EventLead::getDashboardReport($year);
+        // $eventLead = EventLead::getDashboardReport($year);
         //$payonlineLead = Payonline::getDashboardReport($year);
         $newsletterLead = NewsletterLead::getDashboardReport($year);
         $formBuilderLead = OrderLead::getDashboardReport($year);

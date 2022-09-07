@@ -81,15 +81,15 @@
                                 $tablearray = [
                                     'DataTableTab'=>[
                                         'ColumnSetting'=>[
-                                            ['Identity_Name'=>'name','TabIndex'=>'1','Name'=>'Form Name'],
-                                            ['Identity_Name'=>'email','TabIndex'=>'2','Name'=>'Admin Email'],
+                                            ['Identity_Name'=>'name','TabIndex'=>'1','Name'=>'Business'],
+                                            ['Identity_Name'=>'email','TabIndex'=>'2','Name'=>'Full Name'],
                                             ['Identity_Name'=>'contents','TabIndex'=>'3','Name'=>'Contents'],
                                             ['Identity_Name'=>'ip','TabIndex'=>'4','Name'=>'IP'],
                                             ['Identity_Name'=>'date','TabIndex'=>'5','Name'=>'Received Date/Time'],
                                         ],
                                         'DataTableHead'=>[
-                                            ['Title'=>'Form Name','Align'=>'left'],
-                                            ['Title'=>'Admin Email','Align'=>'left'],
+                                            ['Title'=>'Business','Align'=>'left'],
+                                            ['Title'=>'Full Name','Align'=>'left'],
                                             ['Title'=>'Contents','Align'=>'left'],
                                             ['Title'=>'IP','Align'=>'left'],
                                             ['Title'=>'Received Date/Time','Align'=>'center']

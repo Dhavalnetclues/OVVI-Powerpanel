@@ -31,8 +31,9 @@ class OrderLead extends Model {
     protected $table = 'formbuilder_lead';
     protected $fillable = [
         'id',
+        'varTitle',
         'fk_formbuilder_id',
-        'formdata',
+        'varOnFullName',
         'varIpAddress',
         'chrDelete',
         'created_at',
@@ -91,8 +92,9 @@ class OrderLead extends Model {
         $response = false;
         $moduleFields = [
             'id',
+            'varTitle',
             'fk_formbuilder_id',
-            'formdata',
+            'varOnFullName',
             'varIpAddress',
             'chrDelete',
             'created_at',
@@ -126,16 +128,17 @@ class OrderLead extends Model {
     public static function getRecordList($filterArr = false,$id = false) {
         $response = false;
         $moduleFields = [
-            'formbuilder_lead.id',
-            'formbuilder_lead.fk_formbuilder_id',
-            'formbuilder_lead.formdata',
-            'formbuilder_lead.filename',
-            'formbuilder_lead.varIpAddress',
-            'formbuilder_lead.chrDelete',
-            'formbuilder_lead.created_at',
+            'id',
+            'varTitle',
+            'varOnFullName',
+            'fk_formbuilder_id',
+            'formdata',
+            'filename',
+            'varIpAddress',
+            'chrDelete',
+            'created_at',
         ];
         $response = Self::getPowerPanelRecords($moduleFields)
-        				->Join('form_builder','form_builder.id','=','formbuilder_lead.fk_formbuilder_id')
                 ->deleted();
         if (isset($id) && $id != '') {
             $response = $response->where('formbuilder_lead.id', '=', $id);
@@ -148,16 +151,16 @@ class OrderLead extends Model {
     public static function getRecordCount($filterArr = false, $returnCounter = false, $modelNameSpace = false, $checkMain = false, $id = false) {
         $response = false;
         $moduleFields = [
-            'formbuilder_lead.id',
-            'formbuilder_lead.fk_formbuilder_id',
-            'formbuilder_lead.formdata',
-            'formbuilder_lead.filename',
-            'formbuilder_lead.varIpAddress',
-            'formbuilder_lead.chrDelete',
-            'formbuilder_lead.created_at',
+            'id',
+            'varTitle',
+            'fk_formbuilder_id',
+            'formdata',
+            'filename',
+            'varIpAddress',
+            'chrDelete',
+            'created_at',
         ];
         $response = Self::getPowerPanelRecords($moduleFields)
-        				->Join('form_builder','form_builder.id','=','formbuilder_lead.fk_formbuilder_id')
                 ->deleted();
         if (isset($id) && $id != '') {
             $response = $response->where('id', '=', $id);
@@ -189,8 +192,9 @@ class OrderLead extends Model {
         $response = false;
         $moduleFields = [
             'id',
+            'varTitle',
             'fk_formbuilder_id',
-            'formdata',
+            'varOnFullName',
             'varIpAddress',
             'chrDelete',
             'created_at',
@@ -212,8 +216,9 @@ class OrderLead extends Model {
         $response = false;
         $moduleFields = [
             'id',
+            'varTitle',
             'fk_formbuilder_id',
-            'formdata',
+            'varOnFullName',
             'varIpAddress',
             'filename',
             'chrDelete',
@@ -300,7 +305,7 @@ class OrderLead extends Model {
         }
         if (isset($filterArr['searchFilter']) && !empty($filterArr['searchFilter']) && $filterArr['searchFilter'] != ' ') {
             //$query = $query->leftJoin('form_builder', 'form_builder.id', '=', 'formbuilder_lead.fk_formbuilder_id');
-            $data = $query->where('form_builder.varName', 'like', '%' . $filterArr['searchFilter'] . '%');
+            $data = $query->where('formbuilder_lead.varTitle', 'like', '%' . $filterArr['searchFilter'] . '%');
         }
 
         if (!empty($filterArr['start']) && $filterArr['start'] != ' ') {
@@ -377,7 +382,7 @@ class OrderLead extends Model {
         $form_data = [
             'id' => '',
             'fk_formbuilder_id' => $data['fkformbuilderid'],
-            'formdata' => json_encode($data),
+            'varOnFullName' => $data['varOnFullName'],
             'filename' => $filedata,
             'varIpAddress' => $varIpAddress,
             'chrDelete' => 'N',

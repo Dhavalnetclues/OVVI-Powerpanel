@@ -98,217 +98,42 @@ class OrderLeadController extends PowerpanelController {
         // Checkbox
         $checkboxFirstTD = view('powerpanel.partials.checkbox', ['name'=>'delete[]', 'value'=>$value->id])->render();
 
-        $customeformdata = \App\CommonModel::getFormBuilderData($value->fk_formbuilder_id);
+        // $customeformdata = \App\CommonModel::getFormBuilderData($value->fk_formbuilder_id);
         $details = '';
         $label = '';
-        $requestkey_array = [];
-        $json_customeformdata = (isset($customeformdata->varFormDescription)) ? (json_decode($customeformdata->varFormDescription)) : null;
-        $json_data = (json_decode($value->formdata));
-        $json_Array = (array) $json_data;
+        // $requestkey_array = [];
+        // $json_customeformdata = (isset($customeformdata->varFormDescription)) ? (json_decode($customeformdata->varFormDescription)) : null;
+        // $json_data = (json_decode($value->formdata));
+        // $json_Array = (array) $json_data;
 
-        foreach ($json_data as $key => $va) {
-            $requestkey_array[] = $key;
-        }
+        // foreach ($json_data as $key => $va) {
+        //     $requestkey_array[] = $key;
+        // }
 
-        $requestKeys = $requestkey_array;
+        // $requestKeys = $requestkey_array;
         $inputsOfEmailArray = array();
         $valueindex = 0;
         $checkbox = '';
         $user_email = '';
+        $Business = (!empty($value->varTitle) ? $value->varTitle  : ' - ');
+        $FullName = (!empty($value->varOnFullName) ? $value->varOnFullName  : ' - ');
 
-        if(!empty($json_customeformdata)){
-	        foreach ($json_customeformdata as $key => $val) {
-	            if (isset($val->name) && in_array($val->name, $requestKeys)) {
-	                if (isset($val->type)) {
-	                    $inputsOfEmailArray[$valueindex]['type'] = $val->type;
-	                }
-	                if (isset($val->label)) {
-	                    $inputsOfEmailArray[$valueindex]['label'] = $val->label;
-	                }
-	                if (isset($val->subtype)) {
-	                    $inputsOfEmailArray[$valueindex]['subtype'] = $val->subtype;
-	                }
-	                if (isset($val->className)) {
-	                    $inputsOfEmailArray[$valueindex]['className'] = $val->className;
-	                }
-
-	                if (isset($val->type) && $val->type == 'checkbox-group') {
-	                    $selctedchkvalues = array();
-	                    foreach ($json_Array[$val->name] as $chkvalue) {
-	                        $chklabel = MyLibrary::getLabelforformbuilder($chkvalue, $val->values);
-	                        if (!empty($chklabel)) {
-	                            array_push($selctedchkvalues, $chklabel);
-	                        }
-	                    }
-	                    $checkbox = implode(",", $selctedchkvalues);
-	                    $inputsOfEmailArray[$valueindex]['value'] = $checkbox;
-	                } else if (isset($val->type) && $val->type == 'radio-group') {
-	                    $chklabel = MyLibrary::getLabelforformbuilder($json_Array[$val->name], $val->values);
-	                    $checkbox = $chklabel;
-	                    $inputsOfEmailArray[$valueindex]['value'] = $checkbox;
-	                } else if (isset($val->type) && $val->type == 'select') {
-	                    $chklabel = MyLibrary::getLabelforformbuilder($json_Array[$val->name], $val->values);
-	                    $checkbox = $chklabel;
-	                    $inputsOfEmailArray[$valueindex]['value'] = $checkbox;
-	                } elseif (isset($val->type) && $val->type == 'textarea') {
-	                    if (isset($val->subtype) && $val->subtype == 'tinymce') {
-	                        $inputsOfEmailArray[$valueindex]['value'] = $json_Array[$val->name];
-	                    } else if (isset($val->subtype) && $val->subtype == 'quill') {
-	                        $inputsOfEmailArray[$valueindex]['value'] = nl2br($json_Array[$val->name]);
-	                    } else {
-	                        $inputsOfEmailArray[$valueindex]['value'] = nl2br($json_Array[$val->name]);
-	                    }
-	                }else if (isset($val->className) && $val->className == 'form-control urlclass') {
-	                    $url = $json_Array[$val->name];
-	                    $currenturl = explode("/", $url);
-	                    if (isset($currenturl[2])) {
-	                        $wwwurl = explode(".", $currenturl[2]);
-	                    } else {
-	                        $wwwurl[0] = '1';
-	                    }
-	                    if (isset($currenturl[0]) && $currenturl[0] != 'http:' && $currenturl[0] != 'https:') {
-	                        $url_1 = 'http://';
-	                    } else {
-	                        $url_1 = '';
-	                    }
-	                    if (isset($wwwurl[0]) && $wwwurl[0] == '1') {
-	                        $url_2 = 'www.';
-	                    } else {
-	                        $url_2 = '';
-	                    }
-	                    $inputsOfEmailArray[$valueindex]['value'] = $url_1 . $url_2 . $json_Array[$val->name];
-	                } elseif (isset($val->subtype) && $val->subtype == 'email') {
-	                    $user_email = $json_Array[$val->name];
-	                    $inputsOfEmailArray[$valueindex]['value'] = $user_email;
-	                } elseif (isset($val->type) && $val->type == 'text') {
-	                    if (isset($val->subtype) && $val->subtype == 'color') {
-	                        $inputsOfEmailArray[$valueindex]['value'] = $json_Array[$val->name] . '  <div style="width: 137px;height: 30px;background-color: ' . $json_Array[$val->name] . ';"></div>';
-	                    } else {
-	                        $inputsOfEmailArray[$valueindex]['value'] = $json_Array[$val->name];
-	                    }
-	                }   else {
-	                    $inputsOfEmailArray[$valueindex]['value'] = $json_Array[$val->name];
-	                }
-
-	                $valueindex++;
-	            } else if (isset($val->type) && $val->type == 'checkbox-group') {
-
-	                foreach ($val->values as $chkvalue) {
-	                    if (isset($json_Array[$chkvalue->value])) {
-	                        $inputsOfEmailArray[$valueindex]['type'] = '';
-	                        if ($chkvalue->label == 'Country' && (isset($chkvalue->selected) && $chkvalue->selected == 1)) {
-	                            $inputsOfEmailArray[$valueindex]['label'] = $chkvalue->label;
-	                            $cname = MyLibrary::getEmailCountry($json_Array[$chkvalue->value]);
-	                            $name = $cname[0]->var_name;
-	                        } else if ($chkvalue->label == 'State' && (isset($chkvalue->selected) && $chkvalue->selected == 1)) {
-	                            $inputsOfEmailArray[$valueindex]['label'] = $chkvalue->label;
-	                            $sname = MyLibrary::getEmailState($json_Array[$chkvalue->value]);
-	                            $name = $sname[0]->var_name;
-	                        } else if ($chkvalue->label == 'Gender' && (isset($chkvalue->selected) && $chkvalue->selected == 1)) {
-	                            $inputsOfEmailArray[$valueindex]['label'] = $chkvalue->label;
-	                            if ($json_Array[$chkvalue->value] == 'male') {
-	                                $name = 'Male';
-	                            } else if ($json_Array[$chkvalue->value] == 'female') {
-	                                $name = 'Female';
-	                            } else if ($json_Array[$chkvalue->value] == 'transgender') {
-	                                $name = 'Trans Gender';
-	                            }
-	                        } else if ($chkvalue->label == 'Month' && (isset($chkvalue->selected) && $chkvalue->selected == 1)) {
-	                            $inputsOfEmailArray[$valueindex]['label'] = $chkvalue->label;
-	                            if ($json_Array[$chkvalue->value] == '01') {
-	                                $name = 'January';
-	                            } else if ($json_Array[$chkvalue->value] == '02') {
-	                                $name = 'February';
-	                            } else if ($json_Array[$chkvalue->value] == '03') {
-	                                $name = 'March';
-	                            } else if ($json_Array[$chkvalue->value] == '04') {
-	                                $name = 'April';
-	                            } else if ($json_Array[$chkvalue->value] == '05') {
-	                                $name = 'May';
-	                            } else if ($json_Array[$chkvalue->value] == '06') {
-	                                $name = 'June';
-	                            } else if ($json_Array[$chkvalue->value] == '07') {
-	                                $name = 'July';
-	                            } else if ($json_Array[$chkvalue->value] == '08') {
-	                                $name = 'August';
-	                            } else if ($json_Array[$chkvalue->value] == '09') {
-	                                $name = 'September';
-	                            } else if ($json_Array[$chkvalue->value] == '10') {
-	                                $name = 'October';
-	                            } else if ($json_Array[$chkvalue->value] == '11') {
-	                                $name = 'November';
-	                            } else if ($json_Array[$chkvalue->value] == '12') {
-	                                $name = 'December';
-	                            }
-	                        } else {
-	                            $name = '';
-	                        }
-	                        $inputsOfEmailArray[$valueindex]['value'] = $name;
-	                        $valueindex++;
-	                    }
-	                }
-	            }
-	        }
-        }
-
-        if (!empty($inputsOfEmailArray)) {
-            foreach ($inputsOfEmailArray as $input_value) {
-
-                if (isset($input_value)) {
-                    if (isset($input_value['label'])) {
-                        if (isset($input_value['subtype']) && $input_value['subtype'] == 'email') {
-                            $label .= '<b>' . $input_value['label'] . '</b>' . ' :- ';
-                            $label .= '<a href="mailto:' . $input_value['value'] . '">' . $input_value['value'] . '</a>';
-                            $label .= '<div></div>';
-                        } else if (isset($input_value['subtype']) && $input_value['subtype'] == 'url') {
-                            $label .= '<b>' . $input_value['label'] . '</b>' . ' :- ';
-                            $label .= '<a href="' . $input_value['value'] . '" target="_blank">' . $input_value['value'] . '</a>';
-                            $label .= '<div></div>';
-                        } else if (isset($input_value['className']) && $input_value['className'] == 'form-control urlclass') {
-                            $label .= '<b>' . $input_value['label'] . '</b>' . ' :- ';
-                            $label .= '<a href="' . $input_value['value'] . '" target="_blank">' . $input_value['value'] . '</a>';
-                            $label .= '<div></div>';
-                        } else if (isset($input_value['type']) && $input_value['type'] == 'file') {
-                            if (Config::get('Constant.BUCKET_ENABLED')) {
-                                $Url = Config::get('Constant.CDN_PATH') . "foi_documents/" . $value->filename;
-                            } else {
-                                $Url = url('/') . "/cdn/foi_documents/" . $value->filename;
-                            }
-                            $label .= '<b>File Name</b>' . ' :- ';
-                            $label .= $value->filename . '  <a href="' . $Url . '" download><i class="fa fa-download" aria-hidden="true"></i></a>';
-                            $label .= '<div></div>';
-                        } else {
-                            $label .= '<b>' . $input_value['label'] . '</b>' . ' :- ';
-                            if ($input_value['value'] != '') {
-                                $label .= $input_value['value'];
-                            } else {
-                                $label .= 'N/A';
-                            }
-                            $label .= '<div></div>';
-                        }
-                    }
-                }
-
-            }
-
-            $details .= '<div class="pro-act-btn">';
-            if($page == 'dashboard') {
-                $details .= '<a href="javascript:void(0)" class="" onclick="return hs.htmlExpand(this,{width:300,headingText:\'Contents\',wrapperClassName:\'titlebar\',showCredits:false});"><i class="ri-feedback-line fs-24 body-color"></i></a>';
-            } else {
-                $details .= '<a href="javascript:void(0)" class="" onclick="return hs.htmlExpand(this,{width:300,headingText:\'Contents\',wrapperClassName:\'titlebar\',showCredits:false});"><i class="ri-mail-open-line fs-16"></i></a>';
-            }
-            $details .= '<div class="highslide-maincontent">' . nl2br($label) . '</div>';
-            $details .= '</div>';
-        } else {
-            $details .= '-';
-        }
-        
         $receive_date = '<span align="left" data-bs-toggle="tooltip" data-bs-placement="bottom" title="'.date(Config::get("Constant.DEFAULT_DATE_FORMAT").' '.Config::get("Constant.DEFAULT_TIME_FORMAT"), strtotime($value->created_at)).'">'.date(Config::get('Constant.DEFAULT_DATE_FORMAT'), strtotime($value->created_at)).'</span>';
         
+        $label = 'Test';
+        $details .= '<div class="pro-act-btn">';
+        if($page == 'dashboard') {
+            $details .= '<a href="javascript:void(0)" class="" onclick="return hs.htmlExpand(this,{width:300,headingText:\'Contents\',wrapperClassName:\'titlebar\',showCredits:false});"><i class="ri-feedback-line fs-24 body-color"></i></a>';
+        } else {
+            $details .= '<a href="javascript:void(0)" class="" onclick="return hs.htmlExpand(this,{width:300,headingText:\'Contents\',wrapperClassName:\'titlebar\',showCredits:false});"><i class="ri-mail-open-line fs-16"></i></a>';
+        }
+        $details .= '<div class="highslide-maincontent">' . nl2br($label) . '</div>';
+        $details .= '</div>';
+    
         $records = array(
             $checkboxFirstTD,
-            (isset($customeformdata->varName)) ? $customeformdata->varName : "N/A",
-            (isset($customeformdata->varEmail)) ? $customeformdata->varEmail : "N/A",
+            $Business,
+            $FullName,
             $details,
             $value->varIpAddress,
             $receive_date

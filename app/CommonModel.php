@@ -335,8 +335,8 @@ class CommonModel extends Model {
             $titleField = 'nxx';
         } else if ($modelName == 'EventsLead'){
             $titleField = 'eventId';
-        } else if ($modelName == 'FormBuilderLead'){
-            $titleField = 'fk_formbuilder_id';
+        } else if ($modelName == 'varTitle'){
+            $titleField = 'varTitle';
         } else {
             $titleField = 'varTitle';
         }

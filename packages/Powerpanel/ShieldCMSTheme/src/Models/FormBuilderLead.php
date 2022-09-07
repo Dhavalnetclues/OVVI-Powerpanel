@@ -28,8 +28,8 @@ class FormBuilderLead extends Model {
     protected $table = 'formbuilder_lead';
     protected $fillable = [
         'id',
-        'fk_formbuilder_id',
-        'formdata',
+        'varTitle',
+        'varOnFullName',
         'varIpAddress',
         'chrDelete',
         'created_at',
@@ -82,8 +82,8 @@ class FormBuilderLead extends Model {
         $response = false;
         $moduleFields = [
             'id',
-            'fk_formbuilder_id',
-            'formdata',
+            'varTitle',
+            'varOnFullName',
             'varIpAddress',
             'chrDelete',
             'created_at',
@@ -118,8 +118,8 @@ class FormBuilderLead extends Model {
         $response = false;
         $moduleFields = [
             'formbuilder_lead.id',
-            'formbuilder_lead.fk_formbuilder_id',
-            'formbuilder_lead.formdata',
+            'formbuilder_lead.varTitle',
+            'formbuilder_lead.varOnFullName',
             'formbuilder_lead.filename',
             'formbuilder_lead.varIpAddress',
             'formbuilder_lead.chrDelete',
@@ -139,8 +139,8 @@ class FormBuilderLead extends Model {
         $response = false;
         $moduleFields = [
             'formbuilder_lead.id',
-            'formbuilder_lead.fk_formbuilder_id',
-            'formbuilder_lead.formdata',
+            'formbuilder_lead.varTitle',
+            'formbuilder_lead.varOnFullName',
             'formbuilder_lead.filename',
             'formbuilder_lead.varIpAddress',
             'formbuilder_lead.chrDelete',
@@ -178,8 +178,8 @@ class FormBuilderLead extends Model {
         $response = false;
         $moduleFields = [
             'id',
-            'fk_formbuilder_id',
-            'formdata',
+            'varTitle',
+            'varOnFullName',
             'varIpAddress',
             'chrDelete',
             'created_at',
@@ -201,8 +201,8 @@ class FormBuilderLead extends Model {
         $response = false;
         $moduleFields = [
             'id',
-            'fk_formbuilder_id',
-            'formdata',
+            'varTitle',
+            'varOnFullName',
             'varIpAddress',
             'filename',
             'chrDelete',
@@ -288,7 +288,7 @@ class FormBuilderLead extends Model {
             $data = $query->where('chrPublish', $filterArr['statusFilter']);
         }
         if (isset($filterArr['searchFilter']) && !empty($filterArr['searchFilter']) && $filterArr['searchFilter'] != ' ') {
-            $query = $query->leftJoin('form_builder', 'form_builder.id', '=', 'formbuilder_lead.fk_formbuilder_id');
+            $query = $query->leftJoin('form_builder', 'form_builder.id', '=', 'formbuilder_lead.varTitle');
             $data = $query->where('form_builder.varName', 'like', '%' . $filterArr['searchFilter'] . '%');
         }
 
@@ -303,7 +303,7 @@ class FormBuilderLead extends Model {
         return preg_replace('/[^A-Za-z0-9\-.]/', '', $string); // Removes special chars.
     }
 
-    public static function insertformdata($data, $varIpAddress) {
+    public static function insertvarOnFullName($data, $varIpAddress) {
         $keydata = array_keys($data);
         $attechmentarray = array();
         foreach ($keydata as $edata) {
@@ -328,8 +328,8 @@ class FormBuilderLead extends Model {
 
         $form_data = [
             'id' => '',
-            'fk_formbuilder_id' => $data['fkformbuilderid'],
-            'formdata' => json_encode($data),
+            'varTitle' => $data['fkformbuilderid'],
+            'varOnFullName' => json_encode($data),
             'filename' => $filedata,
             'varIpAddress' => $varIpAddress,
             'chrDelete' => 'N',
@@ -339,7 +339,7 @@ class FormBuilderLead extends Model {
         return $user;
     }
 
-    public static function GetFormData($id) {
+    public static function GetvarOnFullName($id) {
         $pagedata = DB::table('formbuilder_lead')
                 ->select('*')
                 ->where('id', '=', $id)

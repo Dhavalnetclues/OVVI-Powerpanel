@@ -46,9 +46,9 @@ Route::group(['middleware' => ['web', 'auth']], function () {
 
     Route::post('/powerpanel/dashboard/InsertComments_user', ['uses' => 'Powerpanel\ShieldCMSTheme\Controllers\powerpanel\dashboard\DashboardController@InsertComments_user']);
 
-    Route::post('/powerpanel/dashboard/doc-chart', ['uses' => 'Powerpanel\ShieldCMSTheme\Controllers\powerpanel\dashboard\DashboardController@getDocChartData']);
+    // Route::post('/powerpanel/dashboard/doc-chart', ['uses' => 'Powerpanel\ShieldCMSTheme\Controllers\powerpanel\dashboard\DashboardController@getDocChartData']);
 
-    Route::post('/powerpanel/dashboard/LeadChart', ['uses' => 'Powerpanel\ShieldCMSTheme\Controllers\powerpanel\dashboard\DashboardController@LeadChart']);
+    // Route::post('/powerpanel/dashboard/LeadChart', ['uses' => 'Powerpanel\ShieldCMSTheme\Controllers\powerpanel\dashboard\DashboardController@LeadChart']);
 
     Route::post('/powerpanel/dashboard/search-chart', ['uses' => 'Powerpanel\ShieldCMSTheme\Controllers\powerpanel\dashboard\DashboardController@SearchChart']);
 
