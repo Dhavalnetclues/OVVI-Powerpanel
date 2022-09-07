@@ -104,7 +104,7 @@ var TableDatatablesAjax = function () {
                         "name": 'created_at'
                     },],
                 "ajax": {
-                    "url": window.site_url + "/powerpanel/formbuilder-lead/get_list"+id, // ajax source
+                    "url": window.site_url + "/powerpanel/order-lead/get_list"+id, // ajax source
                 },
                 'fnCreatedRow': function (nRow, aData, iDataIndex) {
                     // $(nRow).attr('data-order', aData[5]);
@@ -279,7 +279,7 @@ var TableDatatablesAjax = function () {
                         if ($('#ExportRecord').click) {
                             if ($('input[name="delete[]"]:checked').val()) {
                                 ip = '?' + $('input[name="delete[]"]:checked').serialize() + '&' + 'export_type' + '=' + exportRadioVal;
-                                var ajaxurl = window.site_url + "/powerpanel/formbuilder-lead/ExportRecord" + ip;
+                                var ajaxurl = window.site_url + "/powerpanel/order-lead/ExportRecord" + ip;
                                 window.location = ajaxurl;
                                 grid.getDataTable().ajax.reload();
                             } else {
@@ -288,7 +288,7 @@ var TableDatatablesAjax = function () {
                         }
                     } else {
                         $('#selected_records').modal('hide');
-                        var ajaxurl = window.site_url + "/powerpanel/formbuilder-lead/ExportRecord";
+                        var ajaxurl = window.site_url + "/powerpanel/order-lead/ExportRecord";
                         window.location = ajaxurl;
                     }
                 }
@@ -327,7 +327,7 @@ jQuery(document).ready(function () {
 });
 
 function reorder(curOrder, excOrder) {
-    var ajaxurl = site_url + '/powerpanel/formbuilder-lead/reorder';
+    var ajaxurl = site_url + '/powerpanel/order-lead/reorder';
     $.ajax({
         url: ajaxurl,
         data: {

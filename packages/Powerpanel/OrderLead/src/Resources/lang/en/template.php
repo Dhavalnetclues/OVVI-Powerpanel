@@ -195,8 +195,8 @@ return [
         'recordApprovalMessage' => 'Record has been sent for approval.',
         'selectuser' => 'Select User',
     ],
-    'formbuilderleadModule' => [
-        'manageformbuilderLeads' => 'Order Leads',
+    'orderleadModule' => [
+        'manageorderLeads' => 'Order Leads',
         'export' => 'Export',
         'noExport' => 'No Records to export!',
         'recordsExport' => 'Which records do you want to export?',
@@ -207,6 +207,6 @@ return [
         'message' => 'Message',
         'ipAddress' => 'IP',
         'receivedDateTime' => 'Received Date/Time',
-        'formbuilderleads' => 'Order Leads',
+        'orderleads' => 'Order Leads',
     ],
 ];

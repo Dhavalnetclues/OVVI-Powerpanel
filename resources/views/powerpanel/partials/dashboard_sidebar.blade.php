@@ -1148,7 +1148,7 @@
 
                         @if(isset($menuArr['can-order-lead-list']) && $menuArr['can-order-lead-list'])
                         <li class="nav-item">
-                            <a class="nav-link {{ $menuArr['order_active'] }}" title="{{ trans('template.sidebar.orderleads') }}" href="{{ url('powerpanel/order') }}">
+                            <a class="nav-link {{ $menuArr['order_active'] }}" title="{{ trans('template.sidebar.orderleads') }}" href="{{ url('powerpanel/order-lead') }}">
                                 <i class="ri-todo-line d-none"></i> <span data-key="t-widgets">{{ trans('template.sidebar.orderleads') }}</span>
                             </a>
                         </li>

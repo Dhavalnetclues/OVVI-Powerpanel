@@ -38,14 +38,14 @@
                                         <div class="mb-3">
                                             <div class="input-group input-daterange" id="formBuilderRange">
                                                 <span class="input-group-text"><i class="ri-calendar-line fs-13"></i></span>
-                                                <input type="text" class="form-control" id="start_date" name="start_date" placeholder="{{ trans('formbuilderlead::template.common.fromdate') }}"  data-provider="flatpickr" data-date-format="{{Config::get('Constant.DEFAULT_DATE_FORMAT')}}">
+                                                <input type="text" class="form-control" id="start_date" name="start_date" placeholder="{{ trans('orderlead::template.common.fromdate') }}"  data-provider="flatpickr" data-date-format="{{Config::get('Constant.DEFAULT_DATE_FORMAT')}}">
                                             </div>
                                         </div>
 
                                         <div class="mb-3">
                                             <div class="input-group input-daterange" id="formBuilderRange">
                                                 <span class="input-group-text"><i class="ri-calendar-line fs-13"></i></span>
-                                                <input type="text" class="form-control" id="end_date" name="end_date" placeholder="{{ trans('formbuilderlead::template.common.todate') }}"  data-provider="flatpickr" data-date-format="{{Config::get('Constant.DEFAULT_DATE_FORMAT')}}">
+                                                <input type="text" class="form-control" id="end_date" name="end_date" placeholder="{{ trans('orderlead::template.common.todate') }}"  data-provider="flatpickr" data-date-format="{{Config::get('Constant.DEFAULT_DATE_FORMAT')}}">
                                                 {{-- <button class="btn btn-outline-primary border-outline-light btn-rh-search" id="formBuilderRange" type="button"><i class="ri-search-line fs-13"></i></button> --}}
                                             </div>
                                         </div>
@@ -135,11 +135,11 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">{{ trans('formbuilderlead::template.common.alert') }}</h5>
+                    <h5 class="modal-title">{{ trans('orderlead::template.common.alert') }}</h5>
                     <button type="button" class="btn-close fs-10" data-bs-dismiss="modal" aria-label="Close"> </button>
                 </div>
                 <div class="modal-body">
-                    <h5 class="mb-2">{{ trans('formbuilderlead::template.formbuilderleadModule.noExport') }}</h5>
+                    <h5 class="mb-2">{{ trans('orderlead::template.formbuilderleadModule.noExport') }}</h5>
                     <div class="pt-2">
                         <button type="button" class="btn btn-primary bg-gradient waves-effect waves-light btn-label" data-bs-dismiss="modal">
                             <div class="d-flex">
@@ -147,7 +147,7 @@
                                     <i class="ri-check-line label-icon align-middle fs-20 me-2"></i>
                                 </div>
                                 <div class="flex-grow-1">
-                                    {{ trans('formbuilderlead::template.common.ok') }}
+                                    {{ trans('orderlead::template.common.ok') }}
                                 </div>
                             </div>
                         </button>
@@ -161,20 +161,20 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">{{ trans('formbuilderlead::template.common.alert') }}</h5>
+                    <h5 class="modal-title">{{ trans('orderlead::template.common.alert') }}</h5>
                     <button type="button" class="btn-close fs-10" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-sm-12">
-                            <h5 class="mb-2">{{ trans('formbuilderlead::template.formbuilderleadModule.recordsExport') }}</h5>
+                            <h5 class="mb-2">{{ trans('orderlead::template.formbuilderleadModule.recordsExport') }}</h5>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" value="selected_records" id="selected_records" name="export_type">
-                                <label for="selected_records">{{ trans('formbuilderlead::template.formbuilderleadModule.selectedRecords') }}</label>
+                                <label for="selected_records">{{ trans('orderlead::template.formbuilderleadModule.selectedRecords') }}</label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" value="all_records" id="all_records" name="export_type" checked>
-                                <label for="all_records">{{ trans('formbuilderlead::template.formbuilderleadModule.allRecords') }}</label>
+                                <label for="all_records">{{ trans('orderlead::template.formbuilderleadModule.allRecords') }}</label>
                             </div>
                         </div>
                         <div class="col-sm-12 mt-3">
@@ -184,7 +184,7 @@
                                         <i class="ri-check-line label-icon align-middle fs-20 me-2"></i>
                                     </div>
                                     <div class="flex-grow-1">
-                                        {{ trans('formbuilderlead::template.common.ok') }}
+                                        {{ trans('orderlead::template.common.ok') }}
                                     </div>
                                 </div>
                             </button>
@@ -199,11 +199,11 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">{{ trans('formbuilderlead::template.common.alert') }}</h5>
+                    <h5 class="modal-title">{{ trans('orderlead::template.common.alert') }}</h5>
                     <button type="button" class="btn-close fs-10" data-bs-dismiss="modal" aria-label="Close"> </button>
                 </div>
                 <div class="modal-body">
-                    <h5 class="mb-2">{{ trans('formbuilderlead::template.formbuilderleadModule.leastRecord') }}</h5>
+                    <h5 class="mb-2">{{ trans('orderlead::template.formbuilderleadModule.leastRecord') }}</h5>
                     <div class="pt-2">
                         <button type="button" class="btn btn-primary bg-gradient waves-effect waves-light btn-label" data-bs-dismiss="modal">
                             <div class="d-flex">
@@ -211,7 +211,7 @@
                                     <i class="ri-check-line label-icon align-middle fs-20 me-2"></i>
                                 </div>
                                 <div class="flex-grow-1">
-                                    {{ trans('formbuilderlead::template.common.ok') }}
+                                    {{ trans('orderlead::template.common.ok') }}
                                 </div>
                             </div>
                         </button>
@@ -241,7 +241,7 @@
 <script src="{{ $CDN_PATH.'resources/global/scripts/datatable.js' }}" type="text/javascript"></script>
 <script src="{{ $CDN_PATH.'resources/global/plugins/datatables/datatables.min.js' }}" type="text/javascript"></script>
 <script src="{{ $CDN_PATH.'resources/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js' }}" type="text/javascript"></script>
-<script src="{{ $CDN_PATH.'resources/pages/scripts/packages/formbuilderlead/formbuilderlead-datatables-ajax.js?v='.time() }}" type="text/javascript"></script>
+<script src="{{ $CDN_PATH.'resources/pages/scripts/packages/orderlead/orderlead-datatables-ajax.js?v='.time() }}" type="text/javascript"></script>
 @if((File::exists(app_path() . '/Workflow.php') != null || File::exists(base_path() . '/packages/Powerpanel/Workflow/src/Models/Workflow.php') != null))
     <script src="{{ $CDN_PATH.'resources/pages/scripts/user-updates-approval.js' }}" type="text/javascript"></script>
 @endif

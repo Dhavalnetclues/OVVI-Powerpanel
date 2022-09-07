@@ -1,6 +1,6 @@
 <?php
-namespace Powerpanel\FormBuilderLead\Models;
-use Powerpanel\FormBuilderLead\Models\OrderLead;
+namespace Powerpanel\OrderLead\Models;
+use Powerpanel\OrderLead\Models\OrderLead;
 use Illuminate\Contracts\View\View;
 use Maatwebsite\Excel\Concerns\FromView;
 use Maatwebsite\Excel\Concerns\ShouldAutoSize;
