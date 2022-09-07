@@ -20,6 +20,7 @@ class PowerPanelSidebarConfig {
 
         $user = Auth::user();
         $permissionObj = $user->getAllPermissions();
+        
         $permissionArr = array();
         if($permissionObj->count() > 0){
             foreach($permissionObj as $key => $value){
@@ -215,6 +216,20 @@ class PowerPanelSidebarConfig {
                 $menuArr['getdemo_active'] = '';
                 $menuArr['getdemo_open'] = '';
                 $menuArr['getdemo_selected'] = '';
+            }
+        }
+        
+        if (in_array('reseller-leads-list', $permissionArr)) {
+            $menuArr['can-reseller-leads-list'] = true;
+            if (Request::segment(2) == 'reseller-leads') {
+                $menuArr['reseller_active'] = 'active';
+                $menuArr['reseller_open'] = 'open';
+                $menuArr['reseller_selected'] = 'selected';
+                $menuArr['leadmg'] = 'active';
+            } else {
+                $menuArr['reseller_active'] = '';
+                $menuArr['reseller_open'] = '';
+                $menuArr['reseller_selected'] = '';
             }
         }
 

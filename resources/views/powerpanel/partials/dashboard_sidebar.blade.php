@@ -1106,6 +1106,7 @@
             // (isset($menuArr['can-complaint-list']) && $menuArr['can-complaint-list']) ||
             (isset($menuArr['can-appointment-lead-list']) && $menuArr['can-appointment-lead-list']) ||
             (isset($menuArr['can-getdemo-leads-list']) && $menuArr['can-getdemo-leads-list']) ||
+            (isset($menuArr['can-reseller-leads-list']) && $menuArr['can-reseller-leads-list']) ||
             (isset($menuArr['can-events-lead-list']) && $menuArr['can-events-lead-list']) ||
             (isset($menuArr['can-careers-lead-list']) && $menuArr['can-careers-lead-list']) ||
             (isset($menuArr['can-newsletter-lead-list']) && $menuArr['can-newsletter-lead-list'])||
@@ -1137,13 +1138,21 @@
                             </li>
                         @endif
 
-                        @if(isset($menuArr['can-formbuilder-list']) && $menuArr['can-formbuilder-list'])
+                        {{-- @if(isset($menuArr['can-reseller-leads-list']) && $menuArr['can-reseller-leads-list'])
+                            <li data-id="55" class="nav-sort nav-item">
+                                <a href="{{ url('powerpanel/reseller-leads') }}" class="nav-link {{ $menuArr['reseller_active'] }}" data-key="t-crm" title="{{ trans('template.sidebar.resellerlead') }}"> 
+                                    <i class="ri-reseller-line d-none"></i> <span data-key="t-widgets">{{ trans('template.sidebar.resellerlead') }}</span>
+                                </a>
+                            </li>
+                        @endif --}}
+
+                        {{-- @if(isset($menuArr['can-formbuilder-list']) && $menuArr['can-formbuilder-list'])
                         <li class="nav-item">
                             <a class="nav-link {{ $menuArr['formbuilder_active'] }}" title="{{ trans('template.sidebar.formbuilder') }}" href="{{ url('powerpanel/formbuilder') }}">
                                 <i class="ri-todo-line d-none"></i> <span data-key="t-widgets">{{ trans('template.sidebar.formbuilder') }}</span>
                             </a>
                         </li>
-                    @endif
+                    @endif --}}
                         
                         @if(isset($menuArr['can-complaint-list']) && $menuArr['can-complaint-list'])
                             <li data-id="50" class="nav-sort nav-item">

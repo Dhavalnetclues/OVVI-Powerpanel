@@ -1001,6 +1001,7 @@ $menuArr = App\Helpers\PowerPanelSidebarConfig::getConfig();
             (isset($menuArr['can-complaint-list']) && $menuArr['can-complaint-list']) ||
             (isset($menuArr['can-appointment-lead-list']) && $menuArr['can-appointment-lead-list']) ||
             (isset($menuArr['can-getdemo-leads-list']) && $menuArr['can-getdemo-leads-list']) ||
+            (isset($menuArr['can-reseller-leads-list']) && $menuArr['can-reseller-leads-list']) ||
             (isset($menuArr['can-newsletter-lead-list']) && $menuArr['can-newsletter-lead-list'])||
             (isset($menuArr['can-formbuilder-lead-list']) && $menuArr['can-formbuilder-lead-list'])
             )
@@ -1046,6 +1047,16 @@ $menuArr = App\Helpers\PowerPanelSidebarConfig::getConfig();
                             <i class="fa fa-bullhorn"></i>
                             <span class="title">{{ trans('template.sidebar.getdemolead') }}</span>
                             <span class="{{ $menuArr['getdemo_selected'] }}"></span>
+                        </a>
+                    </li>
+                    @endif
+                    @if(isset($menuArr['can-reseller-leads-list']) && $menuArr['can-reseller-leads-list'])
+                    
+                    <li class="nav-item {{ $menuArr['reseller_active'] }}">
+                        <a title="{{ trans('template.sidebar.resellerlead') }}" href="{{ url('powerpanel/reseller-leads') }}" class="nav-link ">
+                            <i class="fa fa-bullhorn"></i>
+                            <span class="title">{{ trans('template.sidebar.resellerlead') }}</span>
+                            <span class="{{ $menuArr['reseller_selected'] }}"></span>
                         </a>
                     </li>
                     @endif

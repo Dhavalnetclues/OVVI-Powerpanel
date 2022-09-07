@@ -184,6 +184,20 @@ class PowerPanelSidebarConfig {
             }
         }
 
+        if (Auth::user()->can('reseller-leads-list')) {
+            $menuArr['can-reseller-leads-list'] = true;
+            if (Request::segment(2) == 'reseller-leads') {
+                $menuArr['reseller_active'] = 'active';
+                $menuArr['reseller_open'] = 'open';
+                $menuArr['reseller_selected'] = 'selected';
+                $menuArr['leadmg'] = 'active';
+            } else {
+                $menuArr['reseller_active'] = '';
+                $menuArr['reseller_open'] = '';
+                $menuArr['reseller_selected'] = '';
+            }
+        }
+
         if (Auth::user()->can('interconnections-list')) {
             $menuArr['can-interconnections'] = true;
             if (Request::segment(2) == 'interconnections') {

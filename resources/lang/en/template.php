@@ -365,6 +365,7 @@ return [
         'errortracking' => 'Error Tracking',
         'notificationlist' => 'Notification',
         'getdemolead' => 'Getdemo Leads',
+        'resellerlead' => 'Reseller Leads',
         'onlinepollinglead' => 'Online Polling Leads',
         'submitticketslead' => 'Ticket List',
         'restaurant_reservations' => 'Reservations',
