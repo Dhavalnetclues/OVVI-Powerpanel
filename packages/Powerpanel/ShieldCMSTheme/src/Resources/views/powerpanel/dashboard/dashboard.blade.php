@@ -31,13 +31,13 @@
             <div class="row">
                 @php
                 if((isset($dashboardWidgetSettings->widget_leadstatistics) && $dashboardWidgetSettings->widget_leadstatistics->widget_display=="Y") || (isset($dashboardWidgetSettings->widget_liveusercountry) && $dashboardWidgetSettings->widget_liveusercountry->widget_display=="Y") || (isset($dashboardWidgetSettings->widget_formbuilderleads) && $dashboardWidgetSettings->widget_formbuilderleads->widget_display=="Y")) {
-                    $divClass = 'col-xl-8';
+                    $divClass = 'col-xl-12';
                 } else {
                     $divClass = 'col-xl-12';
                 }
                 @endphp
                 <div class="{{ $divClass }}">
-                    <div class="dashboard-img mb-4">
+                    <!-- <div class="dashboard-img mb-4">
                         {{-- <img src="{{ Config::get('Constant.CDN_PATH').'resources/images/dashboard.png' }}" alt="" title="" /> --}}
                         <div class="content">
                             <div class="smtitle">Wecome to PowerPanel</div>
@@ -272,10 +272,10 @@
                                 </g>
                             </svg>
                         </div>
-                    </div>
+                    </div> -->
                     <!-- Document Views & Downloads -->
                     @if(isset($dashboardWidgetSettings->widget_download) && $dashboardWidgetSettings->widget_download->widget_display=="Y")
-                    <div class="card">
+                    <!-- <div class="card">
                         <div class="card-header border-0 align-items-center d-md-flex dashboard-header">
                             <h4 class="card-title mb-0 flex-grow-1">Document Views & Downloads</h4>
                             <div class="all-btn">
@@ -287,18 +287,162 @@
                                 <button type="button" class="btn btn-soft-dark btn-sm docChartFilter" data-value="4">4Y</button>
                                 <button type="button" class="btn btn-soft-dark btn-sm docChartFilter" data-value="5">5Y</button>
                             </div>
-                        </div><!-- end card header -->
-
+                        </div>
                         <div class="card-body p-0 pb-2">
                             <div class="w-100">
                                 <div id="doc-chart" data-colors='["--vz-primary", "--vz-danger", "--vz-warning", "--vz-success"]' class="apex-charts" dir="ltr"></div>
                             </div>
-                        </div><!-- end card body -->
-                    </div><!-- end card -->
+                        </div>
+                    </div> -->
                     @endif <!-- end Document Views & Downloads -->
                     <div class="row">
                         <!-- Contact Leads -->
                         @if(isset($dashboardWidgetSettings->widget_conatctleads) && $dashboardWidgetSettings->widget_conatctleads->widget_display=="Y")
+                        <div class={{ (isset($dashboardWidgetSettings->widget_inapporval) && $dashboardWidgetSettings->widget_inapporval->widget_display=='Y') ? 'col-xl-6' : 'col-xl-12' }}>
+                            <div class="card contactuslead">
+                                <div class="card-header align-items-center d-flex">
+                                    <h4 class="card-title mb-0 flex-grow-1">Contact Leads</h4>
+                                </div><!-- end card header -->
+                                <div class="card-body" data-simplebar style="height: 300px;">
+                                    <div class="table-responsive"> <!-- table-card -->
+                                        <table class="table table-hover table-centered align-middle table-nowrap mb-0 lastchild-border-0">
+                                            <thead> <!-- class="text-muted table-light" -->
+                                                <tr>
+                                                    <!-- <th scope="col">ID</th> -->
+                                                    <th scope="col" align="left" title="{{ trans('template.common.name') }}">{{ trans('template.common.name') }}/{{ trans('template.common.emailid') }}</th>
+                                                    <!-- <th scope="col" align="left" title="{{ trans('template.common.emailid') }}"> {{ trans('template.common.emailid') }} </th> -->
+                                                    <th scope="col" align="left" title="{{ trans('template.powerPanelDashboard.receivedDateTime') }}"> {{ trans('template.powerPanelDashboard.receivedDate') }}</th>
+                                                    <th scope="col" align="left" title="{{ trans('template.common.details') }}"> <!-- {{ trans('template.common.details') }} -->&nbsp; </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @if($leads->isEmpty())
+                                                    <tr>
+                                                        <td align="center" colspan="4">
+                                                            {{ trans('template.powerPanelDashboard.noContactLead') }} 
+                                                            <a target="_blank" href="https://www.netclues.com/social-media-marketing"> 
+                                                                {{ trans('template.powerPanelDashboard.here') }}
+                                                            </a> 
+                                                            {{ trans('template.powerPanelDashboard.findContactLead') }}
+                                                        </td>
+                                                    </tr>
+                                                @else
+                                                    @foreach ($leads as $key=>$lead)
+                                                        @if($key<=4)
+                                                        <tr>
+                                                            <!-- <td><span class="fw-medium link-primary">#{!! $lead->id !!}</span></td> -->
+                                                            <td>
+                                                                <div class="d-flex align-items-center">
+                                                                    <div class="flex-shrink-0 me-2 contact-avatar">
+                                                                        <div class="avatar-sm">
+                                                                            <div class="avatar-title bg-black text-white rounded fs-14 text-uppercase">
+                                                                                @php
+                                                                                $title = explode(' ', $lead->varTitle);
+                                                                                $varTitle = '';
+                                                                                if(count($title) > 1) {
+                                                                                    foreach ($title as $key => $val) {
+                                                                                        if($key < 2) { $varTitle .= $val[0]; }
+                                                                                    }
+                                                                                } else {
+                                                                                    $varTitle = substr($lead->varTitle, 0, 2);
+                                                                                }
+                                                                                @endphp
+                                                                                {!! $varTitle !!}
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="flex-grow-1 overflow-hidden">
+                                                                        <h6 class="mb-0">{!! $lead->varTitle !!}</h6>
+                                                                        <p class="text-muted mb-0 fs-11">{!! App\Helpers\MyLibrary::getDecryptedString($lead->varEmail); !!}</p>
+                                                                    </div>
+                                                                </div>
+                                                                
+                                                            </td>
+                                                            <!-- <td align="left">
+                                                                {!! App\Helpers\MyLibrary::getDecryptedString($lead->varEmail); !!}
+                                                            </td> -->
+                                                            <td align="left" data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{ date(''.Config::get('Constant.DEFAULT_DATE_FORMAT').'  '.Config::get('Constant.DEFAULT_TIME_FORMAT').'', strtotime($lead->created_at)) }}">
+                                                                {{ date(Config::get('Constant.DEFAULT_DATE_FORMAT'), strtotime($lead->created_at)) }}
+                                                            </td>
+                                                            <td align="left" class='numeric'>
+                                                                <a class="contactUsLead" href="javascript:void(0);" type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{ trans('template.powerPanelDashboard.clickDetails') }}" id="{!! $lead->id !!}"><i class="ri-arrow-right-up-line fs-16 body-color"></i></a>
+                                                            </td>
+                                                        </tr>
+                                                        @endif
+                                                    @endforeach
+                                                @endif <!-- end tr -->
+                                            </tbody><!-- end tbody -->
+                                        </table><!-- end table -->
+                                    </div>
+                                </div>
+                                @if(isset($leads) && !empty($leads) && count($leads) > 0 )
+                                    <div class="card-footer">
+                                        <div class="justify-content-end">
+                                            <a class="btn btn-soft-dark btn-sm" href="{{ url('powerpanel/contact-us') }}" title="{{ trans('template.powerPanelDashboard.seeAllRecords') }}"><i class="ri-file-list-3-line align-middle"></i> {{ trans('template.powerPanelDashboard.seeAllRecords') }}</a>
+                                        </div>
+                                    </div>
+                                @endif
+                            </div> <!-- .card-->
+                        </div><!-- end col -->
+                        @endif <!-- end Contact Leads -->
+
+                        <!-- In Approval -->
+                        @if(isset($dashboardWidgetSettings->widget_inapporval) && $dashboardWidgetSettings->widget_inapporval->widget_display=="Y")
+                        <div class={{ (isset($dashboardWidgetSettings->widget_conatctleads) && $dashboardWidgetSettings->widget_conatctleads->widget_display=='Y') ? 'col-xl-6' : 'col-xl-12' }}>
+                            <div class="card inapproval-card">
+                                <div class="card-header align-items-center d-flex">
+                                    <h4 class="card-title mb-0 flex-grow-1"  title="In Approval">In Approval</h4>
+                                    <div class="flex-shrink-0">
+                                        <div class="dash-approve-search pull-right">
+                                            <!-- <input type="search" class="form-control form-control-solid placeholder-no-fix" placeholder="Search" id="searchfilter"> -->
+                                            <div class="cm-search">
+                                                <input type="search" class="form-control form-control-solid placeholder-no-fix" placeholder="Search" id="searchfilter">
+                                                <span class="open-search cursor-pointer"><i id="clearSearchFilter" class="ri-search-2-line fs-20"></i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><!-- end card header -->
+                                <div class="card-body" data-simplebar style="height: 360px;">
+                                    <div class="table-responsive"> <!-- table-card -->
+                                        <table class="table table-hover table-centered align-middle table-nowrap mb-0 lastchild-border-0" id="approvals">
+                                            <thead> <!-- class="text-muted table-light" -->
+                                                <tr>
+                                                    <th scope="col">ID</th>
+                                                    <th scope="col" align="left" title="Module"> Module </th>
+                                                    <!-- <th scope="col" align="left" title="View"> View </th> -->
+                                                    <th scope="col" align="left" title="Date &amp; Time"> Date </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @if($approvals->isEmpty())
+                                                    <tr><td align="center" colspan="4">No data available</td></tr>
+                                                @else
+                                                    @foreach ($approvals as $key=>$approval)
+                                                        @if(auth()->user()->can($approval->module->varModuleName.'-reviewchanges'))
+                                                        <tr>
+                                                            <td><span class="fw-medium link-primary"><a class="body-color" href="{{ url('powerpanel/'.$approval->module->varModuleName) }}?tab=A" data-bs-toggle="tooltip" data-bs-placement="bottom" title="{!! $approval->module->varTitle !!}">#{!! $approval->id !!}</a></span></td>
+                                                            <td><a class="body-color" href="{{ url('powerpanel/'.$approval->module->varModuleName.'?tab=A') }}" data-bs-toggle="tooltip" data-bs-placement="bottom" title="{!! $approval->module->varTitle !!}">{!! $approval->module->varTitle !!}</a></td>
+                                                            <td align="left" data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{ date(Config::get('Constant.DEFAULT_DATE_FORMAT').'  '.Config::get('Constant.DEFAULT_TIME_FORMAT'), strtotime($approval->created_at)) }}">{{ date(Config::get('Constant.DEFAULT_DATE_FORMAT'), strtotime($approval->created_at)) }}</td>
+                                                        </tr>
+                                                        @else
+                                                        <tr>
+                                                            <td><span class="fw-medium link-primary">#{!! $approval->id !!}</span></td>
+                                                            <td><a href="{{ url('powerpanel/workflow') }}" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Create workflow for {!! $approval->module->varTitle !!}">{!! $approval->module->varTitle !!} <span class="badge badge-pill badge-danger">No Workflow</span></a></td>
+                                                            <td align="left" data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{ date(Config::get('Constant.DEFAULT_DATE_FORMAT').'  '.Config::get('Constant.DEFAULT_TIME_FORMAT'), strtotime($approval->created_at)) }}">
+                                                                {{ date(Config::get('Constant.DEFAULT_DATE_FORMAT'), strtotime($approval->created_at)) }}
+                                                            </td>
+                                                        </tr>
+                                                        @endif
+                                                    @endforeach
+                                                @endif
+                                            </tbody><!-- end tbody -->
+                                        </table><!-- end table -->
+                                    </div>
+                                </div><!-- end card-body -->
+                            </div><!-- end card -->
+                        </div> <!-- .col-->
+                        @endif <!-- end In Approval -->
+                         @if(isset($dashboardWidgetSettings->widget_conatctleads) && $dashboardWidgetSettings->widget_conatctleads->widget_display=="Y")
                         <div class={{ (isset($dashboardWidgetSettings->widget_inapporval) && $dashboardWidgetSettings->widget_inapporval->widget_display=='Y') ? 'col-xl-6' : 'col-xl-12' }}>
                             <div class="card contactuslead">
                                 <div class="card-header align-items-center d-flex">
@@ -449,7 +593,7 @@
                 <div class="col-xl-4">
                     <!-- Leads Statistics -->
                     @if(isset($dashboardWidgetSettings->widget_leadstatistics) && $dashboardWidgetSettings->widget_leadstatistics->widget_display=="Y")
-                    <div class="card"> <!-- card-height-100 -->
+                    <!-- <div class="card"> 
                         <div class="card-header align-items-center d-flex">
                             <h4 class="card-title mb-0 flex-grow-1" title="Leads Statistics">Leads Statistics</h4>
                             <div class="flex-shrink-0">
@@ -468,35 +612,34 @@
                                     </div>
                                 </div>
                             </div>
-                        </div><!-- end card header -->
-
+                        </div>
                         <div class="card-body">
                             <div id="curve_chart" data-colors='["--vz-danger", "--vz-success", "--vz-warning", "--vz-info", "--vz-primary", "--vz-dark"]' class="apex-charts" dir="ltr"></div>
                         </div>
-                    </div> <!-- .card-->
+                    </div>  -->
                     @endif <!-- end Leads Statistics -->
 
                     @if(isset($dashboardWidgetSettings->widget_liveusercountry) && $dashboardWidgetSettings->widget_liveusercountry->widget_display=="Y")
-                    <div class="card">
+                    <!-- <div class="card">
                         <div class="card-header align-items-center d-flex">
                             <h4 class="card-title mb-0 flex-grow-1">Live Users By Country</h4>
-                        </div><!-- end card header -->
+                        </div>
 						<div class="card-body">
                             <div id="users-by-country" data-colors='["--vz-light"]' style="height: 140px"></div>
-                        </div><!-- end card body -->
-                    </div><!-- end card -->
+                        </div>
+                    </div> -->
                     @endif <!-- end Live Users By Country -->
                     <!-- Form Builder Leads -->
                     @if(isset($dashboardWidgetSettings->widget_formbuilderleads) && $dashboardWidgetSettings->widget_formbuilderleads->widget_display=="Y")
-                    <div class="col-xl-12">
+                    <!-- <div class="col-xl-12">
                         <div class="card">
                             <div class="card-header align-items-center d-flex">
                                 <h4 class="card-title mb-0 flex-grow-1" title="In Approval">Form Builder Leads</h4>
-                            </div><!-- end card header -->
+                            </div>
                             <div class="card-body" data-simplebar style="height: 300px;">
-                                <div class="table-responsive"> <!-- table-card -->
+                                <div class="table-responsive">
                                     <table class="table table-hover table-centered align-middle table-nowrap mb-0 formbuilder-table lastchild-border-0" id="formbuilder_leeds">
-                                        <thead> <!-- class="text-muted table-light" -->
+                                        <thead>
                                             <tr>
                                                 <th class="date-r" scope="col" title="Date">Date</th>
                                                 <th class="name-r" scope="col" align="left" title="Name"> Name </th>
@@ -530,10 +673,10 @@
                                                     @endif
                                                 @endforeach
                                             @endif
-                                        </tbody><!-- end tbody -->
-                                    </table><!-- end table -->
+                                        </tbody>
+                                    </table>
                                 </div>
-                            </div><!-- end card-body -->
+                            </div>
                             @if(isset($formBuilderLead) && !empty($formBuilderLead) && count($formBuilderLead) > 0 )
                                 <div class="card-footer">
                                     <div class="justify-content-end">
@@ -541,9 +684,9 @@
                                     </div>
                                 </div>
                             @endif
-                        </div><!-- end card -->
-                    </div> <!-- .col-->
-                    @endif <!-- end Form Builder Leads -->
+                        </div>
+                    </div> -->
+                    @endif 
                 </div> <!-- .col-->
             </div>
         </div> <!-- end .h-100-->
