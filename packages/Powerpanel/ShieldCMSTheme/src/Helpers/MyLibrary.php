@@ -200,23 +200,6 @@ class MyLibrary {
                 Config::set('Constant.NOTIFICATION.ACTION', $notificationAction);
                 $response = true;
             }
-
-            $objContactInfo = ContactInfo::getContactDetails();
-            $site_contact_no = "";
-            $site_contact_email = "";
-            if (!empty($objContactInfo)) {
-                if (isset($objContactInfo[0]->varEmail)) {
-                    $contact_email = unserialize($objContactInfo[0]->varEmail);
-                    $email = count($contact_email) > 0 ? $contact_email[0] : "";
-                    //$data['company_contact_details']['contact_email'] = $email;	
-                }
-
-                if (isset($objContactInfo[0]->varPhoneNo)) {
-                    $phone = unserialize($objContactInfo[0]->varPhoneNo);
-                    $site_contact_no = count($phone) > 0 ? $phone[0] : "";
-                    //$data['company_contact_details']['contact_no'] = $phone;
-                }
-            }
             Config::set('Constant.SITECONTACT.EMAIL', $site_contact_email);
             Config::set('Constant.SITECONTACT.NUMBER', $site_contact_no);
         }

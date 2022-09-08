@@ -161,25 +161,6 @@ class MyLibrary
                 Config::set('Constant.NOTIFICATION.ACTION', $notificationAction);
                 $response = true;
             }
-
-            // $objContactInfo = ContactInfo::getContactDetails();
-            // $site_contact_no = "";
-            // $site_contact_email = "";
-            // if (!empty($objContactInfo)) {
-            //     if (isset($objContactInfo->varEmail)) {
-            //         $contact_email = $objContactInfo->varEmail;
-            //         $email = $contact_email;
-            //         //$data['company_contact_details']['contact_email'] = $email;
-            //     }
-
-            //     if (isset($objContactInfo->varPhoneNo)) {
-            //         $phone = $objContactInfo->varPhoneNo;
-            //         $site_contact_no = $phone;
-            //         //$data['company_contact_details']['contact_no'] = $phone;
-            //     }
-            // }
-            // Config::set('Constant.SITECONTACT.EMAIL', $site_contact_email);
-            // Config::set('Constant.SITECONTACT.NUMBER', $site_contact_no);
         }
 
         Config::set('Constant.MODULE.NAME_SPACE', $name_space);
