@@ -296,7 +296,6 @@
                     </div> -->
                     @endif <!-- end Document Views & Downloads -->
                     <div class="row">
-                        <!-- Contact Leads -->
                         @if(isset($dashboardWidgetSettings->widget_conatctleads) && $dashboardWidgetSettings->widget_conatctleads->widget_display=="Y")
                         <div class={{ (isset($dashboardWidgetSettings->widget_inapporval) && $dashboardWidgetSettings->widget_inapporval->widget_display=='Y') ? 'col-xl-6' : 'col-xl-12' }}>
                             <div class="card contactuslead">
@@ -305,74 +304,23 @@
                                 </div><!-- end card header -->
                                 <div class="card-body" data-simplebar style="height: 300px;">
                                     <div class="table-responsive"> <!-- table-card -->
-                                        <table class="table table-hover table-centered align-middle table-nowrap mb-0 lastchild-border-0">
-                                            <thead> <!-- class="text-muted table-light" -->
-                                                <tr>
-                                                    <!-- <th scope="col">ID</th> -->
-                                                    <th scope="col" align="left" title="{{ trans('template.common.name') }}">{{ trans('template.common.name') }}/{{ trans('template.common.emailid') }}</th>
-                                                    <!-- <th scope="col" align="left" title="{{ trans('template.common.emailid') }}"> {{ trans('template.common.emailid') }} </th> -->
-                                                    <th scope="col" align="left" title="{{ trans('template.powerPanelDashboard.receivedDateTime') }}"> {{ trans('template.powerPanelDashboard.receivedDate') }}</th>
-                                                    <th scope="col" align="left" title="{{ trans('template.common.details') }}"> <!-- {{ trans('template.common.details') }} -->&nbsp; </th>
+                                        
+                                        <table class="table table-hover table-centered align-middle table-nowrap mb-0 lastchild-border-0" id="datatable_ajax">
+                                            <thead class="table-light">
+                                                <tr role="row">
+                                                    <th align="center"><input type="checkbox" class="form-check-input multiSelectList"></th>
+                                                    <th align="">Title</th>
+                                                    <th align="">Email</th>
+                                                    <th align="">Phone Number</th>
+                                                    <th align="">Business Name</th>
+                                                    <th align="">Message</th>
+                                                    <th align="">IP Address</th>
+                                                    <th align="">Date</th>
                                                 </tr>
                                             </thead>
-                                            <tbody>
-                                                @if($leads->isEmpty())
-                                                    <tr>
-                                                        <td align="center" colspan="4">
-                                                            {{ trans('template.powerPanelDashboard.noContactLead') }} 
-                                                            <a target="_blank" href="https://www.netclues.com/social-media-marketing"> 
-                                                                {{ trans('template.powerPanelDashboard.here') }}
-                                                            </a> 
-                                                            {{ trans('template.powerPanelDashboard.findContactLead') }}
-                                                        </td>
-                                                    </tr>
-                                                @else
-                                                    @foreach ($leads as $key=>$lead)
-                                                        @if($key<=4)
-                                                        <tr>
-                                                            <!-- <td><span class="fw-medium link-primary">#{!! $lead->id !!}</span></td> -->
-                                                            <td>
-                                                                <div class="d-flex align-items-center">
-                                                                    <div class="flex-shrink-0 me-2 contact-avatar">
-                                                                        <div class="avatar-sm">
-                                                                            <div class="avatar-title bg-black text-white rounded fs-14 text-uppercase">
-                                                                                @php
-                                                                                $title = explode(' ', $lead->varTitle);
-                                                                                $varTitle = '';
-                                                                                if(count($title) > 1) {
-                                                                                    foreach ($title as $key => $val) {
-                                                                                        if($key < 2) { $varTitle .= $val[0]; }
-                                                                                    }
-                                                                                } else {
-                                                                                    $varTitle = substr($lead->varTitle, 0, 2);
-                                                                                }
-                                                                                @endphp
-                                                                                {!! $varTitle !!}
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="flex-grow-1 overflow-hidden">
-                                                                        <h6 class="mb-0">{!! $lead->varTitle !!}</h6>
-                                                                        <p class="text-muted mb-0 fs-11">{!! App\Helpers\MyLibrary::getDecryptedString($lead->varEmail); !!}</p>
-                                                                    </div>
-                                                                </div>
-                                                                
-                                                            </td>
-                                                            <!-- <td align="left">
-                                                                {!! App\Helpers\MyLibrary::getDecryptedString($lead->varEmail); !!}
-                                                            </td> -->
-                                                            <td align="left" data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{ date(''.Config::get('Constant.DEFAULT_DATE_FORMAT').'  '.Config::get('Constant.DEFAULT_TIME_FORMAT').'', strtotime($lead->created_at)) }}">
-                                                                {{ date(Config::get('Constant.DEFAULT_DATE_FORMAT'), strtotime($lead->created_at)) }}
-                                                            </td>
-                                                            <td align="left" class='numeric'>
-                                                                <a class="contactUsLead" href="javascript:void(0);" type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{ trans('template.powerPanelDashboard.clickDetails') }}" id="{!! $lead->id !!}"><i class="ri-arrow-right-up-line fs-16 body-color"></i></a>
-                                                            </td>
-                                                        </tr>
-                                                        @endif
-                                                    @endforeach
-                                                @endif <!-- end tr -->
-                                            </tbody><!-- end tbody -->
-                                        </table><!-- end table -->
+                                            <tbody></tbody>
+                                        </table>
+                                      
                                     </div>
                                 </div>
                                 @if(isset($leads) && !empty($leads) && count($leads) > 0 )
@@ -384,69 +332,49 @@
                                 @endif
                             </div> <!-- .card-->
                         </div><!-- end col -->
-                        @endif <!-- end Contact Leads -->
+                        @endif 
 
-                        <!-- In Approval -->
                         @if(isset($dashboardWidgetSettings->widget_inapporval) && $dashboardWidgetSettings->widget_inapporval->widget_display=="Y")
                         <div class={{ (isset($dashboardWidgetSettings->widget_conatctleads) && $dashboardWidgetSettings->widget_conatctleads->widget_display=='Y') ? 'col-xl-6' : 'col-xl-12' }}>
                             <div class="card inapproval-card">
                                 <div class="card-header align-items-center d-flex">
-                                    <h4 class="card-title mb-0 flex-grow-1"  title="In Approval">In Approval</h4>
-                                    <div class="flex-shrink-0">
-                                        <div class="dash-approve-search pull-right">
-                                            <!-- <input type="search" class="form-control form-control-solid placeholder-no-fix" placeholder="Search" id="searchfilter"> -->
-                                            <div class="cm-search">
-                                                <input type="search" class="form-control form-control-solid placeholder-no-fix" placeholder="Search" id="searchfilter">
-                                                <span class="open-search cursor-pointer"><i id="clearSearchFilter" class="ri-search-2-line fs-20"></i></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div><!-- end card header -->
+                                    <h4 class="card-title mb-0 flex-grow-1"  title="Get Demo Leads">Get Demo Leads</h4>
+                                </div>
                                 <div class="card-body" data-simplebar style="height: 360px;">
-                                    <div class="table-responsive"> <!-- table-card -->
-                                        <table class="table table-hover table-centered align-middle table-nowrap mb-0 lastchild-border-0" id="approvals">
+                                    <div class="table-responsive"> 
+                                        <table class="table table-hover table-centered align-middle table-nowrap mb-0 lastchild-border-0" id="getDemoLeads_ajax">
                                             <thead> <!-- class="text-muted table-light" -->
                                                 <tr>
-                                                    <th scope="col">ID</th>
-                                                    <th scope="col" align="left" title="Module"> Module </th>
-                                                    <!-- <th scope="col" align="left" title="View"> View </th> -->
-                                                    <th scope="col" align="left" title="Date &amp; Time"> Date </th>
+                                                   <th align="center"><input type="checkbox" class="form-check-input multiSelectList"></th>
+                                                    <th align="">Title</th>
+                                                    <th align="">Email</th>
+                                                    <th align="">Phone Number</th>
+                                                    <th align="">Business Name</th>
+                                                    <th align="">Message</th>
+                                                    <th align="">IP Address</th>
+                                                    <th align="">Visited Page</th>
+                                                    <th align="">Date</th>
                                                 </tr>
                                             </thead>
-                                            <tbody>
-                                                @if($approvals->isEmpty())
-                                                    <tr><td align="center" colspan="4">No data available</td></tr>
-                                                @else
-                                                    @foreach ($approvals as $key=>$approval)
-                                                        @if(auth()->user()->can($approval->module->varModuleName.'-reviewchanges'))
-                                                        <tr>
-                                                            <td><span class="fw-medium link-primary"><a class="body-color" href="{{ url('powerpanel/'.$approval->module->varModuleName) }}?tab=A" data-bs-toggle="tooltip" data-bs-placement="bottom" title="{!! $approval->module->varTitle !!}">#{!! $approval->id !!}</a></span></td>
-                                                            <td><a class="body-color" href="{{ url('powerpanel/'.$approval->module->varModuleName.'?tab=A') }}" data-bs-toggle="tooltip" data-bs-placement="bottom" title="{!! $approval->module->varTitle !!}">{!! $approval->module->varTitle !!}</a></td>
-                                                            <td align="left" data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{ date(Config::get('Constant.DEFAULT_DATE_FORMAT').'  '.Config::get('Constant.DEFAULT_TIME_FORMAT'), strtotime($approval->created_at)) }}">{{ date(Config::get('Constant.DEFAULT_DATE_FORMAT'), strtotime($approval->created_at)) }}</td>
-                                                        </tr>
-                                                        @else
-                                                        <tr>
-                                                            <td><span class="fw-medium link-primary">#{!! $approval->id !!}</span></td>
-                                                            <td><a href="{{ url('powerpanel/workflow') }}" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Create workflow for {!! $approval->module->varTitle !!}">{!! $approval->module->varTitle !!} <span class="badge badge-pill badge-danger">No Workflow</span></a></td>
-                                                            <td align="left" data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{ date(Config::get('Constant.DEFAULT_DATE_FORMAT').'  '.Config::get('Constant.DEFAULT_TIME_FORMAT'), strtotime($approval->created_at)) }}">
-                                                                {{ date(Config::get('Constant.DEFAULT_DATE_FORMAT'), strtotime($approval->created_at)) }}
-                                                            </td>
-                                                        </tr>
-                                                        @endif
-                                                    @endforeach
-                                                @endif
-                                            </tbody><!-- end tbody -->
+                                            <tbody></tbody><!-- end tbody -->
                                         </table><!-- end table -->
                                     </div>
                                 </div><!-- end card-body -->
+                                 @if(isset($leads) && !empty($leads) && count($leads) > 0 )
+                                    <div class="card-footer">
+                                        <div class="justify-content-end">
+                                            <a class="btn btn-soft-dark btn-sm" href="{{ url('powerpanel/getdemo-leads') }}" title="{{ trans('template.powerPanelDashboard.seeAllRecords') }}"><i class="ri-file-list-3-line align-middle"></i> {{ trans('template.powerPanelDashboard.seeAllRecords') }}</a>
+                                        </div>
+                                    </div>
+                                @endif
                             </div><!-- end card -->
                         </div> <!-- .col-->
-                        @endif <!-- end In Approval -->
+                        @endif 
                          @if(isset($dashboardWidgetSettings->widget_conatctleads) && $dashboardWidgetSettings->widget_conatctleads->widget_display=="Y")
                         <div class={{ (isset($dashboardWidgetSettings->widget_inapporval) && $dashboardWidgetSettings->widget_inapporval->widget_display=='Y') ? 'col-xl-6' : 'col-xl-12' }}>
                             <div class="card contactuslead">
                                 <div class="card-header align-items-center d-flex">
-                                    <h4 class="card-title mb-0 flex-grow-1">Contact Leads</h4>
+                                    <h4 class="card-title mb-0 flex-grow-1">Get a Demo Leads one</h4>
                                 </div><!-- end card header -->
                                 <div class="card-body" data-simplebar style="height: 300px;">
                                     <div class="table-responsive"> <!-- table-card -->
@@ -529,14 +457,13 @@
                                 @endif
                             </div> <!-- .card-->
                         </div><!-- end col -->
-                        @endif <!-- end Contact Leads -->
+                        @endif 
 
-                        <!-- In Approval -->
                         @if(isset($dashboardWidgetSettings->widget_inapporval) && $dashboardWidgetSettings->widget_inapporval->widget_display=="Y")
                         <div class={{ (isset($dashboardWidgetSettings->widget_conatctleads) && $dashboardWidgetSettings->widget_conatctleads->widget_display=='Y') ? 'col-xl-6' : 'col-xl-12' }}>
                             <div class="card inapproval-card">
                                 <div class="card-header align-items-center d-flex">
-                                    <h4 class="card-title mb-0 flex-grow-1"  title="In Approval">In Approval</h4>
+                                    <h4 class="card-title mb-0 flex-grow-1"  title="In Approval">In Approval demol</h4>
                                     <div class="flex-shrink-0">
                                         <div class="dash-approve-search pull-right">
                                             <!-- <input type="search" class="form-control form-control-solid placeholder-no-fix" placeholder="Search" id="searchfilter"> -->
@@ -586,7 +513,7 @@
                                 </div><!-- end card-body -->
                             </div><!-- end card -->
                         </div> <!-- .col-->
-                        @endif <!-- end In Approval -->
+                        @endif 
                     </div>
                 </div><!-- end col -->
 
@@ -732,9 +659,15 @@
 
 @section('scripts')
 <script>window.site_url = '{!! url("/") !!}';</script>
+<script src="{{ $CDN_PATH.'resources/global/plugins/jquery-cookie-master/src/jquery.cookie.js' }}" type="text/javascript"></script>
 <script src="{{ $CDN_PATH.'resources/global/plugins/highslide/highslide-with-html.js' }}" type="text/javascript"></script>
 <script src="{{ $CDN_PATH.'resources/pages/scripts/dashboard-ajax.js?v='.time() }}" type="text/javascript"></script>
 <script src="{{ $CDN_PATH.'resources/global/plugins/datatables/datatables.min.js' }}" type="text/javascript"></script>
+
+<script src="{{ $CDN_PATH.'resources/global/scripts/datatable.js' }}" type="text/javascript"></script>
+<script src="{{ $CDN_PATH.'resources/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js' }}" type="text/javascript"></script>
+<script src="{{ $CDN_PATH.'resources/pages/scripts/packages/contactuslead/contactlead-datatables-ajax.js?v='.time() }}" type="text/javascript"></script>
+<!-- <script src="{{ $CDN_PATH.'resources/pages/scripts/packages/getdemo/getdemolead-datatables-ajax.js?v='.time() }}" type="text/javascript"></script> -->
 <script>
     function dashBoardUpdate(row) {
     var rows = $(row);
@@ -807,11 +740,140 @@
     	liveUsersEnabled = true;
     @endif
 </script>
-<script src="{{ $CDN_PATH.'resources/pages/scripts/dashboard-chart.js?v='.time() }}" type="text/javascript"></script>
+<!-- <script src="{{ $CDN_PATH.'resources/pages/scripts/dashboard-chart.js?v='.time() }}" type="text/javascript"></script> -->
 
 <script type="text/javascript">
     $('.open-search').on('click',function() {
       $('.cm-search').toggleClass('visible');
     });
+</script>
+<script type="text/javascript">
+var grid = '';
+var grid1 = '';
+var getDemoDatatablesAjax = function () {
+    var initPickers = function () {
+        //init date pickers
+        $('.date-picker').datepicker({
+            rtl: App.isRTL(),
+            autoclose: true
+        });
+    }
+    var handleRecords = function () {
+        grid = new Datatable();
+        var ip = '';
+        var totalRec;
+        grid.init({
+            src: $("#getDemoLeads_ajax"),
+            onSuccess: function (grid, response) {
+                if (response.recordsTotal < 1) {
+                    if (response.recordsTotal < 1) {
+                        $('.deleteMass').hide();
+                    } else {
+                        $('.deleteMass').show();
+                    }
+                    $('.ExportRecord').hide();
+                    $("#menu1.tab-pane .notabreocrd").show();
+                                        $("#menu1.tab-pane .withrecords").hide();
+                } else {
+                    $('.ExportRecord').show();
+                    $("#menu1.tab-pane .notabreocrd").hide();
+                                        $("#menu1.tab-pane .withrecords").show();
+                }
+                if(response.recordsTotal < 20) {
+                    $('.gridjs-pages').hide();
+                } else {
+                    $('.gridjs-pages').show();
+                }
+                // grid:        grid object
+                // response:    json object of server side ajax response
+                // execute some code after table records loaded
+                // get all typeable inputs
+                totalRec = response.recordsTotal;
+            },
+            onError: function (grid) {
+                // execute some code on network or other general error
+            },
+            onDataLoad: function (grid) {
+                $(document).ready(function () {
+                    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+                    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+                        return new bootstrap.Tooltip(tooltipTriggerEl)
+                    })
+                });
+                // execute some code on ajax data load
+            },
+            loadingMessage: 'Loading...',
+            dataTable: {// here you can define a typical datatable settings from http://datatables.net/usage/options
+                // Uncomment below line("dom" parameter) to fix the dropdown overflow issue in the datatable cells. The default datatable layout
+                // setup uses scrollable div(table-scrollable) with overflow:auto to enable vertical scroll(see: assets/global/scripts/datatable.js).
+                // So when dropdowns used the scrollable div should be removed.
+                "dom": "t <'gridjs-footer' <'gridjs-pagination'i <'gridjs-pages'p>>>",
+                "deferRender": true,
+                // "stateSave": true, // save datatable state(pagination, sort, etc) in cookie.
+                // "lengthMenu": [
+                //     [10, 20, 50, 100],
+                //     [10, 20, 50, 100] // change per page values here
+                // ],
+                "pageLength": 20, // default record count per page
+                drawCallback:function(){
+                    var $api = this.api();
+                    var pages = $api.page.info().pages;
+                    var rows = $api.data().length;
+                    if(pages<=1){
+                        $('.dataTables_info').css('display','none');
+                        $('.dataTables_paginate').css('display','none');
+                    }
+                },
+                // Code for sorting
+                "serverSide": true,
+                "lengthChange": false,
+                "pagingType": "simple_numbers",
+                "language": {
+                    "info": '<div role="status" aria-live="polite" class="gridjs-summary">Showing <b>_START_</b> to <b>_END_</b> of <b>_TOTAL_</b> results</div>', // title="Page 1 of 2"
+                },
+                "columns": [
+                    {"data": 0, "class": 'td_checker', "bSortable": false},
+                    {"data": 1, "class": 'text-left', "name": 'varName', "bSortable": true},
+                    {"data": 2, "class": 'text-left', "name": 'varEmail', "bSortable": false},
+                    {"data": 3, "class": 'text-center', "bSortable": false},
+                    {"data": 4, "class": 'text-center', "bSortable": false},
+                    {"data": 5, "class": 'text-center', "bSortable": false},
+                    {"data": 6, "class": 'text-center', "name": 'varIpAddress', "bSortable": false},
+                    {"data": 7, "class": 'text-center', "name": 'varPageName', "bSortable": false},
+                    {"data": 8, "class": 'text-center', "name": 'created_at', "bSortable": true},
+                ],
+                "ajax": {
+                    "url": window.site_url + "/powerpanel/getdemo-leads/get_list", // ajax source
+                },
+                "order": [
+                    [7, "desc"]
+                ]// set first column as a default sort by asc
+            }
+        });
+
+       
+        grid.setAjaxParam("customActionType", "group_action");
+        grid.clearAjaxParams();
+        grid.getDataTable().columns().iterator('column', function (ctx, idx) {
+            $(grid.getDataTable().column(idx).header()).append('<span class="sort-icon"/>');
+        });
+    }
+    return {
+        //main function to initiate the module
+        init: function () {
+            $.fn.DataTable.ext.pager.numbers_length = 4;
+            initPickers();
+            handleRecords();
+        }
+    };
+}();
+jQuery(document).ready(function () {
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-Token': $('input[name="_token"]').val()
+        }
+    });
+    getDemoDatatablesAjax.init();
+});
 </script>
 @endsection

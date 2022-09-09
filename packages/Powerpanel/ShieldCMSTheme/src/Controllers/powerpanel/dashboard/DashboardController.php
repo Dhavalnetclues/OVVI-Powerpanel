@@ -20,6 +20,7 @@ use Config;
 use File;
 use Powerpanel\DocumentReport\Models\DocumentsReport;
 use Powerpanel\ContactUsLead\Models\ContactLead;
+use Powerpanel\GetdemoLead\Models\GetdemoLead;
 use Powerpanel\ComplaintLead\Models\ComplaintLead;
 use Powerpanel\Events\Models\EventLead;
 use Powerpanel\Payonline\Models\Payonline;
@@ -66,7 +67,7 @@ class DashboardController extends PowerpanelController
 
     public function index()
     {
-    	$userId = Auth::id();
+        $userId = Auth::id();
         $userIsAdmin = false;
         if (isset($this->currentUserRoleData) && !empty($this->currentUserRoleData)) {
             if ($this->currentUserRoleData->chrIsAdmin == 'Y') {
@@ -179,8 +180,10 @@ class DashboardController extends PowerpanelController
                 CommonModel::updateRecords($whereConditions, $update, false, 'App\DashboardOrder');
             }
         }
-
-        return view('shiledcmstheme::powerpanel.dashboard.dashboard', compact('leads', 'leadsCount', 'approvals', 'breadcrumb', 'formBuilderLead', 'dashboardWidgetSettings'));
+        $contactLeadRecords = ContactLead::getRecordList();
+        $getDemoLeadRecords = GetdemoLead::getRecordList();
+        
+        return view('shiledcmstheme::powerpanel.dashboard.dashboard', compact('leads', 'leadsCount', 'approvals', 'breadcrumb', 'formBuilderLead', 'dashboardWidgetSettings','contactLeadRecords','getDemoLeadRecords'));
     }
 
     public function ajaxcall()

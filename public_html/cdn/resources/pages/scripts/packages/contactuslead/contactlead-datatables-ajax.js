@@ -41,6 +41,8 @@ var TableDatatablesAjax = function() {
                 // So when dropdowns used the scrollable div should be removed.
                 "dom": "t <'gridjs-footer' <'gridjs-pagination'i <'gridjs-pages'p>>>",
                 "deferRender": true,
+                // "scrollY":300,
+                // "scrollX":true,
                 // "stateSave": true, // save datatable state(pagination, sort, etc) in cookie.
                 // "lengthMenu": [
                 //     [10, 20, 50, 100],

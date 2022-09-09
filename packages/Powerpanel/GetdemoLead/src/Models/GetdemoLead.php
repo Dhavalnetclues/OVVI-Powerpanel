@@ -22,6 +22,7 @@ class GetdemoLead extends Model {
         'txtUserMessage',
         'chrDelete',
         'varIpAddress',
+        'varPageName',
         'created_at',
         'updated_at'
     ];
@@ -65,7 +66,7 @@ class GetdemoLead extends Model {
      */
     public static function getRecordById($id, $moduleFields = false) {
         $response = false;
-        $moduleFields = ['id', 'varTitle', 'varEmail', 'varPhoneNo', 'txtUserMessage', 'varBusinessName', 'chrDelete', 'varIpAddress', 'created_at', 'updated_at'];
+        $moduleFields = ['id', 'varTitle', 'varEmail', 'varPhoneNo', 'txtUserMessage', 'varBusinessName', 'chrDelete', 'varIpAddress', 'created_at', 'updated_at','varPageName'];
         $response = Self::getPowerPanelRecords($moduleFields)->deleted()->checkRecordId($id)->first();
         return $response;
     }
@@ -94,7 +95,7 @@ class GetdemoLead extends Model {
      */
     public static function getRecordList($filterArr = false, $id = false) {
         $response = false;
-        $moduleFields = ['id', 'varTitle', 'varEmail', 'varPhoneNo', 'varBusinessName', 'txtUserMessage', 'varIpAddress', 'created_at', 'chrPublish'];
+        $moduleFields = ['id', 'varTitle', 'varEmail', 'varPhoneNo', 'varBusinessName', 'txtUserMessage', 'varIpAddress', 'created_at', 'chrPublish','varPageName'];
         $response = Self::getPowerPanelRecords($moduleFields)
                 ->deleted();
         if (isset($id) && $id != '') {
@@ -107,7 +108,7 @@ class GetdemoLead extends Model {
 
     public static function getRecordCount($filterArr = false, $returnCounter = false, $modelNameSpace = false, $checkMain = false, $id = false) {
         $response = false;
-        $moduleFields = ['id', 'varTitle', 'varEmail', 'varPhoneNo', 'varBusinessName', 'txtUserMessage', 'varIpAddress', 'created_at', 'chrPublish'];
+        $moduleFields = ['id', 'varTitle', 'varEmail', 'varPhoneNo', 'varBusinessName', 'txtUserMessage', 'varIpAddress', 'created_at', 'chrPublish','varPageName'];
         $response = Self::getPowerPanelRecords($moduleFields)
                 ->deleted();
         if (isset($id) && $id != '') {
@@ -135,7 +136,8 @@ class GetdemoLead extends Model {
             'txtUserMessage',
             'varIpAddress',
             'created_at',
-            'chrPublish'
+            'chrPublish',
+            'varPageName',
         ];
         $response = Self::getPowerPanelRecords($moduleFields)
                 ->deleted()
@@ -163,7 +165,7 @@ class GetdemoLead extends Model {
      */
     public static function getCronRecords() {
         $response = false;
-        $moduleFields = ['id', 'varTitle', 'varEmail', 'varPhoneNo', 'varBusinessName', 'txtUserMessage', 'created_at'];
+        $moduleFields = ['id', 'varTitle', 'varEmail', 'varPhoneNo', 'varBusinessName', 'txtUserMessage', 'created_at','varPageName'];
         $response = Self::getPowerPanelRecords($moduleFields)
                 ->deleted()
                 ->publish()
@@ -186,6 +188,7 @@ class GetdemoLead extends Model {
             'varBusinessName',
             'txtUserMessage',
             'varIpAddress',
+            'varPageName',
             'created_at'
         ];
         $query = Self::getPowerPanelRecords($moduleFields)
