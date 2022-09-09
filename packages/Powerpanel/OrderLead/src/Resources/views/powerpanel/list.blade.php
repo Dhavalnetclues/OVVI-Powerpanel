@@ -36,17 +36,17 @@
                                     <div class="p-3 dropdown-body">
 
                                         <div class="mb-3">
-                                            <div class="input-group input-daterange" id="formBuilderRange">
+                                            <div class="input-group input-daterange" id="orderRange">
                                                 <span class="input-group-text"><i class="ri-calendar-line fs-13"></i></span>
                                                 <input type="text" class="form-control" id="start_date" name="start_date" placeholder="{{ trans('orderlead::template.common.fromdate') }}"  data-provider="flatpickr" data-date-format="{{Config::get('Constant.DEFAULT_DATE_FORMAT')}}">
                                             </div>
                                         </div>
 
                                         <div class="mb-3">
-                                            <div class="input-group input-daterange" id="formBuilderRange">
+                                            <div class="input-group input-daterange" id="orderRange">
                                                 <span class="input-group-text"><i class="ri-calendar-line fs-13"></i></span>
                                                 <input type="text" class="form-control" id="end_date" name="end_date" placeholder="{{ trans('orderlead::template.common.todate') }}"  data-provider="flatpickr" data-date-format="{{Config::get('Constant.DEFAULT_DATE_FORMAT')}}">
-                                                {{-- <button class="btn btn-outline-primary border-outline-light btn-rh-search" id="formBuilderRange" type="button"><i class="ri-search-line fs-13"></i></button> --}}
+                                                {{-- <button class="btn btn-outline-primary border-outline-light btn-rh-search" id="orderRange" type="button"><i class="ri-search-line fs-13"></i></button> --}}
                                             </div>
                                         </div>
 
@@ -84,15 +84,17 @@
                                             ['Identity_Name'=>'name','TabIndex'=>'1','Name'=>'Business'],
                                             ['Identity_Name'=>'email','TabIndex'=>'2','Name'=>'Full Name'],
                                             ['Identity_Name'=>'email','TabIndex'=>'3','Name'=>'Email'],
-                                            ['Identity_Name'=>'contents','TabIndex'=>'4','Name'=>'Contents'],
-                                            ['Identity_Name'=>'ip','TabIndex'=>'5','Name'=>'IP'],
-                                            ['Identity_Name'=>'date','TabIndex'=>'6','Name'=>'Received Date/Time'],
+                                            ['Identity_Name'=>'Business Detail','TabIndex'=>'4','Name'=>'Contents'],
+                                            ['Identity_Name'=>'Business Information','TabIndex'=>'5','Name'=>'Contents'],
+                                            ['Identity_Name'=>'ip','TabIndex'=>'6','Name'=>'IP'],
+                                            ['Identity_Name'=>'date','TabIndex'=>'7','Name'=>'Received Date/Time'],
                                         ],
                                         'DataTableHead'=>[
                                             ['Title'=>'Business','Align'=>'left'],
                                             ['Title'=>'Full Name','Align'=>'left'],
                                             ['Title'=>'Email','Align'=>'left'],
-                                            ['Title'=>'Contents','Align'=>'left'],
+                                            ['Title'=>'Business Detail','Align'=>'left'],
+                                            ['Title'=>'Business Information','Align'=>'left'],
                                             ['Title'=>'IP','Align'=>'left'],
                                             ['Title'=>'Received Date/Time','Align'=>'center']
                                         ]
@@ -100,7 +102,7 @@
                                 ];
                             @endphp
 
-                            @include('powerpanel.partials.datatable-view',['ModuleName'=>'formbuilderlead','Permission_Delete'=>'order-lead-delete','tablearray'=>$tablearray,'userIsAdmin'=>$userIsAdmin,'Module_ID'=>Config::get('Constant.MODULE.ID')])
+                            @include('powerpanel.partials.datatable-view',['ModuleName'=>'orderlead','Permission_Delete'=>'order-lead-delete','tablearray'=>$tablearray,'userIsAdmin'=>$userIsAdmin,'Module_ID'=>Config::get('Constant.MODULE.ID')])
 
                         </div>
                     </div>
@@ -108,7 +110,7 @@
 
                 <!-- Modal -->
                 @if (File::exists(base_path() . '/resources/views/powerpanel/partials/quickeditpopup.blade.php') != null)
-                @include('powerpanel.partials.quickeditpopup',['TableName'=>'formBuilderLead'])
+                @include('powerpanel.partials.quickeditpopup',['TableName'=>'orderLead'])
                 @endif
                 @else
                 @if (File::exists(base_path() . '/resources/views/powerpanel/partials/addrecordsection.blade.php') != null)
@@ -141,7 +143,7 @@
                     <button type="button" class="btn-close fs-10" data-bs-dismiss="modal" aria-label="Close"> </button>
                 </div>
                 <div class="modal-body">
-                    <h5 class="mb-2">{{ trans('orderlead::template.formbuilderleadModule.noExport') }}</h5>
+                    <h5 class="mb-2">{{ trans('orderlead::template.orderleadModule.noExport') }}</h5>
                     <div class="pt-2">
                         <button type="button" class="btn btn-primary bg-gradient waves-effect waves-light btn-label" data-bs-dismiss="modal">
                             <div class="d-flex">
@@ -169,14 +171,14 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-sm-12">
-                            <h5 class="mb-2">{{ trans('orderlead::template.formbuilderleadModule.recordsExport') }}</h5>
+                            <h5 class="mb-2">{{ trans('orderlead::template.orderleadModule.recordsExport') }}</h5>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" value="selected_records" id="selected_records" name="export_type">
-                                <label for="selected_records">{{ trans('orderlead::template.formbuilderleadModule.selectedRecords') }}</label>
+                                <label for="selected_records">{{ trans('orderlead::template.orderleadModule.selectedRecords') }}</label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" value="all_records" id="all_records" name="export_type" checked>
-                                <label for="all_records">{{ trans('orderlead::template.formbuilderleadModule.allRecords') }}</label>
+                                <label for="all_records">{{ trans('orderlead::template.orderleadModule.allRecords') }}</label>
                             </div>
                         </div>
                         <div class="col-sm-12 mt-3">
@@ -205,7 +207,7 @@
                     <button type="button" class="btn-close fs-10" data-bs-dismiss="modal" aria-label="Close"> </button>
                 </div>
                 <div class="modal-body">
-                    <h5 class="mb-2">{{ trans('orderlead::template.formbuilderleadModule.leastRecord') }}</h5>
+                    <h5 class="mb-2">{{ trans('orderlead::template.orderleadModule.leastRecord') }}</h5>
                     <div class="pt-2">
                         <button type="button" class="btn btn-primary bg-gradient waves-effect waves-light btn-label" data-bs-dismiss="modal">
                             <div class="d-flex">
@@ -230,7 +232,7 @@
 @section('scripts')
 <script type="text/javascript">
     window.site_url = '{!! url("/") !!}';
-    var DELETE_URL = '{!! url("/powerpanel/formbuilder-lead/DeleteRecord") !!}';
+    var DELETE_URL = '{!! url("/powerpanel/order-lead/DeleteRecord") !!}';
     var searchid = '{!! $searchid !!}'
 
     var showChecker = true;

@@ -63,10 +63,10 @@ var TableDatatablesAjax = function () {
                     var $api = this.api();
                     var pages = $api.page.info().pages;
                     var rows = $api.data().length;
-                    if(pages<=1){
-                        $('.dataTables_info').css('display','none');
-                        $('.dataTables_paginate').css('display','none');
-                    }
+                    // if(pages<=1){
+                    //     $('.dataTables_info').css('display','none');
+                    //     $('.dataTables_paginate').css('display','none');
+                    // }
                 },
                 // Code for sorting
                 "serverSide": true,
@@ -99,13 +99,18 @@ var TableDatatablesAjax = function () {
                         "class": 'text-center',
                         "bSortable": false
                     }, 
-                    {
+                     {
                         "data": 5,
+                        "class": 'text-center',
+                        "bSortable": false
+                    }, 
+                    {
+                        "data": 6,
                         "class": 'text-center',
                         "name": 'varIpAddress',
                         "bSortable": false
                     }, {
-                        "data": 6,
+                        "data": 7,
                         "class": 'text-center',
                         "name": 'created_at'
                     },],
@@ -116,7 +121,7 @@ var TableDatatablesAjax = function () {
                     // $(nRow).attr('data-order', aData[5]);
                 },
                 "order": [
-                    [5, "desc"]
+                    [7, "desc"]
                 ]
             }
         });
@@ -150,7 +155,7 @@ var TableDatatablesAjax = function () {
             }
         });
 
-        $(document).on('change', '#formBuilderRange', function(e) {
+        $(document).on('change', '#orderRange', function(e) {
             e.preventDefault();
             var action = {};
             action['from'] = $('#start_date').val();

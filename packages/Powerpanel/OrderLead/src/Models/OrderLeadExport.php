@@ -22,9 +22,9 @@ class OrderLeadExport implements FromView, ShouldAutoSize
             $filterArr['searchFilter'] = !empty(Request::get('searchValue')) ? Request::get('searchValue') : '';
             $arrResults = OrderLead::getListForExport();
         }
-
+        // echo "<pre>";print_r(count($arrResults));die;
         if (count($arrResults) > 0) {
-            return view('orderlead::powerpanel.excel_format', ['OrderLead' => $arrResults]);
+            return view('orderlead::powerpanel.excel_format', ['OrderLeads' => $arrResults]);
         }
     }
 

@@ -28,7 +28,7 @@ class OrderLead extends Model {
      */
     protected $BUCKET_ENABLED;
 
-    protected $table = 'formbuilder_lead';
+    protected $table = 'OrderLeads';
     protected $fillable = [
         'id',
         'varTitle',
@@ -41,6 +41,7 @@ class OrderLead extends Model {
         'varOnAdditionalModules',
         'varOnStreetAddress',
         'varOnCountry',
+        'varName',
         'varOnState',
         'varOnCity',
         'varOnZipCode',
@@ -69,6 +70,7 @@ class OrderLead extends Model {
     public static function getCurrentMonthCount() {
         $response = false;
         $response = Self::getRecords()
+                ->leftJoin('Countries', 'Countries.id', '=', 'OrderLeads.varOnCountry')
                 ->whereRaw('MONTH(created_at) = MONTH(CURRENT_DATE())')
                 ->whereRaw('YEAR(created_at) = YEAR(CURRENT_DATE())')
                 ->where('chrPublish', '=', 'Y')
@@ -80,6 +82,7 @@ class OrderLead extends Model {
     public static function getCurrentYearCount() {
         $response = false;
         $response = Self::getRecords()
+                ->leftJoin('Countries', 'Countries.id', '=', 'OrderLeads.varOnCountry')
                 ->whereRaw('YEAR(created_at) = YEAR(CURRENT_DATE())')
                 ->where('chrPublish', '=', 'Y')
                 ->where('chrDelete', '=', 'N')
@@ -117,6 +120,7 @@ class OrderLead extends Model {
             'varOnAdditionalModules',
             'varOnStreetAddress',
             'varOnCountry',
+            'Countries.varName',
             'varOnState',
             'varOnCity',
             'varOnZipCode',
@@ -158,7 +162,7 @@ class OrderLead extends Model {
     public static function getRecordList($filterArr = false,$id = false) {
         $response = false;
         $moduleFields = [
-            'id',
+            'OrderLeads.id',
             'varTitle',
             'varOnBusinessType',
             'chrOnPOSBundle',
@@ -169,6 +173,9 @@ class OrderLead extends Model {
             'varOnAdditionalModules',
             'varOnStreetAddress',
             'varOnCountry',
+            'Countries.varName AS country',
+            'Cities.varName AS city',
+            'States.varName AS state',
             'varOnState',
             'varOnCity',
             'varOnZipCode',
@@ -182,9 +189,12 @@ class OrderLead extends Model {
             'created_at',
         ];
         $response = Self::getPowerPanelRecords($moduleFields)
-                ->deleted();
+                    ->leftJoin('Countries', 'Countries.id', '=', 'OrderLeads.varOnCountry')
+                    ->leftJoin('Cities', 'Cities.id', '=', 'OrderLeads.varOnCity')
+                    ->leftJoin('States', 'States.id', '=', 'OrderLeads.varOnState')
+                    ->deleted();
         if (isset($id) && $id != '') {
-            $response = $response->where('formbuilder_lead.id', '=', $id);
+            $response = $response->where('OrderLeads.id', '=', $id);
         }
         $response = $response->filter($filterArr)
                 ->get();
@@ -287,7 +297,7 @@ class OrderLead extends Model {
     public static function getListForExport($selectedIds = false) {
         $response = false;
         $moduleFields = [
-            'id',
+            'OrderLeads.id',
             'varTitle',
             'varOnBusinessType',
             'chrOnPOSBundle',
@@ -300,6 +310,9 @@ class OrderLead extends Model {
             'varOnCountry',
             'varOnState',
             'varOnCity',
+            'Countries.varName AS country',
+            'Cities.varName AS city',
+            'States.varName AS state',
             'varOnZipCode',
             'varOnPhoneNumber',
             'varOnEmailId',
@@ -310,7 +323,11 @@ class OrderLead extends Model {
             'chrDelete',
             'created_at',
         ];
-        $query = Self::getPowerPanelRecords($moduleFields)->deleted();
+        $query = Self::getPowerPanelRecords($moduleFields)
+                ->leftJoin('Countries', 'Countries.id', '=', 'OrderLeads.varOnCountry')
+                ->leftJoin('Cities', 'Cities.id', '=', 'OrderLeads.varOnCity')
+                ->leftJoin('States', 'States.id', '=', 'OrderLeads.varOnState')
+                ->deleted();
         if (!empty($selectedIds) && count($selectedIds) > 0) {
             $query->checkMultipleRecordId($selectedIds);
         }
@@ -335,7 +352,7 @@ class OrderLead extends Model {
      * @author  NetQuick
      */
     function scopePublish($query) {
-        return $query->where(['formbuilder_lead.chrPublish' => 'Y']);
+        return $query->where(['OrderLeads.chrPublish' => 'Y']);
     }
 
     /**
@@ -345,7 +362,7 @@ class OrderLead extends Model {
      * @author  NetQuick
      */
     function scopeDeleted($query) {
-        return $query->where(['formbuilder_lead.chrDelete' => 'N']);
+        return $query->where(['OrderLeads.chrDelete' => 'N']);
     }
 
     /**
@@ -355,7 +372,7 @@ class OrderLead extends Model {
      * @author  NetQuick
      */
     function scopeCheckMultipleRecordId($query, $Ids) {
-        return $query->whereIn('id', $Ids);
+        return $query->whereIn('OrderLeads.id', $Ids);
     }
 
     /**
@@ -377,9 +394,9 @@ class OrderLead extends Model {
     function scopeFilter($query, $filterArr = false, $retunTotalRecords = false) {
         $response = '';
         if (!empty($filterArr['orderByFieldName']) && !empty($filterArr['orderTypeAscOrDesc'])) {
-            $query = $query->orderBy('formbuilder_lead.'.$filterArr['orderByFieldName'], $filterArr['orderTypeAscOrDesc']);
+            $query = $query->orderBy('OrderLeads.'.$filterArr['orderByFieldName'], $filterArr['orderTypeAscOrDesc']);
         } else {
-            //$query = $query->orderBy('`formbuilder_lead`.`created_at`', 'desc');
+            //$query = $query->orderBy('`OrderLeads`.`created_at`', 'desc');
         }
         if (!$retunTotalRecords) {
             if (!empty($filterArr['iDisplayLength']) && $filterArr['iDisplayLength'] > 0) {
@@ -387,22 +404,22 @@ class OrderLead extends Model {
             }
         }
         if (!empty($filterArr['statusFilter']) && $filterArr['statusFilter'] != ' ') {
-            $data = $query->where('formbuilder_lead.chrPublish', $filterArr['statusFilter']);
+            $data = $query->where('OrderLeads.chrPublish', $filterArr['statusFilter']);
         }
         if (isset($filterArr['searchFilter']) && !empty($filterArr['searchFilter']) && $filterArr['searchFilter'] != ' ') {
-            //$query = $query->leftJoin('form_builder', 'form_builder.id', '=', 'formbuilder_lead.fk_formbuilder_id');
-            $data = $query->where('formbuilder_lead.varTitle', 'like', '%' . $filterArr['searchFilter'] . '%');
+            //$query = $query->leftJoin('form_builder', 'form_builder.id', '=', 'OrderLeads.fk_formbuilder_id');
+            $data = $query->where('OrderLeads.varTitle', 'like', '%' . $filterArr['searchFilter'] . '%');
         }
 
         if (!empty($filterArr['start']) && $filterArr['start'] != ' ') {
-                $data = $query->whereRaw('DATE(`nq_formbuilder_lead`.`created_at`) >= DATE("' . date('Y-m-d', strtotime(str_replace('/', '-', $filterArr['start']))) . '")');
+                $data = $query->whereRaw('DATE(`nq_OrderLeads`.`created_at`) >= DATE("' . date('Y-m-d', strtotime(str_replace('/', '-', $filterArr['start']))) . '")');
         }
         if (!empty($filterArr['start']) && $filterArr['start'] != '' &&  empty($filterArr['end']) && $filterArr['end'] == '') {
-                $data = $query->whereRaw('DATE(`nq_formbuilder_lead`.`created_at`) >= DATE("' . date('Y-m-d', strtotime(str_replace('/', '-', $filterArr['start']))) . '")');
+                $data = $query->whereRaw('DATE(`nq_OrderLeads`.`created_at`) >= DATE("' . date('Y-m-d', strtotime(str_replace('/', '-', $filterArr['start']))) . '")');
         }
 
         if (!empty($filterArr['end']) && $filterArr['end'] != ' ') {
-                $data = $query->whereRaw('DATE(`nq_formbuilder_lead`.`created_at`) <= DATE("' . date('Y-m-d', strtotime(str_replace('/', '-', $filterArr['end']))) . '") AND `nq_formbuilder_lead`.`created_at` IS NOT null');
+                $data = $query->whereRaw('DATE(`nq_OrderLeads`.`created_at`) <= DATE("' . date('Y-m-d', strtotime(str_replace('/', '-', $filterArr['end']))) . '") AND `nq_OrderLeads`.`created_at` IS NOT null');
         }
 
         if (!empty($query)) {
@@ -479,7 +496,7 @@ class OrderLead extends Model {
     }
 
     public static function GetFormData($id) {
-        $pagedata = DB::table('formbuilder_lead')
+        $pagedata = DB::table('OrderLeads')
                 ->select('*')
                 ->where('id', '=', $id)
                 ->first();
