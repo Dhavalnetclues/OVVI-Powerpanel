@@ -196,8 +196,8 @@ return [
         'selectuser' => 'Select User',
         'getdemoLeads' => 'Getdemo Leads',
     ],
-    'getdemoleadModule' => [
-        'managegetdemolead' => 'Getdemo Leads',
+    'resellerleadModule' => [
+        'manageresellerlead' => 'Reseller Leads',
         'export' => 'Export',
         'noExport' => 'No Records to export!',
         'recordsExport' => 'Which records do you want to export?',

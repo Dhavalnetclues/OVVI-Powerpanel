@@ -108,22 +108,22 @@ class ResellerleadController extends PowerpanelController {
         // Checkbox
         $checkbox = view('powerpanel.partials.checkbox', ['name'=>'delete[]', 'value'=>$value->id])->render();
         $details = '';
-        if (!empty($value->txtUserMessage)) {
+        if (!empty($value->varMessage)) {
             $details .= '<div class="pro-act-btn">';
             $details .= '<a href="javascript:void(0)" class="without_bg_icon" onclick="return hs.htmlExpand(this,{width:300,headingText:\'Message\',wrapperClassName:\'titlebar\',showCredits:false});"><i aria-hidden="true" class="ri-message-2-line fs-16"></i></a>';
-            $details .= '<div class="highslide-maincontent">' . nl2br($value->txtUserMessage) . '</div>';
+            $details .= '<div class="highslide-maincontent">' . nl2br($value->varMessage) . '</div>';
             $details .= '</div>';
         } else {
             $details .= '-';
         }
             
-        if (!empty($value->varBusinessName) ) {
-            $Business = $value->varBusinessName;
+        if (!empty($value->varCompaney) ) {
+            $Companey = $value->varCompaney;
         } else {
-            $Business = '-';
+            $Companey = '-';
         }
-        if (!empty($value->varPhoneNo)) {
-            $phoneNo = MyLibrary::decryptLatest($value->varPhoneNo);
+        if (!empty($value->varPhoneNumber)) {
+            $phoneNo = MyLibrary::decryptLatest($value->varPhoneNumber);
         } else {
             $phoneNo = '-';
         }
@@ -134,11 +134,11 @@ class ResellerleadController extends PowerpanelController {
         $records = array(
             $checkbox,
             $value->varTitle,
-            MyLibrary::decryptLatest($value->varEmail),
+            MyLibrary::decryptLatest($value->varEmailId),
             $phoneNo,
             // $Satisfied,
             // $Visitfor,
-            $Business,
+            $Companey,
             $details,
             $ipAdress,
             $receivedDate

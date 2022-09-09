@@ -26,16 +26,16 @@ class ResellerLeadServiceProvider extends ServiceProvider
         include __DIR__.'/../routes.php';
 
         $this->publishes([
-            __DIR__.'/../Resources/assets/js/powerpanel' => public_path('resources/pages/scripts/packages/getdemolead'),
-        ], 'getdemolead-js');
+            __DIR__.'/../Resources/assets/js/powerpanel' => public_path('resources/pages/scripts/packages/reseller'),
+        ], 'reseller-js');
 
         $this->publishes([
             __DIR__ . '/../database/migrations' => database_path('migrations'),
-        ], 'getdemolead-migration');
+        ], 'reseller-migration');
 
         $this->publishes([
             __DIR__ . '/../database/seeders' => database_path('seeders'),
-        ], 'getdemolead-seeders');
+        ], 'reseller-seeders');
         
         $this->handleTranslations();
     }

@@ -12,14 +12,14 @@ class ResellerLead extends Model {
      *
      * @var string
      */
-    protected $table = 'getdemo_leads';
+    protected $table = 'ResellerLeads';
     protected $fillable = [
         'id',
         'varTitle',
-        'varEmail',
-        'varPhoneNo',
-        'varBusinessName',
-        'txtUserMessage',
+        'varEmailId',
+        'varPhoneNumber',
+        'varCompaney',
+        'varMessage',
         'chrDelete',
         'varIpAddress',
         'created_at',
@@ -65,7 +65,7 @@ class ResellerLead extends Model {
      */
     public static function getRecordById($id, $moduleFields = false) {
         $response = false;
-        $moduleFields = ['id', 'varTitle', 'varEmail', 'varPhoneNo', 'txtUserMessage', 'varBusinessName', 'chrDelete', 'varIpAddress', 'created_at', 'updated_at'];
+        $moduleFields = ['id', 'varTitle', 'varEmailId', 'varPhoneNumber', 'varMessage', 'varCompaney', 'chrDelete', 'varIpAddress', 'created_at', 'updated_at'];
         $response = Self::getPowerPanelRecords($moduleFields)->deleted()->checkRecordId($id)->first();
         return $response;
     }
@@ -94,7 +94,7 @@ class ResellerLead extends Model {
      */
     public static function getRecordList($filterArr = false, $id = false) {
         $response = false;
-        $moduleFields = ['id', 'varTitle', 'varEmail', 'varPhoneNo', 'varBusinessName', 'txtUserMessage', 'varIpAddress', 'created_at', 'chrPublish'];
+        $moduleFields = ['id', 'varTitle', 'varEmailId', 'varPhoneNumber', 'varCompaney', 'varMessage', 'varIpAddress', 'created_at', 'chrPublish'];
         $response = Self::getPowerPanelRecords($moduleFields)
                 ->deleted();
         if (isset($id) && $id != '') {
@@ -107,7 +107,7 @@ class ResellerLead extends Model {
 
     public static function getRecordCount($filterArr = false, $returnCounter = false, $modelNameSpace = false, $checkMain = false, $id = false) {
         $response = false;
-        $moduleFields = ['id', 'varTitle', 'varEmail', 'varPhoneNo', 'varBusinessName', 'txtUserMessage', 'varIpAddress', 'created_at', 'chrPublish'];
+        $moduleFields = ['id', 'varTitle', 'varEmailId', 'varPhoneNumber', 'varCompaney', 'varMessage', 'varIpAddress', 'created_at', 'chrPublish'];
         $response = Self::getPowerPanelRecords($moduleFields)
                 ->deleted();
         if (isset($id) && $id != '') {
@@ -129,10 +129,10 @@ class ResellerLead extends Model {
         $moduleFields = [
             'id',
             'varTitle',
-            'varEmail',
-            'varPhoneNo',
-            'varBusinessName',
-            'txtUserMessage',
+            'varEmailId',
+            'varPhoneNumber',
+            'varCompaney',
+            'varMessage',
             'varIpAddress',
             'created_at',
             'chrPublish'
@@ -163,7 +163,7 @@ class ResellerLead extends Model {
      */
     public static function getCronRecords() {
         $response = false;
-        $moduleFields = ['id', 'varTitle', 'varEmail', 'varPhoneNo', 'varBusinessName', 'txtUserMessage', 'created_at'];
+        $moduleFields = ['id', 'varTitle', 'varEmailId', 'varPhoneNumber', 'varCompaney', 'varMessage', 'created_at'];
         $response = Self::getPowerPanelRecords($moduleFields)
                 ->deleted()
                 ->publish()
@@ -181,10 +181,10 @@ class ResellerLead extends Model {
         $response = false;
         $moduleFields = [
             'varTitle',
-            'varEmail',
-            'varPhoneNo',
-            'varBusinessName',
-            'txtUserMessage',
+            'varEmailId',
+            'varPhoneNumber',
+            'varCompaney',
+            'varMessage',
             'varIpAddress',
             'created_at'
         ];
@@ -270,7 +270,7 @@ class ResellerLead extends Model {
             $data = $query->where('chrPublish', $filterArr['statusFilter']);
         }
         if (isset($filterArr['searchFilter']) && !empty($filterArr['searchFilter'])) {
-            $data = $query->where('varTitle', 'like', '%' . $filterArr['searchFilter'] . '%')->orwhere('varEmail', 'like', '%' . $filterArr['searchFilter'] . '%');
+            $data = $query->where('varTitle', 'like', '%' . $filterArr['searchFilter'] . '%')->orwhere('varEmailId', 'like', '%' . $filterArr['searchFilter'] . '%');
         }
         if (!empty($filterArr['start']) && $filterArr['start'] != ' ') {
             $data = $query->whereRaw('DATE(created_at) >= DATE("' . date('Y-m-d', strtotime(str_replace('/', '-', $filterArr['start']))) . '")');
