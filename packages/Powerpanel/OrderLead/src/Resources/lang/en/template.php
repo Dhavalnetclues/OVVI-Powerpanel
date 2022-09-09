@@ -196,6 +196,8 @@ return [
         'selectuser' => 'Select User',
     ],
     'orderleadModule' => [
+        'business' => 'Business',
+        'fullname' => 'Full Name',
         'manageorderLeads' => 'Order Leads',
         'export' => 'Export',
         'noExport' => 'No Records to export!',
