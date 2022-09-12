@@ -32,7 +32,7 @@
                 </button>
                 <h4 class="mb-sm-0 dashboard_title fw-semibold me-4 text-capitalize">{{ $breadcrumb['title']}}</h4>
                 <!-- App Search -->
-                <form class="app-search d-none d-md-block" onsubmit="return false;">
+                <!-- <form class="app-search d-none d-md-block" onsubmit="return false;">
                     <div class="position-relative">
                         <input type="text" class="form-control" placeholder="Search..." autocomplete="off" name="inputsearch" id="search-options" value="">
                         <span class="ri-search-2-line search-widget-icon"></span>
@@ -46,7 +46,7 @@
                           <a href="javascript:void(0);" class="text-underline">View All Results <i class="ri-arrow-right-line ms-1"></i></a>
                       </div>
                     </div>
-                </form>
+                </form> -->
             </div>
 
 
