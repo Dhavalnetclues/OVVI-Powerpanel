@@ -180,10 +180,8 @@ class DashboardController extends PowerpanelController
                 CommonModel::updateRecords($whereConditions, $update, false, 'App\DashboardOrder');
             }
         }
-        $contactLeadRecords = ContactLead::getRecordList();
-        $getDemoLeadRecords = GetdemoLead::getRecordList();
         
-        return view('shiledcmstheme::powerpanel.dashboard.dashboard', compact('leads', 'leadsCount', 'approvals', 'breadcrumb', 'formBuilderLead', 'dashboardWidgetSettings','contactLeadRecords','getDemoLeadRecords'));
+        return view('shiledcmstheme::powerpanel.dashboard.dashboard', compact('leads', 'leadsCount', 'approvals', 'breadcrumb', 'formBuilderLead', 'dashboardWidgetSettings'));
     }
 
     public function ajaxcall()
