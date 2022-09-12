@@ -114,33 +114,88 @@ class ReferearnController extends PowerpanelController
         return Excel::download(new ReferearnLeadExport, Config::get('Constant.SITE_NAME') . '-' . trans("referearn::template.referearnsModule.newslettersLeads") . '-' . date("dmy-h:i") . '.xlsx');
     }
 
-    public function tableData($value)
+    public function tableData($value, $page=false)
     {
 
         // Checkbox
         $checkbox = view('powerpanel.partials.checkbox', ['name'=>'delete[]', 'value'=>$value->id])->render();
 
         $name = '';
-        if (!empty($value->varName)) {
-            $name .= $value->varName;
-        } else {
-            $name .= '-';
-        }
-
-        if (!empty($value->varEmail)) {
-            $LEmail = MyLibrary::getDecryptedString($value->varEmail);
-        } else {
-            $LEmail = '-';
-        }
+        $details = '';
+        $label = '';
+        $FullName = (!empty($value->	varName) ? $value->	varName  : '');
+        $Email = (!empty($value->varEmailId) ? MyLibrary::decryptLatest($value->varEmailId)  : '');
+        $ReferralFullNameme = (!empty($value->varReferralFullName) ? $value->varReferralFullName  : '');
+        $ReferralEmailId = (!empty($value->varReferralEmailId) ? MyLibrary::decryptLatest($value->varReferralEmailId)  : '');
+        $ReferralPhoneNumber = (!empty($value->varReferralPhoneNumber) ? MyLibrary::decryptLatest($value->varReferralPhoneNumber)  : '');
+        $BusinessType = (!empty($value->varBusinessType) ? $value->varBusinessType  : '');
+        $LookingForPOS = (!empty($value->varLookingForPOS) ? $value->varLookingForPOS  : '');
+          
         $isSubscribed = (isset($value->chrSubscribed) && !empty($value->chrSubscribed)) ? $value->chrSubscribed : "N";
         $ipAdress = (isset($value->varIpAddress) && !empty($value->varIpAddress)) ? $value->varIpAddress : "-";
+
+        if(!empty($ReferralPhoneNumber)){
+            $label .= '<b>Referral\'s Phone  :- </b>'.$ReferralPhoneNumber.'<br>';
+        }
+        if(!empty($BusinessType)){
+            $BusinessTypeArr = [
+                "Quick_Serve" 			=> "Quick-Serve",
+                "Restaurant_/_Bar"		=> "Restaurant / Bar",
+                "Retail"				=> "Retail",
+                "Bakery"				=> "Bakery",
+                "Coffee_Shop" 			=> "Coffee Shop",
+                "Concessions_/_Snacks" 	=> "Concessions / Snacks",
+                "Food_Truck"			=> "Food Truck",
+                "Ice_Cream_/_Yogurt" 	=> "Ice Cream / Yogurt",
+                "Juice_Bar"				=> "Juice Bar",
+                "Limited-Service_Restaurant" => "Limited-Service Restaurant",
+                "Fine_Dining"			=> "Fine Dining",
+                "Bar_and_Lounge"		=> "Bar and Lounge",
+                "Pizza"					=> "Pizza",
+                "Convenience_Store"		=> "Convenience Store",
+                "Liquor_Store"			=> "Liquor Store",
+                "Grocery_Store"			=> "Grocery Store",
+                "Other"					=> "Other"
+            ];
+            $BusinessTypeList = explode(',',$BusinessType);
+            $BusinessTypeListArr = array();
+            foreach($BusinessTypeList as $BusinessTypeA){
+                $BusinessTypeListArr[] = $BusinessTypeArr[$BusinessTypeA];
+            }
+            $BusinessTypeDisplay = implode(", ",$BusinessTypeListArr);
+            $label .= '<b>Business Type :- </b>'.$BusinessTypeDisplay.'<br>';
+        }
+        if(!empty($LookingForPOS)){
+            $LookingForPOSArr = [
+                "Immediately"   => "Immediately",
+                "Immediatel"   => "Immediately",
+                "1"             => "1 Month",
+                "2"             => "2 Months",
+                "3-6"             => "3-6 Months",
+                "6+"            => "Greater Than 6 Months"
+            ];          
+            $label .= '<b>POS :- </b>'.$LookingForPOSArr[trim($LookingForPOS)].'<br>';
+        }
+
+        $details .= '<div class="pro-act-btn">';
+        if($page == 'dashboard') {
+            $details .= '<a href="javascript:void(0)" class="" onclick="return hs.htmlExpand(this,{width:300,headingText:\'Contents\',wrapperClassName:\'titlebar\',showCredits:false});"><i class="ri-feedback-line fs-24 body-color"></i></a>';
+        } else {
+            $details .= '<a href="javascript:void(0)" class="" onclick="return hs.htmlExpand(this,{width:300,headingText:\'Contents\',wrapperClassName:\'titlebar\',showCredits:false});"><i class="ri-mail-open-line fs-16"></i></a>';
+        }
+        $details .= '<div class="highslide-maincontent">' . nl2br($label) . '</div>';
+        $details .= '</div>';
 
 
         $receivedDate = '<span align="left" data-bs-toggle="tooltip" data-bs-placement="bottom" title="'.date(Config::get("Constant.DEFAULT_DATE_FORMAT").' '.Config::get("Constant.DEFAULT_TIME_FORMAT"), strtotime($value->created_at)).'">'.date(Config::get('Constant.DEFAULT_DATE_FORMAT'), strtotime($value->created_at)).'</span>';
 
         $records = array(
             $checkbox,
-            $LEmail,
+            $FullName,
+            $Email,
+            $ReferralFullNameme,
+            $ReferralEmailId,
+            $details,
             $isSubscribed,
             $ipAdress,
             $receivedDate

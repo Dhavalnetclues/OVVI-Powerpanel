@@ -198,7 +198,10 @@ return [
      'referearnsModule'            => [
         'manageReferearnLeads' => 'Manage Refer & Earn Leads',
         'user'                  => 'User',
-        'email'                  => 'Email',
+        'name'                  => 'Name',
+        'email'                 => 'Email',
+        'referralname'          => 'Referral\'s Name',
+        'referralemail'         => 'Referral\'s Email',
         'subscribed'            => 'Subscribed',
         'export'                => 'Export',
         'noExport'              => 'No Records to export!',

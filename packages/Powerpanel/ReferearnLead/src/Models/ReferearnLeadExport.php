@@ -1,13 +1,13 @@
 <?php
-namespace Powerpanel\Referearn\Models;
-use Powerpanel\Referearn\Models\Referearn;
+namespace Powerpanel\ReferearnLead\Models;
+use Powerpanel\ReferearnLead\Models\ReferearnLead;
 use Illuminate\Contracts\View\View;
 use Maatwebsite\Excel\Concerns\FromView;
 use Maatwebsite\Excel\Concerns\ShouldAutoSize;
 use Request;
 use Config;
 
-class ReferearnExport implements FromView, ShouldAutoSize
+class ReferearnLeadExport implements FromView, ShouldAutoSize
 {
     public function view(): View
     {
@@ -18,13 +18,13 @@ class ReferearnExport implements FromView, ShouldAutoSize
                 $selectedIds = false;
             }
             //$filterArr['searchFilter'] = !empty(Request::get('searchValue')) ? Request::get('searchValue') : '';
-            $arrResults = Referearn::getListForExport($selectedIds);
+            $arrResults = ReferearnLead::getListForExport($selectedIds);
         } else {
-            $arrResults = Referearn::getListForExport();
+            $arrResults = ReferearnLead::getListForExport();
         }
-
+    
         if (count($arrResults) > 0) {
-            return view('referearnlead::powerpanel.excel_format', ['referearnLeads' => $arrResults]);
+            return view('referearn::powerpanel.excel_format', ['referearnLead' => $arrResults]);
         }
     }
 

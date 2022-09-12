@@ -10,11 +10,15 @@ class ReferearnLead extends Model
 	protected $fillable = [
 		'id',
 		'varName',
-		'varEmail',
-		'VarToken',
+		'varEmailId',
+		'varReferralFullName',
+        'varReferralEmailId',
+        'varReferralPhoneNumber',
+        'varBusinessType',
+        'varLookingForPOS',
 		'chrPublish',
 		'chrDelete',
-		'chrSubscribed',
+		'varMessage',
 		'varIpAddress',
 		'created_at',
 		'updated_at'
@@ -76,7 +80,8 @@ class ReferearnLead extends Model
    */
   public static function getRecordList($filterArr=false){
     $response = false;
-    $moduleFields=[ 'id', 'varName','varEmail','chrSubscribed','VarToken','varIpAddress','chrPublish','created_at','updated_at'];
+    $moduleFields=[ 'id', 'varName','varEmailId','varMessage','varReferralFullName', 'varReferralEmailId',
+    'varReferralPhoneNumber','varBusinessType','varLookingForPOS','varIpAddress','chrPublish','created_at','updated_at'];
     $response = Self::getPowerPanelRecords($moduleFields)
     ->deleted()
     ->filter($filterArr)
@@ -85,12 +90,12 @@ class ReferearnLead extends Model
   }
  public static function checkUnSubscriberExist($email) {
         $response = false;
-        $moduleFields = ['varEmail'];
+        $moduleFields = ['varEmailId'];
         $query = self::select($moduleFields)
                 ->checkEmail($email)
                 ->where('chrPublish', '=', 'Y')
                 ->where('chrDelete', '=', 'N')
-                ->where('chrSubscribed', '=', 'N')
+                ->where('varMessage', '=', 'N')
                 ->get();
         if (!empty($query) && $query->count() > 0) {
             $response = true;
@@ -105,7 +110,7 @@ class ReferearnLead extends Model
    */
   public static function getListForExport($selectedIds=false){
     $response = false;
-    $moduleFields=[ 'varName','varEmail','chrSubscribed','VarToken','chrPublish','varIpAddress','created_at'];
+    $moduleFields=[ 'varName','varEmailId', 'varReferralEmailId','varReferralPhoneNumber','varBusinessType','varLookingForPOS','varMessage','varReferralFullName','chrPublish','varIpAddress','created_at'];
     $query = Self::getPowerPanelRecords($moduleFields)->deleted();
     if(!empty($selectedIds) && count($selectedIds) > 0){
       $query->checkMultipleRecordId($selectedIds);
@@ -143,7 +148,7 @@ class ReferearnLead extends Model
       return $query->where(['chrDelete' => 'N']);
   }
  function scopecheckToken($query, $id, $Token) {
-        return $query->where('VarToken', $Token)->where('id', $id);
+        return $query->where('varReferralFullName', $Token)->where('id', $id);
     }
 
   /**
@@ -153,7 +158,7 @@ class ReferearnLead extends Model
    * @author  NetQuick
    */
   function scopeCheckEmail($query,$email) {
-      return $query->where(['varEmail' => $email]);
+      return $query->where(['varEmailId' => $email]);
   }
 
   /**
@@ -167,7 +172,7 @@ class ReferearnLead extends Model
       return $query->whereIn('id',$Ids);
   }
  function scopeCheckRecordId_unsubscribe($query, $id) {
-        return $query->where('id', $id)->where('chrSubscribed', 'Y');
+        return $query->where('id', $id)->where('varMessage', 'Y');
     }
    /**
    * This method handle order by query
@@ -202,7 +207,7 @@ class ReferearnLead extends Model
 
         if(isset($filterArr['searchFilter']) && !empty($filterArr['searchFilter']))
         {
-            $data = $query->where('varEmail',MyLibrary::getEncryptedString($filterArr['searchFilter']));
+            $data = $query->where('varEmailId',MyLibrary::getEncryptedString($filterArr['searchFilter']));
         }
 
         if (!empty($filterArr['start']) && $filterArr['start'] != ' ') {
@@ -225,10 +230,10 @@ class ReferearnLead extends Model
 
   public static function checkSubscriberExist($email){
     $response = false;
-    $moduleFields=[ 'varEmail'];
+    $moduleFields=[ 'varEmailId'];
     $query=self::select($moduleFields)
                     ->checkEmail($email)
-            ->where(['chrSubscribed' => 'Y'])
+            ->where(['varMessage' => 'Y'])
                     ->get();
     if(!empty($query) && $query->count() > 0){
       $response = true;

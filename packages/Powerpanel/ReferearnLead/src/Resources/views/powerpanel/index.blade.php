@@ -38,14 +38,14 @@
                                         <div class="mb-3">
                                             <div class="input-group input-daterange" id="newsLetterRange">
                                                 <span class="input-group-text"><i class="ri-calendar-line fs-13"></i></span>
-                                                <input type="text" class="form-control" id="start_date" name="start_date" placeholder="{{ trans('newsletterlead::template.common.fromdate') }}"  data-provider="flatpickr" data-date-format="{{Config::get('Constant.DEFAULT_DATE_FORMAT')}}">
+                                                <input type="text" class="form-control" id="start_date" name="start_date" placeholder="{{ trans('referearn::template.common.fromdate') }}"  data-provider="flatpickr" data-date-format="{{Config::get('Constant.DEFAULT_DATE_FORMAT')}}">
                                             </div>
                                         </div>
 
                                         <div class="mb-3">
                                             <div class="input-group input-daterange" id="newsLetterRange">
                                                 <span class="input-group-text"><i class="ri-calendar-line fs-13"></i></span>
-                                                <input type="text" class="form-control" id="end_date" name="end_date" placeholder="{{ trans('newsletterlead::template.common.todate') }}"  data-provider="flatpickr" data-date-format="{{Config::get('Constant.DEFAULT_DATE_FORMAT')}}">
+                                                <input type="text" class="form-control" id="end_date" name="end_date" placeholder="{{ trans('referearn::template.common.todate') }}"  data-provider="flatpickr" data-date-format="{{Config::get('Constant.DEFAULT_DATE_FORMAT')}}">
                                                 {{-- <button class="btn btn-outline-primary border-outline-light btn-rh-search" id="newsLetterRange" type="button"><i class="ri-search-line fs-13"></i></button> --}}
                                             </div>
                                         </div>
@@ -81,14 +81,22 @@
                                 $tablearray = [
                                     'DataTableTab'=>[
                                         'ColumnSetting'=>[
-                                            ['Identity_Name'=>'email','TabIndex'=>'1','Name'=>"Email"],
-                                            ['Identity_Name'=>'subscribed','TabIndex'=>'2','Name'=>"Subscribed"],
-                                            ['Identity_Name'=>'ip','TabIndex'=>'3','Name'=>"IP"],
-                                            ['Identity_Name'=>'date','TabIndex'=>'4','Name'=>"Received Date"],
+                                            ['Identity_Name'=>'name','TabIndex'=>'1','Name'=>"Email"],
+                                            ['Identity_Name'=>'email','TabIndex'=>'2','Name'=>"Email"],
+                                            ['Identity_Name'=>'referralname','TabIndex'=>'3','Name'=>"Email"],
+                                            ['Identity_Name'=>'referralemail','TabIndex'=>'4','Name'=>"Email"],
+                                            ['Identity_Name'=>'detail','TabIndex'=>'5','Name'=>"Email"],
+                                            ['Identity_Name'=>'message','TabIndex'=>'6','Name'=>"Subscribed"],
+                                            ['Identity_Name'=>'ip','TabIndex'=>'7','Name'=>"IP"],
+                                            ['Identity_Name'=>'date','TabIndex'=>'8','Name'=>"Received Date"],
                                         ],
                                         'DataTableHead'=>[
+                                            ['Title'=>"Name",'Align'=>'left'],
                                             ['Title'=>"Email",'Align'=>'left'],
-                                            ['Title'=>"Subscribed",'Align'=>'left'],
+                                            ['Title'=>"Referral's Name ",'Align'=>'left'],
+                                            ['Title'=>"Referral's Email",'Align'=>'left'],
+                                            ['Title'=>"Details",'Align'=>'left'],
+                                            ['Title'=>"Message",'Align'=>'left'],
                                             ['Title'=>"IP",'Align'=>'left'],
                                             ['Title'=>"Received Date",'Align'=>'center']
                                         ]
@@ -96,7 +104,7 @@
                                 ];
                             @endphp
 
-                            @include('powerpanel.partials.datatable-view',['ModuleName'=>'newsletterlead','Permission_Delete'=>'newsletter-lead-delete','tablearray'=>$tablearray,'userIsAdmin'=>$userIsAdmin,'Module_ID'=>Config::get('Constant.MODULE.ID')])
+                            @include('powerpanel.partials.datatable-view',['ModuleName'=>'newsletterlead','Permission_Delete'=>'referearn-lead-delete','tablearray'=>$tablearray,'userIsAdmin'=>$userIsAdmin,'Module_ID'=>Config::get('Constant.MODULE.ID')])
 
                         </div>
                     </div>
@@ -127,11 +135,11 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">{{ trans('newsletterlead::template.common.alert') }}</h5>
+                    <h5 class="modal-title">{{ trans('referearn::template.common.alert') }}</h5>
                     <button type="button" class="btn-close fs-10" data-bs-dismiss="modal" aria-label="Close"> </button>
                 </div>
                 <div class="modal-body">
-                    <h5 class="mb-2">{{ trans('newsletterlead::template.newslettersModule.noExport') }}</h5>
+                    <h5 class="mb-2">{{ trans('referearn::template.newslettersModule.noExport') }}</h5>
                     <div class="pt-2">
                         <button type="button" class="btn btn-primary bg-gradient waves-effect waves-light btn-label" data-bs-dismiss="modal">
                             <div class="d-flex">
@@ -139,7 +147,7 @@
                                     <i class="ri-check-line label-icon align-middle fs-20 me-2"></i>
                                 </div>
                                 <div class="flex-grow-1">
-                                    {{ trans('newsletterlead::template.common.ok') }}
+                                    {{ trans('referearn::template.common.ok') }}
                                 </div>
                             </div>
                         </button>
@@ -153,20 +161,20 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">{{ trans('newsletterlead::template.common.alert') }}</h5>
+                    <h5 class="modal-title">{{ trans('referearn::template.common.alert') }}</h5>
                     <button type="button" class="btn-close fs-10" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-sm-12">
-                            <h5 class="mb-2">{{ trans('newsletterlead::template.newslettersModule.recordsExport') }}</h5>
+                            <h5 class="mb-2">{{ trans('referearn::template.newslettersModule.recordsExport') }}</h5>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" value="selected_records" id="selected_records" name="export_type">
-                                <label for="selected_records">{{ trans('newsletterlead::template.newslettersModule.selectedRecords') }}</label>
+                                <label for="selected_records">{{ trans('referearn::template.newslettersModule.selectedRecords') }}</label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" value="all_records" id="all_records" name="export_type" checked>
-                                <label for="all_records">{{ trans('newsletterlead::template.newslettersModule.allRecords') }}</label>
+                                <label for="all_records">{{ trans('referearn::template.newslettersModule.allRecords') }}</label>
                             </div>
                         </div>
                         <div class="col-sm-12 mt-3">
@@ -176,7 +184,7 @@
                                         <i class="ri-check-line label-icon align-middle fs-20 me-2"></i>
                                     </div>
                                     <div class="flex-grow-1">
-                                        {{ trans('newsletterlead::template.common.ok') }}
+                                        {{ trans('referearn::template.common.ok') }}
                                     </div>
                                 </div>
                             </button>
@@ -191,11 +199,11 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">{{ trans('newsletterlead::template.common.alert') }}</h5>
+                    <h5 class="modal-title">{{ trans('referearn::template.common.alert') }}</h5>
                     <button type="button" class="btn-close fs-10" data-bs-dismiss="modal" aria-label="Close"> </button>
                 </div>
                 <div class="modal-body">
-                    <h5 class="mb-2">{{ trans('newsletterlead::template.newslettersModule.leastRecord') }}</h5>
+                    <h5 class="mb-2">{{ trans('referearn::template.newslettersModule.leastRecord') }}</h5>
                     <div class="pt-2">
                         <button type="button" class="btn btn-primary bg-gradient waves-effect waves-light btn-label" data-bs-dismiss="modal">
                             <div class="d-flex">
@@ -203,7 +211,7 @@
                                     <i class="ri-check-line label-icon align-middle fs-20 me-2"></i>
                                 </div>
                                 <div class="flex-grow-1">
-                                    {{ trans('newsletterlead::template.common.ok') }}
+                                    {{ trans('referearn::template.common.ok') }}
                                 </div>
                             </div>
                         </button>

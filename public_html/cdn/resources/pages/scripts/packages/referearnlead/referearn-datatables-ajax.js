@@ -71,12 +71,16 @@ var TableDatatablesAjax = function() {
                     { "data": 1, "class": 'text-left', "bSortable": false },
                     { "data": 2, "class": 'text-center', "name": 'chrSubscribed', "bSortable": false },
                     { "data": 3, "class": 'text-center', "bSortable": false },
-                    { "data": 4, "class": 'text-center', "name": 'created_at' }],
+                    { "data": 4, "class": 'text-center', "bSortable": false },
+                    { "data": 5, "class": 'text-center', "bSortable": false },
+                    { "data": 6, "class": 'text-center', "bSortable": false },
+                    { "data": 7, "class": 'text-center', "bSortable": false },
+                    { "data": 8, "class": 'text-center', "name": 'created_at' }],
                 "ajax": {
                     "url": window.site_url + "/powerpanel/referearn-lead/get_list", // ajax source
                 },
                 "order": [
-                    [4, "desc"]
+                    [8, "desc"]
                 ],
             }
         });
