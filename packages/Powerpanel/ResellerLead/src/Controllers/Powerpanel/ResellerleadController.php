@@ -115,7 +115,7 @@ class ResellerleadController extends PowerpanelController {
         }
         
         $Reseller_details = $label = '';
-        $StreetAddress = (!empty($value->varOnStreetAddress) ? $value->varOnStreetAddress  : '');
+        $StreetAddress = (!empty($value->varAddress) ? $value->varAddress  : '');
         $Country = (!empty($value->country) ? $value->country  : '');
         $State = (!empty($value->state) ? $value->state  : '');
         $City = (!empty($value->city) ? $value->city  : '');
