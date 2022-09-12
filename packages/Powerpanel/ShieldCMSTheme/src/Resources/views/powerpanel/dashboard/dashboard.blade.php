@@ -309,13 +309,13 @@
                                             <thead class="table-light">
                                                 <tr role="row">
                                                     <th align="center"><input type="checkbox" class="form-check-input multiSelectList"></th>
-                                                    <th align="">Title</th>
-                                                    <th align="">Email</th>
-                                                    <th align="">Phone Number</th>
-                                                    <th align="">Business Name</th>
-                                                    <th align="">Message</th>
-                                                    <th align="">IP Address</th>
-                                                    <th align="">Date</th>
+                                                    <th align="left">Title</th>
+                                                    <th align="left">Email</th>
+                                                    <th align="left">Phone Number</th>
+                                                    <th align="left">Business Name</th>
+                                                    <th align="left">Message</th>
+                                                    <th align="left">IP Address</th>
+                                                    <th align="left">Date</th>
                                                 </tr>
                                             </thead>
                                             <tbody></tbody>
@@ -346,14 +346,14 @@
                                             <thead> <!-- class="text-muted table-light" -->
                                                 <tr>
                                                    <th align="center"><input type="checkbox" class="form-check-input multiSelectList"></th>
-                                                    <th align="">Title</th>
-                                                    <th align="">Email</th>
-                                                    <th align="">Phone Number</th>
-                                                    <th align="">Business Name</th>
-                                                    <th align="">Message</th>
-                                                    <th align="">IP Address</th>
-                                                    <th align="">Visited Page</th>
-                                                    <th align="">Date</th>
+                                                    <th align="left">Title</th>
+                                                    <th align="left" >Email</th>
+                                                    <th align="left">Phone Number</th>
+                                                    <th align="left">Business Name</th>
+                                                    <th align="left">Message</th>
+                                                    <th align="left">IP Address</th>
+                                                    <th align="left">Visited Page</th>
+                                                    <th align="left">Date</th>
                                                 </tr>
                                             </thead>
                                             <tbody></tbody><!-- end tbody -->
@@ -381,7 +381,15 @@
                                         <table id="resellerLeads_ajax" class="table table-hover table-centered align-middle table-nowrap mb-0 lastchild-border-0">
                                             <thead> <!-- class="text-muted table-light" -->
                                                 <tr>
-                                                  <th></th>
+                                                    <th align="center"><input type="checkbox" class="form-check-input multiSelectList"></th>
+                                                    <th align="left">Name</th>
+                                                    <th align="left">Email</th>
+                                                    <th align="left">Phone Number</th>
+                                                    <th align="left">Company</th>
+                                                    <th align="left">Reseller Detail</th>
+                                                    <th align="left">Message</th>
+                                                    <th align="left">IP</th>
+                                                    <th align="left">Received Date</th>
                                                 </tr>
                                             </thead>
                                             <tbody></tbody><!-- end tbody -->
@@ -391,7 +399,7 @@
                                 @if(isset($leads) && !empty($leads) && count($leads) > 0 )
                                     <div class="card-footer">
                                         <div class="justify-content-end">
-                                            <a class="btn btn-soft-dark btn-sm" href="{{ url('powerpanel/contact-us') }}" title="{{ trans('template.powerPanelDashboard.seeAllRecords') }}"><i class="ri-file-list-3-line align-middle"></i> {{ trans('template.powerPanelDashboard.seeAllRecords') }}</a>
+                                            <a class="btn btn-soft-dark btn-sm" href="{{ url('powerpanel/reseller-leads') }}" title="{{ trans('template.powerPanelDashboard.seeAllRecords') }}"><i class="ri-file-list-3-line align-middle"></i> {{ trans('template.powerPanelDashboard.seeAllRecords') }}</a>
                                         </div>
                                     </div>
                                 @endif
@@ -403,10 +411,9 @@
                         <div class={{ (isset($dashboardWidgetSettings->widget_conatctleads) && $dashboardWidgetSettings->widget_conatctleads->widget_display=='Y') ? 'col-xl-6' : 'col-xl-12' }}>
                             <div class="card inapproval-card">
                                 <div class="card-header align-items-center d-flex">
-                                    <h4 class="card-title mb-0 flex-grow-1"  title="In Approval">In Approval demol</h4>
+                                    <h4 class="card-title mb-0 flex-grow-1"  title="In Approval">Order Leads</h4>
                                     <div class="flex-shrink-0">
                                         <div class="dash-approve-search pull-right">
-                                            <!-- <input type="search" class="form-control form-control-solid placeholder-no-fix" placeholder="Search" id="searchfilter"> -->
                                             <div class="cm-search">
                                                 <input type="search" class="form-control form-control-solid placeholder-no-fix" placeholder="Search" id="searchfilter">
                                                 <span class="open-search cursor-pointer"><i id="clearSearchFilter" class="ri-search-2-line fs-20"></i></span>
@@ -416,41 +423,30 @@
                                 </div><!-- end card header -->
                                 <div class="card-body" data-simplebar style="height: 360px;">
                                     <div class="table-responsive"> <!-- table-card -->
-                                        <table class="table table-hover table-centered align-middle table-nowrap mb-0 lastchild-border-0" id="approvals">
+                                        <table id="orderLeads_ajax" class="table table-hover table-centered align-middle table-nowrap mb-0 lastchild-border-0" >
                                             <thead> <!-- class="text-muted table-light" -->
                                                 <tr>
-                                                    <th scope="col">ID</th>
-                                                    <th scope="col" align="left" title="Module"> Module </th>
-                                                    <!-- <th scope="col" align="left" title="View"> View </th> -->
-                                                    <th scope="col" align="left" title="Date &amp; Time"> Date </th>
+                                                    <th>ID</th>
+                                                    <th align="left">Business</th>
+                                                    <th align="left"> Full Name </th>
+                                                    <th align="left"> Email </th>
+                                                    <th align="left"> Business Detail </th>
+                                                    <th align="left"> Business Information </th>
+                                                    <th align="left"> IP </th>
+                                                    <th align="left"> Received Date/Time </th>
                                                 </tr>
                                             </thead>
-                                            <tbody>
-                                                @if($approvals->isEmpty())
-                                                    <tr><td align="center" colspan="4">No data available</td></tr>
-                                                @else
-                                                    @foreach ($approvals as $key=>$approval)
-                                                        @if(auth()->user()->can($approval->module->varModuleName.'-reviewchanges'))
-                                                        <tr>
-                                                            <td><span class="fw-medium link-primary"><a class="body-color" href="{{ url('powerpanel/'.$approval->module->varModuleName) }}?tab=A" data-bs-toggle="tooltip" data-bs-placement="bottom" title="{!! $approval->module->varTitle !!}">#{!! $approval->id !!}</a></span></td>
-                                                            <td><a class="body-color" href="{{ url('powerpanel/'.$approval->module->varModuleName.'?tab=A') }}" data-bs-toggle="tooltip" data-bs-placement="bottom" title="{!! $approval->module->varTitle !!}">{!! $approval->module->varTitle !!}</a></td>
-                                                            <td align="left" data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{ date(Config::get('Constant.DEFAULT_DATE_FORMAT').'  '.Config::get('Constant.DEFAULT_TIME_FORMAT'), strtotime($approval->created_at)) }}">{{ date(Config::get('Constant.DEFAULT_DATE_FORMAT'), strtotime($approval->created_at)) }}</td>
-                                                        </tr>
-                                                        @else
-                                                        <tr>
-                                                            <td><span class="fw-medium link-primary">#{!! $approval->id !!}</span></td>
-                                                            <td><a href="{{ url('powerpanel/workflow') }}" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Create workflow for {!! $approval->module->varTitle !!}">{!! $approval->module->varTitle !!} <span class="badge badge-pill badge-danger">No Workflow</span></a></td>
-                                                            <td align="left" data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{ date(Config::get('Constant.DEFAULT_DATE_FORMAT').'  '.Config::get('Constant.DEFAULT_TIME_FORMAT'), strtotime($approval->created_at)) }}">
-                                                                {{ date(Config::get('Constant.DEFAULT_DATE_FORMAT'), strtotime($approval->created_at)) }}
-                                                            </td>
-                                                        </tr>
-                                                        @endif
-                                                    @endforeach
-                                                @endif
-                                            </tbody><!-- end tbody -->
+                                            <tbody></tbody><!-- end tbody -->
                                         </table><!-- end table -->
                                     </div>
                                 </div><!-- end card-body -->
+                                @if(isset($leads) && !empty($leads) && count($leads) > 0 )
+                                    <div class="card-footer">
+                                        <div class="justify-content-end">
+                                            <a class="btn btn-soft-dark btn-sm" href="{{ url('powerpanel/order-lead') }}" title="{{ trans('template.powerPanelDashboard.seeAllRecords') }}"><i class="ri-file-list-3-line align-middle"></i> {{ trans('template.powerPanelDashboard.seeAllRecords') }}</a>
+                                        </div>
+                                    </div>
+                                @endif
                             </div><!-- end card -->
                         </div> <!-- .col-->
                         @endif 
@@ -698,7 +694,7 @@ var getDemoDatatablesAjax = function () {
             autoclose: true
         });
     }
-    var handleRecords = function () {
+    var handlegetDemoRecords = function () {
         grid = new Datatable();
         var ip = '';
         var totalRec;
@@ -803,7 +799,7 @@ var getDemoDatatablesAjax = function () {
         init: function () {
             $.fn.DataTable.ext.pager.numbers_length = 4;
             initPickers();
-            handleRecords();
+            handlegetDemoRecords();
         }
     };
 }();
@@ -829,7 +825,7 @@ var ResellerLeadAjax = function () {
             autoclose: true
         });
     }
-    var handleRecords = function () {
+    var handleResellerRecords = function () {
         grid = new Datatable();
         var ip = '';
         var totalRec;
@@ -867,30 +863,31 @@ var ResellerLeadAjax = function () {
                 //"dom": "<'row'<'col-md-8 col-sm-12'pli><'col-md-4 col-sm-12'<'table-group-actions pull-right'>>r>t<'row'<'col-md-8 col-sm-12'pli><'col-md-4 col-sm-12'>>",
                 "deferRender": true,
                 "stateSave": true, // save datatable state(pagination, sort, etc) in cookie.
-                "lengthMenu": [
-                    [10, 20, 50, 100],
-                    [10, 20, 50, 100] // change per page values here
-                ],
-                "pageLength": 100, // default record count per page
+                // "lengthMenu": [
+                //     [10, 20, 50, 100],
+                //     [10, 20, 50, 100] // change per page values here
+                // ],
+                "pageLength": 20, // default record count per page
+                "lengthChange": false,
+                "pagingType": "simple_numbers",
                 //Code for sorting
                 "serverSide": true,
                 "columns": [
                     {"data": 0, className: 'td_checker', "bSortable": false},
                     {"data": 1, className: 'text-left', "name": 'varTitle', "bSortable": true},
-                    {"data": 2, className: 'text-left', "name": 'varPhoneNumber', "bSortable": true},
                     {"data": 3, className: 'text-center', "name":'varEmailId',  "bSortable": true},
+                    {"data": 2, className: 'text-left', "name": 'varPhoneNumber', "bSortable": true},
                     {"data": 4, className: 'text-center', "name":'varCompaney', "bSortable": true},
                     {"data": 5, className: 'text-center', "bSortable": true},
                     {"data": 6, className: 'text-center', "bSortable": true},
-                    {"data": 7, className: 'text-center', "bSortable": true},
-                    {"data": 8, className: 'text-center', "name": 'varIpAddress'},
-                    {"data": 9, className: 'text-center', "name": 'created_at', "bSortable": true},
+                    {"data": 7, className: 'text-center', "name": 'varIpAddress'},
+                    {"data": 8, className: 'text-center', "name": 'created_at', "bSortable": true},
                 ],
                 "ajax": {
                     "url": window.site_url + "/powerpanel/reseller-leads/get_list", // ajax source
                 },
                 "order": [
-                    [9, "desc"]
+                    [8, "desc"]
                 ]// set first column as a default sort by asc
             }
         });
@@ -904,7 +901,7 @@ var ResellerLeadAjax = function () {
         //main function to initiate the module
         init: function () {
             initPickers();
-            handleRecords();
+            handleResellerRecords();
         }
     };
 }();
@@ -918,4 +915,187 @@ jQuery(document).ready(function () {
 });
 </script>
 <!-- Reseller Lead Script End -->
+<!-- Order lead script start -->
+<script type="text/javascript">
+    var gridRows = 0;
+    var grid = '';
+    var OrderLeadAjax = function () {
+    var handleOrderLeadRecords = function () {
+        var action = $('#category').val();
+        grid = new Datatable();
+        grid.setAjaxParam("catValue", action);
+        var totalRec;
+        grid.init({
+            src: $("#orderLeads_ajax"),
+            onSuccess: function (grid, response) {
+                gridRows = response.recordsTotal;
+                if (response.recordsTotal < 1) {
+                    $('.deleteMass').hide();
+                    $("#menu1.tab-pane .notabreocrd").show();
+                                        $("#menu1.tab-pane .withrecords").hide();
+                } else {
+                    $('.deleteMass').show();
+                    $("#menu1.tab-pane .notabreocrd").hide();
+                                        $("#menu1.tab-pane .withrecords").show();
+                }
+                if(response.recordsTotal < 20) {
+                    $('.gridjs-pages').hide();
+                } else {
+                    $('.gridjs-pages').show();
+                }
+                if (response.newRecordCount > 0) {
+                    $('.newcounter').text(response.newRecordCount).show();
+                } else {
+                    $('.newcounter').hide();
+                }
+            totalRec = response.recordsTotal;
+                // grid:        grid object
+                // response:    json object of server side ajax response
+                // execute some code after table records loaded
+            },
+            onError: function (grid) {
+                // execute some code on network or other general error
+            },
+            onDataLoad: function (grid) {
+                // execute some code on ajax data load
+                // $('.make-switch').bootstrapSwitch();
+            },
+            loadingMessage: 'Loading...',
+            dataTable: {// here you can define a typical datatable settings from http://datatables.net/usage/options
+                // Uncomment below line("dom" parameter) to fix the dropdown overflow issue in the datatable cells. The default datatable layout
+                // setup uses scrollable div(table-scrollable) with overflow:auto to enable vertical scroll(see: assets/global/scripts/datatable.js).
+                // So when dropdowns used the scrollable div should be removed.
+                "dom": "t <'gridjs-footer' <'gridjs-pagination'i <'gridjs-pages'p>>>",
+                "deferRender": true,
+                // "stateSave": true, // save datatable state(pagination, sort, etc) in cookie.
+                // "lengthMenu": [
+                //     [10, 20, 50, 100],
+                //     [10, 20, 50, 100] // change per page values here
+                // ],
+                "pageLength": 20, // default record count per page
+                drawCallback:function(){
+                    var $api = this.api();
+                    var pages = $api.page.info().pages;
+                    var rows = $api.data().length;
+                    // if(pages<=1){
+                    //     $('.dataTables_info').css('display','none');
+                    //     $('.dataTables_paginate').css('display','none');
+                    // }
+                },
+                // Code for sorting
+                "serverSide": true,
+                "lengthChange": false,
+                "pagingType": "simple_numbers",
+                "language": {
+                    "info": '<div role="status" aria-live="polite" class="gridjs-summary">Showing <b>_START_</b> to <b>_END_</b> of <b>_TOTAL_</b> results</div>', // title="Page 1 of 2"
+                },
+                "columns": [
+                    {
+                        "data": 0,
+                        "class": 'text-center td_checker',
+                        "bSortable": false
+                    }, {
+                        "data": 1,
+                        "class": 'text-left mob-show_div',
+                        "name": 'varName',
+                        "bSortable": false
+                    }, {
+                        "data": 2,
+                        "class": 'text-left mob-show_div',
+                        "bSortable": false
+                    }, {
+                        "data": 3,
+                        "class": 'text-center',
+                        "bSortable": false
+                    }, 
+                     {
+                        "data": 4,
+                        "class": 'text-center',
+                        "bSortable": false
+                    }, 
+                     {
+                        "data": 5,
+                        "class": 'text-center',
+                        "bSortable": false
+                    }, 
+                    {
+                        "data": 6,
+                        "class": 'text-center',
+                        "name": 'varIpAddress',
+                        "bSortable": false
+                    }, {
+                        "data": 7,
+                        "class": 'text-center',
+                        "name": 'created_at'
+                    },],
+                "ajax": {
+                    "url": window.site_url + "/powerpanel/order-lead/get_list", // ajax source
+                },
+                'fnCreatedRow': function (nRow, aData, iDataIndex) {
+                    // $(nRow).attr('data-order', aData[5]);
+                },
+                "order": [
+                    [7, "desc"]
+                ]
+            }
+        });
+
+        $('#orderLeads_ajax tbody').on('click', '.moveDwn', function () {
+            var order = $(this).data('order');
+            exOrder = order + 1;
+            reorder(order, exOrder);
+        });
+        $('#orderLeads_ajax tbody').on('click', '.moveUp', function () {
+            var order = $(this).data('order');
+            exOrder = order - 1;
+            reorder(order, exOrder);
+        });
+
+        grid.setAjaxParam("customActionType", "group_action");
+        grid.clearAjaxParams();
+        grid.getDataTable().columns().iterator('column', function (ctx, idx) {
+            $(grid.getDataTable().column(idx).header()).append('<span class="sort-icon"/>');
+        });
+    }
+    return {
+        //main function to initiate the module
+        init: function () {
+            $.fn.DataTable.ext.pager.numbers_length = 4;
+            handleOrderLeadRecords();
+        }
+    };
+}();
+
+jQuery(document).ready(function () {
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-Token': $('input[name="_token"]').val()
+        }
+    });
+    OrderLeadAjax.init();
+    $("#hidefilter").show();
+});
+
+function reorder(curOrder, excOrder) {
+    var ajaxurl = site_url + '/powerpanel/order-lead/reorder';
+    $.ajax({
+        url: ajaxurl,
+        data: {
+            order: curOrder,
+            exOrder: excOrder
+        },
+        type: "POST",
+        dataType: "HTML",
+        success: function (data) {
+        },
+        complete: function () {
+            grid.getDataTable().ajax.reload(null, false);
+        },
+        error: function () {
+            console.log('error!');
+        }
+    });
+}
+</script>
+<!-- Order lead script end -->
 @endsection
