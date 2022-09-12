@@ -309,13 +309,13 @@
                                             <thead class="table-light">
                                                 <tr role="row">
                                                     <th align="center"><input type="checkbox" class="form-check-input multiSelectList"></th>
-                                                    <th align="">Title</th>
-                                                    <th align="">Email</th>
-                                                    <th align="">Phone Number</th>
-                                                    <th align="">Business Name</th>
-                                                    <th align="">Message</th>
-                                                    <th align="">IP Address</th>
-                                                    <th align="">Date</th>
+                                                    <th align="left">Title</th>
+                                                    <th align="left">Email</th>
+                                                    <th align="left">Phone Number</th>
+                                                    <th align="left">Business Name</th>
+                                                    <th align="left">Message</th>
+                                                    <th align="left">IP Address</th>
+                                                    <th align="left">Date</th>
                                                 </tr>
                                             </thead>
                                             <tbody></tbody>
@@ -346,14 +346,14 @@
                                             <thead> <!-- class="text-muted table-light" -->
                                                 <tr>
                                                    <th align="center"><input type="checkbox" class="form-check-input multiSelectList"></th>
-                                                    <th align="">Title</th>
-                                                    <th align="">Email</th>
-                                                    <th align="">Phone Number</th>
-                                                    <th align="">Business Name</th>
-                                                    <th align="">Message</th>
-                                                    <th align="">IP Address</th>
-                                                    <th align="">Visited Page</th>
-                                                    <th align="">Date</th>
+                                                    <th align="left">Title</th>
+                                                    <th align="left" >Email</th>
+                                                    <th align="left">Phone Number</th>
+                                                    <th align="left">Business Name</th>
+                                                    <th align="left">Message</th>
+                                                    <th align="left">IP Address</th>
+                                                    <th align="left">Visited Page</th>
+                                                    <th align="left">Date</th>
                                                 </tr>
                                             </thead>
                                             <tbody></tbody><!-- end tbody -->
@@ -381,7 +381,15 @@
                                         <table id="resellerLeads_ajax" class="table table-hover table-centered align-middle table-nowrap mb-0 lastchild-border-0">
                                             <thead> <!-- class="text-muted table-light" -->
                                                 <tr>
-                                                  <th></th>
+                                                    <th align="center"><input type="checkbox" class="form-check-input multiSelectList"></th>
+                                                    <th align="left">Name</th>
+                                                    <th align="left">Email</th>
+                                                    <th align="left">Phone Number</th>
+                                                    <th align="left">Company</th>
+                                                    <th align="left">Reseller Detail</th>
+                                                    <th align="left">Message</th>
+                                                    <th align="left">IP</th>
+                                                    <th align="left">Received Date</th>
                                                 </tr>
                                             </thead>
                                             <tbody></tbody><!-- end tbody -->
@@ -391,7 +399,7 @@
                                 @if(isset($leads) && !empty($leads) && count($leads) > 0 )
                                     <div class="card-footer">
                                         <div class="justify-content-end">
-                                            <a class="btn btn-soft-dark btn-sm" href="{{ url('powerpanel/contact-us') }}" title="{{ trans('template.powerPanelDashboard.seeAllRecords') }}"><i class="ri-file-list-3-line align-middle"></i> {{ trans('template.powerPanelDashboard.seeAllRecords') }}</a>
+                                            <a class="btn btn-soft-dark btn-sm" href="{{ url('powerpanel/reseller-leads') }}" title="{{ trans('template.powerPanelDashboard.seeAllRecords') }}"><i class="ri-file-list-3-line align-middle"></i> {{ trans('template.powerPanelDashboard.seeAllRecords') }}</a>
                                         </div>
                                     </div>
                                 @endif
@@ -418,14 +426,14 @@
                                         <table id="orderLeads_ajax" class="table table-hover table-centered align-middle table-nowrap mb-0 lastchild-border-0" >
                                             <thead> <!-- class="text-muted table-light" -->
                                                 <tr>
-                                                    <th scope="col">ID</th>
-                                                    <th scope="col" align="left" title="Module">Business</th>
-                                                    <th scope="col" align="left" title="Date &amp; Time"> Full Name </th>
-                                                    <th scope="col" align="left" title="Date &amp; Time"> Email </th>
-                                                    <th scope="col" align="left" title="Date &amp; Time"> Business Detail </th>
-                                                    <th scope="col" align="left" title="Date &amp; Time"> Business Information </th>
-                                                    <th scope="col" align="left" title="Date &amp; Time"> IP </th>
-                                                    <th scope="col" align="left" title="Date &amp; Time"> Received Date/Time </th>
+                                                    <th>ID</th>
+                                                    <th align="left">Business</th>
+                                                    <th align="left"> Full Name </th>
+                                                    <th align="left"> Email </th>
+                                                    <th align="left"> Business Detail </th>
+                                                    <th align="left"> Business Information </th>
+                                                    <th align="left"> IP </th>
+                                                    <th align="left"> Received Date/Time </th>
                                                 </tr>
                                             </thead>
                                             <tbody></tbody><!-- end tbody -->
@@ -855,30 +863,31 @@ var ResellerLeadAjax = function () {
                 //"dom": "<'row'<'col-md-8 col-sm-12'pli><'col-md-4 col-sm-12'<'table-group-actions pull-right'>>r>t<'row'<'col-md-8 col-sm-12'pli><'col-md-4 col-sm-12'>>",
                 "deferRender": true,
                 "stateSave": true, // save datatable state(pagination, sort, etc) in cookie.
-                "lengthMenu": [
-                    [10, 20, 50, 100],
-                    [10, 20, 50, 100] // change per page values here
-                ],
-                "pageLength": 100, // default record count per page
+                // "lengthMenu": [
+                //     [10, 20, 50, 100],
+                //     [10, 20, 50, 100] // change per page values here
+                // ],
+                "pageLength": 20, // default record count per page
+                "lengthChange": false,
+                "pagingType": "simple_numbers",
                 //Code for sorting
                 "serverSide": true,
                 "columns": [
                     {"data": 0, className: 'td_checker', "bSortable": false},
                     {"data": 1, className: 'text-left', "name": 'varTitle', "bSortable": true},
-                    {"data": 2, className: 'text-left', "name": 'varPhoneNumber', "bSortable": true},
                     {"data": 3, className: 'text-center', "name":'varEmailId',  "bSortable": true},
+                    {"data": 2, className: 'text-left', "name": 'varPhoneNumber', "bSortable": true},
                     {"data": 4, className: 'text-center', "name":'varCompaney', "bSortable": true},
                     {"data": 5, className: 'text-center', "bSortable": true},
                     {"data": 6, className: 'text-center', "bSortable": true},
-                    {"data": 7, className: 'text-center', "bSortable": true},
-                    {"data": 8, className: 'text-center', "name": 'varIpAddress'},
-                    {"data": 9, className: 'text-center', "name": 'created_at', "bSortable": true},
+                    {"data": 7, className: 'text-center', "name": 'varIpAddress'},
+                    {"data": 8, className: 'text-center', "name": 'created_at', "bSortable": true},
                 ],
                 "ajax": {
                     "url": window.site_url + "/powerpanel/reseller-leads/get_list", // ajax source
                 },
                 "order": [
-                    [9, "desc"]
+                    [8, "desc"]
                 ]// set first column as a default sort by asc
             }
         });
