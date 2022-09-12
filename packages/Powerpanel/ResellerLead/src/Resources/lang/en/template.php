@@ -212,7 +212,8 @@ return [
         'message' => 'Message',
         'ipAddress' => 'IP',
         'receivedDateTime' => 'Received Date/Time',
-        'getdemoLeads' => 'Getdemo Leads',
-        'business' => 'Business'
+        'resellerLeads' => 'Reseller Leads',
+        'company' => 'Company',
+        'resellerdetail' => 'Reseller Detail',
     ]
 ];

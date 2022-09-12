@@ -1,5 +1,5 @@
 {
-    "name": "Powerpanel/NewsletterLead",
+    "name": "Powerpanel/ReferearnLead",
     "description": "This is a powerpanel Newsletter Lead package",
     "type": "library",
     "license": "1.0.0.0",
@@ -12,7 +12,7 @@
     "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
-            "Powerpanel\\NewsletterLead\\": "/src"
+            "Powerpanel\\ReferearnLead\\": "/src"
         }
     },
     "require": {}

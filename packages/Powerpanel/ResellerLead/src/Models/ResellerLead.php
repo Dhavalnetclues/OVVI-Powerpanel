@@ -18,6 +18,7 @@ class ResellerLead extends Model {
         'varTitle',
         'varEmailId',
         'varPhoneNumber',
+        'varAddress',
         'varCompaney',
         'varState',
         'varCity',
@@ -112,7 +113,7 @@ class ResellerLead extends Model {
     public static function getRecordList($filterArr = false, $id = false) {
         // echo $id;die;
         $response = false;
-        $moduleFields = ['ResellerLeads.id', 'varTitle', 'varEmailId', 'varPhoneNumber', 'varCompaney', 'varState',
+        $moduleFields = ['ResellerLeads.id', 'varTitle', 'varEmailId', 'varPhoneNumber','varAddress', 'varCompaney', 'varState',
         'varCity', 'varCountry', 'Countries.varName AS country','Cities.varName AS city', 'States.varName AS state', 'varMessage','varBestTimeToCall', 'varIpAddress', 'created_at', 'chrPublish'];
         $response = Self::getPowerPanelRecords($moduleFields)
                     ->leftJoin('Countries', 'Countries.id', '=', 'ResellerLeads.varCountry')
@@ -154,6 +155,7 @@ class ResellerLead extends Model {
             'varTitle',
             'varEmailId',
             'varPhoneNumber',
+            'varAddress',
             'varCompaney',
             'varState',
             'varCity',
@@ -218,6 +220,7 @@ class ResellerLead extends Model {
             'varTitle',
             'varEmailId',
             'varPhoneNumber',
+            'varAddress',
             'varCompaney',
             'varState',
             'varCity',
@@ -234,8 +237,8 @@ class ResellerLead extends Model {
                 ->leftJoin('Countries', 'Countries.id', '=', 'ResellerLeads.varCountry')
                 ->leftJoin('Cities', 'Cities.id', '=', 'ResellerLeads.varCity')
                 ->leftJoin('States', 'States.id', '=', 'ResellerLeads.varState')
-                ->whereRaw('MONTH(created_at) = MONTH(CURRENT_DATE())')
-                ->whereRaw('YEAR(created_at) = YEAR(CURRENT_DATE())')
+                // ->whereRaw('MONTH(created_at) = MONTH(CURRENT_DATE())')
+                // ->whereRaw('YEAR(created_at) = YEAR(CURRENT_DATE())')
                 ->deleted();
         if (!empty($selectedIds) && count($selectedIds) > 0) {
             $query->checkMultipleRecordId($selectedIds);
@@ -282,7 +285,7 @@ class ResellerLead extends Model {
      * @author  NetQuick
      */
     function scopeCheckMultipleRecordId($query, $Ids) {
-        return $query->whereIn('id', $Ids);
+        return $query->whereIn('ResellerLeads.id', $Ids);
     }
 
     /**

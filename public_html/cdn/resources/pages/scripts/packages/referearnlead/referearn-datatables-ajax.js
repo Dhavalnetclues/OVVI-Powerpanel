@@ -73,7 +73,7 @@ var TableDatatablesAjax = function() {
                     { "data": 3, "class": 'text-center', "bSortable": false },
                     { "data": 4, "class": 'text-center', "name": 'created_at' }],
                 "ajax": {
-                    "url": window.site_url + "/powerpanel/newsletter-lead/get_list", // ajax source
+                    "url": window.site_url + "/powerpanel/referearn-lead/get_list", // ajax source
                 },
                 "order": [
                     [4, "desc"]
@@ -112,7 +112,7 @@ var TableDatatablesAjax = function() {
                         if ($('#ExportRecord').click) {
                             if ($('input[name="delete[]"]:checked').val()) {
                                 ip = '?' + $('input[name="delete[]"]:checked').serialize() + '&' + 'export_type' + '=' + exportRadioVal;
-                                var ajaxurl = window.site_url + "/powerpanel/newsletter-lead/ExportRecord" + ip;
+                                var ajaxurl = window.site_url + "/powerpanel/referearn-lead/ExportRecord" + ip;
                                 window.location = ajaxurl;
                                 grid.getDataTable().ajax.reload();
                             } else {
@@ -121,7 +121,7 @@ var TableDatatablesAjax = function() {
                         }
                     } else {
                         $('#selected_records').modal('hide');
-                        var ajaxurl = window.site_url + "/powerpanel/newsletter-lead/ExportRecord";
+                        var ajaxurl = window.site_url + "/powerpanel/referearn-lead/ExportRecord";
                         window.location = ajaxurl;
                     }
                 }

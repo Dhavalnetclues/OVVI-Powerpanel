@@ -22,10 +22,9 @@ class ResellerLeadExport implements FromView, ShouldAutoSize
             $filterArr['searchFilter'] = !empty(Request::get('searchValue')) ? Request::get('searchValue') : '';
             $arrResults = ResellerLead::getListForExport();
         }
-        // echo "<pre>";print_r($arrResults);die;
-
+        
         if (count($arrResults) > 0) {
-            return view('getdemolead::powerpanel.excel_format', ['ResellerLead' => $arrResults]);
+            return view('resellerlead::powerpanel.excel_format', ['ResellerLead' => $arrResults]);
         }
     }
 

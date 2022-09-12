@@ -1109,7 +1109,7 @@
             (isset($menuArr['can-reseller-leads-list']) && $menuArr['can-reseller-leads-list']) ||
             (isset($menuArr['can-events-lead-list']) && $menuArr['can-events-lead-list']) ||
             (isset($menuArr['can-careers-lead-list']) && $menuArr['can-careers-lead-list']) ||
-            (isset($menuArr['can-newsletter-lead-list']) && $menuArr['can-newsletter-lead-list'])||
+            (isset($menuArr['can-referearn-lead-list']) && $menuArr['can-referearn-lead-list'])||
             (isset($menuArr['can-error-tracking-list']) && $menuArr['can-error-tracking-list'])||
             // (isset($menuArr['can-online-polling-lead-list']) && $menuArr['can-online-polling-lead-list']) ||
             (isset($menuArr['can-order-lead-list']) && $menuArr['can-order-lead-list']) ||
@@ -1177,6 +1177,14 @@
                                 </a>
                             </li>
                         @endif
+
+                         @if(isset($menuArr['can-referearn-lead-list']) && $menuArr['can-referearn-lead-list'])
+                            <li data-id="56" class="nav-sort nav-item">
+                                <a href="{{ url('powerpanel/referearn-lead') }}" class="nav-link {{ $menuArr['news_letter_active'] }}" data-key="t-crm" title="{{ trans('template.sidebar.referearnleads') }}"> 
+                                    <i class="ri-newspaper-line d-none"></i> <span data-key="t-widgets">{{ trans('template.sidebar.referearnleads') }}</span>
+                                </a>
+                            </li>
+                        @endif
                         
                         {{-- @if(isset($menuArr['can-payonline-list']) && $menuArr['can-payonline-list'])
                             <li data-id="53" class="nav-sort nav-item">
@@ -1202,14 +1210,7 @@
                             </li>
                         @endif --}}
                         
-                        {{-- @if(isset($menuArr['can-newsletter-lead-list']) && $menuArr['can-newsletter-lead-list'])
-                            <li data-id="56" class="nav-sort nav-item">
-                                <a href="{{ url('powerpanel/newsletter-lead') }}" class="nav-link {{ $menuArr['news_letter_active'] }}" data-key="t-crm" title="{{ trans('template.sidebar.newsletterleads') }}"> 
-                                    <i class="ri-newspaper-line d-none"></i> <span data-key="t-widgets">{{ trans('template.sidebar.newsletterleads') }}</span>
-                                </a>
-                            </li>
-                        @endif --}}
-                        
+                                               
                         {{-- @if(isset($menuArr['can-formbuilder-lead-list']) && $menuArr['can-formbuilder-lead-list'])
                             <li data-id="57" class="nav-sort nav-item">
                                 <a href="{{ url('powerpanel/formbuilder-lead') }}" class="nav-link {{ $menuArr['form_builder_active'] }}" data-key="t-crm" title="{{ trans('template.sidebar.formbuilderleads') }}"> 

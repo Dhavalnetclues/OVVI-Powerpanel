@@ -406,6 +406,7 @@ return [
         'restaurant_menu' => 'Menu Item',
         'eventLeads' => 'Event Leads',
         'careerLeads' => 'Career Leads',
+        'referearnleads' => 'Refer & Earn Leads',
         'projectscategory' => 'Project Categories',
         'quicklinks' => 'Quick Links',
         'organizations' => 'Organizations',

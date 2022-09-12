@@ -8,18 +8,18 @@
  * @since     2017-11-10
  * @author    NetQuick
  */
-namespace Powerpanel\NewsletterLead\Controllers\Powerpanel;
+namespace Powerpanel\ReferearnLead\Controllers\Powerpanel;
 
 use App\CommonModel;
-use Powerpanel\NewsletterLead\Models\NewsletterLead;
-use Powerpanel\NewsletterLead\Models\NewsletterLeadExport;
+use Powerpanel\ReferearnLead\Models\ReferearnLead;
+use Powerpanel\ReferearnLead\Models\ReferearnLeadExport;
 use App\Helpers\MyLibrary;
 use App\Http\Controllers\PowerpanelController;
 use Config;
 use Excel;
 use Request;
 
-class NewsletterController extends PowerpanelController
+class ReferearnController extends PowerpanelController
 {
     public function __construct()
     {
@@ -36,9 +36,9 @@ class NewsletterController extends PowerpanelController
      */
     public function index()
     {
-        $iTotalRecords = CommonModel::getRecordCount(false,false,false, 'Powerpanel\NewsletterLead\Models\NewsletterLead');
-        $this->breadcrumb['title'] = trans('newsletterlead::template.newslettersModule.manageNewsletterLeads');
-        return view('newsletterlead::powerpanel.index', ['iTotalRecords' => $iTotalRecords, 'breadcrumb' => $this->breadcrumb]);
+        $iTotalRecords = CommonModel::getRecordCount(false,false,false, 'Powerpanel\ReferearnLead\Models\ReferearnLead');
+        $this->breadcrumb['title'] = trans('referearn::template.referearnsModule.manageReferearnLeads');
+        return view('referearn::powerpanel.index', ['iTotalRecords' => $iTotalRecords, 'breadcrumb' => $this->breadcrumb]);
     }
     /**
      * This method loads team table data on view
@@ -62,8 +62,8 @@ class NewsletterController extends PowerpanelController
         $filterArr['iDisplayStart'] = intval(Request::get('start'));
 
         $sEcho = intval(Request::get('draw'));
-        $arrResults = NewsletterLead::getRecordList($filterArr);
-        $iTotalRecords = CommonModel::getRecordCount($filterArr, true,false, 'Powerpanel\NewsletterLead\Models\NewsletterLead');
+        $arrResults = ReferearnLead::getRecordList($filterArr);
+        $iTotalRecords = CommonModel::getRecordCount($filterArr, true,false, 'Powerpanel\ReferearnLead\Models\ReferearnLead');
         $end = $filterArr['iDisplayStart'] + $filterArr['iDisplayLength'];
         $end = $end > $iTotalRecords ? $iTotalRecords : $end;
         if (!empty($arrResults)) {
@@ -82,7 +82,7 @@ class NewsletterController extends PowerpanelController
     public function DeleteRecord(Request $request)
     {
         $data = Request::all('ids');
-        $update = MyLibrary::deleteMultipleRecords($data,false,false,'Powerpanel\NewsletterLead\Models\NewsletterLead');
+        $update = MyLibrary::deleteMultipleRecords($data,false,false,'Powerpanel\ReferearnLead\Models\ReferearnLead');
         echo json_encode($update);
         exit;
     }
@@ -94,7 +94,7 @@ class NewsletterController extends PowerpanelController
      */
     public function send_email()
     {
-        $data = NewsletterLead::getRecords()->publish()->deleted();
+        $data = ReferearnLead::getRecords()->publish()->deleted();
         if ($data->count() > 0) {
             $data = $data->get()->first()->toArray();
             $id = Crypt::encrypt($data['id']);
@@ -111,7 +111,7 @@ class NewsletterController extends PowerpanelController
      */
     public function ExportRecord()
     {
-        return Excel::download(new NewsletterLeadExport, Config::get('Constant.SITE_NAME') . '-' . trans("newsletterlead::template.newslettersModule.newslettersLeads") . '-' . date("dmy-h:i") . '.xlsx');
+        return Excel::download(new ReferearnLeadExport, Config::get('Constant.SITE_NAME') . '-' . trans("referearn::template.referearnsModule.newslettersLeads") . '-' . date("dmy-h:i") . '.xlsx');
     }
 
     public function tableData($value)

@@ -200,7 +200,7 @@ return [
         Powerpanel\GetdemoLead\Providers\GetdemoLeadServiceProvider::class,
         Powerpanel\ResellerLead\Providers\ResellerLeadServiceProvider::class,
         Powerpanel\ComplaintLead\Providers\ComplaintLeadServiceProvider::class,
-        Powerpanel\NewsletterLead\Providers\NewsletterLeadServiceProvider::class,
+        Powerpanel\ReferearnLead\Providers\ReferearnLeadServiceProvider::class,
         Powerpanel\Alerts\Providers\AlertsServiceProvider::class,
         Powerpanel\PopupContent\Providers\PopupContentServiceProvider::class,
         Netclues\Themes\ThemeServiceProvider::class
