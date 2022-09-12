@@ -14,11 +14,18 @@ class ResellerLead extends Model {
      */
     protected $table = 'ResellerLeads';
     protected $fillable = [
-        'id',
+        'ResellerLeads.id',
         'varTitle',
         'varEmailId',
         'varPhoneNumber',
         'varCompaney',
+        'varState',
+        'varCity',
+        'varCountry',
+        'Countries.varName AS country',
+        'Cities.varName AS city',
+        'States.varName AS state',
+        'varBestTimeToCall',
         'varMessage',
         'chrDelete',
         'varIpAddress',
@@ -29,6 +36,11 @@ class ResellerLead extends Model {
     public static function getCurrentMonthCount() {
         $response = false;
         $response = Self::getRecords()
+                ->leftJoin('Countries', 'Countries.id', '=', 'ResellerLeads.varCountry')
+                ->leftJoin('Cities', 'Cities.id', '=', 'ResellerLeads.varCity')
+                ->leftJoin('States', 'States.id', '=', 'ResellerLeads.varState')
+                ->whereRaw('MONTH(created_at) = MONTH(CURRENT_DATE())')
+                ->whereRaw('YEAR(created_at) = YEAR(CURRENT_DATE())')
                 ->whereRaw('MONTH(created_at) = MONTH(CURRENT_DATE())')
                 ->whereRaw('YEAR(created_at) = YEAR(CURRENT_DATE())')
                 ->where('chrPublish', '=', 'Y')
@@ -40,6 +52,11 @@ class ResellerLead extends Model {
     public static function getCurrentYearCount() {
         $response = false;
         $response = Self::getRecords()
+                ->leftJoin('Countries', 'Countries.id', '=', 'ResellerLeads.varCountry')
+                ->leftJoin('Cities', 'Cities.id', '=', 'ResellerLeads.varCity')
+                ->leftJoin('States', 'States.id', '=', 'ResellerLeads.varState')
+                ->whereRaw('MONTH(created_at) = MONTH(CURRENT_DATE())')
+                ->whereRaw('YEAR(created_at) = YEAR(CURRENT_DATE())')
                 ->whereRaw('YEAR(created_at) = YEAR(CURRENT_DATE())')
                 ->where('chrPublish', '=', 'Y')
                 ->where('chrDelete', '=', 'N')
@@ -65,7 +82,7 @@ class ResellerLead extends Model {
      */
     public static function getRecordById($id, $moduleFields = false) {
         $response = false;
-        $moduleFields = ['id', 'varTitle', 'varEmailId', 'varPhoneNumber', 'varMessage', 'varCompaney', 'chrDelete', 'varIpAddress', 'created_at', 'updated_at'];
+        $moduleFields = ['ResellerLeads.id', 'varTitle', 'varEmailId', 'varPhoneNumber', 'varMessage', 'varCompaney', 'chrDelete', 'varIpAddress', 'created_at', 'updated_at'];
         $response = Self::getPowerPanelRecords($moduleFields)->deleted()->checkRecordId($id)->first();
         return $response;
     }
@@ -93,15 +110,21 @@ class ResellerLead extends Model {
      * @author  NetQuick
      */
     public static function getRecordList($filterArr = false, $id = false) {
+        // echo $id;die;
         $response = false;
-        $moduleFields = ['id', 'varTitle', 'varEmailId', 'varPhoneNumber', 'varCompaney', 'varMessage', 'varIpAddress', 'created_at', 'chrPublish'];
+        $moduleFields = ['ResellerLeads.id', 'varTitle', 'varEmailId', 'varPhoneNumber', 'varCompaney', 'varState',
+        'varCity', 'varCountry', 'Countries.varName AS country','Cities.varName AS city', 'States.varName AS state', 'varMessage','varBestTimeToCall', 'varIpAddress', 'created_at', 'chrPublish'];
         $response = Self::getPowerPanelRecords($moduleFields)
-                ->deleted();
+                    ->leftJoin('Countries', 'Countries.id', '=', 'ResellerLeads.varCountry')
+                    ->leftJoin('Cities', 'Cities.id', '=', 'ResellerLeads.varCity')
+                    ->leftJoin('States', 'States.id', '=', 'ResellerLeads.varState')
+                    ->deleted();
         if (isset($id) && $id != '') {
             $response = $response->where('id', '=', $id);
         }
         $response = $response->filter($filterArr)
-                ->get();
+        ->get();
+        // print_r($response);die;
         return $response;
     }
 
@@ -127,17 +150,29 @@ class ResellerLead extends Model {
     public static function getRecordForDashboardLeadList($limit = 5) {
         $response = false;
         $moduleFields = [
-            'id',
+            'ResellerLeads.id',
             'varTitle',
             'varEmailId',
             'varPhoneNumber',
             'varCompaney',
+            'varState',
+            'varCity',
+            'varCountry',
+            'Countries.varName AS country',
+            'Cities.varName AS city',
+            'States.varName AS state',
+            'varBestTimeToCall',
             'varMessage',
             'varIpAddress',
             'created_at',
             'chrPublish'
         ];
         $response = Self::getPowerPanelRecords($moduleFields)
+                ->leftJoin('Countries', 'Countries.id', '=', 'ResellerLeads.varCountry')
+                ->leftJoin('Cities', 'Cities.id', '=', 'ResellerLeads.varCity')
+                ->leftJoin('States', 'States.id', '=', 'ResellerLeads.varState')
+                ->whereRaw('MONTH(created_at) = MONTH(CURRENT_DATE())')
+                ->whereRaw('YEAR(created_at) = YEAR(CURRENT_DATE())')
                 ->deleted()
                 ->orderBy('id', 'asc')
                 ->limit($limit)
@@ -184,11 +219,23 @@ class ResellerLead extends Model {
             'varEmailId',
             'varPhoneNumber',
             'varCompaney',
+            'varState',
+            'varCity',
+            'varCountry',
+            'Countries.varName AS country',
+            'Cities.varName AS city',
+            'States.varName AS state',
+            'varBestTimeToCall',
             'varMessage',
             'varIpAddress',
             'created_at'
         ];
         $query = Self::getPowerPanelRecords($moduleFields)
+                ->leftJoin('Countries', 'Countries.id', '=', 'ResellerLeads.varCountry')
+                ->leftJoin('Cities', 'Cities.id', '=', 'ResellerLeads.varCity')
+                ->leftJoin('States', 'States.id', '=', 'ResellerLeads.varState')
+                ->whereRaw('MONTH(created_at) = MONTH(CURRENT_DATE())')
+                ->whereRaw('YEAR(created_at) = YEAR(CURRENT_DATE())')
                 ->deleted();
         if (!empty($selectedIds) && count($selectedIds) > 0) {
             $query->checkMultipleRecordId($selectedIds);

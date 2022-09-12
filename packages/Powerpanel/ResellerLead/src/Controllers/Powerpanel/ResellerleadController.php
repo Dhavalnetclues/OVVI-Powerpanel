@@ -99,12 +99,9 @@ class ResellerleadController extends PowerpanelController {
         return Excel::download(new ResellerLeadExport, 'OVVI -' . trans("resellerlead::template.resellerleadModule.resellerLeads") . '-' . date("dmy-h:i") . '.xlsx');
     }
 
-    public function tableData($value) {
+    public function tableData($value, $page=false) {
         $details = '-';
         $phoneNo = '-';
-        $Visitfor = '-';
-        $Satisfied = '-';
-
         // Checkbox
         $checkbox = view('powerpanel.partials.checkbox', ['name'=>'delete[]', 'value'=>$value->id])->render();
         $details = '';
@@ -116,6 +113,36 @@ class ResellerleadController extends PowerpanelController {
         } else {
             $details .= '-';
         }
+        
+        $Reseller_details = $label = '';
+        $StreetAddress = (!empty($value->varOnStreetAddress) ? $value->varOnStreetAddress  : '');
+        $Country = (!empty($value->country) ? $value->country  : '');
+        $State = (!empty($value->state) ? $value->state  : '');
+        $City = (!empty($value->city) ? $value->city  : '');
+        $BestTimeToCall = (!empty($value->varBestTimeToCall) ? $value->varBestTimeToCall  : '');
+        if(!empty($StreetAddress)){
+            $label .= '<b>Address :- </b>'.$StreetAddress.'<br>';
+        }
+        if(!empty($Country)){
+            $label .= '<b>Country :- </b>'.$Country.'<br>';
+        }
+        if(!empty($State)){
+            $label .= '<b>State :- </b>'.$State.'<br>';
+        }
+        if(!empty($City)){
+            $label .= '<b>City :- </b>'.$City.'<br>';
+        }
+        if(!empty($BestTimeToCall)){
+            $label .= '<b>Best Time To Call :- </b>'.$BestTimeToCall.'<br>';
+        }
+        $Reseller_details .= '<div class="pro-act-btn">';
+        if($page == 'dashboard') {
+            $Reseller_details .= '<a href="javascript:void(0)" class="" onclick="return hs.htmlExpand(this,{width:300,headingText:\'Contents\',wrapperClassName:\'titlebar\',showCredits:false});"><i class="ri-feedback-line fs-24 body-color"></i></a>';
+        } else {
+            $Reseller_details .= '<a href="javascript:void(0)" class="" onclick="return hs.htmlExpand(this,{width:300,headingText:\'Contents\',wrapperClassName:\'titlebar\',showCredits:false});"><i class="ri-mail-open-line fs-16"></i></a>';
+        }
+        $Reseller_details .= '<div class="highslide-maincontent">' . nl2br($label) . '</div>';
+        $Reseller_details .= '</div>';
             
         if (!empty($value->varCompaney) ) {
             $Companey = $value->varCompaney;
@@ -128,7 +155,7 @@ class ResellerleadController extends PowerpanelController {
             $phoneNo = '-';
         }
 
-				$ipAdress = (isset($value->varIpAddress) && !empty($value->varIpAddress)) ? $value->varIpAddress : "-";
+		$ipAdress = (isset($value->varIpAddress) && !empty($value->varIpAddress)) ? $value->varIpAddress : "-";
         $receivedDate = '<span align="left" data-bs-toggle="tooltip" data-bs-placement="bottom" title="'.date(Config::get("Constant.DEFAULT_DATE_FORMAT").' '.Config::get("Constant.DEFAULT_TIME_FORMAT"), strtotime($value->created_at)).'">'.date(Config::get('Constant.DEFAULT_DATE_FORMAT'), strtotime($value->created_at)).'</span>';
 
         $records = array(
@@ -139,6 +166,7 @@ class ResellerleadController extends PowerpanelController {
             // $Satisfied,
             // $Visitfor,
             $Companey,
+            $Reseller_details,
             $details,
             $ipAdress,
             $receivedDate

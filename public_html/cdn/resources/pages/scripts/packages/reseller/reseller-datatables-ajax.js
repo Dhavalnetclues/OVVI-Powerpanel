@@ -93,14 +93,15 @@ var TableDatatablesAjax = function () {
                     {"data": 3, "class": 'text-center', "bSortable": false},
                     {"data": 4, "class": 'text-center', "bSortable": false},
                     {"data": 5, "class": 'text-center', "bSortable": false},
-                    {"data": 6, "class": 'text-center', "name": 'varIpAddress', "bSortable": false},
-                    {"data": 7, "class": 'text-center', "name": 'created_at', "bSortable": true},
+                    {"data": 6, "class": 'text-center', "bSortable": false},
+                    {"data": 7, "class": 'text-center', "name": 'varIpAddress', "bSortable": false},
+                    {"data": 8, "class": 'text-center', "name": 'created_at', "bSortable": true},
                 ],
                 "ajax": {
                     "url": window.site_url + "/powerpanel/reseller-leads/get_list"+id, // ajax source
                 },
                 "order": [
-                    [7, "desc"]
+                    [8, "desc"]
                 ]// set first column as a default sort by asc
             }
         });
