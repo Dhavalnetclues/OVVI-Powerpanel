@@ -239,7 +239,7 @@
 <script src="{{ $CDN_PATH.'resources/global/scripts/datatable.js' }}" type="text/javascript"></script>
 <script src="{{ $CDN_PATH.'resources/global/plugins/datatables/datatables.min.js' }}" type="text/javascript"></script>
 <script src="{{ $CDN_PATH.'resources/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js' }}" type="text/javascript"></script>
-<script src="{{ $CDN_PATH.'resources/pages/scripts/packages/newsletterlead/subscription-datatables-ajax.js?v='.time() }}" type="text/javascript"></script>
+<script src="{{ $CDN_PATH.'resources/pages/scripts/packages/referearnlead/referearn-datatables-ajax.js?v='.time() }}" type="text/javascript"></script>
 @if((File::exists(app_path() . '/Workflow.php') != null || File::exists(base_path() . '/packages/Powerpanel/Workflow/src/Models/Workflow.php') != null))
     <script src="{{ $CDN_PATH.'resources/pages/scripts/user-updates-approval.js' }}" type="text/javascript"></script>
 @endif

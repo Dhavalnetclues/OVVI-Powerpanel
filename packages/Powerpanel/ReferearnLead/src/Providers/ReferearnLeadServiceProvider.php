@@ -1,10 +1,10 @@
 <?php
 
-namespace Powerpanel\NewsletterLead\Providers;
+namespace Powerpanel\ReferearnLead\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
-class NewsletterLeadServiceProvider extends ServiceProvider
+class ReferearnLeadServiceProvider extends ServiceProvider
 {
     /**
      * Register services.
@@ -13,7 +13,7 @@ class NewsletterLeadServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->loadViewsFrom(__DIR__.'/../Resources/views', 'newsletterlead');
+        $this->loadViewsFrom(__DIR__.'/../Resources/views', 'referearn');
     }
 
     /**
@@ -26,24 +26,24 @@ class NewsletterLeadServiceProvider extends ServiceProvider
         include __DIR__.'/../routes.php';
 
         $this->publishes([
-            __DIR__.'/../Resources/assets/js/powerpanel' => public_path('resources/pages/scripts/packages/newsletterlead'),
-        ], 'newsletterlead-js');
+            __DIR__.'/../Resources/assets/js/powerpanel' => public_path('resources/pages/scripts/packages/referearn'),
+        ], 'referearn-js');
 
 
         $this->publishes([
             __DIR__ . '/../database/migrations' => database_path('migrations'),
-        ], 'newsletterlead-migration');
+        ], 'referearn-migration');
 
         $this->publishes([
             __DIR__ . '/../database/seeders' => database_path('seeders'),
-        ], 'newsletterlead-seeders');
+        ], 'referearn-seeders');
         
         $this->handleTranslations();
     }
     
     private function handleTranslations() {
 
-        $this->loadTranslationsFrom(__DIR__.'/../Resources/lang', 'newsletterlead');
+        $this->loadTranslationsFrom(__DIR__.'/../Resources/lang', 'referearn');
     }
 
 }

@@ -203,7 +203,7 @@ return [
         Powerpanel\Services\Providers\ServicesServiceProvider::class,
         Powerpanel\Testimonial\Providers\TestimonialServiceProvider::class,
         Powerpanel\Team\Providers\TeamServiceProvider::class,
-        Powerpanel\NewsletterLead\Providers\NewsletterLeadServiceProvider::class,
+        Powerpanel\ReferearnLead\Providers\ReferearnLeadServiceProvider::class,
         Powerpanel\SponsorCategory\Providers\SponsorCategoryServiceProvider::class,
         Powerpanel\Sponsors\Providers\SponsorsServiceProvider::class,
         Powerpanel\ShowCategory\Providers\ShowCategoryServiceProvider::class,

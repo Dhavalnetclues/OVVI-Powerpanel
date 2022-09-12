@@ -57,7 +57,7 @@
             "Powerpanel\\GetdemoLead\\": "packages/Powerpanel/GetdemoLead/src",
             "Powerpanel\\ResellerLead\\": "packages/Powerpanel/ResellerLead/src",
             "Powerpanel\\ComplaintLead\\": "packages/Powerpanel/ComplaintLead/src",
-            "Powerpanel\\NewsletterLead\\": "packages/Powerpanel/NewsletterLead/src",
+            "Powerpanel\\ReferearnLead\\": "packages/Powerpanel/ReferearnLead/src",
             "Powerpanel\\Alerts\\": "packages/Powerpanel/Alerts/src",
             "Powerpanel\\PopupContent\\": "packages/Powerpanel/PopupContent/src"
         }

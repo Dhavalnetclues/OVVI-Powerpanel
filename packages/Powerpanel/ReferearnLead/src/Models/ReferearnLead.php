@@ -1,10 +1,10 @@
 <?php
-namespace Powerpanel\NewsletterLead\Models;
+namespace Powerpanel\ReferearnLead\Models;
 use Illuminate\Database\Eloquent\Model;
 use DB;
 use App\Helpers\MyLibrary;
 
-class NewsletterLead extends Model 
+class ReferearnLead extends Model 
 {	
 	protected $table = 'newsletter_lead';
 	protected $fillable = [

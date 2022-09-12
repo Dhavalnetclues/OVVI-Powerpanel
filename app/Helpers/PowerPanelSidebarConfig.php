@@ -345,9 +345,9 @@ class PowerPanelSidebarConfig {
             }
         }
 
-        if (Auth::user()->can('newsletter-lead-list')) {
-            $menuArr['can-newsletter-lead-list'] = true;
-            if (Request::segment(2) == 'newsletter-lead') {
+        if (Auth::user()->can('referearn-lead-list')) {
+            $menuArr['can-referearn-lead-list'] = true;
+            if (Request::segment(2) == 'referearn-lead') {
                 $menuArr['news_letter_active'] = 'active';
                 $menuArr['news_letter_open'] = 'open';
                 $menuArr['news_letter_selected'] = 'selected';

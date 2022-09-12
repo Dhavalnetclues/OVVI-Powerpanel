@@ -195,8 +195,8 @@ return [
         'recordApprovalMessage' => 'Record has been sent for approval.',
         'selectuser' => 'Select User',
     ],
-     'newslettersModule'            => [
-        'manageNewsletterLeads' => 'Manage Newsletter Leads',
+     'referearnsModule'            => [
+        'manageReferearnLeads' => 'Manage Refer & Earn Leads',
         'user'                  => 'User',
         'email'                  => 'Email',
         'subscribed'            => 'Subscribed',
