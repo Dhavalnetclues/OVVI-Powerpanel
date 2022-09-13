@@ -202,7 +202,7 @@ return [
         'email'                 => 'Email',
         'referralname'          => 'Referral\'s Name',
         'referralemail'         => 'Referral\'s Email',
-        'subscribed'            => 'Subscribed',
+        'details'               => 'Details',
         'export'                => 'Export',
         'noExport'              => 'No Records to export!',
         'recordsExport'         => 'Which records do you want to export?',
@@ -213,6 +213,6 @@ return [
         'message'               => 'Message',
         'ipAddress'             => 'IP Address',
         'receivedDateTime'      => 'RECEIVED DATE/TIME',
-        'newslettersLeads'      => 'Newsletters Leads',
+        'referearnLeads'      => 'Refer & Earn Leads',
     ]
 ];

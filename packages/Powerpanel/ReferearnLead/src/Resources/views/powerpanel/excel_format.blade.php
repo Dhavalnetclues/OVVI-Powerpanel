@@ -10,16 +10,17 @@
               <table class="search-result allData" id="" border="1">
                  <thead>
                   <tr>
-                        <th style="font-weight: bold;text-align:center" colspan="6">{{ Config::get('Constant.SITE_NAME') }} {{ trans("template.referearnsModule.newslettersLeads") }}</th>
+                        <th style="font-weight: bold;text-align:center" colspan="6">{{ trans("referearn::template.referearnsModule.referearnLeads") }}</th>
                    </tr>
                     <tr>
-                       <th style="font-weight: bold;">{{ trans('template.referearnsModule.name') }}</th>
-                       <th style="font-weight: bold;">{{ trans('template.common.email') }}</th>
-                       <th style="font-weight: bold;">{{ trans('template.referearnsModule.referralname') }}</th>
-                       <th style="font-weight: bold;">{{ trans('template.referearnsModule.referralemail') }}</th>
-                       <th style="font-weight: bold;">{{ trans('template.referearnsModule.subscribed') }}</th>
-                       <th style="font-weight: bold;">{{ trans('template.common.ipAddress') }}</th>
-                       <th style="font-weight: bold;">{{ trans('template.contactleadModule.receivedDateTime') }}</th>
+                       <th style="font-weight: bold;">{{ trans('referearn::template.referearnsModule.name') }}</th>
+                       <th style="font-weight: bold;">{{ trans('referearn::template.common.email') }}</th>
+                       <th style="font-weight: bold;">{{ trans('referearn::template.referearnsModule.referralname') }}</th>
+                       <th style="font-weight: bold;">{{ trans('referearn::template.referearnsModule.referralemail') }}</th>
+                       <th style="font-weight: bold;">{{ trans('referearn::template.referearnsModule.details') }}</th>
+                       <th style="font-weight: bold;">{{ trans('referearn::template.referearnsModule.message') }}</th>
+                       <th style="font-weight: bold;">{{ trans('referearn::template.common.ipAddress') }}</th>
+                       <th style="font-weight: bold;">{{ trans('referearn::template.referearnsModule.receivedDateTime') }}</th>
                     </tr>
                  </thead>
                  <tbody>
@@ -27,11 +28,16 @@
                         <?php 
                         $label = ''; 
                         $varName = (!empty($row->varName) ? $row->varName  : '-');
-                        $Email = (!empty($row->varOnEmailId) ? \App\Helpers\MyLibrary::decryptLatest($row->varOnEmailId)  : '');
+                        $Email = (!empty($row->varEmailId) ? \App\Helpers\MyLibrary::decryptLatest($row->varEmailId)  : '');
                         $ReferralFullNameme = (!empty($row->varReferralFullName) ? $row->varReferralFullName  : '-');
                         $ReferralEmailId = (!empty($row->varReferralEmailId) ? \App\Helpers\MyLibrary::decryptLatest($row->varReferralEmailId)  : '');
+                        $ReferralPhoneNumber = (!empty($row->varReferralPhoneNumber) ? \App\Helpers\MyLibrary::decryptLatest($row->varReferralPhoneNumber)  : '');
                         $BusinessType = (!empty($row->varBusinessType) ? $row->varBusinessType  : '');
                         $LookingForPOS = (!empty($row->varLookingForPOS) ? $row->varLookingForPOS  : '');
+                        $Message = '-';
+                        if(!empty($ReferralPhoneNumber)){
+                              $label .= '<b>Referral\'s Phone  :- </b>'.$ReferralPhoneNumber.'<br>';
+                        }
                         if(!empty($BusinessType)){
                            $BusinessTypeArr = [
                               "Quick_Serve" 			=> "Quick-Serve",
@@ -69,8 +75,11 @@
                                  "3-6"             => "3-6 Months",
                                  "6+"            => "Greater Than 6 Months"
                               ];          
-                              $label .= '<b>POS :- </b>'.$LookingForPOSArr[trim($LookingForPOS)].'<br>';
+                              $label .= 'POS :- '.$LookingForPOSArr[trim($LookingForPOS)].'<br>';
                            }
+                           if (!empty($row->varMessage)) {
+											$Message = $row->varMessage;
+									}
                      }
                         ?>
                     <tr>
@@ -78,7 +87,8 @@
                        <td>{!! $Email !!}</td>
                        <td>{{ $ReferralFullNameme }}</td>
                        <td>{!! $ReferralEmailId !!}</td>
-                       <td>{{ $label }}</td>
+                       <td>{!! $label !!}</td>
+                       <td>{{ $Message }}</td>
                        <td>{{ (!empty($row->varIpAddress) ? $row->varIpAddress :'-') }}</td>
                        <td>{{ date('' . Config::get('Constant.DEFAULT_DATE_FORMAT') . ' ' . Config::get('Constant.DEFAULT_TIME_FORMAT') . '', strtotime($row->created_at)) }}</td>
                     </tr>

@@ -35,9 +35,9 @@
                   $userMessage = '-';
                   $Company = '-';
                   $Resellerdetails = '';
-                  $Country = (!empty($value->country) ? $value->country  : '');
-                  $State = (!empty($value->state) ? $value->state  : '');
-                  $City = (!empty($value->city) ? $value->city  : '');
+                  $Country = (!empty($row->country) ? $row->country  : '');
+                  $State = (!empty($row->state) ? $row->state  : '');
+                  $City = (!empty($row->city) ? $row->city  : '');
 
                   if(!empty($row->varAddress)){
                      $Resellerdetails .= 'Street Address :- '.$row->varAddress.'<br>';
@@ -76,7 +76,7 @@
                        <td>{{ $Email }}</td>
                        <td>{{ $phoneNo }}</td>
                        <td>{{ $Company }}</td>
-                       <td>{{ $Resellerdetails }}</td>
+                       <td>{!! $Resellerdetails !!}</td>
                        <td>{{ $userMessage }}</td>
                        <td>{{ (!empty($row->varIpAddress) ? $row->varIpAddress :'-') }}</td>
                        <td>{{ date(''.Config::get('Constant.DEFAULT_DATE_FORMAT').' '.Config::get('Constant.DEFAULT_TIME_FORMAT').'',strtotime($row->created_at)) }}</td>

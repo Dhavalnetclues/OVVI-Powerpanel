@@ -139,7 +139,7 @@
                     <button type="button" class="btn-close fs-10" data-bs-dismiss="modal" aria-label="Close"> </button>
                 </div>
                 <div class="modal-body">
-                    <h5 class="mb-2">{{ trans('referearn::template.newslettersModule.noExport') }}</h5>
+                    <h5 class="mb-2">{{ trans('referearn::template.referearnsModule.noExport') }}</h5>
                     <div class="pt-2">
                         <button type="button" class="btn btn-primary bg-gradient waves-effect waves-light btn-label" data-bs-dismiss="modal">
                             <div class="d-flex">
@@ -167,14 +167,14 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-sm-12">
-                            <h5 class="mb-2">{{ trans('referearn::template.newslettersModule.recordsExport') }}</h5>
+                            <h5 class="mb-2">{{ trans('referearn::template.referearnsModule.recordsExport') }}</h5>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" value="selected_records" id="selected_records" name="export_type">
-                                <label for="selected_records">{{ trans('referearn::template.newslettersModule.selectedRecords') }}</label>
+                                <label for="selected_records">{{ trans('referearn::template.referearnsModule.selectedRecords') }}</label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" value="all_records" id="all_records" name="export_type" checked>
-                                <label for="all_records">{{ trans('referearn::template.newslettersModule.allRecords') }}</label>
+                                <label for="all_records">{{ trans('referearn::template.referearnsModule.allRecords') }}</label>
                             </div>
                         </div>
                         <div class="col-sm-12 mt-3">
@@ -203,7 +203,7 @@
                     <button type="button" class="btn-close fs-10" data-bs-dismiss="modal" aria-label="Close"> </button>
                 </div>
                 <div class="modal-body">
-                    <h5 class="mb-2">{{ trans('referearn::template.newslettersModule.leastRecord') }}</h5>
+                    <h5 class="mb-2">{{ trans('referearn::template.referearnsModule.leastRecord') }}</h5>
                     <div class="pt-2">
                         <button type="button" class="btn btn-primary bg-gradient waves-effect waves-light btn-label" data-bs-dismiss="modal">
                             <div class="d-flex">

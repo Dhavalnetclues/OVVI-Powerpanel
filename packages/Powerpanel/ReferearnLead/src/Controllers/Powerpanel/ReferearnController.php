@@ -111,7 +111,7 @@ class ReferearnController extends PowerpanelController
      */
     public function ExportRecord()
     {
-        return Excel::download(new ReferearnLeadExport, Config::get('Constant.SITE_NAME') . '-' . trans("referearn::template.referearnsModule.newslettersLeads") . '-' . date("dmy-h:i") . '.xlsx');
+        return Excel::download(new ReferearnLeadExport, 'OVVI -' . trans("referearn::template.referearnsModule.referearnLeads") . '-' . date("dmy-h:i") . '.xlsx');
     }
 
     public function tableData($value, $page=false)
@@ -130,8 +130,6 @@ class ReferearnController extends PowerpanelController
         $ReferralPhoneNumber = (!empty($value->varReferralPhoneNumber) ? MyLibrary::decryptLatest($value->varReferralPhoneNumber)  : '');
         $BusinessType = (!empty($value->varBusinessType) ? $value->varBusinessType  : '');
         $LookingForPOS = (!empty($value->varLookingForPOS) ? $value->varLookingForPOS  : '');
-          
-        $isSubscribed = (isset($value->chrSubscribed) && !empty($value->chrSubscribed)) ? $value->chrSubscribed : "N";
         $ipAdress = (isset($value->varIpAddress) && !empty($value->varIpAddress)) ? $value->varIpAddress : "-";
 
         if(!empty($ReferralPhoneNumber)){
@@ -186,6 +184,15 @@ class ReferearnController extends PowerpanelController
         $details .= '<div class="highslide-maincontent">' . nl2br($label) . '</div>';
         $details .= '</div>';
 
+        $Referdetails = '';
+        if (!empty($value->varMessage)) {
+            $Referdetails .= '<div class="pro-act-btn">';
+            $Referdetails .= '<a href="javascript:void(0)" class="without_bg_icon" onclick="return hs.htmlExpand(this,{width:300,headingText:\'Message\',wrapperClassName:\'titlebar\',showCredits:false});"><i aria-hidden="true" class="ri-message-2-line fs-16"></i></a>';
+            $Referdetails .= '<div class="highslide-maincontent">' . nl2br($value->varMessage) . '</div>';
+            $Referdetails .= '</div>';
+        } else {
+            $Referdetails .= '-';
+        }
 
         $receivedDate = '<span align="left" data-bs-toggle="tooltip" data-bs-placement="bottom" title="'.date(Config::get("Constant.DEFAULT_DATE_FORMAT").' '.Config::get("Constant.DEFAULT_TIME_FORMAT"), strtotime($value->created_at)).'">'.date(Config::get('Constant.DEFAULT_DATE_FORMAT'), strtotime($value->created_at)).'</span>';
 
@@ -196,7 +203,7 @@ class ReferearnController extends PowerpanelController
             $ReferralFullNameme,
             $ReferralEmailId,
             $details,
-            $isSubscribed,
+            $Referdetails,
             $ipAdress,
             $receivedDate
         );

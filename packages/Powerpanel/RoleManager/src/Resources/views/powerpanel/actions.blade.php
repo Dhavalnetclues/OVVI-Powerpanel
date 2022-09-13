@@ -60,7 +60,7 @@ $action = [
 			                                <span style="color: red;">{{ $errors->first('name') }}</span>
 			                            </div>
 			                        </div>
-			                        <div class="col-lg-6 col-sm-12">
+			                        {{-- <div class="col-lg-6 col-sm-12">
 			                            <div class="@if($errors->first('varSector')) has-error @endif form-md-line-input cm-floating">
 			                                @if(isset($role->varSector) && ($role->varSector != $role->varSector))
 			                                @php $Class_varSector = " highlitetext"; @endphp
@@ -70,8 +70,8 @@ $action = [
 			                                @include('shiledcmstheme::powerpanel.partials.sector-dropdown', ['selected_sector' => isset($role->varSector)?$role->varSector:'','Class_varSector' => $Class_varSector])
 			                                <span class="help-block">{{ $errors->first('varSector') }}</span>
 			                            </div>
-			                        </div>
-			                        {{ Form::hidden('rolename', isset($role->name) ? $role->name :'') }}
+			                        </div> --}}
+			                        {{-- {{ Form::hidden('rolename', isset($role->name) ? $role->name :'') }} --}}
 			                        
 			                        <div class="col-md-12">
 			                            @if($isAdmin)

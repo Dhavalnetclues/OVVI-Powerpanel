@@ -18,9 +18,9 @@ var Validate = function() {
                     xssProtection: true,
                     no_url: true
                 },
-                sector: {
-                    required: true,
-                },
+                // sector: {
+                //     // required: true,
+                // },
                 display_name: {
                     required: true,
                     noSpace: true
