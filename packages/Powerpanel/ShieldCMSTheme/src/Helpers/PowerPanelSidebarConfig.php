@@ -322,17 +322,17 @@ class PowerPanelSidebarConfig {
                 $menuArr['ad_selected']  = '';
             }
         }
-         if (Auth::user()->can('complaint-list')) {
-            $menuArr['can-complaint-list'] = true;
-            if (Request::segment(2) == 'complaint') {
-                $menuArr['complaint_active'] = 'active';
-                $menuArr['complaint_open'] = 'open';
-                $menuArr['complaint_selected'] = 'selected';
+         if (Auth::user()->can('career-list')) {
+            $menuArr['can-career-list'] = true;
+            if (Request::segment(2) == 'career-lead') {
+                $menuArr['career_active'] = 'active';
+                $menuArr['career_open'] = 'open';
+                $menuArr['career_selected'] = 'selected';
                 $menuArr['leadmg'] = 'active';
             } else {
-                $menuArr['complaint_active'] = '';
-                $menuArr['complaint_open'] = '';
-                $menuArr['complaint_selected'] = '';
+                $menuArr['career_active'] = '';
+                $menuArr['career_open'] = '';
+                $menuArr['career_selected'] = '';
             }
         }
          if (Auth::user()->can('fmbroadcasting-list')) {

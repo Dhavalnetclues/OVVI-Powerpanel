@@ -178,17 +178,17 @@ class PowerPanelSidebarConfig {
                 $menuArr['contact_selected'] = '';
             }
         }
-        if (in_array('complaint-list', $permissionArr)) {
-            $menuArr['can-complaint-list'] = true;
-            if (Request::segment(2) == 'complaint') {
-                $menuArr['complaint_active'] = 'active';
-                $menuArr['complaint_open'] = 'open';
-                $menuArr['complaint_selected'] = 'selected';
+        if (in_array('career-list', $permissionArr)) {
+            $menuArr['can-career-list'] = true;
+            if (Request::segment(2) == 'career-lead') {
+                $menuArr['career_active'] = 'active';
+                $menuArr['career_open'] = 'open';
+                $menuArr['career_selected'] = 'selected';
                 $menuArr['leadmg'] = 'active';
             } else {
-                $menuArr['complaint_active'] = '';
-                $menuArr['complaint_open'] = '';
-                $menuArr['complaint_selected'] = '';
+                $menuArr['career_active'] = '';
+                $menuArr['career_open'] = '';
+                $menuArr['career_selected'] = '';
             }
         }
         if (in_array('error-tracking-list', $permissionArr)) {
@@ -757,18 +757,18 @@ class PowerPanelSidebarConfig {
                 $menuArr['netcareers_selected'] = '';
             }
         }
-        if (Auth::user()->can('complaint-services-list')) {
-            $menuArr['can-complaint-services-list'] = true;
-            if (Request::segment(2) == 'complaint-services') {
-                $menuArr['complaint-services_active'] = 'active';
-                $menuArr['complaint-services_open'] = 'open';
-                $menuArr['complaint-services_selected'] = 'selected';
-                $menuArr['complaint-servicesmg'] = 'active';
+        if (Auth::user()->can('career-services-list')) {
+            $menuArr['can-career-services-list'] = true;
+            if (Request::segment(2) == 'career-services') {
+                $menuArr['career-services_active'] = 'active';
+                $menuArr['career-services_open'] = 'open';
+                $menuArr['career-services_selected'] = 'selected';
+                $menuArr['career-servicesmg'] = 'active';
                 $menuArr['contmg'] = 'active';
             } else {
-                $menuArr['complaint-services_active'] = '';
-                $menuArr['complaint-services_open'] = '';
-                $menuArr['complaint-services_selected'] = '';
+                $menuArr['career-services_active'] = '';
+                $menuArr['career-services_open'] = '';
+                $menuArr['career-services_selected'] = '';
             }
         }
         if (Auth::user()->can('fmbroadcasting-list')) {

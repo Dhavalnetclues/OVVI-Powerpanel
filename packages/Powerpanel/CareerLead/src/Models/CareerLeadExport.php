@@ -1,6 +1,6 @@
 <?php
-namespace Powerpanel\ComplaintLead\Models;
-use Powerpanel\ComplaintLead\Models\ComplaintLead;
+namespace Powerpanel\CareerLead\Models;
+use Powerpanel\CareerLead\Models\CareerLead;
 use Illuminate\Contracts\View\View;
 use Maatwebsite\Excel\Concerns\FromView;
 use Maatwebsite\Excel\Concerns\ShouldAutoSize;
@@ -8,7 +8,7 @@ use Request;
 use Config;
 use Maatwebsite\Excel\Concerns\WithCustomValueBinder;
 
-class ComplaintLeadExport extends \PhpOffice\PhpSpreadsheet\Cell\StringValueBinder implements FromView, ShouldAutoSize, WithCustomValueBinder
+class CareerLeadExport extends \PhpOffice\PhpSpreadsheet\Cell\StringValueBinder implements FromView, ShouldAutoSize, WithCustomValueBinder
 {
     public function view(): View
     {
@@ -17,15 +17,15 @@ class ComplaintLeadExport extends \PhpOffice\PhpSpreadsheet\Cell\StringValueBind
             if (null !== Request::get('delete')) {
                 $selectedIds = Request::get('delete');
             }
-            $arrResults = ComplaintLead::getListForExport($selectedIds);
+            $arrResults = CareerLead::getListForExport($selectedIds);
 
         } else {
             $filterArr['searchFilter'] = !empty(Request::get('searchValue')) ? Request::get('searchValue') : '';
-            $arrResults = ComplaintLead::getListForExport(false, $filterArr);
+            $arrResults = CareerLead::getListForExport(false, $filterArr);
         }
 
         if (count($arrResults) > 0) {
-            return view('complaintlead::powerpanel.excel_format', ['ComplaintLead' => $arrResults]);
+            return view('careerlead::powerpanel.excel_format', ['CareerLead' => $arrResults]);
         }
     }
 

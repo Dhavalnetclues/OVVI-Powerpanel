@@ -199,7 +199,7 @@ return [
         Powerpanel\ContactUsLead\Providers\ContactUsLeadServiceProvider::class,
         Powerpanel\GetdemoLead\Providers\GetdemoLeadServiceProvider::class,
         Powerpanel\ResellerLead\Providers\ResellerLeadServiceProvider::class,
-        Powerpanel\ComplaintLead\Providers\ComplaintLeadServiceProvider::class,
+        Powerpanel\CareerLead\Providers\CareerLeadServiceProvider::class,
         Powerpanel\ReferearnLead\Providers\ReferearnLeadServiceProvider::class,
         Powerpanel\Alerts\Providers\AlertsServiceProvider::class,
         Powerpanel\PopupContent\Providers\PopupContentServiceProvider::class,

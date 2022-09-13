@@ -46,7 +46,7 @@
             (isset($menuArr['can-career-category-list']) && $menuArr['can-career-category-list']) ||
             (isset($menuArr['can-careers-list']) && $menuArr['can-careers-list']) ||
             (isset($menuArr['can-netcareers-list']) && $menuArr['can-netcareers-list']) ||
-            // (isset($menuArr['can-complaint-services-list']) && $menuArr['can-complaint-services-list']) ||
+            // (isset($menuArr['can-career-services-list']) && $menuArr['can-career-services-list']) ||
             // (isset($menuArr['can-boardofdirectors-list']) && $menuArr['can-boardofdirectors-list']) ||
             // (isset($menuArr['can-register-application-list']) && $menuArr['can-register-application-list']) ||
             // (isset($menuArr['can-licence-register-list']) && $menuArr['can-licence-register-list']) ||
@@ -139,7 +139,7 @@
                             (isset($menuArr['can-career-category-list']) && $menuArr['can-career-category-list']) ||
                             (isset($menuArr['can-careers-list']) && $menuArr['can-careers-list']) ||
                             (isset($menuArr['can-netcareers-list']) && $menuArr['can-netcareers-list']) ||
-                            // (isset($menuArr['can-complaint-services-list']) && $menuArr['can-complaint-services-list']) ||
+                            // (isset($menuArr['can-career-services-list']) && $menuArr['can-career-services-list']) ||
                             // (isset($menuArr['can-boardofdirectors-list']) && $menuArr['can-boardofdirectors-list']) ||
                             // (isset($menuArr['can-register-application-list']) && $menuArr['can-register-application-list']) ||
                             // (isset($menuArr['can-licence-register-list']) && $menuArr['can-licence-register-list']) ||
@@ -683,10 +683,10 @@
                                         @endif
 
                                         <!-- Complaint Services -->
-                                        @if(isset($menuArr['can-complaint-services-list']) && $menuArr['can-complaint-services-list'])
+                                        @if(isset($menuArr['can-career-services-list']) && $menuArr['can-career-services-list'])
                                             <li data-id="41" class="nav-sort nav-item">
-                                                <a href="{{ url('powerpanel/complaint-services') }}" class="nav-link {{ $menuArr['complaint-services_active'] }}" title="{{ trans('template.sidebar.complaintservices') }}">
-                                                    <i class="ri-file-settings-line d-none"></i> <span data-key="t-widgets">{{ trans('template.sidebar.complaintservices') }}</span>
+                                                <a href="{{ url('powerpanel/career-services') }}" class="nav-link {{ $menuArr['career-services_active'] }}" title="{{ trans('template.sidebar.careerservices') }}">
+                                                    <i class="ri-file-settings-line d-none"></i> <span data-key="t-widgets">{{ trans('template.sidebar.careerservices') }}</span>
                                                 </a>
                                             </li>
                                         @endif
@@ -1103,7 +1103,7 @@
         <!-- Leads -->
         @if(
             (isset($menuArr['can-contact-us-list']) && $menuArr['can-contact-us-list']) ||
-            // (isset($menuArr['can-complaint-list']) && $menuArr['can-complaint-list']) ||
+            (isset($menuArr['can-career-list']) && $menuArr['can-career-list']) ||
             (isset($menuArr['can-appointment-lead-list']) && $menuArr['can-appointment-lead-list']) ||
             (isset($menuArr['can-getdemo-leads-list']) && $menuArr['can-getdemo-leads-list']) ||
             (isset($menuArr['can-reseller-leads-list']) && $menuArr['can-reseller-leads-list']) ||
@@ -1154,10 +1154,10 @@
                         </li>
                     @endif
                         
-                        @if(isset($menuArr['can-complaint-list']) && $menuArr['can-complaint-list'])
+                        @if(isset($menuArr['can-career-list']) && $menuArr['can-career-list'])
                             <li data-id="50" class="nav-sort nav-item">
-                                <a href="{{ url('powerpanel/complaint') }}" class="nav-link {{ $menuArr['complaint_active'] }}" data-key="t-crm" title="{{ trans('template.sidebar.complaintlead') }}">
-                                    <i class="ri-file-edit-line d-none"></i> <span data-key="t-widgets">{{ trans('template.sidebar.complaintlead') }}</span>
+                                <a href="{{ url('powerpanel/career-lead') }}" class="nav-link {{ $menuArr['career_active'] }}" data-key="t-crm" title="{{ trans('template.sidebar.careerLeads') }}">
+                                    <i class="ri-file-edit-line d-none"></i> <span data-key="t-widgets">{{ trans('template.sidebar.careerLeads') }}</span>
                                 </a>
                             </li>
                         @endif
@@ -1172,7 +1172,7 @@
                         
                         @if(isset($menuArr['can-careers-lead-list']) && $menuArr['can-careers-lead-list'])
                             <li data-id="52" class="nav-sort nav-item">
-                                <a href="{{ url('powerpanel/careers-lead') }}" class="nav-link {{ $menuArr['careers_lead_active'] }}" data-key="t-crm" title="{{ trans('template.sidebar.careerLeads') }}"> 
+                                <a href="{{ url('powerpanel/career-lead') }}" class="nav-link {{ $menuArr['careers_lead_active'] }}" data-key="t-crm" title="{{ trans('template.sidebar.careerLeads') }}"> 
                                     <i class="ri-handbag-line d-none"></i> <span data-key="t-widgets">{{ trans('template.sidebar.careerLeads') }}</span>
                                 </a>
                             </li>

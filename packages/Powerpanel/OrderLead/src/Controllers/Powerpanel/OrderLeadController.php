@@ -128,7 +128,14 @@ class OrderLeadController extends PowerpanelController {
                 "Clothing_Store"			=> "Clothing Store",
                 "Other"						=> "Other"
             ];
-            $label .= '<b>Business Type :- </b>'.$BusinessTypeArr[$BusinessType].'<br>';
+            $BusinesTypeList = explode(',',$BusinessType);
+            $BusinesTypeListArr = array();
+            foreach($BusinesTypeList as $BusinessTypes){
+                $BusinesTypeListArr[] = $BusinessTypeArr[$BusinessTypes];
+            }
+            $BusinesTypeListDisplay = implode(", ",$BusinesTypeListArr);
+            $label .= '<b>Business Type :- </b>'.$BusinesTypeListDisplay.'<br>';
+            // $label .= '<b>Business Type :- </b>'.$BusinessTypeArr[$BusinessType].'<br>';
         }
         if(!empty($POSBundle)){
             $label .= '<b>No Of POS Bundle :- </b>'.$POSBundle.'<br>';

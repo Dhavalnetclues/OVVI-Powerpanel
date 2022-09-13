@@ -61,7 +61,7 @@ var TableDatatablesAjax = function() {
                     { "data": 6, className: 'text-center', "name": 'created_at' },
                 ],
                 "ajax": {
-                    "url": window.site_url + "/powerpanel/complaint/get_list", // ajax source
+                    "url": window.site_url + "/powerpanel/career-lead/get_list", // ajax source
                 },
                 "order": [
                         [6, "desc"]
@@ -86,7 +86,7 @@ var TableDatatablesAjax = function() {
             }
         });
 
-        $(document).on('click', '#complaintleadrange', function(e) {
+        $(document).on('click', '#careerleadrange', function(e) {
             e.preventDefault();
             var action = {};
             action['from'] = $('#start_date').val();
@@ -126,7 +126,7 @@ var TableDatatablesAjax = function() {
                         if ($('#ExportRecord').click) {
                             if ($('input[name="delete[]"]:checked').val()) {
                                 ip = '?' + $('input[name="delete[]"]:checked').serialize() + '&' + 'export_type' + '=' + exportRadioVal;
-                                var ajaxurl = window.site_url + "/powerpanel/complaint/ExportRecord" + ip;
+                                var ajaxurl = window.site_url + "/powerpanel/career-lead/ExportRecord" + ip;
                                 window.location = ajaxurl;
                                 grid.getDataTable().ajax.reload();
                             } else {
@@ -135,7 +135,7 @@ var TableDatatablesAjax = function() {
                         }
                     } else {
                         $('#selected_records').modal('hide');
-                        var ajaxurl = window.site_url + "/powerpanel/complaint/ExportRecord";
+                        var ajaxurl = window.site_url + "/powerpanel/career-lead/ExportRecord";
                         window.location = ajaxurl;
                     }
                 }

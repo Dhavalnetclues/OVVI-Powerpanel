@@ -57,24 +57,46 @@
                 <div class="card-body">
                     <div class="live-preview">
                         <div class="table-responsive">
+							@php
+							$tablearray = [
+								'DataTableTab'=>[
+									'ColumnSetting'=>[
+										['Identity_Name'=>'name','TabIndex'=>'1','Name'=>'Name'],
+										['Identity_Name'=>'email','TabIndex'=>'2','Name'=>'Email'],
+										['Identity_Name'=>'phone','TabIndex'=>'3','Name'=>'Phone'],
+										['Identity_Name'=>'business','TabIndex'=>'4','Name'=>'business'],
+										['Identity_Name'=>'message','TabIndex'=>'5','Name'=>'Message'],
+										['Identity_Name'=>'ip','TabIndex'=>'6','Name'=>'IP'],
+										['Identity_Name'=>'date','TabIndex'=>'7','Name'=>'Date']
+									],
+									'DataTableHead'=>[
+										['Title'=>'Name','Align'=>'left'],
+										['Title'=>'Email','Align'=>'left'],
+										['Title'=>'Phone','Align'=>'left'],
+										['Title'=>'Bussness','Align'=>'left'],
+										['Title'=>'Message','Align'=>'left'],
+										['Title'=>'IP','Align'=>'left'],
+										['Title'=>'Received Date','Align'=>'center']
+									]
+								]
+							];
+						@endphp
                             <table class="table table-striped table-bordered table-hover table-checkable hide-mobile" id="datatable_ajax">
                                 <thead class="text-muted table-light">
 									<tr role="row" class="heading">	
 										<th width="2%" align="center"><input type="checkbox" class="form-check-input group-checkable"></th>
-										<th width="10%" align="left">{{ trans('complaintlead::template.common.name') }}</th>
-										<th width="10%" align="left">{{ trans('complaintlead::template.common.email') }}</th>
-										<th width="10%" align="center">{{ trans('complaintlead::template.common.phoneno') }}</th>
-										<th width="10%" align="center">{{ trans('complaintlead::template.common.message') }}</th>
+										<th width="10%" align="left">{{ trans('careerlead::template.common.name') }}</th>
+										<th width="10%" align="left">{{ trans('careerlead::template.common.email') }}</th>
+										<th width="10%" align="center">{{ trans('careerlead::template.common.phoneno') }}</th>
+										<th width="10%" align="center">{{ trans('careerlead::template.common.message') }}</th>
 										<th width="10%" align="center">{{ trans('Resume') }}</th>
-										<th width="10%" align="center">{{ trans('complaintlead::template.common.received_date_time') }}</th>
+										<th width="10%" align="center">{{ trans('careerlead::template.common.received_date_time') }}</th>
 									</tr>
                                 </thead>
                                 <tbody></tbody>
                             </table>
-                            @can('complaint-delete')
-							<a href="javascript:void(0);" class="btn-sm rounded-pill btn btn-danger right_bottom_btn deleteMass">{{ trans('complaintlead::template.common.delete') }}</a>
-							@endcan
-							<a href="#selectedRecords" class="btn-sm rounded-pill btn btn-primary right_bottom_btn ExportRecord" data-bs-toggle="modal">{{ trans('complaintlead::template.complaintleadModule.export') }}</a>
+                            @include('powerpanel.partials.datatable-view',['ModuleName'=>'CareerLead','Permission_Delete'=>'career-lead-delete','tablearray'=>$tablearray,'userIsAdmin'=>$userIsAdmin,'Module_ID'=>Config::get('Constant.MODULE.ID')])
+							
                         </div>
                     </div>
                 </div><!-- end card-body -->
@@ -90,12 +112,12 @@
 		<div class="modal-vertical">	
 			<div class="modal-content">
 				<div class="modal-header">
-					{{ trans('complaintlead::template.common.alert') }}
+					{{ trans('careerlead::template.common.alert') }}
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"> </button>
 				</div>
-				<div class="modal-body text-center">{{ trans('complaintlead::template.complaintleadModule.noExport') }} </div>
+				<div class="modal-body text-center">{{ trans('careerlead::template.careerleadModule.noExport') }} </div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-primary" data-bs-dismiss="modal">{{ trans('complaintlead::template.common.ok') }}</button>
+					<button type="button" class="btn btn-primary" data-bs-dismiss="modal">{{ trans('careerlead::template.common.ok') }}</button>
 				</div>
 			</div>
 		</div>
@@ -106,28 +128,28 @@
 		<div class="modal-vertical">	
 			<div class="modal-content">
 				<div class="modal-header">
-					{{ trans('complaintlead::template.common.alert') }}
+					{{ trans('careerlead::template.common.alert') }}
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"> </button>
 				</div>
 				<div class="modal-body text-center">
 					<div class="row">
-						<div class="col-12 mb-3">
-							{{ trans('complaintlead::template.complaintleadModule.recordsExport') }}
+						<div class="col-sm-12">
+							<h5 class="mb-2">{{ trans('careerlead::template.careerleadModule.recordsExport') }}</h5>
 						</div>
 						<div class="col-12">
 							<div class="form-check form-check-inline">
 								<input class="form-check-input" type="radio" value="selected_records" id="selected_records" name="export_type">
-								<label for="form-check-label">{{ trans('complaintlead::template.complaintleadModule.selectedRecords') }}</label>
+								<label for="form-check-label">{{ trans('careerlead::template.careerleadModule.selectedRecords') }}</label>
 							</div>
 							<div class="form-check form-check-inline">
 								<input class="form-check-input" type="radio" value="all_records" id="all_records" name="export_type" checked>
-								<label for="form-check-label">{{ trans('complaintlead::template.complaintleadModule.allRecords') }}</label>
+								<label for="form-check-label">{{ trans('careerlead::template.careerleadModule.allRecords') }}</label>
 							</div>
 						</div>
 					</div>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-primary" id="ExportRecord" data-bs-dismiss="modal">{{ trans('complaintlead::template.common.ok') }} </button>
+					<button type="button" class="btn btn-primary" id="ExportRecord" data-bs-dismiss="modal">{{ trans('careerlead::template.common.ok') }} </button>
 				</div>
 			</div>
 			<!-- /.modal-content -->
@@ -140,12 +162,12 @@
 		<div class="modal-vertical">	
 			<div class="modal-content">
 				<div class="modal-header">
-					{{ trans('complaintlead::template.common.alert') }}
+					{{ trans('careerlead::template.common.alert') }}
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"> </button>
 				</div>
-				<div class="modal-body text-center">{{ trans('complaintlead::template.complaintleadModule.leastRecord') }} </div>
+				<div class="modal-body text-center">{{ trans('careerlead::template.careerleadModule.leastRecord') }} </div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-primary" data-bs-dismiss="modal">{{ trans('complaintlead::template.common.ok') }} </button>
+					<button type="button" class="btn btn-primary" data-bs-dismiss="modal">{{ trans('careerlead::template.common.ok') }} </button>
 				</div>
 			</div>
 			<!-- /.modal-content -->
@@ -160,7 +182,7 @@
 	<script>
 		var companyid='{!! (isset($_REQUEST["company"])?$_REQUEST["company"]:'') !!}';
 		window.site_url =  '{!! url("/") !!}';
-		var DELETE_URL =  '{!! url("/powerpanel/complaint/DeleteRecord") !!}';
+		var DELETE_URL =  '{!! url("/powerpanel/career-lead/DeleteRecord") !!}';
 	</script>
         
 	<!-- <script src="{{ $CDN_PATH.'resources/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js' }}" type="text/javascript"></script> -->
@@ -168,7 +190,7 @@
 	<script src="{{ $CDN_PATH.'resources/global/plugins/datatables/datatables.min.js' }}" type="text/javascript"></script>
 	<script src="{{ $CDN_PATH.'resources/global/scripts/datatable.js' }}" type="text/javascript"></script>
 	<script src="{{ $CDN_PATH.'resources/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js' }}" type="text/javascript"></script>
-	<script src="{{ $CDN_PATH.'resources/pages/scripts/packages/complaintlead/complaintlead-datatables-ajax.js' }}" type="text/javascript"></script>
+	<script src="{{ $CDN_PATH.'resources/pages/scripts/packages/careerlead/careerlead-datatables-ajax.js' }}" type="text/javascript"></script>
 	<script src="{{ $CDN_PATH.'resources/pages/scripts/custom.js' }}" type="text/javascript"></script>
 	<script src="{{ $CDN_PATH.'resources/global/plugins/moment.min.js' }}"></script>
 	<script src="{{ $CDN_PATH.'resources/global/plugins/highslide/highslide-with-html.js' }}" type="text/javascript"></script>

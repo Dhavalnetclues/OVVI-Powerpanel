@@ -358,6 +358,7 @@ return [
         'contents' => 'Contents',
         'contact' => 'Contacts',
         'contactuslead' => 'Contact Leads',
+        'careerlead' => 'Career Leads',
         'notificationlist' => 'Notification',
         'feedbacklead' => 'Feedback Leads',
         'submitticketslead' => 'Ticket List',

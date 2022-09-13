@@ -1,10 +1,10 @@
 <?php
-namespace Powerpanel\ComplaintLead\Controllers\Powerpanel;
+namespace Powerpanel\CareerLead\Controllers\Powerpanel;
 
 use App\CommonModel;
-use Powerpanel\ComplaintLead\Models\ComplaintLead;
+use Powerpanel\CareerLead\Models\CareerLead;
 use Powerpanel\Companies\Models\Companies;
-use Powerpanel\ComplaintLead\Models\ComplaintLeadExport;
+use Powerpanel\CareerLead\Models\CareerLeadExport;
 use App\Helpers\MyLibrary;
 use App\Http\Controllers\PowerpanelController;
 use Powerpanel\Services\Models\Services;
@@ -12,7 +12,7 @@ use Config;
 use Excel;
 use Request;
 
-class ComplaintLeadController extends PowerpanelController
+class CareerLeadController extends PowerpanelController
 {
 
     /**
@@ -30,9 +30,9 @@ class ComplaintLeadController extends PowerpanelController
 
     public function index()
     {
-        $iTotalRecords = CommonModel::getRecordCount(false,false,false, 'Powerpanel\ComplaintLead\Models\ComplaintLead');
-        $this->breadcrumb['title'] = trans('complaintlead::template.complaintleadModule.manageComplaintLeads');
-        return view('complaintlead::powerpanel.list', ['iTotalRecords' => $iTotalRecords, 'breadcrumb' => $this->breadcrumb]);
+        $iTotalRecords = CommonModel::getRecordCount(false,false,false, 'Powerpanel\CareerLead\Models\CareerLead');
+        $this->breadcrumb['title'] = trans('careerlead::template.careerleadModule.manageCareerLeads');
+        return view('careerlead::powerpanel.list', ['iTotalRecords' => $iTotalRecords, 'breadcrumb' => $this->breadcrumb]);
     }
 
     public function get_list()
@@ -53,10 +53,10 @@ class ComplaintLeadController extends PowerpanelController
         
         $sEcho = intval(Request::get('draw'));
         
-        $arrResults = ComplaintLead::getRecordList($filterArr);
+        $arrResults = CareerLead::getRecordList($filterArr);
             // echo '<pre>';print_r($arrResults);exit;
 
-        $iTotalRecords = CommonModel::getRecordCount($filterArr, true,false, 'Powerpanel\ComplaintLead\Models\ComplaintLead');
+        $iTotalRecords = CommonModel::getRecordCount($filterArr, true,false, 'Powerpanel\CareerLead\Models\CareerLead');
 
         $end = $filterArr['iDisplayStart'] + $filterArr['iDisplayLength'];
         $end = $end > $iTotalRecords ? $iTotalRecords : $end;
@@ -88,20 +88,20 @@ class ComplaintLeadController extends PowerpanelController
     public function DeleteRecord(Request $request)
     {
         $data = Request::all('ids');
-        $update = MyLibrary::deleteMultipleRecords($data,false,false,'Powerpanel\ComplaintLead\Models\ComplaintLead');
+        $update = MyLibrary::deleteMultipleRecords($data,false,false,'Powerpanel\CareerLead\Models\CareerLead');
         echo json_encode($update);
         exit;
     }
 
     /**
-     * This method handels export process of Complaint leads
+     * This method handels export process of Career leads
      * @return  xls file
      * @since   2016-10-18
      * @author  NetQuick
      */
     public function ExportRecord()
     {
-        return Excel::download(new ComplaintLeadExport, 'OVVI - ' . trans("complaintlead::template.complaintleadModule.complaintLeads") . '-' . date("dmy-h:i") . '.xlsx');
+        return Excel::download(new CareerLeadExport, 'OVVI - ' . trans("careerlead::template.careerleadModule.careerLeads") . '-' . date("dmy-h:i") . '.xlsx');
 
     }
 

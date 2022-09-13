@@ -1,11 +1,11 @@
 <?php
 
-namespace Powerpanel\ComplaintLead\Models;
+namespace Powerpanel\CareerLead\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use DB;
 
-class ComplaintLead extends Model {
+class CareerLead extends Model {
 
     /**
      * The table associated with the model.
@@ -124,7 +124,7 @@ class ComplaintLead extends Model {
         $response = false;
         $moduleFields = ['id'];
         $response = Self::getPowerPanelRecords($moduleFields)
-                ->CheckByComplaintId($albumId)
+                ->CheckByCareerId($albumId)
                 ->deleted()
                 ->count();
         return $response;
@@ -140,7 +140,7 @@ class ComplaintLead extends Model {
         return $query->where('id', $id);
     }
 
-     public function scopeCheckByComplaintId($query, $albumId) {
+     public function scopeCheckByCareerId($query, $albumId) {
         // return $query->where('fkIntCompanyId', $albumId);
     }
     /**

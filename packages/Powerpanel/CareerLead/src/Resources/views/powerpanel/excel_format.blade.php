@@ -4,24 +4,24 @@
         <title>{{ Config::get('Constant.SITE_NAME') }} complaint Leads</title>
     </head>
     <body>
-        @if(isset($ComplaintLead) && !empty($ComplaintLead))
+        @if(isset($CareerLead) && !empty($CareerLead))
         <div class="row">
             <div class="col-12">
                 <table class="search-result allData" id="" border="1">
                     <thead>
                         <tr>
-                            <th style="font-weight: bold;text-align:center" colspan="11"> {{ trans("complaintlead::template.complaintleadModule.complaintLeads") }}</th>
+                            <th style="font-weight: bold;text-align:center" colspan="11"> {{ trans("careerlead::template.careerleadModule.careerLeads") }}</th>
                         </tr>
                         <tr>
-                            <th style="font-weight: bold;">{{ trans('complaintlead::template.common.name') }}</th>
-                            <th style="font-weight: bold;">{{ trans('complaintlead::template.common.email') }}</th>
-                            <th style="font-weight: bold;">{{ trans('complaintlead::template.complaintleadModule.message') }}</th>
-                            <th style="font-weight: bold;">{{ trans('complaintlead::template.complaintleadModule.phone') }}</th>                           
-                            <th style="font-weight: bold;">{{ trans('complaintlead::template.complaintleadModule.receivedDateTime') }}</th>
+                            <th style="font-weight: bold;">{{ trans('careerlead::template.common.name') }}</th>
+                            <th style="font-weight: bold;">{{ trans('careerlead::template.common.email') }}</th>
+                            <th style="font-weight: bold;">{{ trans('careerlead::template.careerleadModule.message') }}</th>
+                            <th style="font-weight: bold;">{{ trans('careerlead::template.careerleadModule.phone') }}</th>                           
+                            <th style="font-weight: bold;">{{ trans('careerlead::template.careerleadModule.receivedDateTime') }}</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($ComplaintLead as $row)
+                        @foreach($CareerLead as $row)
                         <tr>
                             <td>{{ $row->varTitle }}</td>
                             @php

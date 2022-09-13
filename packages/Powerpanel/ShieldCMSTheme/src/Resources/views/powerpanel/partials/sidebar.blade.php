@@ -98,7 +98,7 @@ $menuArr = App\Helpers\PowerPanelSidebarConfig::getConfig();
                 (isset($menuArr['can-interconnections-list']) && $menuArr['can-interconnections-list']) ||
                 (isset($menuArr['can-number-allocation']) && $menuArr['can-number-allocation']) ||
                 (isset($menuArr['can-online-polling-list']) && $menuArr['can-online-polling-list']) ||
-                (isset($menuArr['can-complaint-services-list']) && $menuArr['can-complaint-services-list']) ||
+                (isset($menuArr['can-career-services-list']) && $menuArr['can-career-services-list']) ||
                 (isset($menuArr['can-boardofdirectors-list']) && $menuArr['can-boardofdirectors-list']) ||
                 (isset($menuArr['can-register-application-list']) && $menuArr['can-register-application-list']) ||
                 (isset($menuArr['can-licence-register-list']) && $menuArr['can-licence-register-list']) ||
@@ -834,12 +834,12 @@ $menuArr = App\Helpers\PowerPanelSidebarConfig::getConfig();
                             @endif
                         @endif
 
-                      @if(isset($menuArr['can-complaint-services-list']) && $menuArr['can-complaint-services-list'])
-                        <li class="nav-item {{ $menuArr['complaint-services_active'] }} {{ $menuArr['complaint-services_open'] }}">
-                            <a title="{{ trans('template.sidebar.complaintservices') }}" href="{{ url('powerpanel/complaint-services') }}" class="nav-link nav-toggle">
+                      @if(isset($menuArr['can-career-services-list']) && $menuArr['can-career-services-list'])
+                        <li class="nav-item {{ $menuArr['career-services_active'] }} {{ $menuArr['career-services_open'] }}">
+                            <a title="{{ trans('template.sidebar.careerservices') }}" href="{{ url('powerpanel/career-services') }}" class="nav-link nav-toggle">
                                  <i class="fa fa-cogs"></i>
-                                <span class="title">{{ trans('template.sidebar.complaintservices') }}</span>
-                                <span class="{{ $menuArr['complaint-services_selected'] }}"></span>
+                                <span class="title">{{ trans('template.sidebar.careerservices') }}</span>
+                                <span class="{{ $menuArr['career-services_selected'] }}"></span>
                             </a>
                         </li>
                         @endif
@@ -998,7 +998,7 @@ $menuArr = App\Helpers\PowerPanelSidebarConfig::getConfig();
 
             @if(
             (isset($menuArr['can-contact-us-list']) && $menuArr['can-contact-us-list']) ||
-            (isset($menuArr['can-complaint-list']) && $menuArr['can-complaint-list']) ||
+            (isset($menuArr['can-career-list']) && $menuArr['can-career-list']) ||
             (isset($menuArr['can-appointment-lead-list']) && $menuArr['can-appointment-lead-list']) ||
             (isset($menuArr['can-getdemo-leads-list']) && $menuArr['can-getdemo-leads-list']) ||
             (isset($menuArr['can-reseller-leads-list']) && $menuArr['can-reseller-leads-list']) ||
@@ -1014,12 +1014,12 @@ $menuArr = App\Helpers\PowerPanelSidebarConfig::getConfig();
                     <span class=""></span>
                 </a>
                 <ul class="sub-menu">
-                    @if(isset($menuArr['can-complaint-list']) && $menuArr['can-complaint-list'])
-                    <li class="nav-item {{ $menuArr['complaint_active'] }}">
-                        <a title="{{ trans('template.sidebar.complaintlead') }}" href="{{ url('powerpanel/complaint') }}" class="nav-link ">
+                    @if(isset($menuArr['can-career-list']) && $menuArr['can-career-list'])
+                    <li class="nav-item {{ $menuArr['career_active'] }}">
+                        <a title="{{ trans('template.sidebar.careerlead') }}" href="{{ url('powerpanel/career-lead') }}" class="nav-link ">
                             <i class="fa fa-phone"></i>
-                            <span class="title">{{ trans('template.sidebar.complaintlead') }}</span>
-                            <span class="{{ $menuArr['complaint_selected'] }}"></span>
+                            <span class="title">{{ trans('template.sidebar.careerlead') }}</span>
+                            <span class="{{ $menuArr['career_selected'] }}"></span>
                         </a>
                     </li>
                     @endif
