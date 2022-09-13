@@ -167,7 +167,7 @@ class PowerPanelSidebarConfig {
         }
         if (in_array('contact-us-list', $permissionArr)) {
             $menuArr['can-contact-us-list'] = true;
-            if (Request::segment(2) == 'contact-us') {
+            if (Request::segment(2) == 'contact-lead') {
                 $menuArr['contact_active'] = 'active';
                 $menuArr['contact_open'] = 'open';
                 $menuArr['contact_selected'] = 'selected';

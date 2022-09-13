@@ -6,7 +6,7 @@ use App\Helpers\MyLibrary;
 
 class ReferearnLead extends Model 
 {	
-	protected $table = 'newsletter_lead';
+	protected $table = 'referearn_lead';
 	protected $fillable = [
 		'id',
 		'varName',

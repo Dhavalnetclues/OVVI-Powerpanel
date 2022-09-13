@@ -1124,7 +1124,7 @@
                     <ul class="nav nav-sm flex-column">
                         @if(isset($menuArr['can-contact-us-list']) && $menuArr['can-contact-us-list'])
                             <li data-id="49" class="nav-sort nav-item">
-                                <a href="{{ url('powerpanel/contact-us') }} " class="nav-link {{ $menuArr['contact_active'] }}" data-key="t-analytics" title="{{ trans('template.sidebar.contactuslead') }}">
+                                <a href="{{ url('powerpanel/contact-lead') }} " class="nav-link {{ $menuArr['contact_active'] }}" data-key="t-analytics" title="{{ trans('template.sidebar.contactuslead') }}">
                                     <i class="ri-contacts-book-line d-none"></i> <span data-key="t-widgets">{{ trans('template.sidebar.contactuslead') }}</span>
                                 </a>
                             </li>
