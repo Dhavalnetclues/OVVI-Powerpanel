@@ -8,6 +8,8 @@
 <style type="text/css">
     .dataTables_filter, .dataTables_info { display: none; }
     /*.badge-danger{background: #D33600!important;}*/
+    .card-box{height: 360px;}
+    .card-box .simplebar-mask .table-responsive{overflow-x: unset;}
 </style>
 @endsection
 
@@ -298,11 +300,11 @@
                     <div class="row">
                         @if(isset($dashboardWidgetSettings->widget_conatctleads) && $dashboardWidgetSettings->widget_conatctleads->widget_display=="Y")
                         <div class={{ (isset($dashboardWidgetSettings->widget_inapporval) && $dashboardWidgetSettings->widget_inapporval->widget_display=='Y') ? 'col-xl-6' : 'col-xl-12' }}>
-                            <div class="card contactuslead">
+                            <div class="card">
                                 <div class="card-header align-items-center d-flex">
                                     <h4 class="card-title mb-0 flex-grow-1">Contact Leads</h4>
                                 </div><!-- end card header -->
-                                <div class="card-body" data-simplebar style="height: 300px;">
+                                <div class="card-body card-box" data-simplebar  >
                                     <div class="table-responsive"> <!-- table-card -->
                                         
                                         <table class="table table-hover table-centered align-middle table-nowrap mb-0 lastchild-border-0" id="datatable_ajax">
@@ -336,14 +338,14 @@
 
                         @if(isset($dashboardWidgetSettings->widget_inapporval) && $dashboardWidgetSettings->widget_inapporval->widget_display=="Y")
                         <div class={{ (isset($dashboardWidgetSettings->widget_conatctleads) && $dashboardWidgetSettings->widget_conatctleads->widget_display=='Y') ? 'col-xl-6' : 'col-xl-12' }}>
-                            <div class="card inapproval-card">
+                            <div class="card">
                                 <div class="card-header align-items-center d-flex">
                                     <h4 class="card-title mb-0 flex-grow-1"  title="Get Demo Leads">Get Demo Leads</h4>
                                 </div>
-                                <div class="card-body" data-simplebar style="height: 360px;">
+                                <div class="card-body card-box" data-simplebar>
                                     <div class="table-responsive"> 
                                         <table class="table table-hover table-centered align-middle table-nowrap mb-0 lastchild-border-0" id="getDemoLeads_ajax">
-                                            <thead> <!-- class="text-muted table-light" -->
+                                            <thead class="table-light"> <!-- class="text-muted table-light" -->
                                                 <tr>
                                                    <th align="center"><input type="checkbox" class="form-check-input multiSelectList"></th>
                                                     <th align="left">Title</th>
@@ -372,14 +374,14 @@
                         @endif 
                          @if(isset($dashboardWidgetSettings->widget_conatctleads) && $dashboardWidgetSettings->widget_conatctleads->widget_display=="Y")
                         <div class={{ (isset($dashboardWidgetSettings->widget_inapporval) && $dashboardWidgetSettings->widget_inapporval->widget_display=='Y') ? 'col-xl-6' : 'col-xl-12' }}>
-                            <div class="card contactuslead">
+                            <div class="card">
                                 <div class="card-header align-items-center d-flex">
                                     <h4 class="card-title mb-0 flex-grow-1">Reseller Leads</h4>
                                 </div><!-- end card header -->
-                                <div class="card-body" data-simplebar style="height: 300px;">
+                                <div class="card-body card-box" data-simplebar >
                                     <div class="table-responsive"> <!-- table-card -->
                                         <table id="resellerLeads_ajax" class="table table-hover table-centered align-middle table-nowrap mb-0 lastchild-border-0">
-                                            <thead> <!-- class="text-muted table-light" -->
+                                            <thead class="table-light"> <!-- class="text-muted table-light" -->
                                                 <tr>
                                                     <th align="center"><input type="checkbox" class="form-check-input multiSelectList"></th>
                                                     <th align="left">Name</th>
@@ -409,22 +411,22 @@
 
                         @if(isset($dashboardWidgetSettings->widget_inapporval) && $dashboardWidgetSettings->widget_inapporval->widget_display=="Y")
                         <div class={{ (isset($dashboardWidgetSettings->widget_conatctleads) && $dashboardWidgetSettings->widget_conatctleads->widget_display=='Y') ? 'col-xl-6' : 'col-xl-12' }}>
-                            <div class="card inapproval-card">
+                            <div class="card">
                                 <div class="card-header align-items-center d-flex">
                                     <h4 class="card-title mb-0 flex-grow-1"  title="In Approval">Order Leads</h4>
-                                    <div class="flex-shrink-0">
+                                    <!-- <div class="flex-shrink-0">
                                         <div class="dash-approve-search pull-right">
                                             <div class="cm-search">
                                                 <input type="search" class="form-control form-control-solid placeholder-no-fix" placeholder="Search" id="searchfilter">
                                                 <span class="open-search cursor-pointer"><i id="clearSearchFilter" class="ri-search-2-line fs-20"></i></span>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div><!-- end card header -->
-                                <div class="card-body" data-simplebar style="height: 360px;">
+                                <div class="card-body card-box" data-simplebar>
                                     <div class="table-responsive"> <!-- table-card -->
                                         <table id="orderLeads_ajax" class="table table-hover table-centered align-middle table-nowrap mb-0 lastchild-border-0" >
-                                            <thead> <!-- class="text-muted table-light" -->
+                                            <thead class="table-light"> <!-- class="text-muted table-light" -->
                                                 <tr>
                                                     <th>ID</th>
                                                     <th align="left">Business</th>
