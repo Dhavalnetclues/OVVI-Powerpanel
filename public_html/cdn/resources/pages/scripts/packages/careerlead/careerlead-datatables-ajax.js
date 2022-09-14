@@ -9,19 +9,11 @@ var TableDatatablesAjax = function() {
         var ip = '';
         var totalRec;
 
-        if (companyid != '') {
-            grid.setAjaxParam("cmpId", companyid);
-        }
         grid.init({
             src: $("#datatable_ajax"),
             onSuccess: function(grid, response) {
                 if (response.recordsTotal < 1) { $('.deleteMass').hide(); } else { $('.deleteMass').show(); }
                 if (response.recordsTotal < 1) { $('.ExportRecord').hide(); } else { $('.ExportRecord').show(); }
-
-                // grid:        grid object
-                // response:    json object of server side ajax response
-                // execute some code after table records loaded		
-                // get all typeable inputs		
                 totalRec = response.recordsTotal;
             },
             onError: function(grid) {
@@ -53,7 +45,7 @@ var TableDatatablesAjax = function() {
                 },
                 "columns": [
                     { "data": 0, className: 'text-center td_checker', "bSortable": false },
-                    { "data": 1, className: 'text-left', "name": 'varName' },
+                    { "data": 1, className: 'text-left', "name": 'varTitle' },
                     { "data": 2, className: 'text-left', "bSortable": false },
                     { "data": 3, className: 'text-center', "bSortable": false },
                     { "data": 4, className: 'text-center', "name": 'varService', "bSortable": false },
@@ -124,6 +116,7 @@ var TableDatatablesAjax = function() {
                 if (exportRadioVal != '') {
                     if (exportRadioVal == 'selected_records') {
                         if ($('#ExportRecord').click) {
+                        	console.log($('input[name="delete[]"]:checked').val());
                             if ($('input[name="delete[]"]:checked').val()) {
                                 ip = '?' + $('input[name="delete[]"]:checked').serialize() + '&' + 'export_type' + '=' + exportRadioVal;
                                 var ajaxurl = window.site_url + "/powerpanel/career-lead/ExportRecord" + ip;
@@ -141,6 +134,7 @@ var TableDatatablesAjax = function() {
                 }
             }
         });
+        
         grid.setAjaxParam("customActionType", "group_action");
         grid.clearAjaxParams();
         grid.getDataTable().columns().iterator('column', function(ctx, idx) {

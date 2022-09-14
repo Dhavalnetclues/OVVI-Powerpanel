@@ -104,7 +104,7 @@
                                 ];
                             @endphp
 
-                            @include('powerpanel.partials.datatable-view',['ModuleName'=>'newsletterlead','Permission_Delete'=>'referearn-lead-delete','tablearray'=>$tablearray,'userIsAdmin'=>$userIsAdmin,'Module_ID'=>Config::get('Constant.MODULE.ID')])
+                            @include('powerpanel.partials.datatable-view',['ModuleName'=>'referearnlead','Permission_Delete'=>'referearn-lead-delete','tablearray'=>$tablearray,'userIsAdmin'=>$userIsAdmin,'Module_ID'=>Config::get('Constant.MODULE.ID')])
 
                         </div>
                     </div>
@@ -112,7 +112,7 @@
 
                 <!-- Modal -->
                 @if (File::exists(base_path() . '/resources/views/powerpanel/partials/quickeditpopup.blade.php') != null)
-                @include('powerpanel.partials.quickeditpopup',['TableName'=>'newsLetterLead'])
+                @include('powerpanel.partials.quickeditpopup',['TableName'=>'referearnlead'])
                 @endif
                 @else
                 @if (File::exists(base_path() . '/resources/views/powerpanel/partials/addrecordsection.blade.php') != null)
@@ -228,7 +228,7 @@
 @section('scripts')
 <script type="text/javascript">
     window.site_url = '{!! url("/") !!}';
-    var DELETE_URL = '{!! url("/powerpanel/newsletter-lead/DeleteRecord") !!}';
+    var DELETE_URL = '{!! url("/powerpanel/referearn-lead/DeleteRecord") !!}';
 
     var showChecker = true;
     @if (!$userIsAdmin)

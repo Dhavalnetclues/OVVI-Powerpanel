@@ -105,8 +105,8 @@ class CareerLeadController extends PowerpanelController
 
     }
 
-    public function tableData($value)
-    {  
+    public function tableData($value){
+        $checkbox = view('powerpanel.partials.checkbox', ['name'=>'delete[]', 'value'=>$value->id])->render();  
         $phoneNo = '';          
         $email = '';
         if (!empty($value->varEmail)) {
@@ -142,7 +142,7 @@ class CareerLeadController extends PowerpanelController
         }
         // dd($value);
         $records = array(
-            '<input type="checkbox" name="delete[]" class="form-check-input chkDelete" value="' . $value->id . '">',
+            $checkbox,
             $value->varTitle,
             $email,
             $phoneNo,            

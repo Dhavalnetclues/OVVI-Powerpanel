@@ -326,7 +326,7 @@ class CommonModel extends Model {
         $titleField = 'varTitle';
         $displayOrderField = true;
         $nameFieldModules = array('User','Payonline');
-        $varNameFieldModules = array('ContactLead', 'NewsletterLead', 'RestaurantReservations', 'AppointmentLead', 'FeedbackLead', 'FormBuilder', 'PageTemplate');
+        $varNameFieldModules = array('ContactLead', 'ReferearnLead', 'RestaurantReservations', 'AppointmentLead', 'FeedbackLead', 'FormBuilder', 'PageTemplate');
         if (in_array($modelName, $nameFieldModules)) {
             $titleField = 'name';
         } else if (in_array($modelName, $varNameFieldModules)) {
@@ -340,13 +340,12 @@ class CommonModel extends Model {
         } else {
             $titleField = 'varTitle';
         }
-
+        // echo $titleField;die;
         if ($modelName == "NotificationList") {
             $titleField = 'txtNotification';
         }
 
-        if ($modelName == "PageTemplates") {
-              
+        if ($modelName == "PageTemplates") {              
             $titleField = 'varTemplateName';
         }
 
@@ -354,7 +353,7 @@ class CommonModel extends Model {
             array_push($moduleFields, $titleField);
         }
 
-        $avoidDisplayOrderFieldModules = array('CmsPage', 'StaticBlocks', 'ContactInfo', 'ContactLead', 'NewsletterLead', 'EventLead', 'Publications', 'Workflow', 'News', 'FeedbackLead', 'HitsReport', 'SearchStatictics', 'RFP', 'NotificationList', 'FormBuilder', 'PageTemplates');
+        $avoidDisplayOrderFieldModules = array('CmsPage', 'StaticBlocks', 'ContactInfo', 'ContactLead', 'Referearn', 'EventLead', 'Publications', 'Workflow', 'News', 'FeedbackLead', 'HitsReport', 'SearchStatictics', 'RFP', 'NotificationList', 'FormBuilder', 'PageTemplates');
 
         if (in_array($modelName, $avoidDisplayOrderFieldModules)) {
             $displayOrderField = false;

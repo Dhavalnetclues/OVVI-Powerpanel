@@ -58,7 +58,14 @@
                                     "Clothing_Store"			=> "Clothing Store",
                                     "Other"						=> "Other"
                                 ];
-                                $details .= 'Business Type :- '.$BusinessTypeArr[$BusinessType].'<br>';
+                                $BusinesTypeList = explode(',',$BusinessType);
+                                $BusinesTypeListArr = array();
+                                foreach($BusinesTypeList as $BusinessTypes){
+                                    $BusinesTypeListArr[] = $BusinessTypeArr[$BusinessTypes];
+                                }
+                                $BusinesTypeListDisplay = implode(", ",$BusinesTypeListArr);
+                                $details .= 'Business Type :- '.$BusinesTypeListDisplay.'<br>';
+                                // $details .= 'Business Type :- '.$BusinessTypeArr[$BusinessType].'<br>';
                             }
                             if(!empty($POSBundle)){
                                 $details .= 'No Of POS Bundle :- '.$POSBundle.'<br>';

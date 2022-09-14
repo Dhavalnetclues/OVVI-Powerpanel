@@ -135,7 +135,6 @@ class OrderLeadController extends PowerpanelController {
             }
             $BusinesTypeListDisplay = implode(", ",$BusinesTypeListArr);
             $label .= '<b>Business Type :- </b>'.$BusinesTypeListDisplay.'<br>';
-            // $label .= '<b>Business Type :- </b>'.$BusinessTypeArr[$BusinessType].'<br>';
         }
         if(!empty($POSBundle)){
             $label .= '<b>No Of POS Bundle :- </b>'.$POSBundle.'<br>';

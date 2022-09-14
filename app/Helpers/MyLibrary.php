@@ -426,9 +426,7 @@ class MyLibrary
                     $deletedata = Config::get('Constant.DELETE_RECORD');
                 }
 
-                if ($modelName == "NewsletterLead") {
-                    $updateFields['chrSubscribed'] = 'N';
-                }
+
                 $whereINConditions = $data['ids'];
                 $update = CommonModel::updateMultipleRecords($whereINConditions, $updateFields, false, $modelNameSpace);
             }

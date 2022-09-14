@@ -3,8 +3,8 @@
 	{{Config::get('Constant.SITE_NAME')}} - PowerPanel
 @stop
 @section('css')
-<link href="{{ $CDN_PATH.'resources/global/plugins/datatables/datatables.min.css' }}" rel="stylesheet" type="text/css" />
-<link href="{{ $CDN_PATH.'resources/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css' }}" rel="stylesheet" type="text/css" />
+{{-- <link href="{{ $CDN_PATH.'resources/global/plugins/datatables/datatables.min.css' }}" rel="stylesheet" type="text/css" /> --}}
+{{-- <link href="{{ $CDN_PATH.'resources/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css' }}" rel="stylesheet" type="text/css" /> --}}
 <!-- <link href="{{ $CDN_PATH.'resources/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css' }}" rel="stylesheet" type="text/css"/> -->
 <!-- <link href="{{ $CDN_PATH.'resources/global/plugins/bootstrap-daterangepicker/daterangepicker.min.css' }}" rel="stylesheet" type="text/css" /> -->
 <!-- <link href="{{ $CDN_PATH.'resources/global/plugins/fancybox/source/helpers/jquery.fancybox-thumbs.css' }}" rel="stylesheet" type="text/css"/> -->
@@ -61,67 +61,67 @@
 							$tablearray = [
 								'DataTableTab'=>[
 									'ColumnSetting'=>[
-										['Identity_Name'=>'name','TabIndex'=>'1','Name'=>'Name'],
+										['Identity_Name'=>'vartitle','TabIndex'=>'1','Name'=>'varTitle'],
 										['Identity_Name'=>'email','TabIndex'=>'2','Name'=>'Email'],
 										['Identity_Name'=>'phone','TabIndex'=>'3','Name'=>'Phone'],
-										['Identity_Name'=>'business','TabIndex'=>'4','Name'=>'business'],
-										['Identity_Name'=>'message','TabIndex'=>'5','Name'=>'Message'],
-										['Identity_Name'=>'ip','TabIndex'=>'6','Name'=>'IP'],
+										['Identity_Name'=>'message','TabIndex'=>'4','Name'=>'Message'],
+										['Identity_Name'=>'resume','TabIndex'=>'5','Name'=>'resume'],
+										// ['Identity_Name'=>'ip','TabIndex'=>'6','Name'=>'IP'],
 										['Identity_Name'=>'date','TabIndex'=>'7','Name'=>'Date']
 									],
 									'DataTableHead'=>[
 										['Title'=>'Name','Align'=>'left'],
 										['Title'=>'Email','Align'=>'left'],
 										['Title'=>'Phone','Align'=>'left'],
-										['Title'=>'Bussness','Align'=>'left'],
 										['Title'=>'Message','Align'=>'left'],
-										['Title'=>'IP','Align'=>'left'],
+										['Title'=>'Resume','Align'=>'left'],
+										// ['Title'=>'IP','Align'=>'left'],
 										['Title'=>'Received Date','Align'=>'center']
 									]
 								]
 							];
-						@endphp
-                            <table class="table table-striped table-bordered table-hover table-checkable hide-mobile" id="datatable_ajax">
-                                <thead class="text-muted table-light">
-									<tr role="row" class="heading">	
-										<th width="2%" align="center"><input type="checkbox" class="form-check-input group-checkable"></th>
-										<th width="10%" align="left">{{ trans('careerlead::template.common.name') }}</th>
-										<th width="10%" align="left">{{ trans('careerlead::template.common.email') }}</th>
-										<th width="10%" align="center">{{ trans('careerlead::template.common.phoneno') }}</th>
-										<th width="10%" align="center">{{ trans('careerlead::template.common.message') }}</th>
-										<th width="10%" align="center">{{ trans('Resume') }}</th>
-										<th width="10%" align="center">{{ trans('careerlead::template.common.received_date_time') }}</th>
-									</tr>
-                                </thead>
-                                <tbody></tbody>
-                            </table>
-                            @include('powerpanel.partials.datatable-view',['ModuleName'=>'CareerLead','Permission_Delete'=>'career-lead-delete','tablearray'=>$tablearray,'userIsAdmin'=>$userIsAdmin,'Module_ID'=>Config::get('Constant.MODULE.ID')])
+						@endphp                           
+                            @include('powerpanel.partials.datatable-view',['ModuleName'=>'CareerLead','Permission_Delete'=>'careers-lead-delete','tablearray'=>$tablearray,'userIsAdmin'=>$userIsAdmin,'Module_ID'=>Config::get('Constant.MODULE.ID')])
 							
                         </div>
                     </div>
                 </div><!-- end card-body -->
-			@else
-				@include('powerpanel.partials.addrecordsection',['marketlink' => 'https://www.netclues.com/social-media-marketing', 'type'=>'complaint'])
-			@endif
+				@if (File::exists(base_path() . '/resources/views/powerpanel/partials/quickeditpopup.blade.php') != null)
+                @include('powerpanel.partials.quickeditpopup',['TableName'=>'CareerLead'])
+                @endif
+                @else
+                @if (File::exists(base_path() . '/resources/views/powerpanel/partials/addrecordsection.blade.php') != null)
+                @include('powerpanel.partials.addrecordsection',['type'=>Config::get('Constant.MODULE.TITLE'), 'marketlink' => 'https://www.netclues.ky/it-services/digital-marketing/social-media-marketing-cayman-islands'])
+                @endif
+            @endif
 		</div>
 	</div>
 </div>
 
 <div class="new_modal modal fade" id="noRecords" tabindex="-1" role="basic" aria-hidden="true">
-	<div class="modal-dialog">
-		<div class="modal-vertical">	
-			<div class="modal-content">
-				<div class="modal-header">
-					{{ trans('careerlead::template.common.alert') }}
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"> </button>
-				</div>
-				<div class="modal-body text-center">{{ trans('careerlead::template.careerleadModule.noExport') }} </div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-primary" data-bs-dismiss="modal">{{ trans('careerlead::template.common.ok') }}</button>
-				</div>
-			</div>
-		</div>
-	</div>
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">{{ trans('careerlead::template.common.alert') }}</h5>
+                <button type="button" class="btn-close fs-10" data-bs-dismiss="modal" aria-label="Close"> </button>
+            </div>
+            <div class="modal-body">
+                <h5 class="mb-2">{{ trans('careerlead::template.careerleadModule.noExport') }}</h5>
+                <div class="pt-2">
+                    <button type="button" class="btn btn-primary bg-gradient waves-effect waves-light btn-label" data-bs-dismiss="modal">
+                        <div class="d-flex">
+                            <div class="flex-shrink-0">
+                                <i class="ri-check-line label-icon align-middle fs-20 me-2"></i>
+                            </div>
+                            <div class="flex-grow-1">
+                                {{ trans('careerlead::template.common.ok') }}
+                            </div>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <div class="new_modal modal fade" id="selectedRecords" tabindex="-1" role="basic" aria-hidden="true">
 	<div class="modal-dialog">
@@ -176,13 +176,19 @@
 	<!-- /.modal-dialog -->
 </div>
 <!-- /.modal -->
-@include('powerpanel.partials.deletePopup')
+	@if (File::exists(base_path() . '/resources/views/powerpanel/partials/deletePopup.blade.php') != null)
+    @include('powerpanel.partials.deletePopup')
+    @endif
 @endsection
 @section('scripts')
 	<script>
-		var companyid='{!! (isset($_REQUEST["company"])?$_REQUEST["company"]:'') !!}';
-		window.site_url =  '{!! url("/") !!}';
+		window.site_url = '{!! url("/") !!}';
 		var DELETE_URL =  '{!! url("/powerpanel/career-lead/DeleteRecord") !!}';
+
+		var showChecker = true;
+		@if (!$userIsAdmin)
+		showChecker = false;
+		@endif
 	</script>
         
 	<!-- <script src="{{ $CDN_PATH.'resources/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js' }}" type="text/javascript"></script> -->
