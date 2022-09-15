@@ -27,31 +27,55 @@
 		</div>
 		@endif
         <div class="card">
-            <div class="card-header border border-dashed border-end-0 border-start-0">
-                <div class="row g-3">
-                    <div class="col-xxl-2 col-sm-4">
-                        <div class="search-box">
-                            <input type="search" class="form-control search" placeholder="Search by Name" id="searchfilter">
-                            <i class="ri-search-line search-icon"></i>
-                        </div>
-                    </div>
-                    {{-- <div class="col-lg-6 col-md-3 col-xs-3">
-						<div class="input-group new_date_picker date-picker input-daterange">
-                            <span class="input-group-text"><i class="ri-calendar-line fs-13"></i></span>
-                            <input type="text" class="form-control" id="start_date" name="start_date" placeholder="Start Date" readonly data-provider="flatpickr" data-date-format="{{Config::get('Constant.DEFAULT_DATE_FORMAT')}}">
-                            <input type="text" class="form-control" id="end_date" name="end_date" placeholder="To Date" readonly data-provider="flatpickr" data-date-format="{{Config::get('Constant.DEFAULT_DATE_FORMAT')}}">
-                            <button class="btn btn-outline-primary btn-rh-search" id="complaintleadrange" type="button"><i class="ri-search-line fs-13"></i></button>
-                        </div>
-                    </div> --}}
-                    <!--end col-->
-                    <div class="col-xxl-1 col-sm-2">
-                        <button type="button" class="btn btn-primary" title="Reset" id="refresh">
-                            <i class="ri-refresh-line"></i>
-                        </button>
-                    </div>
-                    <!--end col-->
-                </div><!--end row-->
-            </div>
+			<div class="card-header cmpage-topheader border border-dashed border-end-0 border-start-0 border-top-0">
+				<div class="d-xl-flex flex-wrap align-items-center">
+
+					<div class="cm-filter flex-grow-1 order-sm-1 d-flex align-items-center">
+						@if (File::exists(base_path() . '/resources/views/powerpanel/partials/tabpanel.blade.php') != null)
+							{{-- @include('powerpanel.partials.tabpanel',['tabarray'=>[]]) --}}
+						@endif
+						<div class="btn-group d-inline-block filter-dropdown">
+							<button type="button" class="btn fs-14 fw-medium p-0 border-0 filter-btn" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ri-filter-line fs-21"></i></button>
+							<div class="dropdown-menu">
+								<div class="p-3 dropdown-body">
+
+									<div class="mb-3">
+										<div class="input-group input-daterange" id="contactleadrange">
+											<span class="input-group-text" id="basic-addon1"><i class="ri-calendar-2-line fs-14"></i></span>
+											<input class="form-control" id="start_date" name="start_date" placeholder="{{ trans('contactuslead::template.common.fromdate') }}" type="text" data-provider="flatpickr" data-date-format="{{ Config::get('Constant.DEFAULT_DATE_FORMAT') }}">
+										</div>
+									</div>
+
+									<div class="mb-3">
+										<div class="input-group input-daterange" id="contactleadrange">
+											<span class="input-group-text" id="basic-addon1"><i class="ri-calendar-2-line fs-14"></i></span>
+											<input class="form-control" id="end_date" name="end_date" placeholder="{{ trans('contactuslead::template.common.todate') }}" type="text" data-provider="flatpickr" data-date-format="{{ Config::get('Constant.DEFAULT_DATE_FORMAT') }}">
+										</div>
+									</div>
+
+									<div class="reset-btn">
+										<button type="button" class="btn btn-light bg-gradient waves-effect waves-light btn-light btn-label" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Reset" id="refresh">
+											<div class="d-flex">
+												<div class="flex-shrink-0">
+													<i class="ri-refresh-line label-icon align-middle fs-18 me-2"></i>
+												</div>
+												<div class="flex-grow-1">
+													Reset
+												</div>
+											</div>
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="filter-search d-inline-block">
+							<input type="search" class="form-control search" placeholder="Search by Name" id="searchfilter">
+							<span class="iconsearch cursor-pointer"><i class="ri-search-2-line fs-21"></i></span>
+						</div>
+					</div>
+
+				</div>
+			</div><!-- end card header -->
 
             @if($iTotalRecords > 0)
                 <div class="card-body">
