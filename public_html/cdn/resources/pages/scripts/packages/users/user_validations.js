@@ -50,7 +50,7 @@ var Validate = function () {
 										equalTo: isEqualTo,
 																																								
 								},
-								'roles[]': {required: true}
+								// 'roles[]': {required: true}
 						},
 						messages: {
 								name:{required: Lang.get('validation.required', {attribute: Lang.get('template.userModule.userName')})},
@@ -66,7 +66,7 @@ var Validate = function () {
 										equalTo: 'Password and confirm password should match',
 										minlength:"Password must be at least 6 characters.",
 								},
-								'roles[]': Lang.get('validation.required', {attribute: Lang.get('template.userModule.userRole')}),
+								// 'roles[]': Lang.get('validation.required', {attribute: Lang.get('template.userModule.userRole')}),
 						},
 						errorPlacement: function (error, element) {
 								if (element.parent('.input-group').length) {

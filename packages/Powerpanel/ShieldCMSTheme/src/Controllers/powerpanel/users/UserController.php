@@ -111,13 +111,13 @@ class UserController extends PowerpanelController
         $rules = [
             'name' => 'required|max:160|handle_xss|no_url',
             'email' => 'required|max:160|handle_xss|no_url|unique:users,email,' . $id,
-            'roles' => 'required',
+            // 'roles' => 'required',
         ];
         $messages = [
             'name.required' => 'Name field is required.',
             'email.required' => 'Email is required.',
             'email.unique' => 'Email id already exists.',
-            'roles' => 'Role field is required.',
+            // 'roles' => 'Role field is required.',
         ];
         if (!empty($data['password']) || !is_numeric($id)) {
             $rules['password'] = 'same:confirm-password|min:6|max:20|check_passwordrules';
@@ -271,7 +271,7 @@ class UserController extends PowerpanelController
         $data = Request::get('ids');
         foreach ($data as $key => $id) {
             $user = User::getRecordById($id);
-            $user->removeRole($user->roles[0]->name);
+            // $user->removeRole($user->roles[0]->name);
         }
         $update = User::deleteRecordsPermanent($data);
         exit;
@@ -485,10 +485,10 @@ class UserController extends PowerpanelController
             ];
 
             foreach ($Users as $key => $user) {
-                $userRole = $user->roles[0]->name;
+                // $userRole = $user->roles[0]->name;
                 $allowed = false;
 
-                if (($isAdmin && $userRole != 'netquick_admin' && $user->id != 2 && $user->id != Auth::user()->id) || $this->currentUserRoleData->name == 'netquick_admin') {
+                if (($isAdmin && $user->id != 2 && $user->id != Auth::user()->id)) {
                     $allowed = true;
                 } else {
                     $iTotalRecords--;
@@ -524,7 +524,7 @@ class UserController extends PowerpanelController
         }
 
         // Roles
-        $roles = '<label class = "label label-success">' . $value->roles[0]->display_name . '</label>';
+        // $roles = '<label class = "label label-success">' . $value->roles[0]->display_name . '</label>';
 
 
 
