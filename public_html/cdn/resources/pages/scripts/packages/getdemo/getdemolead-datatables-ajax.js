@@ -34,11 +34,11 @@ var TableDatatablesAjax = function () {
                     $("#menu1.tab-pane .notabreocrd").hide();
 										$("#menu1.tab-pane .withrecords").show();
                 }
-                if(response.recordsTotal < 20) {
-                    $('.gridjs-pages').hide();
-                } else {
-                    $('.gridjs-pages').show();
-                }
+                // if(response.recordsTotal < 10) {
+                //     $('.gridjs-pages').hide();
+                // } else {
+                //     $('.gridjs-pages').show();
+                // }
                 // grid:        grid object
                 // response:    json object of server side ajax response
                 // execute some code after table records loaded
@@ -69,15 +69,15 @@ var TableDatatablesAjax = function () {
                 //     [10, 20, 50, 100],
                 //     [10, 20, 50, 100] // change per page values here
                 // ],
-                "pageLength": 20, // default record count per page
+                "pageLength": 10, // default record count per page
                 drawCallback:function(){
-                    var $api = this.api();
-                    var pages = $api.page.info().pages;
-                    var rows = $api.data().length;
-                    if(pages<=1){
-                        $('.dataTables_info').css('display','none');
-                        $('.dataTables_paginate').css('display','none');
-                    }
+                    // var $api = this.api();
+                    // var pages = $api.page.info().pages;
+                    // var rows = $api.data().length;
+                    // if(pages<=1){
+                    //     $('.dataTables_info').css('display','none');
+                    //     $('.dataTables_paginate').css('display','none');
+                    // }
                 },
                 // Code for sorting
                 "serverSide": true,
@@ -88,7 +88,7 @@ var TableDatatablesAjax = function () {
                 },
                 "columns": [
                     {"data": 0, "class": 'td_checker', "bSortable": false},
-                    {"data": 1, "class": 'text-left', "name": 'varName', "bSortable": true},
+                    {"data": 1, "class": 'text-left', "name": 'varTitle', "bSortable": true},
                     {"data": 2, "class": 'text-left', "name": 'varEmail', "bSortable": false},
                     {"data": 3, "class": 'text-center', "bSortable": false},
                     {"data": 4, "class": 'text-center', "bSortable": false},
@@ -101,7 +101,7 @@ var TableDatatablesAjax = function () {
                     "url": window.site_url + "/powerpanel/getdemo-leads/get_list"+id, // ajax source
                 },
                 "order": [
-                    [7, "desc"]
+                    [0, "desc"]
                 ]// set first column as a default sort by asc
             }
         });

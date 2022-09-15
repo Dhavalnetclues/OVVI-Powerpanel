@@ -463,7 +463,7 @@ class MyLibrary
                             $title = $objModule->varTemplateName;
                         }
                         $logArr['varTitle'] = $title;
-                        Log::recordLog($logArr);
+                        // Log::recordLog($logArr);
                         array_push($responseAr, $objModule->id);
                         $updateRecentUpdatesFilelds = ['chrRecordDelete' => 'Y'];
                         if (Auth::user()->can('recent-updates-list')) {

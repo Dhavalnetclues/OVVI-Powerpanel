@@ -328,7 +328,7 @@
                                 @if(isset($leads) && !empty($leads) && count($leads) > 0 )
                                     <div class="card-footer">
                                         <div class="justify-content-end">
-                                            <a class="btn btn-soft-dark btn-sm" href="{{ url('powerpanel/contact-us') }}" title="{{ trans('template.powerPanelDashboard.seeAllRecords') }}"><i class="ri-file-list-3-line align-middle"></i> {{ trans('template.powerPanelDashboard.seeAllRecords') }}</a>
+                                            <a class="btn btn-soft-dark btn-sm" href="{{ url('powerpanel/contact-lead') }}" title="{{ trans('template.powerPanelDashboard.seeAllRecords') }}"><i class="ri-file-list-3-line align-middle"></i> {{ trans('template.powerPanelDashboard.seeAllRecords') }}</a>
                                         </div>
                                     </div>
                                 @endif

@@ -141,7 +141,7 @@ class GetdemoLead extends Model {
         ];
         $response = Self::getPowerPanelRecords($moduleFields)
                 ->deleted()
-                ->orderBy('id', 'asc')
+                ->orderBy('id', 'desc')
                 ->limit($limit)
                 ->get();
         return $response;
@@ -262,7 +262,7 @@ class GetdemoLead extends Model {
         if (!empty($filterArr['orderByFieldName']) && !empty($filterArr['orderTypeAscOrDesc'])) {
             $query = $query->orderBy($filterArr['orderByFieldName'], $filterArr['orderTypeAscOrDesc']);
         } else {
-            $query = $query->orderBy('varTitle', 'ASC');
+            $query = $query->orderBy('id', 'DESC');
         }
         if (!$retunTotalRecords) {
             if (!empty($filterArr['iDisplayLength']) && $filterArr['iDisplayLength'] > 0) {

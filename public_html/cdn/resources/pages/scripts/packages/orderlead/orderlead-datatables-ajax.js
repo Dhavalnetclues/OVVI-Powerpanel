@@ -24,11 +24,11 @@ var TableDatatablesAjax = function () {
                     $("#menu1.tab-pane .notabreocrd").hide();
 										$("#menu1.tab-pane .withrecords").show();
                 }
-                if(response.recordsTotal < 20) {
-                    $('.gridjs-pages').hide();
-                } else {
-                    $('.gridjs-pages').show();
-                }
+                // if(response.recordsTotal < 20) {
+                //     $('.gridjs-pages').hide();
+                // } else {
+                //     $('.gridjs-pages').show();
+                // }
                 if (response.newRecordCount > 0) {
                     $('.newcounter').text(response.newRecordCount).show();
                 } else {
@@ -58,11 +58,11 @@ var TableDatatablesAjax = function () {
                 //     [10, 20, 50, 100],
                 //     [10, 20, 50, 100] // change per page values here
                 // ],
-                "pageLength": 20, // default record count per page
+                "pageLength": 10, // default record count per page
                 drawCallback:function(){
-                    var $api = this.api();
-                    var pages = $api.page.info().pages;
-                    var rows = $api.data().length;
+                    // var $api = this.api();
+                    // var pages = $api.page.info().pages;
+                    // var rows = $api.data().length;
                     // if(pages<=1){
                     //     $('.dataTables_info').css('display','none');
                     //     $('.dataTables_paginate').css('display','none');
@@ -121,7 +121,7 @@ var TableDatatablesAjax = function () {
                     // $(nRow).attr('data-order', aData[5]);
                 },
                 "order": [
-                    [7, "desc"]
+                    [0, "desc"]
                 ]
             }
         });

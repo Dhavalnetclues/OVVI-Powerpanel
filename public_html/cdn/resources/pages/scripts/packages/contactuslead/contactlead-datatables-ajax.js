@@ -48,15 +48,15 @@ var TableDatatablesAjax = function() {
                 //     [10, 20, 50, 100],
                 //     [10, 20, 50, 100] // change per page values here
                 // ],
-                "pageLength": 20, // default record count per page
+                "pageLength": 10, // default record count per page
                 drawCallback:function(){
-                    var $api = this.api();
-                    var pages = $api.page.info().pages;
-                    var rows = $api.data().length;
-                    if(pages<=1){
-                        $('.dataTables_info').css('display','none');
-                        $('.dataTables_paginate').css('display','none');
-                    }
+                    // var $api = this.api();
+                    // var pages = $api.page.info().pages;
+                    // var rows = $api.data().length;
+                    // if(pages<=1){
+                    //     $('.dataTables_info').css('display','none');
+                    //     $('.dataTables_paginate').css('display','none');
+                    // }
                 },
                 // Code for sorting
                 "serverSide": true,
@@ -80,7 +80,7 @@ var TableDatatablesAjax = function() {
                     "url": window.site_url + "/powerpanel/contact-lead/get_list", // ajax source
                 },
                 "order": [
-                    [6, "desc"]
+                    [0, "desc"]
                 ]
             }
         });

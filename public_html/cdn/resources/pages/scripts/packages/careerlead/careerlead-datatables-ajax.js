@@ -15,6 +15,11 @@ var TableDatatablesAjax = function() {
                 if (response.recordsTotal < 1) { $('.deleteMass').hide(); } else { $('.deleteMass').show(); }
                 if (response.recordsTotal < 1) { $('.ExportRecord').hide(); } else { $('.ExportRecord').show(); }
                 totalRec = response.recordsTotal;
+                // if(response.recordsTotal < 10) {
+                //     $('.gridjs-pages').hide();
+                // } else {
+                //     $('.gridjs-pages').show();
+                // }
             },
             onError: function(grid) {
                 // execute some code on network or other general error
@@ -35,7 +40,7 @@ var TableDatatablesAjax = function() {
                 //     [10, 20, 50, 100],
                 //     [10, 20, 50, 100] // change per page values here
                 // ],
-                "pageLength": 20, // default record count per page
+                "pageLength": 10, // default record count per page
                 //Code for sorting
                 "serverSide": true,
                 "lengthChange": false,
@@ -56,7 +61,7 @@ var TableDatatablesAjax = function() {
                     "url": window.site_url + "/powerpanel/career-lead/get_list", // ajax source
                 },
                 "order": [
-                        [6, "desc"]
+                        [0, "desc"]
                     ] // set first column as a default sort by asc
             }
         });

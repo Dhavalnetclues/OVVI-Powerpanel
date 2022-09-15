@@ -396,7 +396,7 @@ class OrderLead extends Model {
         if (!empty($filterArr['orderByFieldName']) && !empty($filterArr['orderTypeAscOrDesc'])) {
             $query = $query->orderBy('OrderLeads.'.$filterArr['orderByFieldName'], $filterArr['orderTypeAscOrDesc']);
         } else {
-            //$query = $query->orderBy('`OrderLeads`.`created_at`', 'desc');
+            $query = $query->orderBy('id', 'desc');
         }
         if (!$retunTotalRecords) {
             if (!empty($filterArr['iDisplayLength']) && $filterArr['iDisplayLength'] > 0) {
