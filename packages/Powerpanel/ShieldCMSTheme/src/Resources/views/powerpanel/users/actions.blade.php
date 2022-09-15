@@ -69,7 +69,7 @@
 									{!! Form::password('confirm-password', array('autocomplete' => 'off','maxlength'=>20,'class' => 'form-control input-sm maxlength-handler','id'=>'confirmpassword')) !!}
 								</div>
 							</div>
-							<div class="col-md-12">
+							{{-- <div class="col-md-12">
 								@if(isset($user) && $user->id==1)
 								{!! Form::hidden('roles[]','1') !!}
 								@else
@@ -79,7 +79,7 @@
 									<span style="color: red;">{{ $errors->first('roles') }}</span>
 								</div>
 								@endif
-							</div>
+							</div> --}}
 							<div class="col-md-12">
 								<div class="mb-3">
 									@if(isset($user) && $user->id == '1')

@@ -1057,13 +1057,13 @@
                 </a>
                 <div class="collapse menu-dropdown {{ ((isset($menuArr['usermg']) && $menuArr['usermg']=='active')) ? 'show' : '' }}" id="workflow">
                     <ul class="nav nav-sm flex-column">
-                        @if(isset($menuArr['can-roles-list']) && $menuArr['can-roles-list'])
+                        {{-- @if(isset($menuArr['can-roles-list']) && $menuArr['can-roles-list'])
                         <li data-id="47" class="nav-sort nav-item">
                             <a href="{{ url('powerpanel/roles') }}" class="nav-link {{ $menuArr['roles_active'] }}" data-key="t-analytics" title="{{ trans('template.sidebar.rolemanager') }}"> 
                                 <i class="ri-profile-line d-none"></i> <span data-key="t-widgets">{{ trans('template.sidebar.rolemanager') }}</span>
                             </a>
                         </li>
-                    @endif
+                    @endif --}}
                     
                     <!-- User Management -->
                     @if(isset($menuArr['can-users-list']) && $menuArr['can-users-list'])
