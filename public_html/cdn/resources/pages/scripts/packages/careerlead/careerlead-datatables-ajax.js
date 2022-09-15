@@ -55,7 +55,9 @@ var TableDatatablesAjax = function() {
                     { "data": 3, className: 'text-center', "bSortable": false },
                     { "data": 4, className: 'text-center', "name": 'varService', "bSortable": false },
                     { "data": 5, className: 'text-center', "name": 'attachments', "bSortable": false },
-                    { "data": 6, className: 'text-center', "name": 'created_at' },
+                    { "data": 6, className: 'text-center', "bSortable": false },
+                    { "data": 7, className: 'text-center', "name": 'varIpAddress', "bSortable": false },
+                    { "data": 8, className: 'text-center', "name": 'created_at' },
                 ],
                 "ajax": {
                     "url": window.site_url + "/powerpanel/career-lead/get_list", // ajax source

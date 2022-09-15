@@ -148,6 +148,8 @@ class CareerLeadController extends PowerpanelController
             $phoneNo,            
             $value->varMessage ? $value->varMessage : "-" ,         
             $otherinfo ,
+            $value->varPageName,
+            $value->varIpAddress,
             date('' . Config::get('Constant.DEFAULT_DATE_FORMAT') . ' ' . Config::get('Constant.DEFAULT_TIME_FORMAT') . '', strtotime($value->created_at)),
         );
 

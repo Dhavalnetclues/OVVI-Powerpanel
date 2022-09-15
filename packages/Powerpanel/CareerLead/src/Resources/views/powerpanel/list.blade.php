@@ -66,8 +66,9 @@
 										['Identity_Name'=>'phone','TabIndex'=>'3','Name'=>'Phone'],
 										['Identity_Name'=>'message','TabIndex'=>'4','Name'=>'Message'],
 										['Identity_Name'=>'resume','TabIndex'=>'5','Name'=>'resume'],
-										// ['Identity_Name'=>'ip','TabIndex'=>'6','Name'=>'IP'],
-										['Identity_Name'=>'date','TabIndex'=>'7','Name'=>'Date']
+										['Identity_Name'=>'visitedpage','TabIndex'=>'6','Name'=>'Visited Page'],
+										['Identity_Name'=>'ip','TabIndex'=>'7','Name'=>'IP'],
+										['Identity_Name'=>'date','TabIndex'=>'8','Name'=>'Date']
 									],
 									'DataTableHead'=>[
 										['Title'=>'Name','Align'=>'left'],
@@ -75,7 +76,8 @@
 										['Title'=>'Phone','Align'=>'left'],
 										['Title'=>'Message','Align'=>'left'],
 										['Title'=>'Resume','Align'=>'left'],
-										// ['Title'=>'IP','Align'=>'left'],
+										['Title'=>'Visited Page','Align'=>'left'],
+										['Title'=>'IP','Align'=>'left'],
 										['Title'=>'Received Date','Align'=>'center']
 									]
 								]

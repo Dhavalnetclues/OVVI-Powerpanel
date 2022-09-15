@@ -20,6 +20,7 @@ class CareerLead extends Model {
         'varPhoneNo',
         'varMessage',
         'varFile',
+        'varPageName',
         'chrDelete',
         'varIpAddress',
         'created_at',
@@ -65,7 +66,7 @@ class CareerLead extends Model {
      */
     public static function getRecordById($id, $moduleFields = false) {
         $response = false;
-        $moduleFields = ['id', 'varTitle', 'varEmail', 'varPhoneNo', 'varPoBox',  'varMessage', 'varFile', 'chrDelete', 'varIpAddress', 'created_at', 'updated_at'];
+        $moduleFields = ['id', 'varTitle', 'varEmail', 'varPhoneNo', 'varPoBox', 'varPageName', 'varMessage', 'varFile', 'chrDelete', 'varIpAddress', 'created_at', 'updated_at'];
         $response = Self::getPowerPanelRecords($moduleFields)->deleted()->checkRecordId($id)->first();
         return $response;
     }
@@ -94,7 +95,7 @@ class CareerLead extends Model {
      */
     public static function getRecordList($filterArr = false) {
         $response = false;
-        $moduleFields = ['id', 'varTitle', 'varEmail', 'varPhoneNo', 'varMessage', 'varFile','varIpAddress', 'created_at', 'chrPublish'];
+        $moduleFields = ['id', 'varTitle', 'varEmail', 'varPhoneNo', 'varMessage', 'varFile', 'varPageName','varIpAddress', 'created_at', 'chrPublish'];
         $response = Self::getPowerPanelRecords($moduleFields)
                 ->deleted()
                 ->filter($filterArr)
@@ -236,15 +237,15 @@ class CareerLead extends Model {
         if (!empty($filterArr['rangeFilter']['from']) && $filterArr['rangeFilter']['to']) {
             $data = $query->whereRaw('DATE(created_at) BETWEEN "' . date('Y-m-d', strtotime(str_replace('/', '-', $filterArr['rangeFilter']['from']))) . '" AND "' . date('Y-m-d', strtotime(str_replace('/', '-', $filterArr['rangeFilter']['to']))) . '"');
         }
-        // if (!empty($filterArr['start']) && $filterArr['start'] != ' ') {
-        // 		$data = $query->whereRaw('DATE(created_at) >= DATE("' . date('Y-m-d', strtotime(str_replace('/', '-', $filterArr['start']))) . '")');
-        // }
-        // if (!empty($filterArr['start']) && $filterArr['start'] != '' &&  empty($filterArr['end']) && $filterArr['end'] == '') {
-        // 		$data = $query->whereRaw('DATE(created_at) = DATE("' . date('Y-m-d', strtotime(str_replace('/', '-', $filterArr['start']))) . '")');
-        // }
-        // if (!empty($filterArr['end']) && $filterArr['end'] != ' ') {
-        // 		$data = $query->whereRaw('DATE(created_at) <= DATE("' . date('Y-m-d', strtotime(str_replace('/', '-', $filterArr['end']))) . '") AND created_at IS NOT null');
-        // }
+        if (!empty($filterArr['start']) && $filterArr['start'] != ' ') {
+        		$data = $query->whereRaw('DATE(created_at) >= DATE("' . date('Y-m-d', strtotime(str_replace('/', '-', $filterArr['start']))) . '")');
+        }
+        if (!empty($filterArr['start']) && $filterArr['start'] != '' &&  empty($filterArr['end']) && $filterArr['end'] == '') {
+        		$data = $query->whereRaw('DATE(created_at) = DATE("' . date('Y-m-d', strtotime(str_replace('/', '-', $filterArr['start']))) . '")');
+        }
+        if (!empty($filterArr['end']) && $filterArr['end'] != ' ') {
+        		$data = $query->whereRaw('DATE(created_at) <= DATE("' . date('Y-m-d', strtotime(str_replace('/', '-', $filterArr['end']))) . '") AND created_at IS NOT null');
+        }
 
         if (!empty($query)) {
             $response = $query;
