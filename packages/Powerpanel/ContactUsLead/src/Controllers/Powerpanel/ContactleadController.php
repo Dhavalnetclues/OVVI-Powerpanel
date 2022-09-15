@@ -109,7 +109,7 @@ class ContactLeadController extends PowerpanelController
      */
     public function ExportRecord()
     {
-        return Excel::download(new ContactLeadExport, Config::get('Constant.SITE_NAME') . '-' . trans("contactuslead::template.contactleadModule.contactUsLeads") . '-' . date("dmy-h:i") . '.xlsx');
+        return Excel::download(new ContactLeadExport, 'OVVI -' . trans("contactuslead::template.contactleadModule.contactUsLeads") . '-' . date("dmy-h:i") . '.xlsx');
 
     }
 
