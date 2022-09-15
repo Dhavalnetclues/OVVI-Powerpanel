@@ -81,7 +81,7 @@
                                 $tablearray = [
                                     'DataTableTab'=>[
                                         'ColumnSetting'=>[
-                                            ['Identity_Name'=>'varTitle','TabIndex'=>'1','Name'=>'Name'],
+                                            ['Identity_Name'=>'varTitle','TabIndex'=>'1','Name'=>'varTitle'],
                                             ['Identity_Name'=>'email','TabIndex'=>'2','Name'=>'Email'],
                                             ['Identity_Name'=>'phone','TabIndex'=>'3','Name'=>'Phone'],
                                             ['Identity_Name'=>'category','TabIndex'=>'4','Name'=>'Category'],

@@ -88,7 +88,7 @@ var TableDatatablesAjax = function () {
                 },
                 "columns": [
                     {"data": 0, "class": 'td_checker', "bSortable": false},
-                    {"data": 1, "class": 'text-left', "name": 'varName', "bSortable": true},
+                    {"data": 1, "class": 'text-left', "name": 'varTitle', "bSortable": true},
                     {"data": 2, "class": 'text-left', "name": 'varEmail', "bSortable": false},
                     {"data": 3, "class": 'text-center', "bSortable": false},
                     {"data": 4, "class": 'text-center', "bSortable": false},
