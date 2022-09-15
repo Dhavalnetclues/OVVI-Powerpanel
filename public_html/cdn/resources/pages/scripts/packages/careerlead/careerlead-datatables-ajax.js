@@ -63,7 +63,7 @@ var TableDatatablesAjax = function() {
                     "url": window.site_url + "/powerpanel/career-lead/get_list", // ajax source
                 },
                 "order": [
-                        [0, "desc"]
+                        [8, "desc"]
                     ] // set first column as a default sort by asc
             }
         });

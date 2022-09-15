@@ -66,7 +66,7 @@ var TableDatatablesAjax = function() {
                     "info": '<div role="status" aria-live="polite" class="gridjs-summary">Showing <b>_START_</b> to <b>_END_</b> of <b>_TOTAL_</b> results</div>', // title="Page 1 of 2"
                 },
                 "columns": [
-                    { "data": 0, "class": 'text-center td_checker', "bSortable": false },
+                    {"data": 0, "class": 'td_checker', "bSortable": false},
                     { "data": 1, "class": 'text-left', "name": 'varTitle' },
                     { "data": 2, "class": 'text-left', "bSortable": false },
                     { "data": 3, "class": 'text-left', "bSortable": false },
@@ -80,7 +80,7 @@ var TableDatatablesAjax = function() {
                     "url": window.site_url + "/powerpanel/contact-lead/get_list", // ajax source
                 },
                 "order": [
-                    [0, "desc"]
+                    [7, "desc"]
                 ]
             }
         });

@@ -121,7 +121,7 @@ var TableDatatablesAjax = function () {
                     // $(nRow).attr('data-order', aData[5]);
                 },
                 "order": [
-                    [0, "desc"]
+                    [7, "desc"]
                 ]
             }
         });
