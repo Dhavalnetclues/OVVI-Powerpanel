@@ -84,7 +84,7 @@ class ResellerleadController extends PowerpanelController {
      */
     public function DeleteRecord(Request $request) {
         $data = Request::all('ids');
-        $update = MyLibrary::deleteMultipleRecords($data,false,false,'Powerpanel\ResellerLead\Models\resellerLead');
+        $update = MyLibrary::deleteMultipleRecords($data,false,false,'Powerpanel\ResellerLead\Models\ResellerLead');
         echo json_encode($update);
         exit;
     }
