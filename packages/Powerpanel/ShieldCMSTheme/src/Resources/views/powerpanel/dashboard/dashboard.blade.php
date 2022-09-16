@@ -428,7 +428,7 @@
                                         <table id="orderLeads_ajax" class="table table-hover table-centered align-middle table-nowrap mb-0 lastchild-border-0" >
                                             <thead class="table-light"> <!-- class="text-muted table-light" -->
                                                 <tr>
-                                                    <th>ID</th>
+                                                    <th align="center"><input type="checkbox" class="form-check-input multiSelectList"></th>
                                                     <th align="left">Business</th>
                                                     <th align="left"> Full Name </th>
                                                     <th align="left"> Email </th>
@@ -752,7 +752,7 @@ var getDemoDatatablesAjax = function () {
                 //     [10, 20, 50, 100],
                 //     [10, 20, 50, 100] // change per page values here
                 // ],
-                "pageLength": 20, // default record count per page
+                "pageLength": 10, // default record count per page
                 drawCallback:function(){
                     var $api = this.api();
                     var pages = $api.page.info().pages;
@@ -784,7 +784,7 @@ var getDemoDatatablesAjax = function () {
                     "url": window.site_url + "/powerpanel/getdemo-leads/get_list", // ajax source
                 },
                 "order": [
-                    [7, "desc"]
+                    [8, "desc"]
                 ]// set first column as a default sort by asc
             }
         });
@@ -869,7 +869,7 @@ var ResellerLeadAjax = function () {
                 //     [10, 20, 50, 100],
                 //     [10, 20, 50, 100] // change per page values here
                 // ],
-                "pageLength": 20, // default record count per page
+                "pageLength": 10, // default record count per page
                 "lengthChange": false,
                 "pagingType": "simple_numbers",
                 //Code for sorting
@@ -974,7 +974,7 @@ jQuery(document).ready(function () {
                 //     [10, 20, 50, 100],
                 //     [10, 20, 50, 100] // change per page values here
                 // ],
-                "pageLength": 20, // default record count per page
+                "pageLength": 10, // default record count per page
                 drawCallback:function(){
                     var $api = this.api();
                     var pages = $api.page.info().pages;

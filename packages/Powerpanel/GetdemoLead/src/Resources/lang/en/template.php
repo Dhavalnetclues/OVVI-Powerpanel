@@ -207,6 +207,7 @@ return [
         'phone' => 'Phone',
         'satisfied' => 'Satisfied',
         'visitfor' => 'Visit For',
+        'visitedpage' => 'Visited Page',
         'goal' => 'Goal',
         'category' => 'Category',
         'message' => 'Message',

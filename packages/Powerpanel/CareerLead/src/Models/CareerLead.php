@@ -112,8 +112,7 @@ class CareerLead extends Model {
     public static function getListForExport($selectedIds = false) {
         $response = false;
         $moduleFields = ['varTitle', 'varEmail','varPhoneNo', 
-            'varMessage',
-            'varFile', 'varIpAddress', 'created_at'];
+            'varMessage',   'varPageName','varFile', 'varIpAddress', 'created_at'];
         $query = Self::getPowerPanelRecords($moduleFields)->deleted();
         if (!empty($selectedIds) && count($selectedIds) > 0) {
             $query->checkMultipleRecordId($selectedIds);

@@ -86,8 +86,8 @@
                                             ['Identity_Name'=>'phone','TabIndex'=>'3','Name'=>'Phone'],
                                             ['Identity_Name'=>'category','TabIndex'=>'4','Name'=>'Category'],
                                             ['Identity_Name'=>'message','TabIndex'=>'5','Name'=>'Message'],
-                                            ['Identity_Name'=>'ip','TabIndex'=>'6','Name'=>'IP'],
-                                            ['Identity_Name'=>'varPageName','TabIndex'=>'7','Name'=>'Visited Page'],
+                                            ['Identity_Name'=>'varPageName','TabIndex'=>'6','Name'=>'Visited Page'],
+                                            ['Identity_Name'=>'ip','TabIndex'=>'7','Name'=>'IP'],
                                             ['Identity_Name'=>'date','TabIndex'=>'8','Name'=>'Received Date'],
                                         ],
                                         'DataTableHead'=>[
@@ -96,8 +96,8 @@
                                             ['Title'=>'Phone','Align'=>'left'],
                                             ['Title'=>'Business','Align'=>'left'],
                                             ['Title'=>'Message','Align'=>'left'],
-                                            ['Title'=>'IP','Align'=>'left'],
                                             ['Title'=>'Visited Page','Align'=>'left'],
+                                            ['Title'=>'IP','Align'=>'left'],
                                             ['Title'=>'Received Date','Align'=>'center']
                                         ]
                                     ]

@@ -93,8 +93,8 @@ var TableDatatablesAjax = function () {
                     {"data": 3, "class": 'text-center', "bSortable": false},
                     {"data": 4, "class": 'text-center', "bSortable": false},
                     {"data": 5, "class": 'text-center', "bSortable": false},
-                    {"data": 6, "class": 'text-center', "name": 'varIpAddress', "bSortable": false},
-                    {"data": 7, "class": 'text-center', "bSortable": false},
+                    {"data": 6, "class": 'text-center', "bSortable": false},
+                    {"data": 7, "class": 'text-center', "name": 'varIpAddress', "bSortable": false},
                     {"data": 8, "class": 'text-center', "name": 'created_at', "bSortable": true},
                 ],
                 "ajax": {

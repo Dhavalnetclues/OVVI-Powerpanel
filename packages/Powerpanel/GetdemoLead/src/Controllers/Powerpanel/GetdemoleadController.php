@@ -144,8 +144,8 @@ class GetdemoleadController extends PowerpanelController {
             // $Visitfor,
             $Business,
             $details,
-            $ipAdress,
             $varPageName,
+            $ipAdress,
             $receivedDate
         );
 

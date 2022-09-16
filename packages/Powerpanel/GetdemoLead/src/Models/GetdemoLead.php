@@ -141,7 +141,7 @@ class GetdemoLead extends Model {
         ];
         $response = Self::getPowerPanelRecords($moduleFields)
                 ->deleted()
-                ->orderBy('id', 'desc')
+                ->orderBy('id', 'DESC')
                 ->limit($limit)
                 ->get();
         return $response;

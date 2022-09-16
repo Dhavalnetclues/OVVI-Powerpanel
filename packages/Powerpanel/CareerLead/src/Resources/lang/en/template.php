@@ -214,6 +214,8 @@ return [
         'message' => 'Message',
         'service' => 'Service',
         'company' => 'Company',
+        'visitedpage' => 'Visited Page',
+        'ipaddress' => 'IP',
         'dateofcareer' => 'Date Of Complaint',
         'companyresponse' => 'Company Response',
         'attachments' => 'Attachments',

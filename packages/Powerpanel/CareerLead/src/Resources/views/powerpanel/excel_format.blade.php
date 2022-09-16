@@ -15,8 +15,10 @@
                         <tr>
                             <th style="font-weight: bold;">{{ trans('careerlead::template.common.name') }}</th>
                             <th style="font-weight: bold;">{{ trans('careerlead::template.common.email') }}</th>
-                            <th style="font-weight: bold;">{{ trans('careerlead::template.careerleadModule.message') }}</th>
                             <th style="font-weight: bold;">{{ trans('careerlead::template.careerleadModule.phone') }}</th>                           
+                            <th style="font-weight: bold;">{{ trans('careerlead::template.careerleadModule.message') }}</th>
+                            <th style="font-weight: bold;">{{ trans('careerlead::template.careerleadModule.visitedpage') }}</th>
+                            <th style="font-weight: bold;">{{ trans('careerlead::template.careerleadModule.ipaddress') }}</th>
                             <th style="font-weight: bold;">{{ trans('careerlead::template.careerleadModule.receivedDateTime') }}</th>
                         </tr>
                     </thead>
@@ -28,11 +30,13 @@
                             $email = \App\Helpers\MyLibrary::decryptLatest($row->varEmail);
                             @endphp
                             <td>{{ (!empty($email)?($email):'-') }}</td>
-                            <td>{{ (!empty($row->varMessage)?($row->varMessage):'-') }}</td>
-                             @php
+                            @php
                             $phone = \App\Helpers\MyLibrary::decryptLatest($row->varPhoneNo);
                             @endphp
                             <td>{{ (!empty($phone) ? $phone : '-')  }}</td>
+                            <td>{{ (!empty($row->varMessage)?($row->varMessage):'-') }}</td>
+                            <td>{{ (!empty($row->varPageName)?($row->varPageName):'-') }}</td>
+                            <td>{{ (!empty($row->varIpAddress)?($row->varIpAddress):'-') }}</td>
                             <td>{{ date(''.Config::get('Constant.DEFAULT_DATE_FORMAT').' '.Config::get('Constant.DEFAULT_TIME_FORMAT').'',strtotime($row->created_at)) }}</td>
                         </tr>
                         @endforeach

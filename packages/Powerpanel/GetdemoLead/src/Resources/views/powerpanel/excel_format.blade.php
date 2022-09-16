@@ -18,6 +18,7 @@
                        <th style="font-weight: bold;">{{ trans('getdemolead::template.getdemoleadModule.phone') }}</th>
                        <th style="font-weight: bold;">{{ trans('getdemolead::template.getdemoleadModule.business') }}</th>
                        <th style="font-weight: bold;">{{ trans('getdemolead::template.getdemoleadModule.message') }}</th>
+                       <th style="font-weight: bold;">{{ trans('getdemolead::template.getdemoleadModule.visitedpage') }}</th>
                        <th style="font-weight: bold;">{{ trans('template.common.ipAddress') }}</th>
                        <th style="font-weight: bold;">{{ trans('getdemolead::template.getdemoleadModule.receivedDateTime') }}</th>
                     </tr>
@@ -25,24 +26,21 @@
                  <tbody>
                   @foreach($GetdemoLead as $row)   
                   @php
-                  $Satisfied = '-';
-                  $Visitfor = '-';
-                  $category = '-';
-                  $phoneNo = '-';
-                  $userMessage = '-';
-                  $Business = '-';
-	                  
-                              if (!empty($row->varBusinessName) ) {
-                                    $Business = $row->varBusinessName;
-                              } 									
-
-										if (!empty($row->varPhoneNo)) {
-												$phoneNo = \App\Helpers\MyLibrary::decryptLatest($row->varPhoneNo);
-										}
-
-										if (!empty($row->txtUserMessage)) {
-												$userMessage = $row->txtUserMessage;
-										}
+                  $Satisfied = $Visitfor = $category = $phoneNo = $userMessage = $Business = $varPageName = '-';	                  
+                  if (!empty($row->varBusinessName) ) {
+                        $Business = $row->varBusinessName;
+                  }								
+                  if (!empty($row->varPhoneNo)) {
+                        $phoneNo = \App\Helpers\MyLibrary::decryptLatest($row->varPhoneNo);
+                  }
+                  if (!empty($row->txtUserMessage)) {
+                        $userMessage = $row->txtUserMessage;
+                  }
+                  if (!empty($row->varPageName) ) {
+                        $varPageName = $row->varPageName;
+                  } else {
+                        $varPageName = '-';
+                  }
                   @endphp
                     <tr>
                        <td>{{ $row->varTitle }}</td>
@@ -50,6 +48,7 @@
                        <td>{{ $phoneNo }}</td>
                        <td>{{ $Business }}</td>
                        <td>{{ $userMessage }}</td>
+                       <td>{{ $varPageName }}</td>
                        <td>{{ (!empty($row->varIpAddress) ? $row->varIpAddress :'-') }}</td>
                        <td>{{ date(''.Config::get('Constant.DEFAULT_DATE_FORMAT').' '.Config::get('Constant.DEFAULT_TIME_FORMAT').'',strtotime($row->created_at)) }}</td>
                     </tr>

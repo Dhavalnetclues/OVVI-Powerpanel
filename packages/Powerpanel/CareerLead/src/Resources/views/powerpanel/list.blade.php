@@ -40,14 +40,14 @@
 								<div class="p-3 dropdown-body">
 
 									<div class="mb-3">
-										<div class="input-group input-daterange" id="contactleadrange">
+										<div class="input-group input-daterange" id="careerleadrange">
 											<span class="input-group-text" id="basic-addon1"><i class="ri-calendar-2-line fs-14"></i></span>
 											<input class="form-control" id="start_date" name="start_date" placeholder="{{ trans('contactuslead::template.common.fromdate') }}" type="text" data-provider="flatpickr" data-date-format="{{ Config::get('Constant.DEFAULT_DATE_FORMAT') }}">
 										</div>
 									</div>
 
 									<div class="mb-3">
-										<div class="input-group input-daterange" id="contactleadrange">
+										<div class="input-group input-daterange" id="careerleadrange">
 											<span class="input-group-text" id="basic-addon1"><i class="ri-calendar-2-line fs-14"></i></span>
 											<input class="form-control" id="end_date" name="end_date" placeholder="{{ trans('contactuslead::template.common.todate') }}" type="text" data-provider="flatpickr" data-date-format="{{ Config::get('Constant.DEFAULT_DATE_FORMAT') }}">
 										</div>
@@ -126,7 +126,7 @@
 
 <div class="new_modal modal fade" id="noRecords" tabindex="-1" role="basic" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
+        <div class="modal-content">	
             <div class="modal-header">
                 <h5 class="modal-title">{{ trans('careerlead::template.common.alert') }}</h5>
                 <button type="button" class="btn-close fs-10" data-bs-dismiss="modal" aria-label="Close"> </button>
@@ -150,7 +150,7 @@
     </div>
 </div>
 <div class="new_modal modal fade" id="selectedRecords" tabindex="-1" role="basic" aria-hidden="true">
-	<div class="modal-dialog">
+	<div class="modal-dialog modal-dialog-centered">
 		<div class="modal-vertical">	
 			<div class="modal-content">
 				<div class="modal-header">
@@ -227,6 +227,26 @@
 	<script src="{{ $CDN_PATH.'resources/global/plugins/moment.min.js' }}"></script>
 	<script src="{{ $CDN_PATH.'resources/global/plugins/highslide/highslide-with-html.js' }}" type="text/javascript"></script>
 <script>
+
+    $(document).ready(function () {
+        $('#start_date').flatpickr({
+            dateFormat: DEFAULT_DATE_FORMAT,
+        });
+        $('#start_date').on('change', function (e) {
+	        let index = e.target.getAttribute("data-dateIndex");
+	        let date = new Date(e.target.value)
+	        $('#end_date').flatpickr({
+	            dateFormat: DEFAULT_DATE_FORMAT,
+	            minDate: date
+	        }).clear();
+      	});
+
+        $('#end_date').flatpickr({
+            dateFormat: DEFAULT_DATE_FORMAT,
+            minDate: 'today'
+        });
+    });
+
 	// $(document).ready(function () {
 	// 		var today = moment.tz("{{Config::get('Constant.DEFAULT_TIME_ZONE')}}").format(DEFAULT_DT_FORMAT);
 	// 		$('#start_date').datepicker({

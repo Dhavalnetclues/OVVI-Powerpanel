@@ -49,15 +49,15 @@ var TableDatatablesAjax = function() {
                     "info": '<div role="status" aria-live="polite" class="gridjs-summary" title="Page 1 of 2">Showing <b>_START_</b> to <b>_END_</b> of <b>_TOTAL_</b> results</div>',
                 },
                 "columns": [
-                    { "data": 0, className: 'text-center td_checker', "bSortable": false },
-                    { "data": 1, className: 'text-left', "name": 'varTitle' },
-                    { "data": 2, className: 'text-left', "bSortable": false },
-                    { "data": 3, className: 'text-center', "bSortable": false },
-                    { "data": 4, className: 'text-center', "name": 'varService', "bSortable": false },
-                    { "data": 5, className: 'text-center', "name": 'attachments', "bSortable": false },
-                    { "data": 6, className: 'text-center', "bSortable": false },
-                    { "data": 7, className: 'text-center', "name": 'varIpAddress', "bSortable": false },
-                    { "data": 8, className: 'text-center', "name": 'created_at' },
+                    { "data": 0, "class": 'text-center td_checker', "bSortable": false },
+                    { "data": 1, "class": 'text-left', "name": 'varTitle' },
+                    { "data": 2, "class": 'text-left', "bSortable": false },
+                    { "data": 3, "class": 'text-center', "bSortable": false },
+                    { "data": 4, "class": 'text-center', "name": 'varService', "bSortable": false },
+                    { "data": 5, "class": 'text-center', "name": 'attachments', "bSortable": false },
+                    { "data": 6, "class": 'text-center', "bSortable": false },
+                    { "data": 7, "class": 'text-center', "name": 'varIpAddress', "bSortable": false },
+                    { "data": 8, "class": 'text-center', "name": 'created_at' },
                 ],
                 "ajax": {
                     "url": window.site_url + "/powerpanel/career-lead/get_list", // ajax source
@@ -151,7 +151,8 @@ var TableDatatablesAjax = function() {
     return {
         //main function to initiate the module
         init: function() {
-            initPickers();
+            // $.fn.DataTable.ext.pager.numbers_length = 4;
+            // initPickers();
             handleRecords();
         }
     };
