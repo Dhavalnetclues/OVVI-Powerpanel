@@ -91,17 +91,17 @@
                                             ['Identity_Name'=>'name','TabIndex'=>'1','Name'=>'Name'],
                                             ['Identity_Name'=>'email','TabIndex'=>'2','Name'=>'Email'],
                                             ['Identity_Name'=>'reset','TabIndex'=>'3','Name'=>'Reset'],
-                                            // ['Identity_Name'=>'reset','TabIndex'=>'4','Name'=>'Roles'],
-                                            // ['Identity_Name'=>'reset','TabIndex'=>'4','Name'=>'2-Step Verification'],
-                                            ['Identity_Name'=>'publish','TabIndex'=>'4','Name'=>'Publish'],
-                                            ['Identity_Name'=>'dactions','TabIndex'=>'5','Name'=>'Action']
+                                            ['Identity_Name'=>'reset','TabIndex'=>'4','Name'=>'Roles'],
+                                            ['Identity_Name'=>'reset','TabIndex'=>'5','Name'=>'2-Step Verification'],
+                                            ['Identity_Name'=>'publish','TabIndex'=>'6','Name'=>'Publish'],
+                                            ['Identity_Name'=>'dactions','TabIndex'=>'7','Name'=>'Action']
                                         ],
                                         'DataTableHead'=>[
                                             ['Title'=>'Name','Align'=>'left'],
                                             ['Title'=>'Email','Align'=>'left'],
                                             ['Title'=>'Reset','Align'=>'left'],
-                                            // ['Title'=>'Roles','Align'=>'left'],
-                                            // ['Title'=>'2-Step Verification','Align'=>'left'],
+                                            ['Title'=>'Roles','Align'=>'left'],
+                                            ['Title'=>'2-Step Verification','Align'=>'left'],
                                             ['Title'=>'Publish','Align'=>'left'],
                                             ['Title'=>'Action','Align'=>'right']
                                         ]

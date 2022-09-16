@@ -616,8 +616,8 @@ class UserController extends PowerpanelController
             '<div class="pages_title_div_row"> <span class="title-txt"> ' . $title . ' ' . $status . $statusdata . '</span></div>',
             MyLibrary::getDecryptedString($value->email),
             '<a href="javascript:;" class="reset-link" data-email="' . MyLibrary::getDecryptedString($value->email) . '">Send Reset link</a>',
-            // $roles,
-            // $step,
+            $roles,
+            $step,
             $publish_action,
             $allActions
         );

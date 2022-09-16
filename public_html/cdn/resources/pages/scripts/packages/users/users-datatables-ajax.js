@@ -89,23 +89,20 @@ var TableDatatablesAjax = function() {
                     "data": 3,
                     "class": 'text-left',
                     "bSortable": false
-                }, 
-                // {
-                //     "data": 4,
-                //     "class": 'text-left',
-                //     "bSortable": false
-                // },
-                //  {
-                //     "data": 4,
-                //     "class": 'text-center form-switch',
-                //     "bSortable": false
-                // },
-                 {
+                }, {
                     "data": 4,
-                    "class": 'text-center form-switch mob-show_div',
+                    "class": 'text-left',
                     "bSortable": false
                 }, {
                     "data": 5,
+                    "class": 'text-center form-switch',
+                    "bSortable": false
+                }, {
+                    "data": 6,
+                    "class": 'text-center form-switch mob-show_div',
+                    "bSortable": false
+                }, {
+                    "data": 7,
                     "class": 'text-right last_td_action mob-show_div',
                     "bSortable": false
                 }],
