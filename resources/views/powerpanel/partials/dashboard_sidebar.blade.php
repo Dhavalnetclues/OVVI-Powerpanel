@@ -1046,7 +1046,7 @@
         @endif --}}
 
         <!-- Workflow -->
-        @if((isset($menuArr['can-workflow-list']) && $menuArr['can-workflow-list']) || 
+        {{-- @if((isset($menuArr['can-workflow-list']) && $menuArr['can-workflow-list']) || 
 
             (isset($menuArr['can-roles-list']) && $menuArr['can-roles-list']) ||
             (isset($menuArr['can-users-list']) && $menuArr['can-users-list']))
@@ -1074,17 +1074,17 @@
                         </li>
                     @endif
                         <!-- Workflow -->
-                        {{-- @if(isset($menuArr['can-workflow-list']) && $menuArr['can-workflow-list'])
+                        @if(isset($menuArr['can-workflow-list']) && $menuArr['can-workflow-list'])
                             <li data-id="46" class="nav-sort nav-item">
                                 <a href="{{ url('powerpanel/workflow') }}" class="nav-link {{ $menuArr['workflow_active'] }}" data-key="t-starter" title="{{ trans('template.sidebar.workflow') }}">
                                     <i class="ri-stackshare-line d-none"></i> <span data-key="t-widgets">{{ trans('template.sidebar.workflow') }}</span>
                                 </a>
                             </li>
-                        @endif --}}
+                        @endif
 
                         <!-- Users -->                       
                     
-                            {{-- <a class="nav-link menu-link" href="#usermg" data-bs-toggle="collapse" role="button"
+                            <a class="nav-link menu-link" href="#usermg" data-bs-toggle="collapse" role="button"
                                 aria-expanded="{{ (isset($menuArr['usermg']) && $menuArr['usermg']=='active') ? 'true' : 'false' }}" aria-controls="usermg">
                                 <i class="ri-user-line d-none"></i> <span data-key="t-widgets">{{ trans('template.sidebar.users') }}</span>
                             </a>
@@ -1093,12 +1093,12 @@
                                     <!-- Role Manager -->
                                    
                                 </ul>
-                            </div> --}}
+                            </div>
                                 
                     </ul>
                 </div>
             </li>
-        @endif
+        @endif --}}
 
         <!-- Leads -->
         @if(
