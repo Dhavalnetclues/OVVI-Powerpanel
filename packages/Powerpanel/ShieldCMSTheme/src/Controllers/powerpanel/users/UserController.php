@@ -488,8 +488,7 @@ class UserController extends PowerpanelController
                 // $userRole = $user->roles[0]->name;
                 $allowed = false;
 
-                // if (($isAdmin && $user->id != 2 && $user->id != Auth::user()->id)) {
-                if (($isAdmin && $user->id != 2 && $user->id != Auth::user()->id) || $this->currentUserRoleData->name == 'netquick_admin') {
+                if (($isAdmin && $user->id != 2 && $user->id != Auth::user()->id)) {
                     $allowed = true;
                 } else {
                     $iTotalRecords--;
