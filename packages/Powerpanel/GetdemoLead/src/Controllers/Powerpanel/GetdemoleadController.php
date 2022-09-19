@@ -83,7 +83,7 @@ class GetdemoleadController extends PowerpanelController {
      */
     public function DeleteRecord(Request $request) {
         $data = Request::all('ids');
-        $update = MyLibrary::deleteMultipleRecords($data,false,false,'Powerpanel\GetdemoLead\Models\getdemoLead');
+        $update = MyLibrary::deleteMultipleRecords($data,false,false,'Powerpanel\GetdemoLead\Models\GetdemoLead');
         echo json_encode($update);
         exit;
     }

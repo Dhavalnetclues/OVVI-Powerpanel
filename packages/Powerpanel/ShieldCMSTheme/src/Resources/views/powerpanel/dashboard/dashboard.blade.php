@@ -717,11 +717,11 @@ var getDemoDatatablesAjax = function () {
                     $("#menu1.tab-pane .notabreocrd").hide();
                                         $("#menu1.tab-pane .withrecords").show();
                 }
-                if(response.recordsTotal < 20) {
-                    $('.gridjs-pages').hide();
-                } else {
-                    $('.gridjs-pages').show();
-                }
+                // if(response.recordsTotal < 20) {
+                //     $('.gridjs-pages').hide();
+                // } else {
+                //     $('.gridjs-pages').show();
+                // }
                 // grid:        grid object
                 // response:    json object of server side ajax response
                 // execute some code after table records loaded
@@ -757,10 +757,10 @@ var getDemoDatatablesAjax = function () {
                     var $api = this.api();
                     var pages = $api.page.info().pages;
                     var rows = $api.data().length;
-                    if(pages<=1){
-                        $('.dataTables_info').css('display','none');
-                        $('.dataTables_paginate').css('display','none');
-                    }
+                    // if(pages<=1){
+                    //     $('.dataTables_info').css('display','none');
+                    //     // $('.dataTables_paginate').css('display','none');
+                    // }
                 },
                 // Code for sorting
                 "serverSide": true,
@@ -863,17 +863,19 @@ var ResellerLeadAjax = function () {
                 // setup uses scrollable div(table-scrollable) with overflow:auto to enable vertical scroll(see: assets/global/scripts/datatable.js).
                 // So when dropdowns used the scrollable div should be removed.
                 //"dom": "<'row'<'col-md-8 col-sm-12'pli><'col-md-4 col-sm-12'<'table-group-actions pull-right'>>r>t<'row'<'col-md-8 col-sm-12'pli><'col-md-4 col-sm-12'>>",
+                "dom": "t <'gridjs-footer' <'gridjs-pagination'i <'gridjs-pages'p>>>",
                 "deferRender": true,
                 "stateSave": true, // save datatable state(pagination, sort, etc) in cookie.
                 // "lengthMenu": [
                 //     [10, 20, 50, 100],
                 //     [10, 20, 50, 100] // change per page values here
                 // ],
-                "pageLength": 10, // default record count per page
+                "serverSide": true,
                 "lengthChange": false,
                 "pagingType": "simple_numbers",
-                //Code for sorting
-                "serverSide": true,
+                "language": {
+                    "info": '<div role="status" aria-live="polite" class="gridjs-summary">Showing <b>_START_</b> to <b>_END_</b> of <b>_TOTAL_</b> results</div>', // title="Page 1 of 2"
+                },
                 "columns": [
                     {"data": 0, className: 'td_checker', "bSortable": false},
                     {"data": 1, className: 'text-left', "name": 'varTitle', "bSortable": true},
