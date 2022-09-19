@@ -139,7 +139,7 @@ class LoginHistoryController extends PowerpanelController {
             $value->varCountry_name,
             $value->user->name,
             MyLibrary::getDecryptedString($value->user->email),
-            $value->varIpAddress,
+            str_replace("::ffff:","",$value->varIpAddress),
             $date,
             $user_logouttime
         );

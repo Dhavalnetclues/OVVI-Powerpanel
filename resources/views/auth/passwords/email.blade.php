@@ -73,7 +73,9 @@
 								</div>
 
                                 <div class="mb-3">
-                                    <div class="g-recaptcha" data-sitekey="{{Config::get('Constant.GOOGLE_CAPCHA_KEY')}}"></div>
+                                    {{-- <div class="g-recaptcha" data-sitekey="{{Config::get('Constant.GOOGLE_CAPCHA_KEY')}}"></div> --}}
+									<?php $GoogleSitekey = env('RECHAPCHA_SITEKEY');?>
+                                    <div class="g-recaptcha" data-sitekey="{{ $GoogleSitekey; }}"></div>
                                 </div>
 
                                 <div class="click-btn mb-3">

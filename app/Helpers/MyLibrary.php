@@ -740,19 +740,23 @@ class MyLibrary
         return $response;
     }
 
-    public static function get_client_ip()
-    {
+    public static function get_client_ip(){        
         $ipaddress = '';
-        if(!empty($_SERVER['HTTP_CLIENT_IP'])){
-            //ip from share internet
+        $ipaddress = $_SERVER['REMOTE_ADDR'];
+        if (isset($_SERVER['HTTP_CLIENT_IP'])){
             $ipaddress = $_SERVER['HTTP_CLIENT_IP'];
-        }elseif(!empty($_SERVER['HTTP_X_FORWARDED_FOR'])){
-            //ip pass from proxy
+        }else if(isset($_SERVER['HTTP_X_FORWARDED_FOR'])){
             $ipaddress = $_SERVER['HTTP_X_FORWARDED_FOR'];
+        }else if(isset($_SERVER['HTTP_X_FORWARDED'])){
+            $ipaddress = $_SERVER['HTTP_X_FORWARDED'];
+        }else if(isset($_SERVER['HTTP_FORWARDED_FOR'])){
+            $ipaddress = $_SERVER['HTTP_FORWARDED_FOR'];
+        }else if(isset($_SERVER['HTTP_FORWARDED'])){
+            $ipaddress = $_SERVER['HTTP_FORWARDED'];
+        }else if(isset($_SERVER['REMOTE_ADDR'])){
         }else{
-            $ipaddress = $_SERVER['REMOTE_ADDR'];
+            $ipaddress = 'UNKNOWN';
         }
-
         // if (getenv('HTTP_CLIENT_IP')) {
         //     $ipaddress = getenv('HTTP_CLIENT_IP');
         // } else if (getenv('HTTP_X_FORWARDED_FOR')) {
@@ -769,9 +773,9 @@ class MyLibrary
         //     $ipaddress = 'UNKNOWN';
         // }     
 
-        if (env('APP_ENV') == "local") {
-            $ipaddress = getHostByName(getHostName()); //remove this while uploading on server
-        }       
+        // if (env('APP_ENV') == "local") {
+        //     $ipaddress = getHostByName(getHostName()); //remove this while uploading on server
+        // }       
 
         return $ipaddress;
     }
