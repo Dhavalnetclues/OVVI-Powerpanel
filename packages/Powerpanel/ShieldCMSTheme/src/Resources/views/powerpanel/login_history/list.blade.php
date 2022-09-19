@@ -7,6 +7,16 @@
  @endsection
 @section('content')
 
+<script type="text/javascript">
+    window.site_url = '{!! url("/") !!}';
+    var DELETE_URL = '{!! url("/powerpanel/login-history/DeleteRecord") !!}';
+
+    var showChecker = true;
+    @if (!$userIsAdmin)
+    showChecker = false;
+    @endif
+</script>
+
 <!-- BEGIN PAGE BASE CONTENT -->
 <div class="row">
  <div class="col-xl-12">
