@@ -207,11 +207,11 @@ class ReferearnLead extends Model
         }
 
         if(isset($filterArr['searchFilter']) && !empty($filterArr['searchFilter'])){
-            $data = $query->where('varName','like','%'.$filterArr['searchFilter'].'%')->orwhere('varReferralFullName','like','%'.$filterArr['searchFilter'].'%');
+            $data = $query->where('varName','like','%'.$filterArr['searchFilter'].'%')->orwhere('varReferralFullName','like','%'.$filterArr['searchFilter'].'%')->orwhere('varEmailId', 'like','%'. MyLibrary::encryptLatest($filterArr['searchFilter']).'%')->orwhere('varReferralEmailId', 'like','%'. MyLibrary::encryptLatest($filterArr['searchFilter']).'%');
             // echo $filterArr['searchFilter'];die;
-            // echo "<pre>";print_r( MyLibrary::decryptLatest($filterArr['searchFilter']));die;
+            // echo "<pre>";print_r( MyLibrary::encryptLatest($filterArr['searchFilter']));die;
             // $data = $query->orwhere('varReferralFullName','like','%'.$filterArr['searchFilter'].'%');
-            // $data = $query->where('varEmailId', 'like','%'. MyLibrary::decryptLatest($filterArr['searchFilter']).'%');
+            // $data = $query->where('varEmailId', 'like','%'. MyLibrary::encryptLatest($filterArr['searchFilter']).'%');
         }
 
         if (!empty($filterArr['start']) && $filterArr['start'] != ' ') {

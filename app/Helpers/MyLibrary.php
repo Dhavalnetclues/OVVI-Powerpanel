@@ -1590,4 +1590,17 @@ class MyLibrary
         return $output;
     }
 
+    function encryptLatest($string) {
+        $output = false;
+        $encrypt_method = "AES-256-CBC";
+        $secret_key = 'OVVIHQ1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $secret_iv = 'OVVIHQ1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $key = hash('sha256', $secret_key); // hash
+        // iv - encrypt method AES-256-CBC expects 16 bytes - else you will get a warning
+        $iv = substr(hash('sha256', $secret_iv), 0, 16);
+        $output = openssl_encrypt($string, $encrypt_method, $key, 0, $iv);
+        $output = ($output);
+        return $output;
+    }
+
 }
