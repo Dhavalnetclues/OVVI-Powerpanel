@@ -136,25 +136,9 @@ class ReferearnController extends PowerpanelController
             $label .= '<b>Referral\'s Phone  :- </b>'.$ReferralPhoneNumber.'<br>';
         }
         if(!empty($BusinessType)){
-            $BusinessTypeArr = [
-                "Quick_Serve" 			=> "Quick-Serve",
-                "Restaurant_/_Bar"		=> "Restaurant / Bar",
-                "Retail"				=> "Retail",
-                "Bakery"				=> "Bakery",
-                "Coffee_Shop" 			=> "Coffee Shop",
-                "Concessions_/_Snacks" 	=> "Concessions / Snacks",
-                "Food_Truck"			=> "Food Truck",
-                "Ice_Cream_/_Yogurt" 	=> "Ice Cream / Yogurt",
-                "Juice_Bar"				=> "Juice Bar",
-                "Limited-Service_Restaurant" => "Limited-Service Restaurant",
-                "Fine_Dining"			=> "Fine Dining",
-                "Bar_and_Lounge"		=> "Bar and Lounge",
-                "Pizza"					=> "Pizza",
-                "Convenience_Store"		=> "Convenience Store",
-                "Liquor_Store"			=> "Liquor Store",
-                "Grocery_Store"			=> "Grocery Store",
-                "Other"					=> "Other"
-            ];
+            $BusinessTypeArr = ["Quick-Serve","Restaurant / Bar","Retail","Bakery","Coffee Shop","Concessions / Snacks", "Food Truck",
+                "Ice Cream / Yogurt","Juice Bar","Limited-Service Restaurant","Fine Dining","Bar and Lounge","Pizza",
+             "Convenience Store","Liquor Store","Grocery Store","Other"];
             $BusinessTypeList = explode(',',$BusinessType);
             $BusinessTypeListArr = array();
             foreach($BusinessTypeList as $BusinessTypeA){
@@ -164,14 +148,7 @@ class ReferearnController extends PowerpanelController
             $label .= '<b>Business Type :- </b>'.$BusinessTypeDisplay.'<br>';
         }
         if(!empty($LookingForPOS)){
-            $LookingForPOSArr = [
-                "Immediately"   => "Immediately",
-                "Immediatel"   => "Immediately",
-                "1"             => "1 Month",
-                "2"             => "2 Months",
-                "3-6"             => "3-6 Months",
-                "6+"            => "Greater Than 6 Months"
-            ];          
+            $LookingForPOSArr = ["Immediately","1 Month","2 Months","3-6 Months","Greater Than 6 Months"];          
             $label .= '<b>POS :- </b>'.$LookingForPOSArr[trim($LookingForPOS)].'<br>';
         }
 
