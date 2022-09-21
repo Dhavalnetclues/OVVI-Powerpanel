@@ -134,6 +134,16 @@ class CareerLeadController extends PowerpanelController
         }else {
             $otherinfo = '-';
         }
+        $details = '';
+        if (!empty($value->varMessage)) {
+            $details .= '<div class="pro-act-btn">';
+            $details .= '<a href="javascript:void(0)" class="without_bg_icon" onclick="return hs.htmlExpand(this,{width:300,headingText:\'Message\',wrapperClassName:\'titlebar\',showCredits:false});"><i aria-hidden="true" class="ri-message-2-line fs-16"></i></a>';
+            $details .= '<div class="highslide-maincontent">' . nl2br($value->varMessage) . '</div>';
+            $details .= '</div>';
+        } else {
+            $details .= '-';
+        }
+
         
         if (!empty($value->varPhoneNo)) {   
             $phoneNo = (MyLibrary::decryptLatest($value->varPhoneNo));
@@ -146,7 +156,7 @@ class CareerLeadController extends PowerpanelController
             $value->varTitle,
             $email,
             $phoneNo,            
-            $value->varMessage ? $value->varMessage : "-" ,         
+            $details,         
             $otherinfo ,
             $value->varPageName,
             $value->varIpAddress,

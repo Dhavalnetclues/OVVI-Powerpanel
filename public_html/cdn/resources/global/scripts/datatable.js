@@ -2,11 +2,10 @@
  Wrapper/Helper Class for datagrid based on jQuery Datatable Plugin
  ***/
 var Datatable = function () {
-
     var msg = 'No records available.';
     var urlarray = $(location).attr('href').split("/")
     if (jQuery.inArray("contact-lead", urlarray) !== -1) {
-        msg = 'No contact leads received yet. Please Click <a target="_blank" href="https://www.netclues.com/social-media-marketing"> Here </a> to find out how to get more contact leads.';
+        msg = 'No records available.';
     }
     // else if (jQuery.inArray("newsletter-lead", urlarray) !== -1) {
     //     msg = 'No newsletter leads received yet. Please Click <a target="_blank" href="https://www.netclues.com/social-media-marketing"> Here </a> to find out how to get more newsletter leads.';

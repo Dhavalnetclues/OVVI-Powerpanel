@@ -156,7 +156,7 @@
                 <h5 class="modal-title">{{ trans('contactuslead::template.common.alert') }}</h5>
                 <button type="button" class="btn-close fs-10" data-bs-dismiss="modal" aria-label="Close"> </button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body text-center">
                 <h5 class="mb-2">{{ trans('contactuslead::template.contactleadModule.noExport') }}</h5>
                 <div class="pt-2">
                     <button type="button" class="btn btn-primary bg-gradient waves-effect waves-light btn-label" data-bs-dismiss="modal">
@@ -182,7 +182,7 @@
                 <h5 class="modal-title">{{ trans('contactuslead::template.common.alert') }}</h5>
                 <button type="button" class="btn-close fs-10" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body text-center">
 				<div class="row">
 					<div class="col-sm-12">
                         <h5 class="mb-2">{{ trans('contactuslead::template.contactleadModule.recordsExport') }}</h5>
@@ -220,7 +220,7 @@
                 <h5 class="modal-title">{{ trans('contactuslead::template.common.alert') }}</h5>
                 <button type="button" class="btn-close fs-10" data-bs-dismiss="modal" aria-label="Close"> </button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body text-center">
                 <h5 class="mb-2">{{ trans('contactuslead::template.contactleadModule.leastRecord') }}</h5>
                 <div class="pt-2">
                     <button type="button" class="btn btn-primary bg-gradient waves-effect waves-light btn-label" data-bs-dismiss="modal">

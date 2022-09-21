@@ -274,7 +274,7 @@ class GetdemoLead extends Model {
             $data = $query->where('chrPublish', $filterArr['statusFilter']);
         }
         if (isset($filterArr['searchFilter']) && !empty($filterArr['searchFilter'])) {
-            $data = $query->where('varTitle', 'like', '%' . $filterArr['searchFilter'] . '%')->orwhere('varEmail', 'like','%'. MyLibrary::encryptLatest($filterArr['searchFilter']).'%');
+            $data = $query->where('varTitle', 'like', '%' . $filterArr['searchFilter'] . '%')->orwhere('varBusinessName', 'like', '%' . $filterArr['searchFilter'] . '%')->orwhere('varEmail', 'like','%'. MyLibrary::encryptLatest($filterArr['searchFilter']).'%');
         }
         if (!empty($filterArr['start']) && $filterArr['start'] != ' ') {
             $data = $query->whereRaw('DATE(created_at) >= DATE("' . date('Y-m-d', strtotime(str_replace('/', '-', $filterArr['start']))) . '")');

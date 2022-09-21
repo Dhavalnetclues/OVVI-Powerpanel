@@ -131,7 +131,7 @@
                 <h5 class="modal-title">{{ trans('careerlead::template.common.alert') }}</h5>
                 <button type="button" class="btn-close fs-10" data-bs-dismiss="modal" aria-label="Close"> </button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body text-center">
                 <h5 class="mb-2">{{ trans('careerlead::template.careerleadModule.noExport') }}</h5>
                 <div class="pt-2">
                     <button type="button" class="btn btn-primary bg-gradient waves-effect waves-light btn-label" data-bs-dismiss="modal">
@@ -154,7 +154,7 @@
 		<div class="modal-vertical">	
 			<div class="modal-content">
 				<div class="modal-header">
-					{{ trans('careerlead::template.common.alert') }}
+					<h5>{{ trans('careerlead::template.common.alert') }}</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"> </button>
 				</div>
 				<div class="modal-body text-center">
@@ -188,7 +188,7 @@
 		<div class="modal-vertical">	
 			<div class="modal-content">
 				<div class="modal-header">
-					{{ trans('careerlead::template.common.alert') }}
+					<h5>{{ trans('careerlead::template.common.alert') }}</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"> </button>
 				</div>
 				<div class="modal-body text-center">{{ trans('careerlead::template.careerleadModule.leastRecord') }} </div>
