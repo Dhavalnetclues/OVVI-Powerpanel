@@ -18,6 +18,7 @@ use Cache;
 use Carbon\Carbon;
 use Config;
 use App\Helpers\Aws_File_helper;
+use App\Helpers\MyLibrary;
 
 class OrderLead extends Model {
 
@@ -407,8 +408,7 @@ class OrderLead extends Model {
             $data = $query->where('OrderLeads.chrPublish', $filterArr['statusFilter']);
         }
         if (isset($filterArr['searchFilter']) && !empty($filterArr['searchFilter']) && $filterArr['searchFilter'] != ' ') {
-            //$query = $query->leftJoin('form_builder', 'form_builder.id', '=', 'OrderLeads.fk_formbuilder_id');
-            $data = $query->where('OrderLeads.varTitle', 'like', '%' . $filterArr['searchFilter'] . '%');
+            $data = $query->where('OrderLeads.varTitle', 'like', '%' . $filterArr['searchFilter'] . '%')->orwhere('OrderLeads.varOnFullName', 'like', '%' . $filterArr['searchFilter'] . '%')->orwhere('varOnEmailId', 'like','%'. MyLibrary::encryptLatest($filterArr['searchFilter']).'%');
         }
 
         if (!empty($filterArr['start']) && $filterArr['start'] != ' ') {

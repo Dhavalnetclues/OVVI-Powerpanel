@@ -4,6 +4,7 @@ namespace Powerpanel\GetdemoLead\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use DB;
+use App\Helpers\MyLibrary;
 
 class GetdemoLead extends Model {
 
@@ -273,18 +274,16 @@ class GetdemoLead extends Model {
             $data = $query->where('chrPublish', $filterArr['statusFilter']);
         }
         if (isset($filterArr['searchFilter']) && !empty($filterArr['searchFilter'])) {
-            $data = $query->where('varTitle', 'like', '%' . $filterArr['searchFilter'] . '%')->orwhere('varEmail', 'like', '%' . $filterArr['searchFilter'] . '%');
+            $data = $query->where('varTitle', 'like', '%' . $filterArr['searchFilter'] . '%')->orwhere('varEmail', 'like','%'. MyLibrary::encryptLatest($filterArr['searchFilter']).'%');
         }
         if (!empty($filterArr['start']) && $filterArr['start'] != ' ') {
             $data = $query->whereRaw('DATE(created_at) >= DATE("' . date('Y-m-d', strtotime(str_replace('/', '-', $filterArr['start']))) . '")');
         }
         if (!empty($filterArr['start']) && $filterArr['start'] != '' && empty($filterArr['end']) && $filterArr['end'] == '') {
-                                    
             $data = $query->whereRaw('DATE(created_at) >= DATE("' . date('Y-m-d', strtotime(str_replace('/', '-', $filterArr['start']))) . '")');
         }
 
         if (!empty($filterArr['end']) && $filterArr['end'] != ' ') {
-//                                    echo 'hi';exit;
             $data = $query->whereRaw('DATE(created_at) <= DATE("' . date('Y-m-d', strtotime(str_replace('/', '-', $filterArr['end']))) . '") AND created_at IS NOT null');
         }
         if (!empty($query)) {

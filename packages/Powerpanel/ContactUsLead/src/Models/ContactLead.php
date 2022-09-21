@@ -2,6 +2,7 @@
 namespace Powerpanel\ContactUsLead\Models;
 use Illuminate\Database\Eloquent\Model;
 use DB;
+use App\Helpers\MyLibrary;
 class ContactLead extends Model {
 	/**
 	 * The table associated with the model.
@@ -15,6 +16,7 @@ class ContactLead extends Model {
 		'varEmailId',
 		'varPhoneNumber',
 		'varMessage',
+		'varBusinessName',
 		// 'chrDelete',
 		'varIpAddress',
 		'chrLetestUpdate',
@@ -255,44 +257,42 @@ class ContactLead extends Model {
 	 * @since   2017-08-02
 	 * @author  NetQuick
 	 */
-	function scopeFilter($query, $filterArr = false ,$retunTotalRecords = false) 
-	{
-				$response = null;
-				if (!empty($filterArr['orderByFieldName'])  && !empty($filterArr['orderTypeAscOrDesc'])) {
-						$query = $query->orderBy($filterArr['orderByFieldName'], $filterArr['orderTypeAscOrDesc']);
-				} else {
-						$query = $query->orderBy('id', 'DESC');
-				}
+	function scopeFilter($query, $filterArr = false ,$retunTotalRecords = false){
+		$response = null;
+		if (!empty($filterArr['orderByFieldName'])  && !empty($filterArr['orderTypeAscOrDesc'])) {
+				$query = $query->orderBy($filterArr['orderByFieldName'], $filterArr['orderTypeAscOrDesc']);
+		} else {
+				$query = $query->orderBy('id', 'DESC');
+		}
 
-				if (!$retunTotalRecords) {
-						if (!empty($filterArr['iDisplayLength']) && $filterArr['iDisplayLength'] > 0) {
-								$data = $query->skip($filterArr['iDisplayStart'])->take($filterArr['iDisplayLength']);
-						}
+		if (!$retunTotalRecords) {
+				if (!empty($filterArr['iDisplayLength']) && $filterArr['iDisplayLength'] > 0) {
+						$data = $query->skip($filterArr['iDisplayStart'])->take($filterArr['iDisplayLength']);
 				}
-				if (!empty($filterArr['statusFilter']) && $filterArr['statusFilter'] != ' ') {
-						$data = $query->where('chrPublish' ,$filterArr['statusFilter']);
-				}
-				if(isset($filterArr['searchFilter']) && !empty($filterArr['searchFilter']))
-				{
-						$data = $query->where('varTitle','like','%'.$filterArr['searchFilter'].'%')->orwhere('varEmailId','like','%'.$filterArr['searchFilter'].'%');
-				}
+		}
+		if (!empty($filterArr['statusFilter']) && $filterArr['statusFilter'] != ' '){
+				$data = $query->where('chrPublish' ,$filterArr['statusFilter']);
+		}
+		if(isset($filterArr['searchFilter']) && !empty($filterArr['searchFilter'])){
+				$data = $query->where('varTitle','like','%'.$filterArr['searchFilter'].'%')->orwhere('varBusinessName', 'like', '%' . $filterArr['searchFilter'] . '%')->orwhere('varEmailId', 'like','%'. MyLibrary::encryptLatest($filterArr['searchFilter']).'%');
+		}
 
-				if (!empty($filterArr['start']) && $filterArr['start'] != ' ') {
-						$data = $query->whereRaw('DATE(dtCreateDate) >= DATE("' . date('Y-m-d', strtotime(str_replace('/', '-', $filterArr['start']))) . '")');
-				}
+		if (!empty($filterArr['start']) && $filterArr['start'] != ' ') {
+				$data = $query->whereRaw('DATE(dtCreateDate) >= DATE("' . date('Y-m-d', strtotime(str_replace('/', '-', $filterArr['start']))) . '")');
+		}
 
-				if (!empty($filterArr['start']) && $filterArr['start'] != '' &&  empty($filterArr['end']) && $filterArr['end'] == '') {
-						$data = $query->whereRaw('DATE(dtCreateDate) >= DATE("' . date('Y-m-d', strtotime(str_replace('/', '-', $filterArr['start']))) . '")');
-				}
+		if (!empty($filterArr['start']) && $filterArr['start'] != '' &&  empty($filterArr['end']) && $filterArr['end'] == '') {
+				$data = $query->whereRaw('DATE(dtCreateDate) >= DATE("' . date('Y-m-d', strtotime(str_replace('/', '-', $filterArr['start']))) . '")');
+		}
 
-				if (!empty($filterArr['end']) && $filterArr['end'] != ' ') {
-						$data = $query->whereRaw('DATE(dtCreateDate) <= DATE("' . date('Y-m-d', strtotime(str_replace('/', '-', $filterArr['end']))) . '") AND dtCreateDate IS NOT null');
-				}
+		if (!empty($filterArr['end']) && $filterArr['end'] != ' ') {
+				$data = $query->whereRaw('DATE(dtCreateDate) <= DATE("' . date('Y-m-d', strtotime(str_replace('/', '-', $filterArr['end']))) . '") AND dtCreateDate IS NOT null');
+		}
 
-				if (!empty($query)) {
-						$response = $query;
-				}
-				return $response;
+		if (!empty($query)) {
+				$response = $query;
+		}
+		return $response;
 	}
 
 }

@@ -4,6 +4,7 @@ namespace Powerpanel\CareerLead\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use DB;
+use App\Helpers\MyLibrary;
 
 class CareerLead extends Model {
 
@@ -111,8 +112,7 @@ class CareerLead extends Model {
      */
     public static function getListForExport($selectedIds = false) {
         $response = false;
-        $moduleFields = ['varTitle', 'varEmail','varPhoneNo', 
-            'varMessage',   'varPageName','varFile', 'varIpAddress', 'created_at'];
+        $moduleFields = ['varTitle', 'varEmail','varPhoneNo', 'varMessage',   'varPageName','varFile', 'varIpAddress', 'created_at'];
         $query = Self::getPowerPanelRecords($moduleFields)->deleted();
         if (!empty($selectedIds) && count($selectedIds) > 0) {
             $query->checkMultipleRecordId($selectedIds);
@@ -228,7 +228,7 @@ class CareerLead extends Model {
             $data = $query->where('chrPublish', $filterArr['statusFilter']);
         }
         if (isset($filterArr['searchFilter']) && !empty($filterArr['searchFilter'])) {
-            $data = $query->where('varTitle', 'like', '%' . $filterArr['searchFilter'] . '%')->orwhere('varEmail', 'like', '%' . $filterArr['searchFilter'] . '%');
+            $data = $query->where('varTitle', 'like', '%' . $filterArr['searchFilter'] . '%')->orwhere('varEmail', 'like','%'. MyLibrary::encryptLatest($filterArr['searchFilter']).'%');
         }
         if (!empty($filterArr['cmpId']) && $filterArr['cmpId'] != ' ') {
             // $data = $query->where('fkIntCompanyId', $filterArr['cmpId']);
