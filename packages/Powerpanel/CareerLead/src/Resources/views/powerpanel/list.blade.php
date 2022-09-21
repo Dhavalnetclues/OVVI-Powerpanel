@@ -172,10 +172,21 @@
 								<label for="form-check-label">{{ trans('careerlead::template.careerleadModule.allRecords') }}</label>
 							</div>
 						</div>
+
+						<div class="col-sm-12 mt-3">
+                            <button type="button" class="btn btn-primary bg-gradient waves-effect waves-light btn-label" id="ExportRecord" data-bs-dismiss="modal">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <i class="ri-check-line label-icon align-middle fs-20 me-2"></i>
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        {{ trans('careerlead::template.common.ok') }}
+                                    </div>
+                                </div>
+                            </button>
+                        </div>
+
 					</div>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-primary" id="ExportRecord" data-bs-dismiss="modal">{{ trans('careerlead::template.common.ok') }} </button>
 				</div>
 			</div>
 			<!-- /.modal-content -->
@@ -183,23 +194,70 @@
 	</div>
 	<!-- /.modal-dialog -->
 </div>
-<div class="new_modal modal fade" id="noSelectedRecords" tabindex="-1" role="basic" aria-hidden="true">
-	<div class="modal-dialog">
-		<div class="modal-vertical">	
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5>{{ trans('careerlead::template.common.alert') }}</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"> </button>
-				</div>
-				<div class="modal-body text-center">{{ trans('careerlead::template.careerleadModule.leastRecord') }} </div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-primary" data-bs-dismiss="modal">{{ trans('careerlead::template.common.ok') }} </button>
+
+
+{{-- <div class="new_modal modal fade" id="selectedRecords" tabindex="-1" role="basic" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">{{ trans('careerlead::template.common.alert') }}</h5>
+				<button type="button" class="btn-close fs-10" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body text-center">
+				<div class="row">
+					<div class="col-sm-12">
+						<h5 class="mb-2">{{ trans('careerlead::template.careerleadModule.recordsExport') }}</h5>
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="radio" value="selected_records" id="selected_records" name="export_type">
+							<label for="selected_records">{{ trans('careerlead::template.careerleadModule.selectedRecords') }}</label>
+						</div>
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="radio" value="all_records" id="all_records" name="export_type" checked>
+							<label for="all_records">{{ trans('careerlead::template.careerleadModule.allRecords') }}</label>
+						</div>
+					</div>
+					<div class="col-sm-12 mt-3">
+						<button type="button" class="btn btn-primary bg-gradient waves-effect waves-light btn-label" id="ExportRecord" data-bs-dismiss="modal">
+							<div class="d-flex">
+								<div class="flex-shrink-0">
+									<i class="ri-check-line label-icon align-middle fs-20 me-2"></i>
+								</div>
+								<div class="flex-grow-1">
+									{{ trans('careerlead::template.common.ok') }}
+								</div>
+							</div>
+						</button>
+					</div>
 				</div>
 			</div>
-			<!-- /.modal-content -->
 		</div>
 	</div>
-	<!-- /.modal-dialog -->
+</div> --}}
+
+<div class="new_modal modal fade" id="noSelectedRecords" tabindex="-1" role="basic" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">{{ trans('careerlead::template.common.alert') }}</h5>
+				<button type="button" class="btn-close fs-10" data-bs-dismiss="modal" aria-label="Close"> </button>
+			</div>
+			<div class="modal-body text-center">
+				<h5 class="mb-2">{{ trans('careerlead::template.careerleadModule.leastRecord') }}</h5>
+				<div class="pt-2">
+					<button type="button" class="btn btn-primary bg-gradient waves-effect waves-light btn-label" data-bs-dismiss="modal">
+						<div class="d-flex">
+							<div class="flex-shrink-0">
+								<i class="ri-check-line label-icon align-middle fs-20 me-2"></i>
+							</div>
+							<div class="flex-grow-1">
+								{{ trans('careerlead::template.common.ok') }}
+							</div>
+						</div>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 <!-- /.modal -->
 	@if (File::exists(base_path() . '/resources/views/powerpanel/partials/deletePopup.blade.php') != null)

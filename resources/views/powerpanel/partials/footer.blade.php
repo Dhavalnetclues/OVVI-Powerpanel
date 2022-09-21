@@ -4,7 +4,7 @@
 		<div class="row">
 			<div class="col-sm-12 col-md-12">
 				<div class="copyright-txt text-center">
-					Copyright &COPY; {{ date('Y') }} Netclues. All Rights Reserved. | <a class="addTermsandCondition" title="Terms &amp; Conditions" target="_blank" href="https://www.netclues.com/terms-conditions">Terms &amp; Conditions</a>
+					Copyright &COPY; {{ date('Y') }} Netclues. All Rights Reserved.
 				</div>
 			</div>
 			{{-- <div class="col-sm-12 col-md-3">
