@@ -68,7 +68,7 @@
                   }
 
                   if (!empty($row->varMessage)) {
-                        $userMessage = $row->varMessage;
+                        $userMessage = htmlspecialchars($row->varMessage);
                   }
                   ?>
                     <tr>

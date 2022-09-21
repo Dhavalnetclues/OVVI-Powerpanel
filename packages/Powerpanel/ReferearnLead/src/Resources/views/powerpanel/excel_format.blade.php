@@ -53,7 +53,7 @@
                               $label .= 'POS :- '.$LookingForPOSArr[trim($LookingForPOS)].'<br>';
                            }
                            if (!empty($row->varMessage)) {
-											$Message = $row->varMessage;
+											$Message = htmlspecialchars($row->varMessage);
 									}
                      }
                         ?>

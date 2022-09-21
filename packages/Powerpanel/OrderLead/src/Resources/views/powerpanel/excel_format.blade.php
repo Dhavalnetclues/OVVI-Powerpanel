@@ -40,7 +40,6 @@
                             $Peripherals = (!empty($value->varOnPeripherals) ? $value->varOnPeripherals  : '');
                             $MenuProgramming = (!empty($value->varOnMenuProgramming) ? $value->varOnMenuProgramming  : '');
                             $AdditionalModules = (!empty($value->varOnAdditionalModules) ? $value->varOnAdditionalModules  : '');
-                            $StreetAddress = (!empty($value->varOnStreetAddress) ? $value->varOnStreetAddress  : '');
                             if(!empty($BusinessType)){
                                 $BusinessTypeArr = [
                                     "Fine_Dining_Restaurant" 	=> "Fine Dining Restaurant",
@@ -125,9 +124,10 @@
                             $City = (!empty($value->city) ? $value->city  : '');
                             $ZipCode = (!empty($value->varOnZipCode) ? \App\Helpers\MyLibrary::decryptLatest($value->varOnZipCode)  : '');
                             $PhoneNumber = (!empty($value->varOnPhoneNumber) ? \App\Helpers\MyLibrary::decryptLatest($value->varOnPhoneNumber)  : '');
+                            $StreetAddress = (!empty($value->varOnStreetAddress) ? trim($value->varOnStreetAddress)  : '');
                             $AdditionalEquipment = (!empty($value->varOnAdditionalEquipment) ? $value->varOnAdditionalEquipment  : '');
                             if(!empty($StreetAddress)){
-                                $Businessdetails .= 'Street Address :- '.$StreetAddress.'<br>';
+                                $Businessdetails .= 'Street Address :- '.htmlspecialchars($StreetAddress).'<br>';
                             }
                             if(!empty($Country)){
                                 $Businessdetails .= 'Country :- '.$Country.'<br>';
@@ -145,7 +145,7 @@
                                 $Businessdetails .= 'PhoneNumber :- '.$PhoneNumber.'<br>';
                             }
                             if(!empty($AdditionalEquipment)){
-                                $Businessdetails .= 'AdditionalEquipment :- '.$AdditionalEquipment.'<br>';
+                                $Businessdetails .= 'AdditionalEquipment :- '.htmlspecialchars($AdditionalEquipment).'<br>';
                             }                            
                             ?>
                             <tr>

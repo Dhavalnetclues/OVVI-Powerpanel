@@ -34,7 +34,7 @@
                         $phoneNo = \App\Helpers\MyLibrary::decryptLatest($row->varPhoneNo);
                   }
                   if (!empty($row->txtUserMessage)) {
-                        $userMessage = $row->txtUserMessage;
+                        $userMessage = htmlspecialchars($row->txtUserMessage);
                   }
                   if (!empty($row->varPageName) ) {
                         $varPageName = $row->varPageName;

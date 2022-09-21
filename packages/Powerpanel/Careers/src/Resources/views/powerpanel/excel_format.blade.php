@@ -66,8 +66,8 @@
 
                             <td align="center">{{ (!empty($row->varImmigrationStatus) ? $row->varImmigrationStatus : "-") }}</td>
                             <td align="center">{{ (!empty($row->varJobOpening) ? $row->varJobOpening : "-") }}</td>
-                            <td align="center">{{ (!empty($row->varDescribeExp) ? $row->varDescribeExp : "-") }}</td>
-                            <td align="center">{{ (!empty($row->varReasonForChange) ? $row->varReasonForChange : "-") }}</td>
+                            <td align="center">{{ (!empty($row->varDescribeExp) ? htmlspecialchars($row->varDescribeExp) : "-") }}</td>
+                            <td align="center">{{ (!empty($row->varReasonForChange) ? htmlspecialchars($row->varReasonForChange) : "-") }}</td>
                             <td align="center">{{ (!empty($row->varWhenToStart) ? $row->varWhenToStart : "-") }}</td>
 
                         </tr>
