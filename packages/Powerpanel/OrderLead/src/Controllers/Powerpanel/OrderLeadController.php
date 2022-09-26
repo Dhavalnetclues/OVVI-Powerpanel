@@ -110,7 +110,7 @@ class OrderLeadController extends PowerpanelController {
         $AdditionalModules = (!empty($value->varOnAdditionalModules) ? $value->varOnAdditionalModules  : '');
         $StreetAddress = (!empty($value->varOnStreetAddress) ? $value->varOnStreetAddress  : '');
                        
-        $receive_date = '<span align="left" data-bs-toggle="tooltip" data-bs-placement="bottom" title="'.date(Config::get("Constant.DEFAULT_DATE_FORMAT").' '.Config::get("Constant.DEFAULT_TIME_FORMAT"), strtotime($value->created_at)).'">'.date(Config::get('Constant.DEFAULT_DATE_FORMAT'), strtotime($value->created_at)).'</span>';
+        $receive_date = '<span align="left" data-bs-toggle="tooltip" data-bs-placement="bottom" title="'.date(Config::get("Constant.DEFAULT_DATE_FORMAT").' '.Config::get("Constant.DEFAULT_TIME_FORMAT"), strtotime($value->created_at)).'">'.date(Config::get('Constant.DEFAULT_DATE_FORMAT').' '.Config::get("Constant.DEFAULT_TIME_FORMAT").' ', strtotime($value->created_at)).'</span>';
         if(!empty($BusinessType)){
             $BusinessTypeArr = [
                 "Fine_Dining_Restaurant" 	=> "Fine Dining Restaurant",
