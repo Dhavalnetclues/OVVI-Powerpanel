@@ -7,10 +7,11 @@ use Maatwebsite\Excel\Concerns\ShouldAutoSize;
 use Request;
 use Config;
 
-class ReferearnLeadExport implements FromView, ShouldAutoSize
+class ReferearnLeadExport implements extends \PhpOffice\PhpSpreadsheet\Cell\StringValueBinder implements FromView, ShouldAutoSize, WithCustomValueBinder
 {
     public function view(): View
     {
+        print_r(Request::all());die;
         $filterArr = array();
         $filterArr['searchFilter'] = !empty(Request::get('searchValue')) ? Request::get('searchValue') : '';
         $filterArr['start'] = !empty(Request::get('start_date')) ? date("Y-m-d", strtotime(Request::get('start_date'))) : '';

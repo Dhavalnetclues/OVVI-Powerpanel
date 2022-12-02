@@ -241,9 +241,9 @@ class ReferearnLead extends Model
 	 * @since   2016-07-24
 	 * @author  NetQuick
 	 */
-	function scopeSearchByDateRange($query, $startDate, $endDate) {
-        return $query->whereBetween('dtCreateDate', [$startDate,$endDate]);
-    }
+    function scopeSearchByDateRange($query, $startDate, $endDate) {
+        return $query->whereBetween(DB::raw("(DATE_FORMAT(created_at,'%Y-%m-%d'))"), [$startDate,$endDate]);
+}
 
 /**
  * This method handels search by title scope
