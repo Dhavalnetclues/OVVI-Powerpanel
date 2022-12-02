@@ -185,7 +185,7 @@ class ContactLead extends Model {
 	 * @author  NetQuick
 	 */
 	function scopeSearchByDateRange($query, $startDate, $endDate) {
-            return $query->whereBetween(DB::raw("(DATE_FORMAT(created_at,'%Y-%m-%d'))"), [$startDate,$endDate]);
+            return $query->whereBetween(DB::raw("(DATE_FORMAT(dtCreateDate,'%Y-%m-%d'))"), [$startDate,$endDate]);
     }
 
 	/**
