@@ -126,13 +126,18 @@ class GetdemoleadController extends PowerpanelController {
         } else {
             $phoneNo = '-';
         }
+        $Pagedetails = '';
         if (!empty($value->varPageName) ) {
-            $varPageName = $value->varPageName;
+            $Pagedetails .= '<div class="pro-act-btn">';
+            $Pagedetails .= '<a href="javascript:void(0)" class="without_bg_icon" onclick="return hs.htmlExpand(this,{width:300,headingText:\'Visited Page\',wrapperClassName:\'titlebar\',showCredits:false});"><i aria-hidden="true" class="ri-message-2-line fs-16"></i></a>';
+            $Pagedetails .= '<div class="highslide-maincontent">' . nl2br($value->varPageName) . '</div>';
+            $Pagedetails .= '</div>';
+            // $varPageName = $value->varPageName;
         } else {
-            $varPageName = '-';
+            $Pagedetails = '-';
         }
 
-				$ipAdress = (isset($value->varIpAddress) && !empty($value->varIpAddress)) ? $value->varIpAddress : "-";
+		$ipAdress = (isset($value->varIpAddress) && !empty($value->varIpAddress)) ? $value->varIpAddress : "-";
         $receivedDate = '<span align="left" data-bs-toggle="tooltip" data-bs-placement="bottom" title="'.date(Config::get("Constant.DEFAULT_DATE_FORMAT").' '.Config::get("Constant.DEFAULT_TIME_FORMAT"), strtotime($value->created_at)).'">'.date(Config::get('Constant.DEFAULT_DATE_FORMAT').' '.Config::get("Constant.DEFAULT_TIME_FORMAT").' ', strtotime($value->created_at)).'</span>';
 
         $records = array(
@@ -144,7 +149,7 @@ class GetdemoleadController extends PowerpanelController {
             // $Visitfor,
             $Business,
             $details,
-            $varPageName,
+            $Pagedetails,
             $ipAdress,
             $receivedDate
         );
