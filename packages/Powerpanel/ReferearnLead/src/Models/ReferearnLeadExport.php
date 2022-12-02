@@ -11,16 +11,17 @@ class ReferearnLeadExport implements FromView, ShouldAutoSize
 {
     public function view(): View
     {
+        $filterArr = array();
+        $filterArr['searchFilter'] = !empty(Request::get('searchValue')) ? Request::get('searchValue') : '';
+        $filterArr['start'] = !empty(Request::get('start_date')) ? date("Y-m-d", strtotime(Request::get('start_date'))) : '';
+        $filterArr['end'] = !empty(Request::get('end_date')) ? date("Y-m-d",strtotime(Request::get('end_date'))) : '';
         if (Request::get('export_type') == 'selected_records') {
             if (null !== Request::get('delete')) {
-                $selectedIds = Request::get('delete');
-            } else {
-                $selectedIds = false;
+                $filterArr["checkedIds"] = Request::get('delete');
             }
-            //$filterArr['searchFilter'] = !empty(Request::get('searchValue')) ? Request::get('searchValue') : '';
-            $arrResults = ReferearnLead::getListForExport($selectedIds);
+            $arrResults = ReferearnLead::getListForExport($filterArr);
         } else {
-            $arrResults = ReferearnLead::getListForExport();
+            $arrResults = ReferearnLead::getListForExport($filterArr);
         }
     
         if (count($arrResults) > 0) {
