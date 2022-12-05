@@ -11,7 +11,7 @@
 <link href="{{ $CDN_PATH.'resources/global/plugins/highslide/highslide.css' }}" rel="stylesheet" type="text/css" />
 @endsection
 @section('content')
-@include('powerpanel.partials.breadcrumbs')
+{{-- @include('powerpanel.partials.breadcrumbs') --}}
 {!! csrf_field() !!}
 
 <div class="row">
