@@ -209,8 +209,12 @@ class CareerLead extends Model {
 			$query->SearchByName($selectedIds["searchFilter"]);
 		}
 		if(isset($selectedIds["start"]) && !empty($selectedIds["start"]) && isset($selectedIds["end"]) && !empty($selectedIds["end"])){
-			$query->SearchByDateRange($selectedIds["start"],$selectedIds["end"]);
-		}
+            $query->SearchByDateRange($selectedIds["start"],$selectedIds["end"]);
+        }else if(isset($selectedIds["start"]) && !empty($selectedIds["start"]) && $selectedIds["end"] == ""){
+            $query->where(DB::raw("(DATE_FORMAT(created_at,'%Y-%m-%d'))"), '>=', $selectedIds["start"]);
+        }else if(isset($selectedIds["end"]) && !empty($selectedIds["end"]) && $selectedIds["start"] == ""){
+            $query->where(DB::raw("(DATE_FORMAT(created_at,'%Y-%m-%d'))"), '<=', $selectedIds["end"]);
+        }
 		if(isset($selectedIds["checkedIds"]) &&  !empty($selectedIds["checkedIds"]) && count($selectedIds["checkedIds"]) > 0){
 			$query->checkMultipleRecordId($selectedIds);
 		}
@@ -298,7 +302,7 @@ class CareerLead extends Model {
      * @author  NetQuick
      */
     function scopeSearchByName($query, $title) {
-        return $query->where('varTitle', $title);
+        return $query->where('varTitle', 'like', '%' .$title . '%');
     }
 
     public static function getRecordListDashboard($year = false, $timeparam = false, $month = false) {

@@ -296,6 +296,7 @@ class OrderLead extends Model {
      * @author  NetQuick
      */
     public static function getListForExport($selectedIds = false) {
+        //   \DB::enableQueryLog(); // Enable query log
         $response = false;
         $moduleFields = [
             'OrderLeads.id',
@@ -334,12 +335,16 @@ class OrderLead extends Model {
         }
         if(isset($selectedIds["start"]) && !empty($selectedIds["start"]) && isset($selectedIds["end"]) && !empty($selectedIds["end"])){
             $query->SearchByDateRange($selectedIds["start"],$selectedIds["end"]);
+        }else if(isset($selectedIds["start"]) && !empty($selectedIds["start"]) && $selectedIds["end"] == ""){
+            $query->where(DB::raw("(DATE_FORMAT(created_at,'%Y-%m-%d'))"), '>=', $selectedIds["start"]);
+        }else if(isset($selectedIds["end"]) && !empty($selectedIds["end"]) && $selectedIds["start"] == ""){
+            $query->where(DB::raw("(DATE_FORMAT(created_at,'%Y-%m-%d'))"), '<=', $selectedIds["end"]);
         }
         if(isset($selectedIds["checkedIds"]) &&  !empty($selectedIds["checkedIds"]) && count($selectedIds["checkedIds"]) > 0){
             $query->checkMultipleRecordId($selectedIds["checkedIds"]);
         }
         $response = $query->orderByCreatedAtDesc()->get();
-        // dd(count($selectedIds));die;
+        // dd($selectedIds);die;
 		// echo "<pre>";print_r($selectedIds["searchFilter"]);die;
         // dd(\DB::getQueryLog()); // Show results of log
         return $response;
@@ -351,7 +356,7 @@ class OrderLead extends Model {
 	 * @since   2016-07-24
 	 * @author  NetQuick
 	 */
-	function scopeSearchByDateRange($query, $startDate, $endDate) {
+	function scopeSearchByDateRange($query, $startDate, $endDate) { 
         return $query->whereBetween(DB::raw("(DATE_FORMAT(created_at,'%Y-%m-%d'))"), [$startDate,$endDate]);
     }
 
@@ -362,8 +367,7 @@ class OrderLead extends Model {
      * @author  NetQuick
      */
     function scopeSearchByName($query, $title) {
-        // print_r($query);die;
-            return $query->where('varTitle', $title);
+        return $query->where('varTitle', 'like', '%' .$title . '%');
     }
 
     /**

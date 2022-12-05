@@ -274,7 +274,7 @@ class ResellerLead extends Model {
      * @author  NetQuick
      */
     function scopeSearchByName($query, $title) {
-            return $query->where('varTitle', $title);
+        return $query->where('varTitle', 'like', '%' .$title . '%');
     }
 
     /**
