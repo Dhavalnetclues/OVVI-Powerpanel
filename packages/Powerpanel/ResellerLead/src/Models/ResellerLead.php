@@ -216,6 +216,7 @@ class ResellerLead extends Model {
      * @author  NetQuick
      */
     public static function getListForExport($selectedIds = false) {
+        // \DB::enableQueryLog(); // Enable query log
         $response = false;
         $moduleFields = [
             'varTitle',
@@ -247,6 +248,10 @@ class ResellerLead extends Model {
         }
         if(isset($selectedIds["start"]) && !empty($selectedIds["start"]) && isset($selectedIds["end"]) && !empty($selectedIds["end"])){
             $query->SearchByDateRange($selectedIds["start"],$selectedIds["end"]);
+        }else if(isset($selectedIds["start"]) && !empty($selectedIds["start"]) && $selectedIds["end"] == ""){
+            $query->where(DB::raw("(DATE_FORMAT(created_at,'%Y-%m-%d'))"), '>=', $selectedIds["start"]);
+        }else if(isset($selectedIds["end"]) && !empty($selectedIds["end"]) && $selectedIds["start"] == ""){
+            $query->where(DB::raw("(DATE_FORMAT(created_at,'%Y-%m-%d'))"), '<=', $selectedIds["end"]);
         }
 
         if(isset($selectedIds["checkedIds"]) &&  !empty($selectedIds["checkedIds"]) && count($selectedIds["checkedIds"]) > 0){
@@ -254,6 +259,7 @@ class ResellerLead extends Model {
         }
         $response = $query->orderByCreatedAtDesc()
                 ->get();
+        // dd(\DB::getQueryLog()); // Show results of log
         return $response;
     }
 
