@@ -252,7 +252,7 @@ class ReferearnLead extends Model
  * @author  NetQuick
  */
 function scopeSearchByName($query, $title) {
-        return $query->where('varTitle', $title);
+        return $query->where('varName', $title);
 }
 
   public static function checkSubscriberExist($email){
