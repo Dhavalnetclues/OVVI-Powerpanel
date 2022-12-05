@@ -126,11 +126,10 @@ var TableDatatablesAjax = function() {
                     var end_date = $("#end_date").val();
                     if (exportRadioVal == 'selected_records') {
                         if ($('#ExportRecord').click) {
-                            if ($('input[name="delete[]"]:checked').val()) {
+                        	if ($('input[name="delete[]"]:checked').val()) {
                                 ip = '?' + $('input[name="delete[]"]:checked').serialize() + '&' + 'export_type' + '=' + exportRadioVal+"&searchValue="+searchfilter+"&start_date="+start_date+"&end_date="+end_date;
                                 var ajaxurl = window.site_url + "/powerpanel/career-lead/ExportRecord" + ip;
                                 window.location = ajaxurl;
-                                
                                 grid.getDataTable().ajax.reload();
                             } else {
                                 $('#noSelectedRecords').modal('show');

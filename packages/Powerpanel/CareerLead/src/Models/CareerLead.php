@@ -111,6 +111,7 @@ class CareerLead extends Model {
      * @author  NetQuick
      */
     public static function getListForExport($selectedIds = false) {
+        // echo "<pre>";print_r($selectedIds);die;
         $response = false;
         $moduleFields = ['varTitle', 'varEmail','varPhoneNo', 'varMessage',   'varPageName','varFile', 'varIpAddress', 'created_at'];
         $query = Self::getPowerPanelRecords($moduleFields)->deleted();
@@ -124,6 +125,7 @@ class CareerLead extends Model {
 			$query->checkMultipleRecordId($selectedIds["checkedIds"]);
 		}
 		$response = $query->orderByCreatedAtDesc()->get();
+		// dd(\DB::getQueryLog()); // Show results of log
 		return $response;
     }
     public static function getCountById($albumId = null) {
@@ -143,7 +145,7 @@ class CareerLead extends Model {
 	 * @author  NetQuick
 	 */
 	function scopeSearchByDateRange($query, $startDate, $endDate) {
-        return $query->whereBetween(DB::raw("(DATE_FORMAT(dtCreateDate,'%Y-%m-%d'))"), [$startDate,$endDate]);
+        return $query->whereBetween(DB::raw("(DATE_FORMAT(created_at,'%Y-%m-%d'))"), [$startDate,$endDate]);
 }
 
 /**

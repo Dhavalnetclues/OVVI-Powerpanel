@@ -290,6 +290,9 @@ var TableDatatablesAjax = function () {
                     var start_date = $("#start_date").val();
                     var end_date = $("#end_date").val();
                     if (exportRadioVal == 'selected_records') {
+                        var searchfilter = $("#searchfilter").val();
+                        var start_date = $("#start_date").val();
+                        var end_date = $("#end_date").val();
                         if ($('#ExportRecord').click) {
                         	if ($('input[name="delete[]"]:checked').val()) {
                                 ip = '?' + $('input[name="delete[]"]:checked').serialize() + '&' + 'export_type' + '=' + exportRadioVal+"&searchValue="+searchfilter+"&start_date="+start_date+"&end_date="+end_date;

@@ -21,12 +21,10 @@ class CareerLeadExport extends \PhpOffice\PhpSpreadsheet\Cell\StringValueBinder 
                 $filterArr["checkedIds"] = Request::get('delete');
             }
             $arrResults = CareerLead::getListForExport($filterArr);
-
         } else {
-            $filterArr['searchFilter'] = !empty(Request::get('searchValue')) ? Request::get('searchValue') : '';
-            $arrResults = CareerLead::getListForExport(false, $filterArr);
+            $arrResults = CareerLead::getListForExport($filterArr);
         }
-
+        // print_r($filterArr);die;
         if (count($arrResults) > 0) {
             return view('careerlead::powerpanel.excel_format', ['CareerLead' => $arrResults]);
         }
