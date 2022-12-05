@@ -114,11 +114,17 @@ class CareerLead extends Model {
         $response = false;
         $moduleFields = ['varTitle', 'varEmail','varPhoneNo', 'varMessage',   'varPageName','varFile', 'varIpAddress', 'created_at'];
         $query = Self::getPowerPanelRecords($moduleFields)->deleted();
-        if (!empty($selectedIds) && count($selectedIds) > 0) {
-            $query->checkMultipleRecordId($selectedIds);
-        }
-        $response = $query->orderByCreatedAtDesc()->get();
-        return $response;
+        if(isset($selectedIds["searchFilter"]) && !empty($selectedIds["searchFilter"])){
+			$query->SearchByName($selectedIds["searchFilter"]);
+		}
+		if(isset($selectedIds["start"]) && !empty($selectedIds["start"]) && isset($selectedIds["end"]) && !empty($selectedIds["end"])){
+			$query->SearchByDateRange($selectedIds["start"],$selectedIds["end"]);
+		}
+		if(isset($selectedIds["checkedIds"]) &&  !empty($selectedIds["checkedIds"]) && count($selectedIds["checkedIds"]) > 0){
+			$query->checkMultipleRecordId($selectedIds["checkedIds"]);
+		}
+		$response = $query->orderByCreatedAtDesc()->get();
+		return $response;
     }
     public static function getCountById($albumId = null) {
         $response = false;
@@ -129,6 +135,26 @@ class CareerLead extends Model {
                 ->count();
         return $response;
     }
+
+    /**
+	 * This method handels search by date range scope
+	 * @return  Object
+	 * @since   2016-07-24
+	 * @author  NetQuick
+	 */
+	function scopeSearchByDateRange($query, $startDate, $endDate) {
+        return $query->whereBetween(DB::raw("(DATE_FORMAT(dtCreateDate,'%Y-%m-%d'))"), [$startDate,$endDate]);
+}
+
+/**
+ * This method handels search by title scope
+ * @return  Object
+ * @since   2016-07-24
+ * @author  NetQuick
+ */
+function scopeSearchByName($query, $title) {
+        return $query->where('varTitle', $title);
+}
 
     /**
      * This method handels record id scope

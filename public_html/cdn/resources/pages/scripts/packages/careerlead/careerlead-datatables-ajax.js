@@ -121,13 +121,16 @@ var TableDatatablesAjax = function() {
                 $('#noRecords').modal('hide');
                 var exportRadioVal = $("input[name='export_type']:checked").val();
                 if (exportRadioVal != '') {
+                    var searchfilter = $("#searchfilter").val();
+                    var start_date = $("#start_date").val();
+                    var end_date = $("#end_date").val();
                     if (exportRadioVal == 'selected_records') {
                         if ($('#ExportRecord').click) {
-                        	console.log($('input[name="delete[]"]:checked').val());
                             if ($('input[name="delete[]"]:checked').val()) {
-                                ip = '?' + $('input[name="delete[]"]:checked').serialize() + '&' + 'export_type' + '=' + exportRadioVal;
+                                ip = '?' + $('input[name="delete[]"]:checked').serialize() + '&' + 'export_type' + '=' + exportRadioVal+"&searchValue="+searchfilter+"&start_date="+start_date+"&end_date="+end_date;
                                 var ajaxurl = window.site_url + "/powerpanel/career-lead/ExportRecord" + ip;
                                 window.location = ajaxurl;
+                                
                                 grid.getDataTable().ajax.reload();
                             } else {
                                 $('#noSelectedRecords').modal('show');
@@ -135,7 +138,7 @@ var TableDatatablesAjax = function() {
                         }
                     } else {
                         $('#selected_records').modal('hide');
-                        var ajaxurl = window.site_url + "/powerpanel/career-lead/ExportRecord";
+                        var ajaxurl = window.site_url + "/powerpanel/career-lead/ExportRecord"+"?searchValue="+searchfilter+"&start_date="+start_date+"&end_date="+end_date;
                         window.location = ajaxurl;
                     }
                 }
