@@ -147,6 +147,7 @@ class ContactLead extends Model {
 	 * @author  NetQuick
 	 */
 	public static function getListForExport($selectedIds=false){
+		// \DB::enableQueryLog(); // Enable query log
 		$response = false;
 		$moduleFields= ['id',
 			'varTitle',
@@ -170,10 +171,11 @@ class ContactLead extends Model {
 			$query->SearchByDateRange($selectedIds["start"],$selectedIds["end"]);
 		}
 		if(isset($selectedIds["checkedIds"]) &&  !empty($selectedIds["checkedIds"]) && count($selectedIds["checkedIds"]) > 0){
-			$query->checkMultipleRecordId($selectedIds);
+			$query->checkMultipleRecordId($selectedIds["checkedIds"]);
 		}
 		$response = $query->orderByCreatedAtDesc()->get();
-		// echo "<pre>";print_r($response);die;
+		// dd(\DB::getQueryLog()); // Show results of log
+		// echo "<pre>";print_r($selectedIds);die;
 		return $response;
 	}
 		
