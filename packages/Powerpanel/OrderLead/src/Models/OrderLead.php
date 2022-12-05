@@ -330,16 +330,40 @@ class OrderLead extends Model {
                 ->leftJoin('States', 'States.id', '=', 'OrderLeads.varOnState')
                 ->deleted();
         if(isset($selectedIds["searchFilter"]) && !empty($selectedIds["searchFilter"])){
-			$query->SearchByName($selectedIds["searchFilter"]);
-		}
-		if(isset($selectedIds["start"]) && !empty($selectedIds["start"]) && isset($selectedIds["end"]) && !empty($selectedIds["end"])){
-			$query->SearchByDateRange($selectedIds["start"],$selectedIds["end"]);
-		}
-		if(isset($selectedIds["checkedIds"]) &&  !empty($selectedIds["checkedIds"]) && count($selectedIds["checkedIds"]) > 0){
-			$query->checkMultipleRecordId($selectedIds["checkedIds"]);
-		}
-		$response = $query->orderByCreatedAtDesc()->get();
-		return $response;
+            $query->SearchByName($selectedIds["searchFilter"]);
+        }
+        if(isset($selectedIds["start"]) && !empty($selectedIds["start"]) && isset($selectedIds["end"]) && !empty($selectedIds["end"])){
+            $query->SearchByDateRange($selectedIds["start"],$selectedIds["end"]);
+        }
+        if(isset($selectedIds["checkedIds"]) &&  !empty($selectedIds["checkedIds"]) && count($selectedIds["checkedIds"]) > 0){
+            $query->checkMultipleRecordId($selectedIds["checkedIds"]);
+        }
+        $response = $query->orderByCreatedAtDesc()->get();
+        // dd(count($selectedIds));die;
+		// echo "<pre>";print_r($selectedIds["searchFilter"]);die;
+        // dd(\DB::getQueryLog()); // Show results of log
+        return $response;
+    }
+
+    	/**
+	 * This method handels search by date range scope
+	 * @return  Object
+	 * @since   2016-07-24
+	 * @author  NetQuick
+	 */
+	function scopeSearchByDateRange($query, $startDate, $endDate) {
+        return $query->whereBetween(DB::raw("(DATE_FORMAT(created_at,'%Y-%m-%d'))"), [$startDate,$endDate]);
+    }
+
+    /**
+     * This method handels search by title scope
+     * @return  Object
+     * @since   2016-07-24
+     * @author  NetQuick
+     */
+    function scopeSearchByName($query, $title) {
+        // print_r($query);die;
+            return $query->where('varTitle', $title);
     }
 
     /**
@@ -433,26 +457,6 @@ class OrderLead extends Model {
         }
         return $response;
     }
-
-    	/**
-	 * This method handels search by date range scope
-	 * @return  Object
-	 * @since   2016-07-24
-	 * @author  NetQuick
-	 */
-	function scopeSearchByDateRange($query, $startDate, $endDate) {
-        return $query->whereBetween(DB::raw("(DATE_FORMAT(created_at,'%Y-%m-%d'))"), [$startDate,$endDate]);
-}
-
-/**
- * This method handels search by title scope
- * @return  Object
- * @since   2016-07-24
- * @author  NetQuick
- */
-function scopeSearchByName($query, $title) {
-        return $query->where('varTitle', $title);
-}
 
     public static function clean($string) {
         $string = str_replace(' ', '-', $string); // Replaces all spaces with hyphens.
