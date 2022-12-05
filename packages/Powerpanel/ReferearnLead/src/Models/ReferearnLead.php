@@ -120,7 +120,7 @@ class ReferearnLead extends Model
         $query->SearchByDateRange($selectedIds["start"],$selectedIds["end"]);
     }
     if(isset($selectedIds["checkedIds"]) &&  !empty($selectedIds["checkedIds"]) && count($selectedIds["checkedIds"]) > 0){
-        $query->checkMultipleRecordId($selectedIds);
+        $query->checkMultipleRecordId($selectedIds["checkedIds"]);
     }
     $response = $query->orderByCreatedAtDesc()->get();
     // echo "<pre>";print_r($response);die;

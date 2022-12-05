@@ -264,7 +264,7 @@ class ResellerLead extends Model {
      * @author  NetQuick
      */
     function scopeSearchByDateRange($query, $startDate, $endDate) {
-            return $query->whereBetween('created_at', [$startDate,$endDate]);
+            return $query->whereBetween(DB::raw("(DATE_FORMAT(created_at,'%Y-%m-%d'))"), [$startDate,$endDate]);
     }
 
     /**
