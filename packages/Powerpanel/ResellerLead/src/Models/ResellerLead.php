@@ -250,7 +250,7 @@ class ResellerLead extends Model {
         }
 
         if(isset($selectedIds["checkedIds"]) &&  !empty($selectedIds["checkedIds"]) && count($selectedIds["checkedIds"]) > 0){
-            $query->checkMultipleRecordId($selectedIds);
+            $query->checkMultipleRecordId($selectedIds["checkedIds"]);
         }
         $response = $query->orderByCreatedAtDesc()
                 ->get();
