@@ -129,7 +129,7 @@ class GetdemoleadController extends PowerpanelController {
         $Pagedetails = '';
         if (!empty($value->varPageName) ) {
             $Pagedetails .= '<div class="pro-act-btn">';
-            $Pagedetails .= '<a href="javascript:void(0)" class="without_bg_icon" onclick="return hs.htmlExpand(this,{width:300,headingText:\'Visited Page\',wrapperClassName:\'titlebar\',showCredits:false});"><i aria-hidden="true" class="ri-message-2-line fs-16"></i></a>';
+            $Pagedetails .= '<a href="javascript:void(0)" class="without_bg_icon" onclick="return hs.htmlExpand(this,{width:300,headingText:\'Visited Page\',wrapperClassName:\'titlebar\',showCredits:false});"><i aria-hidden="true" class="ri-mail-open-line fs-16"></i></a>';
             $Pagedetails .= '<div class="highslide-maincontent">' . nl2br($value->varPageName) . '</div>';
             $Pagedetails .= '</div>';
             // $varPageName = $value->varPageName;
