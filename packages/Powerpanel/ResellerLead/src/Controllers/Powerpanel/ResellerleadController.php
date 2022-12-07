@@ -161,8 +161,8 @@ class ResellerleadController extends PowerpanelController {
         $records = array(
             $checkbox,
             $value->varTitle,
-            MyLibrary::decryptLatest($value->varEmailId),
             $phoneNo,
+            MyLibrary::decryptLatest($value->varEmailId),
             // $Satisfied,
             // $Visitfor,
             $Companey,
