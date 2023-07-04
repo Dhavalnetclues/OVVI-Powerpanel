@@ -14,7 +14,7 @@ class Alias extends Model
     protected static $fetchedID = [];
     protected static $fetchedAlias = null;
 
-    public function sluggable()
+    public function sluggable(): array
     {
         return [
             'varAlias' => [

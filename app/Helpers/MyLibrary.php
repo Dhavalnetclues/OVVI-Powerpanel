@@ -1579,7 +1579,7 @@ class MyLibrary
         return $yearReplace;
     }
 
-    function decryptLatest($string) {
+    static function decryptLatest($string) {
         $output = false;
         $encrypt_method = "AES-256-CBC";
         $secret_key = 'OVVIHQ1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -1590,7 +1590,7 @@ class MyLibrary
         return $output;
     }
 
-    function encryptLatest($string) {
+    static function encryptLatest($string) {
         $output = false;
         $encrypt_method = "AES-256-CBC";
         $secret_key = 'OVVIHQ1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ';
