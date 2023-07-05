@@ -201,7 +201,7 @@ return [
         'zipCode'=>"Zip Code",
         'emailAddress'=>"Email Address",
         'firstName'=>"First Name",
-        'lastName'=>"LastName",
+        'lastName'=>"Last Name",
         'companyName'=>"Company Name",
         'phoneNumber'=>"Phone Number",
         'ipAddress'=>"IP Address",

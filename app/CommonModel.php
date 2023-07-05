@@ -337,7 +337,9 @@ class CommonModel extends Model {
             $titleField = 'eventId';
         } else if ($modelName == 'varTitle'){
             $titleField = 'varTitle';
-        } else {
+        } else if($modelName="LiquorShopLead"){
+            $titleField = 'varRequestNumber';
+        }else {
             $titleField = 'varTitle';
         }
         // echo $titleField;die;

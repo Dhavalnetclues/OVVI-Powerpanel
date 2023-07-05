@@ -223,7 +223,7 @@ class LiquorShopLead extends Model
 	 */
 	function scopeSearchByName($query, $title)
 	{
-		return $query->where('varTitle', 'like', '%' . $title . '%');
+		return $query->where('varRequestNumber', 'like', '%' . $title . '%')->orWhere('varOnFirstName', 'like', '%'. $title . '%')->orWhere('varOnLastName', 'like', '%'. $title . '%');
 	}
 
 	/**
@@ -338,7 +338,7 @@ class LiquorShopLead extends Model
 			$data = $query->where('chrPublish', $filterArr['statusFilter']);
 		}
 		if (isset($filterArr['searchFilter']) && !empty($filterArr['searchFilter'])) {
-			$data = $query->where('varTitle', 'like', '%' . $filterArr['searchFilter'] . '%')->orwhere('varBusinessName', 'like', '%' . $filterArr['searchFilter'] . '%')->orwhere('varEmailId', 'like', '%' . MyLibrary::encryptLatest($filterArr['searchFilter']) . '%');
+			$data = $query->where('varRequestNumber', 'like', '%' . $filterArr['searchFilter'] . '%')->orWhere('varOnFirstName', 'like', '%'. $filterArr['searchFilter'] . '%')->orWhere('varOnLastName', 'like', '%'. $filterArr['searchFilter'] . '%');
 		}
 
 		if (!empty($filterArr['start']) && $filterArr['start'] != ' ') {

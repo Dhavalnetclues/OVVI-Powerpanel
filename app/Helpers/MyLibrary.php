@@ -434,8 +434,12 @@ class MyLibrary
             $displayOrderFiledsIDs = [];
             foreach ($data['ids'] as $key => $id) {
                 if ($update) {
-
-                    $objModule = CommonModel::getRecordsForDeleteById($id, false, $modelNameSpace, $modifiedModuleFields);
+                    if($modelNameSpace=="Powerpanel\LiquorShopLead\Models\LiquorShopLead"){
+                        $modelName="LiquorShopLead";
+                        $objModule = CommonModel::getRecordsForDeleteById($id, false, $modelNameSpace, $modifiedModuleFields);
+                    }else{
+                        $objModule = CommonModel::getRecordsForDeleteById($id, false, $modelNameSpace, $modifiedModuleFields);
+                    }
                     if (isset($objModule->intDisplayOrder)) {
                         $displayOrderFiledsIDs[] = $objModule->id;
                         /* if(isset($modifiedModuleFields) && !empty($modifiedModuleFields)){
