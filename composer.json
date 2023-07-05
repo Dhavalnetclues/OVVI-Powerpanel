@@ -57,6 +57,7 @@
             "Powerpanel\\ResellerLead\\": "packages/Powerpanel/ResellerLead/src",
             "Powerpanel\\CareerLead\\": "packages/Powerpanel/CareerLead/src",
             "Powerpanel\\ReferearnLead\\": "packages/Powerpanel/ReferearnLead/src",
+            "Powerpanel\\LiquorShopLead\\": "packages/Powerpanel/LiquorShopLead/src",
             "Powerpanel\\Alerts\\": "packages/Powerpanel/Alerts/src",
             "Powerpanel\\PopupContent\\": "packages/Powerpanel/PopupContent/src"
         }

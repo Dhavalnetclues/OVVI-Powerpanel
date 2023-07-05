@@ -13,9 +13,9 @@ class LiquorShopLeadServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $frontPackageThemePath = \config('theme.front_package_path')."liquorShopLead";
+        $frontPackageThemePath = \config('theme.front_package_path')."liquorshoplead";
         $packagePath = __DIR__.'/../Resources/views';
-        $this->loadViewsFrom([$frontPackageThemePath,$packagePath], 'liquorShopLead');
+        $this->loadViewsFrom([$frontPackageThemePath,$packagePath], 'liquorshoplead');
     }
 
     /**

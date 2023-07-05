@@ -201,6 +201,7 @@ return [
         Powerpanel\ResellerLead\Providers\ResellerLeadServiceProvider::class,
         Powerpanel\CareerLead\Providers\CareerLeadServiceProvider::class,
         Powerpanel\ReferearnLead\Providers\ReferearnLeadServiceProvider::class,
+        Powerpanel\LiquorShopLead\Providers\LiquorShopLeadServiceProvider::class,
         Powerpanel\Alerts\Providers\AlertsServiceProvider::class,
         Powerpanel\PopupContent\Providers\PopupContentServiceProvider::class,
         Netclues\Themes\ThemeServiceProvider::class

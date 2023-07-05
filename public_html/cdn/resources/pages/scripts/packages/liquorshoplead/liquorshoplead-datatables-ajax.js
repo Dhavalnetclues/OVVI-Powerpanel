@@ -10,13 +10,22 @@ var TableDatatablesAjax = function() {
         grid.init({
             src: $("#datatable_ajax"),
             onSuccess: function(grid, response) {
+                // if (response.recordsTotal < 1) { 
+                // 	$('.deleteMass').hide();
+                // 	$("#menu1.tab-pane .notabreocrd").show();
+				// 	$("#menu1.tab-pane .withrecords").hide(); 
+                // } else { 
+                // 	$('.deleteMass').show(); 
+                // 	$("#menu1.tab-pane .notabreocrd").hide();
+				// 	$("#menu1.tab-pane .withrecords").show();
+                // }
+                // if(response.recordsTotal < 20) {
+                //     $('.gridjs-pages').hide();
+                // } else {
+                //     $('.gridjs-pages').show();
+                // }
                 if (response.recordsTotal < 1) { $('.deleteMass').hide(); } else { $('.deleteMass').show(); }
                 if (response.recordsTotal < 1) { $('.ExportRecord').hide(); } else { $('.ExportRecord').show(); }
-
-                // grid:        grid object
-                // response:    json object of server side ajax response
-                // execute some code after table records loaded		
-                // get all typeable inputs		
                 totalRec = response.recordsTotal;
             },
             onError: function(grid) {
@@ -30,34 +39,55 @@ var TableDatatablesAjax = function() {
                 // Uncomment below line("dom" parameter) to fix the dropdown overflow issue in the datatable cells. The default datatable layout
                 // setup uses scrollable div(table-scrollable) with overflow:auto to enable vertical scroll(see: assets/global/scripts/datatable.js).
                 // So when dropdowns used the scrollable div should be removed.
-                //"dom": "<'row'<'col-md-8 col-sm-12'pli><'col-md-4 col-sm-12'<'table-group-actions pull-right'>>r>t<'row'<'col-md-8 col-sm-12'pli><'col-md-4 col-sm-12'>>",
+                "dom": "t <'gridjs-footer' <'gridjs-pagination'i <'gridjs-pages'p>>>",
                 "deferRender": true,
-                "stateSave": true, // save datatable state(pagination, sort, etc) in cookie.
-                "lengthMenu": [
-                    [10, 20, 50, 100],
-                    [10, 20, 50, 100] // change per page values here
-                ],
-                "pageLength": 100, // default record count per page
-                //Code for sorting
+                // "scrollY":300,
+                // "scrollX":true,
+                // "stateSave": true, // save datatable state(pagination, sort, etc) in cookie.
+                // "lengthMenu": [
+                //     [10, 20, 50, 100],
+                //     [10, 20, 50, 100] // change per page values here
+                // ],
+                "pageLength": 10, // default record count per page
+                drawCallback:function(){
+                    // var $api = this.api();
+                    // var pages = $api.page.info().pages;
+                    // var rows = $api.data().length;
+                    // if(pages<=1){
+                    //     $('.dataTables_info').css('display','none');
+                    //     $('.dataTables_paginate').css('display','none');
+                    // }
+                },
+                // Code for sorting
                 "serverSide": true,
+                "lengthChange": false,
+                "pagingType": "simple_numbers",
+                "language": {
+                    "info": '<div role="status" aria-live="polite" class="gridjs-summary">Showing <b>_START_</b> to <b>_END_</b> of <b>_TOTAL_</b> results</div>', // title="Page 1 of 2"
+                },
                 "columns": [
-                    { "data": 0, className: 'td_checker', "bSortable": false },
-                    { "data": 1, className: 'text-left', "name": 'varTitle' },
-                    { "data": 2, className: 'text-left', "bSortable": false },
-                    { "data": 3, className: 'text-center', "bSortable": false },
-                    { "data": 4, className: 'text-center', "bSortable": false },
-                    { "data": 5, className: 'text-center', "bSortable": false },
-                    { "data": 6, className: 'text-center', "name": 'varIpAddress' },
-                    { "data": 7, className: 'text-center', "name": 'created_at' },
+                    {"data": 0, "class": 'td_checker', "bSortable": false},
+                    { "data": 1, "class": 'text-left' },
+                    { "data": 2, "class": 'text-left' },
+                    { "data": 3, "class": 'text-left' },
+                    { "data": 4, "class": 'text-center' },
+                    { "data": 5, "class": 'text-center' },
+                    { "data": 6, "class": 'text-left' },
+                    { "data": 7, "class": 'text-left' },
+                    { "data": 8, "class": 'text-left' },
+                    { "data": 9, "class": 'text-left' },
+                    { "data": 10, "class": 'text-center', "name": 'varIpAddress', "bSortable": false },
+                    { "data": 11, "class": 'text-center', "name": 'created_at' },
                 ],
                 "ajax": {
                     "url": window.site_url + "/powerpanel/liquorshop-lead/get_list", // ajax source
                 },
                 "order": [
-                        [5, "desc"]
-                    ] // set first column as a default sort by asc
+                    [7, "desc"]
+                ]
             }
         });
+
         $(document).on('keyup', '#searchfilter', function(e) {
             e.preventDefault();
             var action = $('#searchfilter').val();
@@ -75,7 +105,8 @@ var TableDatatablesAjax = function() {
                 grid.getDataTable().ajax.reload();
             }
         });
-        $(document).on('click', '#liquorshopleadrange', function(e) {
+
+        $(document).on('change', '#liquorshopleadrange', function(e) {
             e.preventDefault();
             var action = {};
             action['from'] = $('#start_date').val();
@@ -96,12 +127,14 @@ var TableDatatablesAjax = function() {
                 grid.setAjaxParam("id", grid.getSelectedRows());
             }
         });
+
         $(document).on('click', '#refresh', function(e) {
             $('#start_date').val('');
             $('#end_date').val('');
             grid.setAjaxParam("rangeFilter", '');
             grid.getDataTable().ajax.reload();
         });
+
         $('#ExportRecord').on('click', function(e) {
             e.preventDefault();
             if (totalRec < 1) {
@@ -110,10 +143,13 @@ var TableDatatablesAjax = function() {
                 $('#noRecords').modal('hide');
                 var exportRadioVal = $("input[name='export_type']:checked").val();
                 if (exportRadioVal != '') {
+                    var searchfilter = $("#searchfilter").val();
+                    var start_date = $("#start_date").val();
+                    var end_date = $("#end_date").val();
                     if (exportRadioVal == 'selected_records') {
                         if ($('#ExportRecord').click) {
-                            if ($('input[name="delete[]"]:checked').val()) {
-                                ip = '?' + $('input[name="delete[]"]:checked').serialize() + '&' + 'export_type' + '=' + exportRadioVal;
+                        	if ($('input[name="delete[]"]:checked').val()) {
+                                ip = '?' + $('input[name="delete[]"]:checked').serialize() + '&' + 'export_type' + '=' + exportRadioVal+"&searchValue="+searchfilter+"&start_date="+start_date+"&end_date="+end_date;
                                 var ajaxurl = window.site_url + "/powerpanel/liquorshop-lead/ExportRecord" + ip;
                                 window.location = ajaxurl;
                                 grid.getDataTable().ajax.reload();
@@ -123,12 +159,13 @@ var TableDatatablesAjax = function() {
                         }
                     } else {
                         $('#selected_records').modal('hide');
-                        var ajaxurl = window.site_url + "/powerpanel/liquorshop-lead/ExportRecord";
+                        var ajaxurl = window.site_url + "/powerpanel/liquorshop-lead/ExportRecord"+"?searchValue="+searchfilter+"&start_date="+start_date+"&end_date="+end_date;
                         window.location = ajaxurl;
                     }
                 }
             }
         });
+
         grid.setAjaxParam("customActionType", "group_action");
         grid.clearAjaxParams();
         grid.getDataTable().columns().iterator('column', function(ctx, idx) {
@@ -138,11 +175,14 @@ var TableDatatablesAjax = function() {
     return {
         //main function to initiate the module
         init: function() {
+        	$.fn.DataTable.ext.pager.numbers_length = 4;
             initPickers();
             handleRecords();
         }
     };
 }();
+
+
 $(document).ready(function() {
     let cookie = clearcookie;
     if (cookie == 'true') {
@@ -150,12 +190,14 @@ $(document).ready(function() {
         $('#searchfilter').val('');
     }
 });
+
 $(window).on('load', function() {
     if ($.cookie('LiquorShopLeadsearch')) {
         $('#searchfilter').val($.cookie('LiquorShopLeadsearch'));
         $('#searchfilter').trigger('keyup');
     }
 });
+
 jQuery(document).ready(function() {
     $.ajaxSetup({
         headers: {

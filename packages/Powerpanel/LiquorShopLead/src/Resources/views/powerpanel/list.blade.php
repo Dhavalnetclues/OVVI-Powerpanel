@@ -36,14 +36,14 @@
                                     <div class="p-3 dropdown-body">
 
                                         <div class="mb-3">
-                                            <div class="input-group input-daterange" id="contactleadrange">
+                                            <div class="input-group input-daterange" id="liquorshopleadrange">
                                                 <span class="input-group-text" id="basic-addon1"><i class="ri-calendar-2-line fs-14"></i></span>
                                                 <input class="form-control" id="start_date" name="start_date" placeholder="{{ trans('liquorshoplead::template.common.fromdate') }}" type="text" data-provider="flatpickr" data-date-format="{{ Config::get('Constant.DEFAULT_DATE_FORMAT') }}">
                                             </div>
                                         </div>
 
                                         <div class="mb-3">
-                                            <div class="input-group input-daterange" id="contactleadrange">
+                                            <div class="input-group input-daterange" id="liquorshopleadrange">
                                                 <span class="input-group-text" id="basic-addon1"><i class="ri-calendar-2-line fs-14"></i></span>
                                                 <input class="form-control" id="end_date" name="end_date" placeholder="{{ trans('liquorshoplead::template.common.todate') }}" type="text" data-provider="flatpickr" data-date-format="{{ Config::get('Constant.DEFAULT_DATE_FORMAT') }}">
                                             </div>
@@ -80,20 +80,28 @@
                                 $tablearray = [
                                     'DataTableTab'=>[
                                         'ColumnSetting'=>[
-                                            ['Identity_Name'=>'name','TabIndex'=>'1','Name'=>'Name'],
-                                            ['Identity_Name'=>'email','TabIndex'=>'2','Name'=>'Email'],
-                                            ['Identity_Name'=>'phone','TabIndex'=>'3','Name'=>'Phone'],
-                                            ['Identity_Name'=>'business','TabIndex'=>'4','Name'=>'business'],
-                                            ['Identity_Name'=>'message','TabIndex'=>'5','Name'=>'Message'],
+                                            ['Identity_Name'=>'varRequestNumber','TabIndex'=>'1','Name'=>'Request Number'],
+                                            ['Identity_Name'=>'chrChooseComponent','TabIndex'=>'2','Name'=>'Component'],
+                                            ['Identity_Name'=>'chrHowManyPOS','TabIndex'=>'3','Name'=>'Total POS'],
+                                            ['Identity_Name'=>'varOnZipCode','TabIndex'=>'4','Name'=>'Zip Code'],
+                                            ['Identity_Name'=>'varOnEmailAddress','TabIndex'=>'5','Name'=>'Email Address'],
+                                            ['Identity_Name'=>'varOnFirstName','TabIndex'=>'6','Name'=>'First Name'],
+                                            ['Identity_Name'=>'varOnLastName','TabIndex'=>'7','Name'=>'Last Name'],
+                                            ['Identity_Name'=>'varOnCompanyName','TabIndex'=>'8','Name'=>'Comapny Name'],
+                                            ['Identity_Name'=>'varOnPhoneNumber','TabIndex'=>'9','Name'=>'Phone Number'],
                                             ['Identity_Name'=>'ip','TabIndex'=>'6','Name'=>'IP'],
                                             ['Identity_Name'=>'date','TabIndex'=>'7','Name'=>'Date']
                                         ],
                                         'DataTableHead'=>[
-                                            ['Title'=>'Name','Align'=>'left'],
-                                            ['Title'=>'Email','Align'=>'left'],
-                                            ['Title'=>'Phone','Align'=>'left'],
-                                            ['Title'=>'Bussness','Align'=>'left'],
-                                            ['Title'=>'Message','Align'=>'left'],
+                                            ['Title'=>'Request Number','Align'=>'left'],
+                                            ['Title'=>'Component','Align'=>'left'],
+                                            ['Title'=>'Total POS','Align'=>'left'],
+                                            ['Title'=>'Zip Code','Align'=>'left'],
+                                            ['Title'=>'Email Address','Align'=>'left'],
+                                            ['Title'=>'First Name','Align'=>'left'],
+                                            ['Title'=>'Last Name','Align'=>'left'],
+                                            ['Title'=>'Comapny Name','Align'=>'left'],
+                                            ['Title'=>'Phone Number','Align'=>'left'],
                                             ['Title'=>'IP','Align'=>'left'],
                                             ['Title'=>'Received Date','Align'=>'center']
                                         ]
@@ -258,7 +266,7 @@
 <script src="{{ $CDN_PATH.'resources/global/scripts/datatable.js' }}" type="text/javascript"></script>
 <script src="{{ $CDN_PATH.'resources/global/plugins/datatables/datatables.min.js' }}" type="text/javascript"></script>
 <script src="{{ $CDN_PATH.'resources/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js' }}" type="text/javascript"></script>
-<script src="{{ $CDN_PATH.'resources/pages/scripts/packages/contactuslead/contactlead-datatables-ajax.js?v='.time() }}" type="text/javascript"></script>
+<script src="{{ $CDN_PATH.'resources/pages/scripts/packages/liquorshoplead/liquorshoplead-datatables-ajax.js?v='.time() }}" type="text/javascript"></script>
 @if((File::exists(app_path() . '/Workflow.php') != null || File::exists(base_path() . '/packages/Powerpanel/Workflow/src/Models/Workflow.php') != null))
     <script src="{{ $CDN_PATH.'resources/pages/scripts/user-updates-approval.js' }}" type="text/javascript"></script>
 @endif
@@ -297,5 +305,4 @@
         });
     });
 </script>
-
 @endsection

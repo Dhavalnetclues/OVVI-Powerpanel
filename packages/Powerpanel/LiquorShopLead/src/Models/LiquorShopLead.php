@@ -36,8 +36,8 @@ class LiquorShopLead extends Model
 	{
 		$response = false;
 		$response = Self::getRecords()
-			->whereRaw('MONTH(dtCreateDate) = MONTH(CURRENT_DATE())')
-			->whereRaw('YEAR(dtCreateDate) = YEAR(CURRENT_DATE())')
+			->whereRaw('MONTH(created_at) = MONTH(CURRENT_DATE())')
+			->whereRaw('YEAR(created_at) = YEAR(CURRENT_DATE())')
 			->where('chrPublish', '=', 'Y')
 			->where('chrDelete', '=', 'N')
 			->count();
@@ -48,7 +48,7 @@ class LiquorShopLead extends Model
 	{
 		$response = false;
 		$response = Self::getRecords()
-			->whereRaw('YEAR(dtCreateDate) = YEAR(CURRENT_DATE())')
+			->whereRaw('YEAR(created_at) = YEAR(CURRENT_DATE())')
 			->where('chrPublish', '=', 'Y')
 			->where('chrDelete', '=', 'N')
 			->count();
@@ -190,9 +190,9 @@ class LiquorShopLead extends Model
 		if (isset($selectedIds["start"]) && !empty($selectedIds["start"]) && isset($selectedIds["end"]) && !empty($selectedIds["end"])) {
 			$query->SearchByDateRange($selectedIds["start"], $selectedIds["end"]);
 		} else if (isset($selectedIds["start"]) && !empty($selectedIds["start"]) && $selectedIds["end"] == "") {
-			$query->where(DB::raw("(DATE_FORMAT(dtCreateDate,'%Y-%m-%d'))"), '>=', $selectedIds["start"]);
+			$query->where(DB::raw("(DATE_FORMAT(created_at,'%Y-%m-%d'))"), '>=', $selectedIds["start"]);
 		} else if (isset($selectedIds["end"]) && !empty($selectedIds["end"]) && $selectedIds["start"] == "") {
-			$query->where(DB::raw("(DATE_FORMAT(dtCreateDate,'%Y-%m-%d'))"), '<=', $selectedIds["end"]);
+			$query->where(DB::raw("(DATE_FORMAT(created_at,'%Y-%m-%d'))"), '<=', $selectedIds["end"]);
 		}
 		if (isset($selectedIds["checkedIds"]) &&  !empty($selectedIds["checkedIds"]) && count($selectedIds["checkedIds"]) > 0) {
 			$query->checkMultipleRecordId($selectedIds["checkedIds"]);
@@ -212,7 +212,7 @@ class LiquorShopLead extends Model
 	 */
 	function scopeSearchByDateRange($query, $startDate, $endDate)
 	{
-		return $query->whereBetween(DB::raw("(DATE_FORMAT(dtCreateDate,'%Y-%m-%d'))"), [$startDate, $endDate]);
+		return $query->whereBetween(DB::raw("(DATE_FORMAT(created_at,'%Y-%m-%d'))"), [$startDate, $endDate]);
 	}
 
 	/**
@@ -277,7 +277,7 @@ class LiquorShopLead extends Model
 	 */
 	function scopeOrderByCreatedAtDesc($query)
 	{
-		return $query->orderBy('dtCreateDate', 'DESC');
+		return $query->orderBy('created_at', 'DESC');
 	}
 
 	public static function getRecordListDashboard($year = false, $timeparam = false, $month = false)
@@ -286,7 +286,7 @@ class LiquorShopLead extends Model
 		$response = false;
 		$response = Self::where('varEmailId', '!=', '')->where('varEmailId', '!=', '');
 		if ($year != '') {
-			$response = $response->whereRaw("YEAR(dtCreateDate) >= " . (int) $year . "");
+			$response = $response->whereRaw("YEAR(created_at) >= " . (int) $year . "");
 		}
 		$response = $response->count();
 		return $response;
@@ -296,7 +296,7 @@ class LiquorShopLead extends Model
 		$response = Self::select('id');
 		$response = $response->where('chrPublish', '=', 'Y')->where('chrDelete', '=', 'N')->where('isWeb', '=', $isWeb);
 		if ($filter != '') {
-			$response = $response->whereRaw("MONTH(dtCreateDate) = " . (int) $filter . "");
+			$response = $response->whereRaw("MONTH(created_at) = " . (int) $filter . "");
 		}
 		$response = $response->count();
 		return $response;
@@ -308,7 +308,7 @@ class LiquorShopLead extends Model
 		// $response = Self::where('chrPublish', '=', 'Y')->where('chrDelete', '=', 'N');
 		$response = Self::where('varEmailId', '!=', '')->where('varEmailId', '!=', '');
 		if ($year != '') {
-			$response = $response->whereRaw("YEAR(dtCreateDate) = " . (int) $year . "");
+			$response = $response->whereRaw("YEAR(created_at) = " . (int) $year . "");
 		}
 		$response = $response->count();
 		return $response;
@@ -342,15 +342,15 @@ class LiquorShopLead extends Model
 		}
 
 		if (!empty($filterArr['start']) && $filterArr['start'] != ' ') {
-			$data = $query->whereRaw('DATE(dtCreateDate) >= DATE("' . date('Y-m-d', strtotime(str_replace('/', '-', $filterArr['start']))) . '")');
+			$data = $query->whereRaw('DATE(created_at) >= DATE("' . date('Y-m-d', strtotime(str_replace('/', '-', $filterArr['start']))) . '")');
 		}
 
 		if (!empty($filterArr['start']) && $filterArr['start'] != '' &&  empty($filterArr['end']) && $filterArr['end'] == '') {
-			$data = $query->whereRaw('DATE(dtCreateDate) >= DATE("' . date('Y-m-d', strtotime(str_replace('/', '-', $filterArr['start']))) . '")');
+			$data = $query->whereRaw('DATE(created_at) >= DATE("' . date('Y-m-d', strtotime(str_replace('/', '-', $filterArr['start']))) . '")');
 		}
 
 		if (!empty($filterArr['end']) && $filterArr['end'] != ' ') {
-			$data = $query->whereRaw('DATE(dtCreateDate) <= DATE("' . date('Y-m-d', strtotime(str_replace('/', '-', $filterArr['end']))) . '") AND dtCreateDate IS NOT null');
+			$data = $query->whereRaw('DATE(created_at) <= DATE("' . date('Y-m-d', strtotime(str_replace('/', '-', $filterArr['end']))) . '") AND created_at IS NOT null');
 		}
 
 		if (!empty($query)) {

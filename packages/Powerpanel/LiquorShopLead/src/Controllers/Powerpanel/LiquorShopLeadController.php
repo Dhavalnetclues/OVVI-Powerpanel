@@ -50,6 +50,7 @@ class LiquorShopLeadController extends PowerpanelController
 
     public function get_list()
     {
+        
         $filterArr = [];
         $records = [];
         $records["data"] = [];
@@ -62,7 +63,6 @@ class LiquorShopLeadController extends PowerpanelController
         $filterArr['iDisplayLength'] = intval(Request::get('length'));
         $filterArr['iDisplayStart'] = intval(Request::get('start'));
         $sEcho = intval(Request::get('draw'));
-
         $arrResults = LiquorShopLead::getRecordList($filterArr);
         $iTotalRecords = CommonModel::getRecordCount($filterArr, true,false, 'Powerpanel\LiquorShopLead\Models\LiquorShopLead');
         // print_r($iTotalRecords);die;
@@ -115,56 +115,37 @@ class LiquorShopLeadController extends PowerpanelController
 
     public function tableData($value)
     {
-
         // Checkbox
         $checkbox = view('powerpanel.partials.checkbox', ['name'=>'delete[]', 'value'=>$value->id])->render();
-
-        $details = '';
-        if (!empty($value->varMessage)) {
-            $details .= '<div class="pro-act-btn">';
-            $details .= '<a href="javascript:void(0)" class="without_bg_icon" onclick="return hs.htmlExpand(this,{width:300,headingText:\'Message\',wrapperClassName:\'titlebar\',showCredits:false});"><i aria-hidden="true" class="ri-message-2-line fs-16"></i></a>';
-            $details .= '<div class="highslide-maincontent">' . nl2br($value->varMessage) . '</div>';
-            $details .= '</div>';
-        } else {
-            $details .= '-';
-        }
-
-        // echo Config::get("Constant.DEFAULT_TIME_FORMAT");die;
-        // Date
-        $date = '<span align="left" data-bs-toggle="tooltip" data-bs-placement="bottom" title="'.date(Config::get("Constant.DEFAULT_DATE_FORMAT").' '.Config::get("Constant.DEFAULT_TIME_FORMAT"), strtotime($value->dtCreateDate)).'">'.date(Config::get('Constant.DEFAULT_DATE_FORMAT').' '.Config::get("Constant.DEFAULT_TIME_FORMAT").' ', strtotime($value->dtCreateDate)).'</span>';
-
-        $phone = '';
-        if (!empty($value->varPhoneNumber)) {
-            $phone = MyLibrary::decryptLatest($value->varPhoneNumber);
-        } else {
-            $phone = '-';
-        }
         
-        $BusinessName = '';
-        if (!empty($value->varBusinessName)) {
-            $BusinessName = $value->varBusinessName;
-        } else {
-            $BusinessName = '-';
-        }
+        $date = '<span align="left" data-bs-toggle="tooltip" data-bs-placement="bottom" title="'.date(Config::get("Constant.DEFAULT_DATE_FORMAT").' '.Config::get("Constant.DEFAULT_TIME_FORMAT"), strtotime($value->created_at)).'">'.date(Config::get('Constant.DEFAULT_DATE_FORMAT').' '.Config::get("Constant.DEFAULT_TIME_FORMAT").' ', strtotime($value->created_at)).'</span>';
 
-        if (!empty($value->varEmailId)) {
-            $LEmail = MyLibrary::decryptLatest($value->varEmailId);
+        if (!empty($value->varOnEmailAddress)) {
+            $varOnEmailAddress = MyLibrary::decryptLatest($value->varOnEmailAddress);
         } else {
-            $LEmail = '-';
+            $varOnEmailAddress = '-';
         }
-
-    
-        $LTitle = (isset($value->varTitle) && !empty($value->varTitle)) ? $value->varTitle : "-"; 
+        $varRequestNumber = (isset($value->varRequestNumber) && !empty($value->varRequestNumber)) ? $value->varRequestNumber : "-"; 
+        $interestedComponent = (isset($value->chrChooseComponent) && !empty($value->chrChooseComponent) && $value->chrChooseComponent==1) ? "Complete POS System" : "Software Only";
+        $totalPOS = (isset($value->chrHowManyPOS) && !empty($value->chrHowManyPOS) && $value->chrHowManyPOS==1) ? "One POS" : "Two or more POS Systems";
+        $zipCode = (isset($value->varOnZipCode) && !empty($value->varOnZipCode)) ?  MyLibrary::decryptLatest($value->varOnZipCode) : "";
+        $varOnFirstName = (isset($value->varOnFirstName) && !empty($value->varOnFirstName)) ?  $value->varOnFirstName : "";
+        $varOnLastName = (isset($value->varOnLastName) && !empty($value->varOnLastName)) ?  $value->varOnLastName : "";
+        $varOnCompanyName = (isset($value->varOnCompanyName) && !empty($value->varOnCompanyName)) ?  $value->varOnCompanyName : "";
+        $varOnPhoneNumber = (isset($value->varOnPhoneNumber) && !empty($value->varOnPhoneNumber)) ?  MyLibrary::decryptLatest($value->varOnPhoneNumber) : "";
         $ipAdress = (isset($value->varIpAddress) && !empty($value->varIpAddress)) ? $value->varIpAddress : "-";
 
         $records = array(
             $checkbox,
-            $LTitle,
-            $LEmail,
-            $phone,
-            $BusinessName,
-            // $contacting_about,
-            $details,
+            $varRequestNumber,
+            $interestedComponent,
+            $totalPOS,
+            $zipCode,
+            $varOnEmailAddress,
+            $varOnFirstName,
+            $varOnLastName,
+            $varOnCompanyName,
+            $varOnPhoneNumber,
             $ipAdress,
             $date
         );
