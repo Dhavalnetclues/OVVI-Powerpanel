@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
   <head>
-    <title>Contact Leads</title>
+    <title>Liquor Shop Leads</title>
   </head>
   <body>
       @if(isset($LiquorShopLead) && !empty($LiquorShopLead))
@@ -13,25 +13,33 @@
                         <th style="font-weight: bold;text-align:center" colspan="6">{{ trans("liquorshoplead::template.liquorShopleadModule.LiquorShopLead") }}</th>
                    </tr>
                     <tr>
-                       <th style="font-weight: bold;">{{ trans('liquorshoplead::template.common.name') }}</th>
-                       <th style="font-weight: bold;">{{ trans('liquorshoplead::template.common.email') }}</th>
-                       <th style="font-weight: bold;">{{ trans('liquorshoplead::template.liquorShopleadModule.phone') }}</th>
-                       <th style="font-weight: bold;">{{ trans('liquorshoplead::template.common.business') }}</th>
-                       <th style="font-weight: bold;">{{ trans('liquorshoplead::template.liquorShopleadModule.message') }}</th>
+                       <th style="font-weight: bold;">{{ trans('liquorshoplead::template.common.requestNumber') }}</th>
+                       <th style="font-weight: bold;">{{ trans('liquorshoplead::template.common.component') }}</th>
+                       <th style="font-weight: bold;">{{ trans('liquorshoplead::template.common.totalPOS') }}</th>
+                       <th style="font-weight: bold;">{{ trans('liquorshoplead::template.common.zipCode') }}</th>
+                       <th style="font-weight: bold;">{{ trans('liquorshoplead::template.common.emailAddress') }}</th>
+                       <th style="font-weight: bold;">{{ trans('liquorshoplead::template.common.firstName') }}</th>
+                       <th style="font-weight: bold;">{{ trans('liquorshoplead::template.common.lastName') }}</th>
+                       <th style="font-weight: bold;">{{ trans('liquorshoplead::template.common.companyName') }}</th>
+                       <th style="font-weight: bold;">{{ trans('liquorshoplead::template.common.phoneNumber') }}</th>
                        <th style="font-weight: bold;">{{ trans('template.common.ipAddress') }}</th>
-                       <th style="font-weight: bold;">{{ trans('liquorshoplead::template.liquorShopleadModule.receivedDateTime') }}</th>
+                       <th style="font-weight: bold;">{{ trans('liquorshoplead::template.common.receivedDateTime') }}</th>
                     </tr>
                  </thead>
                  <tbody>
                   @foreach($LiquorShopLead as $row)
                     <tr>
-                       <td>{{ $row->varTitle }}</td>
-                       <td>{{ \App\Helpers\MyLibrary::decryptLatest($row->varEmailId) }}</td>
-                       <td>{{ (!empty($row->varPhoneNumber)?\App\Helpers\MyLibrary::decryptLatest($row->varPhoneNumber):'-') }}</td>
-                       <td>{{ (!empty($row->varBusinessName) ? $row->varBusinessName :'-') }}</td>
-                       <td>{{ (!empty($row->varMessage)? htmlspecialchars(strip_tags($row->varMessage)) :'-') }}</td>
+                       <td>{{ $row->varRequestNumber }}</td>
+                       <td>{{ (isset($row->chrChooseComponent) && !empty($row->chrChooseComponent) && $row->chrChooseComponent==1 ) ? 'Complete POS System':'Software Only' }}</td>
+                       <td>{{ (isset($row->chrHowManyPOS) && !empty($row->chrHowManyPOS) && $row->chrHowManyPOS==1 ) ? 'One POS':'Two or more POS Systems' }}</td>
+                       <td>{{ (isset($row->varOnZipCode) && !empty($row->varOnZipCode) ) ? \App\Helpers\MyLibrary::decryptLatest($row->varOnZipCode):'' }}</td>
+                       <td>{{ (isset($row->varOnEmailAddress) && !empty($row->varOnEmailAddress) ) ? \App\Helpers\MyLibrary::decryptLatest($row->varOnEmailAddress):'' }}</td>
+                       <td>{{ (isset($row->varOnFirstName) && !empty($row->varOnFirstName) ) ? $row->varOnFirstName:'' }}</td>
+                       <td>{{ (isset($row->varOnLastName) && !empty($row->varOnLastName) ) ? $row->varOnLastName:'' }}</td>
+                       <td>{{ (isset($row->varOnCompanyName) && !empty($row->varOnCompanyName) ) ? $row->varOnCompanyName:'' }}</td>
+                       <td>{{ (isset($row->varOnPhoneNumber) && !empty($row->varOnPhoneNumber) ) ? \App\Helpers\MyLibrary::decryptLatest($row->varOnPhoneNumber):'' }}</td>
                        <td>{{ (!empty($row->varIpAddress) ? $row->varIpAddress :'-') }}</td>
-                       <td>{{ date(''.Config::get('Constant.DEFAULT_DATE_FORMAT').' '.Config::get('Constant.DEFAULT_TIME_FORMAT').'',strtotime($row->dtCreateDate)) }}</td>
+                       <td>{{ date(''.Config::get('Constant.DEFAULT_DATE_FORMAT').' '.Config::get('Constant.DEFAULT_TIME_FORMAT').'',strtotime($row->created_at)) }}</td>
                     </tr>
                   @endforeach
                  </tbody>
