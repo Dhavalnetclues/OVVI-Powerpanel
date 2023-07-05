@@ -407,6 +407,7 @@ return [
         'eventLeads' => 'Event Leads',
         'careerLeads' => 'Career Leads',
         'referearnleads' => 'Refer & Earn Leads',
+        'liquorshopleads' => 'Liquor Shop Leads',
         'projectscategory' => 'Project Categories',
         'quicklinks' => 'Quick Links',
         'organizations' => 'Organizations',
