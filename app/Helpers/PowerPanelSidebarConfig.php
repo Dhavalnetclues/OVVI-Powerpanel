@@ -178,6 +178,19 @@ class PowerPanelSidebarConfig {
                 $menuArr['contact_selected'] = '';
             }
         }
+         if (in_array('white-label', $permissionArr)) {
+            $menuArr['can-contact-us'] = true;
+            if (Request::segment(2) == 'white-label') {
+                $menuArr['white_label'] = 'active';
+                $menuArr['white_label'] = 'open';
+                $menuArr['white_label'] = 'selected';
+                $menuArr['leadmg'] = 'active';
+            } else {
+                $menuArr['white_label'] = '';
+                $menuArr['white_label'] = '';
+                $menuArr['white_label'] = '';
+            }
+        }
         if (in_array('liquorshop-list', $permissionArr)) {
             $menuArr['can-liquorshop-list'] = true;
             if (Request::segment(2) == 'liquorshop-lead') {

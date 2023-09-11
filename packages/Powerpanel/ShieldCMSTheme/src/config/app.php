@@ -215,7 +215,8 @@ return [
         Powerpanel\Projects\Providers\ProjectsServiceProvider::class,
         Powerpanel\ClientCategory\Providers\ClientCategoryServiceProvider::class,
         Powerpanel\Client\Providers\ClientServiceProvider::class,
-         Powerpanel\BookAppointment\Providers\BookAppointmentServiceProvider::class,
+        Powerpanel\BookAppointment\Providers\BookAppointmentServiceProvider::class,
+        Powerpanel\WhiteLabelLead\Providers\WhiteLabelLeadServiceProvider::class,
     ],
     /*
       |--------------------------------------------------------------------------

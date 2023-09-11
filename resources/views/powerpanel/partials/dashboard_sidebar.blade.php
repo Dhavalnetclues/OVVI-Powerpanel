@@ -1103,6 +1103,7 @@
         <!-- Leads -->
         @if(
             (isset($menuArr['can-contact-us-list']) && $menuArr['can-contact-us-list']) ||
+            (isset($menuArr['can-white-label']) && $menuArr['can-white-label']) ||
             (isset($menuArr['can-liquorshop-list']) && $menuArr['can-liquorshop-list']) ||
             (isset($menuArr['can-career-list']) && $menuArr['can-career-list']) ||
             (isset($menuArr['can-appointment-lead-list']) && $menuArr['can-appointment-lead-list']) ||
@@ -1191,6 +1192,15 @@
                             <li data-id="56" class="nav-sort nav-item">
                                 <a href="{{ url('powerpanel/liquorshop-lead') }}" class="nav-link {{ $menuArr['liquorshop_active'] }}" data-key="t-crm" title="{{ trans('template.sidebar.liquorshopleads') }}"> 
                                     <i class="ri-newspaper-line d-none"></i> <span data-key="t-widgets">{{ trans('template.sidebar.liquorshopleads') }}</span>
+                                </a>
+                            </li>
+                        @endif
+
+
+                        @if(isset($menuArr['can-liquorshop-list']) && $menuArr['can-liquorshop-list'])
+                            <li data-id="56" class="nav-sort nav-item">
+                                <a href="{{ url('powerpanel/white-label') }}" class="nav-link" data-key="t-crm" title="White Label Leads"> 
+                                    <i class="ri-newspaper-line d-none"></i> <span data-key="t-widgets">White Label Leads</span>
                                 </a>
                             </li>
                         @endif

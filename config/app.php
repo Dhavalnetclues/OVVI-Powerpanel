@@ -197,6 +197,7 @@ return [
         Powerpanel\OrderLead\Providers\OrderLeadServiceProvider::class,
         Powerpanel\Workflow\Providers\WorkflowServiceProvider::class,
         Powerpanel\ContactUsLead\Providers\ContactUsLeadServiceProvider::class,
+        Powerpanel\WhiteLabelLead\Providers\WhiteLabelLeadServiceProvider::class,
         Powerpanel\GetdemoLead\Providers\GetdemoLeadServiceProvider::class,
         Powerpanel\ResellerLead\Providers\ResellerLeadServiceProvider::class,
         Powerpanel\CareerLead\Providers\CareerLeadServiceProvider::class,
