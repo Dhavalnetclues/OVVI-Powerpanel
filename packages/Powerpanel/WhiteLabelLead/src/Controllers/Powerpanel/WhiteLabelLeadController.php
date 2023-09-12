@@ -9,6 +9,7 @@ use App\Http\Controllers\PowerpanelController;
 use Powerpanel\Services\Models\Services;
 use App\Timezone;
 use Carbon\Carbon;
+use Carbon\CarbonImmutable;
 use Config;
 use Excel;
 use Request;
@@ -133,16 +134,41 @@ class WhiteLabelLeadController extends PowerpanelController
         } else {
             $details .= '-';
         }
+        $dt = Carbon::parse($value->dtCreateDate)->timezone('America/Chicago');
+        // dd($value->dtCreateDate);
+        // $time = Carbon::createFromFormat('Y-m-d H:i:s', $value->dtCreateDate)->tz("Asia/Kolkata");
+        // $dateq = CarbonImmutable::parse($dt)->setTimezone('America/Chicago');
+        // dd($dt);
+        
+        $toDay = $dt->format('d');
+        $toMonth = $dt->format('m');
+        $toYear = $dt->format('Y');
+        $toHour = $dt->format('h');
+        $toMinute = $dt->format('i');
+        $toSecond = $dt->format('sa');
+        $dateUTC = Carbon::createFromDate($toYear, $toMonth, $toDay, 'UTC');
+        $datePST = Carbon::create($toYear, $toMonth, $toDay, $toHour, $toMinute, $toSecond, 'America/Chicago');
+        // $ff = Carbon::parse($datePST)->timezone('America/Chicago');
+        // dd($datePST);
+        // echo $toHour. " :: ".$toMinute." ::".$toSecond;die;
+        // echo $toHour. " :: ".$toMinute." ::".$toSecond;die;
+        $datePST1 = Carbon::createFromTime($toHour, $toMinute, $toSecond, 'America/Chicago');
+        $difference = $dateUTC->diffInHours($datePST);
+        // dd($datePST1);
+        $date = $dt->addHours($difference);
+        // $tomorrow = Carbon::date($value->dtCreateDate)('America/Chicago');
+
+
         // date_default_timezone_set('America/Chicago');
         // $cdate = MyLibrary::UTCToTimeZone($value->dtCreateDate,'date');
         // dd($cdate);
         // dd($value->dtCreateDate);
         // dd(Timezone::time_zone($value->dtCreateDate));
         $datetime = Carbon::createFromFormat('Y-m-d H:i:s', $value->dtCreateDate);
-// echo $datetime->toAtomString() . "\n";die;
-// 2020-09-15T23:45:00+00:00
-
-$datetime->setTimezone('America/Chicago');
+        // 2020-09-15T23:45:00+00:00
+        
+        $datetime->setTimezone('America/Chicago');
+        // echo $datetime->toAtomString() . "\n";die;
 // echo $datetime . "\n";die;
 // 2020-09-15T16:45:00-07:00
         // dd(Timezone::convertToLocal($value->dtCreateDate, 'Y-m-d g:i', true));
