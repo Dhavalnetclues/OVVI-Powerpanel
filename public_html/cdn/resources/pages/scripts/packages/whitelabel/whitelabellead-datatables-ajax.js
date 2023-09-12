@@ -147,7 +147,7 @@ var TableDatatablesAjax = function() {
                         if ($('#ExportRecord').click) {
                         	if ($('input[name="delete[]"]:checked').val()) {
                                 ip = '?' + $('input[name="delete[]"]:checked').serialize() + '&' + 'export_type' + '=' + exportRadioVal+"&searchValue="+searchfilter+"&start_date="+start_date+"&end_date="+end_date;
-                                var ajaxurl = window.site_url + "/powerpanel/contact-lead/ExportRecord" + ip;
+                                var ajaxurl = window.site_url + "/powerpanel/white-label/ExportRecord" + ip;
                                 window.location = ajaxurl;
                                 grid.getDataTable().ajax.reload();
                             } else {
@@ -156,7 +156,7 @@ var TableDatatablesAjax = function() {
                         }
                     } else {
                         $('#selected_records').modal('hide');
-                        var ajaxurl = window.site_url + "/powerpanel/contact-lead/ExportRecord"+"?searchValue="+searchfilter+"&start_date="+start_date+"&end_date="+end_date;
+                        var ajaxurl = window.site_url + "/powerpanel/white-label/ExportRecord"+"?searchValue="+searchfilter+"&start_date="+start_date+"&end_date="+end_date;
                         window.location = ajaxurl;
                     }
                 }

@@ -1197,9 +1197,9 @@
                         @endif
 
 
-                        @if(isset($menuArr['can-liquorshop-list']) && $menuArr['can-liquorshop-list'])
+                        @if(isset($menuArr['can-whitelabel-list']) && $menuArr['can-whitelabel-list'])
                             <li data-id="56" class="nav-sort nav-item">
-                                <a href="{{ url('powerpanel/white-label') }}" class="nav-link" data-key="t-crm" title="White Label Leads"> 
+                                <a href="{{ url('powerpanel/white-label') }}" class="nav-link {{ $menuArr['whitelabel_active'] }}" data-key="t-crm" title="White Label Leads"> 
                                     <i class="ri-newspaper-line d-none"></i> <span data-key="t-widgets">White Label Leads</span>
                                 </a>
                             </li>

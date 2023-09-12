@@ -20,7 +20,7 @@ class PowerPanelSidebarConfig {
 
         $user = Auth::user();
         $permissionObj = $user->getAllPermissions();
-        
+        // print_r($permissionObj);die;
         $permissionArr = array();
         if($permissionObj->count() > 0){
             foreach($permissionObj as $key => $value){
@@ -178,17 +178,17 @@ class PowerPanelSidebarConfig {
                 $menuArr['contact_selected'] = '';
             }
         }
-         if (in_array('white-label', $permissionArr)) {
-            $menuArr['can-contact-us'] = true;
+         if (in_array('whitelabel-list', $permissionArr)) {
+            $menuArr['can-whitelabel-list'] = true;
             if (Request::segment(2) == 'white-label') {
-                $menuArr['white_label'] = 'active';
-                $menuArr['white_label'] = 'open';
-                $menuArr['white_label'] = 'selected';
+                $menuArr['whitelabel_active'] = 'active';
+                $menuArr['whitelabel_open'] = 'open';
+                $menuArr['whitelabel_selected'] = 'selected';
                 $menuArr['leadmg'] = 'active';
             } else {
-                $menuArr['white_label'] = '';
-                $menuArr['white_label'] = '';
-                $menuArr['white_label'] = '';
+                $menuArr['whitelabel_active'] = '';
+                $menuArr['whitelabel_open'] = '';
+                $menuArr['whitelabel_selected'] = '';
             }
         }
         if (in_array('liquorshop-list', $permissionArr)) {

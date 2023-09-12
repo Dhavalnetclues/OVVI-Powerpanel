@@ -3,7 +3,7 @@ namespace Powerpanel\WhiteLabelLead\Controllers\Powerpanel;
 
 use App\CommonModel;
 use Powerpanel\WhiteLabelLead\Models\WhiteLabelLead;
-use Powerpanel\WhiteLabelLead\Models\ContactLeadExport;
+use Powerpanel\WhiteLabelLead\Models\WhiteLabelLeadExport;
 use App\Helpers\MyLibrary;
 use App\Http\Controllers\PowerpanelController;
 use Powerpanel\Services\Models\Services;
@@ -32,8 +32,7 @@ class WhiteLabelLeadController extends PowerpanelController
     public function index()
     {
         $iTotalRecords = CommonModel::getRecordCount(false,false,false, 'Powerpanel\WhiteLabelLead\Models\WhiteLabelLead');
-        // $this->breadcrumb['title'] = trans('whitelabellead::template.contactleadModule.manageContactLeads');
-        $this->breadcrumb['title'] = 'White Label Lead';
+        $this->breadcrumb['title'] = trans('whitelabellead::template.WhiteLabelLeadModule.manageWhiteLabelLeads');
 
         if (method_exists($this->CommonModel, 'GridColumnData')) {
             $settingdata = CommonModel::GridColumnData(Config::get('Constant.MODULE.ID'));
@@ -110,7 +109,7 @@ class WhiteLabelLeadController extends PowerpanelController
      */
     public function ExportRecord()
     {
-        return Excel::download(new ContactLeadExport, 'OVVI -' . trans("whitelabellead::template.contactleadModule.contactUsLeads") . '-' . date("dmy-h:i") . '.xlsx');
+        return Excel::download(new WhiteLabelLeadExport, 'OVVI -' . trans("whitelabellead::template.WhiteLabelLeadModule.whiteLabelLeads") . '-' . date("dmy-h:i") . '.xlsx');
 
     }
 

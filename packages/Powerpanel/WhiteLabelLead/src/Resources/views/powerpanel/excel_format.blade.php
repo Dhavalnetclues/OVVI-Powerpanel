@@ -4,26 +4,26 @@
     <title>Contact Leads</title>
   </head>
   <body>
-      @if(isset($ContactLead) && !empty($ContactLead))
+      @if(isset($WhiteLabelLead) && !empty($WhiteLabelLead))
           <div class="row">
            <div class="col-12">
               <table class="search-result allData" id="" border="1">
                  <thead>
                   <tr>
-                        <th style="font-weight: bold;text-align:center" colspan="6">{{ trans("contactuslead::template.contactleadModule.contactUsLeads") }}</th>
+                        <th style="font-weight: bold;text-align:center" colspan="6">{{ trans("whitelabellead::template.WhiteLabelLeadModule.whiteLabelLeads") }}</th>
                    </tr>
                     <tr>
-                       <th style="font-weight: bold;">{{ trans('contactuslead::template.common.name') }}</th>
-                       <th style="font-weight: bold;">{{ trans('contactuslead::template.common.email') }}</th>
-                       <th style="font-weight: bold;">{{ trans('contactuslead::template.contactleadModule.phone') }}</th>
-                       <th style="font-weight: bold;">{{ trans('contactuslead::template.common.business') }}</th>
-                       <th style="font-weight: bold;">{{ trans('contactuslead::template.contactleadModule.message') }}</th>
+                       <th style="font-weight: bold;">{{ trans('whitelabellead::template.common.name') }}</th>
+                       <th style="font-weight: bold;">{{ trans('whitelabellead::template.common.email') }}</th>
+                       <th style="font-weight: bold;">{{ trans('whitelabellead::template.WhiteLabelLeadModule.phone') }}</th>
+                       <th style="font-weight: bold;">{{ trans('whitelabellead::template.common.business') }}</th>
+                       <th style="font-weight: bold;">{{ trans('whitelabellead::template.WhiteLabelLeadModule.message') }}</th>
                        <th style="font-weight: bold;">{{ trans('template.common.ipAddress') }}</th>
-                       <th style="font-weight: bold;">{{ trans('contactuslead::template.contactleadModule.receivedDateTime') }}</th>
+                       <th style="font-weight: bold;">{{ trans('whitelabellead::template.WhiteLabelLeadModule.receivedDateTime') }}</th>
                     </tr>
                  </thead>
                  <tbody>
-                  @foreach($ContactLead as $row)
+                  @foreach($WhiteLabelLead as $row)
                     <tr>
                        <td>{{ $row->varTitle }}</td>
                        <td>{{ \App\Helpers\MyLibrary::decryptLatest($row->varEmailId) }}</td>

@@ -38,14 +38,14 @@
                                         <div class="mb-3">
                                             <div class="input-group input-daterange" id="contactleadrange">
                                                 <span class="input-group-text" id="basic-addon1"><i class="ri-calendar-2-line fs-14"></i></span>
-                                                <input class="form-control" id="start_date" name="start_date" placeholder="{{ trans('contactuslead::template.common.fromdate') }}" type="text" data-provider="flatpickr" data-date-format="{{ Config::get('Constant.DEFAULT_DATE_FORMAT') }}">
+                                                <input class="form-control" id="start_date" name="start_date" placeholder="{{ trans('whitelabellead::template.common.fromdate') }}" type="text" data-provider="flatpickr" data-date-format="{{ Config::get('Constant.DEFAULT_DATE_FORMAT') }}">
                                             </div>
                                         </div>
 
                                         <div class="mb-3">
                                             <div class="input-group input-daterange" id="contactleadrange">
                                                 <span class="input-group-text" id="basic-addon1"><i class="ri-calendar-2-line fs-14"></i></span>
-                                                <input class="form-control" id="end_date" name="end_date" placeholder="{{ trans('contactuslead::template.common.todate') }}" type="text" data-provider="flatpickr" data-date-format="{{ Config::get('Constant.DEFAULT_DATE_FORMAT') }}">
+                                                <input class="form-control" id="end_date" name="end_date" placeholder="{{ trans('whitelabellead::template.common.todate') }}" type="text" data-provider="flatpickr" data-date-format="{{ Config::get('Constant.DEFAULT_DATE_FORMAT') }}">
                                             </div>
                                         </div>
 
@@ -100,16 +100,16 @@
                                     ]
                                 ];
                             @endphp
-                            @include('powerpanel.partials.datatable-view',['ModuleName'=>'WhiteLabelLead','Permission_Delete'=>'contact-us-delete','tablearray'=>$tablearray,'userIsAdmin'=>$userIsAdmin,'Module_ID'=>Config::get('Constant.MODULE.ID')])
+                            @include('powerpanel.partials.datatable-view',['ModuleName'=>'WhiteLabelLead','Permission_Delete'=>'whitelabel-delete','tablearray'=>$tablearray,'userIsAdmin'=>$userIsAdmin,'Module_ID'=>Config::get('Constant.MODULE.ID')])
 
-                            {{-- @can('contact-us-delete')
+                            {{-- @can('whitelabel-delete')
                                 <a href="javascript:void(0);" class="btn btn-danger bg-gradient waves-effect waves-light btn-label deleteMass">
                                     <div class="d-flex">
                                         <div class="flex-shrink-0">
                                             <i class="ri-delete-bin-line label-icon align-middle fs-20 me-2"></i>
                                         </div>
                                         <div class="flex-grow-1">
-                                            {{ trans('contactuslead::template.common.delete') }}
+                                            {{ trans('whitelabellead::template.common.delete') }}
                                         </div>
                                     </div>
                                 </a>
@@ -120,7 +120,7 @@
                                         <i class="ri-share-box-line label-icon align-middle fs-20 me-2"></i>
                                     </div>
                                     <div class="flex-grow-1">
-                                        {{ trans('contactuslead::template.contactleadModule.export') }}
+                                        {{ trans('whitelabellead::template.WhiteLabelLeadModule.export') }}
                                     </div>
                                 </div>
                             </a> --}}
@@ -130,7 +130,7 @@
 
                 <!-- Modal -->
                 @if (File::exists(base_path() . '/resources/views/powerpanel/partials/quickeditpopup.blade.php') != null)
-                @include('powerpanel.partials.quickeditpopup',['TableName'=>'contactLead'])
+                @include('powerpanel.partials.quickeditpopup',['TableName'=>'WhiteLabelLead'])
                 @endif
                 @else
                 @if (File::exists(base_path() . '/resources/views/powerpanel/partials/addrecordsection.blade.php') != null)
@@ -153,11 +153,11 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">{{ trans('contactuslead::template.common.alert') }}</h5>
+                <h5 class="modal-title">{{ trans('whitelabellead::template.common.alert') }}</h5>
                 <button type="button" class="btn-close fs-10" data-bs-dismiss="modal" aria-label="Close"> </button>
             </div>
             <div class="modal-body text-center">
-                <h5 class="mb-2">{{ trans('contactuslead::template.contactleadModule.noExport') }}</h5>
+                <h5 class="mb-2">{{ trans('whitelabellead::template.WhiteLabelLeadModule.noExport') }}</h5>
                 <div class="pt-2">
                     <button type="button" class="btn btn-primary bg-gradient waves-effect waves-light btn-label" data-bs-dismiss="modal">
                         <div class="d-flex">
@@ -165,7 +165,7 @@
                                 <i class="ri-check-line label-icon align-middle fs-20 me-2"></i>
                             </div>
                             <div class="flex-grow-1">
-                                {{ trans('contactuslead::template.common.ok') }}
+                                {{ trans('whitelabellead::template.common.ok') }}
                             </div>
                         </div>
                     </button>
@@ -179,20 +179,20 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">{{ trans('contactuslead::template.common.alert') }}</h5>
+                <h5 class="modal-title">{{ trans('whitelabellead::template.common.alert') }}</h5>
                 <button type="button" class="btn-close fs-10" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body text-center">
 				<div class="row">
 					<div class="col-sm-12">
-                        <h5 class="mb-2">{{ trans('contactuslead::template.contactleadModule.recordsExport') }}</h5>
+                        <h5 class="mb-2">{{ trans('whitelabellead::template.WhiteLabelLeadModule.recordsExport') }}</h5>
 						<div class="form-check form-check-inline">
 							<input class="form-check-input" type="radio" value="selected_records" id="selected_records" name="export_type">
-							<label for="selected_records">{{ trans('contactuslead::template.contactleadModule.selectedRecords') }}</label>
+							<label for="selected_records">{{ trans('whitelabellead::template.WhiteLabelLeadModule.selectedRecords') }}</label>
 						</div>
 						<div class="form-check form-check-inline">
 							<input class="form-check-input" type="radio" value="all_records" id="all_records" name="export_type" checked>
-							<label for="all_records">{{ trans('contactuslead::template.contactleadModule.allRecords') }}</label>
+							<label for="all_records">{{ trans('whitelabellead::template.WhiteLabelLeadModule.allRecords') }}</label>
 						</div>
 					</div>
                     <div class="col-sm-12 mt-3">
@@ -202,7 +202,7 @@
                                     <i class="ri-check-line label-icon align-middle fs-20 me-2"></i>
                                 </div>
                                 <div class="flex-grow-1">
-                                    {{ trans('contactuslead::template.common.ok') }}
+                                    {{ trans('whitelabellead::template.common.ok') }}
                                 </div>
                             </div>
                         </button>
@@ -217,11 +217,11 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">{{ trans('contactuslead::template.common.alert') }}</h5>
+                <h5 class="modal-title">{{ trans('whitelabellead::template.common.alert') }}</h5>
                 <button type="button" class="btn-close fs-10" data-bs-dismiss="modal" aria-label="Close"> </button>
             </div>
             <div class="modal-body text-center">
-                <h5 class="mb-2">{{ trans('contactuslead::template.contactleadModule.leastRecord') }}</h5>
+                <h5 class="mb-2">{{ trans('whitelabellead::template.WhiteLabelLeadModule.leastRecord') }}</h5>
                 <div class="pt-2">
                     <button type="button" class="btn btn-primary bg-gradient waves-effect waves-light btn-label" data-bs-dismiss="modal">
                         <div class="d-flex">
@@ -229,7 +229,7 @@
                                 <i class="ri-check-line label-icon align-middle fs-20 me-2"></i>
                             </div>
                             <div class="flex-grow-1">
-                                {{ trans('contactuslead::template.common.ok') }}
+                                {{ trans('whitelabellead::template.common.ok') }}
                             </div>
                         </div>
                     </button>

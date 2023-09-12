@@ -196,8 +196,8 @@ return [
         'recordApprovalMessage' => 'Record has been sent for approval.',
         'selectuser' => 'Select User',
     ],
-    'contactleadModule' => [
-        'manageContactLeads' => 'Contact Leads',
+    'WhiteLabelLeadModule' => [
+        'manageWhiteLabelLeads' => 'White Label Leads',
         'export' => 'Export',
         'noExport' => 'No Records to export!',
         'recordsExport' => 'Which records do you want to export?',
@@ -208,7 +208,7 @@ return [
         'message' => 'Message',
         'ipAddress' => 'IP',
         'receivedDateTime' => 'Received Date/Time',
-        'contactUsLeads' => 'Contact Us Leads',
+        'whiteLabelLeads' => 'White Label Leads',
         'contactReply' => 'Reply',
         'contactForward' => 'Forward',
         'connectingAbout' => 'Connecting About',
