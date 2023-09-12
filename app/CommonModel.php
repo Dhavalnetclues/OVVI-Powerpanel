@@ -327,6 +327,7 @@ class CommonModel extends Model {
         $displayOrderField = true;
         $nameFieldModules = array('User','Payonline');
         $varNameFieldModules = array('ContactLead', 'ReferearnLead', 'RestaurantReservations', 'AppointmentLead', 'FeedbackLead', 'FormBuilder', 'PageTemplate');
+        // dd($modelName);
         if (in_array($modelName, $nameFieldModules)) {
             $titleField = 'name';
         } else if (in_array($modelName, $varNameFieldModules)) {
@@ -337,7 +338,7 @@ class CommonModel extends Model {
             $titleField = 'eventId';
         } else if ($modelName == 'varTitle'){
             $titleField = 'varTitle';
-        } else if($modelName="LiquorShopLead"){
+        } else if($modelName=="LiquorShopLead"){
             $titleField = 'varRequestNumber';
         }else {
             $titleField = 'varTitle';

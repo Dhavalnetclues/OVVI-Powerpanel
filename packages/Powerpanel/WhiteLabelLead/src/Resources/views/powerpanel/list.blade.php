@@ -246,7 +246,7 @@
 @section('scripts')
 <script type="text/javascript">
     window.site_url = '{!! url("/") !!}';
-    var DELETE_URL = '{!! url("/powerpanel/contact-lead/DeleteRecord") !!}';
+    var DELETE_URL = '{!! url("/powerpanel/white-label/DeleteRecord") !!}';
 
     var showChecker = true;
     @if (!$userIsAdmin)

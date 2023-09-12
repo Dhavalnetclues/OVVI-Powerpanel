@@ -93,10 +93,11 @@ class WhiteLabelLeadController extends PowerpanelController
      * @author  NetQuick
      */
     public function DeleteRecord(Request $request)
-    {
+    { 
         $data = Request::all('ids');
-        // print_r($data);die;
-        $update = MyLibrary::deleteMultipleRecords($data,false,false,'Powerpanel\WhiteLabelLead\Models\ContactLead');
+        // dd($data);        
+        $update = MyLibrary::deleteMultipleRecords($data,false,false,'Powerpanel\WhiteLabelLead\Models\WhiteLabelLead');
+
         echo json_encode($update);
         exit;
     }
