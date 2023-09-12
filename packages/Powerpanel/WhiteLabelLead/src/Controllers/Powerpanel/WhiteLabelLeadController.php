@@ -7,6 +7,8 @@ use Powerpanel\WhiteLabelLead\Models\WhiteLabelLeadExport;
 use App\Helpers\MyLibrary;
 use App\Http\Controllers\PowerpanelController;
 use Powerpanel\Services\Models\Services;
+use App\Timezone;
+use Carbon\Carbon;
 use Config;
 use Excel;
 use Request;
@@ -116,7 +118,9 @@ class WhiteLabelLeadController extends PowerpanelController
 
     public function tableData($value)
     {
-
+ 
+        // $now = Carbon::now('America/Chicago');
+        // dd($now);
         // Checkbox
         $checkbox = view('powerpanel.partials.checkbox', ['name'=>'delete[]', 'value'=>$value->id])->render();
 
@@ -129,9 +133,22 @@ class WhiteLabelLeadController extends PowerpanelController
         } else {
             $details .= '-';
         }
+        // date_default_timezone_set('America/Chicago');
+        // $cdate = MyLibrary::UTCToTimeZone($value->dtCreateDate,'date');
+        // dd($cdate);
+        // dd($value->dtCreateDate);
+        // dd(Timezone::time_zone($value->dtCreateDate));
+        $datetime = Carbon::createFromFormat('Y-m-d H:i:s', $value->dtCreateDate);
+// echo $datetime->toAtomString() . "\n";die;
+// 2020-09-15T23:45:00+00:00
 
-        // echo Config::get("Constant.DEFAULT_TIME_FORMAT");die;
-        // Date
+$datetime->setTimezone('America/Chicago');
+// echo $datetime . "\n";die;
+// 2020-09-15T16:45:00-07:00
+        // dd(Timezone::convertToLocal($value->dtCreateDate, 'Y-m-d g:i', true));
+        // $date = '<span align="left" data-bs-toggle="tooltip" data-bs-placement="bottom" title="'.date(Config::get("Constant.DEFAULT_DATE_FORMAT").' '.Config::get("Constant.DEFAULT_TIME_FORMAT"), strtotime($value->dtCreateDate)).'">'.date(Config::get('Constant.DEFAULT_DATE_FORMAT').' '.Config::get("Constant.DEFAULT_TIME_FORMAT").' ', strtotime($value->dtCreateDate)).'</span>';
+
+
         $date = '<span align="left" data-bs-toggle="tooltip" data-bs-placement="bottom" title="'.date(Config::get("Constant.DEFAULT_DATE_FORMAT").' '.Config::get("Constant.DEFAULT_TIME_FORMAT"), strtotime($value->dtCreateDate)).'">'.date(Config::get('Constant.DEFAULT_DATE_FORMAT').' '.Config::get("Constant.DEFAULT_TIME_FORMAT").' ', strtotime($value->dtCreateDate)).'</span>';
 
         $phone = '';

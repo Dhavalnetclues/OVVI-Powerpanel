@@ -1606,5 +1606,38 @@ class MyLibrary
         $output = ($output);
         return $output;
     }
+    
+    function ConvertDateTimeToUTC($Date, $Date_Format, $TimeZone) {
+        $Unix_TimeStamp = strtotime($Date->format($Date_Format));
+        $dt = new DateTime();
+        if ($Date_Format != 'Y-m-d') {
+            $dt->setTimezone(new DateTimeZone($TimeZone));
+        }
+        $dt->setTimestamp($Unix_TimeStamp); //<--- Pass a UNIX TimeStamp
+        $UTCTime = $dt->format($Date_Format);
+        return $UTCTime;
+    }
+
+    // function UTCToTimeZone($DateTime, $Format, $orgTimezone = "") {
+    //     // $currentTimezone = date_default_timezone_get();
+    //     $currentTimezone = 'America/Chicago';
+    //     // dd($currentTimezone);
+    //     $OnlyDate = new DateTime($DateTime, new DateTimeZone('UTC'));
+    //     $date = new DateTime($DateTime, new DateTimeZone('UTC'));
+    //     $date->setTimezone(new DateTimeZone($currentTimezone));
+    //     //  echo $date->format('d-m-Y H:i:s'); die;
+    //     if ($Format == 'date') {
+    //         $UTCTime = $this->ConvertDateTimeToUTC($OnlyDate, 'Y-m-d', $currentTimezone);
+    //     } elseif ($Format == 'time') {
+    //         $UTCTime = $this->ConvertDateTimeToUTC($date, 'H:i:s', $currentTimezone);
+    //     } elseif ($Format == 'timeA') {
+    //         $UTCTime = $this->ConvertDateTimeToUTC($date, 'g:i A', $currentTimezone);
+    //     } elseif ($Format == 'datetime') {
+    //         $UTCTime = $this->ConvertDateTimeToUTC($date, 'Y-m-d H:i:s', $currentTimezone);
+    //     }
+
+    //     return $UTCTime;
+    // }
+
 
 }
