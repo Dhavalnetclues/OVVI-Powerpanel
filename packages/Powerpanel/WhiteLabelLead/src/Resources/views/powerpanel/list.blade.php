@@ -92,7 +92,7 @@
                                             ['Title'=>'Name','Align'=>'left'],
                                             ['Title'=>'Email','Align'=>'left'],
                                             ['Title'=>'Phone','Align'=>'left'],
-                                            ['Title'=>'Bussness','Align'=>'left'],
+                                            ['Title'=>'business','Align'=>'left'],
                                             ['Title'=>'Message','Align'=>'left'],
                                             ['Title'=>'IP','Align'=>'left'],
                                             ['Title'=>'Received Date','Align'=>'center']

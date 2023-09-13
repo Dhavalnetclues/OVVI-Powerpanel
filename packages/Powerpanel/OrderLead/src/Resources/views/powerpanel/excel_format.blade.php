@@ -155,7 +155,7 @@
                                 <td>{!! $details !!}</td>
                                 <td>{!! $Businessdetails !!}</td>
                                 <td>{{ (!empty($value->varIpAddress) ? $value->varIpAddress :'-') }}</td>
-                                <td>{{ date(''.Config::get('Constant.DEFAULT_DATE_FORMAT').' '.Config::get('Constant.DEFAULT_TIME_FORMAT').'',strtotime($value->created_at)) }}</td>
+                                <td>{{ \App\Helpers\MyLibrary::UTCToTimeZone($value->created_at, 'UTC', 'America/Chicago')  }}</td>
                             </tr>
                         <?php } ?>
                     </tbody>

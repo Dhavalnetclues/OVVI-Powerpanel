@@ -131,7 +131,7 @@ class ContactLeadController extends PowerpanelController
 
         // echo Config::get("Constant.DEFAULT_TIME_FORMAT");die;
         // Date
-        $date = '<span align="left" data-bs-toggle="tooltip" data-bs-placement="bottom" title="'.date(Config::get("Constant.DEFAULT_DATE_FORMAT").' '.Config::get("Constant.DEFAULT_TIME_FORMAT"), strtotime($value->dtCreateDate)).'">'.date(Config::get('Constant.DEFAULT_DATE_FORMAT').' '.Config::get("Constant.DEFAULT_TIME_FORMAT").' ', strtotime($value->dtCreateDate)).'</span>';
+        $date = '<span align="left" data-bs-toggle="tooltip" data-bs-placement="bottom" title="'.MyLibrary::UTCToTimeZone($value->dtCreateDate, 'UTC', 'America/Chicago').'">'.MyLibrary::UTCToTimeZone($value->dtCreateDate, 'UTC', 'America/Chicago').'</span>';
 
         $phone = '';
         if (!empty($value->varPhoneNumber)) {

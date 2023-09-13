@@ -118,7 +118,7 @@ class LiquorShopLeadController extends PowerpanelController
         // Checkbox
         $checkbox = view('powerpanel.partials.checkbox', ['name'=>'delete[]', 'value'=>$value->id])->render();
         
-        $date = '<span align="left" data-bs-toggle="tooltip" data-bs-placement="bottom" title="'.date(Config::get("Constant.DEFAULT_DATE_FORMAT").' '.Config::get("Constant.DEFAULT_TIME_FORMAT"), strtotime($value->created_at)).'">'.date(Config::get('Constant.DEFAULT_DATE_FORMAT').' '.Config::get("Constant.DEFAULT_TIME_FORMAT").' ', strtotime($value->created_at)).'</span>';
+        $date = '<span align="left" data-bs-toggle="tooltip" data-bs-placement="bottom" title="'.MyLibrary::UTCToTimeZone($value->created_at, 'UTC', 'America/Chicago').'">'.MyLibrary::UTCToTimeZone($value->created_at, 'UTC', 'America/Chicago').'</span>';
 
         if (!empty($value->varOnEmailAddress)) {
             $varOnEmailAddress = MyLibrary::decryptLatest($value->varOnEmailAddress);

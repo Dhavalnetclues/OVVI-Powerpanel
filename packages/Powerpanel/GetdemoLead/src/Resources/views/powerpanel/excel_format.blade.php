@@ -50,7 +50,7 @@
                        <td>{{ $userMessage }}</td>
                        <td>{{ $varPageName }}</td>
                        <td>{{ (!empty($row->varIpAddress) ? $row->varIpAddress :'-') }}</td>
-                       <td>{{ date(''.Config::get('Constant.DEFAULT_DATE_FORMAT').' '.Config::get('Constant.DEFAULT_TIME_FORMAT').'',strtotime($row->created_at)) }}</td>
+                       <td>{{ \App\Helpers\MyLibrary::UTCToTimeZone($row->created_at, 'UTC', 'America/Chicago')  }}</td>
                     </tr>
                   @endforeach
                  </tbody>

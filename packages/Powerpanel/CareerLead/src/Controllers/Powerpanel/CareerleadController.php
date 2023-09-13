@@ -160,7 +160,7 @@ class CareerLeadController extends PowerpanelController
             $otherinfo ,
             $value->varPageName,
             $value->varIpAddress,
-            date('' . Config::get('Constant.DEFAULT_DATE_FORMAT') . ' ' . Config::get('Constant.DEFAULT_TIME_FORMAT') . '', strtotime($value->created_at)),
+            MyLibrary::UTCToTimeZone($value->created_at, 'UTC', 'America/Chicago'),
         );
 
         return $records;

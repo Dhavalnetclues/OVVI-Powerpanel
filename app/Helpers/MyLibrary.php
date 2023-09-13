@@ -1618,26 +1618,21 @@ class MyLibrary
         return $UTCTime;
     }
 
-    // function UTCToTimeZone($DateTime, $Format, $orgTimezone = "") {
-    //     // $currentTimezone = date_default_timezone_get();
-    //     $currentTimezone = 'America/Chicago';
-    //     // dd($currentTimezone);
-    //     $OnlyDate = new DateTime($DateTime, new DateTimeZone('UTC'));
-    //     $date = new DateTime($DateTime, new DateTimeZone('UTC'));
-    //     $date->setTimezone(new DateTimeZone($currentTimezone));
-    //     //  echo $date->format('d-m-Y H:i:s'); die;
-    //     if ($Format == 'date') {
-    //         $UTCTime = $this->ConvertDateTimeToUTC($OnlyDate, 'Y-m-d', $currentTimezone);
-    //     } elseif ($Format == 'time') {
-    //         $UTCTime = $this->ConvertDateTimeToUTC($date, 'H:i:s', $currentTimezone);
-    //     } elseif ($Format == 'timeA') {
-    //         $UTCTime = $this->ConvertDateTimeToUTC($date, 'g:i A', $currentTimezone);
-    //     } elseif ($Format == 'datetime') {
-    //         $UTCTime = $this->ConvertDateTimeToUTC($date, 'Y-m-d H:i:s', $currentTimezone);
-    //     }
-
-    //     return $UTCTime;
-    // }
+    function UTCToTimeZone($DateTime, $FromTimeZone, $ToTimeZone) {
+        $dt = Carbon::parse($DateTime)->timezone($ToTimeZone);
+        $toDay = $dt->format('d');
+        $toMonth = $dt->format('m');
+        $toYear = $dt->format('Y');
+        $toHour = $dt->format('h');
+        $toMinute = $dt->format('i');
+        $toSecond = $dt->format('sa');
+        $dateUTC = Carbon::create($toYear, $toMonth, $toDay, $toHour, $toMinute, $toSecond, $FromTimeZone);
+        $datePST = Carbon::create($toYear, $toMonth, $toDay, $toHour, $toMinute, $toSecond, $ToTimeZone);
+        $difference = $dateUTC->diffInHours($datePST);        
+        $date = $dt->subHours($difference);
+        $convertDate = date(Config::get('Constant.DEFAULT_DATE_FORMAT').' '.Config::get("Constant.DEFAULT_TIME_FORMAT").' ', strtotime($date));
+       return $convertDate;
+    }
 
 
 }

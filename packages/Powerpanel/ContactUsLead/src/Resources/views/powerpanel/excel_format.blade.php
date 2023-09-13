@@ -31,7 +31,7 @@
                        <td>{{ (!empty($row->varBusinessName) ? $row->varBusinessName :'-') }}</td>
                        <td>{{ (!empty($row->varMessage)? htmlspecialchars(strip_tags($row->varMessage)) :'-') }}</td>
                        <td>{{ (!empty($row->varIpAddress) ? $row->varIpAddress :'-') }}</td>
-                       <td>{{ date(''.Config::get('Constant.DEFAULT_DATE_FORMAT').' '.Config::get('Constant.DEFAULT_TIME_FORMAT').'',strtotime($row->dtCreateDate)) }}</td>
+                       <td>{{ \App\Helpers\MyLibrary::UTCToTimeZone($row->dtCreateDate, 'UTC', 'America/Chicago')  }}</td>
                     </tr>
                   @endforeach
                  </tbody>
