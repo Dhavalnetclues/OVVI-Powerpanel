@@ -1618,7 +1618,7 @@ class MyLibrary
         return $UTCTime;
     }
 
-    function UTCToTimeZone($DateTime, $FromTimeZone, $ToTimeZone) {
+    static function UTCToTimeZone($DateTime, $FromTimeZone, $ToTimeZone) {
         $dt = Carbon::parse($DateTime)->timezone($ToTimeZone);
         $toDay = $dt->format('d');
         $toMonth = $dt->format('m');
