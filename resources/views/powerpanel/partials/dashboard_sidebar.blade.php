@@ -1104,6 +1104,7 @@
         @if(
             (isset($menuArr['can-contact-us-list']) && $menuArr['can-contact-us-list']) ||
             (isset($menuArr['can-white-label']) && $menuArr['can-white-label']) ||
+            (isset($menuArr['can-cbd-store-lead-list']) && $menuArr['can-cbd-store-lead-list']) ||
             (isset($menuArr['can-liquorshop-list']) && $menuArr['can-liquorshop-list']) ||
             (isset($menuArr['can-career-list']) && $menuArr['can-career-list']) ||
             (isset($menuArr['can-appointment-lead-list']) && $menuArr['can-appointment-lead-list']) ||
@@ -1201,6 +1202,14 @@
                             <li data-id="56" class="nav-sort nav-item">
                                 <a href="{{ url('powerpanel/white-label') }}" class="nav-link {{ $menuArr['whitelabel_active'] }}" data-key="t-crm" title="White Label Leads"> 
                                     <i class="ri-newspaper-line d-none"></i> <span data-key="t-widgets">White Label Leads</span>
+                                </a>
+                            </li>
+                        @endif
+
+                        @if(isset($menuArr['can-cbd-store-lead-list']) && $menuArr['can-cbd-store-lead-list'])
+                            <li data-id="56" class="nav-sort nav-item">
+                                <a href="{{ url('powerpanel/cbd-store') }}" class="nav-link {{ $menuArr['cbd-store_active'] }}" data-key="t-crm" title="White Label Leads"> 
+                                    <i class="ri-newspaper-line d-none"></i> <span data-key="t-widgets">CBD Store Leads</span>
                                 </a>
                             </li>
                         @endif

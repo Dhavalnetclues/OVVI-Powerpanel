@@ -87,7 +87,7 @@
                 </button>
             @endif
         @endif
-        @php $moduleForExportBtn = ['ContactLead','orderlead','ticketlist','CareerLead','referearnlead','getdemolead','errorLog','eventslead','LogManager','LiquorShopLead','WhiteLabelLead'] @endphp
+        @php $moduleForExportBtn = ['ContactLead','orderlead','ticketlist','CareerLead','referearnlead','getdemolead','errorLog','eventslead','LogManager','LiquorShopLead','WhiteLabelLead','CBDStoreLead'] @endphp
         @if(in_array($ModuleName,$moduleForExportBtn))
             <a href="#selectedRecords" class="btn btn-primary bg-gradient waves-effect waves-light btn-label ExportRecord ms-1" data-bs-toggle="modal">
                 <div class="d-flex">

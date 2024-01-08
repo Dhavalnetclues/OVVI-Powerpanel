@@ -191,6 +191,19 @@ class PowerPanelSidebarConfig {
                 $menuArr['whitelabel_selected'] = '';
             }
         }
+        if (in_array('cbd-store-lead-list', $permissionArr)) {
+            $menuArr['can-cbd-store-lead-list'] = true;
+            if (Request::segment(2) == 'cbd-store') {
+                $menuArr['cbd-store_active'] = 'active';
+                $menuArr['cbd-store_open'] = 'open';
+                $menuArr['cbd-store_selected'] = 'selected';
+                $menuArr['leadmg'] = 'active';
+            } else {
+                $menuArr['cbd-store_active'] = '';
+                $menuArr['cbd-store_open'] = '';
+                $menuArr['cbd-store_selected'] = '';
+            }
+        }
         if (in_array('liquorshop-list', $permissionArr)) {
             $menuArr['can-liquorshop-list'] = true;
             if (Request::segment(2) == 'liquorshop-lead') {
